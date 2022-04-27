@@ -1,6 +1,10 @@
 # Machine Learning Bootcamp
 
-## Week 1 - 2: Python, Probability and Statistic Skills
+## Python (2 days)
+
+1. Python for Datascience
+
+## Probability and Statistic Skills (6 days)
 
 1. Calculus and Linear Algebra:
     1.1. Calculus: Integrals and Derivatives.  
@@ -22,26 +26,20 @@
 6. Hypothesis Testing:  
 
 
-## Week 3: Computer Science
+## Computer Science (1 day)
 
 1. Big O Notation
 2. Object Oriented Programming
 3. Data Structures and Algorithms
 
-## Week 4: Programming Skills
-
-1. Data Science toolbox: Python and SQL
-2. Intermediate Python
-3. SQL main queries and joining tables.
-
-## Week 5: Data Collection and Data Loading
+## Collect and store data (4 days)
 
 1. Data Science project structure
-2. Importing different file types in Python
-3. Web Scraping tools and techniques.
-4. How to connect to a SQL database using Python in Jupyter: Connecting to a DB2 database. 
+2.1. Static Files (csv, json, yml)
+2.2. Web Scraping tools and techniques.
+3. How to connect to a SQL database using Python: Connecting to a DB2 database. 
 
-Project part I: Involves creating your own dataset from web scraping.
+Project part I: Involves creating your own dataset from web scraping and storing it on SQL DB.
 
 ## Week 6: Data Management 
 
