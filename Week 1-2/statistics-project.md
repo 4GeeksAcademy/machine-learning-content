@@ -1,4 +1,4 @@
-# Examen
+# Projecto Estadistica
 
 ## Planteamiento
 
