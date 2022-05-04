@@ -6,7 +6,7 @@
 
 ## Probability and Statistic Skills (6 days)
 
-1. Calculus and Linear Algebra:
+1. Calculus and Linear Algebra:  
     1.1. Calculus: Integrals and Derivatives.  
     1.2. Linear Algebra: Matrix operations and Linear Transformations.  
 2. Probability:  
