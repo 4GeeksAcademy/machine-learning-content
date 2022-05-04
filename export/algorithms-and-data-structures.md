@@ -80,7 +80,7 @@ O(n^2) = 256 steps
 O(2^n) = 65,356 steps
 ```
 
-![big-o%20complexity.png](attachment:big-o%20complexity.png)
+![big-o%20complexity.png](../assets/big-o%20complexity.png)
 
 ## Understanding algorithms and data structures
 
@@ -108,13 +108,13 @@ Sometimes you need to store a list of elements in memory. Suppose you have a lis
 
 10 is at index 2
 
-![arrays.png](attachment:arrays.png)  
+![arrays.png](../assets/arrays.png)  
 
 Now let's suppose after adding the first four tasks, you want to add a fifth one but the next space is occupied. With linked lists your tasks can be anywhere in memory. 
 
 Elements aren't next to each other so you can't instantly calculate the position, you have to go to the first element to get the adress of the second element. Then go to the second element to get the adress of the third element. The blue squares are memory in use by someone else, you can't add data there because it is already occupied.
 
-![LinkedList.png](attachment:LinkedList.png)
+![LinkedList.png](../assets/LinkedList.png)
 
 Suppose you do your spend list of the month . At the end of the month you check how much you spent in that month. 
 That means you are having a lot of Inserts and a few Reads. Should you use an array or a list?
@@ -149,7 +149,7 @@ When you want to store multiple elements, should you use an array or a list?
 
 **Best practice: Keep track of first and last items in a linked list so it only takes O(1)**
 
-![arrays%20and%20linkedlist%20time%20complexity.png](attachment:arrays%20and%20linkedlist%20time%20complexity.png)
+![arrays%20and%20linkedlist%20time%20complexity.png](../assets/arrays%20and%20linkedlist%20time%20complexity.png)
 
 #### Selection Sort Algorithm
 

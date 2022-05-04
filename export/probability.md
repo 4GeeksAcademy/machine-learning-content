@@ -12,7 +12,7 @@ There are two types of sets:
 2. Infinite set: For example, a set of all real numbers.
 
 
-![probability%20sets.png](attachment:probability%20sets.png)
+![probability%20sets.png](../assets/probability%20sets.png)
 
 Everything outside the Set A we call it the complement of Set A. An element x belongs to the complement of A if x is an element of our universal set, and also does not belong to A.
 
@@ -23,7 +23,7 @@ The **union** of the two sets consists of all elements that belong to one set or
 The **intersection** of two sets is the collection of elements that belong to both of the sets. So, an element belongs to the intersection of two sets if and only if that element belongs to both of them.
 
 
-![intersection.png](attachment:intersection.png)
+![intersection.png](../assets/intersection.png)
 
 **Sequences**
 
@@ -81,7 +81,7 @@ Sample spaces are sets, and a set can be discrete, finite, infinite, continuous,
 
 
 
-![probability_dice.png](attachment:probability_dice.png)
+![probability_dice.png](../assets/probability_dice.png)
 
 ### Why Probability?
 
@@ -110,7 +110,7 @@ Probability theory provides a set of formal rules for determining the likelihood
 •	Fixed data and different models (We use the same belief to check the uncertainty of different models and update our beliefs) -Based on Bayes Rule.
 
 
-![Bayessian.png](attachment:Bayessian.png)
+![Bayessian.png](../assets/Bayessian.png)
 
 ### Events
 
