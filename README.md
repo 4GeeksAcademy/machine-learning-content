@@ -41,7 +41,7 @@
 
 Project part I: Involves creating your own dataset from web scraping and storing it on SQL DB.
 
-## Week 6: Data Management 
+## Data Management (3 days)
 
 1. Data Manipulation using Numpy and Pandas
 2. Visualization using Matplotlib and Seaborn
@@ -52,7 +52,7 @@ Project part I: Involves creating your own dataset from web scraping and storing
 
 Project Part II: Data cleaning
 
-## Week 7: Modeling
+## Modeling (6 days)
 
 1. Supervised and Unsupervised Learning
 2. Cross Validation (Overfitting vs underfitting)
@@ -60,7 +60,7 @@ Project Part II: Data cleaning
 4. Metrics: Measuring your results
 5. Model parameters
 
-## Week 8 - 9: Machine Learning Algorithms
+## Machine Learning Algorithms (6 days)
 
 1. Regression Algorithms
 2. Classification Algorithms
@@ -69,13 +69,13 @@ Project Part II: Data cleaning
 5. Time Series Forecasting and Recommender Systems
 6. Introduction to Deep Learning.
 
-## Week 10: Storytelling, Communicating your results
+## Storytelling, Communicating your results (2 days)
 
 1. Business intelligence tools
 2. Using the ideal graph to show insights
 3. Communicating statistics in a simple way
 
-## Week 11: Data Science as Software
+## Data Science as Software (1 day)
 
 1. Software project structure
 2. How to use the cookiecutter template
