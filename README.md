@@ -6,45 +6,31 @@
 
 ## Probability and Statistic Skills (6 days)
 
-1. Calculus and Linear Algebra:  
-    1.1. Calculus: Integrals and Derivatives.  
-    1.2. Linear Algebra: Matrix operations and Linear Transformations.  
-2. Probability:  
-    2.1. Math background  
-    2.2. Space vs Distribution  
-    2.3. Events  
-    2.4. Conditional Probability  
-3. Random Variables:  
-    3.1. Variables Continuas  
-    3.2. Variables Categoricas  
-4. Descriptive Statistics:  
-    4.1. Meassures of Central tendency  
-    4.2. Meassures of Variability  
-    4.3. Meassures Correlation  
-5. Different types of Distributions:  
-    5.1. Uniforme, Binomial, Bernuli  
-6. Hypothesis Testing:  
+1. Calculus
+2. Linear Algebra 
+3. Probability
+4. Descriptive Statistics
+5. Random Variables
+6. Hypothesis Testing
 
 
 ## Computer Science (1 day)
 
-1. Big O Notation
-2. Object Oriented Programming
-3. Data Structures and Algorithms
+1. Optimizing Algorithms
 
 ## Collect and store data (4 days)
 
 1. Data Science project structure
 2.1. Static Files (csv, json, yml)
 2.2. Web Scraping tools and techniques.
-3. How to connect to a SQL database using Python: Connecting to a DB2 database. 
+3. How to connect to a SQL database using Python. 
 
 Project part I: Involves creating your own dataset from web scraping and storing it on SQL DB.
 
 ## Data Management (3 days)
 
-1. Data Manipulation using Numpy and Pandas
-2. Visualization using Matplotlib and Seaborn
+1. Exploratory data analysis
+2. Data Cleaning
 3. Feature Engineering: creating new features from existing features.
 4. How to deal with outliers
 5. How to deal with missing data
@@ -77,9 +63,7 @@ Project Part II: Data cleaning
 
 ## Data Science as Software (1 day)
 
-1. Software project structure
-2. How to use the cookiecutter template
-3. How to create a machine learning web app with Heroku.
+1. How to create a machine learning web app with Heroku.
 
 ## Week 12: Real life cases
 
