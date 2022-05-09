@@ -20,12 +20,12 @@
 
 ## Collect and store data (4 days)
 
-1. Data Science project structure. 
-2.1. Static Files (csv, json, yml). 
-2.2. Web Scraping tools and techniques. 
-3. How to connect to a SQL database using Python.  
+1. Data Science project structure.  
+2.1. Static Files (csv, json, yml).  
+2.2. Web Scraping tools and techniques.  
+3. How to connect to a SQL database using Python.   
   
-Project part I: Involves creating your own dataset from web scraping and storing it on SQL DB.  
+Project part I: Involves creating your own dataset from web scraping and storing it on SQL DB.   
 
 ## Data Management (3 days)
 
