@@ -15,12 +15,20 @@ We will begin by listing the measures of central tendency, which represents the 
 
 ### Measures of central tendency
 
-This measures represent the idea that there is one number that best summarizes the entire set.
+**Moments**
+
+A moment is a quantitative measure that says something about the shape of a distribution. There are central moments and non-central moments. This section is focused on the central moments. This central tendency measures represent the idea that there is one number that best summarizes the entire set.
+
+The 0th central moment is the total probability and is always equal to 1.
+
+The 1st moment is the mean (expected value).
+
+The 2nd central moment is the variance.
 
 **Mean**
 
 The arithmetic mean is probably what you are most familiar with when people talk about average.
-If you have five numbers, the mean would be the sum of those five numbers divided by 5.
+If you have five numbers, the mean would be the sum of those five numbers divided by 5. It is the balance point and it is also called the first moment.
 
 **Median**
 
@@ -39,7 +47,7 @@ This measures represent how spread is the data.
 
 Standard deviation tells us how far is the mean from each observation in the given data set.
 
-In descriptive statistics we generally deal with data available in a sample, not in a population.
+In descriptive statistics we generally deal with data available in a sample, not in a population. The standard deviation is calculated with the square root of the variance.
 
 ![descriptive_stats_standard_deviation.png](../assets/descriptive_stats_standard_deviation.png)
 
@@ -51,7 +59,7 @@ The mean deviation gives information about how far the data values are spread ou
 
 **Variance**
 
-Just another measure of dispersion, of how data points differ from the mean. Variance is the expectation of the squared deviation of a random variable from its population mean or sample mean. 
+Just another measure of dispersion, of how data points differ from the mean. Variance is the expectation of the squared deviation of a random variable from its population mean or sample mean. Variance is interesting in a mathematical sense, but the standard deviation is often a much better measure of how spread out the distribution is.
 
 ![descriptive_stats_variance.png](../assets/descriptive_stats_variance.png)
 
@@ -119,6 +127,8 @@ IQR = interquantile range = Q3 - Q1
 
 ### Skewness
 
+The 3rd central moment is the skewness. A measure that describes the contrast of one tail versus the other tail. For example, if there are more high values in your distribution than low values then your distribution is 'skewed' towards the high values.
+
 ![descriptive_stats_skewness.png](../assets/descriptive_stats_skewness.png)
 
 To calculate skewness:
@@ -150,7 +160,7 @@ If r is negative, it means that as one variable gets larger , the other gets sma
 
 ### Kurtosis
 
-It is about the existance of outliers.It is a measure of whether the data are heavy-tailed (profusion of outliers) or light-tailed (lack of outliers) relative to a normal distribution.
+The 4th central moment is Kurtosis. It is about the existance of outliers.It is a measure of whether the data are heavy-tailed (profusion of outliers) or light-tailed (lack of outliers) relative to a normal distribution. It is about how fat the tails in the distribution are.
 
 ![descriptive_stats_kurtosis.png](../assets/descriptive_stats_kurtosis.png)
 
@@ -161,6 +171,8 @@ The main difference between skewness and kurtosis is:
     
     Skewness refers to a degree of symmetry.
     Kurtosis refers to a degree of presence of outliers.
+
+The higher the moment, the harder it is to estimate with samples. Larger samples are required in order to obtain good estimates.
 
 References:
 

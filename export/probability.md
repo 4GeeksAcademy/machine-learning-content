@@ -75,6 +75,16 @@ Let's imagine we flip a coin. The probability space is (S, P). We make a SET of 
 
 The probability for heads is the same as the probability for tails which is the same as 0.5. So if you flip a coin there is an even chance of getting heads or of getting tails.
 
+
+Now let-s imagine we have a fair roll dice. We have 6 possible outcomes if we roll a dice : { 1, 2, 3, 4, 5, 6}
+If it is a fair roll dice, then each of those possible outcomes has the same probability, which would be: number of possibilities that meet my condition / number of equally likely possibilities.
+
+P(1) = 1/6
+
+P(1 or 6) = 2/6
+
+p(2 and 3) = 0/6 ------> getting a 2 or a 3 are mutually exclusive events. They can not happen at the same time.
+
 A probability distribution is considered uniform if every outcome is equally as likely.
 
 Sample spaces are sets, and a set can be discrete, finite, infinite, continuous, and so on. Let's have an example of a simple discrete and finite sample space. We will roll a dice twice. We are not dealing with two probabilistic experiments. We are dealing with a single experiment that involves two rolls of the die. We take note of the first result, and then take note of the second result and this gives us a pair of numbers and graph it as follows.
@@ -109,6 +119,14 @@ Probability theory provides a set of formal rules for determining the likelihood
 
 •	Fixed data and different models (We use the same belief to check the uncertainty of different models and update our beliefs) -Based on Bayes Rule.
 
+**Differences between Bayesian and frequentist statistics.**
+
+Both attempt to estimate a population parameter based on a sample of data.
+
+Frequentists treat the data as random and the statistic as fixed. Inferences are based on long-run infinite sampling, and estimates of the parameter come in the form of point estimates or confidence intervals.
+
+Bayesians treat the population parameter as random and the data as fixed. Bayesian statistics allows us to make informed guesses about the value of the parameter in the form of prior distributions. Estimates of the parameter come in the form of posterior distributions.
+
 
 ![Bayessian.png](../assets/Bayessian.png)
 
@@ -132,9 +150,11 @@ The complement of an event is all the other outcomes of an event. For example, i
 The conditional probability of an event B is the probability that the event will occur given that event A has already occurred.
 If A and B are two events, then the conditional probability can be designated as P(A given B) or P(A|B). Conditional probability can be calculated from the joint probability(A | B) = P(A, B) / P(B) The conditional probability is not symmetrical; 
 
-For example P(A | B) != P(B | A) Other ways of calculating conditional probability includes using the other conditional probability, i.e.
+For example P(A | B) != P(B | A)
 
-P(A|B) = P(B|A) * P(A) / P(B)
+Other ways of calculating conditional probability includes using the other conditional probability, i.e.
+
+P(A|B) = P(B|A) * P(A) / P(B) ----->Bayes Theorem
 
 Reverse is also used:
 
@@ -146,7 +166,13 @@ This alternate calculation of conditional probability is referred to as the Baye
 
 **Bayes Theorem**
 
+Bayes’ theorem is a simple mathematical formula used for calculating conditional probabilities. This theorem states that:
+
+P(A|B) = P(B|A) * P(A) / P(B)
+
 Bayes’s theorem is used for the calculation of a conditional probability where intuition often fails. Although widely used in probability, the theorem is being applied in the machine learning field too. Its use in machine learning includes the fitting of a model to a training dataset and developing classification models.
+
+It is always possible to answer conditional probability questions by Bayes Therorem. It tells us the probability of event A given some new evidence B, but if you forgot it you can always grow stories with trimed trees.
 
 Example:
 
@@ -159,6 +185,17 @@ P(Fire|Smoke) =P(Fire) P(Smoke|Fire)/P(Smoke)
 = 1% x 90%/10%
 = 9%
 
+**Bayes Theorem in Machine Learning**
+
+Bayes theorem can be used both in regression and classification.
+
+Generally, in Supervised Machine Learning, when we want to train a model the main building blocks are:
+
+- A set of data points that contain features (the attributes that define such data points)
+- The labels of such data point (the numeric or categorical tag which we later want to predict on new data points)
+- A hypothesis function that links such features with their corresponding labels.
+- We also have a loss function, which is the difference between the predictions of the model and the real labels which we want to reduce to achieve the best possible results.
+
 References:
 
 https://medium.com/brandons-computer-science-notes/an-introdcution-to-probability-45a64aee7606
@@ -168,4 +205,6 @@ https://discovery.cs.illinois.edu/learn/Prediction-and-Probability/Conditional-P
 https://www.upgrad.com/blog/bayes-theorem-explained-with-example-complete-guide/
 
 https://www.edx.org/es/micromasters/mitx-statistics-and-data-science
+
+https://towardsdatascience.com/bayes-theorem-clearly-explained-with-visualization-5083ea5e9b14
 
