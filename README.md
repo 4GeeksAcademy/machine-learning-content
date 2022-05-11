@@ -6,70 +6,91 @@
 
 ## Probability and Statistic Skills (6 days)
 
-1. Calculus
-2. Linear Algebra 
-3. Probability
-4. Descriptive Statistics
-5. Random Variables
-6. Hypothesis Testing
-
+1.1. Calculus
+1.2. Linear Algebra 
+📝 Calculus and Linear algebra problems
+2. Probability
+📝 Probability problems 
+3. Descriptive Statistics
+📝 Descriptive statistics problems
+4. Random Variables
+📝 Probability Distribution problems
+5.1. Hypothesis Testing
+📝 Hypothesis testing problems
+5.2 No new material
 
 ## Computer Science (1 day)
 
 1. Optimizing Algorithms
+📝 Algorithm optimization problems
 
 ## Collect and store data (4 days)
 
 1. Data Science project structure.  
-2.1. Static Files (csv, json, yml).  
-2.2. Web Scraping tools and techniques.  
-3. Connecting to SQL databases with Python.   
+1.2. Static Files (csv, json, yml).  
+📝 Descriptive statistics problems.
+2. Web Scraping tools and techniques. 
+📝 Load tweets from Twitter
+3. Create and connect to SQL databases with Python.
+📝 Connect and analyse a Sql dataset
   
-Project part I: Involves creating your own dataset from web scraping and storing it on SQL DB.   
+Project part I: Web scraping dataset and storing it on SQL DB.   
 
 ## Data Management (3 days)
 
-1. Exploratory data analysis
-2. How to deal with outliers
-3. How to deal with missing data
-4. Feature Engineering.
-5. Feature encoding for categorical variables
-6. Feature Scaling
+1.1. Exploratory data analysis
+1.2. How to deal with outliers
+1.3. How to deal with missing data
+📝 EDA from Titanic dataset
+2.1. Feature Engineering.
+2.2. Feature encoding for categorical variables
+2.3. Feature Scaling
+📝 Titanic data cleaning
 
 Project Part II: Data cleaning
 
 ## Machine Learning (12 days)
 
-1. Machine Learning Basics
-2. Machine learning algorithms
-2.1. Decision Trees
-2.2. Random Forest
-2.3. Gradient Boosting
-2.4. Dimensionality Reduction
-2.5. KNN
-2.6. K-Means
-2.7. Linear Regression
-2.8. Logistic Regression
-2.9. Support Vector Machine (SVM)
-3. Model Evaluation
-4. Hypertuning machine learning algorithms
-5. Time Series Forecasting and Recommender Systems
-6. Introduction to Deep Learning.
+1.1 Machine Learning Basics
+1.2. Machine learning algorithms
+1.3 Decision Trees
+📝 Decision tree project (2 hours)
+2. Random Forest
+📝 Random Forest project (2 hours)
+3. Gradient Boosting
+📝 Gradient Boosting project (2 hours)
+4.1. Dimensionality Reduction
+4.2. KNN
+4.3. K-Means
+📝 Clustering project (2 hours)
+5. Linear Regression
+📝 Linear regression project (2 hours)
+6.1 Logistic Regression
+6.2. Support Vector Machine (SVM)
+📝 Logistic regression project (2 hours)
+7. Model Evaluation
+📝 Evaluate previously created models (2 hours)
+8. Hypertuning machine learning algorithms
+📝 Hypertuning your previous models (2 hours)
+9. Time Series Forecasting and Recommender Systems
+📝 Time series project (2 hours)
+10. Introduction to Deep Learning.
+📝 Deep learning project (2 hours)
 
-Project Part III: Create a machine learning model
+Project Part III: Create a machine learning model (2 days)
 
 ## Data Science as Software (1 day)
 
 1. How to create a machine learning web app with Heroku.
 
-Project Part IV: Create a web app for your machine learning model
+Project Part IV: Deploy model to Heroku 
 
 ## Data Warehouse tools: modeling on the cloud (3 days)
 
 1. Data warehouse tools
-2. create and execute machine learning models in BigQuery by using SQL queries
+2. Create and execute machine learning models in BigQuery 
 
-Project: Create your own real time machine learning model 
+Project: Create a machine learning model using BigQuery
 
 ## Communicating your results (1 day)
 
@@ -77,6 +98,8 @@ Project: Create your own real time machine learning model
 
 ## Week 12: Real life cases (3 days)
 
-1.   *can be the rats problem.
-2.   *Look for an image classification good case-----> can be a case applied to medicine, sports, etc.
-3.   *Look for an NLP, neural networks or recommender system(clustering) good case*
+1.   
+2. Image classification
+3. 
+
+## Week 13-16: Final project
