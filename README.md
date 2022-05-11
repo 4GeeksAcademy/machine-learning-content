@@ -20,54 +20,63 @@
 
 ## Collect and store data (4 days)
 
-1. Data Science project structure
-2.1. Static Files (csv, json, yml)
-2.2. Web Scraping tools and techniques.
-3. How to connect to a SQL database using Python. 
-
-Project part I: Involves creating your own dataset from web scraping and storing it on SQL DB.
+1. Data Science project structure.  
+2.1. Static Files (csv, json, yml).  
+2.2. Web Scraping tools and techniques.  
+3. Connecting to SQL databases with Python.   
+  
+Project part I: Involves creating your own dataset from web scraping and storing it on SQL DB.   
 
 ## Data Management (3 days)
 
 1. Exploratory data analysis
-2. Data Cleaning
-3. Feature Engineering: creating new features from existing features.
-4. How to deal with outliers
-5. How to deal with missing data
-6. Label encoding and Normalization Techniques
+2. How to deal with outliers
+3. How to deal with missing data
+4. Feature Engineering.
+5. Feature encoding for categorical variables
+6. Feature Scaling
 
 Project Part II: Data cleaning
 
-## Modeling (6 days)
+## Machine Learning (12 days)
 
-1. Supervised and Unsupervised Learning
-2. Cross Validation (Overfitting vs underfitting)
-3. Introduction to the scikit-learn library.
-4. Metrics: Measuring your results
-5. Model parameters
-
-## Machine Learning Algorithms (6 days)
-
-1. Regression Algorithms
-2. Classification Algorithms
-3. Clustering
-4. Hypertuning your machine learning algorithm
+1. Machine Learning Basics
+2. Machine learning algorithms
+2.1. Decision Trees
+2.2. Random Forest
+2.3. Gradient Boosting
+2.4. Dimensionality Reduction
+2.5. KNN
+2.6. K-Means
+2.7. Linear Regression
+2.8. Logistic Regression
+2.9. Support Vector Machine (SVM)
+3. Model Evaluation
+4. Hypertuning machine learning algorithms
 5. Time Series Forecasting and Recommender Systems
 6. Introduction to Deep Learning.
 
-## Storytelling, Communicating your results (2 days)
-
-1. Business intelligence tools
-2. Using the ideal graph to show insights
-3. Communicating statistics in a simple way
+Project Part III: Create a machine learning model
 
 ## Data Science as Software (1 day)
 
 1. How to create a machine learning web app with Heroku.
 
-## Week 12: Real life cases
+Project Part IV: Create a web app for your machine learning model
 
-1.   *Look for a statistics case that can be solved in paper (finish the solution) and scale it to coding big amounts of data
-        --->  can be the rats problem but reshaped.*
-2.   *Look for an image classification good case-----> can be a case applied to medicine (xrays, etc)*
-3.   *Look for an NLP, neural networks or recommender system(clustering) good case*-----> Look for the new Spotify case in Kaggle competitions.
+## Data Warehouse tools: modeling on the cloud (3 days)
+
+1. Data warehouse tools
+2. create and execute machine learning models in BigQuery by using SQL queries
+
+Project: Create your own real time machine learning model 
+
+## Communicating your results (1 day)
+
+1. Communicating statistics in a simple way
+
+## Week 12: Real life cases (3 days)
+
+1.   *can be the rats problem.
+2.   *Look for an image classification good case-----> can be a case applied to medicine, sports, etc.
+3.   *Look for an NLP, neural networks or recommender system(clustering) good case*
