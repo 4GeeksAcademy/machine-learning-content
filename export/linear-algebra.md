@@ -5,17 +5,21 @@ Linear Algebra is the branch of mathematics concerning linear equations that use
 The two primary mathematical entities that are of interest in linear algebra are the vector and the matrix. They are examples of a more general entity known as a tensor. Tensors possess an order (or rank), which determines the number of dimensions in an array required to represent it.
 Matrix: Array of numbers in a rectangular form represented by rows and columns.
 
-Example: 3 4
+Example: 
 
-         5 6
+3 4
+
+5 6
 
 Vectors: A vector is a row or a column of a matrix.
 
-Example: 3
+Example: 
+		 
+3
 
-	     4
+4
                 
-	     5
+5
 
 Tensors:  Tensors are an array of numbers or functions that transmute with certain rules when coordinate changes.
 Machine Learning is the point of contact for Computer Science and Statistics.

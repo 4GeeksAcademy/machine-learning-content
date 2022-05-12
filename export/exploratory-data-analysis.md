@@ -908,6 +908,8 @@ Source:
 
 https://www.dataquest.io/blog/pandas-python-tutorial/
 
+https://www.kdnuggets.com/2020/07/exploratory-data-analysis-steroids.html
+
 https://www.dataquest.io/blog/pandas-tutorial-python-2/
 
 https://medium.com/analytics-vidhya/introduction-to-exploratory-data-analysis-for-image-text-based-data-1179e194df3f#:~:text=Exploratory%20data%20analysis%20is%20the%20first%20step%20towards,the%20closer%20you%20get%20to%20solving%20the%20problem.
