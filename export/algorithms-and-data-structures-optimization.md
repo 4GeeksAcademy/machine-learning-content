@@ -102,7 +102,7 @@ Sometimes you need to store a list of elements in memory. Suppose you have a lis
 
 10 is at index 2
 
-![arrays.png](../assets/arrays.png)  
+![arrays.jpg](../assets/arrays.jpg)  
 
 Now let's suppose after adding the first four tasks, you want to add a fifth one but the next space is occupied. With linked lists your tasks can be anywhere in memory. 
 
@@ -143,7 +143,7 @@ When you want to store multiple elements, should you use an array or a list?
 
 **Best practice: Keep track of first and last items in a linked list so it only takes O(1)**
 
-![arrays%20and%20linkedlist%20time%20complexity.png](../assets/arrays%20and%20linkedlist%20time%20complexity.png)
+![arrays_and_linkedlist_time_complexity.jpg](../assets/arrays_and_linkedlist_time_complexity.jpg)
 
 #### Selection Sort Algorithm
 
