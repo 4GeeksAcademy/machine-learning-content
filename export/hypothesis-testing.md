@@ -5,7 +5,7 @@
 
 Having frequency histograms is a good way of looking at how is our data distributed. But at some point, we might want to see what percentage of our data falls into each of the variable's categories. In that case we can build a relative frequency histogram, which will shows us the percentages instead of the quantities. But as we have more and more data we might want to see smaller bins in our histogram so that we can see the distribution much clear. As we continue having more and more data, maybe we want to see even more thin bins which will get us into a point where we approach to an infiinite number of categories and the best way of looking at it would be to connect the top of the bars that you will actually get a curve. This is called the density curve.
 
-![Density_curve.png](../assets/Density_curve.png)
+![density_curve.jpg](../assets/density_curve.jpg)
 
 **Probability from density curve:**
 
@@ -15,7 +15,7 @@ We have a set of women's heights that are normally distributed with a mean of 15
 
 Find and interpret P(W > 170)
 
-![density_probability_problem.png](../assets/density_probability_problem.png)
+![density_probability_problem.jpg](../assets/density_probability_problem.jpg)
 
 ### Central Limit Theorem
 
@@ -33,7 +33,7 @@ If we roll the die 10 times and average the values, then the resulting parameter
 
 If we roll the die 100 times and average the values, then the resulting parameter will have a distribution that behaves even more similar to a normal distribution, again centered at 3.5, but now with decreased variance.
 
-![central_limit_theorem.png](../assets/central_limit_theorem.png)
+![central_limit_theorem.jpg](../assets/central_limit_theorem.jpg)
 
 ### Sampling Methods
 
@@ -195,7 +195,7 @@ A confidence level is the probability that the interval estimate will include th
 
 A parameter is a numerical description of a characteristic of the population.
 
-![hypothesis%20testing_%20standard%20normal%20distribution.png](../assets/hypothesis%20testing_%20standard%20normal%20distribution.png)
+![hypothesis_testing_standard_normal_distribution.jpg](../assets/hypothesis_testing_standard_normal_distribution.jpg)
 
 Sample means will follow the normal probability distribution for large sample sizes (n>=30)
 
@@ -203,7 +203,7 @@ To build an interval estimate with a 90% confidence level
 
 Confidence level corresponds to a z-score from the standard normal table equal to 1.645
 
-![hypothesis%20testing_%20confidence%20interval.png](../assets/hypothesis%20testing_%20confidence%20interval.png)
+![hypothesis_testing_confidence_interval.jpg](../assets/hypothesis_testing_confidence_interval.jpg)
 
 **Confidence Interval**
 
@@ -226,7 +226,7 @@ c = the standard error of the mean
 Select 10 samples and construct 90% confidence intervals around each of the sample means.
 Theorethically, 9 of the 10 intervals will contain the true population mean, which remains unknown.
 
-![hypothesis%20testing_%20confidence%20interval%20example.png](../assets/hypothesis%20testing_%20confidence%20interval%20example.png)
+![hypothesis_testing_confidence_interval_example.jpg](../assets/hypothesis_testing_confidence_interval_example.jpg)
 
 Do not misinterpret the definition of a confidence interval:
 
@@ -395,7 +395,7 @@ What are the five linear regression assumptions and how can you check for them?
 
 5. No multicollinearity: Look for correlations above ~0.8 between features.
 
-![simple%20linear%20regression%20formula.png](../assets/simple%20linear%20regression%20formula.png)
+![simple_linear_regression_formula.jpg](../assets/simple_linear_regression_formula.jpg)
 
 **5. What is the p-value?**
 

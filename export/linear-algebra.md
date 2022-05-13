@@ -38,7 +38,7 @@ Scalar operations involve a vector and a number
 
 
 
-![linear%20algebra_scalar%20operations.png](../assets/linear%20algebra_scalar%20operations.png)
+![linear_algebra_scalar_operations.png](../assets/linear_algebra_scalar_operations.png)
 
 **Vector multiplication**
 
@@ -46,11 +46,11 @@ There are two types of vector multiplication: Dot product and Hadamard product.
 The dot product of two vectors is a scalar. Dot product of vectors and matrices (matrix multiplication) is one of the most important operations in deep learning.
 
 
-![linear%20algebra_dot%20product.png](../assets/linear%20algebra_dot%20product.png)
+![linear_algebra_dot_product.png](../assets/linear_algebra_dot_product.png)
 
 Hadamard Product is elementwise multiplication, and it outputs a vector.
 
-![linear%20algebra_hadamard%20product.png](../assets/linear%20algebra_hadamard%20product.png)
+![linear_algebra_hadamard_product.png](../assets/linear_algebra_hadamard_product.png)
 
 
 ### Matrices
@@ -66,7 +66,7 @@ Simply apply the scalar to every element in the matrix — add, subtract, di
 
 
 
-![matrix_scalar%20operations.png](../assets/matrix_scalar%20operations.png)
+![matrix_scalar_operations.png](../assets/matrix_scalar_operations.png)
 
 **Matrix elementwise operations**
 
@@ -74,7 +74,7 @@ To add, subtract, or divide two matrices they must have equal dimensions.
 We combine corresponding values in an elementwise fashion to produce a new matrix.
 
 
-![matrix_elementwise%20operations.png](../assets/matrix_elementwise%20operations.png)
+![matrix_elementwise_operations.png](../assets/matrix_elementwise_operations.png)
 
 **Matrix multiplication**
 
@@ -82,7 +82,7 @@ Hadamard product of matrices is an elementwise operation.
 Values that correspond positionally are multiplied to produce a new matrix.
 
 
-![matrix_hadamard%20operations.png](../assets/matrix_hadamard%20operations.png)
+![matrix_hadamard_operations.png](../assets/matrix_hadamard_operations.png)
 
 *Rules*
 

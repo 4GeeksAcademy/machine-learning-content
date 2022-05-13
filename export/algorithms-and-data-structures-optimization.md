@@ -108,7 +108,7 @@ Now let's suppose after adding the first four tasks, you want to add a fifth one
 
 Elements aren't next to each other so you can't instantly calculate the position, you have to go to the first element to get the adress of the second element. Then go to the second element to get the adress of the third element. The blue squares are memory in use by someone else, you can't add data there because it is already occupied.
 
-![LinkedList.png](../assets/LinkedList.png)
+![linkedlist.jpg](../assets/linkedlist.jpg)
 
 Suppose you do your spend list of the month . At the end of the month you check how much you spent in that month. 
 That means you are having a lot of Inserts and a few Reads. Should you use an array or a list?
@@ -192,7 +192,7 @@ There is no performance benefit of using recursion, in fact, sometimes loops are
 
 "Loops may achieve a performance gain for your program. Recursion may achieve a performance gain for the programmer"
 
-![recursion.png](../assets/recursion.png)
+![recursion.jpg](../assets/recursion.jpg)
 
 Remember ! Recursion keeps track of the state. 
 TIP: When we are dealing with a recursive function involving an array, the base case is often an empty array or an array with one element.
@@ -253,7 +253,7 @@ Remember Recursion? In the case of QuickSort, we choose a pivot (1 element from 
 
 Let's find the elements smaller than the pivot and the elements larger than the pivot. This is called partitioning.
 
-![quicksort.png](../assets/quicksort.png)
+![quicksort.jpg](../assets/quicksort.jpg)
 
 You just got a sneak peek that your algorithm works!
 
@@ -331,7 +331,7 @@ Hashes are good for modeling relationships from one thing to another thing, for 
 
 Hash tables work with constant time O(1) (not mean instant time)
 
-![hash%20tables%20big%20o%20notation.png](../assets/hash%20tables%20big%20o%20notation.png)
+![hash_tables_big_o_notation.jpg](../assets/hash_tables_big_o_notation.jpg)
 
 Let's try not to hit the worst case performance with hash tables. To do that, we need to avoid collisions. How do we do that? Using low load factor and using a good hash function.
 
@@ -339,7 +339,7 @@ Let's try not to hit the worst case performance with hash tables. To do that, we
 
 It is the number of items in the hash table divided by the total number of slots.
 
-![load%20factor.png](../assets/load%20factor.png)
+![load_factor.jpg](../assets/load_factor.jpg)
 
 When the load factor starts to grow > 1 it is time to resize. When we are running out of space, we create a new array that is bigger.
 
@@ -347,7 +347,7 @@ When the load factor starts to grow > 1 it is time to resize. When we are runnin
 
 We should also resize when our load factor is greater than 0.7, because resizing is expensive and we don't want to resize too often.
 
-![good_vs_bad_hash_function.png](../assets/good_vs_bad_hash_function.png)
+![good_vs_bad_hash_function.jpg](../assets/good_vs_bad_hash_function.jpg)
 
 **Important facts:**
 
@@ -440,11 +440,11 @@ Suppose we are Netflix. Users are plotted by similarity. If we want to recommend
 Feature extraction means converting an item (like a user) into a list of numbers that can be compared.
 If we have five features for each user in Netflix, for example Romance, Comedy, Horror, Science-fiction, Religious. To find the distance between two points we use the Pythagorean formula:
 
-![knn1.png](../assets/knn1.png)
+![knn1.jpg](../assets/knn1.jpg)
 
 A mathematician would say we are now calculating the distance in five dimensions, but the distance formula remains the same:
 
-![knn2.png](../assets/knn2.png)
+![knn2.jpg](../assets/knn2.jpg)
 
 So for example, if John and Maria are 18 apart, and Lucas and Maria are 3 apart, then if Lucas likes a movie, we will recommend it to Maria. We just built a recommendation system!
 

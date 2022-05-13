@@ -22,7 +22,7 @@ Random Variables may be discrete or continuous.
 
 -Must be associated with a real value. Example: Rainfall on a given day (in centimeters), Stock price of a company, Temperature of a given day.
 
-![random_variable.png](../assets/random_variable.png)
+![random_variable.jpg](../assets/random_variable.jpg)
 
 In statistics we represent a distribution of discrete variables with PMF's (Probability Mass Functions). The PMF defines the probability of all possible values x of the random variable.  We represent distributions of continuous variables with PDF's (Probability Density Functions).
  CDF's (Cumulative Distribution Functions) represent the probability that the random variable X will have an outcome less or equal to the value x. CDF's are used for both discrete and continuous distributions.
@@ -156,7 +156,7 @@ It has the following properties:
 Models when there is complete ignorance that a result would have more probability than others. So all possible outcomes are equally likely. Therefore, the distribution consists of random values with no patterns in them.
 A uniform distribution would be as follows:
 
-![uniform_rv.png](../assets/uniform_rv.png)
+![uniform_rv.jpg](../assets/uniform_rv.jpg)
 
 Let's generate a scatterplot with random floating numbers between 0 and 1:
 
@@ -294,7 +294,7 @@ Some examples that may follow a Poisson distribution are:
 2. Number of patients arriving in an emergency room bewteen 10pm and 11pm.
 
 
-![poisson_rv.png](../assets/poisson_rv.png)
+![poisson_rv.jpg](../assets/poisson_rv.jpg)
 
 **Geometric Random Variables**
 
@@ -306,7 +306,7 @@ Random variable X: number of tosses until the first Heads
 
 Model of: waiting times, number of trials until a success
 
-![geometric_rv.png](../assets/geometric_rv.png)
+![geometric_rv.jpg](../assets/geometric_rv.jpg)
 
 ### EXPECTED VALUE
 
@@ -315,7 +315,7 @@ The expected value is the mean of a random variable.
 You can use this to work out the average score of a dice roll over 6 rolls.
 
 
-![expected_value.png](../assets/expected_value.png)
+![expected_value.jpg](../assets/expected_value.jpg)
 
 Given the outcomes=(1, 2) and the probabilities=(1/8, 1/4) the expected value, E[x] is E[x] = 1(1/8) + 2(1/4) = 0.625.
 

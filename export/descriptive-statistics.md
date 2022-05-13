@@ -49,19 +49,19 @@ Standard deviation tells us how far is the mean from each observation in the giv
 
 In descriptive statistics we generally deal with data available in a sample, not in a population. The standard deviation is calculated with the square root of the variance.
 
-![descriptive_stats_standard_deviation.png](../assets/descriptive_stats_standard_deviation.png)
+![descriptive_stats_standard_deviation.jpg](../assets/descriptive_stats_standard_deviation.jpg)
 
 **Mean Deviation**
 
 The mean deviation gives information about how far the data values are spread out from the mean value.
 
-![descriptive_stats_mean_deviation.png](../assets/descriptive_stats_mean_deviation.png)
+![descriptive_stats_mean_deviation.jpg](../assets/descriptive_stats_mean_deviation.jpg)
 
 **Variance**
 
 Just another measure of dispersion, of how data points differ from the mean. Variance is the expectation of the squared deviation of a random variable from its population mean or sample mean. Variance is interesting in a mathematical sense, but the standard deviation is often a much better measure of how spread out the distribution is.
 
-![descriptive_stats_variance.png](../assets/descriptive_stats_variance.png)
+![descriptive_stats_variance.jpg](../assets/descriptive_stats_variance.jpg)
 
 **Range**
 
@@ -93,7 +93,7 @@ The median 59 has four values less than itself out of eight. 59 is the 50th perc
 
 Quartiles are values that divide your data into quarters. Sorted in ascending order.
 
-![descriptive_stats_quartiles.png](../assets/descriptive_stats_quartiles.png)
+![descriptive_stats_quartiles.jpg](../assets/descriptive_stats_quartiles.jpg)
 
 12
 
@@ -129,17 +129,17 @@ IQR = interquantile range = Q3 - Q1
 
 The 3rd central moment is the skewness. A measure that describes the contrast of one tail versus the other tail. For example, if there are more high values in your distribution than low values then your distribution is 'skewed' towards the high values.
 
-![descriptive_stats_skewness.png](../assets/descriptive_stats_skewness.png)
+![descriptive_stats_skewness.jpg](../assets/descriptive_stats_skewness.jpg)
 
 To calculate skewness:
 
 1. Pearson First Coefficient of Skewness (Mode Skewness) 
 
-![descriptive_stats_pearson%20first.png](../assets/descriptive_stats_pearson%20first.png)
+![descriptive_stats_pearson_first.jpg](../assets/descriptive_stats_pearson_first.jpg)
 
 2. Pearson Second Coefficient of Skewness (Median Skewness)
 
-![descriptive_stats_pearson%20second.png](../assets/descriptive_stats_pearson%20second.png)
+![descriptive_stats_pearson_second.jpg](../assets/descriptive_stats_pearson_second.jpg)
 
 Direction of skewness is given by sign. 0 means no skewness. Negative means negative skewed.
 The coefficient compares the sample distribution with a normal distribution.
@@ -162,7 +162,7 @@ If r is negative, it means that as one variable gets larger , the other gets sma
 
 The 4th central moment is Kurtosis. It is about the existance of outliers.It is a measure of whether the data are heavy-tailed (profusion of outliers) or light-tailed (lack of outliers) relative to a normal distribution. It is about how fat the tails in the distribution are.
 
-![descriptive_stats_kurtosis.png](../assets/descriptive_stats_kurtosis.png)
+![descriptive_stats_kurtosis.jpg](../assets/descriptive_stats_kurtosis.jpg)
 
 Leptokurtic means tails are thick and heavy
 Platykurtic means tails are thinner.
