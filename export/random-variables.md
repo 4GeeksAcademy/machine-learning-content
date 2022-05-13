@@ -133,7 +133,7 @@ Binomial distributions must meet three criteria:
 2. Each trial is independent.
 3. The probability of succeess is exactly the same for all trials.
 
-![binomial_rv.png](../assets/binomial_rv.png)
+![binomial_rv.jpg](../assets/binomial_rv.jpg)
 
 **Bernoulli random variable**
 
@@ -149,7 +149,7 @@ It is controlled by a single parameter, which gives the probability of the rando
 
 It has the following properties:
 
-![bernoulli_rv.png](../assets/bernoulli_rv.png)
+![bernoulli_rv.jpg](../assets/bernoulli_rv.jpg)
 
 **Uniform random variable**
 

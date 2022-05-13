@@ -128,7 +128,7 @@ Frequentists treat the data as random and the statistic as fixed. Inferences are
 Bayesians treat the population parameter as random and the data as fixed. Bayesian statistics allows us to make informed guesses about the value of the parameter in the form of prior distributions. Estimates of the parameter come in the form of posterior distributions.
 
 
-![Bayessian.png](../assets/Bayessian.png)
+![bayessian.png](../assets/bayessian.png)
 
 ### Events
 
