@@ -58,19 +58,21 @@ Project part I: Web scraping dataset and storing it on SQL DB
 
 ## Data Management (3 days)
 
-1.1. Exploratory data analysis
-
-1.2. How to deal with outliers
-
-1.3. How to deal with missing data
+1. Exploratory data analysis
 
 📝 EDA from Titanic dataset
 
-2.1. Feature Engineering
+2. Feature Engineering
 
-2.2. Feature encoding for categorical variables
+2.1. How to deal with outliers
 
-2.3. Feature Scaling
+2.2. How to deal with missing data
+
+2.3. Feature encoding for categorical variables
+
+2.4. Feature Scaling
+
+3. Feature selection
 
 📝 Titanic data cleaning
 
@@ -148,9 +150,5 @@ Project: Create a machine learning model using BigQuery
 1. Communicating statistics in a simple way
 
 ## Week 12: Real life cases (3 days)
-
-1.   
-2. Image classification
-3. 
 
 ## Week 13-16: Final project
