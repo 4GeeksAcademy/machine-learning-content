@@ -3,7 +3,7 @@
 
 A random variable is a variable that can take on different values randomly.
 
-On its own, a random variable is just a description of the states that are possible; it must be coupled with a probability distribution that specifies how likely each of these states are. A random variable X is a function that maps events to real numbers.
+On its own, a random variable is just a description of the states that are possible; it must be coupled with a probability distribution that specifies how likely each of these states are. A random variable $X$ is a function that maps events to real numbers.
 
 Random Variables may be discrete or continuous.
 
@@ -24,8 +24,8 @@ Random Variables may be discrete or continuous.
 
 ![random_variable.jpg](../assets/random_variable.jpg)
 
-In statistics we represent a distribution of discrete variables with PMF's (Probability Mass Functions). The PMF defines the probability of all possible values x of the random variable.  We represent distributions of continuous variables with PDF's (Probability Density Functions).
- CDF's (Cumulative Distribution Functions) represent the probability that the random variable X will have an outcome less or equal to the value x. CDF's are used for both discrete and continuous distributions.
+In statistics we represent a distribution of discrete variables with PMF's (Probability Mass Functions). The PMF defines the probability of all possible values $x$ of the random variable.  We represent distributions of continuous variables with PDF's (Probability Density Functions).
+CDF's (Cumulative Distribution Functions) represent the probability that the random variable $X$ will have an outcome less or equal to the value $x$. CDF's are used for both discrete and continuous distributions.
 
 ### Probability Mass Function (PMF)
 
@@ -90,7 +90,7 @@ plt.show()
 
 ### Cumulative Distribution Function
 
-The CDF maps the probability that a random variable X will take a value of less than or equal to a value x (P(X ≤ x)). In this section we will visualize only the continuous case. The CDF accumulates all probabilities and is therefore bounded between 0 ≤ x ≤ 1.
+The CDF maps the probability that a random variable $X$ will take a value of less than or equal to a value $x$ $(P(X ≤ x))$. In this section we will visualize only the continuous case. The CDF accumulates all probabilities and is therefore bounded between $0 ≤ x ≤ 1$.
 
 Let's visualize the function and graph of a CDF of a normal distribution:
 
@@ -123,7 +123,7 @@ A probability distribution is the description of how likely a random variable or
 
 **Binomial Random Variable**
 
-The *Binomial Distribution* with parameters n and p is the discrete probability distribution of the number of successes in a sequence of n independent experiments. It is frequently used to model the number of successes in a sample of size n drawn with replacement from a population of size N.
+The *Binomial Distribution* with parameters $n$ and $p$ is the discrete probability distribution of the number of successes in a sequence of $n$ independent experiments. It is frequently used to model the number of successes in a sample of size $n$ drawn with replacement from a population of size $N$.
 
 Binomial probability distributions help us to understand the likelihood of rare events and to set probable expected ranges.
 
@@ -140,12 +140,17 @@ Binomial distributions must meet three criteria:
 Bernoulli distribution is a special case of a Binomial distribution.
 It models a trial that results in success or failure. For example, heads or tails. All values in a Bernoulli distribution are either 0 or 1. Let's imagine the coin we have is not a fair coin, because it's probability of falling heads is 70%. The distribution would as follows:
 
-    heads = 1, p(heads) = p = 0.7
-    tails = 0, p(tails) = 1 - p = 0.3
+heads = $1$
+
+$p(heads) = p = 0.7$
+
+tails = $0$
+
+$p(tails) = 1 - p = 0.3$
 
 The *Bernoulli Distribution* is a distribution over a single binary random variable.
 
-It is controlled by a single parameter, which gives the probability of the random variable being equal to 1.
+It is controlled by a single parameter, which gives the probability of the random variable being equal to $1$.
 
 It has the following properties:
 
@@ -158,7 +163,7 @@ A uniform distribution would be as follows:
 
 ![uniform_rv.jpg](../assets/uniform_rv.jpg)
 
-Let's generate a scatterplot with random floating numbers between 0 and 1:
+Let's generate a scatterplot with random floating numbers between $0$ and $1$:
 
 
 ```python
@@ -193,18 +198,17 @@ plt.title('Scatterplot of a Random/Uniform Distribution', fontsize='xx-large')
 
 Finally the most commonly used distribution over real numbers, also known as Gaussian distribution, or bell curve mainly because of the Central Limit Theorem (CLT), which states that as the amount independent random samples (like multiple coin flips) goes to infinity the distribution of the sample mean tends towards a normal distribution.
 
-The two parameters are μ (mu = population mean) and σ (sigma = population standard deviation) control the normal distribution.
+The two parameters are $μ$ (mu = population mean) and $σ$ (sigma = population standard deviation) control the normal distribution.
 
-The parameter μ gives the coordinate of the central peak, which is also the mean of the distribution E[X] = μ.
+The parameter $μ$ gives the coordinate of the central peak, which is also the mean of the distribution $E[X] = μ$.
 
-The standard deviation of the distribution is given by σ and the variance by σ2.
+The standard deviation of the distribution is given by $σ$ and the variance by $σ2$.
 
 Normal distribution encodes the maximum amount of uncertainty over the real numbers. We can thus think of the normal distribution as being the one that inserts the least amount of prior knowledge into a model.
 
 The following image shows a normal distribution:
 
-![normal_rv.png](../assets/normal_rv.png)
-
+![normal_rv.png](../assets/normal_rv.jpg)
 
 Now let's generate 2 samples with normal distribution:
 
@@ -302,7 +306,7 @@ Geometric distribution is a probability distribution that describes the number o
 
 Sample space: set of infinite sequences of Heads and Tails
 
-Random variable X: number of tosses until the first Heads
+Random variable $X$: number of tosses until the first Heads
 
 Model of: waiting times, number of trials until a success
 
@@ -317,7 +321,7 @@ You can use this to work out the average score of a dice roll over 6 rolls.
 
 ![expected_value.jpg](../assets/expected_value.jpg)
 
-Given the outcomes=(1, 2) and the probabilities=(1/8, 1/4) the expected value, E[x] is E[x] = 1(1/8) + 2(1/4) = 0.625.
+Given the outcomes=$(1, 2)$ and the probabilities=$(1/8, 1/4)$, the expected value $E[x]$ is: $E[x]$ = $1(1/8) + 2(1/4) = 0.625$.
 
 Interpretation: average in large number of independent repetitions.
     
@@ -325,13 +329,13 @@ Caution: If we have an infinite sum, it needs to be well-defined.
 
 **Rules**
 
-**Linearity of Expected Value**
+-Linearity of Expected Value
 
-E[F+G] = E[F] + E[G].
+$E[F+G] = E[F] + E[G]$.
 
-**Multiplication Rule of Expected Value**
+-Multiplication Rule of Expected Value
 
-E[F x G] does not equal E[F] * E[G]
+$E[F x G]$ does not equal $E[F] * E[G]$
 
 References: 
 

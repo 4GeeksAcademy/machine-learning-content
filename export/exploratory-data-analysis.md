@@ -41,8 +41,8 @@ The data is stored as a comma-separated values, or csv file, where each row is s
 ```python
 #Reading the train and test data and assign to a variable
 
-train_data = pd.read_csv("../assets/train.csv")
-test_data = pd.read_csv("../assets/test.csv")
+train_data = pd.read_csv("../assets/titanic_train.csv")
+test_data = pd.read_csv("../assets/titanic_test.csv")
 ```
 
 ### Finding dimensions, shape, size of the dataframe using Pandas

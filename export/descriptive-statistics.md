@@ -119,11 +119,8 @@ Q1 = 41 is the 25th percentile of data.
 
 Q3 = 85 is 75th percentile of data
 
-IQR = interquantile range = Q3 - Q1 
-
-                          = 85 - 41 
-                          
-                          = 44
+IQR = interquantile range $= Q3 - Q1 = 85 - 41 = 44$
+                
 
 ### Skewness
 

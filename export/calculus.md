@@ -21,27 +21,27 @@ For example, if we wanted to know how far a person walked based on its velocity 
 Many of these types of problems turn out to be equivalent to finding the area under some graph. The purpose of small approximations is that it lets us reframe the problem of how far the person has walked into the question of finding the area under a certain curve.
 
 
-![calculus_graph_slopes.jpg](../assets/calculus_graph_slopes.jpg)
+![calculus_graph_slopes.jpg](../assets/calculus_graph1.jpg)
 
 So having just solved a problem by reframing it as an area under a graph, you might start thinking about how to find the area under other graphs. Now let's see a different graph.
 
 ![calculus_graph2.jpg](../assets/calculus_graph2.jpg)
 
-The integral of f(x) corresponds to the computation of the area under the graph of f(x). The area under f(x) between the points x = a and x = b is denoted as follows:
+The integral of $f(x)$ corresponds to the computation of the area under the graph of $f(x)$. The area under $f(x)$ between the points $x = a$ and $x = b$ is denoted as follows:
 
 ![formula_1.png](../assets/formula_1.png)
 
-The area A(a,b) is bounded by the function f(x) from above, by the x-axis from below, and by two vertical lines at x = a and x = b. Those two points x = a and x = b are denoted the limits of integration. The ∫ sign comes from the Latin word summa. The integral is the sum of the values of f(x) between the two limits of integration.
-The area under f(x) between x = a and x = b is obtained by calculating the change in the integral function as follows:
+The area $A(a,b)$ is bounded by the function $f(x)$ from above, by the x-axis from below, and by two vertical lines at $x = a$ and $x = b$. Those two points $x = a$ and $x = b$ are denoted the limits of integration. The $∫$ sign comes from the Latin word summa. The integral is the sum of the values of $f(x)$ between the two limits of integration.
+The area under $f(x)$ between $x = a$ and $x = b$ is obtained by calculating the change in the integral function as follows:
 
 ![formula_2.png](../assets/formula_2.png)
 
 ![calculus_graph5.jpg](../assets/calculus_graph5.jpg)
 
-We can approximate the total area under the function f(x) between x = a and x = b by splitting the graph into small vertical rectangular strips of width h, then adding up the areas of those rectangular strips. The figure below shows how to compute the area under f(x) = x2 between x = 3 and x = 6 by approximating it as six rectangular strips of width h = 0.5.
+We can approximate the total area under the function $f(x)$ between $x = a$ and $x = b$ by splitting the graph into small vertical rectangular strips of width $h$, then adding up the areas of those rectangular strips. The figure below shows how to compute the area under $f(x) = x2$ between $x = 3$ and $x = 6$ by approximating it as six rectangular strips of width $h = 0.5$.
 
 
-So to recap A(x) which gives the area under the graph of x2 between some fixed-left point and some variable right point gives us a clear panoram that many practical problems that can be approximated by adding up a large number of small things can be reframed as a question about the area under a certain curve.
+So to recap $A(x)$ which gives the area under the graph of x2 between some fixed-left point and some variable right point gives us a clear panoram that many practical problems that can be approximated by adding up a large number of small things can be reframed as a question about the area under a certain curve.
 
 
 ### Derivatives
@@ -53,15 +53,16 @@ A Derivative can be defined in two ways:
 2.	The slope of a line at a specific point (Geometry)
 
 We will use the geometry definition for simplicity in explanation.
-The slope represents the steepness of a line. It means: How much does y (or f(x)) change given a specific change in x?
+The slope represents the steepness of a line. It means: How much does $y$ (or $f(x)$) change given a specific change in $x$?
 
 
 ![calculus_graph_slopes.jpg](../assets/calculus_graph_slopes.jpg)
 
 ![calculus_slope2_graph.jpg](../assets/calculus_slope2_graph.jpg)
 
-The slope between (1,4) and (3,12) would be:
-slope= (y2−y1)/(x2−x1) = 12−43−1 = 4
+The slope between $(1,4)$ and $(3,12)$ would be:
+
+slope= $\frac{(y2−y1)}{(x2−x1)}$ = $\frac{(12-4)}{(3-1)} = 4$
 
 ### Machine Learning use cases
 

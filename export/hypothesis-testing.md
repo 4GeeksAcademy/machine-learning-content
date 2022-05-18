@@ -11,9 +11,9 @@ Having frequency histograms is a good way of looking at how is our data distribu
 
 Let's see an example on how to calculate probabilities from density curves:
 
-We have a set of women's heights that are normally distributed with a mean of 155 centimeters and a standard deviation of 15 centimeters. The height of a randomly selected women from this set will be denoted as W.
+We have a set of women's heights that are normally distributed with a mean of 155 centimeters and a standard deviation of 15 centimeters. The height of a randomly selected women from this set will be denoted as $W$.
 
-Find and interpret P(W > 170)
+Find and interpret $P(W > 170)$
 
 ![density_probability_problem.jpg](../assets/density_probability_problem.jpg)
 
@@ -27,11 +27,11 @@ The theorem states that as the size of the sample increases, the distribution of
 
 The central limit theorem does not state anything about a single sample mean, instead it states something about the shape or the distribution of sample means.
 
-For example, let's say we have a fair and balanced 6-sided die. The result of rolling the die has a uniform distribution on [1,2,3,4,5,6]. The average result from a die roll is (1+2+3+4+5+6)/6 = 3.5
+For example, let's say we have a fair and balanced 6-sided die. The result of rolling the die has a uniform distribution on $[1,2,3,4,5,6]$. The average result from a die roll is $(1+2+3+4+5+6)/6 = 3.5$
 
-If we roll the die 10 times and average the values, then the resulting parameter will have a distribution that begins to look similar to a normal distribution, again centered at 3.5.
+If we roll the die $10$ times and average the values, then the resulting parameter will have a distribution that begins to look similar to a normal distribution, again centered at $3.5$.
 
-If we roll the die 100 times and average the values, then the resulting parameter will have a distribution that behaves even more similar to a normal distribution, again centered at 3.5, but now with decreased variance.
+If we roll the die $100$ times and average the values, then the resulting parameter will have a distribution that behaves even more similar to a normal distribution, again centered at $3.5$, but now with decreased variance.
 
 ![central_limit_theorem.jpg](../assets/central_limit_theorem.jpg)
 
@@ -46,23 +46,23 @@ The sampling method is the process of studying the population by gathering infor
 The non-representative sampling method is a technique in which the researcher selects the sample based on subjective judgment rather than the random selection. Not all the members of the population have a chance to participate in the study.
 
 
-Convenience Sampling = Picks samples that are most convenient, like people that can be easily approached.
+-Convenience Sampling = Picks samples that are most convenient, like people that can be easily approached.
 
-Consecutive Sampling = Picks a single person or a group of people for sampling. Then the researcher researches for a period of time to analyze the result and move to another group if needed.
+-Consecutive Sampling = Picks a single person or a group of people for sampling. Then the researcher researches for a period of time to analyze the result and move to another group if needed.
 
-Purposive Sampling = Picks samples for a specific purpose. An example is to focus on extreme cases. This can be useful but is limited because it doesn't allow you to make statements about the whole population.
+-Purposive Sampling = Picks samples for a specific purpose. An example is to focus on extreme cases. This can be useful but is limited because it doesn't allow you to make statements about the whole population.
 
-Snowball Sampling = In this method, the samples have traits that are difficult to find. So, each identified member of a population is asked to find the other sampling units. Those sampling units also belong to the same targeted population.
+-Snowball Sampling = In this method, the samples have traits that are difficult to find. So, each identified member of a population is asked to find the other sampling units. Those sampling units also belong to the same targeted population.
 
 **Representative Sampling:**
 
-Simple Random Sampling = Pick samples (psuedo)randomly. Every item in the population has an equal and likely chance of being selected in the sample.
+-Simple Random Sampling = Pick samples (psuedo)randomly. Every item in the population has an equal and likely chance of being selected in the sample.
 
-Systematic Sampling = Pick samples with a fixed interval. For example every 10th sample (0, 10, 20, etc.). It is calculated by dividing the total population size by the desired population size.
+-Systematic Sampling = Pick samples with a fixed interval. For example every 10th sample $(0, 10, 20, etc.)$. It is calculated by dividing the total population size by the desired population size.
 
-Stratified Sampling = The total population is divided into smaller groups formed based on a few characteristics in the population. Pick the same amount of samples from each of the different groups (strata) in the population.
+-Stratified Sampling = The total population is divided into smaller groups formed based on a few characteristics in the population. Pick the same amount of samples from each of the different groups (strata) in the population.
 
-Cluster Sampling = Divide the population into groups (clusters) and pick samples from those groups. The cluster or group of people are formed from the population set. The group has similar significatory characteristics. Also, they have an equal chance of being a part of the sample. This method uses simple random sampling for the cluster of population.
+-Cluster Sampling = Divide the population into groups (clusters) and pick samples from those groups. The cluster or group of people are formed from the population set. The group has similar significatory characteristics. Also, they have an equal chance of being a part of the sample. This method uses simple random sampling for the cluster of population.
 
 Let´s see some examples of how to get samples.
 
@@ -197,13 +197,13 @@ A parameter is a numerical description of a characteristic of the population.
 
 ![hypothesis_testing_standard_normal_distribution.jpg](../assets/hypothesis_testing_standard_normal_distribution.jpg)
 
-Sample means will follow the normal probability distribution for large sample sizes (n>=30)
+Sample means will follow the normal probability distribution for large sample sizes $(n>=30)$
 
 To build an interval estimate with a 90% confidence level
 
-Confidence level corresponds to a z-score from the standard normal table equal to 1.645
+Confidence level corresponds to a z-score from the standard normal table equal to $1.645$
 
-![hypothesis_testing_confidence_interval.jpg](../assets/hypothesis_testing_confidence_interval.jpg)
+![hypothesis_testing_confidence_interval.png](../assets/hypothesis_testing_confidence_interval.jpg)
 
 **Confidence Interval**
 
@@ -213,15 +213,15 @@ The confidence interval needs to be described in the context of several samples.
 
 Lets build a confidence interval around a sample mean using these equations:
     
-x̄ ± z c 
+$x̄ ± z c$
     
 Where:
     
-x̄ = the sample mean
+$x̄$ = the sample mean
 
-z = the z-score, which is the number of standard deviations based on the confidence level
+$z$ = the z-score, which is the number of standard deviations based on the confidence level
 
-c = the standard error of the mean
+$c$ = the standard error of the mean
 
 Select 10 samples and construct 90% confidence intervals around each of the sample means.
 Theorethically, 9 of the 10 intervals will contain the true population mean, which remains unknown.
@@ -241,7 +241,14 @@ A specific confidence interval gives a range of plausible values for the paramet
 
 ### Steps of formulating a hypothesis
 
+Hypothesis testing is a statistical method that is used in making statistical decisions using experimental data. Hypothesis Testing is basically an assumption that we make about the population parameter.
+
+For example, when we say that boys are taller than girls. This assumption needs some statistic way to prove it, we need a mathematical conclusion what ever we are assuming is true.
+
 Hypotheses are claims, and we can use statistics to prove or disprove them. Hypothesis testing structures the problems so that we can use statistical evidence to test these claims and check if the claim is valid or not.
+
+
+**Steps:**
 
 1. Defining hypothesis
 
@@ -257,18 +264,18 @@ Hypotheses are claims, and we can use statistics to prove or disprove them. Hypo
 
 **1. Defining our null and alternative hypothesis**
 
-First of all, we need to understand which scientific question we are looking for an answer to, and it should be formulated in the form of the Null Hypothesis (H₀) and the Alternative Hypothesis (H₁ or Hₐ). 
+First of all, we need to understand which scientific question we are looking for an answer to, and it should be formulated in the form of the Null Hypothesis ($H₀$) and the Alternative Hypothesis ($H₁$ or $Hₐ$). 
 
-What is the null hypothesis? (Ho)
+What is the null hypothesis? ($H₀$)
 
-The null hypothesis is a statement about a population parameter, the statement assumed to be true before we collect the data. We test the likelihood of this statement being true in order to decide whether to accept or reject our alternative hypothesis. It can be thought of as the 'control' of the experiment and it usually has some equal sign (>=, <=, =)
+The null hypothesis is a statement about a population parameter, the statement assumed to be true before we collect the data. We test the likelihood of this statement being true in order to decide whether to accept or reject our alternative hypothesis. It can be thought of as the 'control' of the experiment and it usually has some equal sign ($>=, <=, =$)
 
-What is the alternatuve hypothesis? (Ha)
+What is the alternatuve hypothesis? ($Hₐ$)
 
 A statement that directly contradicts the null hypothesis. This is what we want to prove to be true with our collected data. Can be thought of as the 'experiment'. It usually has the opposite sign of the null hypothesis.
 
 
-**Fact:** Sample statistics is not what should be involved in our hypothesis. Our hypothesis are claims about the population that we want to study. Please remember that H₀ and Hₐ must be mutually exclusive, and Hₐ shouldn’t contain equality.
+**Fact:** Sample statistics is not what should be involved in our hypothesis. Our hypothesis are claims about the population that we want to study. Please remember that $H₀$ and $Hₐ$ must be mutually exclusive, and $Hₐ$ shouldn’t contain equality.
 
 **2. Assumption Check**
 
@@ -286,14 +293,13 @@ The next thing we do is set up a threshold known as the significance level.
 
 
 
-As there is a 90% probability that any given confidence interval will contain the true population mean, there is a 10% chance that it wont.
-This 10% is known as the level of significance and is represented by the shaded area.
+Refers to the degree of significance in which we accept or reject the null-hypothesis. 100% accuracy is not possible for accepting or rejecting a hypothesis, so we therefore select a level of significance that is usually 5%.
 
-While a researcher performs research, a hypothesis has to be set, which is known as the null hypothesis. This hypothesis is required to be tested via pre-defined statistical examinations. This process is termed as statistical hypothesis testing.
-Significance means 'not by chance' or 'probably true'.
+The level of significance is defined as the fixed probability of wrong elimination of null hypothesis when in fact, it is true. Level of significance $α$ (alpha) is the probability of making a type 1 error (false positive). The probability for the confidence interval is a complement to the significance level. 
+A $(1-α)$ confidence interval has a significance level equal to $α$.
 
-The level of significance is defined as the fixed probability of wrong elimination of null hypothesis when in fact, it is true. Level of significance α (alpha) is the probability of making a type 1 error (false positive). The probability for the confidence interval is a complement to the significance level. 
-A (1-α) confidence interval has a significance level equal to α.
+Having a 95% probability that any given confidence interval will contain the true population mean, there is a 5% chance that it wont.
+This 5% is known as the level of significance.
 
 **4. Selecting the proper test**
 
@@ -301,7 +307,7 @@ A variety of statistical procedures exist. The appropriate one depends on the re
 
 **T-Test** : for 1 independent variable with 2 categories, and the target variable.
 
-When we wish to know whether the means of two groups in a students classroom (male and female in a gender variable) differ, a t test is appropriate. In order to calculate a t test, we need to know the mean, standard deviation, and number of individuals in each of the two groups. An example of a t test research question is “Is there a significant difference between the writing scores of boys and girls in the classroom?” A sample answer might be: “Boys (M=5.67, SD=.45) and girls (M=5.76, SD=.50) score similarly in writing, t(35)=.54, p>.05.” [Note: The (35) is the degrees of freedom for a t test. It is the number of individuals minus the number of groups (always 2 groups with a t-test). In this example, there were 37 individuals and 2 groups so the degrees of freedom is 37-2=35.] Remember, a t test can only compare the means of two groups of an independent variable (for example gender) on a single dependent variable (for example writing score).
+When we wish to know whether the means of two groups in a students classroom (male and female in a gender variable) differ, a t test is appropriate. In order to calculate a t test, we need to know the mean, standard deviation, and number of individuals in each of the two groups. An example of a t test research question is “Is there a significant difference between the writing scores of boys and girls in the classroom?” A sample answer might be: “Boys $(M=5.67, SD=.45)$ and girls $(M=5.76, SD=.50)$ score similarly in writing, $t(35)=.54$, $p>.05$.” [Note: The $(35)$ is the degrees of freedom for a t test. It is the number of individuals minus the number of groups (always 2 groups with a t-test). In this example, there were 37 individuals and 2 groups so the degrees of freedom is $37-2=35$.] Remember, a t test can only compare the means of two groups of an independent variable (for example gender) on a single dependent variable (for example writing score).
 
 A t-distribution is flatter than a normal distribution. As the degrees of freedom increase, the shape of the t-distribution becomes similar to a normal distribution. With more than 30 degrees of freedom (sample size of 30 or more) the two distributions are practically identical.
 
@@ -313,6 +319,7 @@ Types of T-test:
 
 -One Sample T-test: mean of a single group against a known mean
 
+
 Assump­tions about data
 
 1. indepe­ndent
@@ -322,15 +329,121 @@ Assump­tions about data
 3. have a similar amount of variance within each group being compared
 
 
-**F-test (ANOVA Analysis)**
+One sample t-test: The One Sample t Test determines whether the sample mean is statistically different from a known or hypothesised population mean. The One Sample t Test is a parametric test.
+
+Let's imagine we have a small dataset with 10 ages and we are checking whether the average age is 30 or not. We could solve it this way:
+
+
+```py
+    from scipy.stats import ttest_1samp
+    import numpy as np
+    ages = np.genfromtxt(“ages.csv”)
+    print(ages)
+    ages_mean = np.mean(ages)
+    print(ages_mean)
+    tset, pval = ttest_1samp(ages, 30)
+    print(“p-values”,pval)
+    if pval < 0.05:    # alpha value is 0.05 or 5%
+      print(" we are rejecting null hypothesis")
+    else:
+      print("we are accepting null hypothesis")
+```
+
+
+Two sampled T-test :-The Independent Samples t Test or 2-sample t-test compares the means of two independent groups in order to determine whether there is statistical evidence that the associated population means are significantly different. The Independent Samples t Test is a parametric test. This test is also known as: Independent t Test.
+
+For example if we would want to see if there is any association between week1 and week2 we could do it with the following code:
+
+
+
+```py
+    from scipy.stats import ttest_ind
+    import numpy as np
+
+    week1 = np.genfromtxt("week1.csv",  delimiter=",")
+    week2 = np.genfromtxt("week2.csv",  delimiter=",")
+    print(week1)
+    print("week2 data :-\n")
+    print(week2)
+    week1_mean = np.mean(week1)
+    week2_mean = np.mean(week2)
+    print("week1 mean value:",week1_mean)
+    print("week2 mean value:",week2_mean)
+    week1_std = np.std(week1)
+    week2_std = np.std(week2)
+    print("week1 std value:",week1_std)
+    print("week2 std value:",week2_std)
+    ttest,pval = ttest_ind(week1,week2)
+    print("p-value",pval)
+    if pval <0.05:
+      print("we reject null hypothesis")
+    else:
+      print("we accept null hypothesis")
+  ```
+
+
+Paired sampled t-test :- The paired sample t-test is also called dependent sample t-test. It’s an uni variate test that tests for a significant difference between 2 related variables. An example of this is if you where to collect the blood pressure for an individual before and after some treatment, condition, or time point.
+
+$H0$ :- means difference between two sample is 0
+
+$H1$:- mean difference between two sample is not 0
+
+Let's try executing the following code example:
+
+
+```python
+import pandas as pd
+from scipy import stats
+
+df = pd.read_csv("../assets/blood_pressure.csv")
+
+df[['bp_before','bp_after']].describe()
+ttest,pval = stats.ttest_rel(df['bp_before'], df['bp_after'])
+print(pval)
+
+if pval<0.05:
+    print("reject null hypothesis")
+else:
+    print("accept null hypothesis")
+```
+
+    0.0011297914644840823
+    reject null hypothesis
+
+
+
+**F-TEST (ANOVA Analysis)**
+
+The t-test works well when dealing with two groups, but sometimes we want to compare more than two groups at the same time. For example, if we wanted to test whether voter age differs based on some categorical variable like race, we have to compare the means of each level or group the variable. We could carry out a separate t-test for each pair of groups, but when you conduct many tests you increase the chances of false positives. The analysis of variance or ANOVA is a statistical inference test that lets you compare multiple groups at the same time. Unlike the t-distributions, the F-distribution does not have any negative values because between and within-group variability are always positive due to squaring each deviation.
 
 One-way Anova : One independent variable with more than 2 categories, and the target variable.
 
-If we have one independent variable (with three or more categories) and one dependent variable, we do a one-way ANOVA. A sample research question is, “Do Doctors, teachers, and engineers differ on their opinion about a tax increase?” A sample answer is, “Teachers (M=3.56, SD=.56) are less likely to favor a tax increase than doctors (M=5.67, SD=.60) or engineers (M=5.34, SD=.45), F(2,120)=5.67, p<.05.” [Note: The (2,207) are the degrees of freedom for an ANOVA. The first number is the number of groups minus 1. Because we had three professions it is 2, 3-1=2. The second number is the total number of individuals minus the number of groups. Because we had 210 subject and 3 groups, it is 207 (210 - 3)]. 
+If we have one independent variable (with three or more categories) and one dependent variable, we do a one-way ANOVA. A sample research question is, “Do Doctors, teachers, and engineers differ on their opinion about a tax increase?” A sample answer is, “Teachers $(M=3.56, SD=.56)$ are less likely to favor a tax increase than doctors $(M=5.67, SD=.60)$ or engineers $(M=5.34, SD=.45)$, $F(2,120)=5.67$, $p<.05$.” [Note: The $(2,207)$ are the degrees of freedom for an ANOVA. The first number is the number of groups minus 1. Because we had three professions it is 2, because 3-1=2. The second number is the total number of individuals minus the number of groups. Because we had 210 subject and 3 groups, it is 207 (210 - 3)]. 
+
+Code example: there are 3 different category of plant and their weight and need to check whether all 3 group are similar or not.
+
+
+```python
+df_anova = pd.read_csv('../assets/PlantGrowth.csv')
+df_anova = df_anova[['weight','group']]
+grps = pd.unique(df_anova.group.values)
+d_data = {grp:df_anova['weight'][df_anova.group == grp] for grp in grps}
+ 
+F, p = stats.f_oneway(d_data['ctrl'], d_data['trt1'], d_data['trt2'])
+print("p-value for significance is: ", p)
+if p<0.05:
+    print("reject null hypothesis")
+else:
+    print("accept null hypothesis")
+```
+
+    p-value for significance is:  0.0159099583256229
+    reject null hypothesis
+
 
 Two-way Anova : More than 1 independent variable with two or more categories each, and the target variable.
 
-A two-way ANOVA has three research questions, one for each of the two independent variables and one for the interaction of the two independent variables.
+A two-way ANOVA has three research questions, one for each of the two independent variables and one for the interaction of the two independent variables. 2-way F-test does not tell which variable is dominant. if we need to check individual significance then Post-hoc testing need to be performed.
 
 Sample Research Questions for a Two-Way ANOVA:
 Do teachers, doctors and engineers differ on their opinion about a tax increase?
@@ -341,11 +454,92 @@ A two-way ANOVA has three null hypotheses, three alternative hypotheses and thre
 
 Assump­tions about data:
 
-1. each data y is normally distri­buted
+1. each data $y$ is normally distri­buted
 
 2. the variance of each treatment group is same
 
 3. all observ­ations are indepe­ndent
+
+Code example: Let’s take a look at the Grand mean crop yield (the mean crop yield not by any sub-group), as well the mean crop yield by each factor, as well as by the factors grouped together.
+
+
+```python
+import pandas as pd
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
+
+df_anova2 = pd.read_csv("https://raw.githubusercontent.com/Opensourcefordatascience/Data-sets/master/crop_yield.csv")
+model = ols('Yield ~ C(Fert)*C(Water)', df_anova2).fit()
+print(f"Overall model F({model.df_model: .0f},{model.df_resid: .0f}) = {model.fvalue: .3f}, p = {model.f_pvalue: .4f}")
+
+res = sm.stats.anova_lm(model, typ= 2)
+res
+```
+
+    Overall model F( 3, 16) =  4.112, p =  0.0243
+
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sum_sq</th>
+      <th>df</th>
+      <th>F</th>
+      <th>PR(&gt;F)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>C(Fert)</th>
+      <td>69.192</td>
+      <td>1.0</td>
+      <td>5.766000</td>
+      <td>0.028847</td>
+    </tr>
+    <tr>
+      <th>C(Water)</th>
+      <td>63.368</td>
+      <td>1.0</td>
+      <td>5.280667</td>
+      <td>0.035386</td>
+    </tr>
+    <tr>
+      <th>C(Fert):C(Water)</th>
+      <td>15.488</td>
+      <td>1.0</td>
+      <td>1.290667</td>
+      <td>0.272656</td>
+    </tr>
+    <tr>
+      <th>Residual</th>
+      <td>192.000</td>
+      <td>16.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
 
 **Chi-square**
 
@@ -371,31 +565,85 @@ Assump­tions:
 
 3. outcomes mutually exclusive
 
-4. large n and no more than 20% of expected counts < 5
+4. large $n$ and no more than 20% of expected counts $< 5$
 
 
-**Regression**
+Code example: In an election survey, voters might be classified by gender (male or female) and voting preference (Democrat, Republican, or Independent). We could use a chi-square test for independence to determine whether gender is related to voting preference
 
 
-Sometimes we wish to know if there is a relationship between two variables. A simple correlation measures the relationship between two variables.
+```python
+df_chi = pd.read_csv('../assets/chi-test.csv')
+contingency_table=pd.crosstab(df_chi["Gender"],df_chi["Like Shopping?"])
+print('contingency_table :-\n',contingency_table)
 
-In regression, one or more variables (predictors) are used to predict an outcome (criterion). 
+#Observed Values
+Observed_Values = contingency_table.values 
+print("Observed Values :-\n",Observed_Values)
 
-Linear Regression:
+b=stats.chi2_contingency(contingency_table)
+Expected_Values = b[3]
+print("Expected Values :-\n",Expected_Values)
 
-What are the five linear regression assumptions and how can you check for them?
+no_of_rows=len(contingency_table.iloc[0:2,0])
+no_of_columns=len(contingency_table.iloc[0,0:2])
+ddof=(no_of_rows-1)*(no_of_columns-1)
+print("Degree of Freedom:-",ddof)
 
-1. Linearity: the target (y) and the features (xi) have a linear relationship. To verify linearity we can plot the errors against the predicted y and look for the values to be symmetrically distributed around a horizontal line with constant variance.
+alpha = 0.05
 
-2. Independence: the errors are not correlated with one another. To verify independence we can plot errors over time and look for non-random patterns (for time series data).
+from scipy.stats import chi2
 
-3. Normality: the errors are normally distributed. We can verify normality by ploting the errors with a histogram.
+chi_square=sum([(o-e)**2./e for o,e in zip(Observed_Values,Expected_Values)])
+chi_square_statistic=chi_square[0]+chi_square[1]
+print("chi-square statistic:-",chi_square_statistic)
 
-4. Homoskedasticity: the variance of the error term is constant across values of the target and features. To verufy it we can plot the errors against the predicted y.
+critical_value=chi2.ppf(q=1-alpha,df=ddof)
+print('critical_value:',critical_value)
 
-5. No multicollinearity: Look for correlations above ~0.8 between features.
+#p-value
+p_value=1-chi2.cdf(x=chi_square_statistic,df=ddof)
 
-![simple_linear_regression_formula.jpg](../assets/simple_linear_regression_formula.jpg)
+print('p-value:',p_value)
+print('Significance level: ',alpha)
+print('Degree of Freedom: ',ddof)
+print('chi-square statistic:',chi_square_statistic)
+print('critical_value:',critical_value)
+print('p-value:',p_value)
+
+if chi_square_statistic>=critical_value:
+    print("Reject H0,There is a relationship between 2 categorical variables")
+else:
+    print("Retain H0,There is no relationship between 2 categorical variables")
+    
+if p_value<=alpha:
+    print("Reject H0,There is a relationship between 2 categorical variables")
+else:
+    print("Retain H0,There is no relationship between 2 categorical variables")
+```
+
+    contingency_table :-
+     Like Shopping?  No  Yes
+    Gender                 
+    Female           2    3
+    Male             2    2
+    Observed Values :-
+     [[2 3]
+     [2 2]]
+    Expected Values :-
+     [[2.22222222 2.77777778]
+     [1.77777778 2.22222222]]
+    Degree of Freedom:- 1
+    chi-square statistic:- 0.09000000000000008
+    critical_value: 3.841458820694124
+    p-value: 0.7641771556220945
+    Significance level:  0.05
+    Degree of Freedom:  1
+    chi-square statistic: 0.09000000000000008
+    critical_value: 3.841458820694124
+    p-value: 0.7641771556220945
+    Retain H0,There is no relationship between 2 categorical variables
+    Retain H0,There is no relationship between 2 categorical variables
+
 
 **5. What is the p-value?**
 
@@ -410,7 +658,7 @@ What value is most often used  to determine statistical significance?
 
 A value of alpha = 0.05 is most often used as the threshold for statistical significance.
 
-In other words, a low p-value means that we have compelling evidence to reject the null hypothesis. If the p-value is lower than 5% we often reject H0 and accept Ha is true. We say that p < 0.05 is statistically significant, because there is less than 5% chance that we are wrong in rejecting the null hypothesis.
+In other words, a low p-value means that we have compelling evidence to reject the null hypothesis. If the p-value is lower than 5% we often reject $Ho$ and accept $Ha$ is true. We say that $p < 0.05$ is statistically significant, because there is less than 5% chance that we are wrong in rejecting the null hypothesis.
 
 One way to calculate the p-value is through a T-test. We can use Scipy's ttest_ind function to calculate the t-test for the means of two independent samples of scores.
 
@@ -418,19 +666,19 @@ Let's see an example:
 
 Maria designed an experiment where some individuals tasted lemonades from four different cups and attempted to identify which cup contained homemade lemonade. Each subject was given three cups that contained bittled lemonade and one cup that contained homemade lemonade (the order was randomized). She wanted to test if the subjects could do better than simply guessing when identifying the homemade lemonade.
 
-Her null hypothesis Ho : p = 0.30
+Her null hypothesis $Ho$ : $p = 0.30$
 
-Her alternative hypothesis Ha : p > 0.30
+Her alternative hypothesis $Ha$ : $p > 0.30$
 
 *p is the likelihood of individuals to identify the homemade lemonade*
 
-The experiment showed that 18 of the 50 individuals correctly identified the homemade lemonade. Maria calculated that the statistic p = 18/50 = 0.3 had an associated p-value of approximately 0.061.
+The experiment showed that 18 of the 50 individuals correctly identified the homemade lemonade. Maria calculated that the statistic $p = 18/50 = 0.3$ had an associated p-value of approximately $0.061$.
 
-Using a significance level of α = 0.05 what conclusions can we get?
+Using a significance level of $α = 0.05$ what conclusions can we get?
 
 * Since the p-value is greater than the significance level, we should reject the null hypothesis Ho.
 * We don't have enough evidence to say that these individuals can do better than guessing when identifying the homemade lemonade.
-The null hypothesis H_0: p=0.25 says their likelihood is no better than guessing, and we failed to reject the null hypothesis.
+The null hypothesis $Ho$: $p=0.25$ says their likelihood is no better than guessing, and we failed to reject the null hypothesis.
 
 **6. Decision and Conclusion**
 
@@ -450,21 +698,17 @@ Type II error is the non-rejection of a false null hypothesis, or a false negati
 
 We can make four different decisions with hypothesis testing:
 
-Reject H0 and H0 is not true (no error)
-Do not reject H0 and H0 is true (no error)
-Reject H0 and H0 is true (Type 1 Error)
-Do not reject H0 and H0 is not true (Type 2 error)
+Reject $Ho$ and $Ho$ is not true (no error)
+
+Do not reject $Ho$ and $Ho$ is true (no error)
+
+Reject $Ho$ and $Ho$ is true (Type 1 Error)
+
+Do not reject $Ho$ and $Ho$ is not true (Type 2 error)
+
 Type 1 error is also called Alpha error. Type 2 error is also called Beta error.
 
-### What is A/B testing and why is it useful?
-
-An A/B test is a controlled experiment where two variants (A and B) are tested against each other on the same response.
-
-For example, a company could test two different email subject lines and then measure which one has the higher open rate. Once the superior variant has been determined (through statistical significance or some metric), all future customers will typically only receive the "winning" variant.
-
-A/B testing is useful because it allows practitioners to rapidly test variations and learn about an audience preferences.
-
-### Implications in Machine Learning
+## Implications in Machine Learning
 
 The central limit theorem has important implications in applied machine learning. The theorem does inform the solution to linear algorithms such as linear regression, but not exotic methods like artificial neural networks that are solved using numerical optimization methods.
 
@@ -506,59 +750,6 @@ df[['Feature1', 'Feature2']].corr(method='pearson')
 
 -With knowledge that the sample mean will be a part of a Gaussian distribution from the central limit theorem, we can use knowledge of the Gaussian distribution to estimate the likelihood of the sample mean based on the sample size and calculate an interval of desired confidence around the skill of the model.
 
-**Linear Regression in Machine Learning**
-
-
-
-```python
-# Linear regression from scratch
-import random
-# Create data from regression
-xs = np.array(range(1,20))
-ys = [0,8,10,8,15,20,26,29,38,35,40,60,50,61,70,75,80,88,96]
-
-# Put data in dictionary
-data = dict()
-for i in list(xs):
-    data.update({xs[i-1] : ys[i-1]})
-
-# Slope
-m = 0
-# y intercept
-b = 0
-# Learning rate
-lr = 0.0001
-# Number of epochs
-epochs = 100000
-
-# Formula for linear line
-def lin(x):
-    return m * x + b
-
-# Linear regression algorithm
-for i in range(epochs):
-    # Pick a random point and calculate vertical distance and horizontal distance
-    rand_point = random.choice(list(data.items()))
-    vert_dist = abs((m * rand_point[0] + b) - rand_point[1])
-    hor_dist = rand_point[0]
-
-    if (m * rand_point[0] + b) - rand_point[1] < 0:
-        # Adjust line upwards
-        m += lr * vert_dist * hor_dist
-        b += lr * vert_dist   
-    else:
-        # Adjust line downwards
-        m -= lr * vert_dist * hor_dist
-        b -= lr * vert_dist
-        
-# Plot data points and regression line
-plt.figure(figsize=(15,6))
-plt.scatter(data.keys(), data.values())
-plt.plot(xs, lin(xs))
-plt.title('Linear Regression result')  
-print('Slope: {}\nIntercept: {}'.format(m, b))
-```
-
 Source:
 
 https://www.kaggle.com/code/carlolepelaars/statistics-tutorial/notebook
@@ -571,5 +762,7 @@ https://researchbasics.education.uconn.edu/anova_regression_and_chi-square/#
 
 https://cheatography.com/mmmmy/cheat-sheets/hypothesis-testing-cheatsheet/
 
+https://towardsdatascience.com/hypothesis-testing-in-machine-learning-using-python-a0dc89e169ce
 
+https://github.com/yug95/MachineLearning
 

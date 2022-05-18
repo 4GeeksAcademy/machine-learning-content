@@ -28,11 +28,11 @@ The **intersection** of two sets is the collection of elements that belong to bo
 **Sequences**
 
 A sequence is a collection of elements that are coming out of some set and that collection is indexed by the natural numbers. 
-We mean that we have i and ai where i is an index that runs over the natural numbers, which is the set of positive integers, and each ai is an element of some set. Formally, a sequence is a function that, to any natural number, associates an element of S. We normally care about whether a sequence converges to some number a. The limit as i goes to infinity of ai is equal to a certain number, a.
+We mean that we have $i$ and $ai$ where $i$ is an index that runs over the natural numbers, which is the set of positive integers, and each $ai$ is an element of some set. Formally, a sequence is a function that, to any natural number, associates an element of $S$. We normally care about whether a sequence converges to some number $a$. The limit as $i$ goes to infinity of $ai$ is equal to a certain number, $a$.
 
 But what exactly does it mean for a sequence to converge?
 
-No matter what kind of band I take around my limit a, eventually, the sequence will be inside this band and will stay inside there. For example, if a certain sequence converges to a number a and another sequence converges to a number b, we will have that ai + bi (which is another sequence) will converge to a+b.
+No matter what kind of band I take around my limit $a$, eventually, the sequence will be inside this band and will stay inside there. For example, if a certain sequence converges to a number a and another sequence converges to a number $b$, we will have that $ai + bi$ (which is another sequence) will converge to $a+b$.
 
 But, how can we tell whether a given sequence converges or not?
 
@@ -43,11 +43,11 @@ We have 2 cases:
 
 **Infinite series**
 
-We have a sequence of numbers ai, indexed by i, where i ranges from 1 to infinity. Then we have an infinite sequence. We want to add the terms of that sequence together. 
+We have a sequence of numbers $ai$, indexed by $i$, where $i$ ranges from $1$ to infinity. Then we have an infinite sequence. We want to add the terms of that sequence together. 
 
 So, what is an infinite series?
 
-The infinite series is defined as the limit, as n goes to infinity, of the finite series in which we add only the first n terms in the series. The situation is more complicated if the terms ai can have different signs. In that case, it's possible that the limit does not exist, and so the series is not well defined.
+The infinite series is defined as the limit, as $n$ goes to infinity, of the finite series in which we add only the first $n$ terms in the series. The situation is more complicated if the terms $ai$ can have different signs. In that case, it's possible that the limit does not exist, and so the series is not well defined.
 
 **Countable vs Uncountable sets**
 
@@ -67,23 +67,25 @@ Nowadays, there is not much we can understand about what goes on around us unles
 Probability finds out the likeliness that something will happen by providing a way to summarize the uncertainty that comes from laziness and ignorance. So life is uncertain but we need to make predictions and decisions under uncertainty.
 
 A probabilistic model is a model of a random experiment and it can help you analyze uncertain situations no matter what your unique background is. 
-We first describe the possible outcomes of the experiment and then we describe the likelihood of the different possible outcomes. This combination is called the probability space, which is the pairing (S, P) where S is the sample space and P is the probability distribution.
+We first describe the possible outcomes of the experiment and then we describe the likelihood of the different possible outcomes. This combination is called the probability space, which is the pairing $(S, P)$ where $S$ is the sample space and $P$ is the probability distribution.
 
-Let's imagine we flip a coin. The probability space is (S, P). We make a SET of the possible outcomes. That set is called the **sample space** of all elementary events. Its **probability distribution** means assigning a real number p(x) to every elementary event X such that its probability is between 0 and 1 and the sum of all these probabilities is equal to 1.
+Let's imagine we flip a coin. The probability space is $(S, P)$. We make a SET of the possible outcomes. That set is called the **sample space** of all elementary events. Its **probability distribution** means assigning a real number $p(x)$ to every elementary event $X$ such that its probability is between $0$ and $1$ and the sum of all these probabilities is equal to $1$.
 
-**S = {Heads, Tails} where S can either be heads or tails, therefore the probability is P(Heads) = P(Tails) = 1/2**
+$S = {Heads, Tails}$ where $S$ can either be heads or tails, therefore the probability is $P(Heads) = P(Tails) = 1/2$
 
-The probability for heads is the same as the probability for tails which is the same as 0.5. So if you flip a coin there is an even chance of getting heads or of getting tails.
+The probability for heads is the same as the probability for tails which is the same as $0.5$. So if you flip a coin there is an even chance of getting heads or of getting tails.
 
 
-Now let-s imagine we have a fair roll dice. We have 6 possible outcomes if we roll a dice : { 1, 2, 3, 4, 5, 6}
-If it is a fair roll dice, then each of those possible outcomes has the same probability, which would be: number of possibilities that meet my condition / number of equally likely possibilities.
+Now let's imagine we have a fair roll dice. We have $6$ possible outcomes if we roll a dice : { 1, 2, 3, 4, 5, 6}
+If it is a fair roll dice, then each of those possible outcomes has the same probability, which would be: 
 
-P(1) = 1/6
+number of possibilities that meet my condition / number of equally likely possibilities
 
-P(1 or 6) = 2/6
+$P(1) = 1/6$
 
-p(2 and 3) = 0/6 ------> getting a 2 or a 3 are mutually exclusive events. They can not happen at the same time.
+$P(1 or 6) = 2/6$
+
+$p(2 and 3) = 0/6$ ------> getting a $2$ or a $3$ are mutually exclusive events. They can not happen at the same time.
 
 A probability distribution is considered uniform if every outcome is equally as likely.
 
@@ -142,23 +144,23 @@ Events can be :
 
 •	Mutually exclusive - events can't happen at the same time.
 
-The complement of an event is all the other outcomes of an event. For example, if the event is Tails, the complement is Heads. If you know the probability of p(x) you can find the complement by doing 1 - p(x). Sometimes it is easier to work out the complement first before the actual probability.
+The complement of an event is all the other outcomes of an event. For example, if the event is Tails, the complement is Heads. If you know the probability of $p(x)$ you can find the complement by doing $1 - p(x)$. Sometimes it is easier to work out the complement first before the actual probability.
 
 
 ### Conditional Probability
 
-The conditional probability of an event B is the probability that the event will occur given that event A has already occurred.
-If A and B are two events, then the conditional probability can be designated as P(A given B) or P(A|B). Conditional probability can be calculated from the joint probability(A | B) = P(A, B) / P(B) The conditional probability is not symmetrical; 
+The conditional probability of an event $B$ is the probability that the event will occur given that event $A$ has already occurred.
+If $A$ and $B$ are two events, then the conditional probability can be designated as $P(A given B)$ or $P(A|B)$. Conditional probability can be calculated from the joint probability $(A | B) = P(A, B) / P(B)$ The conditional probability is not symmetrical; 
 
-For example P(A | B) != P(B | A)
+For example $P(A | B) != P(B | A)$
 
 Other ways of calculating conditional probability includes using the other conditional probability, i.e.
 
-P(A|B) = P(B|A) * P(A) / P(B) ----->Bayes Theorem
+$P(A|B) = P(B|A) * P(A) / P(B)$ ----->Bayes Theorem
 
 Reverse is also used:
 
-P(B|A) = P(A|B) * P(B) / P(A)
+$P(B|A) = P(A|B) * P(B) / P(A)$
 
 This way of calculation is useful when it is challenging to calculate the joint probability. Else, when the reverse conditional probability is available, calculation through this becomes easy.
 This alternate calculation of conditional probability is referred to as the Bayes Rule or Bayes Theorem.
@@ -168,7 +170,7 @@ This alternate calculation of conditional probability is referred to as the Baye
 
 Bayes’ theorem is a simple mathematical formula used for calculating conditional probabilities. This theorem states that:
 
-P(A|B) = P(B|A) * P(A) / P(B)
+$P(A|B) = P(B|A) * P(A) / P(B)$
 
 Bayes’s theorem is used for the calculation of a conditional probability where intuition often fails. Although widely used in probability, the theorem is being applied in the machine learning field too. Its use in machine learning includes the fitting of a model to a training dataset and developing classification models.
 
@@ -181,8 +183,10 @@ What is the probability of a dangerous Fire when there is Smoke?
 
 Calculation
 
-P(Fire|Smoke) =P(Fire) P(Smoke|Fire)/P(Smoke)
+$P(Fire|Smoke) =P(Fire) P(Smoke|Fire)/P(Smoke)$
+
 = 1% x 90%/10%
+
 = 9%
 
 **Bayes Theorem in Machine Learning**
