@@ -40,21 +40,21 @@
 
 ## Collect and store data (4 days)
 
-1. Data Science project structure
+1. Intro to SQL (Structured Query language)
 
-1.2. Static Files (csv, json, yml)
+1.2 Create and connect to SQL databases with Python
 
-📝 Creating project structure and loading files
+📝 Connect to a Sql database and analyse it
 
-2. Web Scraping tools and techniques. 
+2. Loading Static Files (csv, json, yml)
 
-📝 Load tweets from Twitter
+2.2  Web Scraping tools and techniques
 
-3. Create and connect to SQL databases with Python.
+📝 Web scraping stock data from a website
 
-📝 Connect and analyse a Sql dataset
+3. Data Science project structure
   
-Project part I: Web scraping dataset and storing it on SQL DB
+Project: Interacting with the Twitter API
 
 ## Data Management (3 days)
 
