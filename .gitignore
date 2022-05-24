@@ -1,3 +1,8 @@
 .*
 !.gitignore
 !.gitpod.yml
+
+
+   
+# Checkpoints will not be pushed.
+.ipynb_checkpoints
