@@ -1,0 +1,16 @@
+
+   
+
+   
+# pip install -r requirements.txt
+
+# Base ----------------------------------------
+pandas>=1.1.4
+numpy>=1.18.5
+opencv-python>=4.1.2
+matplotlib>=3.2.2
+ipyleaflet>=0.14.0
+sympy>=1.10.1
+
+# Machine learning ----------------------------
+sklearn
