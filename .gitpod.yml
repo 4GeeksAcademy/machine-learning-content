@@ -2,10 +2,16 @@ image: jgoldfar/pandoc-nbconvert-docker
 
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: echo 'init script' # runs during prebuild
-    command: echo 'start script'
-
+    - init: >
+          pip install -r "requirements.txt";
+      command: >
+          pip install -r "requirements.txt";
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
-  - port: 3000
-    onOpen: open-preview
+    - port: 9000-9099
+      onOpen: ignore
+
+vscode:
+    extensions:
+        - ms-toolsai.jupyter
+        - vscode.python
