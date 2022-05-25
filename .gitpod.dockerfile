@@ -1,8 +1,3 @@
-
-   
-
-   
-
-FROM gitpod/workspace-python
+FROM gitpod/workspace-full
 
 RUN npm i learnpack -g
