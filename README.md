@@ -40,7 +40,7 @@
 
 ## Collect and store data (4 days)
 
-1. Intro to SQL (Structured Query language)
+1. Intro to SQL (Structured Query language) - external
 
 1.2 Create and connect to SQL databases with Python
 
