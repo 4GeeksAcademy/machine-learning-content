@@ -1,4 +1,3 @@
-
 # Random Variables
 
 A random variable is a variable that can take on different values randomly.
@@ -57,7 +56,9 @@ plt.show()
 ```
 
 
+    
 ![png](random-variables_files/random-variables_7_0.png)
+    
 
 
 ### Probability Density Functions (PDF)
@@ -85,7 +86,9 @@ plt.show()
 ```
 
 
+    
 ![png](random-variables_files/random-variables_9_0.png)
+    
 
 
 ### Cumulative Distribution Function
@@ -113,7 +116,9 @@ plt.show()
 ```
 
 
+    
 ![png](random-variables_files/random-variables_11_0.png)
+    
 
 
 # Probability Distributions
@@ -190,7 +195,9 @@ plt.title('Scatterplot of a Random/Uniform Distribution', fontsize='xx-large')
 
 
 
+    
 ![png](random-variables_files/random-variables_23_1.png)
+    
 
 
 **Normal Distribution**
@@ -251,7 +258,9 @@ plt.title('Normal distribution (n=1000)', fontsize='xx-large')
 
 
 
+    
 ![png](random-variables_files/random-variables_29_2.png)
+    
 
 
 Now let's see the normal distribution with a scatterplot:
@@ -273,7 +282,9 @@ plt.title('Scatterplot of a Normal Distribution', fontsize='xx-large')
 
 
 
+    
 ![png](random-variables_files/random-variables_31_1.png)
+    
 
 
 What is a long tailed distribution?

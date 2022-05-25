@@ -1,4 +1,3 @@
-
 # Standard Normal Table
 
 *This is not a lesson. Use this table as reference.*

@@ -1,4 +1,3 @@
-
 # Machine Learning Basics
 
 What is Machine Learning?

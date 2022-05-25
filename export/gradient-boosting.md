@@ -1,4 +1,3 @@
-
 # Gradient Boosting
 
 **How does gradient boosting machines differ from traditional decision tree algorithms?**

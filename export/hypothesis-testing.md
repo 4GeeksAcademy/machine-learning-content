@@ -1,4 +1,3 @@
-
 # HYPOTHESIS TESTING
 
 ### Density Curves

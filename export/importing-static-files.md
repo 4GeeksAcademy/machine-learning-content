@@ -1,4 +1,3 @@
-
 # Importing files into Python
 
 ### Importing flat files with Numpy

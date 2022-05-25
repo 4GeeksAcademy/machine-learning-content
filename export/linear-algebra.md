@@ -1,4 +1,3 @@
-
 # Linear Algebra
 
 Linear Algebra is the branch of mathematics concerning linear equations that uses vector space and matrices.

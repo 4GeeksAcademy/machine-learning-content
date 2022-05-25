@@ -1,4 +1,3 @@
-
 # Feature encoding for categorical variables
 
 This is an important phase in the data cleaning process. Feature encoding involves replacing classes in a categorical variable with real numbers. For example, classroom A, classroom B and classroom C could be encoded as 2,4,6.

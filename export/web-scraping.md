@@ -1,4 +1,3 @@
-
 # Web Scraping
 
 Web Scraping is one of the important methods to retrieve data from a website automatically. Not all websites allow people to scrape, however you can add the ‘robots.txt’ after the URL of the website you want to scrape, in order to know whether you will be allowed to scrape or not. 

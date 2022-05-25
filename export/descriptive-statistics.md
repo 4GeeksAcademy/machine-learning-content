@@ -1,4 +1,3 @@
-
 # DESCRIPTIVE STATISTICS
 
 We can divide Statistics field in two categories:

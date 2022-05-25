@@ -1,4 +1,3 @@
-
 # Exploratory Data Analysis
 
 Exploratory data analysis is the first step towards solving any data science or machine learning problem. It refers to the critical process of performing initial investigations on the data we have available and getting familiar with it. EDA makes a thorough examination on our dataset to find trends, patterns, and relationships between features within the data with the help of graphs and plots using libraries like Matplotlib and Seaborn. We will also be using the Pandas library. Pandas makes importing, analysing and visualizing much easier.
@@ -385,7 +384,9 @@ plt.show()
 ```
 
 
+    
 ![png](exploratory-data-analysis_files/exploratory-data-analysis_20_0.png)
+    
 
 
 
@@ -422,7 +423,9 @@ countplot_features('Sex')
 ```
 
 
+    
 ![png](exploratory-data-analysis_files/exploratory-data-analysis_25_0.png)
+    
 
 
 Observations: 
@@ -435,7 +438,9 @@ countplot_features('Embarked')
 ```
 
 
+    
 ![png](exploratory-data-analysis_files/exploratory-data-analysis_27_0.png)
+    
 
 
 Observations: 
@@ -458,7 +463,9 @@ plt.ylim(0,)
 
 
 
+    
 ![png](exploratory-data-analysis_files/exploratory-data-analysis_29_1.png)
+    
 
 
 Observations:
@@ -481,7 +488,9 @@ plt.ylim(0,)
 
 
 
+    
 ![png](exploratory-data-analysis_files/exploratory-data-analysis_31_1.png)
+    
 
 
 Observations: 
@@ -509,7 +518,9 @@ sns.heatmap(train_data.corr(), annot=True, cmap='viridis')
 
 
 
+    
 ![png](exploratory-data-analysis_files/exploratory-data-analysis_35_1.png)
+    
 
 
 Observations:
@@ -767,7 +778,9 @@ plt.ylabel('Fare')
 
 
 
+    
 ![png](exploratory-data-analysis_files/exploratory-data-analysis_42_1.png)
+    
 
 
 Observations: 

@@ -1,4 +1,3 @@
-
 # Feature scaling
 
 Following the data pre-processing steps, data scaling is a method of standardization that’s useful when working with a dataset that contains continuous features that are on different scales, and you’re using a model that operates in some sort of linear space (like linear regression or K-nearest neighbors).

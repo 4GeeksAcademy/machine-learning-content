@@ -1,4 +1,3 @@
-
 # K Nearest neighbors
 
 KNN makes predictions by averaging the k neighbors nearest to a given data point. For example, if we wanted to predict how much money a potential customer would spend at our store, we could find the 5 customers most similar to her and average their spending to make the prediction.

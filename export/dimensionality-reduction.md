@@ -1,4 +1,3 @@
-
 # Dimensionality Reduction
 
 ***What is dimensionality reduction?**

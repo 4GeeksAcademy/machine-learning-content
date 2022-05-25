@@ -1,4 +1,3 @@
-
 # Calculus
 
 Calculus, linear algebra and probability are the 'languages' in which machine learning is written. 

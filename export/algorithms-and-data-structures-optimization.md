@@ -1,4 +1,3 @@
-
 # ALGORITHMS AND DATA STRUCTURES
 
 ## What is an algorithm?
@@ -7,10 +6,9 @@ Algorithms are more simple than we think. Since we are kids we are taught how to
 An algorithm is a set of instructions followed to achieve a goal or to produce an output, for example learning to walk, tie your shoes or preparing a cake. All these processes are taught to us using a step to step procedure.
 Let's see an example of a very simple algorithm, the steps to prepare some brownies:
 
-
-```python
+```py
 function PrepareBrownies(flavor){
-"
+
  1. Heat Oven to 350 F
  2. Mix flour, baking powder, salt in a bowl
  3. Mix melted butter with "+ flavor +" chips in another bowl
@@ -20,7 +18,7 @@ function PrepareBrownies(flavor){
  7  Mix. 
  8. Put in pan
  9. Bake for 30 minutes
-"
+
 }
 
 PrepareBrownies('chocolate')
@@ -72,7 +70,7 @@ O(n^2) = 256 steps
 O(2^n) = 65,356 steps
 ```
 
-![big-o%20complexity.png](../assets/big-o%20complexity.png)
+![big-o_complexity.png](../assets/big-o_complexity.jpg)
 
 ## Understanding algorithms and data structures
 
@@ -461,6 +459,7 @@ KNN can be used for classification for categorizing into a group, and regression
 When we work with KNN it is really important to pick the right features:
 
 -Features that directly correlate to what you try to recommend.
+
 -Features that don't have a bias (for example if we only ask users to rate romance movies)
 
 There is no right answer when it comes to picking good features. We have to think about all the different things we need to consider.
@@ -471,4 +470,7 @@ https://www.freecodecamp.org/news/time-is-complex-but-priceless-f0abd015063c/
 
 https://www.bigocheatsheet.com/
 
-Book: Grooking Algorithms
+Book: 
+
+Grooking Algorithms - Aditya Y. Bhargava
+(free download: https://github.com/cjbt/Free-Algorithm-Books/blob/master/book/Grokking%20Algorithms%20-%20An%20illustrated%20guide%20for%20programmers%20and%20other%20curious%20people.pdf)

@@ -1,4 +1,3 @@
-
 # Probability
 
 ### Mathematical Background

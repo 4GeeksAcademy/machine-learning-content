@@ -1,4 +1,3 @@
-
 # Machine Learning Algorithms
 
 What are parametic and non parametric models? 

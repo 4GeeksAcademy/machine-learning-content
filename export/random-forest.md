@@ -1,4 +1,3 @@
-
 # Random Forest
 
 **What is Random Forest?**

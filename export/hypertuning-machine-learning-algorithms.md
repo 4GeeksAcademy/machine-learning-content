@@ -1,4 +1,3 @@
-
 # Hypertuning Machine Learning Algorithms
 
 ### What are two common ways to automate hyperparameter tuning?

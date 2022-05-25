@@ -1,4 +1,3 @@
-
 # K-means
 
 K-means clustering is an unsupervised clustering algorithm that partitions observations into k clusters. 
