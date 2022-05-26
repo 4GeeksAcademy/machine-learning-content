@@ -53,6 +53,8 @@
 📝 Web scraping stock data from a website
 
 3. Data Science project structure
+
+📝 ML Project structure activity
   
 Project: Interacting with the Twitter API
 
