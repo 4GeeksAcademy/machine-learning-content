@@ -135,7 +135,7 @@ To connect to a DB2, it requires the following information:
 - User id
 - Password
 
-Example to create a databse connection: 
+Example to create a database connection: 
 
 ```py
 #Create database connection
@@ -176,24 +176,26 @@ Parameters for the function:
 
 Example: Creating a table called CARS in Python
 
-```py
-#CREATE TABLE
 
+#CREATE TABLE
+```py
 stmt = ibm_db.exec_inmediate(conn, "CREATE TABLE Cars(
     serial_no VARCHAR(20) PRIMARY KEY NOT NULL,
     make varchar(20) NOT NULL,
     model VARCHAR(20) NOT NULL,
     car_class VARCHAR(20) NOT NULL)"
     )
+```
 
 #LOAD DATA IN TABLE
-
+```py
 stmt = ibm_db.exec_inmediate(conn, "INSERT INTO Cars(
     serial_no, make, model, car_class)
     VALUES('A2345453','Ford','Mustang','class3');")
+```
 
 #FETCH DATA FROM CARS TABLE
-
+```py
 stmt = ibm_db.exec_inmediate(conn, "SELECT * FROM Cars")
 
 ibm_db.fetch_both(stmt)
