@@ -44,13 +44,13 @@
 
 1.2 Create and connect to SQL databases with Python
 
-📝 Connect to a Sql database and analyse it
+📝 Connecting to a Sql database from Python
 
 2. Loading Static Files (csv, json, yml)
 
 2.2  Web Scraping tools and techniques
 
-📝 Web scraping stock data from a website
+📝 Web scraping data from a website
 
 3. Data Science project structure
 
