@@ -90,37 +90,35 @@ Project Part II: Data cleaning
 
 📝 Linear regression project (2 hours) 
 
-2. Polynomial Regression
-
-📝 Polynomial regression project (2 hours)
-
-3. Decision Trees
+2. Decision Trees
 
 📝 Decision tree project (2 hours)
 
-4. Random Forest
+3. Random Forest
 
 📝 Random Forest project (2 hours)
 
-5. Gradient Boosting
+4. Gradient Boosting
 
 📝 Gradient Boosting project (2 hours)
 
-6.1. Clustering
+5.1. Clustering
 
-6.2. KNN
+5.2. KNN
 
-6.3. K-Means
+5.3. K-Means
 
 📝 Clustering project (2 hours)
 
-7.1. Logistic Regression
+6.1 Logistic Regression
 
-7.2. SVM
+6.2 Dimensionality Reduction
 
-7.3. Dimensionality Reduction
+📝 Logistic Regression project (2 hours)
 
-📝 Logistic regression project (2 hours)
+7. SVM
+
+📝 SVM project (2 hours)
 
 8. Model Evaluation and Hypertuning machine learning algorithms
 
