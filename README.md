@@ -82,57 +82,63 @@ Project Part II: Data cleaning
 
 ## Machine Learning (12 days)
 
-1.1 Machine Learning Basics
+1.1. Machine Learning Basics
 
 1.2. Machine learning algorithms
 
-1.3 Decision Trees
+1.3. Linear Regression
+
+📝 Linear regression project (2 hours) 
+
+2. Polynomial Regression
+
+📝 Polynomial regression project (2 hours)
+
+3. Decision Trees
 
 📝 Decision tree project (2 hours)
 
-2. Random Forest
+4. Random Forest
 
 📝 Random Forest project (2 hours)
 
-3. Gradient Boosting
+5. Gradient Boosting
 
 📝 Gradient Boosting project (2 hours)
 
-4.1. Dimensionality Reduction
+6.1. Clustering
 
-4.2. KNN
+6.2. KNN
 
-4.3. K-Means
+6.3. K-Means
 
 📝 Clustering project (2 hours)
 
-5. Linear Regression
+7.1. Logistic Regression
 
-📝 Linear regression project (2 hours)
+7.2. SVM
 
-6.1 Logistic Regression
-
-6.2. Support Vector Machine (SVM)
+7.3. Dimensionality Reduction
 
 📝 Logistic regression project (2 hours)
 
-7. Model Evaluation
+8. Model Evaluation and Hypertuning machine learning algorithms
 
-📝 Evaluate previously created models (2 hours)
+📝 Evaluate and hypertune previously created model (2 hours)
 
-8. Hypertuning machine learning algorithms
+9. Natural Language Processing
 
-📝 Hypertuning your previous models (2 hours)
+📝 Natural language processing project (2 hours)
 
-9. Time Series Forecasting and Recommender Systems
+10. Time Series Forecasting 
 
 📝 Time series project (2 hours)
 
-10. Introduction to Deep Learning
+11. Introduction to Deep Learning
 
 📝 Deep learning project (2 hours)
 
-Project Part III: Create a machine learning model (2 days)
+Project Part III: Create a machine learning model (1 day)
 
 ## Data Science as Software (1 day)
 
