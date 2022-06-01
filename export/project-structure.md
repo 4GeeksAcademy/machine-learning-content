@@ -183,7 +183,40 @@ Let's see how files have been populated:
 
 ![app_file.jpg](attachment:app_file.jpg)
 
-Now go ahead with the Module's project where you will practice interacting with APIs, storing data in SQL database and creating a web app in Streamlit. Good luck!
+**Good practices to include in your projects**
+
+-Keep secrets and configuration out of version control**
+
+You really don't want to leak your Twitter secret key or database username and password on Github. Here's one way to do this, by storing your secrets and config variables in a special file (You learned it in the Cookiecutter template)
+
+Create a .env file in the project root folder. Thanks to the .gitignore, this file should never get committed into the version control repository. Here's an example:
+
+```py
+# example .env file
+DATABASE_URL=postgres://username:password@localhost:5432/dbname
+AWS_ACCESS_KEY=myaccesskey
+AWS_SECRET_ACCESS_KEY=mysecretkey
+OTHER_VARIABLE=something
+```
+
+-Using a package to load these variables automatically
+
+There is a package called python-dotenv to load up all the entries in this file as environment variables so they are accessible with os.environ.get. Here's an example snippet adapted from the python-dotenv documentation applied in the cookiecutter data science template:
+
+```py
+# src/data/dotenv_example.py
+import os
+from dotenv import load_dotenv, find_dotenv
+
+# find .env automatically by walking up directories until it's found
+dotenv_path = find_dotenv()
+
+# load up the entries as environment variables
+load_dotenv(dotenv_path)
+
+database_url = os.environ.get("DATABASE_URL")
+other_variable = os.environ.get("OTHER_VARIABLE")
+```
 
 Source: 
 

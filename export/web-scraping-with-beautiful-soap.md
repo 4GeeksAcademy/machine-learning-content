@@ -146,7 +146,7 @@ print(text)
 
 **Parsing HTML Using Beautiful Soup**
 
-We'll learn how to use the BeautifulSoup package to parse, prettify and extractinformation from HTML.
+We'll learn how to use the BeautifulSoup package to parse, prettify and extract information from HTML.
 
 
 ```python
@@ -163,7 +163,7 @@ resp = requests.get(url)
 # Extracts the response as html: html_doc
 html_doc = resp.text
 
-# Create a BeautifulSoup object from the HTML: soup
+#Then, all we have to do is convert the HTML document to a BeautifulSoup object!
 soup = BeautifulSoup(html_doc)
 
 # Prettify the BeautifulSoup object: pretty_soup
@@ -171,6 +171,27 @@ pretty_soup = soup.prettify()
 
 # Print the response
 print(pretty_soup)
+```
+
+**Tags can be called in different ways**
+
+
+```python
+#This line of code creates a BeautifulSoup object from a webpage:
+ 
+soup = BeautifulSoup(webpage.content, "html.parser")
+ 
+# Within the `soup` object, tags can be called by name:
+ 
+first_div = soup.div
+ 
+# or by CSS selector:
+ 
+all_elements_of_header_class = soup.select(".header")
+ 
+# or by a call to `.find_all`:
+ 
+all_p_elements = soup.find_all("p")
 ```
 
 ### 3. Interacting with APIs
