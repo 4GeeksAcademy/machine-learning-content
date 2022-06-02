@@ -22,26 +22,8 @@ Next, we need to install tweepy.
 
 
 ```python
-! pip install tweepy
+#install tweepy
 ```
-
-    Collecting tweepy
-      Downloading tweepy-4.10.0-py3-none-any.whl (94 kB)
-    [2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m94.4/94.4 kB[0m [31m6.9 MB/s[0m eta [36m0:00:00[0m
-    [?25hRequirement already satisfied: requests<3,>=2.27.0 in /home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages (from tweepy) (2.27.1)
-    Collecting requests-oauthlib<2,>=1.2.0
-      Downloading requests_oauthlib-1.3.1-py2.py3-none-any.whl (23 kB)
-    Collecting oauthlib<4,>=3.2.0
-      Downloading oauthlib-3.2.0-py3-none-any.whl (151 kB)
-    [2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m151.5/151.5 kB[0m [31m21.3 MB/s[0m eta [36m0:00:00[0m
-    [?25hRequirement already satisfied: charset-normalizer~=2.0.0 in /home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages (from requests<3,>=2.27.0->tweepy) (2.0.12)
-    Requirement already satisfied: idna<4,>=2.5 in /home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages (from requests<3,>=2.27.0->tweepy) (3.3)
-    Requirement already satisfied: certifi>=2017.4.17 in /home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages (from requests<3,>=2.27.0->tweepy) (2022.5.18.1)
-    Requirement already satisfied: urllib3<1.27,>=1.21.1 in /home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages (from requests<3,>=2.27.0->tweepy) (1.26.9)
-    Installing collected packages: oauthlib, requests-oauthlib, tweepy
-    Successfully installed oauthlib-3.2.0 requests-oauthlib-1.3.1 tweepy-4.10.0
-    [33mWARNING: There was an error checking the latest version of pip.[0m[33m
-    [0m
 
 **Step 3:** 
 
@@ -50,14 +32,14 @@ Import Tweepy
 
 ```python
 # your code here
-import tweepy
+
 ```
 
 **Step 4:** 
 
 You need to provide the Twitter keys and tokens in order to use the API v2.
 
-Create a simple python file called keys.py to store all passwords. Include the keys.py file in .gitignore so that your credentials are not uploaded to Github.
+Create a simple python file called keys.py to store all passwords. Include the keys.py file in a .gitignore file so that your credentials are not uploaded to Github.
 
 ```py
 consumer_key="insert your API key"
@@ -75,22 +57,18 @@ Make a connection with API v2. Import the keys and use them in the function twee
 ```python
 #import all data from the keys file
 
-from keys import *
 ```
 
 
 ```python
 #import requests
-import requests
+
 
 # Use tweepy.Client()
-client = tweepy.Client( bearer_token=bearer_token, 
-                        consumer_key=consumer_key, 
-                        consumer_secret=consumer_secret, 
-                        access_token=access_token, 
-                        access_token_secret=access_token_secret, 
-                        return_type = requests.Response,
-                        wait_on_rate_limit=True)
+
+
+
+
 ```
 
 **Step 6:** 
@@ -106,12 +84,11 @@ You can use this link for guidance on how to create the query: https://developer
 
 ```python
 # Define query
-query = '#100daysofcode (react OR python) -is:retweet'
+
 
 # get max. 100 tweets
-tweets = client.search_recent_tweets(query=query, 
-                                    tweet_fields=['author_id','created_at','lang'],
-                                     max_results=100)
+
+
 ```
 
 **Step 7:** 
@@ -120,16 +97,18 @@ Convert to pandas Dataframe
 
 
 ```python
-import pandas as pd
+#import pandas
+
 
 # Save data as dictionary
-tweets_dict = tweets.json() 
+
 
 # Extract "data" value from dictionary
-tweets_data = tweets_dict['data'] 
+ 
 
 # Transform to pandas Dataframe
-df = pd.json_normalize(tweets_data) 
+
+
 ```
 
 **Step 8:** 
@@ -138,7 +117,7 @@ Take a look at your dataframe
 
 
 ```python
-df
+#your code
 ```
 
 **Step 9:**
@@ -148,7 +127,7 @@ Save data in a csv file named 'coding-tweets'
 
 ```python
 # save df
-df.to_csv("coding-tweets.csv")
+
 ```
 
 **Step 10:** 
@@ -162,17 +141,10 @@ Now that you have your DataFrame of tweets set up, you're going to do a bit of t
 
 ```python
 #import re
-import re
+
 
 #define your function here
-def word_in_text(word, text):
-    word = word.lower()
-    text = text.lower()
-    match = re.search(word, text)
 
-    if match:
-        return True
-    return False
 
 ```
 
@@ -183,12 +155,10 @@ Iterate through dataframe rows counting the number of tweets in which react and 
 
 ```python
 # Initialize list to store tweet counts
-[react, python] = [0, 0]
+
 
 # Iterate through df, counting the number of tweets in which each(react and python) is mentioned.
-for index, row in df.iterrows():
-    react += word_in_text('react', row['text'])
-    python += word_in_text('python', row['text'])
+
 ```
 
 **Step 12:** 
@@ -198,19 +168,17 @@ Visualize the data
 
 ```python
 # Import packages
-import matplotlib.pyplot as plt
-import seaborn as sns
+
 
 # Set seaborn style
-sns.set(color_codes=True)
+
 
 # Create a list of labels:cd
-cd = ['react', 'python']
+
 
 # Plot the bar chart
-ax = sns.barplot(cd, [react, python])
-ax.set(ylabel="count")
-plt.show()
+
+
 ```
 
 Source: 
