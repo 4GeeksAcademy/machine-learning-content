@@ -27,37 +27,54 @@ Next, we need to install tweepy.
 
 **Step 3:** 
 
-Import Tweepy
+You need to provide the Twitter keys and tokens in order to use the API v2.
+
+To do it in a safe way, you should store the secrets in a seperate .env file.
+A dotenv file contains only text, where it has one environment variable assignment per line.
+Create a .env file in your project and add your secret keys or passwords: 
+
+```py
+CONSUMER_KEY="insert your API key"
+CONSUMER_SECRET="insert your API secret"
+ACCEESS_TOKEN="insert your access token"
+ACCESS_TOKEN_SECRET="insert your access token secret"
+BEARER_TOKEN="insert your bearer token"
+```
+
+>Important: Make sure to add it in your .gitignore file, which is not saved to source control, so that you aren't putting potentially sensitive information at risk. 
+
+To set password or secret keys in environment variable on Linux(and Mac) or Windows, see the following link: https://dev.to/biplov/handling-passwords-and-secret-keys-using-environment-variables-2ei0
 
 
-```python
-# your code here
+To access these variables in Windows in our python script, we need to import the os module.
+We can do that by using os.environ.get() method and passing the key we want to access.
 
+Now, you need to install python-dotenvpackage. python-dotenv is a Python package that lets your Python app read a .env file. This package will search for a .env and if it finds one, will expose the variables in it to the app.
+
+Example:
+
+```py
+from dotenv import load_dotenv   #for python-dotenv method
+load_dotenv()                    
+
+import os 
+
+user_name = os.environ.get('USER')
+password = os.environ.get('password')
 ```
 
 **Step 4:** 
 
-You need to provide the Twitter keys and tokens in order to use the API v2.
+Import Tweepy
 
-Create a simple python file called keys.py to store all passwords. Include the keys.py file in a .gitignore file so that your credentials are not uploaded to Github.
 
-```py
-consumer_key="insert your API key"
-consumer_secret="insert your API secret"
-access_token="insert your access token"
-access_token_secret="insert your access token secret"
-bearer_token="insert your bearer token"
+```python
+#import tweepy
 ```
 
 **Step 5:** 
 
-Make a connection with API v2. Import the keys and use them in the function tweepy.Client(). Use the following documentation for guidance on the parameters: https://docs.tweepy.org/en/stable/client.html
-
-
-```python
-#import all data from the keys file
-
-```
+Make a connection with API v2. Use the variables in the function tweepy.Client(). Use the following documentation for guidance on the parameters: https://docs.tweepy.org/en/stable/client.html
 
 
 ```python
