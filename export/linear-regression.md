@@ -66,3 +66,7 @@ plt.plot(xs, lin(xs))
 plt.title('Linear Regression result')  
 print('Slope: {}\nIntercept: {}'.format(m, b))
 ```
+
+Source:
+
+https://towardsdatascience.com/simple-and-multiple-linear-regression-with-python-c9ab422ec29c

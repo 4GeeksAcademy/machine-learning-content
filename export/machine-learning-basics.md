@@ -95,3 +95,5 @@ https://towardsdatascience.com/train-test-split-and-cross-validation-in-python-8
 
 https://www.kdnuggets.com/2020/09/understanding-bias-variance-trade-off-3-minutes.html
 
+https://medium.com/@ranjitmaity95/7-tactics-to-combat-imbalanced-classes-in-machine-learning-datase-4266029e2861
+

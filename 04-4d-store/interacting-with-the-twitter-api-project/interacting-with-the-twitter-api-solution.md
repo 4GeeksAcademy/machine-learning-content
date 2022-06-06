@@ -59,17 +59,12 @@ access_token_secret="insert your access token secret"
 bearer_token="insert your bearer token"
 ```
 
+
 >Important: Make sure to add it in your .gitignore file, which is not saved to source control, so that you aren't putting potentially sensitive information at risk. 
-
-To set password or secret keys in environment variable on Linux(and Mac) or Windows, see the following link: https://dev.to/biplov/handling-passwords-and-secret-keys-using-environment-variables-2ei0
-
-To access these variables in our python script, we need to import the os module.
-We can do that by using os.environ.get() method and passing the key we want to access.
 
 Now, you need to install python-dotenvpackage. python-dotenv is a Python package that lets your Python app read a .env file. This package will search for a .env and if it finds one, will expose the variables in it to the app.
 
 Example:
-
 
 ```py
 from dotenv import load_dotenv   #for python-dotenv method
@@ -77,9 +72,15 @@ load_dotenv()
 
 import os 
 
-user_name = os.environ.get('USER')
-password = os.environ.get('password')
+consumer_key = os.environ.get('CONSUMER_KEY')
+consumer_secret = os.environ.get('CONSUMER_SECRET')
+access_token = os.environ.get('ACCESS_TOKEN')
+access_token_secret = os.environ.get('ACCESS_TOKEN_SECRET')
+bearer_token = os.environ.get('BEARER_TOKEN')
+
 ```
+
+To set password or secret keys in environment variable on Linux(and Mac) or Windows, see the following link: https://dev.to/biplov/handling-passwords-and-secret-keys-using-environment-variables-2ei0
 
 **Step 4:** 
 
@@ -241,3 +242,5 @@ https://www.indeed.com/q-Remote-Entry-Level-Human-Resource-Position-jobs.html?vj
 https://www.codegrepper.com/code-examples/python/how+to+install+dotenv+python
 
 https://dev.to/jakewitcher/using-env-files-for-environment-variables-in-python-applications-55a1
+
+https://dev.to/biplov/handling-passwords-and-secret-keys-using-environment-variables-2ei0

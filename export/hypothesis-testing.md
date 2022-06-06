@@ -67,6 +67,11 @@ Let´s see some examples of how to get samples.
 
 
 ```python
+# Generate Normal Distribution
+normal_dist = np.random.randn(10000)
+
+# Note that we take very small samples just to illustrate the different sampling methods
+
 # Convenience samples
 convenience_samples = normal_dist[0:5]
 
@@ -81,15 +86,17 @@ random_samples = normal_dist.sample(5)
 systematic_samples = normal_dist[normal_dist.index % 2000 == 0]
 
 # Stratified Sampling
-# We will get 1 person from every classroom in the dataset
+# We will get 1 student from every classroom in the dataset
+# We have 8 classrooms so that makes a total of 8 samples
+# This is an example code. There is no real dataset.
 
-df = pd.read_csv('dataset.csv')
+df = pd.read_csv('../assets/toy_dataset.csv')
 
 strat_samples = []
 
-for classroom in df['Classroom'].unique():
-    samp = df[df['Classroom'] == classroom].sample(1)
-    strat_samples.append(samp['Average_grade'].item())
+for city in df['City'].unique():
+    samp = df[df['City'] == city].sample(1)
+    strat_samples.append(samp['Income'].item())
     
 print('Stratified samples:\n\n{}\n'.format(strat_samples))
 
@@ -343,7 +350,7 @@ Let's imagine we have a small dataset with 10 ages and we are checking whether t
     tset, pval = ttest_1samp(ages, 30)
     print(“p-values”,pval)
     if pval < 0.05:    # alpha value is 0.05 or 5%
-      print(" we are rejecting null hypothesis")
+      print("we are rejecting null hypothesis")
     else:
       print("we are accepting null hypothesis")
 ```

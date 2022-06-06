@@ -1,7 +1,7 @@
 # Exploratory Data Analysis
 
 Exploratory data analysis is the first step towards solving any data science or machine learning problem. It refers to the critical process of performing initial investigations on the data we have available and getting familiar with it. EDA makes a thorough examination on our dataset to find trends, patterns, and relationships between features within the data with the help of graphs and plots using libraries like Matplotlib and Seaborn. We will also be using the Pandas library. Pandas makes importing, analysing and visualizing much easier.
-In this section, we will use the Titanic dataset, a popular introductory dataset, to learn the step by step exploratory data analysis process. The purpose is to bring the reader in the position of going on with its own ideas, and by the end of this module searching for a dataset with a subject of its own interest to explore.
+In this section, we will use the Titanic dataset, a popular introductory dataset, to learn the step by step exploratory data analysis process. The purpose is to bring the reader in the position of going on with its own ideas, and by the end of this course searching for a dataset with a subject of its own interest to explore.
 
 ### Understanding the problem statement
 
@@ -11,7 +11,7 @@ Problem definition:
 
 The sinking of the Titanic resulted in the death of 1502 out of 2224 passengers and crew. While there was some element of luck involved in surviving, it seems some groups of people were more likely to survive than others. Apparently there were some patterns in the people who died and the people who survived. The problem here is that we are given certain data with specific characteristics of each passenger and the data is already labeled which let us know if the passenger lived or died. We have also been given a test dataset with more Titanic passengers and their characteristics but this dataset is not labeled, so we don't know who lived and who died. 
 
-We need to build a predictive model that answers the question: “what sorts of people were more likely to survive?” using passenger data (ie name, age, gender, socio-economic class, etc). To be able to predict which passengers were more likely to survive we will use a couple of algorithms to train the first dataset and when we decide which one is the best I will use it to predict what passengers in the unlabeled dataset survived.
+We need to build a predictive model that answers the question: “what sorts of people were more likely to survive?” using passenger data (ie name, age, gender, socio-economic class, etc). To be able to predict which passengers were more likely to survive we will use a couple of algorithms to train the first dataset and when we decide which one is the best, we will use it to predict what passengers in the unlabeled dataset survived.
 
 For this specific section, we will focus on the Titanic exploratory data analysis only.
 
@@ -22,7 +22,7 @@ https://www.kaggle.com/competitions/titanic/
 
 ### Importing libraries and reading the dataset
 
-Our next step is to read in the data and do some preliminary exploration. This will help us figure out how we want to approach creating groups and finding patterns. In order to do that we need to import some necessary libraries (for this example)
+Our next step is to read in the data and do some preliminary exploration. This will help us figure out how we want to approach creating groups and finding patterns. In order to do that we need to import some necessary libraries (for this example). In case any of them does not appear, make sure to install it.
 
 
 ```python
@@ -32,6 +32,9 @@ import pandas as pd
 import numpy as np 
 import matplotlib.pyplot as plt  
 import seaborn as sns
+
+import warnings
+warnings.filterwarnings("ignore")
 ```
 
 The data is stored as a comma-separated values, or csv file, where each row is separated by a new line, and each column by a comma (,). In order to read in the data, we’ll need to use the pandas.read_csv function. This function will take in a csv file and return a DataFrame.
@@ -367,7 +370,7 @@ Observations:
 
 -This time the 'Age' feature has 86 null values, and our 'Cabin' feature has 327 null values from the 418 total number of rows.
 
-### Exploring data columns
+### Exploring relevant data columns
 
 Now we need to find some insights from the dataset to see if there is any kind of hidden pattern or relationship between columns.
 We will start with the 'Survived' column which seems to be our target variable as it is not given to us in the test dataset.
@@ -392,7 +395,6 @@ plt.show()
 
 ```python
 train_data['Survived'].value_counts()
-
 ```
 
 
@@ -406,7 +408,7 @@ train_data['Survived'].value_counts()
 
 Observations: As our target variable is supposed to classify passengers in 1 or 0, whether they survive or not, we used a countplot to see if the data is balanced. We also used the method value_counts() to see exactly how many people survived(1) and how many did not survived(0) in our train_data. It is balanced and we know for a fact that the sinking ok Titanic resulted in the death of most of its passengers.
 
-**Categorical variables**
+**Countplot for categorical variables**
 
 
 ```python
@@ -449,6 +451,45 @@ Most of our Titanic passengers embarked by the Southampton station.
 
 
 ```python
+countplot_features('Pclass')
+```
+
+
+    
+![png](exploratory-data-analysis_files/exploratory-data-analysis_29_0.png)
+    
+
+
+Observations: Most of the passengers were travelling in the third class.
+
+**Distribution Plots for Continuous variables**
+
+
+```python
+#Let's plot the Probability Density Function (PDF) of Age of 891 passengers traveling in the Titanic.
+
+sns.distplot(train_data['Age'])
+```
+
+    /home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+      warnings.warn(msg, FutureWarning)
+
+
+
+
+
+    <AxesSubplot:xlabel='Age', ylabel='Density'>
+
+
+
+
+    
+![png](exploratory-data-analysis_files/exploratory-data-analysis_32_2.png)
+    
+
+
+
+```python
 #View if there is a linear relation between continuous numerical variable Age & target variable Survived.
 
 sns.regplot(x = "Age", y = "Survived", data = train_data)
@@ -464,7 +505,7 @@ plt.ylim(0,)
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_29_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_33_1.png)
     
 
 
@@ -474,22 +515,47 @@ There is clear negative linear relation between Age and our target variable. Thi
 
 
 ```python
+#Let's plot the Probability Density Function (PDF) of Fare paid by 891 passengers traveling in the Titanic.
+sns.distplot(train_data['Fare'])
+```
+
+    /home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+      warnings.warn(msg, FutureWarning)
+
+
+
+
+
+    <AxesSubplot:xlabel='Fare', ylabel='Density'>
+
+
+
+
+    
+![png](exploratory-data-analysis_files/exploratory-data-analysis_35_2.png)
+    
+
+
+Observations: From the above plotted PDF of Fare we can see that a majority of points in distribution lie between 0 to 100
+
+
+```python
 # View if there is a linear relation between continuous numerical variable Fare & target variable Survived.
 
-sns.regplot(x = "Fare", y = "Survived", data = train_data)
+sns.regplot(x = "Age", y = "Survived", data = train_data)
 plt.ylim(0,)
 ```
 
 
 
 
-    (0.0, 2.1449926011734073)
+    (0.0, 1.05)
 
 
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_31_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_37_1.png)
     
 
 
@@ -519,7 +585,7 @@ sns.heatmap(train_data.corr(), annot=True, cmap='viridis')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_35_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_41_1.png)
     
 
 
@@ -531,11 +597,11 @@ There is also a negative relation between the passenger class (pclass) and the a
 
 ### Detecting outliers
 
-In statistics, an outlier is an observation point that is distant from other observations. In data, it means that our dataframe feature has some extreme values which we need to analyse further. Those extreme values may be typing errors, or they may be extreme values but considered normal in the population we are studying. In the case our outliers are typing errors we need to decide if we are going to eliminate them or replace them with another value. In the case a feature's outliers are considered normal and part of the population, it may be better if we keep them because it will give important information to ur model. 
+In statistics, an outlier is an observation point that is distant from other observations. In data, it means that our dataframe feature has some extreme values which we need to analyse further. Those extreme values may be typing errors, or they may be extreme values but considered normal in the population we are studying. In the case our outliers are typing errors we need to decide if we are going to eliminate them or replace them with another value. In the case a feature's outliers are considered normal and part of the population, it may be better if we keep them because it will give important information to our model. 
 
 How important we consider the feature for our model will influence in our decision about what to do with outliers.
 
-Pandas describe() method is used to view some basic statistical details like percentile, mean, std etc. of a data frame or a series of numeric values. In the case we would like to see the object type features using describe(), this should be entered as dataframe.describe(include='O') and it will show us the most frequent value and how many times it appears.
+Pandas describe() method is used to view some basic statistical details like percentile, mean, std, etc. of a data frame or a series of numeric values. In the case we would like to see the object type features using describe(), this should be entered as 'dataframe.describe(include='O')' and it will show us the most frequent value and how many times it appears.
 
 Syntax: 
 
@@ -779,17 +845,17 @@ plt.ylabel('Fare')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_42_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_48_1.png)
     
 
 
 Observations: 
 
--It looks like the ticket fare of 512 is not very common. We should establish some upper and lower bounds to determine whether a data point should be considered or not an outlier. There are a couple of ways to determine this and we will learn about them in the data cleaning process.
+-It looks like the ticket fare of 512 is not very common. We should establish some upper and lower bounds to determine whether a data point should be considered or not an outlier. There are a couple of ways to determine this and we will learn about them in the data cleaning process, on how to deal with outliers.
 
 ### Finding missing or null values
 
-Most of the machine learning algorithms are not able to handle missing values. Having some missing values is normal. What we want to identify at this stage are big holes in the dataset with features that have a lot of missing values.
+Most of the machine learning algorithms are not able to handle missing values. Having some missing values is normal and we should decide if eliminating them or replacing them with other values. What we want to identify at this stage are big holes in the dataset with features that have a lot of missing values.
 
 We begin by separating our features into numerical and categorical columns. We do this because the method to handle missing values, later, will be different for these two data types.
 
@@ -868,6 +934,23 @@ train_data[num_vars].isnull().sum().sort_values(ascending=False)
 
 
 
+
+```python
+train_data[cat_vars].isnull().sum().sort_values(ascending=False)
+```
+
+
+
+
+    Cabin       687
+    Embarked      2
+    Name          0
+    Sex           0
+    Ticket        0
+    dtype: int64
+
+
+
 Finally , we can divide that result by the length of our dataframe (the number of rows) in order to get the percentage of missing values in each column. Missing values are usually represented in the form of Nan, null or None in the dataset.
 
 
@@ -888,6 +971,43 @@ train_data[num_vars].isnull().sum().sort_values(ascending=False)/len(train_data)
     dtype: float64
 
 
+
+
+```python
+train_data[cat_vars].isnull().sum().sort_values(ascending=False)/len(train_data)
+```
+
+
+
+
+    Cabin       0.771044
+    Embarked    0.002245
+    Name        0.000000
+    Sex         0.000000
+    Ticket      0.000000
+    dtype: float64
+
+
+
+### Eliminating irrelevant data
+
+The following columns will not be useful for prediction, so we will eliminate them, in train and test datasets.
+
+
+```python
+#Drop ireelevant columns in train data
+
+drop_cols = ['PassengerId','Cabin', 'Ticket', 'Name']
+train_data.drop(drop_cols, axis = 1, inplace = True)
+```
+
+
+```python
+#Drop ireelevant columns in test data
+
+drop_cols = ['PassengerId','Cabin', 'Ticket', 'Name']
+test_data.drop(drop_cols, axis = 1, inplace = True)
+```
 
 ### Eliminating duplicated data
 
