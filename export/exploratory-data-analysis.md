@@ -542,14 +542,14 @@ Observations: From the above plotted PDF of Fare we can see that a majority of p
 ```python
 # View if there is a linear relation between continuous numerical variable Fare & target variable Survived.
 
-sns.regplot(x = "Age", y = "Survived", data = train_data)
+sns.regplot(x = "Fare", y = "Survived", data = train_data)
 plt.ylim(0,)
 ```
 
 
 
 
-    (0.0, 1.05)
+    (0.0, 2.1616921754597285)
 
 
 
@@ -562,6 +562,53 @@ plt.ylim(0,)
 Observations: 
 
 Yes, there is a positive linear relation between 'Fare' and 'Survived' feature which means that people who paid a more expensive fare had more probabilities to survive (Survive = 1).
+
+### Eliminating duplicated data
+
+Duplicates are entries that represent the same sample point multiple times. For example, if a measurement or record was registered twice by two different people. Detecting such duplicates is not always easy, as each dataset might have a unique identifier (e.g. an index number or an ID that is unique to each new sample). If we are not sure yet about which is the column that identifies each unique sample, we might want to ignore them first. And once we are aware about the number of duplicates in our dataset, we can simply drop them with drop_duplicates().
+
+In the case of our dataset, it is not difficult to find that unique identifier column because it's column name is very clear: PassengerId.
+
+
+```python
+n_duplicates = train_data['PassengerId'].duplicated().sum()
+
+print(f'It seems that there are {n_duplicates} duplicated passenger according to the PassengerId feature')
+```
+
+    It seems that there are 0 duplicated passenger according to the PassengerId feature
+
+
+### Eliminating irrelevant data
+
+The following columns will not be useful for prediction, so we will eliminate them, in train and test datasets.
+
+
+```python
+#Drop ireelevant columns in train data
+
+drop_cols = ['PassengerId','Cabin', 'Ticket', 'Name']
+train_data.drop(drop_cols, axis = 1, inplace = True)
+```
+
+
+```python
+#Drop same ireelevant columns in test data
+
+test_data.drop(drop_cols, axis = 1, inplace = True)
+```
+
+**Pandas drop_duplicates() Function Syntax:**
+
+DataFrame.drop_duplicates(subset=None, keep=’first’, inplace=False)
+
+**Pandas drop_duplicates() Function Parameters:**
+
+subset: Subset takes a column or list of column label for identifying duplicate rows. By default, all the columns are used to find the duplicate rows.
+
+keep: allowed values are {‘first’, ‘last’, False}, default ‘first’. If ‘first’, duplicate rows except the first one is deleted. If ‘last’, duplicate rows except the last one is deleted. If False, all the duplicate rows are deleted.
+
+inplace: if True, the source DataFrame itself is changed. By default, source DataFrame remains unchanged and a new DataFrame instance is returned.
 
 ### Plotting different features against one other using heatmaps
 
@@ -585,7 +632,7 @@ sns.heatmap(train_data.corr(), annot=True, cmap='viridis')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_41_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_47_1.png)
     
 
 
@@ -593,7 +640,9 @@ Observations:
 
 Here you can infer that there is a strong negative relation between Fare and PClass. This is totally understandable because if a passenger instead of buying a ticket in 1st class (PClass = 1), decided to buy a ticket in 3rd class (PClass = 3), the ticket fare would certainly decrease.
 
-There is also a negative relation between the passenger class (pclass) and the age of the passenger. That means that 3rd class (Pclass = 3) had younger passengers that the 1st class (Pclass = 1).
+There is also a negative relation between the passenger class (pclass) and the age of the passenger. That means that 3rd class (Pclass = 3) had younger passengers than the 1st class (Pclass = 1).
+
+Also, we can see that Pclass is very related to the target variable 'Survived'. So the better passenger class, more probabilities to survive.
 
 ### Detecting outliers
 
@@ -645,7 +694,6 @@ train_data.describe()
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>PassengerId</th>
       <th>Survived</th>
       <th>Pclass</th>
       <th>Age</th>
@@ -659,7 +707,6 @@ train_data.describe()
       <th>count</th>
       <td>891.000000</td>
       <td>891.000000</td>
-      <td>891.000000</td>
       <td>714.000000</td>
       <td>891.000000</td>
       <td>891.000000</td>
@@ -667,7 +714,6 @@ train_data.describe()
     </tr>
     <tr>
       <th>mean</th>
-      <td>446.000000</td>
       <td>0.383838</td>
       <td>2.308642</td>
       <td>29.699118</td>
@@ -677,7 +723,6 @@ train_data.describe()
     </tr>
     <tr>
       <th>std</th>
-      <td>257.353842</td>
       <td>0.486592</td>
       <td>0.836071</td>
       <td>14.526497</td>
@@ -687,7 +732,6 @@ train_data.describe()
     </tr>
     <tr>
       <th>min</th>
-      <td>1.000000</td>
       <td>0.000000</td>
       <td>1.000000</td>
       <td>0.420000</td>
@@ -697,7 +741,6 @@ train_data.describe()
     </tr>
     <tr>
       <th>25%</th>
-      <td>223.500000</td>
       <td>0.000000</td>
       <td>2.000000</td>
       <td>20.125000</td>
@@ -707,7 +750,6 @@ train_data.describe()
     </tr>
     <tr>
       <th>50%</th>
-      <td>446.000000</td>
       <td>0.000000</td>
       <td>3.000000</td>
       <td>28.000000</td>
@@ -717,7 +759,6 @@ train_data.describe()
     </tr>
     <tr>
       <th>75%</th>
-      <td>668.500000</td>
       <td>1.000000</td>
       <td>3.000000</td>
       <td>38.000000</td>
@@ -727,7 +768,6 @@ train_data.describe()
     </tr>
     <tr>
       <th>max</th>
-      <td>891.000000</td>
       <td>1.000000</td>
       <td>3.000000</td>
       <td>80.000000</td>
@@ -769,10 +809,7 @@ train_data.describe(include=['O'])
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Name</th>
       <th>Sex</th>
-      <th>Ticket</th>
-      <th>Cabin</th>
       <th>Embarked</th>
     </tr>
   </thead>
@@ -780,33 +817,21 @@ train_data.describe(include=['O'])
     <tr>
       <th>count</th>
       <td>891</td>
-      <td>891</td>
-      <td>891</td>
-      <td>204</td>
       <td>889</td>
     </tr>
     <tr>
       <th>unique</th>
-      <td>891</td>
       <td>2</td>
-      <td>681</td>
-      <td>147</td>
       <td>3</td>
     </tr>
     <tr>
       <th>top</th>
-      <td>Braund, Mr. Owen Harris</td>
       <td>male</td>
-      <td>347082</td>
-      <td>B96 B98</td>
       <td>S</td>
     </tr>
     <tr>
       <th>freq</th>
-      <td>1</td>
       <td>577</td>
-      <td>7</td>
-      <td>4</td>
       <td>644</td>
     </tr>
   </tbody>
@@ -845,7 +870,7 @@ plt.ylabel('Fare')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_48_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_54_1.png)
     
 
 
@@ -870,8 +895,8 @@ print("Numerical variables:", num_vars)
 print("Categorical variables:", cat_vars)
 ```
 
-    Numerical variables: Index(['PassengerId', 'Survived', 'Pclass', 'Age', 'SibSp', 'Parch', 'Fare'], dtype='object')
-    Categorical variables: Index(['Name', 'Sex', 'Ticket', 'Cabin', 'Embarked'], dtype='object')
+    Numerical variables: Index(['Survived', 'Pclass', 'Age', 'SibSp', 'Parch', 'Fare'], dtype='object')
+    Categorical variables: Index(['Sex', 'Embarked'], dtype='object')
 
 
 We will use the pandas “isnull()” function to find out all the fields which have missing values. This will return True if a field has missing values and false if the field does not have missing values. 
@@ -885,13 +910,12 @@ train_data[num_vars].isnull().sum()
 
 
 
-    PassengerId      0
-    Survived         0
-    Pclass           0
-    Age            177
-    SibSp            0
-    Parch            0
-    Fare             0
+    Survived      0
+    Pclass        0
+    Age         177
+    SibSp         0
+    Parch         0
+    Fare          0
     dtype: int64
 
 
@@ -904,11 +928,8 @@ train_data[cat_vars].isnull().sum()
 
 
 
-    Name          0
-    Sex           0
-    Ticket        0
-    Cabin       687
-    Embarked      2
+    Sex         0
+    Embarked    2
     dtype: int64
 
 
@@ -923,13 +944,12 @@ train_data[num_vars].isnull().sum().sort_values(ascending=False)
 
 
 
-    Age            177
-    PassengerId      0
-    Survived         0
-    Pclass           0
-    SibSp            0
-    Parch            0
-    Fare             0
+    Age         177
+    Survived      0
+    Pclass        0
+    SibSp         0
+    Parch         0
+    Fare          0
     dtype: int64
 
 
@@ -942,11 +962,8 @@ train_data[cat_vars].isnull().sum().sort_values(ascending=False)
 
 
 
-    Cabin       687
-    Embarked      2
-    Name          0
-    Sex           0
-    Ticket        0
+    Embarked    2
+    Sex         0
     dtype: int64
 
 
@@ -961,13 +978,12 @@ train_data[num_vars].isnull().sum().sort_values(ascending=False)/len(train_data)
 
 
 
-    Age            0.198653
-    PassengerId    0.000000
-    Survived       0.000000
-    Pclass         0.000000
-    SibSp          0.000000
-    Parch          0.000000
-    Fare           0.000000
+    Age         0.198653
+    Survived    0.000000
+    Pclass      0.000000
+    SibSp       0.000000
+    Parch       0.000000
+    Fare        0.000000
     dtype: float64
 
 
@@ -980,62 +996,11 @@ train_data[cat_vars].isnull().sum().sort_values(ascending=False)/len(train_data)
 
 
 
-    Cabin       0.771044
     Embarked    0.002245
-    Name        0.000000
     Sex         0.000000
-    Ticket      0.000000
     dtype: float64
 
 
-
-### Eliminating irrelevant data
-
-The following columns will not be useful for prediction, so we will eliminate them, in train and test datasets.
-
-
-```python
-#Drop ireelevant columns in train data
-
-drop_cols = ['PassengerId','Cabin', 'Ticket', 'Name']
-train_data.drop(drop_cols, axis = 1, inplace = True)
-```
-
-
-```python
-#Drop ireelevant columns in test data
-
-drop_cols = ['PassengerId','Cabin', 'Ticket', 'Name']
-test_data.drop(drop_cols, axis = 1, inplace = True)
-```
-
-### Eliminating duplicated data
-
-Duplicates are entries that represent the same sample point multiple times. For example, if a measurement or record was registered twice by two different people. Detecting such duplicates is not always easy, as each dataset might have a unique identifier (e.g. an index number or an ID that is unique to each new sample). If we are not sure yet about which is the column that identifies each unique sample, we might want to ignore them first. And once we are aware about the number of duplicates in our dataset, we can simply drop them with drop_duplicates().
-
-In the case of our dataset, it is not difficult to find that unique identifier column because it's column name is very clear: PassengerId.
-
-
-```python
-n_duplicates = train_data['PassengerId'].duplicated().sum()
-
-print(f'It seems that there are {n_duplicates} duplicated passenger according to the PassengerId feature')
-```
-
-    It seems that there are 0 duplicated passenger according to the PassengerId feature
-
-
-**Pandas drop_duplicates() Function Syntax:**
-
-DataFrame.drop_duplicates(subset=None, keep=’first’, inplace=False)
-
-**Pandas drop_duplicates() Function Parameters:**
-
-subset: Subset takes a column or list of column label for identifying duplicate rows. By default, all the columns are used to find the duplicate rows.
-
-keep: allowed values are {‘first’, ‘last’, False}, default ‘first’. If ‘first’, duplicate rows except the first one is deleted. If ‘last’, duplicate rows except the last one is deleted. If False, all the duplicate rows are deleted.
-
-inplace: if True, the source DataFrame itself is changed. By default, source DataFrame remains unchanged and a new DataFrame instance is returned.
 
 Source:
 

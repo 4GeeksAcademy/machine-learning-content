@@ -90,7 +90,7 @@ systematic_samples = normal_dist[normal_dist.index % 2000 == 0]
 # We have 8 classrooms so that makes a total of 8 samples
 # This is an example code. There is no real dataset.
 
-df = pd.read_csv('../assets/toy_dataset.csv')
+df = pd.read_csv('https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/toy_dataset.csv')
 
 strat_samples = []
 
@@ -401,7 +401,7 @@ Let's try executing the following code example:
 import pandas as pd
 from scipy import stats
 
-df = pd.read_csv("../assets/blood_pressure.csv")
+df = pd.read_csv('https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/blood_pressure.csv')
 
 df[['bp_before','bp_after']].describe()
 ttest,pval = stats.ttest_rel(df['bp_before'], df['bp_after'])
@@ -430,7 +430,7 @@ Code example: there are 3 different category of plant and their weight and need 
 
 
 ```python
-df_anova = pd.read_csv('../assets/PlantGrowth.csv')
+df_anova = pd.read_csv('https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/PlantGrowth.csv')
 df_anova = df_anova[['weight','group']]
 grps = pd.unique(df_anova.group.values)
 d_data = {grp:df_anova['weight'][df_anova.group == grp] for grp in grps}
@@ -578,7 +578,7 @@ Code example: In an election survey, voters might be classified by gender (male 
 
 
 ```python
-df_chi = pd.read_csv('../assets/chi-test.csv')
+df_chi = pd.read_csv('https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/chi-test.csv')
 contingency_table=pd.crosstab(df_chi["Gender"],df_chi["Like Shopping?"])
 print('contingency_table :-\n',contingency_table)
 
@@ -722,8 +722,7 @@ The central limit theorem has important implications in applied machine learning
 
 Covariance is a measure of how much two random variables vary together. If two variables are independent, their covariance is 0. However, a covariance of 0 does not imply that the variables are independent.
 
-
-```python
+```py
 #Code to get the covariance between two variables.
 
 df[['Feature1', 'Feature2']].cov()
