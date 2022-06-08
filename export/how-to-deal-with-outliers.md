@@ -67,6 +67,15 @@ What to do when we want to include outliers but we dont want them to mislead our
 
 We can use bootstrapping techniques, models taht are robust and not sensitive to outliers.
 
+In the case of the Titanic dataset, we are only going to treat the Fare column which had outliers. The way we will determine outliers will be by establishing upper and lower bounds with the IQR.
+
+
+
+
+```python
+
+```
+
 Source:
 
 https://www.kdnuggets.com/2017/01/3-methods-deal-outliers.html?msclkid=69e30c98cf9111ecb308f37782fbdee6

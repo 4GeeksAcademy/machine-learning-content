@@ -642,7 +642,32 @@ Here you can infer that there is a strong negative relation between Fare and PCl
 
 There is also a negative relation between the passenger class (pclass) and the age of the passenger. That means that 3rd class (Pclass = 3) had younger passengers than the 1st class (Pclass = 1).
 
-Also, we can see that Pclass is very related to the target variable 'Survived'. So the better passenger class, more probabilities to survive.
+Also, we can see that Pclass is very related to the target variable 'Survived'. So the better passenger class, more probabilities to survive. We can confirm that by using an specific graph.
+
+
+```python
+#Checking correlation between Pclass and Fare:
+plt.figure(figsize = (8, 4))
+sns.boxplot(y = train_data.Pclass, x = train_data.Fare, orient = 'h', showfliers = False, palette = 'gist_heat')
+plt.ylabel('Passenger Class')
+plt.yticks([0,1,2], ['First Class','Second Class', 'Third Class'])
+plt.show()
+```
+
+
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    /workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb Cell 50' in <cell line: 2>()
+          <a href='vscode-notebook-cell://4geeksacade-machinelear-fa4rj5l90vy.ws-us47.gitpod.io/workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb#ch0000069vscode-remote?line=0'>1</a> #Checking correlation between Pclass and Fare:
+    ----> <a href='vscode-notebook-cell://4geeksacade-machinelear-fa4rj5l90vy.ws-us47.gitpod.io/workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb#ch0000069vscode-remote?line=1'>2</a> plt.figure(figsize = (8, 4))
+          <a href='vscode-notebook-cell://4geeksacade-machinelear-fa4rj5l90vy.ws-us47.gitpod.io/workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb#ch0000069vscode-remote?line=2'>3</a> sns.boxplot(y = train_data.Pclass, x = train_data.Fare, orient = 'h', showfliers = False, palette = 'gist_heat')
+          <a href='vscode-notebook-cell://4geeksacade-machinelear-fa4rj5l90vy.ws-us47.gitpod.io/workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb#ch0000069vscode-remote?line=3'>4</a> plt.ylabel('Passenger Class')
+
+
+    NameError: name 'plt' is not defined
+
 
 ### Detecting outliers
 
@@ -870,7 +895,7 @@ plt.ylabel('Fare')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_54_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_55_1.png)
     
 
 
