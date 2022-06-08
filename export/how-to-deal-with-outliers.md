@@ -32,7 +32,7 @@ Not all outliers are bad and some should not be deleted. In fact, outliers can b
 
 Should we remove outliers?
 
-It depends on what  causes the outliers.
+It depends on what causes the outliers.
 
 Causes for outliers:
 
@@ -57,24 +57,22 @@ Sometimes it’s best to keep outliers in your data. They can capture valuable i
 
 If the outlier in question is:
 
-A measurement error or data entry error, correct the error if possible. If you can’t fix it, remove that observation because you know it’s incorrect.
-Not a part of the population you are studying (i.e., unusual properties or conditions), you can legitimately remove the outlier.
-A natural part of the population you are studying, you should not remove it.
+A measurement error or data entry error, correct the error if possible. If you can’t fix it, remove that observation because you know it’s incorrect. 
+
+If the outliers are not a part of the population you are studying (i.e., unusual properties or conditions), you can legitimately remove the outlier. If the feature has also null values, it is an option to replace the outlier values with null values so that they can be trated together with the null values.
+If the outliers are a natural part of the population you are studying, you should not remove them.
 
 When you decide to remove outliers, document the excluded data points and explain your reasoning. You must be able to attribute a specific cause for removing outliers. Another approach is to perform the analysis with and without these observations and discuss the differences. Comparing results in this manner is particularly useful when you’re unsure about removing an outlier and when there is substantial disagreement within a group over this question.
 
 What to do when we want to include outliers but we dont want them to mislead our results?
 
-We can use bootstrapping techniques, models taht are robust and not sensitive to outliers.
+We can use bootstrapping techniques, models that are robust and not sensitive to outliers.
 
-In the case of the Titanic dataset, we are only going to treat the Fare column which had outliers. The way we will determine outliers will be by establishing upper and lower bounds with the IQR.
-
-
+In the case of the Titanic dataset, we are only going to treat the Fare column which had outliers. 
 
 
-```python
 
-```
+
 
 Source:
 

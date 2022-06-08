@@ -43,8 +43,8 @@ The data is stored as a comma-separated values, or csv file, where each row is s
 ```python
 #Reading the train and test data and assign to a variable
 
-train_data = pd.read_csv("../assets/titanic_train.csv")
-test_data = pd.read_csv("../assets/titanic_test.csv")
+train_data = pd.read_csv("https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_train.csv")
+test_data = pd.read_csv("https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_test.csv")
 ```
 
 ### Finding dimensions, shape, size of the dataframe using Pandas
@@ -417,6 +417,11 @@ Observations: As our target variable is supposed to classify passengers in 1 or 
 def countplot_features(feature):
     plot=sns.countplot(x=feature,data=train_data)
     plt.show()
+
+def countplot_targetvsfeature(feature,y):
+    fig = plt.figure(figsize=(15,10))
+    plot=sns.countplot(x=feature,data=train_data,hue=y)
+    plt.show()    
 ```
 
 
@@ -427,6 +432,18 @@ countplot_features('Sex')
 
     
 ![png](exploratory-data-analysis_files/exploratory-data-analysis_25_0.png)
+    
+
+
+
+```python
+countplot_targetvsfeature('Sex','Survived')
+
+```
+
+
+    
+![png](exploratory-data-analysis_files/exploratory-data-analysis_26_0.png)
     
 
 
@@ -441,7 +458,7 @@ countplot_features('Embarked')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_27_0.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_28_0.png)
     
 
 
@@ -456,7 +473,7 @@ countplot_features('Pclass')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_29_0.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_30_0.png)
     
 
 
@@ -484,7 +501,7 @@ sns.distplot(train_data['Age'])
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_32_2.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_33_2.png)
     
 
 
@@ -505,7 +522,7 @@ plt.ylim(0,)
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_33_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_34_1.png)
     
 
 
@@ -532,7 +549,7 @@ sns.distplot(train_data['Fare'])
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_35_2.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_36_2.png)
     
 
 
@@ -555,7 +572,7 @@ plt.ylim(0,)
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_37_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_38_1.png)
     
 
 
@@ -632,7 +649,7 @@ sns.heatmap(train_data.corr(), annot=True, cmap='viridis')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_47_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_48_1.png)
     
 
 
@@ -642,7 +659,7 @@ Here you can infer that there is a strong negative relation between Fare and PCl
 
 There is also a negative relation between the passenger class (pclass) and the age of the passenger. That means that 3rd class (Pclass = 3) had younger passengers than the 1st class (Pclass = 1).
 
-Also, we can see that Pclass is very related to the target variable 'Survived'. So the better passenger class, more probabilities to survive. We can confirm that by using an specific graph.
+Also, we can see that Pclass is very related to the target variable 'Survived'. So the better passenger class, more probabilities to survive. We can confirm this relationship with the following graph.
 
 
 ```python
@@ -655,19 +672,12 @@ plt.show()
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    /workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb Cell 50' in <cell line: 2>()
-          <a href='vscode-notebook-cell://4geeksacade-machinelear-fa4rj5l90vy.ws-us47.gitpod.io/workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb#ch0000069vscode-remote?line=0'>1</a> #Checking correlation between Pclass and Fare:
-    ----> <a href='vscode-notebook-cell://4geeksacade-machinelear-fa4rj5l90vy.ws-us47.gitpod.io/workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb#ch0000069vscode-remote?line=1'>2</a> plt.figure(figsize = (8, 4))
-          <a href='vscode-notebook-cell://4geeksacade-machinelear-fa4rj5l90vy.ws-us47.gitpod.io/workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb#ch0000069vscode-remote?line=2'>3</a> sns.boxplot(y = train_data.Pclass, x = train_data.Fare, orient = 'h', showfliers = False, palette = 'gist_heat')
-          <a href='vscode-notebook-cell://4geeksacade-machinelear-fa4rj5l90vy.ws-us47.gitpod.io/workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb#ch0000069vscode-remote?line=3'>4</a> plt.ylabel('Passenger Class')
+    
+![png](exploratory-data-analysis_files/exploratory-data-analysis_50_0.png)
+    
 
 
-    NameError: name 'plt' is not defined
-
+>The parameter showfliers = False is ignoring the outliers. But if we do not establish that parameter, we can use boxplots to view outliers.
 
 ### Detecting outliers
 
@@ -871,7 +881,7 @@ In the numerical features, we can look at the min and max value for a especific 
 
 Once we suspect there are outliers, we can use a boxplot for that feature to have a better visualization of outliers.
 
-Observations: According to our statistics dataframe, everything seems normal except for the 'Fare' column which has a mean of 32.20 but its 50% percentile is 14, and its max value is 512. We could say 512 seems to be an outlier but it could be a typing error,but it is possible that the most expensive ticket had that price. It would be useful if we do some research and confirm that information.
+Observations: According to our statistics dataframe, everything seems normal except for the 'Fare' column which has a mean of 32.20 but its 50% percentile is 14, and its max value is 512. We could say 512 seems to be an outlier but it could be a typing error. It is also possible that the most expensive ticket had that price. It would be useful if we do some research and confirm that information.
 
 Let's see how to write the code for a boxplot in order to visualize outliers.
 A box plot shows the distribution of quantitative data in a way that facilitates comparisons between variables.The box shows the quartiles of the dataset while the whiskers extend to show the rest of the distribution.
@@ -895,7 +905,7 @@ plt.ylabel('Fare')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_55_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_57_1.png)
     
 
 
@@ -1026,6 +1036,144 @@ train_data[cat_vars].isnull().sum().sort_values(ascending=False)/len(train_data)
     dtype: float64
 
 
+
+# How to deal with outliers
+
+To learn about how to deal with outliers, read the information from the following link:
+
+https://github.com/4GeeksAcademy/machine-learning-content/blob/master/05-3d-data/how-to-deal-with-outliers.ipynb
+
+
+
+```python
+fare_stat = train_data['Fare'].describe()
+print(fare_stat)
+```
+
+    count    891.000000
+    mean      32.204208
+    std       49.693429
+    min        0.000000
+    25%        7.910400
+    50%       14.454200
+    75%       31.000000
+    max      512.329200
+    Name: Fare, dtype: float64
+
+
+
+```python
+IQR = fare_stat['75%']-fare_stat['25%']
+upper = fare_stat['75%'] + 1.5*IQR
+lower = fare_stat['25%'] - 1.5*IQR
+print('The upper & lower bounds for suspected outliers are {} and {}.'.format(upper,lower))
+```
+
+    The upper & lower bounds for suspected outliers are 65.6344 and -26.724.
+
+
+Based on the prices we saw in the boxplot the most extreme values are above 300. Let's see how many values represent that extreme value of 512 and drop them.
+
+
+```python
+train_data[train_data['Fare'] > 300]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+      <th>FareGroup</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>258</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>512.3292</td>
+      <td>C</td>
+      <td>HighFare</td>
+    </tr>
+    <tr>
+      <th>679</th>
+      <td>1</td>
+      <td>1</td>
+      <td>male</td>
+      <td>36.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>512.3292</td>
+      <td>C</td>
+      <td>HighFare</td>
+    </tr>
+    <tr>
+      <th>737</th>
+      <td>1</td>
+      <td>1</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>512.3292</td>
+      <td>C</td>
+      <td>HighFare</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+train_data.drop(train_data[(train_data['Fare'] > 300)].index, inplace=True)
+```
+
+
+```python
+train_data.shape
+```
+
+
+
+
+    (888, 9)
+
+
+
+We confirm that we have eliminated those 3 outliers!
+
+# How to deal with missing values
 
 Source:
 
