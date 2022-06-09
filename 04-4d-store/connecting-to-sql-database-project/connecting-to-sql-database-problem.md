@@ -7,20 +7,20 @@ Go to this link : https://cloud.ibm.com/registration to create your IBM cloud ac
 
 Once logged in, you will notice a catalog option on the top left of the search bar. After going in the catalog make sure you choose DB2 and nothing else such as DB2 Warehouse, DB2 Hosted or SQL Query. Do not choose them. Only choose DB2.
 
-![DB2.jpg](../assets/DB2.jpg)
+![DB2.jpg](../../assets/DB2.jpg)
 
 In the Pricing Plans make sure to select the Lite plan as it is a free plan. Then click on CREATE at the bottom right of the page.
 
 Open your dashboard and you will see a Resource List option. After going in the Resource List, locate and expand the Services and click on your instance of DB2 database.
 
-![db2_resource_list.jpg](../assets/db2_resource_list.jpg)
+![db2_resource_list.jpg](../../assets/db2_resource_list.jpg)
 
 Click on the open console button. This will open a new tab on your web browser and then choose the 3rd option from the top left drop down menu.
 If you want to run SQL queries, you can do it from here.
 
-![db2_open_console.jpg](..assets/db2_open_console.jpg)
+![db2_open_console.jpg](../../assets/db2_open_console.jpg)
 
-![db2_run_sql.jpg](../assets/db2_run_sql.jpg)
+![db2_run_sql.jpg](../../assets/db2_run_sql.jpg)
 
 You will need to have your Service Credentials in order to access this database from Python. So, go back to the page where there was an OPEN CONSOLE button, and on the left, you will be able to see the Service Credentials option.
 

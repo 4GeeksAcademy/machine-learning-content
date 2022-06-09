@@ -2,8 +2,7 @@
 
 ### Importing flat files with Numpy
 
-
-```python
+```py
 import numpy as np
  
 # Assign filename to variable: file
@@ -39,8 +38,7 @@ There is also another function np.recfromcsv() that behaves similarly to np.genf
 
 We can easily import files of mixed data types as DataFrames using the pandas functions read_csv() and read_table().
 
-
-```python
+```py
 import pandas as pd
  
 # Assign the filename to a variable
@@ -55,8 +53,7 @@ print(df.head())
 
 It is also possible to retrieve the corresponding numpy array using the attribute values.
 
-
-```python
+```py
 # Build a numpy array from the DataFrame: data_array
 data_array = np.array(data.values)
 ```
@@ -64,8 +61,7 @@ data_array = np.array(data.values)
 Sometimes we will find purselves dealing with corrupted files thay may include comments, missing values, etc.
 We can load those corrupted files with Pandas as follows:
 
-
-```python
+```py
 # Import file: data
 data = pd.read_csv(file, sep='\t', comment='#', na_values='Nothing')
 ```
@@ -74,8 +70,7 @@ data = pd.read_csv(file, sep='\t', comment='#', na_values='Nothing')
 
 At some point, we will also have to deal with Excel files. Given an Excel file imported into a variable, you can retrieve a list of the sheet names using the attribute sheet_names.
 
-
-```python
+```py
 import pandas as pd
  
 # Assign spreadsheet to a file variable
@@ -87,12 +82,12 @@ excel_file = pd.ExcelFile(file)
 # Print sheet names
 print(excel_file.sheet_names)
 
+
 ```
 
 We will learn how to import any given sheet of our loaded .xslx file as a DataFrame. We'll be able to do so by specifying either the sheet's name or its index.
 
-
-```python
+```py
 # Load the sheet '2004' into a DataFrame df1
 df1 = excel_file.parse('2004')
 
@@ -108,8 +103,7 @@ print(df2.head())
 
 We have used the method parse(). However, we can add additional arguments like skiprows, names and parse_cols. These arguments skip rows, name the columns and designate which columns to parse, respectively. All these arguments can be assigned to lists containing the specific row numbers, strings and column numbers, as appropriate.
 
-
-```python
+```py
 # Parse the first column of the second sheet and rename the column: df2
 
 df2 = excel_file.parse(1, parse_cols=[0], skiprows=[0], names=['City'])
@@ -119,8 +113,7 @@ df2 = excel_file.parse(1, parse_cols=[0], skiprows=[0], names=['City'])
 
 We will learn how to import a SAS file as a DataFrame using SAS7BDAT and pandas.
 
-
-```python
+```py
 import pandas as pd
 import matplotlib.pyplot as plt
 from sas7bdat import SAS7BDAT
@@ -136,8 +129,7 @@ print(df_sas.head())
 
 How to import a Stata file as DataFrame using the pd.read_stata() function from pandas:
 
-
-```python
+```py
 import pandas as pd
 import matplotlib.pyplot as plt
  
@@ -150,8 +142,7 @@ pd.DataFrame.hist(df[['column1']])
 
 **HDF5 FILES**
 
-
-```python
+```py
 import numpy as np
 import h5py
  
@@ -165,8 +156,7 @@ data = h5py.File(file, 'r')
 
 In the case of matlab files we will use scipy.
 
-
-```python
+```py
 import scipy.io
  
 mat = scipy.io.loadmat('examplefile.mat')
