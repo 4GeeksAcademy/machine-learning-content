@@ -40,8 +40,8 @@ The data is stored as a comma-separated values, or csv file, where each row is s
 ```python
 #Reading the train and test data and assign to a variable
 
-train_data = pd.read_csv('https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_train.csv', delimiter=",")
-test_data = pd.read_csv('https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_test.csv', delimiter=",")
+train_data = pd.read_csv("https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_train.csv")
+test_data = pd.read_csv("https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_test.csv")
 ```
 
 
@@ -51,8 +51,8 @@ test_data = pd.read_csv('https://github.com/4GeeksAcademy/machine-learning-conte
 
     /workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb Cell 9' in <cell line: 3>()
           <a href='vscode-notebook-cell://4geeksacade-machinelear-1m68wgcb3om.ws-us47.gitpod.io/workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb#ch0000008vscode-remote?line=0'>1</a> #Reading the train and test data and assign to a variable
-    ----> <a href='vscode-notebook-cell://4geeksacade-machinelear-1m68wgcb3om.ws-us47.gitpod.io/workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb#ch0000008vscode-remote?line=2'>3</a> train_data = pd.read_csv('https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_train.csv', delimiter=",")
-          <a href='vscode-notebook-cell://4geeksacade-machinelear-1m68wgcb3om.ws-us47.gitpod.io/workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb#ch0000008vscode-remote?line=3'>4</a> test_data = pd.read_csv('https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_test.csv', delimiter=",")
+    ----> <a href='vscode-notebook-cell://4geeksacade-machinelear-1m68wgcb3om.ws-us47.gitpod.io/workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb#ch0000008vscode-remote?line=2'>3</a> train_data = pd.read_csv("https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_train.csv")
+          <a href='vscode-notebook-cell://4geeksacade-machinelear-1m68wgcb3om.ws-us47.gitpod.io/workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb#ch0000008vscode-remote?line=3'>4</a> test_data = pd.read_csv("https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_test.csv")
 
 
     File ~/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/util/_decorators.py:311, in deprecate_nonkeyword_arguments.<locals>.decorate.<locals>.wrapper(*args, **kwargs)
