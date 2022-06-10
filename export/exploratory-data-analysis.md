@@ -40,79 +40,9 @@ The data is stored as a comma-separated values, or csv file, where each row is s
 ```python
 #Reading the train and test data and assign to a variable
 
-train_data = pd.read_csv("https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_train.csv")
-test_data = pd.read_csv("https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_test.csv")
+train_data = pd.read_csv('../assets/titanic_train.csv')
+test_data = pd.read_csv('../assets/titanic_train.csv')
 ```
-
-
-    ---------------------------------------------------------------------------
-
-    ParserError                               Traceback (most recent call last)
-
-    /workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb Cell 9' in <cell line: 3>()
-          <a href='vscode-notebook-cell://4geeksacade-machinelear-1m68wgcb3om.ws-us47.gitpod.io/workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb#ch0000008vscode-remote?line=0'>1</a> #Reading the train and test data and assign to a variable
-    ----> <a href='vscode-notebook-cell://4geeksacade-machinelear-1m68wgcb3om.ws-us47.gitpod.io/workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb#ch0000008vscode-remote?line=2'>3</a> train_data = pd.read_csv("https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_train.csv")
-          <a href='vscode-notebook-cell://4geeksacade-machinelear-1m68wgcb3om.ws-us47.gitpod.io/workspace/machine-learning-content/05-3d-data/exploratory-data-analysis.ipynb#ch0000008vscode-remote?line=3'>4</a> test_data = pd.read_csv("https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_test.csv")
-
-
-    File ~/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/util/_decorators.py:311, in deprecate_nonkeyword_arguments.<locals>.decorate.<locals>.wrapper(*args, **kwargs)
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/util/_decorators.py?line=304'>305</a> if len(args) > num_allow_args:
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/util/_decorators.py?line=305'>306</a>     warnings.warn(
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/util/_decorators.py?line=306'>307</a>         msg.format(arguments=arguments),
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/util/_decorators.py?line=307'>308</a>         FutureWarning,
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/util/_decorators.py?line=308'>309</a>         stacklevel=stacklevel,
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/util/_decorators.py?line=309'>310</a>     )
-    --> <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/util/_decorators.py?line=310'>311</a> return func(*args, **kwargs)
-
-
-    File ~/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py:680, in read_csv(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py?line=664'>665</a> kwds_defaults = _refine_defaults_read(
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py?line=665'>666</a>     dialect,
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py?line=666'>667</a>     delimiter,
-       (...)
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py?line=675'>676</a>     defaults={"delimiter": ","},
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py?line=676'>677</a> )
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py?line=677'>678</a> kwds.update(kwds_defaults)
-    --> <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py?line=679'>680</a> return _read(filepath_or_buffer, kwds)
-
-
-    File ~/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py:581, in _read(filepath_or_buffer, kwds)
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py?line=577'>578</a>     return parser
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py?line=579'>580</a> with parser:
-    --> <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py?line=580'>581</a>     return parser.read(nrows)
-
-
-    File ~/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py:1254, in TextFileReader.read(self, nrows)
-       <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py?line=1251'>1252</a> nrows = validate_integer("nrows", nrows)
-       <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py?line=1252'>1253</a> try:
-    -> <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py?line=1253'>1254</a>     index, columns, col_dict = self._engine.read(nrows)
-       <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py?line=1254'>1255</a> except Exception:
-       <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/readers.py?line=1255'>1256</a>     self.close()
-
-
-    File ~/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/c_parser_wrapper.py:225, in CParserWrapper.read(self, nrows)
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/c_parser_wrapper.py?line=222'>223</a> try:
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/c_parser_wrapper.py?line=223'>224</a>     if self.low_memory:
-    --> <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/c_parser_wrapper.py?line=224'>225</a>         chunks = self._reader.read_low_memory(nrows)
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/c_parser_wrapper.py?line=225'>226</a>         # destructive to chunks
-        <a href='file:///home/gitpod/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/io/parsers/c_parser_wrapper.py?line=226'>227</a>         data = _concatenate_chunks(chunks)
-
-
-    File ~/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/_libs/parsers.pyx:805, in pandas._libs.parsers.TextReader.read_low_memory()
-
-
-    File ~/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/_libs/parsers.pyx:861, in pandas._libs.parsers.TextReader._read_rows()
-
-
-    File ~/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/_libs/parsers.pyx:847, in pandas._libs.parsers.TextReader._tokenize_rows()
-
-
-    File ~/.pyenv/versions/3.8.13/lib/python3.8/site-packages/pandas/_libs/parsers.pyx:1960, in pandas._libs.parsers.raise_parser_error()
-
-
-    ParserError: Error tokenizing data. C error: Expected 1 fields in line 28, saw 395
-
-
 
 ### Finding dimensions, shape, size of the dataframe using Pandas
 
@@ -1143,6 +1073,8 @@ Based on the prices we saw in the boxplot the most extreme values are above 300.
 
 
 ```python
+#visualizing data with fare above 300
+
 train_data[train_data['Fare'] > 300]
 ```
 
@@ -1175,7 +1107,6 @@ train_data[train_data['Fare'] > 300]
       <th>Parch</th>
       <th>Fare</th>
       <th>Embarked</th>
-      <th>FareGroup</th>
     </tr>
   </thead>
   <tbody>
@@ -1189,7 +1120,6 @@ train_data[train_data['Fare'] > 300]
       <td>0</td>
       <td>512.3292</td>
       <td>C</td>
-      <td>HighFare</td>
     </tr>
     <tr>
       <th>679</th>
@@ -1201,7 +1131,6 @@ train_data[train_data['Fare'] > 300]
       <td>1</td>
       <td>512.3292</td>
       <td>C</td>
-      <td>HighFare</td>
     </tr>
     <tr>
       <th>737</th>
@@ -1213,7 +1142,6 @@ train_data[train_data['Fare'] > 300]
       <td>0</td>
       <td>512.3292</td>
       <td>C</td>
-      <td>HighFare</td>
     </tr>
   </tbody>
 </table>
@@ -1223,6 +1151,8 @@ train_data[train_data['Fare'] > 300]
 
 
 ```python
+#Dropping data with fare above 300
+
 train_data.drop(train_data[(train_data['Fare'] > 300)].index, inplace=True)
 ```
 
@@ -1234,13 +1164,17 @@ train_data.shape
 
 
 
-    (888, 9)
+    (888, 8)
 
 
 
 We confirm that we have eliminated those 3 outliers!
 
 # How to deal with missing values
+
+To learn about techniques on how to deal with missing values, read the information from the following link:
+
+https://github.com/4GeeksAcademy/machine-learning-content/blob/master/05-3d-data/how-to-deal-with-missing-values.ipynb
 
 Source:
 
