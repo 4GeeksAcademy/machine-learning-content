@@ -27,7 +27,7 @@ PassengerId,Survived,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked
 26,1,3,"Asplund, Mrs. Carl Oscar (Selma Augusta Emilia Johansson)",female,38,1,5,347077,31.3875,,S
 27,0,3,"Emir, Mr. Farred Chehab",male,,0,0,2631,7.225,,C
 28,0,1,"Fortune, Mr. Charles Alexander",male,19,3,2,19950,263,C23 C25 C27,S
-29,1,3,"O Dwyer, Miss. Ellen Nellie",female,,0,0,330959,7.8792,,Q
+29,1,3,"O'Dwyer, Miss. Ellen ""Nellie""",female,,0,0,330959,7.8792,,Q
 30,0,3,"Todoroff, Mr. Lalio",male,,0,0,349216,7.8958,,S
 31,0,1,"Uruchurtu, Don. Manuel E",male,40,0,0,PC 17601,27.7208,,C
 32,1,1,"Spencer, Mrs. William Augustus (Marie Eugenie)",female,,1,0,PC 17569,146.5208,B78,C
