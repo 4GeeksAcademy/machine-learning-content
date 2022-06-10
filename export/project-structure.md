@@ -150,19 +150,19 @@ Each of these files can access the values of the items we pass to cookiecutter: 
 
 We can automatically generate the README.md by inserting the items project_name , description , open_source_license in it.
 
-![README.jpg](attachment:README.jpg)
+![README.jpg](../assets/README.jpg)
 
 **Set environment variables**
 
 We can automatically fill in the values of s3_bucket , aws_profile,port , host and api_key inside the .env file
 
-![environment_variables.jpg](attachment:environment_variables.jpg)
+![environment_variables.jpg](../assets/environment_variables.jpg)
 
 **Deduplicate code**
 
 If our Streamlit apps follow the same structure and all start with the name of the project as the title, there’s no need to repeat this code every time.
 
-![deduplicate_code.jpg](attachment:deduplicate_code.jpg)
+![deduplicate_code.jpg](../assets/deduplicate_code.jpg)
 
 Once done with the template’s code, we can push it to Github, and anyone who liked our structure can use it to start a project.   
 
@@ -173,15 +173,15 @@ Example: cookiecutter git@github.com:maria/streamlit-cookiecutter.git
 
 Once we execute this command, Cookiecutter will ask to set the values of the items defined in the cookiecutter.json file (notice that the default value of each item is put between brackets).
 
-![cookiecutter.jpg](attachment:cookiecutter.jpg)
+![cookiecutter.jpg](../assets/cookiecutter.jpg)
 
 Let's see how files have been populated:
 
-![README_filled.jpg](attachment:README_filled.jpg)
+![README_filled.jpg](../assets/README_filled.jpg)
 
-![env_file.jpg](attachment:env_file.jpg)
+![env_file.jpg](../assets/env_file.jpg)
 
-![app_file.jpg](attachment:app_file.jpg)
+![app_file.jpg](../assets/app_file.jpg)
 
 **Good practices to include in your projects**
 

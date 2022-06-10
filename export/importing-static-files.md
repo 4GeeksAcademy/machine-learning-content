@@ -1,5 +1,7 @@
 # Importing files into Python
 
+In this reading we are going to see code examples on how to load different type of files. It is not executable code. It can be used as a reference whenever you are loading a new type of file into your notebook.
+
 ### Importing flat files with Numpy
 
 ```py
@@ -58,7 +60,7 @@ It is also possible to retrieve the corresponding numpy array using the attribut
 data_array = np.array(data.values)
 ```
 
-Sometimes we will find purselves dealing with corrupted files thay may include comments, missing values, etc.
+Sometimes we will find ourselves dealing with corrupted files thay may include comments, missing values, etc.
 We can load those corrupted files with Pandas as follows:
 
 ```py
