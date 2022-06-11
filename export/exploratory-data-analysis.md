@@ -1149,6 +1149,10 @@ train_data[train_data['Fare'] > 300]
 
 
 
+Observations: The three individuals who payed a fare of 512.3292 survived. Should we drop them? Or can they bring valuable information to our model?
+
+We'll learn how to drop rows with values bigger than certain value. But you are welcome to investigate more about Titanic fares and decide to keep them or not.
+
 
 ```python
 #Dropping data with fare above 300
@@ -1158,6 +1162,8 @@ train_data.drop(train_data[(train_data['Fare'] > 300)].index, inplace=True)
 
 
 ```python
+#Confirm there are three rows less.
+
 train_data.shape
 ```
 
