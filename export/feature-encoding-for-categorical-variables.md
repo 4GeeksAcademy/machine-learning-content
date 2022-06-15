@@ -20,3 +20,7 @@ Each category is assigned a numeric value representing an order. For example: [s
 
 Each category is transformed into a new binary feature, with all records being marked 1 for True or 0 for False. For example: [Florida, Virginia, Massachussets] could be encoded to state_Florida = [1,0,0], state_Virginia = [0,1,0], state_Massachussets = [0,0,1].
 
+
+Source: 
+
+https://towardsdatascience.com/guide-to-encoding-categorical-features-using-scikit-learn-for-machine-learning-5048997a5c79#:~:text=Feature%20encoding%20is%20the%20process,not%20data%20in%20text%20form.

@@ -87,37 +87,51 @@ If it is a numerical feature, we can replace the missing values with the mean, b
 Example:
 
 ```py
-#Replacing a column null values with the column mean.
-updated_df['column_to_impute'] = updated_df['column_to_impute'].fillna(updated_df['column_to_impute'].mean())
+#Replacing a column null values with the column mean
+df['column_to_impute'] = df['column_to_impute'].fillna(df['column_to_impute'].mean())
+
+#Imputing null values using scikit learn SimpleImputer
+from sklearn.impute import SimpleImputer
+my_imputer = SimpleImputer(strategy = 'mean')
+new_df = my_imputer.fit_transform(df)
 ```
 
 -Median
 
-If it is a numerical feature and the feature has extreme values which we had decided to keep, then those outliers will pull the mean towards the extremes and it will not represent a central tendency anymore. In that case, we should consider using the median instead.
+If it is a numerical feature and the feature has extreme values, which we had decided to keep, then those outliers will pull the mean towards the extremes and it will not represent a central tendency anymore. In that case, we should consider using the median instead.
 
 Example:
 
 ```py
-#Imputing null values with the median.
+
+df.fillna(df.median())
+
+#Imputing null values using scikit learn SimpleImputer
+
 from sklearn.impute import SimpleImputer
 my_imputer = SimpleImputer(strategy = 'median')
-new_data = my_imputer.fit_transform(updated_df)
+new_df = my_imputer.fit_transform(df)
 ```
 
--Most frequent value for categorical features
+-Mode
 
-If our feature is a categorical value, filling the missing data with the most frequent value will be a good approach.
+Another technique is mode imputation in which the missing values are replaced with the mode value or most frequent value of the entire feature column. When the data is skewed, it is good to consider using mode values for replacing the missing values. For data points such as the Embarked field, you may consider using mode for replacing the values. Note that imputing missing data with mode values can be done with numerical and categorical data.
 
 Example:
 
+
 ```py
-#Imputing null values with the most frequent value
+
+df['column_to_impute'] = df['column_to_impute'].fillna(df['column_to_impute'].mode()[0])
+
+#Imputing null values with scikit learn SimpleImputer
+
 from sklearn.impute import SimpleImputer
 imputer = SimpleImputer(strategy='most_frequent')
 imputer.fit_transform(X)
 ```
 
--Create a new category for for categorical features
+-Create a new category for categorical features
 
 Impute the Value “missing”, which treats it as a Separate Category to replace null values in a categorical feature.
 
@@ -140,12 +154,14 @@ Example:
 df['column_to_impute'] = df['column_to_impute'].fillna(0)
 ```
 
+-Other imputation methods
+
 In a multivariate approach, more than one feature is taken into consideration. There are two ways to impute missing values considering the multivariate approach. Using KNNImputer or IterativeImputer classes. To explain them, we will do assumptions using the Titanic example. 
 
 ![null_imputation_example.jpg](../assets/null_imputation_example.jpg)
 
 
--Iterative imputation
+- Iterative imputation
 
 Suppose the feature ‘age’ is well correlated with the feature ‘Fare’ such that people with lower fares are also younger and people with higher fares are also older.
 
@@ -161,10 +177,10 @@ impute_it = IterativeImputer()
 impute_it.fit_transform(X)
 ```
 
-In this case, the null values in one column are filled by fitting a regression model using other columns in the dataset. For all rows, in which ‘Age’ is not missing sci-kit learn runs a regression model. It uses ‘Sib sp’ and ‘Fare’ as the features and ‘Age’ as the target. And then for all rows for which ‘Age’ is missing, it makes predictions for ‘Age’ by passing ‘Sib sp’ and ‘Fare’ to the training model. So it actually builds a regression model with two features and one target and then makes predictions on any places where there are missing values. And those predictions are the imputed values.
+In this case, the null values in one column are filled by fitting a regression model using other columns in the dataset. For all rows, in which ‘Age’ is not missing scikit learn runs a regression model. It uses ‘Sib sp’ and ‘Fare’ as the features and ‘Age’ as the target. And then for all rows for which ‘Age’ is missing, it makes predictions for ‘Age’ by passing ‘Sib sp’ and ‘Fare’ to the training model. So it actually builds a regression model with two features and one target and then makes predictions on any places where there are missing values. And those predictions are the imputed values.
 
 
--Nearest Neighbors Imputations (KNNImputer)
+- Nearest Neighbors Imputations (KNNImputer)
 
 Missing values are imputed using the k-Nearest Neighbors approach where a Euclidean distance is used to find the nearest neighbors.
 
@@ -177,12 +193,16 @@ impute_knn = KNNImputer(n_neighbors=2)
 impute_knn.fit_transform(X)
 ```
 
-Here, the n_neighbors=2. So scikit learn finds the two most similar rows measured by how close the ‘Sib sp’ and ‘Fare’ values are to the row which has missing values. In this case, the last row has a missing value. And the third row and the fifth row have the closest values for the other two features. So the average of the ‘Age’ feature from these two rows is taken as the imputed value.
+Let's look at the data again:
 
+![null_imputation_example.jpg](../assets/null_imputation_example.jpg)
 
+As the n_neighbors = 2, scikit learn finds the two most similar rows measured by how close the ‘Sib sp’ and ‘Fare’ values are to the row which has missing values. In this case, the last row has a missing value. And the third row and the fifth row have the closest values for the other two features. So the average of the ‘Age’ feature from these two rows is taken as the imputed value.
 
 Source: 
 
 https://www.analyticsvidhya.com/blog/2021/05/dealing-with-missing-values-in-python-a-complete-guide/
 
 https://www.analyticsvidhya.com/blog/2021/10/handling-missing-value/
+
+https://vitalflux.com/pandas-impute-missing-values-mean-median-mode/#:~:text=entire%20feature%20column.-,When%20the%20data%20is%20skewed%2C%20it%20is%20good%20to%20consider,with%20numerical%20and%20categorical%20data.

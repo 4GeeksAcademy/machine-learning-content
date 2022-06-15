@@ -1,6 +1,12 @@
 # Feature Engineering
 
-Feature engineering is an essential part of building any intelligent system. This is the reason Data Scientists and Machine learning engineers often spend 70% of their time in the data preparation phase before modeling. Specifically, we’ll learn how to modify dataset variables to extract meaningful information in order to capture as much insight as possible, leaving datasets and their variables ready to be used in machine learning algorithms.
+Feature engineering is an essential part of building any intelligent system. This is the reason Data Scientists and Machine learning engineers often spend 70% of their time in the data preparation phase before modeling. 
+
+![density_curve.jpg](../assets/ml_pipeline.jpg)
+
+*A standard machine learning pipeline (source: Practical Machine Learning with Python, Apress/Springer)*
+
+Specifically, we’ll learn how to modify dataset variables to extract meaningful information in order to capture as much insight as possible, leaving datasets and their variables ready to be used in machine learning algorithms.
 
 **What is a feature?**
 
@@ -35,9 +41,14 @@ Feature engineering is the process of using data domain knowledge to create and 
 Feature engineering can be very time consuming because it includes a number of processes, like:
 
 -Filling missing values within a variable
--Encoding categorical variables into numbers
--Variable transformation
+
 -Creating or extracting new features from the ones available in your dataset
+
+-Encoding categorical variables into numbers
+
+-Variable transformation
+
+
 
 **Why do we need to do feature engineering?**
 
@@ -47,9 +58,21 @@ Every time we start a new machine learning project, whether we receive a raw dat
 
 ### Feature Engineering on numeric data
 
-Even though numeric data can be directly fed into machine learning models, we still need to engineer features which are relevant to the problem 
+Even though numeric data can be directly fed into machine learning models, we still need to engineer features which are relevant to the problem, before building a model.
+
+A form of raw measures include features which represent frequencies, counts or occurrences of specific attributes. Let’s look at a sample of data from the millionsong dataset which depicts counts or frequencies of songs which have been heard by various users.
+
+
+
+
 
 ### Feature engineering on categorical data
+
+
+
+
+
+
 
 ### What are some naive feature engineering techniques that improve model efficacy?
 

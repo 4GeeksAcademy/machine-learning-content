@@ -41,7 +41,7 @@ The data is stored as a comma-separated values, or csv file, where each row is s
 #Reading the train and test data and assign to a variable
 
 train_data = pd.read_csv('../assets/titanic_train.csv')
-test_data = pd.read_csv('../assets/titanic_train.csv')
+test_data = pd.read_csv('../assets/titanic_test.csv')
 ```
 
 ### Finding dimensions, shape, size of the dataframe using Pandas
@@ -446,7 +446,7 @@ countplot_targetvsfeature('Sex','Survived')
 
 Observations: 
 
-Most of our data passengers were male.
+Most of our data passengers were male, but from male, most of them did not survive. On the other side, even though there were less female passengers, most of them survived.
 
 
 ```python
@@ -456,6 +456,17 @@ countplot_features('Embarked')
 
     
 ![png](exploratory-data-analysis_files/exploratory-data-analysis_28_0.png)
+    
+
+
+
+```python
+countplot_targetvsfeature('Embarked','Survived')
+```
+
+
+    
+![png](exploratory-data-analysis_files/exploratory-data-analysis_29_0.png)
     
 
 
@@ -470,11 +481,22 @@ countplot_features('Pclass')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_30_0.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_31_0.png)
     
 
 
-Observations: Most of the passengers were travelling in the third class.
+
+```python
+countplot_targetvsfeature('Pclass','Survived')
+```
+
+
+    
+![png](exploratory-data-analysis_files/exploratory-data-analysis_32_0.png)
+    
+
+
+Observations: Most of the passengers were travelling in the third class, but most of them did not survive.
 
 **Distribution Plots for Continuous variables**
 
@@ -498,7 +520,7 @@ sns.distplot(train_data['Age'])
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_33_2.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_35_2.png)
     
 
 
@@ -519,7 +541,7 @@ plt.ylim(0,)
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_34_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_36_1.png)
     
 
 
@@ -546,7 +568,7 @@ sns.distplot(train_data['Fare'])
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_36_2.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_38_2.png)
     
 
 
@@ -569,7 +591,7 @@ plt.ylim(0,)
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_38_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_40_1.png)
     
 
 
@@ -585,9 +607,19 @@ In the case of our dataset, it is not difficult to find that unique identifier c
 
 
 ```python
-n_duplicates = train_data['PassengerId'].duplicated().sum()
+train_duplicates = train_data['PassengerId'].duplicated().sum()
 
-print(f'It seems that there are {n_duplicates} duplicated passenger according to the PassengerId feature')
+print(f'It seems that there are {train_duplicates} duplicated passenger according to the PassengerId feature')
+```
+
+    It seems that there are 0 duplicated passenger according to the PassengerId feature
+
+
+
+```python
+test_duplicates = test_data['PassengerId'].duplicated().sum()
+
+print(f'It seems that there are {test_duplicates} duplicated passenger according to the PassengerId feature')
 ```
 
     It seems that there are 0 duplicated passenger according to the PassengerId feature
@@ -599,7 +631,7 @@ The following columns will not be useful for prediction, so we will eliminate th
 
 
 ```python
-#Drop ireelevant columns in train data
+#Drop irrelevant columns in train data
 
 drop_cols = ['PassengerId','Cabin', 'Ticket', 'Name']
 train_data.drop(drop_cols, axis = 1, inplace = True)
@@ -607,7 +639,7 @@ train_data.drop(drop_cols, axis = 1, inplace = True)
 
 
 ```python
-#Drop same ireelevant columns in test data
+#Drop same irrelevant columns in test data
 
 test_data.drop(drop_cols, axis = 1, inplace = True)
 ```
@@ -646,7 +678,7 @@ sns.heatmap(train_data.corr(), annot=True, cmap='viridis')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_48_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_51_1.png)
     
 
 
@@ -670,13 +702,173 @@ plt.show()
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_50_0.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_53_0.png)
     
 
 
 >The parameter showfliers = False is ignoring the outliers. But if we do not establish that parameter, we can use boxplots to view outliers.
 
-### Detecting outliers
+
+
+There are different ways of visualizing relationships:
+
+
+```python
+#Using seaborn.pairplot for a grid visualization of every relationship
+
+sns.pairplot(data=train_data)
+```
+
+
+
+
+    <seaborn.axisgrid.PairGrid at 0x7fb18df57a00>
+
+
+
+
+    
+![png](exploratory-data-analysis_files/exploratory-data-analysis_56_1.png)
+    
+
+
+
+```python
+#Using transpose
+
+train_data_corr = train_data.corr().transpose()
+train_data_corr
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Survived</th>
+      <td>1.000000</td>
+      <td>-0.334068</td>
+      <td>-0.079472</td>
+      <td>-0.033395</td>
+      <td>0.082157</td>
+      <td>0.261742</td>
+    </tr>
+    <tr>
+      <th>Pclass</th>
+      <td>-0.334068</td>
+      <td>1.000000</td>
+      <td>-0.368625</td>
+      <td>0.080937</td>
+      <td>0.018212</td>
+      <td>-0.604960</td>
+    </tr>
+    <tr>
+      <th>Age</th>
+      <td>-0.079472</td>
+      <td>-0.368625</td>
+      <td>1.000000</td>
+      <td>-0.307639</td>
+      <td>-0.189194</td>
+      <td>0.100396</td>
+    </tr>
+    <tr>
+      <th>SibSp</th>
+      <td>-0.033395</td>
+      <td>0.080937</td>
+      <td>-0.307639</td>
+      <td>1.000000</td>
+      <td>0.415141</td>
+      <td>0.211816</td>
+    </tr>
+    <tr>
+      <th>Parch</th>
+      <td>0.082157</td>
+      <td>0.018212</td>
+      <td>-0.189194</td>
+      <td>0.415141</td>
+      <td>1.000000</td>
+      <td>0.263910</td>
+    </tr>
+    <tr>
+      <th>Fare</th>
+      <td>0.261742</td>
+      <td>-0.604960</td>
+      <td>0.100396</td>
+      <td>0.211816</td>
+      <td>0.263910</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+# Using a different way of correlation matrix
+
+background_color = "#97CADB"
+
+fig = plt.figure(figsize=(10,10))
+gs = fig.add_gridspec(1,1)
+gs.update(wspace=0.3, hspace=0.15)
+ax0 = fig.add_subplot(gs[0,0])
+fig.patch.set_facecolor(background_color) 
+ax0.set_facecolor(background_color) 
+
+# train_data_corr = train_data[['Age', 'Fare', 'SibSp', 'Parch', 'Pclass','Survived']].corr().transpose()
+mask = np.triu(np.ones_like(train_data_corr))
+ax0.text(2,-0.1,"Correlation Matrix",fontsize=22, fontweight='bold', fontfamily='cursive', color="#000000")
+sns.heatmap(train_data_corr,mask=mask,fmt=".1f",annot=True)
+plt.show()
+```
+
+    findfont: Font family ['cursive'] not found. Falling back to DejaVu Sans.
+    findfont: Generic family 'cursive' not found because none of the following families were found: Apple Chancery, Textile, Zapf Chancery, Sand, Script MT, Felipa, Comic Neue, Comic Sans MS, cursive
+
+
+
+    
+![png](exploratory-data-analysis_files/exploratory-data-analysis_58_1.png)
+    
+
+
+# FEATURE ENGINEERING
+
+To read about what exactly are features, why should we do feature engineering click here: https://github.com/4GeeksAcademy/machine-learning-content/blob/master/05-3d-data/feature-engineering.ipynb
+
+The first process we will learn in our Titanic feature engineering will be how to find and deal with extreme values (outliers).
+
+### OUTLIERS
+
+**FINDING OUTLIERS**
 
 In statistics, an outlier is an observation point that is distant from other observations. In data, it means that our dataframe feature has some extreme values which we need to analyse further. Those extreme values may be typing errors, or they may be extreme values but considered normal in the population we are studying. In the case our outliers are typing errors we need to decide if we are going to eliminate them or replace them with another value. In the case a feature's outliers are considered normal and part of the population, it may be better if we keep them because it will give important information to our model. 
 
@@ -813,6 +1005,8 @@ train_data.describe()
 
 
 
+We can see that the 891 records contain data in each and every column left.
+
 
 ```python
 #Now, let's modify its parameters to be able to see some statistics on our categorical features.
@@ -872,7 +1066,7 @@ train_data.describe(include=['O'])
 
 
 
-**Why is this useful to find outliers?**
+**WHY IS THIS USEFUL TO FIND OUTLIERS?**
 
 In the numerical features, we can look at the min and max value for a especific feature, and compare it to its 25% and 75% percentile. We can also compare the mean to the 50% percentile and confirm if there is any extreme high or low value making my mean go up or down, much more than the 50% percentile.
 
@@ -902,7 +1096,7 @@ plt.ylabel('Fare')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_57_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_67_1.png)
     
 
 
@@ -910,7 +1104,153 @@ Observations:
 
 -It looks like the ticket fare of 512 is not very common. We should establish some upper and lower bounds to determine whether a data point should be considered or not an outlier. There are a couple of ways to determine this and we will learn about them in the data cleaning process, on how to deal with outliers.
 
-### Finding missing or null values
+**HOW TO DEAL WITH OUTLIERS**
+
+To learn about the types of outliers and different methods to deal with them, read the information from the following link:
+
+https://github.com/4GeeksAcademy/machine-learning-content/blob/master/05-3d-data/how-to-deal-with-outliers.ipynb
+
+
+We will apply one of those methods by defining upper and lower bounds. Let's see how is it implemented:
+
+
+```python
+fare_stat = train_data['Fare'].describe()
+print(fare_stat)
+```
+
+    count    891.000000
+    mean      32.204208
+    std       49.693429
+    min        0.000000
+    25%        7.910400
+    50%       14.454200
+    75%       31.000000
+    max      512.329200
+    Name: Fare, dtype: float64
+
+
+
+```python
+IQR = fare_stat['75%']-fare_stat['25%']
+upper = fare_stat['75%'] + 1.5*IQR
+lower = fare_stat['25%'] - 1.5*IQR
+print('The upper & lower bounds for suspected outliers are {} and {}.'.format(upper,lower))
+```
+
+    The upper & lower bounds for suspected outliers are 65.6344 and -26.724.
+
+
+Based on this results, we should drop Fare values above 65. However, our criteria is very important here, and based on the prices we saw in the boxplot the most extreme values are above 300. Let's see how many values represent that extreme value of 512 and drop them.
+
+
+```python
+#visualizing data with fare above 300
+
+train_data[train_data['Fare'] > 300]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>258</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>512.3292</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>679</th>
+      <td>1</td>
+      <td>1</td>
+      <td>male</td>
+      <td>36.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>512.3292</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>737</th>
+      <td>1</td>
+      <td>1</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>512.3292</td>
+      <td>C</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+Observations: The three individuals who payed a fare of '512.3292' did survive. Should we drop them? Or can they bring valuable information to our model?
+
+We'll learn how to drop rows with values bigger than certain value. But you are welcome to investigate more about Titanic fares and decide if keeping them or not.
+
+
+```python
+#Dropping data with fare above 300
+
+train_data.drop(train_data[(train_data['Fare'] > 300)].index, inplace=True)
+```
+
+
+```python
+#Confirm there are three rows less.
+
+train_data.shape
+```
+
+
+
+
+    (888, 8)
+
+
+
+We confirm that we have eliminated those 3 outliers!
+
+### MISSING VALUES
+
+**FINDING MISSING OR NULL VALUES**
 
 Most of the machine learning algorithms are not able to handle missing values. Having some missing values is normal and we should decide if eliminating them or replacing them with other values. What we want to identify at this stage are big holes in the dataset with features that have a lot of missing values.
 
@@ -1010,7 +1350,7 @@ train_data[num_vars].isnull().sum().sort_values(ascending=False)/len(train_data)
 
 
 
-    Age         0.198653
+    Age         0.199324
     Survived    0.000000
     Pclass      0.000000
     SibSp       0.000000
@@ -1028,159 +1368,142 @@ train_data[cat_vars].isnull().sum().sort_values(ascending=False)/len(train_data)
 
 
 
-    Embarked    0.002245
+    Embarked    0.002252
     Sex         0.000000
     dtype: float64
 
 
 
-# How to deal with outliers
-
-To learn about how to deal with outliers, read the information from the following link:
-
-https://github.com/4GeeksAcademy/machine-learning-content/blob/master/05-3d-data/how-to-deal-with-outliers.ipynb
-
-
 
 ```python
-fare_stat = train_data['Fare'].describe()
-print(fare_stat)
-```
+# How many null values should I deal with in the test data?
 
-    count    891.000000
-    mean      32.204208
-    std       49.693429
-    min        0.000000
-    25%        7.910400
-    50%       14.454200
-    75%       31.000000
-    max      512.329200
-    Name: Fare, dtype: float64
-
-
-
-```python
-IQR = fare_stat['75%']-fare_stat['25%']
-upper = fare_stat['75%'] + 1.5*IQR
-lower = fare_stat['25%'] - 1.5*IQR
-print('The upper & lower bounds for suspected outliers are {} and {}.'.format(upper,lower))
-```
-
-    The upper & lower bounds for suspected outliers are 65.6344 and -26.724.
-
-
-Based on the prices we saw in the boxplot the most extreme values are above 300. Let's see how many values represent that extreme value of 512 and drop them.
-
-
-```python
-#visualizing data with fare above 300
-
-train_data[train_data['Fare'] > 300]
+test_data.isnull().sum()
 ```
 
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Survived</th>
-      <th>Pclass</th>
-      <th>Sex</th>
-      <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
-      <th>Fare</th>
-      <th>Embarked</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>258</th>
-      <td>1</td>
-      <td>1</td>
-      <td>female</td>
-      <td>35.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>512.3292</td>
-      <td>C</td>
-    </tr>
-    <tr>
-      <th>679</th>
-      <td>1</td>
-      <td>1</td>
-      <td>male</td>
-      <td>36.0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>512.3292</td>
-      <td>C</td>
-    </tr>
-    <tr>
-      <th>737</th>
-      <td>1</td>
-      <td>1</td>
-      <td>male</td>
-      <td>35.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>512.3292</td>
-      <td>C</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+    Pclass       0
+    Sex          0
+    Age         86
+    SibSp        0
+    Parch        0
+    Fare         1
+    Embarked     0
+    dtype: int64
 
 
 
-Observations: The three individuals who payed a fare of 512.3292 survived. Should we drop them? Or can they bring valuable information to our model?
-
-We'll learn how to drop rows with values bigger than certain value. But you are welcome to investigate more about Titanic fares and decide to keep them or not.
-
-
-```python
-#Dropping data with fare above 300
-
-train_data.drop(train_data[(train_data['Fare'] > 300)].index, inplace=True)
-```
-
-
-```python
-#Confirm there are three rows less.
-
-train_data.shape
-```
-
-
-
-
-    (888, 8)
-
-
-
-We confirm that we have eliminated those 3 outliers!
-
-# How to deal with missing values
-
+**HOW TO DEAL WITH MISSING VALUES**
+ 
 To learn about techniques on how to deal with missing values, read the information from the following link:
 
 https://github.com/4GeeksAcademy/machine-learning-content/blob/master/05-3d-data/how-to-deal-with-missing-values.ipynb
+
+
+```python
+#### Handling Missing Values
+
+## Fill missing AGE with Median
+train_data['Age'].fillna(train_data['Age'].median(), inplace=True)
+
+## Fill missing EMBARKED with Mode
+train_data['Embarked'].fillna(train_data['Embarked'].mode()[0], inplace=True)
+```
+
+The notation '[0]' means that the thing before it (mode() in this case) is a collection, a list, an array, ..., and you are taking the first element.
+
+The mode() returns 2 values, first is mode value, second is count. So 'train_data['Embarked'].mode()[0]' means we get the mode value of 'train_data['Embarked']'.
+
+Let's verify there were no missing values left:
+
+
+```python
+train_data.isnull().sum()
+```
+
+
+
+
+    Survived    0
+    Pclass      0
+    Sex         0
+    Age         0
+    SibSp       0
+    Parch       0
+    Fare        0
+    Embarked    0
+    dtype: int64
+
+
+
+Now let's also handle the missing values in our test data:
+
+
+```python
+#### Handling Missing Values in test data
+
+## Fill missing AGE and FARE with Median
+
+test_data['Age'].fillna(test_data['Age'].median(), inplace=True)
+test_data['Fare'].fillna(test_data['Fare'].median(), inplace=True)
+```
+
+
+```python
+test_data.isnull().sum()
+```
+
+
+
+
+    Pclass      0
+    Sex         0
+    Age         0
+    SibSp       0
+    Parch       0
+    Fare        0
+    Embarked    0
+    dtype: int64
+
+
+
+### Creating new features from the ones available in our dataset
+
+As part of the feature engineering and before encoding our label variables, we will learn how to create new features based on the existing ones. Let's look how is our dataset so far by taking a look at the first 10 rows.
+
+
+```python
+train_data.head(10)
+```
+
+
+```python
+# We will create a new column to show how many family members of each passenger were in the Titanic.
+# We will calculate it based on the sum of SibSp (siblings and spouse) and Parch  (parents and children)
+```
+
+### FEATURE ENCODING FOR CATEGORICAL VARIABLES
+
+Feature encoding is the process of turning categorical data in a dataset into numerical data. It is essential that we perform feature encoding because most machine learning models can only interpret numerical data and not data in text form
+
+To read about the different types of feature encoding click here: https://github.com/4GeeksAcademy/machine-learning-content/blob/master/05-3d-data/feature-encoding-for-categorical-variables.ipynb
+
+Here we will apply specific numbers directly to our label features, but you are free to use Scikit learn.
+
+
+```python
+# Encoding the 'Sex' column
+train_data['Sex'] = train_data['Sex'].apply(lambda x: 1 if x == 'male' else 0)
+
+# Encoding the 'Embarked' column
+train_data['Embarked'] = train_data['Embarked'].map({'S' : 0, 'C': 1, 'Q': 2})
+```
+
+### FEATURE SCALING
+
+# FEATURE SELECTION
 
 Source:
 
