@@ -40,12 +40,11 @@ The data is stored as a comma-separated values, or csv file, where each row is s
 ```python
 #Reading the train and test data and assign to a variable
 
-train_data = pd.read_csv('../assets/titanic_train.csv')
-test_data = pd.read_csv('../assets/titanic_test.csv')
+train_data = pd.read_csv('assets/titanic_train.csv')
+test_data = pd.read_csv('assets/titanic_test.csv')
 ```
 
 ### Finding dimensions, shape, size of the dataframe using Pandas
-
 
 After reading the dataframes available, we will analyze their shape, size and the kind of data available.
 We will do this for both train and test dataset. It is important to also write observations at the end of each step. 
@@ -405,6 +404,19 @@ train_data['Survived'].value_counts()
 
 Observations: As our target variable is supposed to classify passengers in 1 or 0, whether they survive or not, we used a countplot to see if the data is balanced. We also used the method value_counts() to see exactly how many people survived(1) and how many did not survived(0) in our train_data. It is balanced and we know for a fact that the sinking ok Titanic resulted in the death of most of its passengers.
 
+**Using histograms to visualize all features**
+
+
+```python
+train_data.hist(bins=10,figsize=(9,7),grid=False);
+```
+
+
+    
+![png](exploratory-data-analysis_files/exploratory-data-analysis_24_0.png)
+    
+
+
 **Countplot for categorical variables**
 
 
@@ -428,7 +440,7 @@ countplot_features('Sex')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_25_0.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_27_0.png)
     
 
 
@@ -440,7 +452,7 @@ countplot_targetvsfeature('Sex','Survived')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_26_0.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_28_0.png)
     
 
 
@@ -455,7 +467,7 @@ countplot_features('Embarked')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_28_0.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_30_0.png)
     
 
 
@@ -466,7 +478,7 @@ countplot_targetvsfeature('Embarked','Survived')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_29_0.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_31_0.png)
     
 
 
@@ -481,7 +493,7 @@ countplot_features('Pclass')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_31_0.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_33_0.png)
     
 
 
@@ -492,11 +504,11 @@ countplot_targetvsfeature('Pclass','Survived')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_32_0.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_34_0.png)
     
 
 
-Observations: Most of the passengers were travelling in the third class, but most of them did not survive.
+Observations: Most of the passengers were travelling in the third class, but most of them did not survive. However, in the first class, most of the passengers survived.
 
 **Distribution Plots for Continuous variables**
 
@@ -520,7 +532,7 @@ sns.distplot(train_data['Age'])
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_35_2.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_37_2.png)
     
 
 
@@ -541,7 +553,7 @@ plt.ylim(0,)
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_36_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_38_1.png)
     
 
 
@@ -568,7 +580,7 @@ sns.distplot(train_data['Fare'])
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_38_2.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_40_2.png)
     
 
 
@@ -591,7 +603,7 @@ plt.ylim(0,)
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_40_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_42_1.png)
     
 
 
@@ -678,7 +690,7 @@ sns.heatmap(train_data.corr(), annot=True, cmap='viridis')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_51_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_53_1.png)
     
 
 
@@ -702,7 +714,7 @@ plt.show()
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_53_0.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_55_0.png)
     
 
 
@@ -722,14 +734,37 @@ sns.pairplot(data=train_data)
 
 
 
-    <seaborn.axisgrid.PairGrid at 0x7fb18df57a00>
+    <seaborn.axisgrid.PairGrid at 0x21db6e55db0>
 
 
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_56_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_58_1.png)
     
+
+
+
+```python
+#Correlation of features with target
+
+train_data.corr()["Survived"]
+```
+
+
+
+
+    Survived    1.000000
+    Pclass     -0.334068
+    Sex        -0.545899
+    Age        -0.067081
+    SibSp      -0.033395
+    Parch       0.082157
+    Fare        0.261742
+    Embarked    0.102964
+    fam_mbrs    0.018211
+    Name: Survived, dtype: float64
+
 
 
 
@@ -773,55 +808,55 @@ train_data_corr
     <tr>
       <th>Survived</th>
       <td>1.000000</td>
-      <td>-0.334068</td>
-      <td>-0.079472</td>
-      <td>-0.033395</td>
-      <td>0.082157</td>
-      <td>0.261742</td>
+      <td>-0.338481</td>
+      <td>-0.077221</td>
+      <td>-0.035322</td>
+      <td>0.081629</td>
+      <td>0.257307</td>
     </tr>
     <tr>
       <th>Pclass</th>
-      <td>-0.334068</td>
+      <td>-0.338481</td>
       <td>1.000000</td>
-      <td>-0.368625</td>
-      <td>0.080937</td>
-      <td>0.018212</td>
-      <td>-0.604960</td>
+      <td>-0.369226</td>
+      <td>0.083081</td>
+      <td>0.018443</td>
+      <td>-0.549500</td>
     </tr>
     <tr>
       <th>Age</th>
-      <td>-0.079472</td>
-      <td>-0.368625</td>
+      <td>-0.077221</td>
+      <td>-0.369226</td>
       <td>1.000000</td>
-      <td>-0.307639</td>
-      <td>-0.189194</td>
-      <td>0.100396</td>
+      <td>-0.308247</td>
+      <td>-0.189119</td>
+      <td>0.096067</td>
     </tr>
     <tr>
       <th>SibSp</th>
-      <td>-0.033395</td>
-      <td>0.080937</td>
-      <td>-0.307639</td>
+      <td>-0.035322</td>
+      <td>0.083081</td>
+      <td>-0.308247</td>
       <td>1.000000</td>
-      <td>0.415141</td>
-      <td>0.211816</td>
+      <td>0.414838</td>
+      <td>0.159651</td>
     </tr>
     <tr>
       <th>Parch</th>
-      <td>0.082157</td>
-      <td>0.018212</td>
-      <td>-0.189194</td>
-      <td>0.415141</td>
+      <td>0.081629</td>
+      <td>0.018443</td>
+      <td>-0.189119</td>
+      <td>0.414838</td>
       <td>1.000000</td>
-      <td>0.263910</td>
+      <td>0.216225</td>
     </tr>
     <tr>
       <th>Fare</th>
-      <td>0.261742</td>
-      <td>-0.604960</td>
-      <td>0.100396</td>
-      <td>0.211816</td>
-      <td>0.263910</td>
+      <td>0.257307</td>
+      <td>-0.549500</td>
+      <td>0.096067</td>
+      <td>0.159651</td>
+      <td>0.216225</td>
       <td>1.000000</td>
     </tr>
   </tbody>
@@ -850,19 +885,19 @@ sns.heatmap(train_data_corr,mask=mask,fmt=".1f",annot=True)
 plt.show()
 ```
 
-    findfont: Font family ['cursive'] not found. Falling back to DejaVu Sans.
-    findfont: Generic family 'cursive' not found because none of the following families were found: Apple Chancery, Textile, Zapf Chancery, Sand, Script MT, Felipa, Comic Neue, Comic Sans MS, cursive
-
-
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_58_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_61_0.png)
     
 
 
-# FEATURE ENGINEERING
+**End of Day 1!**
 
-To read about what exactly are features, why should we do feature engineering click here: https://github.com/4GeeksAcademy/machine-learning-content/blob/master/05-3d-data/feature-engineering.ipynb
+Now, let's do a lot of exploratory data analysis on this module's project!
+
+# DAY 2: FEATURE ENGINEERING
+
+To read about what exactly are features and why should we do feature engineering, click on the following link: https://github.com/4GeeksAcademy/machine-learning-content/blob/master/05-3d-data/feature-engineering.ipynb
 
 The first process we will learn in our Titanic feature engineering will be how to find and deal with extreme values (outliers).
 
@@ -1096,7 +1131,7 @@ plt.ylabel('Fare')
 
 
     
-![png](exploratory-data-analysis_files/exploratory-data-analysis_67_1.png)
+![png](exploratory-data-analysis_files/exploratory-data-analysis_71_1.png)
     
 
 
@@ -1397,13 +1432,13 @@ test_data.isnull().sum()
 
 **HOW TO DEAL WITH MISSING VALUES**
  
-To learn about techniques on how to deal with missing values, read the information from the following link:
+To learn about the techniques on how to deal with missing values, read the information from the following link:
 
 https://github.com/4GeeksAcademy/machine-learning-content/blob/master/05-3d-data/how-to-deal-with-missing-values.ipynb
 
 
 ```python
-#### Handling Missing Values
+# Handling Missing Values in train_data
 
 ## Fill missing AGE with Median
 train_data['Age'].fillna(train_data['Age'].median(), inplace=True)
@@ -1442,7 +1477,7 @@ Now let's also handle the missing values in our test data:
 
 
 ```python
-#### Handling Missing Values in test data
+# Handling Missing Values in test data
 
 ## Fill missing AGE and FARE with Median
 
@@ -1482,18 +1517,61 @@ train_data.head(10)
 ```python
 # We will create a new column to show how many family members of each passenger were in the Titanic.
 # We will calculate it based on the sum of SibSp (siblings and spouse) and Parch  (parents and children)
+
+print(train_data)
+
+train_data["fam_mbrs"] = train_data["SibSp"] + train_data["Parch"]
+
+print(train_data)
+```
+
+         Survived  Pclass     Sex   Age  SibSp  Parch     Fare Embarked
+    0           0       3    male  22.0      1      0   7.2500        S
+    1           1       1  female  38.0      1      0  71.2833        C
+    2           1       3  female  26.0      0      0   7.9250        S
+    3           1       1  female  35.0      1      0  53.1000        S
+    4           0       3    male  35.0      0      0   8.0500        S
+    ..        ...     ...     ...   ...    ...    ...      ...      ...
+    886         0       2    male  27.0      0      0  13.0000        S
+    887         1       1  female  19.0      0      0  30.0000        S
+    888         0       3  female  28.0      1      2  23.4500        S
+    889         1       1    male  26.0      0      0  30.0000        C
+    890         0       3    male  32.0      0      0   7.7500        Q
+    
+    [888 rows x 8 columns]
+         Survived  Pclass     Sex   Age  SibSp  Parch     Fare Embarked  fam_mbrs
+    0           0       3    male  22.0      1      0   7.2500        S         1
+    1           1       1  female  38.0      1      0  71.2833        C         1
+    2           1       3  female  26.0      0      0   7.9250        S         0
+    3           1       1  female  35.0      1      0  53.1000        S         1
+    4           0       3    male  35.0      0      0   8.0500        S         0
+    ..        ...     ...     ...   ...    ...    ...      ...      ...       ...
+    886         0       2    male  27.0      0      0  13.0000        S         0
+    887         1       1  female  19.0      0      0  30.0000        S         0
+    888         0       3  female  28.0      1      2  23.4500        S         3
+    889         1       1    male  26.0      0      0  30.0000        C         0
+    890         0       3    male  32.0      0      0   7.7500        Q         0
+    
+    [888 rows x 9 columns]
+
+
+
+```python
+test_data["fam_mbrs"] = test_data["SibSp"] + test_data["Parch"]
 ```
 
 ### FEATURE ENCODING FOR CATEGORICAL VARIABLES
 
-Feature encoding is the process of turning categorical data in a dataset into numerical data. It is essential that we perform feature encoding because most machine learning models can only interpret numerical data and not data in text form
+Feature encoding is the process of turning categorical data in a dataset into numerical data. It is essential that we perform feature encoding because most machine learning models can only interpret numerical data and not data in text form.
 
-To read about the different types of feature encoding click here: https://github.com/4GeeksAcademy/machine-learning-content/blob/master/05-3d-data/feature-encoding-for-categorical-variables.ipynb
+To read about the different methods of feature encoding go to following link: https://github.com/4GeeksAcademy/machine-learning-content/blob/master/05-3d-data/feature-encoding-for-categorical-variables.ipynb
 
-Here we will apply specific numbers directly to our label features, but you are free to use Scikit learn.
+To add some additional information, here we will use a different and short method on how to apply specific numbers directly to our label features, so we are manually encoding our categorical features, but you are free to use Scikit learn or Pandas.
 
 
 ```python
+#Train data
+
 # Encoding the 'Sex' column
 train_data['Sex'] = train_data['Sex'].apply(lambda x: 1 if x == 'male' else 0)
 
@@ -1501,9 +1579,570 @@ train_data['Sex'] = train_data['Sex'].apply(lambda x: 1 if x == 'male' else 0)
 train_data['Embarked'] = train_data['Embarked'].map({'S' : 0, 'C': 1, 'Q': 2})
 ```
 
+
+```python
+#Test data
+
+# Encoding the 'Sex' column
+test_data['Sex'] = test_data['Sex'].apply(lambda x: 1 if x == 'male' else 0)
+
+# Encoding the 'Embarked' column
+test_data['Embarked'] = test_data['Embarked'].map({'S' : 0, 'C': 1, 'Q': 2})
+```
+
+
+```python
+#Verifying all our features are now numbers
+
+train_data.head()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+      <th>fam_mbrs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>7.2500</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>71.2833</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7.9250</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>53.1000</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8.0500</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
 ### FEATURE SCALING
 
-# FEATURE SELECTION
+So now that we have all our features converted into numbers, are they ready for modeling? It depends if all our features are on the same scale or not. To read what does it mean to have different scales and the methods to standarize them, go to the following link: https://github.com/4GeeksAcademy/machine-learning-content/blob/master/05-3d-data/feature-scaling.ipynb
+
+After reading it we decide to implement the StandardScaler, but you are free to find reasons to scale your dataframe in a different way. 
+
+
+```python
+# import module
+from sklearn.preprocessing import MinMaxScaler
+
+scaler = MinMaxScaler()
+
+train_scaler = scaler.fit(train_data[['Age', 'Fare']])
+train_data[['Age', 'Fare']] = train_scaler.transform(train_data[['Age', 'Fare']])
+
+test_scaler = scaler.fit(test_data[['Age', 'Fare']])
+test_data[['Age', 'Fare']] = test_scaler.transform(test_data[['Age', 'Fare']])
+```
+
+
+```python
+#Verifying
+
+train_data.head()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+      <th>fam_mbrs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0.271174</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.027567</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.472229</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.271039</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0.321438</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.030133</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.434531</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.201901</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0.434531</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.030608</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+#Verifying
+
+test_data.head()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pclass</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+      <th>fam_mbrs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3</td>
+      <td>1</td>
+      <td>0.452723</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.015282</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3</td>
+      <td>0</td>
+      <td>0.617566</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.013663</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>1</td>
+      <td>0.815377</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.018909</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>1</td>
+      <td>0.353818</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.016908</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3</td>
+      <td>0</td>
+      <td>0.287881</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0.023984</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+**End of Day 2!**
+
+Now let's clean our project dataset and leave it almost ready for modeling!
+
+# Day 3: FEATURE SELECTION
+
+Go to the following link https://github.com/4GeeksAcademy/machine-learning-content/blob/master/05-3d-data/feature-selection.ipynb to read the information about when is it neccesary to make feature selection and what are the existing methods to do it.
+
+How to retrieve the 5 right informative features in the Titanic dataset?
+
+
+```python
+train_data.head()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+      <th>fam_mbrs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>-0.563437</td>
+      <td>1</td>
+      <td>0</td>
+      <td>-0.566959</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.664528</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.989016</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+      <td>-0.256446</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-0.550557</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.434285</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.547171</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>0.434285</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-0.547519</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+#Separate features from target
+
+X = train_data.drop("Survived",axis=1)
+y = train_data["Survived"]
+```
+
+
+```python
+from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import chi2
+
+mdlsel = SelectKBest(chi2, k=5) 
+mdlsel.fit(X,y)
+ix = mdlsel.get_support() 
+data2 = pd.DataFrame(mdlsel.transform(X), columns = X.columns.values[ix])
+
+data2.head(n=5)
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pclass</th>
+      <th>Sex</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>Embarked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.027567</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.271039</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.030133</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.201901</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.030608</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+In this case, using the Chi square feature selection, the most important features are 'Pclass', 'Sex','Parch','Fare' and 'Embarked'.
+
+This is just to show you how to apply one of the feature selection methods in the Titanic dataset in order to reduce the number of features before modeling, however, Titanic is a short dataset so you should evaluate if doing feature selection or not. 
+
+There are algorithms that include feature selection in their modeling process( for example Lasso modeling).
+
+This process is very related to the modeling process, because, in order to verify if we are doing a good feature selection, sometimes is necessary to do some modeling with different feature groups to find out the accuracy achieved.
+
+Now go ahead and analyse your project dataframe! 
+
+
 
 Source:
 
