@@ -1,6 +1,23 @@
-# Project Structure
+# Machine Learning Coding Project Structure
 
-## The README file
+Almost no one starts starts a project from scratch in a professional team, it's a common practice to innitialize your project by using pre-defined files and structure (a template) that contains all the recomendations and initial setups needed to avoid past mistakes, using the most popular libraries and compatible with one of the major cloud platforms for later deployment.
+
+A serious project template must contain some if not all of the following features:
+
+1. Enviroment variable isolation to store sensible information.
+2. Git ready.
+3. A package manager for dependency management like PIP, Poetry, Pipenv, Conda, etc.
+4. Readme file and well made documentation.
+5. Compatibility with one of the major cloud platforms for continious deployment.
+6. A `src` folder that will contain the programing code created by the developers.
+
+Additionaly, in the case of maching learning or data-science we want our boilerplate to have a data folder for storing datasets in static file formats like CSV, JSON, etc.
+
+
+
+## Project Structure
+
+### The README file
 
 **What is it?**
 
@@ -32,7 +49,7 @@ You can use any text editor. There are plugins for many editors (e.g. Atom, Emac
 
 You can also use a dedicated Markdown editor like Typora or an online one like StackEdit or Dillinger. You can even use the editable template below.
 
-## The requirements.txt file
+### The requirements.txt file
 
 **What are dependencies?**
 
