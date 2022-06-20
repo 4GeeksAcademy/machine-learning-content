@@ -7,9 +7,11 @@ Please use the 'exploratory-data-analysis' notebook as your main notebook to lea
 
 Every day, after reading and executing the Titanic guiding notebook, go to the module's project to put in practice your new skills for each process. Read the project instructions and make some progress every day.
 
-#### Structure of the Titanic guiding notebook
+## Structure of the Titanic guiding notebook
 
-**Day 1: Exporatory data analysis on Titanic dataset**
+The Titanic guiding notebook is divided in 3 days.
+
+### Day 1: Exporatory data analysis on Titanic dataset
 
 Understand the problem
 
@@ -19,21 +21,21 @@ Visualizations and finding relationships
 
 >Execute code cells for each part of the Titanic EDA
 
-**Day 2: Feature Engineering **
+### Day 2: Feature Engineering
 
 Read the feature engineering lecture and come back to the main notebook to start the process step by step.
 
--Outliers: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
+- Outliers: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
 
--Missing values: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
+- Missing values: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
 
--Feature encoding for categorical variables: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
+- Feature encoding for categorical variables: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
 
--Feature scaling: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
+- Feature scaling: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
 
--Feature Selection: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
+- Feature Selection: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
 
-**Day 3: Feature Selection**
+### Day 3: Feature Selection
 
 Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the cleaning process.
 
@@ -41,7 +43,7 @@ Use this day to understand this final part of the data cleaning process, and spe
 
 >Remember the phrase 'Garbage in, garbage out'. If your model receives poor quality data, you will also produce a poor model.
 
-#### Introducing new libraries
+## Introducing new libraries
 
 We will also introduce in this module two new libraries, seaborn and scikit-learn, which will certainly make the job much easier.
 
@@ -74,7 +76,6 @@ Scikit-learn is perhaps Python’s most useful machine learning library. Regress
 In the Titanic guiding notebook we mention several scikit-learn commands but you can use Scikit-learn documentation for more commands and a better understanding of its parameters.
 
 https://scikit-learn.org/stable/data_transforms.html
-
 
 
 
