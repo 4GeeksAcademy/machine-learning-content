@@ -16,9 +16,13 @@ We need to build a predictive model that answers the question: “what sorts of 
 For this specific section, we will focus on the Titanic exploratory data analysis only.
 
 
--The complete problem statement and data description can be found here:
+-If you want to read the complete problem statement and data description, it can be found here:
 
 https://www.kaggle.com/competitions/titanic/
+
+-Please download the data directly from the following link:
+
+https://github.com/4GeeksAcademy/machine-learning-content/tree/master/05-3d-data/assets
 
 ### Importing libraries and reading the dataset
 
