@@ -9,6 +9,8 @@ Every day, after reading and executing the Titanic guiding notebook, go to the m
 
 ## Structure of the Titanic guiding notebook
 
+The Titanic guiding notebook is divided in 3 days.
+
 ### Day 1: Exporatory data analysis on Titanic dataset
 
 Understand the problem
