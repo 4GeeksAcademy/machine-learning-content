@@ -23,15 +23,15 @@ Visualizations and finding relationships
 
 Read the feature engineering lecture and come back to the main notebook to start the process step by step.
 
--Outliers: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
+- Outliers: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
 
--Missing values: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
+- Missing values: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
 
--Feature encoding for categorical variables: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
+- Feature encoding for categorical variables: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
 
--Feature scaling: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
+- Feature scaling: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
 
--Feature Selection: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
+- Feature Selection: Read the introduction, then follow the link to read the different methods and then come back to your main notebook to understand and execute the code for that part of the Titanic cleaning process.
 
 ### Day 3: Feature Selection
 
