@@ -54,6 +54,31 @@ Randomized search does a good job finding near-optimal hyperparameters over a ve
 
 Randomized search does not fine-tune the results as much as grid search does since it tipically does not test every possible combination of parameters.
 
+**Examples of questions that hyperparameter tuning will answer for us**
+
+- What should be the value for the maximum depth of the Decision Tree?
+
+- How many trees should I select in a Random Forest model?
+
+- Should use a single layer or multiple layer Neural Network, if multiple layers then how many layers should be there?
+
+- How many neurons should I include in the Neural Network?
+
+- What should be the minimum sample split value for Decision Tree?
+
+- What value should I select for the minimum sample leaf for my Decision Tree?
+
+- How many iterations should I select for Neural Network?
+
+- What should be the value of the learning rate for gradient descent?
+
+- Which solver method is best suited for my Neural Network?
+
+- What is the K in K-nearest Neighbors?
+
+- What should be the value for C and sigma in Support Vector Machine?
+
+
 Source: 
 
 https://www.geeksforgeeks.org/difference-between-model-parameters-vs-hyperparameters/
