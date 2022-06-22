@@ -6,29 +6,28 @@
 
 ## Probability and Statistic Skills (6 days)
 
-1.1. Calculus
+1. Calculus
 
-1.2. Linear Algebra 
+2. Linear Algebra 
 
 📝 Calculus and Linear algebra problems
 
-2. Probability
+3. Probability
 
 📝 Probability problems 
 
-3. Descriptive Statistics
+4. Descriptive Statistics
 
 📝 Descriptive statistics problems
 
-4. Random Variables
+5. Random Variables
 
 📝 Probability Distribution problems
 
-5.1. Hypothesis Testing
+6.1. Hypothesis Testing
 
 📝 Hypothesis testing problems
 
-5.2 No new material
 
 
 ## Computer Science (1 day)
@@ -40,23 +39,22 @@
 
 ## Collect and store data (4 days)
 
-1. Intro to SQL (Structured Query language) - external
+1.1. Intro to SQL (Structured Query language) - external
 
 1.2 Create and connect to SQL databases with Python
 
 📝 Connecting to a Sql database from Python
 
-2. Loading Static Files (csv, json, yml)
+2.1. Loading Static Files (csv, json, yml)
 
-2.2  Web Scraping tools and techniques
+2.2.  Web Scraping tools and techniques
 
 📝 Web scraping data from a website 
 
-3. Data Science project structure
-
-📝 ML Project structure activity
+3. Project structure
   
-Project: Interacting with the Twitter API
+📝 Interacting with the Twitter API
+  
 
 ## Data Management (3 days)
 
