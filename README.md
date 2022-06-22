@@ -1,6 +1,6 @@
 # Machine Learning Bootcamp
 
-## Python (2 days)
+## Python (3 days)
 
 1. Python for Datascience
 
@@ -29,7 +29,6 @@
 📝 Hypothesis testing problems
 
 
-
 ## Computer Science (1 day)
 
 1. Optimizing Algorithms
@@ -37,7 +36,7 @@
 📝 Algorithm optimization problems
 
 
-## Collect and store data (4 days)
+## Collect and store data (3 days)
 
 1.1. Intro to SQL (Structured Query language) - external
 
