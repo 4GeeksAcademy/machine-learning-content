@@ -72,14 +72,13 @@ For example, a robot could use reinforcement learning to learn that walking forw
 
 While online learning does have its uses, traditional machine learning is performed offline using the batch learning method. 
 ‍
-
 In batch learning, data is accumulated over a period of time. The machine learning model is then trained with this accumulated data from time to time in batches. If new data comes in, an entire new batch (including all the old and new data) must be fed into the algorithm to learn from the new data. In batch learning, the machine learning algorithm updates its parameters only after consuming batches of new data.
 
 It is the direct opposite of online learning because the model is unable to learn incrementally from a stream of live data. Online learning refers to updating models incrementally as they gain more information.
  
 
 
-### How is data divided?
+## How is data divided?
 
 What is training data and what is it used for?
 
@@ -101,19 +100,101 @@ A test set is a set of data not used during training or validation. The model's 
 
 ### Training and validation techniques
 
+A goal of supervised learning is to build a model that performs well on new data. If you have new data, it’s a good idea to see how your model performs on it. The problem is that you may not have new data, but you can simulate this experience with a procedure like train test split.
+
 **Train-test-split**
+
+Train test split is a model validation procedure that allows you to simulate how a model would perform on new/unseen data. Here is how the procedure works.
+
+1. Make sure your data is arranged into a format acceptable for train test split. In scikit-learn, this consists of separating your full dataset into Features and Target.
+
+2. Split the dataset into two pieces: a training set and a testing set. This consists of random sampling without replacement about 75% (you can vary this) of the rows and putting them into your training set and putting the remaining 25% to your test set. Note that the colors in “Features” and “Target” indicate where their data will go (“X_train”, “X_test”, “y_train”, “y_test”) for a particular train test split.
+
+2. Train the model on the training set. This is “X_train” and “y_train” in the image.
+
+3. Test the model on the testing set (“X_test” and “y_test” in the image) and evaluate the performance.
+
+![train_test_split](../assets/train_test_split.jpg)
+
+Example code:
+
+```py
+
+#Separate your full dataset into Features and Target
+
+features = [‘bedrooms’,’bathrooms’,’sqft_living’,’sqft_lot’,’floors’]
+X = df.loc[:, features]
+y = df.loc[:, [‘price’]]
+
+#Splits the data and returns a list which contains four NumPy arrays. 
+#train_size = 0.75 puts 75% of the data into a training set and the remaining 25% into a testing set
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0, train_size = 0.75)
+
+#Fitting the model
+
+reg.fit(X_train, y_train)
+
+#Making predictions on validation set(X_test)
+
+reg.predict(X_test)
+
+#Measuring the results
+
+score = reg.score(X_test, y_test)
+print(score)
+
+```
 
 **Cross Validation**
 
-Cross validation is a technique for more accurately training and validation models. It rotates what data is held out from model training to be used as the validation data.
+Another model validation technique is Cross validation, also known as out of sampling technique. This is a resampling technique for more accurately training and validation models. It rotates what data is held out from model training to be used as the validation data. 
 
 Several models are trained and evaluated, with every piece of data being held out from one model. The average performance of all the models is then calculated.
 
 It is a more reliable way to validate models but is more computationally costly. For example, 5-fold cross validation requires training and validating 5 models instead of 1.
 
-**What is overfitting?**
+![cross_validation](../assets/cross_validation.jpg)
 
-Overfitting when a model makes much better predictions on known data (data included in the training set) than unknown data (data not included in the training set).
+Some cross-validation techniques:
+
+- Leave p out cross-validation
+
+- Leave one out cross-validation
+
+- Holdout cross-validation
+
+- Repeated random subsampling validation
+
+- k-fold cross-validation
+
+- Stratified k-fold cross-validation
+
+- Time Series cross-validation
+
+- Nested cross-validation
+
+
+
+Implementation of these cross-validations can be found out in the sklearn package. Read this [sklearn documentation](https://scikit-learn.org/stable/modules/cross_validation.html) for more details. K-fold and stratified k-fold cross-validations are the most used techniques. 
+
+With any model validation procedure it is important to keep in mind some advantages and disadvantages which in the case of train test split are:
+
+Some Advantages:
+
+- Relatively simple and easier to understand than other methods like K-fold cross validation
+
+- Helps avoid overly complex models that don’t generalize well to new data
+
+Some Disadvantages:
+
+- Eliminates data that could have been used for training a machine learning model (testing data isn’t used for training)
+
+- With the change in the random state of the split, the accuracy of the model also changes, so we are not able to achieve a fixed accuracy for the model. The testing data should be kept independent of the training data so that no data leakage occurs. 
+
+## What is overfitting?
+
+Overfitting is when a model makes much better predictions on known data (data included in the training set) than unknown data (data not included in the training set).
 
 How can we combat overfitting?
 
@@ -152,3 +233,7 @@ https://www.qwak.com/post/online-vs-offline-machine-learning-whats-the-differenc
 https://towardsdatascience.com/10-machine-learning-algorithms-you-need-to-know-77fb0055fe0
 
 https://hackernoon.com/introduction-to-recommender-system-part-1-collaborative-filtering-singular-value-decomposition-44c9659c5e75
+
+https://towardsdatascience.com/understanding-train-test-split-scikit-learn-python-ea676d5e3d1
+
+https://towardsdatascience.com/understanding-8-types-of-cross-validation-80c935a4976d
