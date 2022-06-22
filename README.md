@@ -60,11 +60,11 @@ Project: Interacting with the Twitter API
 
 ## Data Management (3 days)
 
-1. Exploratory data analysis
+1. Exploratory data analysis on Titanic dataset
 
-📝 EDA from Titanic dataset
+📝 Project EDA (2 hours)
 
-2. Feature Engineering
+2. Feature Engineering on Titanic dataset
 
 2.1. How to deal with outliers
 
@@ -74,86 +74,91 @@ Project: Interacting with the Twitter API
 
 2.4. Feature Scaling
 
-3. Feature selection
+📝 Project feature engineering (2 hours)
 
-📝 Titanic data cleaning
+3. Feature selection techniques
 
-Project Part II: Data cleaning
+📝 Project feature selection
+
 
 ## Machine Learning (12 days)
 
 1.1. Machine Learning Basics
 
-1.2. Machine learning algorithms
+1.2. Model evaluation
 
-1.3. Linear Regression
+1.3. Model hyperparameters optimization
 
-📝 Linear regression project (2 hours) 
+1.4 Logistic Regression notebook
 
-2. Decision Trees
+📝 Logistic regression project (2 hours) 
+
+2. Simple Linear Regression notebook
+
+📝 Simple Linear regression project (2 hours) 
+
+3.1. Multiple Regression notebook
+
+📝 Multiple regression project (2 hours) 
+
+4.1. Tree Based models
+
+4.2. Decision Trees
 
 📝 Decision tree project (2 hours)
 
-3. Random Forest
+5. Random Forest
 
 📝 Random Forest project (2 hours)
 
-4. Gradient Boosting
+6. Gradient Boosting
 
 📝 Gradient Boosting project (2 hours)
 
-5.1. Clustering
+7. Naive Bayes
 
-5.2. KNN
+📝 Naive Bayes project (2 hours)
 
-5.3. K-Means
+8. Support Vector Machine
 
-📝 Clustering project (2 hours)
+📝 Support Vector Machine project (2 hours)
 
-6.1 Logistic Regression
+9.1. Clustering
 
-6.2 Dimensionality Reduction
+9.2. Dimesionality Reduction
 
-📝 Logistic Regression project (2 hours)
-
-7. SVM
-
-📝 SVM project (2 hours)
-
-8. Model Evaluation and Hypertuning machine learning algorithms
-
-📝 Evaluate and hypertune previously created model (2 hours)
-
-9. Natural Language Processing
-
-📝 Natural language processing project (2 hours)
+📝 Unsupervised learning project (2 hours)
 
 10. Time Series Forecasting 
 
 📝 Time series project (2 hours)
 
-11. Introduction to Deep Learning
+11. Natural Language Processing
+
+📝 Natural language processing project (2 hours)
+
+12. Introduction to Deep Learning
 
 📝 Deep learning project (2 hours)
 
-Project Part III: Create a machine learning model (1 day)
 
-## Data Science as Software (1 day)
+## Data Science as Software (2 days)
 
 1. How to create a machine learning web app with Heroku.
 
-Project Part IV: Deploy model to Heroku 
+📝 Heroku app project (2 hours) 
+
+2. How to create a machine learning web app with Streamlit 
+
+📝 Streamlit app project (2 hours)
 
 ## Data Warehouse tools: modeling on the cloud (3 days)
 
 1. Data warehouse tools
-2. Create and execute machine learning models in BigQuery 
 
-Project: Create a machine learning model using BigQuery
+2. Create and execute machine learning model in BigQuery 
 
-## Communicating your results (1 day)
-
-1. Communicating statistics in a simple way
+3. BigQuery Project
 
 ## Week 12: Real life cases (3 days)
 
