@@ -1,9 +1,9 @@
-**Regression**
+# Linear Regression
 
 
 In regression, one or more variables (predictors) are used to predict an outcome (criterion). 
 
-Linear Regression:
+Linear regression is an approach to model the relationship between a single dependent variable (target variable) and one (simple regression) or more (multiple regression) independent variables. The linear regression model assumes a linear relationship between the input and output variables. If this relationship is present, we can estimate the coefficients required by the model to make predictions on new data.
 
 What are the five linear regression assumptions and how can you check for them?
 
@@ -19,6 +19,9 @@ What are the five linear regression assumptions and how can you check for them?
 
 
 ```python
+import numpy as np
+import matplotlib.pyplot as plt
+
 # Linear regression from scratch
 import random
 # Create data from regression
@@ -67,6 +70,20 @@ plt.title('Linear Regression result')
 print('Slope: {}\nIntercept: {}'.format(m, b))
 ```
 
+    Slope: 5.096261164108786
+    Intercept: -8.549690202482191
+
+
+
+    
+![png](linear-regression_files/linear-regression_1_1.png)
+    
+
+
+## Simple Linear Regression
+
 Source:
 
 https://towardsdatascience.com/simple-and-multiple-linear-regression-with-python-c9ab422ec29c
+
+

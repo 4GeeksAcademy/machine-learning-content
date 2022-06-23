@@ -1455,6 +1455,8 @@ The notation '[0]' means that the thing before it (mode() in this case) is a col
 
 The mode() returns 2 values, first is mode value, second is count. So 'train_data['Embarked'].mode()[0]' means we get the mode value of 'train_data['Embarked']'.
 
+Feel free to use scikit-learn instead.
+
 Let's verify there were no missing values left:
 
 
@@ -1561,6 +1563,8 @@ print(train_data)
 
 
 ```python
+#Repeat process in test data
+
 test_data["fam_mbrs"] = test_data["SibSp"] + test_data["Parch"]
 ```
 
@@ -1574,31 +1578,63 @@ To add some additional information, here we will use a different and short metho
 
 
 ```python
-#Train data
+# One-hot encoding multiple columns
 
-# Encoding the 'Sex' column
-train_data['Sex'] = train_data['Sex'].apply(lambda x: 1 if x == 'male' else 0)
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import make_column_transformer
 
-# Encoding the 'Embarked' column
-train_data['Embarked'] = train_data['Embarked'].map({'S' : 0, 'C': 1, 'Q': 2})
+transformer = make_column_transformer(
+    (OneHotEncoder(), ['Embarked', 'Sex']),
+    remainder='passthrough')
+
+transformed = transformer.fit_transform(train_data)
+transformed_df = pd.DataFrame(transformed, columns=transformer.get_feature_names())
+print(transformed_df.head())
+```
+
+       onehotencoder__x0_C  onehotencoder__x0_Q  onehotencoder__x0_S  \
+    0                  0.0                  0.0                  1.0   
+    1                  1.0                  0.0                  0.0   
+    2                  0.0                  0.0                  1.0   
+    3                  0.0                  0.0                  1.0   
+    4                  0.0                  0.0                  1.0   
+    
+       onehotencoder__x1_female  onehotencoder__x1_male  Survived  Pclass   Age  \
+    0                       0.0                     1.0       0.0     3.0  22.0   
+    1                       1.0                     0.0       1.0     1.0  38.0   
+    2                       1.0                     0.0       1.0     3.0  26.0   
+    3                       1.0                     0.0       1.0     1.0  35.0   
+    4                       0.0                     1.0       0.0     3.0  35.0   
+    
+       SibSp  Parch     Fare  fam_mbrs  
+    0    1.0    0.0   7.2500       1.0  
+    1    1.0    0.0  71.2833       1.0  
+    2    0.0    0.0   7.9250       0.0  
+    3    1.0    0.0  53.1000       1.0  
+    4    0.0    0.0   8.0500       0.0  
+
+
+    c:\Users\danie\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\utils\deprecation.py:87: FutureWarning: Function get_feature_names is deprecated; get_feature_names is deprecated in 1.0 and will be removed in 1.2. Please use get_feature_names_out instead.
+      warnings.warn(msg, category=FutureWarning)
+
+
+
+```python
+#Changing to more friendly names
+
+transformed_df = transformed_df.rename(columns = {'onehotencoder__x0_C':'Embarked_C',
+                                                  'onehotencoder__x0_Q':'Embarked_Q',
+                                                  'onehotencoder__x0_S':'Embarked_S',
+                                                  'onehotencoder__x1_female':'Female',
+                                                  'onehotencoder__x1_male':'Male'
+                                                  })
 ```
 
 
 ```python
-#Test data
+#verifying my final train dataframe
 
-# Encoding the 'Sex' column
-test_data['Sex'] = test_data['Sex'].apply(lambda x: 1 if x == 'male' else 0)
-
-# Encoding the 'Embarked' column
-test_data['Embarked'] = test_data['Embarked'].map({'S' : 0, 'C': 1, 'Q': 2})
-```
-
-
-```python
-#Verifying all our features are now numbers
-
-train_data.head()
+transformed_df.head()
 ```
 
 
@@ -1622,77 +1658,237 @@ train_data.head()
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>Embarked_C</th>
+      <th>Embarked_Q</th>
+      <th>Embarked_S</th>
+      <th>Female</th>
+      <th>Male</th>
       <th>Survived</th>
       <th>Pclass</th>
-      <th>Sex</th>
       <th>Age</th>
       <th>SibSp</th>
       <th>Parch</th>
       <th>Fare</th>
-      <th>Embarked</th>
       <th>fam_mbrs</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
-      <td>3</td>
-      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
       <td>22.0</td>
-      <td>1</td>
-      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>7.2500</td>
-      <td>0</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
       <td>38.0</td>
-      <td>1</td>
-      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>71.2833</td>
-      <td>1</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1</td>
-      <td>3</td>
-      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
       <td>26.0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>7.9250</td>
-      <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
       <td>35.0</td>
-      <td>1</td>
-      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>53.1000</td>
-      <td>0</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0</td>
-      <td>3</td>
-      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
       <td>35.0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>8.0500</td>
-      <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+#Repeating transformation in test dataframe
+
+transformed_test = transformer.fit_transform(test_data)
+transformed_test_df = pd.DataFrame(transformed_test, columns=transformer.get_feature_names())
+```
+
+    c:\Users\danie\AppData\Local\Programs\Python\Python310\lib\site-packages\sklearn\utils\deprecation.py:87: FutureWarning: Function get_feature_names is deprecated; get_feature_names is deprecated in 1.0 and will be removed in 1.2. Please use get_feature_names_out instead.
+      warnings.warn(msg, category=FutureWarning)
+
+
+
+```python
+#Changing to more friendly names in test dataframe
+
+transformed_test_df = transformed_test_df.rename(columns = {'onehotencoder__x0_C':'Embarked_C',
+                                                            'onehotencoder__x0_Q':'Embarked_Q',
+                                                            'onehotencoder__x0_S':'Embarked_S',
+                                                            'onehotencoder__x1_female':'Female',
+                                                            'onehotencoder__x1_male':'Male'
+                                                            })
+```
+
+
+```python
+# Verifying new test dataframe
+
+transformed_test_df.head()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Embarked_C</th>
+      <th>Embarked_Q</th>
+      <th>Embarked_S</th>
+      <th>Female</th>
+      <th>Male</th>
+      <th>Pclass</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Fare</th>
+      <th>fam_mbrs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>34.5</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>7.8292</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>47.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>7.0000</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>62.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>9.6875</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>27.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>8.6625</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>22.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>12.2875</td>
+      <td>2.0</td>
     </tr>
   </tbody>
 </table>
@@ -1713,18 +1909,18 @@ from sklearn.preprocessing import MinMaxScaler
 
 scaler = MinMaxScaler()
 
-train_scaler = scaler.fit(train_data[['Age', 'Fare']])
-train_data[['Age', 'Fare']] = train_scaler.transform(train_data[['Age', 'Fare']])
+train_scaler = scaler.fit(transformed_df[['Age', 'Fare']])
+transformed_df[['Age', 'Fare']] = train_scaler.transform(transformed_df[['Age', 'Fare']])
 
-test_scaler = scaler.fit(test_data[['Age', 'Fare']])
-test_data[['Age', 'Fare']] = test_scaler.transform(test_data[['Age', 'Fare']])
+test_scaler = scaler.fit(transformed_test_df[['Age', 'Fare']])
+transformed_test_df[['Age', 'Fare']] = test_scaler.transform(transformed_test_df[['Age', 'Fare']])
 ```
 
 
 ```python
 #Verifying
 
-train_data.head()
+transformed_df.head()
 ```
 
 
@@ -1748,77 +1944,95 @@ train_data.head()
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>Embarked_C</th>
+      <th>Embarked_Q</th>
+      <th>Embarked_S</th>
+      <th>Female</th>
+      <th>Male</th>
       <th>Survived</th>
       <th>Pclass</th>
-      <th>Sex</th>
       <th>Age</th>
       <th>SibSp</th>
       <th>Parch</th>
       <th>Fare</th>
-      <th>Embarked</th>
       <th>fam_mbrs</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
-      <td>3</td>
-      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
       <td>0.271174</td>
-      <td>1</td>
-      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>0.027567</td>
-      <td>0</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
       <td>0.472229</td>
-      <td>1</td>
-      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>0.271039</td>
-      <td>1</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1</td>
-      <td>3</td>
-      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
       <td>0.321438</td>
-      <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.030133</td>
-      <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
       <td>0.434531</td>
-      <td>1</td>
-      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>0.201901</td>
-      <td>0</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0</td>
-      <td>3</td>
-      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
       <td>0.434531</td>
-      <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.030608</td>
-      <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
@@ -1830,7 +2044,7 @@ train_data.head()
 ```python
 #Verifying
 
-test_data.head()
+transformed_test_df.head()
 ```
 
 
@@ -1854,77 +2068,111 @@ test_data.head()
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>Embarked_C</th>
+      <th>Embarked_Q</th>
+      <th>Embarked_S</th>
+      <th>Female</th>
+      <th>Male</th>
       <th>Pclass</th>
-      <th>Sex</th>
       <th>Age</th>
       <th>SibSp</th>
       <th>Parch</th>
       <th>Fare</th>
-      <th>Embarked</th>
       <th>fam_mbrs</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>3</td>
-      <td>1</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
       <td>0.452723</td>
-      <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.015282</td>
-      <td>2</td>
-      <td>0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>3</td>
-      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
       <td>0.617566</td>
-      <td>1</td>
-      <td>0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>0.013663</td>
-      <td>0</td>
-      <td>1</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2</td>
-      <td>1</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
       <td>0.815377</td>
-      <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.018909</td>
-      <td>2</td>
-      <td>0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>3</td>
-      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
       <td>0.353818</td>
-      <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>0.016908</td>
-      <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>3</td>
-      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
       <td>0.287881</td>
-      <td>1</td>
-      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
       <td>0.023984</td>
-      <td>0</td>
-      <td>2</td>
+      <td>2.0</td>
     </tr>
   </tbody>
 </table>
 </div>
 
 
+
+Before showing you some feature selection techniques, let's save our clean train and test datasets.
+
+
+```python
+# Save transformed train_data as clean_titanic_train
+
+transformed_df.to_csv('assets/processed/clean_titanic_train.csv')
+```
+
+
+```python
+# Save transformed test_data as clean_titanic_test
+
+transformed_test_df.to_csv('assets/processed/clean_titanic_test.csv')
+```
 
 **End of Day 2!**
 
@@ -1938,7 +2186,7 @@ How to retrieve the 5 right informative features in the Titanic dataset?
 
 
 ```python
-train_data.head()
+transformed_df.head()
 ```
 
 
@@ -1962,77 +2210,95 @@ train_data.head()
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>Embarked_C</th>
+      <th>Embarked_Q</th>
+      <th>Embarked_S</th>
+      <th>Female</th>
+      <th>Male</th>
       <th>Survived</th>
       <th>Pclass</th>
-      <th>Sex</th>
       <th>Age</th>
       <th>SibSp</th>
       <th>Parch</th>
       <th>Fare</th>
-      <th>Embarked</th>
       <th>fam_mbrs</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>-0.563437</td>
-      <td>1</td>
-      <td>0</td>
-      <td>-0.566959</td>
-      <td>0</td>
-      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>0.271174</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.027567</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.664528</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.989016</td>
-      <td>1</td>
-      <td>1</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.472229</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.271039</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1</td>
-      <td>3</td>
-      <td>0</td>
-      <td>-0.256446</td>
-      <td>0</td>
-      <td>0</td>
-      <td>-0.550557</td>
-      <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>0.321438</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.030133</td>
+      <td>0.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.434285</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0.547171</td>
-      <td>0</td>
-      <td>1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.434531</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.201901</td>
+      <td>1.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0</td>
-      <td>3</td>
-      <td>1</td>
-      <td>0.434285</td>
-      <td>0</td>
-      <td>0</td>
-      <td>-0.547519</td>
-      <td>0</td>
-      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>0.434531</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.030608</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
@@ -2044,8 +2310,8 @@ train_data.head()
 ```python
 #Separate features from target
 
-X = train_data.drop("Survived",axis=1)
-y = train_data["Survived"]
+X = transformed_df.drop("Survived",axis=1)
+y = transformed_df["Survived"]
 ```
 
 
@@ -2082,53 +2348,53 @@ data2.head(n=5)
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>Embarked_C</th>
+      <th>Female</th>
+      <th>Male</th>
       <th>Pclass</th>
-      <th>Sex</th>
-      <th>Parch</th>
       <th>Fare</th>
-      <th>Embarked</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
-      <td>0.0</td>
+      <td>3.0</td>
       <td>0.027567</td>
-      <td>0.0</td>
     </tr>
     <tr>
       <th>1</th>
       <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.271039</td>
       <td>1.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.271039</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
       <td>3.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
       <td>0.030133</td>
-      <td>0.0</td>
     </tr>
     <tr>
       <th>3</th>
+      <td>0.0</td>
       <td>1.0</td>
       <td>0.0</td>
-      <td>0.0</td>
+      <td>1.0</td>
       <td>0.201901</td>
-      <td>0.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
       <td>1.0</td>
-      <td>0.0</td>
+      <td>3.0</td>
       <td>0.030608</td>
-      <td>0.0</td>
     </tr>
   </tbody>
 </table>
@@ -2136,7 +2402,7 @@ data2.head(n=5)
 
 
 
-In this case, using the Chi square feature selection, the most important features are 'Pclass', 'Sex','Parch','Fare' and 'Embarked'.
+It gives me the 5 most important features according to the Chi-square method.
 
 This is just to show you how to apply one of the feature selection methods in the Titanic dataset in order to reduce the number of features before modeling, however, Titanic is a short dataset so you should evaluate if doing feature selection or not. 
 

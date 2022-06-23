@@ -1,6 +1,8 @@
-# Evaluation Metrics
+# Model Evaluation
 
-**Evaluation metrics useful for clasification problems**
+## Evaluation metrics
+
+### Evaluation metrics useful for clasification problems
 
 1. Accuracy - measures the percentage of the time we correctly classify samples: (true positive + true negative)/ all samples
 
@@ -16,7 +18,7 @@
 
 7. Log-loss - similar to accuracy but increases the penalty for incorrect classifications that are further away from their true class. For log-loss, lower values are better.
 
-**Evaluation metrics useful for regression problems**
+### Evaluation metrics useful for regression problems
 
 1. Means squared error (MSE)- the average of the squared error of each prediction.
 
@@ -26,7 +28,7 @@
 
 4. Coefficient of determination (R^2) - proportion of variance in the target that is predictable from the features.
 
-### Model evaluation
+## Modeling errors
 
 **What are the three types of error in a Machine Learning model?**
 
@@ -46,4 +48,3 @@ Variance refers to an error from an estimator being too specific and learning re
 In short, the bias-variance trade-off is a trade-off between underfitting and overfitting. As you decrease bias, you tend to increase variance.
 
 Our goal is to create models that minimize the overall error by careful model selection and tuning to ensure there is a balance between bias and variance, general enough to make good predictions on new data but specific enough to pick up as much signal as possible.
-

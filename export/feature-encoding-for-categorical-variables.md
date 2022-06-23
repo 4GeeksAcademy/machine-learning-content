@@ -69,7 +69,7 @@ pd.get_dummies(data['Gender']).head()
 
 -OneHotEncoder can be incorporated as part of a machine learning pipeline.
 
--Under OneHotEncoder we can use the GridSearch function in Scikit-learn to choose the best preprecessing parameters.
+-Under OneHotEncoder we can use the GridSearch function in Scikit-learn to choose the best preprocessing parameters.
 
 #### 2. Ordinal Encoding
 
@@ -96,6 +96,12 @@ oe = OrdinalEncoder()
 #Apply ordinalEncoder to income_status
 oe.fit_transform(data[['income_status']])
 
+```
+
+A way to do this manually could be:
+
+```py
+data['education_level'] = data['education_level'].apply(lambda x: 2 if x == 'high' else 1)
 ```
 
 **Pandas Map method**
@@ -154,3 +160,5 @@ Source:
 https://towardsdatascience.com/guide-to-encoding-categorical-features-using-scikit-learn-for-machine-learning-5048997a5c79#:~:text=Feature%20encoding%20is%20the%20process,not%20data%20in%20text%20form.
 
 https://towardsdatascience.com/understanding-feature-engineering-part-2-categorical-data-f54324193e63
+
+https://lifewithdata.com/2022/03/09/onehotencoder-how-to-do-one-hot-encoding-in-sklearn/
