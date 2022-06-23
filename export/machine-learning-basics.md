@@ -176,7 +176,48 @@ Some cross-validation techniques:
 
 
 
-Implementation of these cross-validations can be found out in the sklearn package. Read this [sklearn documentation](https://scikit-learn.org/stable/modules/cross_validation.html) for more details. K-fold and stratified k-fold cross-validations are the most used techniques. 
+Implementation of these cross-validations can be found out in the sklearn package. Read this [sklearn documentation](https://scikit-learn.org/stable/modules/cross_validation.html) for more details. K-fold and stratified k-fold cross-validations are the most used techniques. Here we will show how to implement K-fold cross validation.
+
+
+K-fold cross-validation is a superior technique to validate the performance of our model. It evaluates the model using different chunks of the data set as the validation set.
+
+We divide our data set into K-folds. K represents the number of folds into which you want to split your data. If we use 5-folds, the data set divides into five sections. In different iterations, one part becomes the validation set.
+
+*K-fold cross validation implementation*
+
+```py
+from sklearn.model_selection import cross_validate
+
+#Example with a function:
+
+def cross_validation(model, _X, _y, _cv=5):
+
+    scoring = ['accuracy', 'precision']
+
+    results = cross_validate(estimator=model,
+                                X=_X,
+                                y=_y,
+                                cv=_cv,
+                                scoring=_scoring,
+                                return_train_score=True)
+
+    return {"Training Accuracy scores": results['train_accuracy'],
+              "Mean Training Accuracy": results['train_accuracy'].mean()*100,
+              "Training Precision scores": results['train_precision'],
+              "Mean Training Precision": results['train_precision'].mean(),
+              "Validation Accuracy scores": results['test_accuracy'],
+              "Mean Validation Accuracy": results['test_accuracy'].mean()*100,
+              "Validation Precision scores": results['test_precision'],
+              "Mean Validation Precision": results['test_precision'].mean(),
+              }
+        
+```
+
+The custom cross_validation function in the code above will perform 5-fold cross-validation. It returns the results of the metrics specified above.
+
+The estimator parameter of the cross_validate function receives the algorithm we want to use for training. The parameter X takes the matrix of features. The parameter y takes the target variable. The parameter scoring takes the metrics we want to use for evaluation. We pass a list containing metrics we want to use to check our model.
+
+
 
 With any model validation procedure it is important to keep in mind some advantages and disadvantages which in the case of train test split are:
 
@@ -237,3 +278,5 @@ https://hackernoon.com/introduction-to-recommender-system-part-1-collaborative-f
 https://towardsdatascience.com/understanding-train-test-split-scikit-learn-python-ea676d5e3d1
 
 https://towardsdatascience.com/understanding-8-types-of-cross-validation-80c935a4976d
+
+https://www.section.io/engineering-education/how-to-implement-k-fold-cross-validation/

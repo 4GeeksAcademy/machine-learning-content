@@ -18,6 +18,10 @@
 
 7. Log-loss - similar to accuracy but increases the penalty for incorrect classifications that are further away from their true class. For log-loss, lower values are better.
 
+To see how to implement each of them see the scikit-learn documentation examples:
+
+https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics
+
 ### Evaluation metrics useful for regression problems
 
 1. Means squared error (MSE)- the average of the squared error of each prediction.
@@ -27,6 +31,10 @@
 3. Mean absolute error (MAE) - the average of the absolute error of each prediction.
 
 4. Coefficient of determination (R^2) - proportion of variance in the target that is predictable from the features.
+
+To see how to implement each of them see the scikit-learn documentation examples:
+
+https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics
 
 ## Modeling errors
 
@@ -48,3 +56,7 @@ Variance refers to an error from an estimator being too specific and learning re
 In short, the bias-variance trade-off is a trade-off between underfitting and overfitting. As you decrease bias, you tend to increase variance.
 
 Our goal is to create models that minimize the overall error by careful model selection and tuning to ensure there is a balance between bias and variance, general enough to make good predictions on new data but specific enough to pick up as much signal as possible.
+
+Source:
+
+https://towardsdatascience.com/interpreting-roc-curve-and-roc-auc-for-classification-evaluation-28ec3983f077

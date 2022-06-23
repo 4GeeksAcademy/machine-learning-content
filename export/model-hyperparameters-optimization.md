@@ -2,7 +2,7 @@
 
 ## What is a model hyperparameter?
 
-A model hyperparameter is the parameter whose value is set before the model start training. They cannot be learned by fitting the model to the data.
+A model hyperparameter is the parameter whose value is set before the model starts training. They cannot be learned by fitting the model to the data.
 
 Examples of model hyperparameters in different models:
 
@@ -30,9 +30,78 @@ Often, we are not aware of optimal values for hyperparameters which would genera
 
 ## What are two common ways to automate hyperparameter tuning?
 
+Hyperparameter tuning is an optimization technique and is an essential aspect of the machine learning process. A good choice of hyperparameters may make your model meet your desired metric. Yet, the plethora of hyperparameters, algorithms, and optimization objectives can lead to an unending cycle of continuous optimization effort.
+
 1. Grid Search - test every possible combination of pre-defined hyperparameter values and select the best one.
 
+Example:
+
+```py
+
+#import libraries
+from sklearn import svm, datasets
+from sklearn.model_selection import GridSearchCV
+
+#load the data
+iris = datasets.load_iris()
+
+#establish parameters
+parameters = {'kernel':('linear', 'rbf'), 'C':[1, 10]}
+
+#choose the model
+svc = svm.SVC()
+
+#Search all possible combinations
+clf = GridSearchCV(svc, parameters)
+clf.fit(iris.data, iris.target)
+
+#get the hyperparameter keys
+sorted(clf.cv_results_.keys())
+
+```
+
+See the complete scikit-learn documentation about GridSearchCV:
+
+https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html   
+
+
+
 2. Randomized Search - randomly test possible combinations of pre-defined hyperparameter values and select the best tested one.
+
+Example:
+
+```py
+
+#import libraries
+from sklearn.datasets import load_iris
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import RandomizedSearchCV
+from scipy.stats import uniform
+
+#load the data
+iris = load_iris()
+
+#choose the model
+logistic = LogisticRegression(solver='saga', tol=1e-2, max_iter=200, random_state=0)
+
+#establish possible hyperparameters
+distributions = dict(C=uniform(loc=0, scale=4), penalty=['l2', 'l1'])
+
+#Do a random search in possible combination between the established hyperparameters
+clf = RandomizedSearchCV(logistic, distributions, random_state=0)
+search = clf.fit(iris.data, iris.target)
+
+#Get the best hyperparameter values
+search.best_params_
+
+{'C': 2..., 'penalty': 'l1'}
+
+```
+
+See the complete scikit-learn documentation about RandomizedSearchCV:
+
+https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html   
+
 
 **What are the pros and cons of grid search?**
 
@@ -84,3 +153,5 @@ Source:
 https://www.geeksforgeeks.org/difference-between-model-parameters-vs-hyperparameters/
 
 https://www.mygreatlearning.com/blog/hyperparameter-tuning-explained/
+
+https://medium.com/codex/do-i-need-to-tune-logistic-regression-hyperparameters-1cb2b81fca69
