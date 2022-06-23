@@ -8,5 +8,5 @@ for i in $(find . | grep -F .ipynb); do
 done
 
 mkdir export
-mv ./*/*.md ./export
+cp ./*/*.md ./export
 cp ./*/*.ipynb ./export
