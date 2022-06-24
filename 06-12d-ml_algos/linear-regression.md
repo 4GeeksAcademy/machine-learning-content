@@ -1,8 +1,5 @@
 # Linear Regression
 
-
-In regression, one or more variables (predictors) are used to predict an outcome (criterion). 
-
 Linear regression is an approach to model the relationship between a single dependent variable (target variable) and one (simple regression) or more (multiple regression) independent variables. The linear regression model assumes a linear relationship between the input and output variables. If this relationship is present, we can estimate the coefficients required by the model to make predictions on new data.
 
 What are the five linear regression assumptions and how can you check for them?
@@ -17,13 +14,16 @@ What are the five linear regression assumptions and how can you check for them?
 
 5. No multicollinearity: Look for correlations above ~0.8 between features.
 
+Let's see how to implement from scratch and visualize the linear regression between two variables:
 
-```python
+```py
+
 import numpy as np
 import matplotlib.pyplot as plt
 
 # Linear regression from scratch
 import random
+
 # Create data from regression
 xs = np.array(range(1,20))
 ys = [0,8,10,8,15,20,26,29,38,35,40,60,50,61,70,75,80,88,96]
@@ -68,19 +68,32 @@ plt.scatter(data.keys(), data.values())
 plt.plot(xs, lin(xs))
 plt.title('Linear Regression result')  
 print('Slope: {}\nIntercept: {}'.format(m, b))
+
 ```
 
     Slope: 5.096261164108786
     Intercept: -8.549690202482191
 
-
-
+  
+![linear-regression-result](../assets/linear-regression-result.jpg)
     
-![png](linear-regression_files/linear-regression_1_1.png)
-    
-
 
 ## Simple Linear Regression
+
+
+
+## Multiple Linear Regression 
+
+**Is multiple regression the same as polynomial regression?**
+
+
+
+**Is a polynomial regression non-linear?**
+
+No. It is a linear model that can be used to fit non-linear data.
+
+
+
 
 Source:
 
