@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt 
 
 # read the csv file
-df = pd.read_csv('../assets/weight-height.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/4GeeksAcademy/machine-learning-content/master/assets/weight-height.csv')
 
 # print the first 5 rows of the data set
 df.head()
