@@ -1,6 +1,8 @@
 # Linear Regression
 
-Linear regression is an approach to model the relationship between a single dependent variable (target variable) and one (simple regression) or more (multiple regression) independent variables. The linear regression model assumes a linear relationship between the input and output variables. If this relationship is present, we can estimate the coefficients required by the model to make predictions on new data.
+Linear regression is a basic yet super powerful machine learning algorithm. As you gain more and more experience with machine learning, you’ll notice how simple is better than complex most of the time. Linear regression is widely used in different supervised machine learning problems and it focuses on regression problem (the value we wish the predict is continuous).
+
+It models the relationship between a single dependent variable (target variable) and one (simple regression) or more (multiple regression) independent variables. The linear regression model assumes a linear relationship between the input and output variables. If this relationship is present, we can estimate the coefficients required by the model to make predictions on new data.
 
 What are the five linear regression assumptions and how can you check for them?
 
@@ -20,14 +22,14 @@ Simple linear regression is a linear approach to modeling the relationship betwe
 
 $y = a + bx$
 
-where x is the independent variable (height), y is the dependent variable (weight), b is the slope, and a is the intercept. The intercept represents the value of y when x is 0 and the slope indicates the steepness of the line.
+Where X is the vector of features, and a, b are the coefficients we wish to learn. a is the intercept and b is the slope. The intercept represents the value of y when x is 0 and the slope indicates the steepness of the line.
 The objective is to obtain the line that best fits our data (the line that minimize the sum of square errors). The error is the difference between the real value y and the predicted value y_hat, which is the value obtained using the calculated linear equation.
 
 error = y(real) - y(predicted) = y(real) - (a+bx)
 
 In linear regression, every dependent value has a single corresponding independent variable that drives its value. For example, in the linear regression formula of $y = 3x + 7$, there is only one possible outcome of 'y' if 'x' is defined as 2.
 
-Let's see how to implement from scratch and visualize linear regression between two variables:
+For curious people, let's see how could we implement linear regression between two variables from scratch:
 
 ```py
 
@@ -90,7 +92,7 @@ print('Slope: {}\nIntercept: {}'.format(m, b))
   
 ![linear-regression-result](../assets/linear-regression-result.jpg)
     
-
+Scikit-learn Linear regression makes it easier for us to implement and optimize linear regression models. You can see the scikit-learn linear regression documentation here: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
 
 ## Multiple Linear Regression 
 
@@ -220,15 +222,27 @@ After converting to polynomial terms we fit the linear regression which is now w
 To implement polynomial regression with multiple columns see the sklearn polynomial regression documentation: https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html
 
 
+Having more features may seem like a perfect way for improving the accuracy of our trained model (reducing the loss) because the model that will be trained will be more flexible and will take into account more parameters. On the other hand, we need to be extremely careful about overfitting the data. As we know, every dataset has noisy samples. For example, a data point wasn’t measured accurately or is not up to date. The inaccuracies can lead to a low-quality model if not trained carefully. The model might end up memorizing the noise instead of learning the trend of the data.
 
+Let's see an overfitted non-linear example:
+
+![underfitting_vs_overfitting](../assets/underfitting_vs_overfitting.jpg)
+
+If not filtered and explored up front, some features can be more destructive than helpful, repeat information that already expressed by other features and add high noise to the dataset.
+
+Because overfit is an extremely common issue in many machine learning problems, there are different approaches to solving it. The main one is simplifying the models as much as possible. Simple models do not (usually) overfit. On the other hand, we need to pay attention the to gentle trade-off between overfitting and underfitting a model.
 
 
 Source:
+
+https://scikit-learn.org/
 
 https://www.investopedia.com/ask/answers/060315/what-difference-between-linear-regression-and-multiple-regression.asp
 
 https://www.analyticsvidhya.com/blog/2021/07/all-you-need-to-know-about-polynomial-regression/#:~:text=Polynomial%20Regression%20is%20a%20form%20of%20Linear%20regression%20known%20as,as%20an%20nth%20degree%20polynomial.
 
 https://towardsdatascience.com/simple-and-multiple-linear-regression-with-python-c9ab422ec29c
+
+https://medium.com/hackernoon/practical-machine-learning-ridge-regression-vs-lasso-a00326371ece
 
 
