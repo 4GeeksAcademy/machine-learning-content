@@ -128,7 +128,7 @@ Let's start by loading our clean titanic train data and name it final_df.
 ```python
 # loading clean train dataset
 
-final_df = pd.read_csv('datasets/clean_titanic_train.csv')
+final_df = pd.read_csv('https://raw.githubusercontent.com/4GeeksAcademy/machine-learning-content/master/assets/clean_titanic_train.csv')
 ```
 
 
@@ -739,11 +739,11 @@ In the following code, let's see how to generate our predictions, and save them 
 ```python
 #Load initial test set (the one that was not cleaned yet and where we need to make predictions)
 
-initial_test_df = pd.read_csv('datasets/titanic_test.csv')
+initial_test_df = pd.read_csv('https://raw.githubusercontent.com/4GeeksAcademy/machine-learning-content/master/assets/titanic_test.csv')
 
 #Load cleaned test set
 
-final_test = pd.read_csv('datasets/clean_titanic_test.csv')
+final_test = pd.read_csv('https://raw.githubusercontent.com/4GeeksAcademy/machine-learning-content/master/assets/clean_titanic_test.csv')
 
 #Adding the column survived to clean test set in order to make predictions
 

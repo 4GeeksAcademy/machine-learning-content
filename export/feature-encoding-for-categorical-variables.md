@@ -71,6 +71,8 @@ pd.get_dummies(data['Gender']).head()
 
 -Under OneHotEncoder we can use the GridSearch function in Scikit-learn to choose the best preprocessing parameters.
 
+>To avoid multi-collinearity, we have to drop one of the dummy columns in features with two categories.
+
 #### 2. Ordinal Encoding
 
 Each category is assigned a numeric value representing an order. For example: [small, medium, large, extra-large] could be encoded to [1,2,3,4].
