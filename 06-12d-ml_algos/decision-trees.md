@@ -54,7 +54,7 @@ Gini impurity or entropy. Both generally produce similar results.
 
 **What is Gini impurity?**
 
-Gini impurity is a measurement of how often a randomly chosen record would be incorrectly classified if it was randomly classified using the distribution of the set of samples.
+Gini impurity, also called the Gini index, is a measurement of how often a randomly chosen record would be incorrectly classified if it was randomly classified using the distribution of the set of samples.
 
 A low Gini (near 0) means most records from the sample are in the same class.
 
