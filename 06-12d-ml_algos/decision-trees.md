@@ -81,6 +81,15 @@ High entropy (maximum of 1) means records from sample are spread evenly across c
 
 Non-parametric. The number of model parameters is not determined before creating the model.
 
+**Disadvantages of decision trees**
+
+- Overfitting. Decision trees overfit very quickly. If you let them grow without a stopping mechanism or a correction mechanism after the tree has been trained, they can split so many times that each leaf is a sample. This means that they’ve literally learned how the training data set looks and suffer from high variance (generalize poorly to novel data). Check the chapter below for practical advice on correcting overfitting.
+
+- Non-robust to input data changes. A small change in training data can result in a completely different tree. The overall accuracy might still be high, but the specific decision splits will be totally different.
+
+- Biased towards the dominant class. Classification decision trees tend to favor predicting the dominant class in datasets with class imbalance. 
+
+
 **What are some ways to reduce overfitting with decision trees?**
 
 - Reduce maximum depth
@@ -96,3 +105,7 @@ Non-parametric. The number of model parameters is not determined before creating
 **How is feature importance evaluated in decision-tree based models?**
 
 The features that are split on most frequently and are closest to the top of the tree, thus affecting the largest number of samples, are considered to be the most important.
+
+Source:
+
+https://pythonkai.org/2021/12/20/machine-learning-for-beginners-project-4-decision-tree-classifier/
