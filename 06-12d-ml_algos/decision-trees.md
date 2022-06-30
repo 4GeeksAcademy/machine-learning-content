@@ -1,19 +1,28 @@
 ### Decision Trees
 
+Decision trees belong to a class of supervised machine learning algorithms, which are used in both classification (predicts discrete outcome) and regression (predicts continuous numeric outcomes) predictive modeling.
+
 **What are decision trees?**
 
+Decision trees are a sequence of conditions that allow us to split the data iteratively (a node after another, essentially) until we can assign each data into a label. New data will simply follow the decision tree and end up in the most suitable category.
 
+It is used for classification, regression, to measure feature importance and for feature selection.
 
+Let´s see a simple a simple decision tree:
 
-**What are the common uses of decision tree algorithms?**
+![decision-tree](../assets/decision-tree.jpg)
 
-1. Classification 
+The leaves that contain a mixture of people who have and don’t have Heart Disease are called impure. We can quantify impurity using Gini Impurity, Entropy, and Information Gain. The higher the Gini Impurity, the more impure the leaves are. So we want the value to be as low as possible. We calculate the Gini Impurity of each of the leaves first, then calculate the total Gini Impurity of the split. The formula to calculate Gini Impurity of leaves is:
 
-2. Regression
+Gini impurity of a leaf: 1 - (probability of 'yes')^2 - (probability of 'no')^2
 
-3. Measuring feature importance 
+Finding Gini Impurity for continuous variables is a little more involved. First, we need to sort the column from lowest to highest, then calculate the average for adjacent rows. These average values will be our candidates for root node thresholds. Lastly, we calculate the Gini Impurity values for each average value. 
 
-4. Feature selection
+**Between several features, how do we know which feature should be the root node?**
+
+Gini impurity is calculated for all root node candidates, the one with the lowest Gini Impurity is going to be our root node.
+
+We add branches to nodes that are impure to reduce impurity. Adding branches pretty much follows the same process as finding the root node. 
 
 
 **What are the main hyperparameters that you can tune for decision trees?**
@@ -54,7 +63,7 @@ Gini impurity or entropy. Both generally produce similar results.
 
 **What is Gini impurity?**
 
-Gini impurity, also called the Gini index, is a measurement of how often a randomly chosen record would be incorrectly classified if it was randomly classified using the distribution of the set of samples.
+Gini impurity is a measurement of how often a randomly chosen record would be incorrectly classified if it was randomly classified using the distribution of the set of samples.
 
 A low Gini (near 0) means most records from the sample are in the same class.
 
