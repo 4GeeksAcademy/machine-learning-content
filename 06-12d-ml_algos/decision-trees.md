@@ -92,6 +92,8 @@ Generally speaking, decision trees have the following parameters:
 
 The traditional decision tree is greedy and looks at all features at each split point, but many modern implementations allow splitting on randomized features (as seen in scikit learn) so max features may or may not be a tuneable hyperparameter.
 
+As always, the best place to know what other hyperparameters can be tuned, is the scikit learn documentation on decision trees, whether it's for classification or regression: https://scikit-learn.org/stable/modules/tree.html
+
 **How is feature importance evaluated in decision-tree based models?**
 
 The features that are split on most frequently and are closest to the top of the tree, thus affecting the largest number of samples, are considered to be the most important.
