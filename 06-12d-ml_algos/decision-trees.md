@@ -1,14 +1,26 @@
 ### Decision Trees
 
-Decision trees belong to a class of supervised machine learning algorithms, which are used in both classification (predicts discrete outcome) and regression (predicts continuous numeric outcomes) predictive modeling.
+Decision trees belong to a class of supervised machine learning algorithms, which are used in both classification (predicts discrete outcome) and regression (predicts continuous numeric outcomes) predictive modeling. They are constructed from only two elements — nodes and branches.
 
 **What are decision trees?**
 
-Decision trees are a sequence of conditions that allow us to split the data iteratively (a node after another, essentially) until we can assign each data into a label. New data will simply follow the decision tree and end up in the most suitable category.
+Decision trees are a sequence of conditions that allow us to split the data iteratively (a node after another, essentially) until we can assign each data into a label. New data will simply follow the decision tree and end up in the most suitable category. 
 
-It is used for classification, regression, to measure feature importance and for feature selection.
+They are used for classification, regression, to measure feature importance and for feature selection.
 
-Let´s see a simple a simple decision tree:
+
+
+Let´s see a decision tree structure:
+
+![decision_tree_structure](../assets/decision_tree_structure.jpg)
+
+- Root node — node at the top of the tree. It contains a feature that best splits the data (a single feature that alone classifies the target variable most accurately)
+
+- Decision nodes — nodes where the variables are evaluated. These nodes have arrows pointing to them and away from them
+
+- Leaf nodes — final nodes at which the prediction is made
+
+Depending on the dataset size (both in rows and columns), there are probably thousands to millions of ways the nodes and their conditions can be arranged. Now, let's look at a small example:
 
 ![decision-tree](../assets/decision-tree.jpg)
 
@@ -20,12 +32,37 @@ Finding Gini Impurity for continuous variables is a little more involved. First,
 
 **Between several features, how do we know which feature should be the root node?**
 
+We need to check how every input feature classifies the target variable independently. If none of the features alone is 100% correct in the classification, we can consider these features impure.
+
 Gini impurity is calculated for all root node candidates, the one with the lowest Gini Impurity is going to be our root node.
 
-We add branches to nodes that are impure to reduce impurity. Adding branches pretty much follows the same process as finding the root node. 
+To further decide which of the impure features is most pure, we can use the Entropy metric, whose value ranges from 0 (best) to 1 (worst). The variable with the lowest entropy is then used as a root node.
+
+To begin training the decision tree classifier, we have to determine the root node. Then, for every single split, the Information gain metric is calculated. It represents an average of all entropy values based on a specific split. The higher the gain is, the better the decision split is.
+
+To sum up:
+
+- **Gini impurity** is a measurement of how often a randomly chosen record would be incorrectly classified if it was randomly classified using the distribution of the set of samples.
+
+A low Gini (near 0) means most records from the sample are in the same class.
+
+A high Gini (maximum of 1 or less, depending on number of classes) = records from sample are spread evenly across classes.
 
 
-**What are the main hyperparameters that you can tune for decision trees?**
+- **Entropy** is the measure of the purity of members among non-empty classes. It is very similar to Gini in concept, but a slightly different calculation.
+
+Low entropy (near 0) means most records from the sample are in the same class.
+
+High entropy (maximum of 1) means records from sample are spread evenly across classes.
+
+
+**Are decision trees parametric or non-parametric models?**
+
+Non-parametric. The number of model parameters is not determined before creating the model.
+
+
+
+## What are the main hyperparameters that you can tune for decision trees?
 
 Generally speaking, decision trees have the following parameters:
 
@@ -42,7 +79,7 @@ Generally speaking, decision trees have the following parameters:
 The traditional decision tree is greedy and looks at all features at each split point, but many modern implementations allow splitting on randomized features (as seen in scikit learn) so max features may or may not be a tuneable hyperparameter.
 
 
-**How each hyperparameter affects the model's ability to learn?**
+## How each hyperparameter affects the model's ability to learn?**
 
 - max depth: increasing max depth will decrease bias and increase variance 
 
@@ -56,32 +93,8 @@ The traditional decision tree is greedy and looks at all features at each split 
 
 There may be instances when changing hyperparameters has no effect on the model.
 
-**What metrics are usually used to compute splits?**
 
-Gini impurity or entropy. Both generally produce similar results.
-
-
-**What is Gini impurity?**
-
-Gini impurity is a measurement of how often a randomly chosen record would be incorrectly classified if it was randomly classified using the distribution of the set of samples.
-
-A low Gini (near 0) means most records from the sample are in the same class.
-
-A high Gini (maximum of 1 or less, depending on number of classes) = records from sample are spread evenly across classes.
-
-**What is entropy?**
-
-Entropy is the measure of the purity of members among non-empty classes. It is very similar to Gini in concept, but a slightly different calculation.
-
-Low entropy (near 0) means most records from the sample are in the same class.
-
-High entropy (maximum of 1) means records from sample are spread evenly across classes.
-
-**Are decision trees parametric or non-parametric models?**
-
-Non-parametric. The number of model parameters is not determined before creating the model.
-
-**Disadvantages of decision trees**
+## Disadvantages of decision trees**
 
 - Overfitting. Decision trees overfit very quickly. If you let them grow without a stopping mechanism or a correction mechanism after the tree has been trained, they can split so many times that each leaf is a sample. This means that they’ve literally learned how the training data set looks and suffer from high variance (generalize poorly to novel data). Check the chapter below for practical advice on correcting overfitting.
 
@@ -90,7 +103,7 @@ Non-parametric. The number of model parameters is not determined before creating
 - Biased towards the dominant class. Classification decision trees tend to favor predicting the dominant class in datasets with class imbalance. 
 
 
-**What are some ways to reduce overfitting with decision trees?**
+## What are some ways to reduce overfitting with decision trees?**
 
 - Reduce maximum depth
 
@@ -102,10 +115,12 @@ Non-parametric. The number of model parameters is not determined before creating
 
 - Decrease the number of features
 
-**How is feature importance evaluated in decision-tree based models?**
+## How is feature importance evaluated in decision-tree based models?**
 
 The features that are split on most frequently and are closest to the top of the tree, thus affecting the largest number of samples, are considered to be the most important.
 
 Source:
 
 https://pythonkai.org/2021/12/20/machine-learning-for-beginners-project-4-decision-tree-classifier/
+
+https://towardsdatascience.com/master-machine-learning-decision-trees-from-scratch-with-python-de75b0494bcd
