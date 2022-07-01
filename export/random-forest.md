@@ -3,6 +3,7 @@
 **What is Random Forest?**
 
 
+
 **How does Random Forest differ from traditional Decision Tree algorithms?**
 
 Random Forest is an ensemble method that uses bagged decision trees with random feature subsets chosen at each split point. It then either averages the prediction results of each tree (regression) or using votes from each tree (classification) to make the final prediction.
