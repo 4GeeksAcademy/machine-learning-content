@@ -26,7 +26,7 @@ Steps of a gradient boosting algorithm:
 
 Gradient boosting involves using multiple weak predictors (decision trees) to create a strong predictor. Specifically, it includes a loss function that calculates the gradient of the error with regard to each feature and then iteratively creates new decision trees that minimize the current error. More and more trees are added to the current model to continue correcting error until improvements fall below some minimum threshold or a pre-decided number of trees have been created.
 
-## What hyperparameters can be tuned in gradient boosting in addition to each individual tree's hyperparameters?**
+**What hyperparameters can be tuned in gradient boosting in addition to each individual tree's hyperparameters?**
 
 The main hyperparameters that can be tuned with GBM models are:
 
@@ -178,3 +178,9 @@ https://towardsdatascience.com/basic-ensemble-learning-random-forest-adaboost-gr
 https://medium.com/@aravanshad/gradient-boosting-versus-random-forest-cfa3fa8f0d80
 
 https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d
+
+https://xgboost.readthedocs.io/en/latest/parameter.html
+
+https://towardsdatascience.com/a-beginners-guide-to-xgboost-87f5d4c30ed7
+
+https://towardsdatascience.com/fine-tuning-xgboost-in-python-like-a-boss-b4543ed8b1e
