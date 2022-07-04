@@ -115,7 +115,60 @@ Now, let's see the following comparison. XGBoost model has the best combination 
 
 (Image from towardsdatascience.com)
 
-Ensemble learning is very powerful and can be used not only for classification problem but regression also. Even though they generally work mostly in tree methods, they can also be applied in linear and svm models within the bagging or boosting ensembles, to lead better performance. But remember, picking the right algorithm is not enough. We must also choose the right configuration of the algorithm for a dataset by tuning the hyper-parameters. 
+Setting the optimal hyperparameters of any ML model can be a challenge. So why not let Scikit Learn do it for you? 
+
+For XGBoost to be able to handle our data, we’ll need to transform it into a specific format called DMatrix. Let's see an example on how to define an XGBoost model:
+
+```py
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size=0.2)
+
+D_train = xgb.DMatrix(X_train, label=Y_train)
+D_test = xgb.DMatrix(X_test, label=Y_test)
+
+param = {
+    'eta': 0.3, 
+    'max_depth': 3,  
+    'objective': 'multi:softprob',  
+    'num_class': 3} 
+
+steps = 20  # The number of training iterations
+
+model = xgb.train(param, D_train, steps)
+
+```
+
+How would we combine Scikit Learn’s grid search with an XGBoost classifier?
+
+>Only do that on a big dataset if you have time to kill — doing a grid search is essentially training an ensemble of decision trees many times over!
+
+```py
+
+from sklearn.model_selection import GridSearchCV
+
+clf = xgb.XGBClassifier()
+parameters = {
+     "eta"    : [0.05, 0.10, 0.15, 0.20, 0.25, 0.30 ] ,
+     "max_depth"        : [ 3, 4, 5, 6, 8, 10, 12, 15],
+     "min_child_weight" : [ 1, 3, 5, 7 ],
+     "gamma"            : [ 0.0, 0.1, 0.2 , 0.3, 0.4 ],
+     "colsample_bytree" : [ 0.3, 0.4, 0.5 , 0.7 ]
+     }
+
+grid = GridSearchCV(clf,
+                    parameters, n_jobs=4,
+                    scoring="neg_log_loss",
+                    cv=3)
+
+grid.fit(X_train, Y_train)
+
+```
+
+The full list of possible parameters is available on the official XGBoost website: https://xgboost.readthedocs.io/en/latest/parameter.html 
+
+
+Ensemble learning is very powerful and can be used not only for classification but regression also. Even though they generally work mostly in tree methods, they can also be applied in linear and svm models within the bagging or boosting ensembles, to lead to better performance. But remember, picking the right algorithm is not enough. We must also choose the right configuration of the algorithm for a dataset by tuning the hyper-parameters. 
 
 
 Source:
@@ -123,3 +176,5 @@ Source:
 https://towardsdatascience.com/basic-ensemble-learning-random-forest-adaboost-gradient-boosting-step-by-step-explained-95d49d1e2725
 
 https://medium.com/@aravanshad/gradient-boosting-versus-random-forest-cfa3fa8f0d80
+
+https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d
