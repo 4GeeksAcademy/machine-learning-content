@@ -86,13 +86,13 @@
 
 1.3. Model hyperparameters optimization
 
-1.4 Logistic Regression notebook
+1.4. Logistic Regression notebook
 
 📝 Logistic regression project (2 hours) 
 
 2.1. Linear Regression 
 
-2.2. Linear Regression notebook
+2.2. Exploring Linear Regression notebook
 
 📝 Linear regression project (2 hours) 
 
@@ -102,23 +102,23 @@
 
 4.1. Decision Trees
 
-4.2. Decision Trees Notebook
+4.2. Exploring Decision Trees Notebook
 
 📝 Decision trees project (2 hours)
 
-5.1 Random Forest
+5.1. Random Forest
 
 📝 Random Forest project (2 hours)
 
-6. Boosting Algorithms
+6.1. Boosting Algorithms
 
 📝 Gradient Boosting project (2 hours)
 
-7. Naive Bayes
+7.1. Naive Bayes
 
 📝 Naive Bayes project (2 hours)
 
-8. Support Vector Machine
+8.1. Support Vector Machine
 
 📝 Support Vector Machine project (2 hours)
 
@@ -128,15 +128,17 @@
 
 📝 Unsupervised learning project (2 hours)
 
-10. Time Series Forecasting 
+10.1. Time Series Forecasting 
 
 📝 Time series project (2 hours)
 
-11. Natural Language Processing
+11.1. Natural Language Processing
 
 📝 Natural language processing project (2 hours)
 
-12. Introduction to Deep Learning
+12.1. Introduction to Deep Learning
+
+12.2. Exploring Deep Learning Notebook
 
 📝 Deep learning project (2 hours)
 
