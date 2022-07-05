@@ -90,25 +90,27 @@
 
 📝 Logistic regression project (2 hours) 
 
-2. Simple Linear Regression notebook
+2.1. Linear Regression 
 
-📝 Simple Linear regression project (2 hours) 
+2.2. Linear Regression notebook
 
-3.1. Multiple Regression notebook
+📝 Linear regression project (2 hours) 
 
-📝 Multiple regression project (2 hours) 
+3.1. Regularized Linear Regression 
 
-4.1. Tree Based models
+📝 Regularized linear regression project (2 hours) 
 
-4.2. Decision Trees
+4.1. Decision Trees
 
-📝 Decision tree project (2 hours)
+4.2. Decision Trees Notebook
 
-5. Random Forest
+📝 Decision trees project (2 hours)
+
+5.1 Random Forest
 
 📝 Random Forest project (2 hours)
 
-6. Gradient Boosting
+6. Boosting Algorithms
 
 📝 Gradient Boosting project (2 hours)
 
