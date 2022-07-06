@@ -827,7 +827,7 @@ submission.tail()
 
 
 
-## Important considerations before modeling with Logistic Regression 
+## Import considerations before modeling with Logistic Regression 
 
 Ultimately in predictive modeling machine learning projects we are focused on making accurate predictions rather than interpreting the results. As such, we can break some assumptions as long as the model is robust and performs well.
 

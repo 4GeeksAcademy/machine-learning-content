@@ -2,7 +2,7 @@
 
 ***What is dimensionality reduction?**
 
-...
+Dimensionality Reduction is used to reduce the number of variables of a data set while ensuring that important information is still conveyed. Dimensionality Reduction can be done using Feature Extraction methods and Feature Selection methods. Feature Selection selects a subset of the original variables. Feature Extraction performs data transformation from a high-dimensional space to a low-dimensional space. Example: PCA algorithm is a Feature Extraction approach.
 
 **Why would we want to use dimensionality reduction techniques to transform our data before training?**
 
@@ -49,3 +49,7 @@ Selecting the number of latent features to retain is tipically done by inspectin
 This means that principal components with small eigenvalues have a small impact on the model and can be removed.
 
 There are various rules of thumb, but one general rule is to include the most significant principal components that account for at least 95% of the variation in the features.
+
+Source:
+
+https://www.dataquest.io/blog/top-10-machine-learning-algorithms-for-beginners/#:~:text=The%20first%205%20algorithms%20that,are%20examples%20of%20supervised%20learning.

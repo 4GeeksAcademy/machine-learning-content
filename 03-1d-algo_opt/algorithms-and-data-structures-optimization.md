@@ -1,6 +1,8 @@
-# ALGORITHMS AND DATA STRUCTURES
+# ALGORITMOS Y ESTRUCTURAS DE DATOS
 
-## What is an algorithm?
+## ¿Qué es un algoritmo?
+
+Los algoritmos son más simples de lo que pensamos. Desde que somos niños nos enseñan cómo completar las tareas del día a día. Un algoritmo es un conjunto de instrucciones que se siguen para lograr un objetivo o producir un resultado, por ejemplo, aprender a caminar, atarse los zapatos o preparar un pastel. Todos estos procesos se nos enseñan mediante un procedimiento paso a paso.
 
 Algorithms are more simple than we think. Since we are kids we are taught how to complete day to day tasks.
 An algorithm is a set of instructions followed to achieve a goal or to produce an output, for example learning to walk, tie your shoes or preparing a cake. All these processes are taught to us using a step to step procedure.
@@ -192,7 +194,7 @@ There is no performance benefit of using recursion, in fact, sometimes loops are
 
 ![recursion.jpg](../assets/recursion.jpg)
 
-Remember ! Recursion keeps track of the state. 
+¡Recuerda! Recursion keeps track of the state. 
 TIP: When we are dealing with a recursive function involving an array, the base case is often an empty array or an array with one element.
 If we are stuck, we should try that first.
 
