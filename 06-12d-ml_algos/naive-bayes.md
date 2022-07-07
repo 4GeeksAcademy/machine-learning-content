@@ -215,6 +215,8 @@ https://www.analyticsvidhya.com/blog/2021/01/gaussian-naive-bayes-with-hyperpame
 
 https://www.aifinesse.com/naive-bayes/naive-bayes-advantages/
 
+https://www.aifinesse.com/naive-bayes/naive-bayes-tuning/
+
 
 
 
