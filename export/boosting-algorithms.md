@@ -93,7 +93,7 @@ accuracy_score(y_test, y_pred)
 OUTPUT:0.834
 ```
 
-> n_estimators stands for how many trees we want to grow
+> n_estimators stands for how many tree we want to grow
 
 ## What is XGBoost?
 
