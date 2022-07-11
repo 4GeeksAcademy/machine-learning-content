@@ -206,4 +206,10 @@ https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.tex
 
 https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html
 
+https://github.com/pb111/Naive-Bayes-Classification-Project
+
+https://www.kaggle.com/code/shawon10/url-classification-by-naive-bayes/notebook
+
+https://github.com/Hrd2D/Sentiment-analysis-on-Google-Play-store-apps-reviews/blob/master/main.ipynb
+
 
