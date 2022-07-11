@@ -1,5 +1,31 @@
 # Support Vector Machine
 
+Support Vector Machine is a supervised learning algorithm so we need to have a labeled dataset to be able to use SVM. It can be used both for regression and classification and it can be of linear and non linear type. The optimization objective is to maximize the margin, which means finding the line for which the distance of the closest points is the farthest possible.
+
+Let's see some graphs where the algorithm is trying to find the maximum distance between the closest points:
+
+![svm](../assets/svm.jpg)
+
+![svm2](../assets/svm2.jpg)
+
+![svm3](../assets/svm3.jpg)
+
+We can see that the third graph between lines is the greatest distance we can observe in order to put between our two groups.
+
+To completely understand the Support Vector Machine terminology, let's look at the parts of it:
+
+![svm_terminology](../assets/svm_terminology.jpg)
+
+To sum up some possible uses of SVM models, they can be used for:
+
+-Linear classification
+
+-Non linear classification
+
+-Linear Regression
+
+-Non linear Regression
+
 ## What hyperparameters can we tune for SVM?
 
 The hyperparameters that we commonly tune for SVM are:
@@ -15,18 +41,6 @@ The hyperparameters that we commonly tune for SVM are:
 -Coef() (influences impact of high vs low degree polynomials for polynomial or sigmoid kernels)
 
 -Epsilon (a margin term used for SVM regressions)
-
-**What are some possible uses of SVM models?**
-
-Support Vector Machine can be used for:
-
--Linear classification
-
--Non linear classification
-
--Linear Regression
-
--Non linear Regression
 
 **What common kernels can be used for SVM?**
 
