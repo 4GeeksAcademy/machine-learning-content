@@ -38,7 +38,7 @@ While a computer can actually be quite good at finding patterns and summarizing 
 
 ```py
 Tfidf_vect = TfidfVectorizer(max_features=5000)
-Tfidf_vect.fit(df['text_final'])
+Tfidf_vect.fit(news_df['text_final'])
 
 X_train_Tfidf = Tfidf_vect.transform(X_train)
 X_test_Tfidf = Tfidf_vect.transform(X_test)
@@ -56,7 +56,7 @@ The following parts of the cleaning process will have different code implementat
 2. Change all the text to lower case because python interprets upper and lower case differently. Here an example on how to convert entries to lower case. Remember you can include this step as part of a cleaning function.
 
 ```py
-df['text'] = [entry.lower() for entry in df['text']]
+news_df['text'] = [entry.lower() for entry in news_df['text']]
 ```
 
 3. Remove non-alpha text, tags, and punctuation characters. This can be done with the help of regular expressions.
@@ -86,12 +86,13 @@ def remove_punctuation(text):
     no_punct=[words for words in text if words not in string.punctation]
     words_wo_punct=''.join(no_punct)
     return words_wo_punct
-news_df['title_wo_punct']=news_df['title'].apply(lambda x: remove_punctuation(x))
+news_df['title_wo_punct'] = news_df['title'].apply(lambda x: remove_punctuation(x))
 
 def remove_stopwords(text):
     text=[word for word in text if word not in stopword]
     return text
 news_df['title_wo_punct_split_wo_stopwords'] = news_df['title_wo_punct_split'].apply(lambda x: remove_stopwords(x))
+
 ```
 
 We can also decide to remove the stop words by adding a parameter called “stop_words” in the “TFidfVectorizer” of the vectorization step.
@@ -100,7 +101,7 @@ We can also decide to remove the stop words by adding a parameter called “stop
 
 ```py
 #Example 1
-df['text']= [word_tokenize(entry) for entry in df['text']]
+news_df['text']= [word_tokenize(entry) for entry in news_df['text']]
 
 #Example 2 : 
 def tokenize(text):
@@ -109,27 +110,27 @@ def tokenize(text):
 news_df['title_wo_punct_split']=news_df['title_wo_punct'].apply(lambda x: tokenize(x.lower())) #--->The new column has created a list, by splitting all the non-word characters.
 ```
 
-6. Word Lemmatization/ Stemming: It is the process of reducing the inflectional forms of each word into a common base or root.
-The difference between lemma and stem is that a stemmer operates on a single word without knowledge of the context, and therefore cannot discriminate between words which have different meanings depending on part of speech. However, stemmers are typically easier to implement and run faster, and the reduced accuracy may not matter for some applications. For example, if the message contains some error word like “frei” which might be misspelled for “free”. Stemmer will stem or reduce that error word to its root word i.e. “fre”. As a result, “fre” is the root word for both “free” and “frei”. 
-
-    For word lemmatization you can use WordNetLemmatizer(). WordNetLemmatizer requires Pos tags to understand if the word is noun or verb or adjective etc. By default it is set to Noun. Let's see the following code example:
+6. Word Lemmatization/ Stemming: It is the process of reducing the inflectional forms of each word into a common base or root. The main purpose is to reduce variations of the same word, thereby reducing the corpus of words we include in the model. The difference between stemming and lemmatizing is that, stemming chops off the end of the word without taking into consideration the context of the word. Whereas, Lemmatizing considers the context of the word and shortens the word into its root form based on the dictionary definition. Stemming is a faster process compared to Lemmantizing. Hence, it a trade-off between speed and accuracy. For example, if the message contains some error word like “frei” which might be misspelled for “free”. Stemmer will stem or reduce that error word to its root word i.e. “fre”. As a result, “fre” is the root word for both “free” and “frei”. 
 
 ```py
-tag_map = defaultdict(lambda : wn.NOUN)
-tag_map['J'] = wn.ADJ
-tag_map['V'] = wn.VERB
-tag_map['R'] = wn.ADV
-
-# Initializing WordNetLemmatizer()
-word_Lemmatized = WordNetLemmatizer()
-
-# pos_tag function below will provide the 'tag' i.e if the word is Noun(N) or Verb(V) or something else.
-for word, tag in pos_tag(entry):
-    # Below condition is to check for Stop words and consider only alphabets
-    if word not in stopwords.words('english') and word.isalpha():
-        word_Final = word_Lemmatized.lemmatize(word,tag_map[tag[0]])
+print(ps.stem('believe'))
+print(ps.stem('believing'))
+print(ps.stem('believed'))
+print(ps.stem('believes'))
 ```
 
+    The stem results for all of the above is believ
+
+```py
+print(wn.lemmatize(“believe”))
+print(wn.lemmatize(“believing”))
+print(wn.lemmatize(“believed”))
+print(wn.lemmatize(“believes”))
+```
+
+    The lemmatize results in the order of print statements are — believe, believing, believed, and belief. Lemmatize produces the same result if the word is not in the corpus. Believe is lemmatized to belief (the root word)
+    
+    
 ## Cleaning process with a word cloud example
 
 What is a word cloud? 
@@ -230,6 +231,8 @@ https://towardsdatascience.com/3-super-simple-projects-to-learn-natural-language
 https://www.youtube.com/watch?v=VDg8fCW8LdM
 
 https://medium.com/@bedigunjit/simple-guide-to-text-classification-nlp-using-svm-and-naive-bayes-with-python-421db3a72d34
+
+https://towardsdatascience.com/nlp-in-python-data-cleaning-6313a404a470
 
 
 
