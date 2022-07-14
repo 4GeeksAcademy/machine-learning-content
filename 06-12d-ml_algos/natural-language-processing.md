@@ -51,7 +51,7 @@ X_test_Tfidf = Tfidf_vect.transform(X_test)
 
 You can always add or remove steps which best suits the data set you are dealing with:
 
-1. Remove Blank rows or duplicated rows in Data. We can do this using dropna and drop_duplicates respectively.
+1. Remove blank or duplicated rows in the data. We can do this using dropna and drop_duplicates respectively.
 
 2. Change all the text to lower case because python interprets upper and lower case differently. Here an example on how to convert entries to lower case. Remember you can include this step as part of a cleaning function.
 
@@ -59,11 +59,11 @@ You can always add or remove steps which best suits the data set you are dealing
 df['text'] = [entry.lower() for entry in df['text']]
 ```
 
-3. Remove Non-alpha text, tags, and punctuation characters. This can be done with the help of regular expressions.
+3. Remove non-alpha text, tags, and punctuation characters. This can be done with the help of regular expressions.
 
 4. Remove Stop words: It removes all the frequently used words such as “I, or, she, have, did, you, to”.
 
-Both previous steps can be easily achieved by using the nltk and string modules. Let's see an example of the punctuation and stop words this modules have already defined.
+    Both previous steps can be easily achieved by using the nltk and string modules. Let's see an example of the punctuation and stop words this modules have already defined.
 
 ```py
 import string
@@ -78,7 +78,7 @@ print(punctuation)
 >>>   !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 ```
 
-We can also decide to remove the stop words by adding a parameter called “stop_words” in the “TFidfVectorizer” of the vectorization step.
+    We can also decide to remove the stop words by adding a parameter called “stop_words” in the “TFidfVectorizer” of the vectorization step.
 
 5. Word Tokenization: It is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens. The list of tokens becomes input for further processing. NLTK Library has word_tokenize and sent_tokenize to easily break a stream of text into a list of words or sentences, respectively. Here an example:
 
