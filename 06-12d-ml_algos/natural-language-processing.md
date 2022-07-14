@@ -49,7 +49,7 @@ X_test_Tfidf = Tfidf_vect.transform(X_test)
 
 ### Detail of data pre-processing steps
 
-You can always add or remove steps which best suits the data set you are dealing with:
+The following parts of the cleaning process will have different code implementation examples. You can always add or remove steps which best suits the data set you are dealing with:
 
 1. Remove blank or duplicated rows in the data. We can do this using dropna and drop_duplicates respectively.
 
@@ -63,27 +63,43 @@ df['text'] = [entry.lower() for entry in df['text']]
 
 4. Remove Stop words: It removes all the frequently used words such as “I, or, she, have, did, you, to”.
 
-Both steps 3 and 4 of the cleaning process (remvoing special characters and stop words) can be easily achieved by using the nltk and string modules. Let's see an example of the punctuation and stop words this modules have already defined.
+Both steps 3 and 4 of the cleaning process (removing special characters and stop words) can be easily achieved by using the nltk and string modules. Let's see an example of the punctuation and stop words this modules have already defined.
 
 ```py
 import string
 import nltk
+
 nltk.download('stopwords')
 nltk.download('punkt')
+
 stopwords = nltk.corpus.stopwords.words('english')
 punctuation = string.punctuation
+
 print(stopwords[:5])
 print(punctuation)
 >>>   ['i', 'me', 'my', 'myself', 'we']
 >>>   !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+
+def remove_punctuation(text):
+    no_punct=[words for words in text if words not in string.punctation]
+    words_wo_punct=''.join(no_punct)
+    return words_wo_punct
+news_df['title_wo_punct']=news_df['title'].apply(lambda x: remove_punctuation(x))
 ```
 
 We can also decide to remove the stop words by adding a parameter called “stop_words” in the “TFidfVectorizer” of the vectorization step.
 
-5. Word Tokenization: It is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens. The list of tokens becomes input for further processing. NLTK Library has word_tokenize and sent_tokenize to easily break a stream of text into a list of words or sentences, respectively. Here an example:
+5. Word Tokenization: It is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens. The list of tokens becomes input for further processing. NLTK Library has word_tokenize and sent_tokenize to easily break a stream of text into a list of words or sentences, respectively. Here a couple of examples. The second example is a function that tokenizes and converts to lower case at the same time.
 
 ```py
+#Example 1
 df['text']= [word_tokenize(entry) for entry in df['text']]
+
+#Example 2 : 
+def tokenize(text):
+    split=re.split("\W+",text) #--->\W+” splits on one or more non-word character
+    return split
+news_df['title_wo_punct_split']=news_df['title_wo_punct'].apply(lambda x: tokenize(x.lower())) #--->The new column has created a list, by splitting all the non-word characters.
 ```
 
 6. Word Lemmatization/ Stemming: It is the process of reducing the inflectional forms of each word into a common base or root.
