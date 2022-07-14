@@ -28,7 +28,7 @@ Real-world data is often incomplete, inconsistent, and/or lacking in certain beh
 
 - **Step 6:** Encoding the target
 
-Label encode the target variable — This is done to transform Categorical data of string type in the data set into numerical values which the model can understand.
+Label encode the target variable to transform its string type, if so, into numerical values which the model can understand.
 
 - **Step 7:** Bag of words (vectorization)
 
