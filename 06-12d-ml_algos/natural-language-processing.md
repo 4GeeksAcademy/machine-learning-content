@@ -63,7 +63,7 @@ df['text'] = [entry.lower() for entry in df['text']]
 
 4. Remove Stop words: It removes all the frequently used words such as “I, or, she, have, did, you, to”.
 
-Both previous steps can be easily achieved by using the nltk and string modules. Let's see an example of the punctuation and stop words this modules have already defined.
+Both steps 3 and 4 of the cleaning process (remvoing special characters and stop words) can be easily achieved by using the nltk and string modules. Let's see an example of the punctuation and stop words this modules have already defined.
 
 ```py
 import string
@@ -89,7 +89,7 @@ df['text']= [word_tokenize(entry) for entry in df['text']]
 6. Word Lemmatization/ Stemming: It is the process of reducing the inflectional forms of each word into a common base or root.
 The difference between lemma and stem is that a stemmer operates on a single word without knowledge of the context, and therefore cannot discriminate between words which have different meanings depending on part of speech. However, stemmers are typically easier to implement and run faster, and the reduced accuracy may not matter for some applications. For example, if the message contains some error word like “frei” which might be misspelled for “free”. Stemmer will stem or reduce that error word to its root word i.e. “fre”. As a result, “fre” is the root word for both “free” and “frei”. 
 
-For word lemmatization you can use WordNetLemmatizer(). WordNetLemmatizer requires Pos tags to understand if the word is noun or verb or adjective etc. By default it is set to Noun. Let's see the following code example:
+    For word lemmatization you can use WordNetLemmatizer(). WordNetLemmatizer requires Pos tags to understand if the word is noun or verb or adjective etc. By default it is set to Noun. Let's see the following code example:
 
 ```py
 tag_map = defaultdict(lambda : wn.NOUN)
