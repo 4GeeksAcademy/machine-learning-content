@@ -22,13 +22,13 @@ While a computer can actually be quite good at finding patterns and summarizing 
 
 - **Step 4:** Preprocess the content of each text. This is a very important step.
 
-Real-world data is often incomplete, inconsistent, and/or lacking in certain behaviors or trends, and is likely to contain many errors. Data pre-processing is a proven method of resolving such issues.This will help in getting better results through the classification algorithms. You can see the detail of the cleaning process below.
+Real-world data is often incomplete, inconsistent, and/or lacking in certain behaviors or trends, and is likely to contain many errors. Data pre-processing is a proven method of resolving such issues.This will help in getting better results through the classification algorithms. You can see the detail of the cleaning process below in "Detail of data pre-processing steps".
 
 - **Step 5:** Separate train and test datasets
 
 - **Step 6:** Encoding the target
 
-Label encode the target variable to transform its string type, if so, into numerical values which the model can understand.
+Label encode the target variable to transform its string type, if so, into numerical values which the model can understand. This can be done as one of your first steps too, but make sure it is converted before splitting the data into train and test.
 
 - **Step 7:** Bag of words (vectorization)
 
