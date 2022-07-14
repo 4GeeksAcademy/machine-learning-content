@@ -47,7 +47,7 @@ X_test_Tfidf = Tfidf_vect.transform(X_test)
 - **Step 8:** Use the ML Algorithm to Predict the outcome.
 
 
-### Detail of data pre-processing steps
+### **Detail of data pre-processing steps**
 
 The following parts of the cleaning process will have different code implementation examples. You can always add or remove steps which best suits the data set you are dealing with:
 
