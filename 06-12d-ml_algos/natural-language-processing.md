@@ -80,11 +80,18 @@ print(punctuation)
 >>>   ['i', 'me', 'my', 'myself', 'we']
 >>>   !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 
+#creating functions to remove punctuation and stop words
+
 def remove_punctuation(text):
     no_punct=[words for words in text if words not in string.punctation]
     words_wo_punct=''.join(no_punct)
     return words_wo_punct
 news_df['title_wo_punct']=news_df['title'].apply(lambda x: remove_punctuation(x))
+
+def remove_stopwords(text):
+    text=[word for word in text if word not in stopword]
+    return text
+news_df['title_wo_punct_split_wo_stopwords'] = news_df['title_wo_punct_split'].apply(lambda x: remove_stopwords(x))
 ```
 
 We can also decide to remove the stop words by adding a parameter called “stop_words” in the “TFidfVectorizer” of the vectorization step.
