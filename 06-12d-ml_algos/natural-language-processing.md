@@ -51,17 +51,17 @@ X_test_Tfidf = Tfidf_vect.transform(X_test)
 
 The following parts of the cleaning process will have different code implementation examples. You can always add or remove steps which best suits the data set you are dealing with:
 
-1. Remove blank or duplicated rows in the data. We can do this using dropna and drop_duplicates respectively.
+**1. Remove blank or duplicated rows** in the data. We can do this using dropna and drop_duplicates respectively.
 
-2. Change all the text to lower case because python interprets upper and lower case differently. Here an example on how to convert entries to lower case. Remember you can include this step as part of a cleaning function.
+**2. Change all the text to lower case** because python interprets upper and lower case differently. Here an example on how to convert entries to lower case. Remember you can include this step as part of a cleaning function.
 
 ```py
 news_df['text'] = [entry.lower() for entry in news_df['text']]
 ```
 
-3. Remove non-alpha text, tags, and punctuation characters. This can be done with the help of regular expressions.
+**3. Remove non-alpha text, tags, and punctuation** characters. This can be done with the help of regular expressions.
 
-4. Remove Stop words: It removes all the frequently used words such as “I, or, she, have, did, you, to”.
+**4. Remove Stop words.** It removes all the frequently used words such as “I, or, she, have, did, you, to”.
 
 Both steps 3 and 4 of the cleaning process (removing special characters and stop words) can be easily achieved by using the nltk and string modules. Let's see an example of the punctuation and stop words this modules have already defined.
 
@@ -97,7 +97,7 @@ news_df['title_wo_punct_split_wo_stopwords'] = news_df['title_wo_punct_split'].a
 
 We can also decide to remove the stop words by adding a parameter called “stop_words” in the “TFidfVectorizer” of the vectorization step.
 
-5. Word Tokenization: It is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens. The list of tokens becomes input for further processing. NLTK Library has word_tokenize and sent_tokenize to easily break a stream of text into a list of words or sentences, respectively. Here a couple of examples. The second example is a function that tokenizes and converts to lower case at the same time.
+**5. Word Tokenization.** It is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens. The list of tokens becomes input for further processing. NLTK Library has word_tokenize and sent_tokenize to easily break a stream of text into a list of words or sentences, respectively. Here a couple of examples. The second example is a function that tokenizes and converts to lower case at the same time.
 
 ```py
 #Example 1
@@ -110,7 +110,7 @@ def tokenize(text):
 news_df['title_wo_punct_split']=news_df['title_wo_punct'].apply(lambda x: tokenize(x.lower())) #--->The new column has created a list, by splitting all the non-word characters.
 ```
 
-6. Word Lemmatization/ Stemming: It is the process of reducing the inflectional forms of each word into a common base or root. The main purpose is to reduce variations of the same word, thereby reducing the corpus of words we include in the model. The difference between stemming and lemmatizing is that, stemming chops off the end of the word without taking into consideration the context of the word. Whereas, Lemmatizing considers the context of the word and shortens the word into its root form based on the dictionary definition. Stemming is a faster process compared to Lemmantizing. Hence, it a trade-off between speed and accuracy. For example, if the message contains some error word like “frei” which might be misspelled for “free”. Stemmer will stem or reduce that error word to its root word i.e. “fre”. As a result, “fre” is the root word for both “free” and “frei”. 
+**6. Word Lemmatization/ Stemming.** It is the process of reducing the inflectional forms of each word into a common base or root. The main purpose is to reduce variations of the same word, thereby reducing the corpus of words we include in the model. The difference between stemming and lemmatizing is that, stemming chops off the end of the word without taking into consideration the context of the word. Whereas, Lemmatizing considers the context of the word and shortens the word into its root form based on the dictionary definition. Stemming is a faster process compared to Lemmantizing. Hence, it a trade-off between speed and accuracy. For example, if the message contains some error word like “frei” which might be misspelled for “free”. Stemmer will stem or reduce that error word to its root word i.e. “fre”. As a result, “fre” is the root word for both “free” and “frei”. 
 
 ```py
 print(ps.stem('believe'))
@@ -119,7 +119,7 @@ print(ps.stem('believed'))
 print(ps.stem('believes'))
 ```
 
-    The stem results for all of the above is believ
+*The stem results for all of the above is believ*
 
 ```py
 print(wn.lemmatize(“believe”))
@@ -128,7 +128,7 @@ print(wn.lemmatize(“believed”))
 print(wn.lemmatize(“believes”))
 ```
 
-    The lemmatize results in the order of print statements are — believe, believing, believed, and belief. Lemmatize produces the same result if the word is not in the corpus. Believe is lemmatized to belief (the root word)
+*The lemmatize results in the order of print statements are — believe, believing, believed, and belief. Lemmatize produces the same result if the word is not in the corpus. Believe is lemmatized to belief (the root word)*
     
     
 ## Cleaning process with a word cloud example
