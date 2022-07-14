@@ -40,6 +40,7 @@ While a computer can actually be quite good at finding patterns and summarizing 
 Tfidf_vect = TfidfVectorizer(max_features=5000)
 Tfidf_vect.fit(df['text_final'])
 ```
+
     Finally we will transform X_train and X_test to vectorized X_train_Tfidf and X_test_Tfidf. These will now contain for each row a list of unique integer number and its associated importance as calculated by TF-IDF.
 
 ```py
