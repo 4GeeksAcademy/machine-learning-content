@@ -120,7 +120,11 @@
 
 8.1. Support Vector Machine
 
-📝 Support Vector Machine project (2 hours)
+8.2. Intro to Natural Language Processing
+
+8.3. Exploring Natural Language Processing Notebook
+
+📝 NLP using SVM project (2 hours)
 
 9.1. Clustering
 
@@ -132,13 +136,9 @@
 
 📝 Time series project (2 hours)
 
-11.1. Natural Language Processing
+11.1. Introduction to Deep Learning
 
-📝 Natural language processing project (2 hours)
-
-12.1. Introduction to Deep Learning
-
-12.2. Exploring Deep Learning Notebook
+11.2. Exploring Deep Learning Notebook
 
 📝 Deep learning project (2 hours)
 

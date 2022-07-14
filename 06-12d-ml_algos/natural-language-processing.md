@@ -26,13 +26,13 @@ Real-world data is often incomplete, inconsistent, and/or lacking in certain beh
 
 - **Step 5:** Separate train and test datasets
 
-- **Step 6:** Encoding
+- **Step 6:** Encoding the target
 
 Label encode the target variable — This is done to transform Categorical data of string type in the data set into numerical values which the model can understand.
 
 - **Step 7:** Bag of words (vectorization)
 
-It is the process of converting sentence words into numerical feature vectors. It is useful as models require data to be in numeric format. So if the word is present in that particular sentence then we will put 1 otherwise 0. The most popular method is called TF-IDF. It stands for “Term Frequency — Inverse Document” Frequency. TF-IDF are word frequency scores that try to highlight words that are more interesting, e.g. frequent in a document but not across documents.We can also decide to remove stop words by adding a parameter called “stop_words” in “TFidfVectorizer”.
+It is the process of converting sentence words into numerical feature vectors. It is useful as models require data to be in numeric format. So if the word is present in that particular sentence then we will put 1 otherwise 0. The most popular method is called TF-IDF. It stands for “Term Frequency — Inverse Document” Frequency. TF-IDF are word frequency scores that try to highlight words that are more interesting, e.g. frequent in a document but not across documents. We can also decide to remove the stop words by adding a parameter called “stop_words” in “TFidfVectorizer”.
 
 - **Step 8:** Use the ML Algorithm to Predict the outcome
 
@@ -40,26 +40,59 @@ It is the process of converting sentence words into numerical feature vectors. I
 
 You can always add or remove steps which best suits the data set you are dealing with:
 
-1. Remove Blank rows in Data, if any. We can do this using dropna.
+1. Remove Blank rows or duplicated rows in Data. We can do this using dropna and drop_duplicates respectively.
 
-2. Change all the text to lower case because python interprets upper and lower case differently. Here an example on how to convert entries to lower case.
+2. Change all the text to lower case because python interprets upper and lower case differently. Here an example on how to convert entries to lower case. Remember you can include this step as part of a cleaning function.
 
 ```py
 df['text'] = [entry.lower() for entry in df['text']]
 ```
 
-3. Word Tokenization: It is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens. The list of tokens becomes input for further processing. NLTK Library has word_tokenize and sent_tokenize to easily break a stream of text into a list of words or sentences, respectively. Here an example:
+3. Remove Non-alpha text, tags, and punctuation characters. This can be done with the help of regular expressions.
+
+4. Remove Stop words: It removes all the frequently used words such as “I, or, she, have, did, you, to”.
+
+Both previous steps can be easily achieved by using the nltk and string modules. Let's see an example of the punctuation and stop words this modules have already defined.
+
+```py
+import string
+import nltk
+nltk.download('stopwords')
+nltk.download('punkt')
+stopwords = nltk.corpus.stopwords.words('english')
+punctuation = string.punctuation
+print(stopwords[:5])
+print(punctuation)
+>>>   ['i', 'me', 'my', 'myself', 'we']
+>>>   !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+```
+
+5. Word Tokenization: It is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens. The list of tokens becomes input for further processing. NLTK Library has word_tokenize and sent_tokenize to easily break a stream of text into a list of words or sentences, respectively. Here an example:
 
 ```py
 df['text']= [word_tokenize(entry) for entry in df['text']]
 ```
 
-4. Remove Stop words: It removes all the frequently used words such as “I, or, she, have, did, you, to”.
-
-5. Remove Non-alpha text and punctuation characters
-
 6. Word Lemmatization/ Stemming: It is the process of reducing the inflectional forms of each word into a common base or root.
-The difference between lemma and stem is that a stemmer operates on a single word without knowledge of the context, and therefore cannot discriminate between words which have different meanings depending on part of speech. However, stemmers are typically easier to implement and run faster, and the reduced accuracy may not matter for some applications. For example, if the message contains some error word like “frei” which might be misspelled for “free”. Stemmer will stem or reduce that error word to its root word i.e. “fre”. As a result, “fre” is the root word for both “free” and “frei”.
+The difference between lemma and stem is that a stemmer operates on a single word without knowledge of the context, and therefore cannot discriminate between words which have different meanings depending on part of speech. However, stemmers are typically easier to implement and run faster, and the reduced accuracy may not matter for some applications. For example, if the message contains some error word like “frei” which might be misspelled for “free”. Stemmer will stem or reduce that error word to its root word i.e. “fre”. As a result, “fre” is the root word for both “free” and “frei”. 
+
+For word lemmatization you can use WordNetLemmatizer(). WordNetLemmatizer requires Pos tags to understand if the word is noun or verb or adjective etc. By default it is set to Noun. Let's see the following code example:
+
+```py
+tag_map = defaultdict(lambda : wn.NOUN)
+tag_map['J'] = wn.ADJ
+tag_map['V'] = wn.VERB
+tag_map['R'] = wn.ADV
+
+# Initializing WordNetLemmatizer()
+word_Lemmatized = WordNetLemmatizer()
+
+# pos_tag function below will provide the 'tag' i.e if the word is Noun(N) or Verb(V) or something else.
+for word, tag in pos_tag(entry):
+    # Below condition is to check for Stop words and consider only alphabets
+    if word not in stopwords.words('english') and word.isalpha():
+        word_Final = word_Lemmatized.lemmatize(word,tag_map[tag[0]])
+```
 
 ## Cleaning process with a word cloud Example
 
@@ -138,7 +171,8 @@ There is a Python library for creating word clouds. We can use pip to install it
 pip install wordcloud
 
 wordcloud = WordCloud(width = 800, height = 800, background_color = 'black', stopwords = stop_words, max_words = 1000
-                      , min_font_size = 20).generate(str(df1['text']))
+                      , min_font_size = 20).generate(str(df['text']))
+                      
 #plot the word cloud
 fig = plt.figure(figsize = (8,8), facecolor = None)
 plt.imshow(wordcloud)
@@ -147,6 +181,8 @@ plt.show()
 ```
 
 ![wordcloud3](../assets/wordcloud3.jpg)
+
+When you look at a word cloud, notice it is primarily single words. The larger the word, the higher its frequency. To prevent the word cloud from outputting sentences, the text goes through a processes called tokenization. It is the process of breaking down a sentence into the individual words. The individual words are called tokens.
 
 
 Source:
