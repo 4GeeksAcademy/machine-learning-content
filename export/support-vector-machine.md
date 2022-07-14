@@ -32,7 +32,7 @@ To sum up some possible uses of SVM models, they can be used for:
 
 The maximum margin classifier will separate the categories. If you are familiar with the bias-variance trade off, you will know that if you are putting a line that is very well adjusted for your dataset, you are reducing the bias and increasing the variance. If you are not familiar yet, what it says is that when you have high bias, it means that your model might not be fully tuned to your dataset so will have more misclassification, but if you have a low bias and high variance it means that your model will be very very well tuned to your dataset and that can lead to overfitting meaning that it will perform very well on your training set but in your testing set you will have more error rate.
 
-Because your margins are so small, you may increase the chance of misclassify new data points. T
+Because your margins are so small, you may increase the chance of misclassify new data points.
 
 How do we deal with that?
 
@@ -52,7 +52,9 @@ We can determine the best C value by doing cross validation or tuning with valid
 
 - Gamma: Gamma is a nonlinear hyperplane parameter. High values indicate that data points that are very close to each other can be grouped. A low value indicates that data points can be grouped together even if they are separated by large distances.
 
-To know the entire list of SVM hyperparameters go to the following scikit learn documentation: https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html
+To know the entire list of SVM hyperparameters that can be tuned, go to the following scikit learn documentation: 
+
+https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html
 
 **Why is it important to scale features before using SVM?**
 
