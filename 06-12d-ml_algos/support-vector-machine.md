@@ -52,7 +52,9 @@ We can determine the best C value by doing cross validation or tuning with valid
 
 - Gamma: Gamma is a nonlinear hyperplane parameter. High values indicate that data points that are very close to each other can be grouped. A low value indicates that data points can be grouped together even if they are separated by large distances.
 
-To know the entire list of SVM hyperparameters go to the following scikit learn documentation: https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html
+To know the entire list of SVM hyperparameters that can be tuned, go to the following scikit learn documentation: 
+
+https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html
 
 **Why is it important to scale features before using SVM?**
 
