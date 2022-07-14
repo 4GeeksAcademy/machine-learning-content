@@ -22,7 +22,7 @@ While a computer can actually be quite good at finding patterns and summarizing 
 
 - **Step 4:** Preprocess the content of each text. This is a very important step.
 
-Real-world data is often incomplete, inconsistent, and/or lacking in certain behaviors or trends, and is likely to contain many errors. Data pre-processing is a proven method of resolving such issues.This will help in getting better results through the classification algorithms.
+Real-world data is often incomplete, inconsistent, and/or lacking in certain behaviors or trends, and is likely to contain many errors. Data pre-processing is a proven method of resolving such issues.This will help in getting better results through the classification algorithms. You can see the detail of the cleaning process below.
 
 - **Step 5:** Separate train and test datasets
 
@@ -32,9 +32,23 @@ Label encode the target variable — This is done to transform Categorical data 
 
 - **Step 7:** Bag of words (vectorization)
 
-It is the process of converting sentence words into numerical feature vectors. It is useful as models require data to be in numeric format. So if the word is present in that particular sentence then we will put 1 otherwise 0. The most popular method is called TF-IDF. It stands for “Term Frequency — Inverse Document” Frequency. TF-IDF are word frequency scores that try to highlight words that are more interesting, e.g. frequent in a document but not across documents. We can also decide to remove the stop words by adding a parameter called “stop_words” in “TFidfVectorizer”.
+It is the process of converting sentence words into numerical feature vectors. It is useful as models require data to be in numeric format. So if the word is present in that particular sentence then we will put 1 otherwise 0. The most popular method is called TF-IDF. It stands for “Term Frequency — Inverse Document” Frequency. TF-IDF are word frequency scores that try to highlight words that are more interesting, e.g. frequent in a document but not across documents. 
+
+This will help TF-IDF build a vocabulary of words which it has learned from the corpus data and it will assign a unique integer number to each of these words. Their will be maximum of 5000 unique words.
+
+```py
+Tfidf_vect = TfidfVectorizer(max_features=5000)
+Tfidf_vect.fit(df['text_final'])
+```
+Finally we will transform X_train and X_test to vectorized X_train_Tfidf and X_test_Tfidf. These will now contain for each row a list of unique integer number and its associated importance as calculated by TF-IDF.
+
+```py
+X_train_Tfidf = Tfidf_vect.transform(X_train)
+X_test_Tfidf = Tfidf_vect.transform(X_test)
+```
 
 - **Step 8:** Use the ML Algorithm to Predict the outcome
+
 
 ### Detail of data pre-processing steps
 
@@ -67,6 +81,8 @@ print(punctuation)
 >>>   !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 ```
 
+We can also decide to remove the stop words by adding a parameter called “stop_words” in the “TFidfVectorizer” of the vectorization step.
+
 5. Word Tokenization: It is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens. The list of tokens becomes input for further processing. NLTK Library has word_tokenize and sent_tokenize to easily break a stream of text into a list of words or sentences, respectively. Here an example:
 
 ```py
@@ -94,7 +110,7 @@ for word, tag in pos_tag(entry):
         word_Final = word_Lemmatized.lemmatize(word,tag_map[tag[0]])
 ```
 
-## Cleaning process with a word cloud Example
+## Cleaning process with a word cloud example
 
 What is a word cloud? 
 
@@ -187,9 +203,9 @@ When you look at a word cloud, notice it is primarily single words. The larger t
 
 Source:
 
-https://towardsdatascience.com/3-super-simple-projects-to-learn-natural-language-processing-using-python-8ef74c757cd9
-
 https://projectgurukul.org/spam-filtering-machine-learning/
+
+https://towardsdatascience.com/3-super-simple-projects-to-learn-natural-language-processing-using-python-8ef74c757cd9
 
 https://www.youtube.com/watch?v=VDg8fCW8LdM
 
