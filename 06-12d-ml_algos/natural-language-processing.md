@@ -34,9 +34,7 @@ While a computer can actually be quite good at finding patterns and summarizing 
 
     It is the process of converting sentence words into numerical feature vectors. It is useful as models require data to be in numeric format. So if the word is present in that particular sentence then we will put 1 otherwise 0. The most popular method is called TF-IDF. It stands for “Term Frequency — Inverse Document” Frequency. TF-IDF are word frequency scores that try to highlight words that are more interesting, e.g. frequent in a document but not across documents. 
     
-    This will help TF-IDF build a vocabulary of words which it has learned from the corpus data and it will assign a unique integer number to each of these words. Acoording to the following code, there will be a maximum of 5000 unique words.
-    
-        Finally we will transform X_train and X_test to vectorized X_train_Tfidf and X_test_Tfidf. These will now contain for each row a list of unique integer number and its associated importance as calculated by TF-IDF.
+    This will help TF-IDF build a vocabulary of words which it has learned from the corpus data and it will assign a unique integer number to each of these words. Acoording to the following code, there will be a maximum of 5000 unique words. Finally we will transform X_train and X_test to vectorized X_train_Tfidf and X_test_Tfidf. These will now contain for each row a list of unique integer number and its associated importance as calculated by TF-IDF.
 
 ```py
 Tfidf_vect = TfidfVectorizer(max_features=5000)
