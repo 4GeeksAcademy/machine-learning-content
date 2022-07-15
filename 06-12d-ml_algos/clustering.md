@@ -55,6 +55,8 @@ Manipulating the value of k is going to alter your predictions in order of who y
 
 *image by towardsdatascience.com*
 
+
+
 ### Pros and Cons
 
 ### KNN and Recommender Systems
@@ -85,3 +87,5 @@ Customer segmentation is probably the most common use case for k-means clusterin
 Source:
 
 https://www.dataquest.io/blog/top-10-machine-learning-algorithms-for-beginners/#:~:text=The%20first%205%20algorithms%20that,are%20examples%20of%20supervised%20learning.
+
+https://towardsdatascience.com/how-to-find-the-optimal-value-of-k-in-knn-35d936e554eb
