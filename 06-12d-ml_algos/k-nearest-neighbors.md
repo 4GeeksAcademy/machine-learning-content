@@ -1,10 +1,10 @@
-# Clustering
+# K Nearest neighbors (KNN)
 
-Unsupervised learning models are used when we only have the input variables (X) and no corresponding output variables. They use unlabeled training data to model the underlying structure of the data.
+Before we start learning the K-nearest neighbors algorithm, we first need to clarify the difference between K-means clustering and k-nearest neighbors algorithm because they are often confused with each other.
 
-Clustering is used to group samples such that objects within the same cluster are more similar to each other than to the objects from another cluster.
+We want to let you know that the ‘K’ in K-Means Clustering has nothing to do with the ‘K’ in KNN algorithm. k-Means Clustering is an unsupervised learning algorithm that is used for clustering whereas KNN is a supervised learning algorithm used for classification.
 
-## K Nearest neighbors
+**What is K-nearest neighbors (KNN)?**
 
 When you think about KNN think about your friends. You are the average of the people you spend most time with.
 When you think about your feature space, think of it as your neoghborhood, where each data point has a neightbor.
@@ -17,7 +17,7 @@ The average could be weighted based on similarity between data points and the si
 
 KNN is non-parametric, meaning we don´t make any assumptions about the underlying distribution of your data, and KNN can be used either as a classifier or regressor. 
 
-### How KNN works?
+## How KNN works?
 
 KNN makes predictions by:
 
@@ -69,23 +69,10 @@ As k increases, bias tends to increase and variance decreases.
 
 
 
-
-
-## K-means
-
-K-means clustering is an unsupervised clustering algorithm that partitions observations into k clusters. 
-
-The cluster means are usually randomized at the start (often by choosing random observations from the data) and then updated as more records are observed.
-
-At each iterations, a new observation is assigned to a cluster based on which cluster mean it is nearest and then the means are recalculated, or updated , with the new observation information included.
-
-**What is one common use case for k-mean clustering?**
-
-Customer segmentation is probably the most common use case for k-means clustering (although it has many uses)
-
-
 Source:
 
 https://www.dataquest.io/blog/top-10-machine-learning-algorithms-for-beginners/#:~:text=The%20first%205%20algorithms%20that,are%20examples%20of%20supervised%20learning.
 
 https://towardsdatascience.com/how-to-find-the-optimal-value-of-k-in-knn-35d936e554eb
+
+https://becominghuman.ai/comprehending-k-means-and-knn-algorithms-c791be90883d
