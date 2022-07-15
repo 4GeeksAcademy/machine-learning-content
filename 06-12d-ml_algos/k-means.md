@@ -18,7 +18,17 @@ Customer segmentation is probably the most common use case for k-means clusterin
 
 ## How does it work?
 
+Step 1: Determine K value by Elbow method and specify the number of clusters K
 
+Step 2: Randomly assign each data point to a cluster
+
+Step 3: Determine the cluster centroid coordinates
+
+Step 4: Determine the distances of each data point to the centroids and re-assign each point to the closest cluster centroid based upon minimum distance
+
+Step 5: Calculate cluster centroids again
+
+Step 6: Repeat steps 4 and 5 until we reach global optima where no improvements are possible and no switching of data points from one cluster to other.
 
 
 

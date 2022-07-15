@@ -25,7 +25,19 @@ KNN makes predictions by:
 
 -Majority voting for classification tasks.
 
-The two important steps are:
+**Steps:**
+
+Step 1: Determine the value for K
+
+Step 2: Calculate the distances between the new input (test data) and all the training data. The most commonly used metrics for calculating distance are Euclidean, Manhattan and Minkowski
+
+Step 3: Sort the distance and determine k nearest neighbors based on minimum distance values
+
+Step 4: Analyze the category of those neighbors and assign the category for the test data based on majority vote
+
+Step 5: Return the predicted class
+
+Let's explain further the follwoing two steps:
 
 1. Choosing the right distance metric. Distance is heavily utilized in KNN. It just measures the distance between two data points.
 
