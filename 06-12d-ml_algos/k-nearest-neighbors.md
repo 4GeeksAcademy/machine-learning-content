@@ -7,9 +7,9 @@ We want to let you know that the ‘K’ in K-Means Clustering has nothing to do
 **What is K-nearest neighbors (KNN)?**
 
 When you think about KNN think about your friends. You are the average of the people you spend most time with.
-When you think about your feature space, think of it as your neoghborhood, where each data point has a neightbor.
+When you think about your feature space, think of it as your neighborhood, where each data point has a neightbor.
 
-KNN is a simple algorithm but it's very powerful. It makes predictions by averaging the k neighbors nearest to a given data point. For example, if we wanted to predict how much money a potential customer would spend at our store, we could find the 5 customers most similar to her and average their spending to make the prediction.
+KNN is a simple algorithm but it's very powerful.  It classifies the data point on how its neighbor is classified. It makes predictions by averaging the k neighbors nearest to a given data point. For example, if we wanted to predict how much money a potential customer would spend at our store, we could find the 5 customers most similar to her and average their spending to make the prediction.
 
 The average could be weighted based on similarity between data points and the similarity distance metric could be defined as well.
 
@@ -53,33 +53,67 @@ But what distance metric should I choose?
 
 2. Choosing the value of k
 
-How should we choose the value of k?
-
 ![knn](../assets/knn.jpg)
 
 *image by helloacm.com*
 
-Manipulating the value of k is going to alter your predictions in order of who your neighbors are. An effective and simple way to choose k is applying cross validation. Cross validation is a very used technique to evaluate your algorithm efficiently, not only with KNN but also with other algorithms. In the case of KNN it means trying different values of k and choosing the one with the smallest error or best performance. 
+**How do we select the ideal number of neighbors for KNN?**
 
-> Increasing K will normally increase bias and reduce variance, and viceversa.
+Choosing the right value of K is called parameter tuning and it’s necessary for better results. By choosing the value of K we square root the total number of data points available in the dataset.
+
+a. K = sqrt (total number of data points).
+
+b. Odd value of K is always selected to avoid confusion between 2 classes.
+
+There is no closed-form solution for calculating k, so various heuristics are often used. It may be easiest to simply do cross validation and test several different values for k and choose the one that produces the smallest error during cross validation.
+
+>As k increases, bias tends to increase and variance decreases.
 
 ![error_vs_kvalue](../assets/error_vs_kvalue.jpg)
 
 *image by towardsdatascience.com*
 
+## Pros and Cons
+
+**Pros:**
+
+- No training time is required
+
+- Its simple and easy to implement
+
+- New data points can be added to the train data set at any time since model training is not required.
+
+- No assumptions about the data, so it is good for non linearity.
+
+**Cons:**
+
+- Require feature scaling
+
+- Does not work well when the dimensions are high. Poor runtime on large train set.
+
+- Sensitive to outliers
+
+- Prediction is computationally expensive as we need to compute the distance between the point under consideration and all other points.
 
 
-### Pros and Cons
+## KNN and Recommender Systems
 
-### KNN and Recommender Systems
+We can extend this concept of neighbors to the applications of recommender systems. The statistical techniques of KNN allows us to find similar subsets of users (neighbors) to make recommendations on. The general idea is that a new user (data point) is matched against the entire data space to discover similar neighbors. The items that the neighbors like are then recommended to the new user.
 
-**How do we select the ideal number of neighbors for KNN?**
+![recommender_system](../assets/recommender_system.jpg)
 
-There is no closed-form solution for calculating k, so various heuristics are often used. It may be easiest to simply do cross validation and test several different values for k and choose the one that produces the smallest error during cross validation.
+*Image by www.aurigait.com*
 
-As k increases, bias tends to increase and variance decreases.
+Recommender systems can be loosely broken down into three categories: content based systems, collaborative filtering systems, and hybrid systems (which use a combination of the other two).
 
+**Content based** approach utilizes a series of discrete characteristics of an item in order to recommend additional items with similar properties.
 
+**Collaborative filtering** approach builds a model from a user’s past behaviors (items previously purchased or selected and/or numerical ratings given to those items) as well as similar decisions made by other users. This model is then used to predict items (or ratings for items) that the user may have an interest in.
+
+![recommender_system_approaches](../assets/recommender_system_approaches.jpg)
+
+Most businesses probably use a combination of both (hybrid approach) in their production recommender systems.
+In the exploring-a-recommender-system notebook we will show an example with the most common approach, collaborative filtering, using a simple version.
 
 Source:
 
@@ -88,3 +122,9 @@ https://www.dataquest.io/blog/top-10-machine-learning-algorithms-for-beginners/#
 https://towardsdatascience.com/how-to-find-the-optimal-value-of-k-in-knn-35d936e554eb
 
 https://becominghuman.ai/comprehending-k-means-and-knn-algorithms-c791be90883d
+
+https://towardsdatascience.com/knn-algorithm-what-when-why-how-41405c16c36f
+
+https://medium.com/analytics-vidhya/a-beginners-guide-to-k-nearest-neighbor-knn-algorithm-with-code-5015ce8b227e
+
+https://www.aurigait.com/blog/recommendation-system-using-knn/#:~:text=Collaborative%20Filtering%20using%20k%2DNearest,of%20top%2Dk%20nearest%20neighbors.

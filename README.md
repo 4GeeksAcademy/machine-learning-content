@@ -126,19 +126,21 @@
 
 📝 NLP using SVM project (2 hours)
 
-9.1. Clustering
+9.1. K-nearest neighbors (KNN)
 
-9.2. Dimesionality Reduction
+📝 KNN project (2 hours)
 
-📝 Unsupervised learning project (2 hours)
+10.1. K-means
 
-10.1. Time Series Forecasting 
+📝 K-means project (2 hours)
+
+11.1. Time Series Forecasting 
 
 📝 Time series project (2 hours)
 
-11.1. Introduction to Deep Learning
+12.1. Introduction to Deep Learning
 
-11.2. Exploring Deep Learning Notebook
+12.2. Exploring Deep Learning Notebook
 
 📝 Deep learning project (2 hours)
 
