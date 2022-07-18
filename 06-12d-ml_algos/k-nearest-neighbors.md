@@ -115,6 +115,16 @@ Recommender systems can be loosely broken down into three categories: content ba
 Most businesses probably use a combination of both (hybrid approach) in their production recommender systems.
 In the exploring-a-recommender-system notebook we will show an example with the most common approach, collaborative filtering, using a simple version.
 
+Recommender systems can be classified into 3 types:
+
+- Simple recommenders: offer generalized recommendations to every user, based on movie popularity and/or genre. The basic idea is that movies that are more popular will have a higher probability of being liked by the average audience. 
+
+- Content-based recommenders: suggest similar items based on a particular item. This system uses item metadata, such as genre, director, description, actors, etc. for movies, to make these recommendations. The general idea is that if a person likes a particular item, he or she will also like an item that is similar to it. And to recommend that, it will make use of the user's past item metadata. A good example could be YouTube, where based on your history, it suggests you new videos that you could potentially watch.
+
+- Collaborative filtering engines: these systems are widely used, and they try to predict the rating or preference that a user would give an item-based on past ratings and preferences of other users. Collaborative filters do not require item metadata like its content-based counterparts.
+
+
+
 Source:
 
 https://www.dataquest.io/blog/top-10-machine-learning-algorithms-for-beginners/#:~:text=The%20first%205%20algorithms%20that,are%20examples%20of%20supervised%20learning.
