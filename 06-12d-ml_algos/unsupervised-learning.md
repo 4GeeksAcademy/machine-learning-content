@@ -50,35 +50,23 @@ It is also used for finding groups in types of complaints, types of consumer beh
 
 >Anomalies can be considered small clusters with points very far away from any centroid.
 
-#### How does k-means work?
+**How does k-means work?**
 
-**Step 1:** 
+**Step 1:** Determine K value by Elbow method and specify the number of clusters K
 
-Determine K value by Elbow method and specify the number of clusters K
+**Step 2:** Randomly assign each data point to a cluster
 
-**Step 2:** 
-
-Randomly assign each data point to a cluster
-
-**Step 3:** 
-
-Determine the cluster centroid coordinates
+**Step 3:** Determine the cluster centroid coordinates
 
 What is a centroid?
 
 Simple, it is the center point of a cluster. For example, if we want to find 3 clusters, then we would have 3 centroids, or centers, one for each cluster.
 
-**Step 4:** 
+**Step 4:** Determine the distances of each data point to the centroids and re-assign each point to the closest cluster centroid based upon minimum distance. The smaller the distance, more similarity. The bigger the distance, less similarity.
 
-Determine the distances of each data point to the centroids and re-assign each point to the closest cluster centroid based upon minimum distance. The smaller the distance, more similarity. The bigger the distance, less similarity.
+**Step 5:** Calculate cluster centroids again
 
-**Step 5:** 
-
-Calculate cluster centroids again
-
-**Step 6:** 
-
-Repeat steps 4 and 5 until we reach global optima where no improvements are possible and no switching of data points from one cluster to other.
+**Step 6:** Repeat steps 4 and 5 until we reach global optima where no improvements are possible and no switching of data points from one cluster to other.
 
 **Common distance metrics:**
 
@@ -113,7 +101,7 @@ Dimensionality Reduction is used to reduce the number of variables of a data set
 
 **Why would we want to use dimensionality reduction techniques to transform our data before training?**
 
-Dimensionality reduction call allow us to:
+Dimensionality reduction allows us to:
 
 - Remove collinearity from the feature space
 
@@ -160,8 +148,6 @@ Selecting the number of latent features to retain is tipically done by inspectin
 This means that principal components with small eigenvalues have a small impact on the model and can be removed.
 
 There are various rules of thumb, but one general rule is to include the most significant principal components that account for at least 95% of the variation in the features.
-
-
 
 Source:
 
