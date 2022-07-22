@@ -122,7 +122,7 @@ Recommender systems can be classified into 3 types:
 
 - Collaborative filtering engines: these systems are widely used, and they try to predict the rating or preference that a user would give an item-based on past ratings and preferences of other users. Collaborative filters do not require item metadata like its content-based counterparts.
 
-
+We have prepared a guided project for you to understand hoy to build a very simple movie recommender system.
 
 Source:
 
