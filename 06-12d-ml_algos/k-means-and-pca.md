@@ -20,7 +20,7 @@ We want to minimize the variance inside a cluster.
 
 **What are the inputs and outputs?**
 
-The inputs will be a set of numerical inputs normally scaled.
+The inputs will be a set of numerical inputs normally scaled, and without outliers.
 
 The outputs will be a set of labels, one for each observation, and also a set of centroids, one for each cluster.
 
@@ -87,6 +87,23 @@ Repeat steps 4 and 5 until we reach global optima where no improvements are poss
 -Manhattan distance: The distance between two points is the sum of the (absolute) differences of their coordinates.
 
 -Cosine distance
+
+**Example Code:**
+
+```py
+# Import kmeans and vq functions
+from scipy.cluster.vq import kmeans, vq
+
+# Compute cluster centers
+centroids,_ = kmeans(df, 2)
+
+# Assign cluster labels
+df['cluster_labels'], _ = vq(df, centroids)
+
+# Plot the points with seaborn
+sns.scatterplot(x='x', y='y', hue='cluster_labels', data=df)
+plt.show()
+```
 
 ## Dimensionality Reduction
 
