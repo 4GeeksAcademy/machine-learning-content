@@ -113,7 +113,6 @@ Recommender systems can be loosely broken down into three categories: content ba
 ![recommender_system_approaches](../assets/recommender_system_approaches.jpg)
 
 Most businesses probably use a combination of both (hybrid approach) in their production recommender systems.
-In the exploring-a-recommender-system notebook we will show an example with the most common approach, collaborative filtering, using a simple version.
 
 Recommender systems can be classified into 3 types:
 
