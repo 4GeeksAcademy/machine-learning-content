@@ -107,7 +107,7 @@ plt.show()
 
 ## Dimensionality Reduction
 
-***What is dimensionality reduction?**
+**What is dimensionality reduction?**
 
 Dimensionality Reduction is used to reduce the number of variables of a data set while ensuring that important information is still conveyed. Dimensionality Reduction can be done using feature extraction methods and Feature Selection methods. Feature Selection selects a subset of the original variables. Feature Extraction performs data transformation from a high-dimensional space to a low-dimensional space. Example: PCA algorithm is a Feature Extraction approach.
 
