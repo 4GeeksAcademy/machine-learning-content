@@ -219,3 +219,5 @@ https://www.digitalocean.com/community/tutorials/a-guide-to-time-series-forecast
 https://www.digitalocean.com/community/tutorials/a-guide-to-time-series-visualization-with-python-3
 
 https://www.digitalocean.com/community/tutorials/a-guide-to-time-series-forecasting-with-prophet-in-python-3
+
+https://www.clarify.io/learn/time-series-data
