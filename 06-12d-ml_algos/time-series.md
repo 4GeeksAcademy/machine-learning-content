@@ -123,7 +123,7 @@ results = mod.fit()
 ```
 
 
-## Prophet
+## Prophet method
 
 The Core Data Science team at Facebook published a new method called Prophet, which enables data analysts and developers alike to perform forecasting at scale in Python 3.
 
