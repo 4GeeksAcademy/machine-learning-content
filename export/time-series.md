@@ -22,7 +22,7 @@ ARIMA models are denoted with the notation ARIMA(p, d, q). These three parameter
 
 - **q** is the parameter associated with the moving average part of the model.
 
-One of the most important features of a time series is variation. There are 4 variation categories: Seasonal, Cyclic, Trend, and Irregular fluctuations. Variations are patterns in the times series data. A time series that has patterns that repeat over known and fixed periods of time is said to have seasonality. **Seasonality** is a general term for variations that periodically repeat in data. 
+One of the most important features of a time series is variation. There are 4 variation categories: Seasonal, Cyclic, Trend, and Irregular fluctuations. Variations are patterns in the times series data. A time series that has patterns that repeat over known and fixed periods of time is said to have **seasonality**. 
 
 If our model has a seasonal component, we use a seasonal ARIMA model (SARIMA). In that case we have another set of parameters: P,D, and Q which describe the same associations as p,d, and q, but correspond with the seasonal components of the model.
 
@@ -36,7 +36,7 @@ When evaluating and comparing statistical models fitted with different parameter
 
 **Decomposition**
 
-In time series data, a lot can be revealed through visualizing it.
+In time series data, a lot can be revealed through visualizing it. Here an example:
 
 ```py
 y.plot(figsize=(15, 6))
@@ -68,6 +68,61 @@ We can use an additive model when it seems that the trend is more linear and the
 
 Trends can be upward or downward, and can be linear or non-linear. It is important to understand your data set to know whether or not a significant period of time has passed to identify an actual trend.
 
+**Example code:**
+
+We will use a “grid search” to iteratively explore different combinations of parameters. For each combination of parameters, we fit a new seasonal ARIMA model with the SARIMAX() function from the statsmodels module and assess its overall quality. Once we have explored the entire landscape of parameters, our optimal set of parameters will be the one that yields the best performance for our criteria of interest. Let’s begin by generating the various combination of parameters that we wish to assess:
+
+```py
+# Define the p, d and q parameters to take any value between 0 and 2
+p = d = q = range(0, 2)
+
+# Generate all different combinations of p, q and q triplets
+pdq = list(itertools.product(p, d, q))
+
+# Generate all different combinations of seasonal p, q and q triplets
+seasonal_pdq = [(x[0], x[1], x[2], 12) for x in list(itertools.product(p, d, q))]
+
+print('Examples of parameter combinations for Seasonal ARIMA...')
+print('SARIMAX: {} x {}'.format(pdq[1], seasonal_pdq[1]))
+print('SARIMAX: {} x {}'.format(pdq[1], seasonal_pdq[2]))
+print('SARIMAX: {} x {}'.format(pdq[2], seasonal_pdq[3]))
+print('SARIMAX: {} x {}'.format(pdq[2], seasonal_pdq[4]))
+```
+
+The code chunk below iterates through combinations of parameters and uses the SARIMAX function from statsmodels to fit the corresponding Seasonal ARIMA model. Here, the order argument specifies the (p, d, q) parameters, while the seasonal_order argument specifies the (P, D, Q, S) seasonal component of the Seasonal ARIMA model. After fitting each SARIMAX()model, the code prints out its respective AIC score.
+
+```py
+for param in pdq:
+    for param_seasonal in seasonal_pdq:
+        try:
+            mod = sm.tsa.statespace.SARIMAX(y,
+                                            order=param,
+                                            seasonal_order=param_seasonal,
+                                            enforce_stationarity=False,
+                                            enforce_invertibility=False)
+
+            results = mod.fit()
+
+            print('ARIMA{}x{}12 - AIC:{}'.format(param, param_seasonal, results.aic))
+        except:
+            continue
+```
+
+Fitting an ARIMA model: Using grid search, we have identified the set of parameters that produces the best fitting model to our time series data. We can proceed to analyze this particular model in more depth.
+
+We’ll start by plugging the optimal parameter values into a new SARIMAX model:
+
+```py
+mod = sm.tsa.statespace.SARIMAX(y,
+                                order=(1, 1, 1),
+                                seasonal_order=(1, 1, 1, 12),
+                                enforce_stationarity=False,
+                                enforce_invertibility=False)
+
+results = mod.fit()
+```
+
+
 ## Prophet
 
 The Core Data Science team at Facebook published a new method called Prophet, which enables data analysts and developers alike to perform forecasting at scale in Python 3.
@@ -78,7 +133,7 @@ In order to compute its forecasts, the fbprophet library relies on the STAN prog
 pip install pystan
 ```
 
-Once installed, we are ready to install fbprophet. Then, we can import it using:
+Once installed, we are ready to install fbprophet too and import it as follows:
 
 ```py
 from fbprophet import Prophet
@@ -134,7 +189,7 @@ my_model.plot(forecast, uncertainty=True)
 
 *image from www.digitalocean.com*
 
-**When working with time series data:**
+## Some recommendation When working with time series data:
 
 - Check for discrepancies in your data that may be caused by region specific time changes like daylight savings time.
 
