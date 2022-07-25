@@ -123,7 +123,7 @@ results = mod.fit()
 ```
 
 
-## Prophet
+## Prophet method
 
 The Core Data Science team at Facebook published a new method called Prophet, which enables data analysts and developers alike to perform forecasting at scale in Python 3.
 
@@ -189,7 +189,7 @@ my_model.plot(forecast, uncertainty=True)
 
 *image from www.digitalocean.com*
 
-## Some recommendation When working with time series data:
+## Some recommendations when working with time series data:
 
 - Check for discrepancies in your data that may be caused by region specific time changes like daylight savings time.
 
