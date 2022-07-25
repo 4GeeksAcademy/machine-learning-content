@@ -1,6 +1,8 @@
 # Time Series
 
-Time Series data is experimental data that has been observed at different points in time, usually evenly spaced. However, just because a series of events has a time element does not automatically make it a time series.
+Time series data is any type of information presented as an ordered sequence. Sensors, monitoring, weather forecasts, stock prices, exchange rates, application performance metrics are just a few examples of the type of data that includes time series.
+
+Time is the central attribute that distinguishes time series from other types of data. The time intervals applied to assemble the collected data in a chronological order are called the time series frequency. So having time as one of the main axes would be the main indicator that a given dataset is a time series. However, just because a series of events has a time element does not automatically make it a time series.
 
 When working with time-series data, there are a few things to look out for:
 
