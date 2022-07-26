@@ -700,7 +700,7 @@ A common mistake beginners make is they immediately start to apply ARIMA forecas
 
 ```python
 import pandas as pd
-data = pd.read_csv('../assets/electric_production.csv', index_col=0)
+data = pd.read_csv('https://raw.githubusercontent.com/4GeeksAcademy/machine-learning-content/master/assets/electric_production.csv', index_col=0)
 data.head()
 ```
 
