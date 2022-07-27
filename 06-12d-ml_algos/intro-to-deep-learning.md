@@ -214,7 +214,7 @@ The following graph shows the top 16 open-source deep learning libraries used by
 
 By all measures, TensorFlow is the undisputed leader, followed by Keras.
 
-### **TensorFlow** 
+**TensorFlow** 
 
 Tensorflow is a Python open-source library for fast numerical computing created and released by Google. It was designed for use both in research and development and in production systems. It can run on single CPU systems and GPUs, as well as mobile devices and large-scale distributed systems of hundreds of machines.
 
@@ -226,33 +226,84 @@ Computation is described in terms of data flow and operations in the structure o
 
 - Operation: An operation is a named abstract computation that can take input attributes and produce output attributes. For example, you could define an add or multiply operation.
 
+**Keras** 
 
-The best place to start is with the user-friendly Keras sequential API. Build models by plugging together building blocks.
+Keras is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano.
 
-
-
-
-
-Here a first example on how you can define values as tensors and execute an operation:
+The best place to start is with the user-friendly Keras sequential API. Build models by plugging together building blocks. Let's see the following example taken from the Tensorflow website:
 
 ```bash
 pip install tensorflow
 ```
 
 ```py
-import tensorflow as tf
-a = tf.constant(10)
-b = tf.constant(32)
-print(a+b)
+#import Tensorflow
 
->>>>>tf.Tensor(42, shape=(), dtype=int32)
+import tensorflow as tf
+print("TensorFlow version:", tf.__version__)
+
+#load the MNIST dataset. Convert the sample data from integers to floating-point numbers.
+
+mnist = tf.keras.datasets.mnist
+
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+x_train, x_test = x_train / 255.0, x_test / 255.0
+
+#build a tf.keras.Sequential model by stacking layers
+
+model = tf.keras.models.Sequential([
+  tf.keras.layers.Flatten(input_shape=(28, 28)),
+  tf.keras.layers.Dense(128, activation='relu'),
+  tf.keras.layers.Dropout(0.2),
+  tf.keras.layers.Dense(10)
+])
+
+# For each example, the model returns a vector of logits or log-odds scores, one for each class.
+
+predictions = model(x_train[:1]).numpy()
+predictions
+
+# The tf.nn.softmax function converts these logits to probabilities for each class:
+
+tf.nn.softmax(predictions).numpy()
+
+# Define a loss function for training using losses.SparseCategoricalCrossentropy, which takes a vector of logits and a True index and returns a scalar loss for each example.
+
+loss_fn = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+
+# This loss is equal to the negative log probability of the true class: The loss is zero if the model is sure of the correct class.
+# This untrained model gives probabilities close to random (1/10 for each class), so the initial loss should be close to -tf.math.log(1/10) ~= 2.3.
+
+loss_fn(y_train[:1], predictions).numpy()
+
+# Before you start training, configure and compile the model using Keras Model.compile. Set the optimizer class to adam, set the loss to the loss_fn function you defined earlier, and specify a metric to be evaluated for the model by setting the metrics parameter to accuracy.
+
+model.compile(optimizer='adam',
+              loss=loss_fn,
+              metrics=['accuracy'])
+
+# Use the Model.fit method to adjust your model parameters and minimize the loss:
+
+model.fit(x_train, y_train, epochs=5)
+
+# The Model.evaluate method checks the models performance, usually on a "Validation-set" or "Test-set".
+
+model.evaluate(x_test,  y_test, verbose=2)
+
 ```
 
+The image classifier is now trained to ~98% accuracy on this dataset. If you want your model to return a probability, you can wrap the trained model, and attach the softmax to it:
 
-### **Keras** 
+```py
+probability_model = tf.keras.Sequential([
+  model,
+  tf.keras.layers.Softmax()
+])
 
-Keras is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano.
+probability_model(x_test[:5])
+```
 
+You have trained a machine learning model using a prebuilt dataset using the Keras API!
 
 
 Source: 
@@ -274,3 +325,11 @@ https://machinelearningmastery.com/linear-algebra-cheat-sheet-for-machine-learni
 https://www.mygreatlearning.com/blog/deep-learning-applications/
 
 http://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.88210&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false
+
+https://machinelearningmastery.com/tutorial-first-neural-network-python-keras/
+
+https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/quickstart/beginner.ipynb#scrollTo=4mDAAPFqVVgn
+
+https://www.tensorflow.org/tutorials/load_data/images
+
+https://www.tensorflow.org/tutorials
