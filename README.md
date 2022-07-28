@@ -1,34 +1,32 @@
 # Machine Learning Bootcamp
 
-## Python (2 days)
+## Python (3 days)
 
 1. Python for Datascience
 
 ## Probability and Statistic Skills (6 days)
 
-1.1. Calculus
+1. Calculus
 
-1.2. Linear Algebra 
+2. Linear Algebra 
 
 📝 Calculus and Linear algebra problems
 
-2. Probability
+3. Probability
 
 📝 Probability problems 
 
-3. Descriptive Statistics
+4. Descriptive Statistics
 
 📝 Descriptive statistics problems
 
-4. Random Variables
+5. Random Variables
 
 📝 Probability Distribution problems
 
-5.1. Hypothesis Testing
+6.1. Hypothesis Testing
 
 📝 Hypothesis testing problems
-
-5.2 No new material
 
 
 ## Computer Science (1 day)
@@ -38,33 +36,32 @@
 📝 Algorithm optimization problems
 
 
-## Collect and store data (4 days)
+## Collect and store data (3 days)
 
-1. Intro to SQL (Structured Query language) - external
+1.1. Intro to SQL (Structured Query language) - external
 
 1.2 Create and connect to SQL databases with Python
 
 📝 Connecting to a Sql database from Python
 
-2. Loading Static Files (csv, json, yml)
+2.1. Loading Static Files (csv, json, yml)
 
-2.2  Web Scraping tools and techniques
+2.2.  Web Scraping tools and techniques
 
 📝 Web scraping data from a website 
 
-3. Data Science project structure
-
-📝 ML Project structure activity
+3. Project structure
   
-Project: Interacting with the Twitter API
+📝 Interacting with the Twitter API
+  
 
 ## Data Management (3 days)
 
-1. Exploratory data analysis
+1. Exploratory data analysis on Titanic dataset
 
-📝 EDA from Titanic dataset
+📝 Project EDA (2 hours)
 
-2. Feature Engineering
+2. Feature Engineering on Titanic dataset
 
 2.1. How to deal with outliers
 
@@ -74,86 +71,97 @@ Project: Interacting with the Twitter API
 
 2.4. Feature Scaling
 
-3. Feature selection
+📝 Project feature engineering (2 hours)
 
-📝 Titanic data cleaning
+3. Feature selection techniques
 
-Project Part II: Data cleaning
+📝 Project feature selection
+
 
 ## Machine Learning (12 days)
 
 1.1. Machine Learning Basics
 
-1.2. Machine learning algorithms
+1.2. Model evaluation
 
-1.3. Linear Regression
+1.3. Model hyperparameters optimization
+
+1.4. Logistic Regression notebook
+
+📝 Logistic regression project (2 hours) 
+
+2.1. Linear Regression 
+
+2.2. Exploring Linear Regression notebook
 
 📝 Linear regression project (2 hours) 
 
-2. Decision Trees
+3.1. Regularized Linear Regression 
 
-📝 Decision tree project (2 hours)
+📝 Regularized linear regression project (2 hours) 
 
-3. Random Forest
+4.1. Decision Trees
+
+4.2. Exploring Decision Trees Notebook
+
+📝 Decision trees project (2 hours)
+
+5.1. Random Forest
 
 📝 Random Forest project (2 hours)
 
-4. Gradient Boosting
+6.1. Boosting Algorithms
 
 📝 Gradient Boosting project (2 hours)
 
-5.1. Clustering
+7.1. Naive Bayes
 
-5.2. KNN
+📝 Naive Bayes project (2 hours)
 
-5.3. K-Means
+8.1. Support Vector Machine
 
-📝 Clustering project (2 hours)
+8.2. Intro to Natural Language Processing
 
-6.1 Logistic Regression
+8.3. Exploring Natural Language Processing Notebook
 
-6.2 Dimensionality Reduction
+📝 NLP using SVM project (2 hours)
 
-📝 Logistic Regression project (2 hours)
+9.1. K-nearest neighbors (KNN)
 
-7. SVM
+📝 KNN project (2 hours)
 
-📝 SVM project (2 hours)
+10.1. K-means
 
-8. Model Evaluation and Hypertuning machine learning algorithms
+📝 K-means project (2 hours)
 
-📝 Evaluate and hypertune previously created model (2 hours)
-
-9. Natural Language Processing
-
-📝 Natural language processing project (2 hours)
-
-10. Time Series Forecasting 
+11.1. Time Series Forecasting 
 
 📝 Time series project (2 hours)
 
-11. Introduction to Deep Learning
+12.1. Introduction to Deep Learning
+
+12.2. Exploring Deep Learning Notebook
 
 📝 Deep learning project (2 hours)
 
-Project Part III: Create a machine learning model (1 day)
 
-## Data Science as Software (1 day)
+## Data Science as Software (2 days)
 
 1. How to create a machine learning web app with Heroku.
 
-Project Part IV: Deploy model to Heroku 
+📝 Heroku app project (2 hours) 
+
+2. How to create a machine learning web app with Streamlit 
+
+📝 Streamlit app project (2 hours)
 
 ## Data Warehouse tools: modeling on the cloud (3 days)
 
 1. Data warehouse tools
-2. Create and execute machine learning models in BigQuery 
 
-Project: Create a machine learning model using BigQuery
+2. Create and execute machine learning model in BigQuery 
 
-## Communicating your results (1 day)
-
-1. Communicating statistics in a simple way
+3. BigQuery Project
 
 ## Week 12: Real life cases (3 days)
 

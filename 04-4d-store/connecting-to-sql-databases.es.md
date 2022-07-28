@@ -1,0 +1,281 @@
+# Cómo conectarse a bases de datos SQL usando Python
+
+Como ingenieros de Machine Learning, probablemente tengamos que interactuar con bases de datos SQL para acceder a los datos. SQL significa "Structured Query Language" (lenguaje de consulta estructurado). La diferencia clave entre SQL y Python es que los desarrolladores usan SQL para acceder y extraer datos de una base de datos, mientras que los desarrolladores usan Python para analizar y manipular datos ejecutando pruebas de regresión, pruebas de series temporales y otros cálculos de procesamiento de datos.
+
+Algunas bases de datos SQL populares son SQLite, PostgreSQL, MySQL. SQLite es mejor conocido por ser una base de datos integrada. Esto significa que no tenemos que instalar una aplicación adicional o usar un servidor separado para ejecutar la base de datos. Se mueve rápido pero tiene una funcionalidad limitada, por lo que si no necesitamos mucho espacio de almacenamiento de datos, querremos usar una base de datos SQLite. Por otro lado, PostgreSQL y MySQL tienen tipos de bases de datos que son excelentes para soluciones empresariales. Si necesitamos escalar rápido, MySQL y PostgreSQL son la mejor opción. Proporcionarán infraestructura a largo plazo, reforzarán la seguridad y manejarán actividades de alto rendimiento.
+
+En esta lección veremos cómo interactúan Python y algunas bases de datos SQL. ¿Por qué deberíamos preocuparnos por conectar Python y una base de datos SQL?
+
+Tal vez, como ingenieros de Machine Learning, necesitemos construir un "ETL pipeline" (tubería ETL) automatizado. Conectar Python a una base de datos SQL nos permitirá usar Python para sus capacidades de automatización. También podremos comunicarnos entre diferentes fuentes de datos. No tendremos que cambiar entre diferentes lenguajes de programación, podremos usar nuestras habilidades de Python para manipular datos de una base de datos SQL. No necesitaremos un archivo CSV.
+
+Lo importante a recordar es que Python puede integrarse con cada tipo de base de datos. Las bases de datos de Python y SQL se conectan a través de bibliotecas de Python personalizadas. Puede importar estas bibliotecas a su secuencia de comandos de Python.
+
+**The following is a code example on how to connect to a SQL database:**
+
+
+
+
+```py
+from dbmodule import connect 
+
+#Create a connection object
+
+CONNECTION = CONNECT('databse name', 'username','password')
+
+#Create a cursor object
+
+CURSOR = CONNECTION.CURSOR()
+
+#Run queries
+
+CURSOR.EXECUTE('select * from mytable')
+RESULTS = CURSOR.FETCHALL()
+
+#Free resources
+CURSOR.CLOSE()
+```
+
+**Example code to connect to a PostreSQL database and store data in a pandas dataframe:**
+
+In this case, we chose AWS Redshift. We will import the psycopg library. This library translates the Python code we write to speak to the PostgreSQL database (AWS Redshift).
+
+Otherwise, AWS Redshift would not understand our Python code. But because of the psycopg library, youwe will now speak a language AWS Redshift can understand.
+
+```py
+#Library for connecting to AWS Redshift
+import psycopg
+
+#Library for reading the config file, which is in JSON
+import json
+
+#Data manipulation library
+import pandas as pd
+```
+\
+We imported JSON because creating a JSON config file is a secure way to store your database credentials. We don't want anyone else eyeing those! The json.load() function reads the JSON file so we can access our database credentials in the next step.
+
+```py
+config_file = open(r"C:\Users\yourname\config.json")
+config = json.load(config_file)
+```
+\
+Now we want to create a databse connection. We'll need to read and use the credentials from our config file:
+
+```py
+con = psycopg2.connect(dbname= "db_name", host=config[hostname], port = config["port"],user=config["user_id"], password=config["password_key"])
+cur = con.cursor()
+```
+
+### Creating and connecting to a SQLite database using Python
+
+As we already mentioned, SQLite is a Relation Database Management System that is lightweight and easy to set up. SQLite is serverless, which is its biggest advantage. It does not require a server to run a database, unlike other RDMS like MySQL or PostgreSQL. So we don’t need any installation setup.
+
+SQLite databases are stored locally, with files stored in the disk. This makes accessing and managing the data in the database is remarkably fast.
+
+**Example code to create a database:**
+
+```py
+import sqlite3
+
+connection = sqlite3.connect('shows.db')  #creating a database with name:
+cursor = connection.cursor()   #create a cursor object in order to create a table
+cursor.execute('''CREATE TABLE IF NOT EXISTS Shows
+              (Title TEXT, Director TEXT, Year INT)''')  #create a table with column names and data types
+
+connection.commit()  #commit the changes in the database
+connection.close()  #close the connection
+```
+
+After running the file, in your current project directory, one file is created called shows.db. This is the SQLite database file generated by Python.
+
+
+**Example code to connect to the databse:**
+
+```py
+
+from sqlalchemy import create_engine
+import pandas as pd
+ 
+# Create engine: engine
+engine = create_engine('sqlite:///databse_name.sqlite')
+ 
+# Save the table names to a list: table_names
+table_names = engine.table_names()
+ 
+# Print the table names to the shell
+print(table_names)
+ 
+# Open engine connection: con,  and select specified columns and number of rows
+
+with engine.connect() as con:
+    ab = con.execute("SELECT Title, Director FROM Shows")
+    df = pd.DataFrame(ab.fetchmany(size=5))
+    df.columns = ab.keys()
+
+# Close connection
+con.close()
+ 
+# Print first rows of dataframe
+print(df.head())
+```
+
+### Connecting to a DB2 Database
+
+IBM Db2 is a family of data management products, including the Db2 relational database. The free plan provides 200 MB of data storage on the cloud. In order to practice creating a SQL database and writing SQL queries, this is a good place to start. 
+
+We can create our tables on the cloud or directly from our notebook using Python. In order to do it with python, we first need to connect to our cloud database using the credentials provided to us in the moment the database instance was created.
+
+To connect to a DB2, it requires the following information:
+
+- controler name
+- database name
+- DNS host name or IP
+- Host port
+- Connection protocole
+- User id
+- Password
+
+Example to create a database connection: 
+
+```py
+#Create database connection
+
+dsn = (
+    "Driver = { {IBM DB2 ODBC DRIVER}};"
+    "Database = {0};"
+    "HOSTNAME = {1};"
+    "PORT = {2};"
+    "PROTOCOL = TCPIP;"
+    "UID = {3};"
+    "PWD = {4};").format(dsn_database, dsn_hostname, dsn_port, dsn_uid, dsn_pwd)
+
+try: 
+    conn = ibm_db.connect(dsn, " ", " ")
+    print("Connected!")
+    
+except:
+    print("Unable to connect to database")
+    
+#Close the database connection
+
+ibm_db.close(conn)
+
+#Note: It is always important to close the connections to avoid non used connectors taking resources.
+
+```
+
+**How to create a table from python**
+
+ibm_db.exec_inmediate()  --> function of the ibm_db API
+
+Parameters for the function:
+
+- connection
+- statement
+- options
+
+Example: Creating a table called CARS in Python
+
+
+#CREATE TABLE
+```py
+stmt = ibm_db.exec_inmediate(conn, "CREATE TABLE Cars(
+    serial_no VARCHAR(20) PRIMARY KEY NOT NULL,
+    make varchar(20) NOT NULL,
+    model VARCHAR(20) NOT NULL,
+    car_class VARCHAR(20) NOT NULL)"
+    )
+```
+
+#LOAD DATA IN TABLE
+```py
+stmt = ibm_db.exec_inmediate(conn, "INSERT INTO Cars(
+    serial_no, make, model, car_class)
+    VALUES('A2345453','Ford','Mustang','class3');")
+```
+
+#FETCH DATA FROM CARS TABLE
+```py
+stmt = ibm_db.exec_inmediate(conn, "SELECT * FROM Cars")
+
+ibm_db.fetch_both(stmt)
+```
+
+**Using pandas to retrieve data from the tables**
+
+Example:
+
+
+```py
+
+import pandas
+import ibm_db_dbi
+pconn = ibm_db_dbi.connection(conn)
+
+df = pandas.read_sql('SELECT * FROM Cars', pconn)
+df
+
+#Example of a plot
+
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns 
+
+#categorical scatterplot
+
+plot = sns.swarmplot(x="Category", y="Calcium", data=df)
+plt.setp(plot.get_xticklabels(), rotation=70)
+plt.title('Calcium content')
+plt.show()
+
+#Making a boxplot
+#A boxplot is a graph that indicates the distribution of 1 or more variables. The box captures the median 50% of the data.
+# The line and dots indicate possible outliers and not normal values.
+
+plot = sns.set_style('Whitegrid')
+ax = sns.boxplot(x=df['glucose level'])
+plt.show()
+```
+
+**Getting the properties**
+
+DB2 --->  syscat.tables                                 
+
+SQL Server --->  information=schema.tables   
+ 
+Oracle --->  all_tables or user_tables
+
+Example:
+
+
+```py
+
+#Getting table properties from DB2
+
+SELECT * FROM syscat.tables
+#(this will show too many tables)
+
+SELECT tabschema, tabname, create_time
+FROM syscat.tables
+WHERE tabschema = 'ABC12345' #---> replace with your own DB2 username
+
+#Getting a list of columns in database
+
+SELECT * FROM syscat.columns
+WHERE tabname = 'Cats'
+
+#To obtain specific column properties:
+
+%sql SELECT DISTINCT(name), coltype, length
+    FROM sysibm.syscolumns
+    WHERE tbname = 'Cats'
+    
+%sql SELECT DISTINCT(name), coltype, length
+    FROM sysibm.syscolumns 
+    WHERE tbname = 'Miami_crime_data'
+
+```
+
+Source:
+
+https://www.freecodecamp.org/news/python-sql-how-to-use-sql-databases-with-python/#:~:text=Perhaps%20you%20work%20in%20data%20engineering%20and%20you,be%20able%20to%20communicate%20between%20different%20data%20sources.
