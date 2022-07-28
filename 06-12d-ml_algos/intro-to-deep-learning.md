@@ -36,48 +36,11 @@ The diagram below shows a simple network. Weights and biases are the learnable p
 
 The activation function, f(h) can be any function. If we let f(h)=h, the output will be the same as the input. Now the output of the network is $y=Σi WiXi + b$
 
-**Forward propagation**
+**Forward and back propagation**
 
-By propagating values from the first layer (the input layer) through all the mathematical functions represented by each node, the network outputs a value. This process is called a forward pass. Let's see how to implement it with **Numpy**.
+By propagating values from the first layer (the input layer) through all the mathematical functions represented by each node, the network outputs a value. This process is called a **forward pass**.
 
-```py
-import numpy as np
-
-def sigmoid(x):
-    """
-    Calculate sigmoid
-    """
-    return 1/(1+np.exp(-x))
-
-# Network size
-N_input = 4
-N_hidden = 3
-N_output = 2
-
-np.random.seed(42)
-# Make some fake data
-X = np.random.randn(4)
-
-weights_input_to_hidden = np.random.normal(0, scale=0.1, size=(N_input, N_hidden))
-weights_hidden_to_output = np.random.normal(0, scale=0.1, size=(N_hidden, N_output))
-
-
-# TODO: Make a forward pass through the network
-
-hidden_layer_in = np.dot(X, weights_input_to_hidden)
-hidden_layer_out = sigmoid(hidden_layer_in)
-
-print('Hidden-layer Output:')
-print(hidden_layer_out)
-
-output_layer_in = np.dot(hidden_layer_out, weights_hidden_to_output)
-output_layer_out = sigmoid(output_layer_in)
-
-print('Output-layer Output:')
-print(output_layer_out)
-
-```
-You **forward propagate** to get the output and compare it with the real value to get the error. Now, to minimise the error, you propagate backwards by finding the derivative of error with respect to each weight and then subtracting this value from the weight value. This is called **back propagation**.
+You forward propagateto get the output and compare it with the real value to get the error. Now, to minimise the error, you propagate backwards by finding the derivative of error with respect to each weight and then subtracting this value from the weight value. This is called **back propagation**.
 
 Now let's see the code for implementing the entire propagation:
 
@@ -161,10 +124,91 @@ out = sigmoid(np.dot(hidden, weights_hidden_output))
 predictions = out > 0.5
 accuracy = np.mean(predictions == targets_test)
 print("Prediction accuracy: {:.3f}".format(accuracy))
-
 ```
 
+## Deep learning techniques
+
+There are various Deep Learning models which are used to solve complicated tasks. Each of them is used for specific tasks, with certain processes and limitations. The following deep learning techniques is a very good summary taken from Heartbeat (https://heartbeat.comet.ml/), an online publication community that provides educational resources for data science, machine learning, and deep learning practitioners.
+
+### Multilayer Perceptrons (MLPs)
+
+Multilayer Perceptrons is a feedforward artificial neural network, where a set of inputs are fed into the Neural Network to generate a set of outputs. MLPs are made up of input layers and an output layer that is fully connected.
+
+When to use it?
+
+- When your dataset is in a tabular format consisting of rows and columns. Typically CSV files
+
+- Can be used for both Classification and Regression tasks where a set of ground truth values are given as the input.
+
+### Convolutional Neural Network (CNN)
+
+Convolutional Neural Network (CNN), also known as a ConvNet is a feed-forward Neural Network. It is typically used in image recognition, by processing pixelated data to detect and classify objects in an image. The model has been built to solve complex tasks, preprocessing, and data compilation.
+
+When to use it?
+
+- It works very well with Image Datasets An example of this is OCR document analysis, which recognizes text within a digital image.
+
+- Ideally, the input data is a 2-dimensional field. However, it can also be converted into a 1-dimensional to make the process faster.
+
+- This technique should also be used if the model requires high complexity in calculating the output.
+
+### Recurrent Neural Networks (RNNs)
+
+A Recurrent Neural Network is used to work for time series data or data that involve sequences. RNN uses the previous state’s knowledge and uses it as an input value for the current prediction.
+
+Therefore, RNN can memorize previous inputs using its internal memory. They are used for time-series analysis, handwriting recognition, Natural Language Processing, and more.
+
+When to use it? There are 4 different ways that you can use Recurrent Neural Networks:
+
+1. One to one: a single input that produces a single output. An example of this is Image Classification
+
+2. One to many: a single input that produces a sequence of outputs. An example of this is Image captioning, where a variety of words are detected from a single image
+
+3. Many to one: a sequence of inputs that produces a single output. An example of this is Sentiment Analysis
+
+4. Many to many: a sequence of inputs that produces a sequence of outputs. An example of this is Video classification, where you split the video into frames and label each frame separately
+
+**Long Short Term Memory Networks (LSTMs)**
+
+Long Short Term Memory Networks is a type of Recurrent Neural Network which can learn and memorize long-term dependencies. Its default behavior and the aim of an LSTM is to remember past information for long periods.
+
+### Generative Adversarial Networks (GANs)
+
+Generative Adversarial Networks use two neural networks which compete with one another, hence the “adversarial” in the name.
+
+The two neural networks used to build a GAN are called ‘the generator’ and ‘the discriminator’. The Generator learns to generate fake data whilst the Discriminator learns from that fake information. They are used to ensure accuracy in the model’s predictions.
+
+When to use it?
+
+- Image inpainting — you can do this by restoring missing parts of images.
+
+- Image super-resolution — you can do this by upscaling low-resolution images to high resolution.
+
+- If you want to create data from images to texts.
+
+### Restricted Boltzmann Machines (RBMs)
+
+Restricted Boltzmann machine is a type of Recurrent Neural Network where the nodes make binary decisions with some bias. It was invented by Geoffrey Hinton and is used generally for dimensionality reduction, classification, regression, feature learning, and topic modeling.
+
+RBMs uses two layers:
+
+- Visible units
+
+- Hidden units
+
+The visible and hidden units have biases connected. The visible units are connected to the hidden units, and they do not have any output nodes.
+
+When to use it?
+
+- As the Boltzmann Machine will learn to regulate, this technique will be good to use when monitoring a system.
+
+- It is efficient when you are building a binary recommendation system
+
+- It is also used specifically when using a very specific dataset.
+
 ## Top applications of deep learning in 2022
+
+Deep Learning has recently outperformed humans in solving particular tasks, for example, Image Recognition. The level of accuracy achieved by Deep Learning has made it become so popular, and everybody is figuring out ways to implement it into their business. Different applications include:
 
 - Self driving cars
 
@@ -335,3 +379,5 @@ https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tut
 https://www.tensorflow.org/tutorials/load_data/images
 
 https://www.tensorflow.org/tutorials
+
+https://heartbeat.comet.ml/deep-learning-techniques-you-should-know-in-2022-94f33e62d922
