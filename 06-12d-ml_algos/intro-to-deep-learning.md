@@ -1,8 +1,8 @@
 # Intro to Deep Learning
 
-Deep learning is a sub-field of machine learning dealing with algorithms inspired by the structure and function of the brain called artificial neural networks. Deep learning algorithms are similar to how nervous system structured where each neuron connected each other and passing information.
+Deep learning is a sub-field of machine learning dealing with algorithms inspired by the structure and function of the brain called artificial neural networks. Deep learning algorithms are similar to how nervous system is structured, where each neuron is connected to each other and passing information.
 
-Deep learning models tend to perform well with amount of data wheras old machine learning models stop improving after a saturation point. One of differences between machine learning and deep learning model is on the feature extraction area. Feature extraction is done by human in machine learning whereas deep learning model figure out by itself.
+Deep learning models tend to perform well with amount of data wheras old machine learning models stop improving after a saturation point. One of the differences between machine learning and deep learning models is on the feature extraction area. Feature extraction is done by human in machine learning whereas deep learning model figure out by itself.
 
 ![why_deep_learning](../assets/why_deep_learning.jpg)
 
@@ -220,7 +220,7 @@ Tensorflow is a Python open-source library for fast numerical computing created 
 
 Computation is described in terms of data flow and operations in the structure of a directed graph.
 
-- Nodes: Nodes perform computation and have zero or more inputs and outputs. Data that moves between nodes are known as tensors, which are multi-dimensional arrays of real values.
+- Nodes: Nodes perform computation and have zero or more inputs and outputs. Data that moves between nodes are known as **tensors**, which are multi-dimensional arrays of real values.
 
 - Edges: The graph defines the flow of data, branching, looping, and updates to state. Special edges can be used to synchronize behavior within the graph, for example, waiting for computation on a number of inputs to complete.
 
@@ -228,9 +228,11 @@ Computation is described in terms of data flow and operations in the structure o
 
 **Keras** 
 
-Keras is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano.
+Keras is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano. Keras is designed for human beings, not machines, by minimizing the number of user actions required for common use cases. It is also the most used deep learning framework among top-5 winning teams on Kaggle.
 
-The best place to start is with the user-friendly Keras sequential API. Build models by plugging together building blocks. Let's see the following example taken from the Tensorflow website:
+To sum up the relationship between Tensorflow and Keras, TensorFlow is an open-sourced end-to-end platform, a library for multiple machine learning tasks, while Keras is a high-level neural network library that runs on top of TensorFlow. Both provide high-level APIs used for easily building and training models, but Keras is more user-friendly because it's built-in Python.
+
+The best place to start is with the user-friendly Keras sequential API. Let's see the following example taken from the Tensorflow website:
 
 ```bash
 pip install tensorflow
@@ -303,7 +305,7 @@ probability_model = tf.keras.Sequential([
 probability_model(x_test[:5])
 ```
 
-You have trained a machine learning model using a prebuilt dataset using the Keras API!
+You have trained a machine learning model using a prebuilt dataset using the Keras API! See the exploring KERAS notebook to see a couple more of examples!
 
 
 Source: 
