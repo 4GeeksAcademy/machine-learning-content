@@ -349,10 +349,12 @@ probability_model = tf.keras.Sequential([
 probability_model(x_test[:5])
 ```
 
-You have trained a machine learning model using a prebuilt dataset using the Keras API! See the exploring KERAS notebook to see a couple more of examples!
+You have trained a machine learning model using a prebuilt dataset using the Keras API! See the exploring-neural-networks notebook to see another example in Keras!
 
 
 Source: 
+
+https://www.deeplearningbook.org/
 
 https://machinelearningmastery.com/inspirational-applications-deep-learning/
 
