@@ -279,6 +279,12 @@ In the Titanic form that you saw at the beginning of this lesson, we were only r
 
 You can find a couple of form examples in the following links:
 
+https://github.com/4GeeksAcademy/machine-learning-content/blob/master/07-1d-ml_deploy/form-examples/index_example1.html
+
+https://github.com/4GeeksAcademy/machine-learning-content/blob/master/07-1d-ml_deploy/form-examples/index_example2.html
+
+https://www.geeksforgeeks.org/html-design-form/
+
 
 ### **Step 4:** Predicting the survival result
 
