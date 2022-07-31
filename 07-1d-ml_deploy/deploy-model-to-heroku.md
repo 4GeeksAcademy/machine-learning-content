@@ -104,15 +104,13 @@ You now have a small Flask web application. You have run your application and di
 
 ### **Step 3:** Using HTML templates
 
-The Bootstrap toolkit will help you give some style to your application without having to write your own HTML, CSS and JavaScript code. The toolkit will allow you to focus on learning how Flask works, instead of learning HMTL.
-
 Currently, your application only displays a simple message without HTML. Web applications primarily use HTML to display information to the visitor, so you will now work to incorporate a HTML file into your application, which can be displayed in the web browser.
 
 Flask provides a render_template() helper function that allows the use of the Jinja template engine. This will make managing HTML much easier by writing your HTML code in .html files, in addition to using logic in your HTML code. You will use these HTML files, (templates), to create your web application.
 
 In this step, you will create your main Flask application in a new file.
 
-First, in your project directory, use your favorite text editor to create and edit your app.py file. This will host all the code you will use to create the application. 
+First, in your project directory, use your favorite text editor to create and edit your app.py file. Previously you have been using the app.py to wrute the code for your final model. To avoid confusions, now you will use a 'model.py' or a 'titanic.py' for that, and the app.py will exclusively be to build your web app. This will host all the code you will use to create the application. 
 
 In this new file, you will import the Flask object to create a Flask application instance, as you did before. You will also import the render_template() helper function that allows you to render HTML template files that exist in the templates folder you are about to create. The file will have a single view function that will be responsible for handling requests to the main / path. Add the following content:
 
@@ -163,13 +161,11 @@ Lets create folder templates. In your application, you will use templates to ren
 </html>
 ```
 
->At the end of this tutorial, you will see a complete form example code.
-
 Save the file and use your browser to navigate to http://127.0.0.1:500 again, or refresh the page. This time, the browser should display the text 'Welcome to my Titanic Survival prediction app' in an <h1> tag.
 
 In addition to the templates folder, Flask web applications also typically have a static folder to house files, such as the CSS files, JavaScript files, and images that the application uses.
 
-You can create a style.css stylesheet file to add CSS to your application. First, create a directory called static inside your main project directory. Then create another directory called css inside static to host the .css files. The same can be done for js files and images.
+You can create a style.css stylesheet file to add CSS to your application. First, create a directory called static inside your main project directory. Then create another directory called css inside static to host the .css files. The same can be done for js files and images for more complex apps.
 
 Inside your css directory create a style.css file and add the following rule:
 
@@ -266,7 +262,8 @@ Now that you have a base.html template you can inherit that code to index.html b
 {% endblock %}
 ```
 
-You have used HTML templates and static files in Flask. Let's see how our actual code could be to create a form requesting the attributes of our passengers.
+You have used HTML templates and static files in Flask in a clean way. However, to make things simple for your fist web app, we will keep only the index.html file.
+Let's see how our actual code could be to create a form requesting the attributes of our passengers.
 
 >Important: in-order to predict the data correctly the corresponding values of each label should match with the value of each input selected.
 
@@ -285,7 +282,7 @@ In the form above we have only chosen the numerical features for prediction, but
 Let’s run the application.
 
 ```bash
-export FLASK_APP=script.py
+export FLASK_APP=app.py
 run flask
 ```
 
