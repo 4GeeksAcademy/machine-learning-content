@@ -402,7 +402,7 @@ We are ready! Push your project to Heroku! If you wish to do it directly on Hero
 
 - Copy that link and paste it in your browser to test your app.
 
-If you feel more comfortable with the command line, you will need to have git and Heroku CLI installed, and then follow this steps:
+**If you feel more comfortable with the command line, you will need to have git and Heroku CLI installed, and then follow this steps:**
 
 ```bash
 heroku login
