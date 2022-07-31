@@ -16,3 +16,5 @@ https://medium.com/towards-data-science/how-to-deploy-a-streamlit-app-using-an-a
 
 https://medium.com/swlh/using-streamlit-to-create-interactive-webapps-from-simple-python-scripts-f78b08e486e7
 
+https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace
+
