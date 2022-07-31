@@ -188,7 +188,7 @@ In your index.html file you will add a link to your style.css file:
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
-    <title>FlaskBlog</title>
+    <title>Welcome to my Titanic Survival prediction app</title>
 </head>
 ```
 
@@ -262,12 +262,12 @@ Now that you have a base.html template you can inherit that code to index.html b
 {% endblock %}
 ```
 
-You have used HTML templates and static files in Flask in a clean way. However, to make things simple for your fist web app, we will keep only the index.html file.
-Let's see how our actual code could be to create a form requesting the attributes of our passengers.
+You have used HTML templates and static files in Flask in a clean way. However, to make things simple for your first web app, we will keep only the index.html file.
+Let's see how should we code a form requesting the attributes of our passengers.
 
->Important: in-order to predict the data correctly the corresponding values of each label should match with the value of each input selected.
+>In order to predict the data correctly, the corresponding values of each label should match with the value of each input selected.
 
-In the form above we have only chosen the numerical features for prediction, but in the case we include categorical features that were converted label encoded, we need to put the same values to the html form. The following example shows how the form should be coded in case our 'Sex' feature would have been assined 0 for Male and 1 for Female:
+In the Titanic form that you saw at the beginning of this lesson, we were only requesting the numerical features for prediction, but in the case we include categorical features that were previously label encoded, we need to put the same values to the html form. The following example shows how the form should be coded in case our 'Sex' feature would have been assined 0 for Male and 1 for Female:
 
 ```py
 <label for="Sex">Gender</label>
@@ -276,6 +276,9 @@ In the form above we have only chosen the numerical features for prediction, but
       <option value="1">Female</option>
     </select>
 ```
+
+You can find a couple of form examples in the following links:
+
 
 ### **Step 4:** Predicting the survival result
 
