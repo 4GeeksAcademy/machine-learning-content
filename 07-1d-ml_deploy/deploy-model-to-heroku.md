@@ -1,12 +1,32 @@
 # Deployment of a Machine learning model using Flask and Heroku 
 
+Machine Learning models are powerful tools to make predictions based on available data. In order to make these models useful for society, they need to be deployed so that other’s can easily access them to make predictions. This can be done using Flask and Heroku.
+
 Flask is a small and lightweight Python web framework that provides useful tools and features that make creating web applications easier using only a Python file. 
 
 Heroku is a cloud platform that lets you build, deliver, monitor and scale apps. Heroku makes the processes of deploying, configuring, scaling, tuning, and managing apps as simple and straightforward as possible so that developers can focus on building great apps. It also includes a rich ecosystem of managed data services.
 
+Let's imagine we have just finished creating our Titanic survival prediction model. Now what?
+
+In order to predict with unknown data we have to deploy it over the internet so that the outside world can use it.
+
+For that, we will need to save the model so that we can predict the values later. We make use of pickle in python which is a powerful algorithm for serializing and de-serializing a Python object structure, but there are other tools too. The following code saves the model using Pickle:
+
+```py
+#serializing our model to a file called model.pkl
+import pickle
+filename = 'titanic_model.pkl'
+pickle.dump(classifier, open(filename,'wb'))
+```
+
 ## Steps to create a web app using Flask in Python3
 
+For predicting survival in Titanic from various attributes we first need to collect the data(new attribute values) and then use the model we built to predict whether a passenger would survive or not in the Titanic. Therefore, in order to collect the data we create a html form which would contain all the different options to select from each attribute. Here, I have created a simple form using html only. If you want to make the form more interactive you can do so as well.
+
+![titanic_prediction_form](../assets/titanic_prediction_form.jpg)
+
 ### **Step 1:** Activate environment and install Flask
+
 
 In the command line enter your project's directory. Once there, activate your environment and use pip to install Flask.
 
@@ -97,7 +117,10 @@ First, in your project directory, use your favorite text editor to create and ed
 In this new file, you will import the Flask object to create a Flask application instance, as you did before. You will also import the render_template() helper function that allows you to render HTML template files that exist in the templates folder you are about to create. The file will have a single view function that will be responsible for handling requests to the main / path. Add the following content:
 
 ```py
-from flask import Flask, render_template
+import numpy as np
+import flask
+import pickle
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -125,8 +148,9 @@ If you click on this line, the debugger will reveal more code so that you have m
 
 You will probably see an error showing 'template not found (index.html)'. 
 
-To fix this error, create a directory called templates inside your project directory. Inside it, open a file named index.html for editing and add the following code:
+Lets create folder templates. In your application, you will use templates to render HTML which will display in the user’s browser. This folder contains our html form file index.html. Start editing your index.html file by writing the following code:
 
+```py
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -134,15 +158,18 @@ To fix this error, create a directory called templates inside your project direc
     <title>ML app</title>
 </head>
 <body>
-   <h1>Welcome to my Machine Learning app</h1>
+   <h1>Welcome to my Titanic Survival prediction app</h1>
 </body>
 </html>
+```
 
-Save the file and use your browser to navigate to http://127.0.0.1:500 again, or refresh the page. This time, the browser should display the text Welcome to FlaskBlog in an <h1> tag.
+>At the end of this tutorial, you will see a complete form example code.
+
+Save the file and use your browser to navigate to http://127.0.0.1:500 again, or refresh the page. This time, the browser should display the text 'Welcome to my Titanic Survival prediction app' in an <h1> tag.
 
 In addition to the templates folder, Flask web applications also typically have a static folder to house files, such as the CSS files, JavaScript files, and images that the application uses.
 
-You can create a style.css stylesheet file to add CSS to your application. First, create a directory called static inside your main project directory. Then create another directory called css inside static to host the .css files. The same happens for images and js directories.
+You can create a style.css stylesheet file to add CSS to your application. First, create a directory called static inside your main project directory. Then create another directory called css inside static to host the .css files. The same can be done for js files and images.
 
 Inside your css directory create a style.css file and add the following rule:
 
@@ -173,9 +200,9 @@ Here you use the helper function url_for() to generate the appropriate file loca
 
 Save and close the file.
 
-After updating your application's index page, you will notice that the Welcome to my Machine learning app text is now brown, centered, and framed within a border.
+After updating your application's index page, you will notice that the 'Welcome to my Titanic Survival prediction app' text is now brown, centered, and framed within a border.
 
-You can put the style you want to your style.css file. However, the Bootstrap tool kit help you with this if you are not an expert. Now, if your application will have more than one page, then you can avoid unnecessary repetition of code with the help of a base template file, from which all your HTML files will inherit. If that is the case, you can write the following code in your base.html file:
+You can put the style you want to your style.css file. However, the Bootstrap tool kit can help you with this if you are not an expert. Now, if your application will have more than one page, then you can avoid unnecessary repetition of code with the help of a base template file, from which all your HTML files will inherit. If that is the case, you can write the following code in your base.html file:
 
 ```py
 <!doctype html>
@@ -239,52 +266,72 @@ Now that you have a base.html template you can inherit that code to index.html b
 {% endblock %}
 ```
 
-You have used HTML templates and static files in Flask. You also used Bootstrap to start refining the look and feel of his page and a base template to avoid code repetition. In the next step, you will set up a database that will store his application data.
+You have used HTML templates and static files in Flask. Let's see how our actual code could be to create a form requesting the attributes of our passengers.
 
-### **Heroku step: Create a new web app on Heroku**
+>Important: in-order to predict the data correctly the corresponding values of each label should match with the value of each input selected.
 
-You should already have an account on Heroku, but if you don't. go ahead and create your account at 'https://www.heroku.com'.
-
-- Click on 'Create a new app'
-
-- On 'deploy' tab: link Heroku app to your Github account and select the repo to connect to.
-
-- Scroll down and choose 'manual deploy'. After making sure you are on the branch you want to deploy (in this case: main), then clic on 'Deploy branch'. You will see all the required packages been installed like the following image:
-
-*include image*
-
-- When finished, it should look like the following screenshot:
-
-*include image*
-
-- Copy that link and paste it in your browser to test your app.
-
-
-
-
-## Structure of your folder
-
-*include an ideal structure image* 
-
-
-
-> Don't forget that before starting your app, you should save your model. You can use the code below.
+In the form above we have only chosen the numerical features for prediction, but in the case we include categorical features that were converted label encoded, we need to put the same values to the html form. The following example shows how the form should be coded in case our 'Sex' feature would have been assined 0 for Male and 1 for Female:
 
 ```py
-import pickle
-
-filename = 'titanic_model.pkl'
-
-pickle.dump(classifier, open(filename,'wb'))
+<label for="Sex">Gender</label>
+    <select id="relation" name="relation">
+      <option value="0">Male</option>
+      <option value="1">Female</option>
+    </select>
 ```
 
+### **Step 4:** Predicting the survival result
+
+Let’s run the application.
+
+```bash
+export FLASK_APP=script.py
+run flask
+```
+
+When someone submits the form, the webpage should display the result if a passenger would survive or die in the Titanic. For this, we require the model file(model.pkl) we created before, in the same project folder. We add the following code to the app.py file:
+
+```py
+#prediction function
+def ValuePredictor(to_predict_list):
+    to_predict = np.array(to_predict_list).reshape(1,12)
+    loaded_model = pickle.load(open("model.pkl","rb"))
+    result = loaded_model.predict(to_predict)
+    return result[0]
 
 
-**Using Flask to make a web API for our machine learning model**
+@app.route('/result',methods = ['POST'])
+def result():
+    if request.method == 'POST':
+        to_predict_list = request.form.to_dict()
+        to_predict_list=list(to_predict_list.values())
+        to_predict_list = list(map(int, to_predict_list))
+        result = ValuePredictor(to_predict_list)
+        
+        if int(result)==1:
+            prediction='Passenger survives'
+        else:
+            prediction='Passenger dies'
+            
+        return render_template("result.html",prediction=prediction) 
+```
 
-What you normally used to name app.py will have to be renamed for example to 'titanic.py', or 'build_features.py', etc because your app.py file will now be in charge of building the web app.
+Here after the form is submitted, the form values are stored in variable to_predict_list in the form of dictionary. We convert it into a list of the dictionary’s values and pass it as an argument to ValuePredictor() function. In this function, we load the model.pkl file and predict the new values and return the result.
 
-In your app.py file your code should look something like this:
+This result/prediction(Passenger survives or not) is then passed as an argument to the template engine with the html page to be displayed.
+
+Create the following result.html file and add it to templates folder.
+
+```py
+<!doctype html>
+<html>
+   <body>
+       <h1> {{ prediction }}</h1>
+   </body>
+</html>
+```
+
+**An alternative code for the entire app.py file could be:**
 
 ```py
 import numpy as np
@@ -292,12 +339,11 @@ from flask import Flask, request, render_template
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('titanic_model.pkl','rb'))
+model = pickle.load(open('titanic_model.pkl', 'rb'))
 
 @app.route('/') #http://www.google.com/
 def home():
-    return render_template('index.html')          
-
+    return render_template('index.html')
 @app.route('/predict', methods=['POST'])
 def predict():
     '''
@@ -307,18 +353,82 @@ def predict():
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
 
-    output = round(prediction[0],2)
+    output = round(prediction[0], 2)
 
-    return render_template('index.html',prediction_text='Would you survive? {} (1=survived, 0=deceased)'.format(output))
+    return render_template('index.html', prediction_text='Would you survive? {} (1=survived, 0=deceased)'.format(output))
 
 if __name__=="__main__":
     app.run(port=5000, debug=True)
 ```
 
+Run the application again and it should predict the result after submitting the form. We have successfully created the Web application. Now it’s time to use heroku to deploy it.
+
+### **Step 5: Using Heroku for deployment**
+
+You should already have an account on Heroku, but if you don't. go ahead and create your account at 'https://www.heroku.com'.
+Let's make sure we also have the following before deploying to Heroku:
+
+1. Gunicorn handles requests and takes care of complicated things. Download gunicorn to our virtual environment. You can use pip to download it.
+
+```bash
+pip install gunicorn
+```
+
+2. We have installed a lot of libraries and other important files like flask, gunicorn, sklearn etc. We need to tell heroku that our project requires all these libraries to successfully run the application. This is done by creating a requirements.txt file.
+
+
+3. Procfile is a text file in the root directory of your application, to explicitly declare what command should be executed to start your app. This is an essential requirement for heroku. This file tells heroku we want to use the web process with the command gunicorn and the app name.
+
+```py
+web: gunicorn app:app
+```
+
+Your current structure should be looking something like this:
+
+![flask-heroku-structure](../assets/flask-heroku-structure.jpg)
+
+4. Finally, use a .gitignore file to do exclude unnecessary files that we don't want to deploy to Heroku.
+
+We are ready! Push your project to Heroku! If you wish to do it directly on Heroku's website you can do it as follows:
+
+- Click on 'Create a new app'
+
+- On 'deploy' tab: link Heroku app to your Github account and select the repo to connect to.
+
+- Scroll down and choose 'manual deploy'. After making sure you are on the branch you want to deploy (in this case: main), then clic on 'Deploy branch'. You will see all the required packages been installed like the following image:
+
+![deploying_branch](../assets/deploying_branch.jpg)
+
+- When finished, it should look like the following screenshot:
+
+![deployed_to_heroku](../assets/deployed_to_heroku.jpg)
+
+- Copy that link and paste it in your browser to test your app.
+
+If you feel more comfortable with the command line, you will need to have git and Heroku CLI installed, and then follow this steps:
+
+```bash
+heroku login
+```
+
+```bash
+heroku create
+```
+
+```bash
+git init
+git add .
+git commit -m 'initial commit'
+```
+
+```bash
+git push heroku master
+heroku open
+```
+        
+
 
 Source:
-
-https://medium.com/towards-data-science/considerations-for-deploying-machine-learning-models-in-production-
 
 https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3-es
 
