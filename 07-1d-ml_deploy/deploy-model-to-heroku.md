@@ -161,7 +161,7 @@ Lets create folder templates. In your application, you will use templates to ren
 </html>
 ```
 
-Save the file and use your browser to navigate to http://127.0.0.1:500 again, or refresh the page. This time, the browser should display the text 'Welcome to my Titanic Survival prediction app' in an <h1> tag.
+Save the file and use your browser to navigate to http://127.0.0.1:500 again, or refresh the page. This time, the browser should display the text 'Welcome to my Titanic Survival prediction app' in an h1 tag.
 
 In addition to the templates folder, Flask web applications also typically have a static folder to house files, such as the CSS files, JavaScript files, and images that the application uses.
 
@@ -178,7 +178,7 @@ h1 {
 }
 ```
 
-This code will add a border, change the color to brown, center the text and add a small padding to the <h1> tags.
+This code will add a border, change the color to brown, center the text and add a small padding to the h1 tags.
 
 Save and close the file.
 
