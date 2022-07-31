@@ -423,7 +423,7 @@ git push heroku master
 heroku open
 ```
         
-
+Go ahead and test your web app!
 
 Source:
 
