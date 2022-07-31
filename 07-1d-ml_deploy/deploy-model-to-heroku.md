@@ -250,7 +250,7 @@ However, the following highlighted parts are specific to the Jinja template engi
 
 - {{ url_for('index')}: a function invocation that will return the URL for the index() view function. This is different from the previous url_for() invocation you used to link to a static CSS file, because it only requires one argument, which is the name of the view function, and links to the path associated with the function rather than to a static file.
 
--{% block content %} {% endblock %}: another block that will be replaced by content depending on the secondary template (templates that inherit from base.html) that will override it.
+- {% block content %} {% endblock %}: another block that will be replaced by content depending on the secondary template (templates that inherit from base.html) that will override it.
 
 Now that you have a base.html template you can inherit that code to index.html by adding only the following code in your index.html:
 
