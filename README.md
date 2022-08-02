@@ -147,11 +147,11 @@
 
 ## Data Science as Software (2 days)
 
-1. How to create a machine learning web app with Heroku.
+1. How to create a machine learning web app using Flask and Heroku.
 
-📝 Heroku app project (2 hours) 
+📝 Flask app project (2 hours) 
 
-2. How to create a machine learning web app with Streamlit 
+2. How to create a machine learning web app using Streamlit and Heroku
 
 📝 Streamlit app project (2 hours)
 
