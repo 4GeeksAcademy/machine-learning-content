@@ -1,4 +1,4 @@
-# Deployment of a Machine learning model using Streamlit
+# Deployment of a Machine learning model using Streamlit and Heroku
 
 In the previous lesson we learned how to build a machine learning web application using Flask, writing basic HTML, and deploying Flask apps with Heroku. But, what if we could build those apps as easy as writing Python scripts?
 
@@ -69,7 +69,6 @@ The simplicity of these ideas does not prevent you from creating incredibly rich
 - Streamlit is built for GPUs. Streamlit allows direct access to machine-level primitives like TensorFlow and PyTorch and complements these libraries.
 
 ![streamlit4](../assets/streamlit4.jpg)
-
 
 ## Streamlit basic features
 

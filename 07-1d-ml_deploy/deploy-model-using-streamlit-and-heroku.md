@@ -70,7 +70,6 @@ The simplicity of these ideas does not prevent you from creating incredibly rich
 
 ![streamlit4](../assets/streamlit4.jpg)
 
-
 ## Streamlit basic features
 
 Here we will explain some of the basic features but for a complete Streamlit documentation you can clic on the following link: `https://docs.streamlit.io/`
