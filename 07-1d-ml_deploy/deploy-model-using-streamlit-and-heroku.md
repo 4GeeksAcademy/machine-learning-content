@@ -15,6 +15,8 @@ import streamlit as st
 st.write('Hello, world!')
 ```
 
+![streamlit1](../assets/streamlit1.jpg)
+
 2. **Treat widgets as variables.** There are no callbacks in Streamlit! Every interaction simply reruns the script from top to bottom. This approach leads to really clean code:
 
 ```py
@@ -22,6 +24,8 @@ import streamlit as st
 x = st.slider('x')
 st.write(x, 'squared is', x * x)
 ```
+
+![streamlit2](../assets/streamlit2.jpg)
 
 3. **Reuse data and computation.** What if you download lots of data or perform complex computation? The key is to safely reuse information across runs. Streamlit introduces a cache primitive that behaves like a persistent, immutable-by-default, data store that lets Streamlit apps safely and effortlessly reuse information. Look at the following example:
 
@@ -37,6 +41,8 @@ data = read_and_cache_csv(BUCKET + "labels.csv.gz", nrows=1000)
 desired_label = st.selectbox('Filter to:', ['car', 'truck'])
 st.write(data[data.label == desired_label])
 ```
+
+![streamlit3](../assets/streamlit3.jpg)
 
 Now, let's go ahead and install Streamlit using pip: 
 
@@ -62,6 +68,8 @@ The simplicity of these ideas does not prevent you from creating incredibly rich
 
 - Streamlit is built for GPUs. Streamlit allows direct access to machine-level primitives like TensorFlow and PyTorch and complements these libraries.
 
+![streamlit4](../assets/streamlit4.jpg)
+
 
 ## Streamlit basic features
 
@@ -82,7 +90,7 @@ age = streamlit.selectbox("Choose your age:", np.arange(18, 66, 1))
 Another option:
 
 ```py
-select = st.sidebar.selectbox('Select a State',data['State'])
+select = st.selectbox('Select a State',data['State'])
 ```
 
 The first parameter is the title of the selectbox and the second parameter defines a list of values to be populated in the selectbox. Here, the second parameter is a column name ‘State’ in the .csv file we loaded.
@@ -192,6 +200,8 @@ st.markdown("* This gives a general overview of the data including"
             "frequency of games over time, most games played in a day, and longest break"
             "between games.")
 ```
+
+![streamlit_markdown](../assets/streamlit_markdown.jpg)
 
 **Write**
 
