@@ -65,6 +65,8 @@ The simplicity of these ideas does not prevent you from creating incredibly rich
 
 ## Streamlit basic features
 
+Here we will explain some of the basic features but for a complete Streamlit documentation you can clic on the following link: `https://docs.streamlit.io/`
+
 **Selection Widgets**
 
 There are many widgets available, including the following:
@@ -72,7 +74,7 @@ There are many widgets available, including the following:
 - SelectBox
 
 ```py
-age = streamlit.selectbox("Choose your age: ", np.arange(18, 66, 1))
+age = streamlit.selectbox("Choose your age:", np.arange(18, 66, 1))
 ```
 
 ![streamlit_selectbox](../assets/streamlit_selectbox.jpg)
@@ -276,6 +278,10 @@ This will create a Heroku instance and push all code in your application folder 
 
 Source:
 
+https://docs.streamlit.io/
+
+https://www.heroku.com/
+
 https://medium.com/towards-data-science/streamlit-101-an-in-depth-introduction-fc8aad9492f2
 
 https://medium.com/insiderfinance/python-streamlit-app-lets-you-get-any-stock-information-with-just-4-lines-of-code-128b784afab8
@@ -289,4 +295,6 @@ https://medium.com/towards-data-science/how-to-deploy-a-streamlit-app-using-an-a
 https://medium.com/swlh/using-streamlit-to-create-interactive-webapps-from-simple-python-scripts-f78b08e486e7
 
 https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace
+
+https://neptune.ai/blog/streamlit-guide-machine-learning
 

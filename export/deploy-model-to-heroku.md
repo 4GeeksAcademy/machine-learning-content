@@ -369,7 +369,7 @@ if __name__=="__main__":
 
 Run the application again and it should predict the result after submitting the form. We have successfully created the Web application. Now it’s time to use heroku to deploy it.
 
-### **Step 5: Using Heroku for deployment**
+## Deployment using Heroku
 
 You should already have an account on Heroku, but if you don't. go ahead and create your account at 'https://www.heroku.com'.
 Let's make sure we also have the following before deploying to Heroku:
@@ -413,6 +413,8 @@ We are ready! Push your project to Heroku! If you wish to do it directly on Hero
 
 **If you feel more comfortable with the command line, you will need to have git and Heroku CLI installed, and then follow this steps:**
 
+You can clic on the following link to install Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
+
 ```bash
 heroku login
 ```
@@ -435,6 +437,10 @@ heroku open
 Go ahead and test your web app!
 
 Source:
+
+https://www.heroku.com/
+
+https://devcenter.heroku.com/articles/heroku-cli
 
 https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3-es
 
