@@ -1,11 +1,36 @@
 # Cloud data warehouses
 
+Laptops and desktops work fine for routine tasks, but with the recent increase in size of datasets and computing power needed to run machine learning models, taking advantage of cloud resources is a necessity for data science.
+
+Cloud computing is...
+
+There are many benefits we could mention from implementing cloud computing in our organizations, just as an example are cost reduction and inmediacy.
+
+Of course this can also involve risks. Some of the risks of cloudd computing are:
+
+-Governance
+
+-Dependency
+
+-Integration
+
+-Service non-compliance
+
+-Privacy related aspects
+
+**Cloud Providers**
+
+There are 3 big providers in the west market, AWS, Microsoft Azure and Google Cloud platform.
+
+
+
+
 
 
 
 ## Google Cloud Platform
 
-Google Cloud Platform offers you three¹ ways to carry out machine learning:
+Google Cloud Platform offers you three ways to carry out machine learning:
 
 - Keras with a TensorFlow backend to build custom, deep learning models that are trained on Cloud ML Engine
 
@@ -65,6 +90,8 @@ If you are new/want to explore GCP for first time, then use google sandbox accou
 
 **Source:**
 
+GCP:
+
 -https://medium.com/ibm-data-ai/machine-learning-in-google-cloud-with-bigquery-25d40b158f91
 
 -https://medium.com/@rajdeepmondal/predicting-cab-fare-for-chicago-using-bqml-395126343c92
@@ -74,3 +101,7 @@ If you are new/want to explore GCP for first time, then use google sandbox accou
 -https://towardsdatascience.com/build-a-useful-ml-model-in-hours-on-gcp-to-predict-the-beatles-listeners-1b2322486bdf
 
 -https://towardsdatascience.com/choosing-between-tensorflow-keras-bigquery-ml-and-automl-natural-language-for-text-classification-6b1c9fc21013
+
+https://towardsdatascience.com/running-jupyter-notebook-in-google-cloud-platform-in-15-min-61e16da34d52
+
+https://towardsdatascience.com/automated-machine-learning-on-the-cloud-in-python-47cf568859f
