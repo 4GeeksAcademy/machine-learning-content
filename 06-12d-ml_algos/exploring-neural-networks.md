@@ -1,4 +1,4 @@
-# Exploring KERAS
+# Exploring Neural Networks using KERAS
 
 This notebook is taken from the Machine Learning Mastery tutorials (machinelearningmastery.com). It covers step by step how to model your first neural network using Keras!
 
