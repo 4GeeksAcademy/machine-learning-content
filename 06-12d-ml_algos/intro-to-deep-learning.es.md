@@ -1,48 +1,48 @@
-# Intro to Deep Learning
+# Introducción al aprendizaje profundo
 
-Deep learning is a sub-field of machine learning dealing with algorithms inspired by the structure and function of the brain called artificial neural networks. Deep learning algorithms are similar to how nervous system is structured, where each neuron is connected to each other and passing information.
+El aprendizaje profundo es un subcampo de Machine Learning que se ocupa de algoritmos inspirados en la estructura y función del cerebro llamados redes neuronales artificiales. Los algoritmos de aprendizaje profundo son similares a cómo se estructura el sistema nervioso, donde cada neurona está conectada entre sí y pasa información.
 
-Deep learning models tend to perform well with amount of data wheras old machine learning models stop improving after a saturation point. One of the differences between machine learning and deep learning models is on the feature extraction area. Feature extraction is done by human in machine learning whereas deep learning model figure out by itself.
+Los modelos de aprendizaje profundo tienden a funcionar bien con una gran cantidad de datos, mientras que los modelos antiguos de Machine Learning dejan de mejorar después de un punto de saturación. Una de las diferencias entre Machine Learning y los modelos de aprendizaje profundo está en el área de extracción de funciones. La extracción de características la realiza el ser humano en Machine Learning, mientras que el modelo de aprendizaje profundo se da cuenta por sí mismo.
 
 ![why_deep_learning](../assets/why_deep_learning.jpg)
 
-*Image by Andrew Ng at https://www.slideshare.net/ExtractConf*
+*Imagen de Andrew Ng en https://www.slideshare.net/ExtractConf*
 
-**What are activation functions?**
+**¿Qué son las funciones de activación?**
 
-Let's imagine an example about a model that decides if a student is accepted to a university based on its grades. Activation functions are functions that decide, given the inputs into the node, what should be the node’s output, so in this case the activation function decides, given the grades, if the student is accepted or not. 
+Imaginemos un ejemplo sobre un modelo que decide si un estudiante es aceptado en una universidad en función de sus calificaciones. Las funciones de activación son funciones que deciden, dadas las entradas en el nodo, cuál debe ser la salida del nodo, por lo que en este caso la función de activación decide, dadas las calificaciones, si el estudiante es aceptado o no. 
 
-One way in which neurons process inputs is by using linear combinations of weighted inputs (i.e., linear neuron). Another one is using a logistic function which returns a value between 0 and 1. Other activation functions you’ll see are tanh, and softmax functions.
+Una forma en que las neuronas procesan las entradas es mediante el uso de combinaciones lineales de entradas ponderadas (es decir, neurona lineal). Otra es usar una función logística que devuelve un valor entre 0 y 1. Otras funciones de activación que verá son las funciones tanh y softmax.
 
-**What are weights?**
+**¿Qué son los pesos?**
 
-When input data comes into a neuron, it gets multiplied by a weight value that is assigned to this particular input. These weights start out as random values, and as the neural network learns more about what kind of input data leads to a student being accepted into a university, the network adjusts the weights based on any errors in categorization that the previous weights resulted in. This is called training the neural network. Training neural networks can be viewed as a sort of optimization problem. The goal is to minimize the error of neural nets through constant training. 
+Cuando los datos de entrada entran en una neurona, se multiplican por un valor de peso que se asigna a esta entrada en particular. Estos pesos comienzan como valores aleatorios y, a medida que la red neuronal aprende más sobre qué tipo de datos de entrada conducen a que un estudiante sea aceptado en una universidad, la red ajusta los pesos en función de los errores de categorización que resultaron de los pesos anteriores. A esto se le llama entrenar la red neuronal. El entrenamiento de redes neuronales puede verse como una especie de problema de optimización. El objetivo es minimizar el error de las redes neuronales mediante un entrenamiento constante.
 
-To figure out how we’re going to find these weights, start by thinking about the goal. We want the network to make predictions as close as possible to the real values. To measure this, we need a metric of how wrong the predictions are, the error. A common metric is the sum of the squared errors (SSE), where y^ is the prediction and y is the true value, and you take the sum over all output units j and another sum over all data points μ.
+Para averiguar cómo vamos a encontrar estos pesos, comienza por pensar en la meta. Queremos que la red haga predicciones lo más cercanas posible a los valores reales. Para medir esto, necesitamos una métrica de qué tan equivocadas están las predicciones, el error. Una métrica común es la suma de los errores cuadráticos (SSE), donde y^ es la predicción e y es el valor real, y toma la suma de todas las unidades de salida j y otra suma de todos los puntos de datos μ.
 
-The SSE is a good choice for a few reasons. The square ensures the error is always positive and larger errors are penalized more than smaller errors. Our goal is to find weights wij that minimize the squared error. To do this with a neural network, typically we use gradient descent. 
+El SSE es una buena opción por varias razones. El cuadrado asegura que el error sea siempre positivo y que los errores más grandes se penalicen más que los errores más pequeños. Nuestro objetivo es encontrar pesos wij que minimicen el error cuadrático. Para hacer esto con una red neuronal, normalmente usamos el descenso de gradiente.
 
-Do you remember our 'Algorithm Optimization' module? We saw a little bit of Gradient Descent.
+¿Recuerdas nuestro módulo 'Optimización de algoritmos'? Vimos un poco de Gradient Descent.
 
-Gradient descent is an optimization algorithm used to find the values of parameters (coefficients) of a function (f) that minimizes a cost function (cost). Gradient descent is best used when the parameters cannot be calculated analytically (e.g. using linear algebra) and must be searched for by an optimization algorithm. It uses derivatives and calculus techniques through back propagation, resilient propagation and Manhattan propagation and other optimization techniques based on gradient calculations.
+El descenso de gradiente es un algoritmo de optimización utilizado para encontrar los valores de los parámetros (coeficientes) de una función (f) que minimiza una función de cost (costo). El descenso de gradiente se usa mejor cuando los parámetros no se pueden calcular analíticamente (por ejemplo, usando álgebra lineal) y se deben buscar mediante un algoritmo de optimización. Utiliza técnicas de derivadas y cálculo a través de retropropagación, propagación resiliente y propagación de Manhattan y otras técnicas de optimización basadas en cálculos de gradiente.
 
-Algebra and calculus are the foundation of the deep neural nets. 
+El álgebra y el cálculo son la base de las redes neuronales profundas.
 
-**Neural networks**
+**Redes neuronales**
 
-The diagram below shows a simple network. Weights and biases are the learnable parameters. In the following equation: $y = mx+b$ 'm' (the slope) would be the weight and 'b' would represent bias. The linear combination of the weights, inputs, and bias form the input h, which passes through the activation function f(h), giving the final output, labeled y.
+El siguiente diagrama muestra una red simple. Los pesos y bias (sesgos) son los parámetros que se pueden aprender. En la siguiente ecuación: $y = mx+b$ 'm' (la pendiente) sería el peso y 'b' representaría el bias. La combinación lineal de los pesos, las entradas y el bias forman la entrada h, que pasa a través de la función de activación f(h), dando la salida final, etiquetada como y.
 
 ![neural_network](../assets/neural_network.jpg)
 
-The activation function, f(h) can be any function. If we let f(h)=h, the output will be the same as the input. Now the output of the network is $y=Σi WiXi + b$
+La función de activación, f(h) puede ser cualquier función. Si hacemos f(h)=h, la salida será la misma que la entrada. Ahora la salida de la red es $y=Σi WiXi + b$.
 
-**Forward and back propagation**
+**Propagación hacia adelante y hacia atrás**
 
-By propagating values from the first layer (the input layer) through all the mathematical functions represented by each node, the network outputs a value. This process is called a **forward pass**.
+Al propagar valores desde la primera capa (la capa de entrada) a través de todas las funciones matemáticas representadas por cada nodo, la red genera un valor. Este proceso se llama **pase hacia adelante**.
 
-You forward propagateto get the output and compare it with the real value to get the error. Now, to minimise the error, you propagate backwards by finding the derivative of error with respect to each weight and then subtracting this value from the weight value. This is called **back propagation**.
+Reenvía la propagación para obtener el resultado y lo compara con el valor real para obtener el error. Ahora, para minimizar el error, se propaga hacia atrás encontrando la derivada del error con respecto a cada peso y luego restando este valor del valor del peso. Esto se llama **propagación inversa**.
 
-Now let's see the code for implementing the entire propagation:
+Ahora veamos el código para implementar toda la propagación:
 
 ```py
 import numpy as np
@@ -57,14 +57,14 @@ def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
 
-# Hyperparameters
-n_hidden = 2  # number of hidden units
+# Hiperparámetros
+n_hidden = 2  # Número de unidades ocultas
 epochs = 900
 learnrate = 0.005
 
 n_records, n_features = features.shape
 last_loss = None
-# Initialize weights
+# Inicializar pesos
 weights_input_hidden = np.random.normal(scale=1 / n_features ** .5,
                                         size=(n_features, n_hidden))
 weights_hidden_output = np.random.normal(scale=1 / n_features ** .5,
@@ -74,19 +74,19 @@ for e in range(epochs):
     del_w_input_hidden = np.zeros(weights_input_hidden.shape)
     del_w_hidden_output = np.zeros(weights_hidden_output.shape)
     for x, y in zip(features.values, targets):
-        ## Forward pass ##
-        # TODO: Calculate the output
+        ## Pase adelantado ##
+        # TODO: Calcular la salida
         hidden_input = np.dot(x, weights_input_hidden)
         hidden_output = sigmoid(hidden_input)
 
         output = sigmoid(np.dot(hidden_output,
                                 weights_hidden_output))
 
-        ## Backward pass ##
-        # TODO: Calculate the network's prediction error
+        ## Pase hacia atrás ##
+        # TODO: Calcular el error de predicción de la red
         error = y - output
 
-        # TODO: Calculate error term for the output unit
+        # TODO: Calcular el término de error para la unidad de salida
         output_error_term = error * output * (1 - output)
 
         ## propagate errors to hidden layer
