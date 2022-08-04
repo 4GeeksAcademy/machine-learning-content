@@ -1,6 +1,6 @@
-# Intro to Deep Learning
+# Introducción al aprendizaje profundo
 
-Deep learning is a sub-field of machine learning dealing with algorithms inspired by the structure and function of the brain called artificial neural networks. Deep learning algorithms are similar to how nervous system is structured, where each neuron is connected to each other and passing information.
+El aprendizaje profundo es un subcampo de Machine Learning que se ocupa de algoritmos inspirados en la estructura y función del cerebro llamados redes neuronales artificiales. Los algoritmos de aprendizaje profundo son similares a cómo se estructura el sistema nervioso, donde cada neurona está conectada entre sí y pasa información.
 
 Deep learning models tend to perform well with amount of data wheras old machine learning models stop improving after a saturation point. One of the differences between machine learning and deep learning models is on the feature extraction area. Feature extraction is done by human in machine learning whereas deep learning model figure out by itself.
 
