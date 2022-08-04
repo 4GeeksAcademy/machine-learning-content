@@ -116,6 +116,8 @@
 
 7.1. Naive Bayes
 
+7.2. Exploring Naive Bayes notebook
+
 📝 Naive Bayes project (2 hours)
 
 8.1. Support Vector Machine
@@ -130,17 +132,19 @@
 
 📝 KNN project (2 hours)
 
-10.1. K-means
+10.1. Unsupervised Learning
 
 📝 K-means project (2 hours)
 
 11.1. Time Series Forecasting 
 
+11.2. Exploring Time Series Notebook
+
 📝 Time series project (2 hours)
 
 12.1. Introduction to Deep Learning
 
-12.2. Exploring Deep Learning Notebook
+12.2. Exploring Neural Networks Notebook
 
 📝 Deep learning project (2 hours)
 
