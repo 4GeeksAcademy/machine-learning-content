@@ -6,7 +6,7 @@ Cloud computing is the on-demand availability of computer system resources, espe
 
 Cloud computing relies on sharing of resources to achieve coherence and typically using a "pay-as-you-go" model which can help in reducing capital expenses but be careful because it may also lead to unexpected operating expenses for unaware users.
 
-There are many benefits we could mention from implementing cloud computing in our organizations. To mention just a couple of them are cost reduction and inmediacy. Of course cloud computing can also involve risks. To name a few are dependency and provacy related aspects.
+There are many benefits we could mention from implementing cloud computing in our organizations. Of course cloud computing can also involve risks. It can be helpful with cost reduction and inmediacy but it can involve dependency and privacy related aspects risks.
 
 The main characteristics of cloud computing are:
 
@@ -22,13 +22,13 @@ When we talk about AI, we always talk about levels of responsability. The levels
 
 ![cloud_computing](../assets/cloud_computing.jpg)
 
-When we talk about on-premises scheme, we basically are not on the cloud and we are responsible of everything. When we migrate to an IaaS model (Infrastructure as a service), it means that we are going to rent the infrastructure services to the cloud provider, for example virtual machines, servers, storage, etc. When we migrate to PaaS (Platform as a service), the provider is not only offering me an infrastructure, they are offering a platform that we can use. Finally, in Saas (Software as a service), the provider is in charge of everything. 
+When we talk about on-premises scheme, we basically are not on the cloud and we are responsible of everything. When we migrate to an IaaS model (Infrastructure as a service), it means that we are going to rent the infrastructure services to the cloud provider, for example virtual machines, servers, storage, etc. When we migrate to PaaS (Platform as a service), the provider is not only offering us an infrastructure, they are offering a platform that we can use. Finally, in Saas (Software as a service), the provider is in charge of everything. 
 
-What is the cost with cloud computing services?
+What are the costs in cloud computing services?
 
-Cloud services have pricing models based in 'pay per use' or for usage. An advantage of this is that there are no infrastructure initial costs and there is no need to buy expensive infrastructure that we may not entirely use. Another great advantage is that we can pay for additional resources if we need them, this is what we call elasticity, and of course we can stop paying for those resources if we we no longer need them.
+Cloud services have pricing models based in 'pay per use'. An advantage of this is that there are no infrastructure initial costs and there is no need to buy expensive infrastructure that we may not entirely use. Another great advantage is that we can pay for additional resources if we need them, this is what we call elasticity, and of course we can stop paying for those resources if we we no longer need them.
 
-If you own a company, there are some questions you need to answer before migrating your company to the cloud. There have been succesful migrations to the cloud, but there have also been failing migrations. We need to understand that we are talking about a digital transformation process. Generally, the companies that start a digital transformation, have certain maturity in their procedures, in their culture (human resources), and in their technologies. Companies that have failed in this transformation, normally focus in the new technologies, but they forget about redesigning their processes, or do not bother training their human resources on how to use this technologies. After some months or a couple of years, they realize they wasted their time and money. Sometimes the reason is they did not started with clear goals of what to achieve with the digital transformation.
+If you own a company, there are some questions you need to answer before migrating your company to the cloud. There have been succesful migrations to the cloud, but there have also been failing migrations. We need to understand that we are talking about a digital transformation process. Generally, the companies that start a digital transformation, have certain maturity in their procedures, in their culture (human resources), and in their technologies. Companies that have failed in this transformation, normally focus in the new technologies, but they forget about redesigning their processes, or do not bother training their human resources on how to use this new technologies. After some months or a couple of years, they realize they wasted their time and money. Sometimes the reason is they did not even started with clear goals of what to achieve with their digital transformation.
 
 So before migrating to the cloud, make yourself these questions:
 
@@ -42,7 +42,7 @@ So before migrating to the cloud, make yourself these questions:
 
 In order to answer the last question, we need to know what providers exist in the market. There are a lot of cloud computing providers, for example Digital Ocean, IBM Cloud, OpenStack, etc. However there are three big providers in the west market, AWS, Microsoft Azure and Google Cloud platform, from which AWS has the biggest market share, and its the most widely used.
 
->The three of them have free tiers.
+>A lot of providers have free tiers. AWS, GCP and Azure do offer them.
 
 ## Cloud computing concepts
 
@@ -50,7 +50,7 @@ In order to answer the last question, we need to know what providers exist in th
 
 It is a service that allows us to store data in a raw format, without any kind of preprocessing. We can store structured data, for example an excel file, semi structured data, like a json file, and non-structured data, for example an audio.
 
-This data lakes are meant to store non-structured data, however they can store the other two types of data, too. Data lakes allows us to import any amount of real time data, store and label data in a safe way, analyse that data without the need to move the data to a separate analysis tool, and of course it allows to create predictive models with this data.
+This data lakes are meant to store non-structured data, however they can store the other two types of data, too. Data lakes allow us to import any amount of real time data, store and label that data in a safe way, analyse it without the need to move the data to a separate analysis tool, and of course we can use them to create predictive models.
 
 Data Lakes help companies take better decisions because they become a centralized and standarized information source. They adapt easily to changes, they can scale much more than a relational database, and they allow crossing diverse data sources, not just relational.
 
@@ -58,7 +58,9 @@ However, they also have difficulties, like big initial investments and expensive
 
 **What is the difference between a Data Lake and a Data Warehouse?**
 
+A data warehouse is an optimized database to analyse relational data that comes from transactional systems and business applications. The data gets cleaned, enriched and transformed so that they can act as the only true source in which users can trust.
 
+A data lake is different because it stores relational data from business applications and no relational data from mobile applications, IoT devices and social networks. The structure or scheme of the data is not defined when the data is captured.
 
 
 
