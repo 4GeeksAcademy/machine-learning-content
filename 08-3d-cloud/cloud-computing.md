@@ -58,11 +58,18 @@ However, they also have difficulties, like big initial investments and expensive
 
 **What is the difference between a Data Lake and a Data Warehouse?**
 
-A data warehouse is an optimized database to analyse relational data that comes from transactional systems and business applications. The data gets cleaned, enriched and transformed so that they can act as the only true source in which users can trust.
+A data warehouse is an optimized and centralized data repository to analyse relational data that comes from transactional systems and business applications. The data gets cleaned, enriched and transformed so that they can act as the only true source in which users can trust.
 
 A data lake is different because it stores relational data from business applications and no relational data from mobile applications, IoT devices and social networks. The structure or scheme of the data is not defined when the data is captured.
 
+The main difference between data lake and data warehouse has to do with the format in which data is processed and stored. In a data warehouse, we will always find structured and preprocessed data. Deciding if having a data lake or a data warehouse, depends on the type of data you will be working with, and also the frequency in which the data will be updated and queried. Data warehouses are analytical databases so they are not intended for frequent queries and updates.
+Depending on the needs, a company may have a data lake as well as a data warehouse. Both data structures are very valuable. 
 
+**What is a data mart?**
+
+A datawarehouse is composed of datamarts. Data marts are small databases oriented to specific topics from the organization. For example a datamart for each department (Marketing, Purchases, etc). The process that extracts, transforms and loads the data from datamarts into the data warehouse is known as **ETL**. This ETL processes are normally done by batches, which are loaded during a specific time of the day, normally at nights when the work loads are not so high.
+
+A data warehouse, compared to a data mart, tries to centralize information, and fight against having multiple truths from having multiple databases.
 
 ## Cloud computing providers
 
@@ -70,7 +77,13 @@ A data lake is different because it stores relational data from business applica
 
 AWS is the most used cloud platform today. This cloud solution allows us to virtually execute any application on the cloud, from web applications to IoT solutions and big data.
 
-**S3** is a data storage service 
+**S3** is an Amazon data storage service. One of the most important products from Amazon. **S3** is an object based storage service that allows to store as much data as you want because the scaling is automatic. When we talk about object based we mean the minimal unit, in this case, the files.
+
+How does S3 work?
+
+All files or objects are stored in buckets. We can think of a bucket as a folder where we store our files. A bucket is a container that can store different types of objects. We can not create a bucket with a name that already exists. Bucket names in S3 are unique and we can configure if buckets are public or private. Inside a bucket we can modify a file and have its versions during time.
+
+S3 storage format: https://[bucket name].s3.amazonaws.com/video.mp4
 
 
 
