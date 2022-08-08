@@ -1,18 +1,42 @@
 # Básicos de Machine Learning 
 
-¿Qué es Machine Learning? 
+## ¿Qué es Machine Learning? 
 
-Machine learning es el campo de la ciencia que estudia algoritmos que aproximan funciones cada vez mejor a medida que se les dan más observaciones. Los algoritmos de Machine learning a menudo se utilizan para aprender y automatizar procesos humanos, optimizar resultados, predecir resultados, modelar relaciones complejas y aprender patrones en los datos.
+Machine learning es el campo de la ciencia que estudia algoritmos que aproximan funciones cada vez mejor a medida que se les dan más observaciones. 
 
-**Aprendizaje supervisado vs no supervisado**
+Los algoritmos de Machine Learning son programas que pueden aprender de los datos y mejorar a partir de la experiencia, sin intervención humana. Las tareas de aprendizaje pueden incluir el aprendizaje de la función que asigna la entrada a la salida, el aprendizaje de la estructura oculta en los datos no etiquetados; o "aprendizaje basado en instancias", donde se produce una etiqueta de clase para una nueva instancia comparando la nueva instancia (fila) con las instancias de los datos de entrenamiento, que se almacenaron en la memoria.
 
-Aprendizaje supervisado...
+## Tipos de algoritmos de Machine Learning
 
-Los datos etiquetados son datos que tienen la información sobre la variable de destino para cada instancia. Los usos más comunes del aprendizaje supervisado son la regresión y la clasificación.
+### Aprendizaje supervisado
 
-Aprendizaje sin supervisión...
+Es útil en los casos en que una etiqueta está disponible para un determinado conjunto de entrenamiento, pero falta y debe predecirse para otras instancias. Utiliza los datos de entrenamiento etiquetados para aprender la función de mapeo que convierte las variables de entrada (X) en la variable de salida (Y).
 
-Los usos más comunes del aprendizaje automático no supervisado son la agrupación en clústeres, la reducción de la dimensionalidad y la minería de reglas de asociación.
+Los datos etiquetados son datos que tienen la información sobre la variable de destino para cada instancia.
+
+Tipos de algoritmos de Machine Learning supervisado:
+
+- La clasificación se utiliza para predecir el resultado de una muestra dada cuando la variable de salida está en forma de categorías.
+
+- La regresión se utiliza para predecir el resultado de una muestra dada cuando la variable de salida está en forma de valores reales.
+
+- El ensamblaje es otro tipo de aprendizaje supervisado. Significa combinar las predicciones de múltiples modelos de Machine Learning que son individualmente débiles para producir una predicción más precisa en una nueva muestra. Ensamblar significa combinar los resultados de múltiples estudiantes (clasificadores) para obtener mejores resultados, mediante votación o promediación. La votación se usa durante la clasificación y el promedio se usa durante la regresión. La idea es que los conjuntos de alumnos se desempeñen mejor que los alumnos individuales. El Bagging (embolsado) y el Boosting (impulso) son dos tipos de algoritmos de ensamblaje.
+
+**¿Cuál es la diferencia entre Bagging y Boosting?**
+
+El Bagging y el Boosting son métodos de ensamblado, lo que significa que combinan muchos predictores débiles para crear un predictor fuerte. Una diferencia clave es que el embolsado construye modelos independientes en paralelo, mientras que el impulso construye modelos secuencialmente, en cada paso enfatizando las observaciones que se perdieron en los pasos anteriores.
+
+Algunos ejemplos de algoritmos de aprendizaje supervisado son:
+
+1. Árboles de decisión.
+
+2. Clasificación Naive Bayes.
+
+3. Regresión de mínimos cuadrados ordinarios.
+
+4. Regresión logística.
+
+5. Máquinas de vectores de soporte.
 
 **Aprendizaje en línea vs fuera de línea**
 

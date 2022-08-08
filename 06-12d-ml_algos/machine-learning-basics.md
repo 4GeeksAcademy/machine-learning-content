@@ -6,10 +6,9 @@ Machine learning is the field of science that studies algorithms that approximat
 
 Machine learning algorithms are programs that can learn from data and improve from experience, without human intervention. Learning tasks may include learning the function that maps the input to the output, learning the hidden structure in unlabeled data; or ‘instance-based learning’, where a class label is produced for a new instance by comparing the new instance (row) to instances from the training data, which were stored in memory. 
 
-
 ## Types of machine learning algorithms
 
-### Supervised learning
+### Supervised learning 
 
 It is useful in cases where a label is available for a certain training set, but is missing and needs to be predicted for other instances. It uses the labeled training data to learn the mapping function that turns input variables (X) into the output variable (Y).
 
@@ -26,7 +25,6 @@ Types of supervised machine learning algorithms:
 **What is the difference between bagging and boosting?**
 
 Bagging and boosting are both ensemble methods, meaning they combine many weak predictors to create a strong predictor. One key difference is that bagging builds independent models in parallel, whereas boosting builds models sequentially, at each step emphasizing the observations that were missed in previous steps.
-
 
 Some examples of supervised learning algorithms are:
 
