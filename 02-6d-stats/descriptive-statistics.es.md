@@ -10,7 +10,7 @@ Esto es diferente de la Estadística Inferencial.
 
 Estadística Inferencial significa intentar hacer inferencias o conclusiones de una muestra a toda la población.
 
-Entonces, utilizando Estadística Descriptivanquiza quieras tal vez usar un número que sea más indicativo de todos los números en ese conjunto. O algunos de los números que representan la tendencia central.
+Entonces, utilizando Estadística Descriptiva quizás quieras tal vez usar un número que sea más indicativo de todos los números en ese conjunto. O algunos de los números que representan la tendencia central.
 
 Comenzaremos enumerando las medidas de tendencia central, que representan la idea de que hay un número que resume mejor todo el conjunto.
 
@@ -32,13 +32,13 @@ La media aritmética es probablemente con lo que estás más familiarizado cuand
 
 **Mediana**
 
-Es el valor que divide los datos en dos partes iguales, Si el número de elementos en los datos es par, entonces la mediana sería el promedio de los dos términos medios.
+Es el valor que divide los datos en dos partes iguales. Si el número de elementos en los datos es par, entonces la mediana sería el promedio de los dos términos medios.
 
 Cuando la diferencia entre los términos consecutivos es constante (progresión aritmética) entonces la mediana = media.
 
 **Moda**
 
-la moda es escencialmente que número es el mas común en un set. Si dos valores aparecen al mismo tiempo más que otros, entonces tenemos un conjunto bimodal. También podemos tener conjuntos trimodales o multimodales.
+la moda es esencialmente que número es el más común en un set. Si dos valores aparecen al mismo tiempo más que otros, entonces tenemos un conjunto bimodal. También podemos tener conjuntos trimodales o multimodales.
 
 ### Medidas de variabilidad
 
@@ -62,7 +62,7 @@ La Desviación media da información sobre la distancia entre los valores de los
 
 Es solamente otra medida de dispersión, de cómo los puntos de datos difieren de la media. La varianza es la expectativa de la desviación al cuadrado de una variable aleatoria de su media poblacional o media muestral.
 
-La varianza es mastante interesante en un sentido matemático, pero la desviación estándar suele ser una medida mucho mejor de cuán dispersa está la distribución.
+La varianza es bastante interesante en un sentido matemático, pero la desviación estándar suele ser una medida mucho mejor de cuán dispersa está la distribución.
 
 ![descriptive_stats_variance.jpg](../assets/descriptive_stats_variance.jpg)
 
@@ -179,7 +179,7 @@ La principal diferencia entre la asimetría y la curtosis es:
 
 Cuanto mayor sea el momento, más difícil será estimar con muestras. Se requieren muestras más grandes para obtener buenas estimaciones.
 
-References:
+Referencias:
 
 https://towardsdatascience.com/understanding-descriptive-statistics-c9c2b0641291
 
