@@ -173,10 +173,59 @@ La implementación de estas validaciones cruzadas se puede encontrar en el paque
 
 La validación cruzada K-fold es una técnica superior para validar el rendimiento de nuestro modelo. Evalúa el modelo utilizando diferentes fragmentos del conjunto de datos como conjunto de validación.
 
+Dividimos nuestro conjunto de datos en K-pliegues. K representa el número de pliegues en los que desea dividir sus datos. Si usamos 5 pliegues, el conjunto de datos se divide en cinco secciones. En diferentes iteraciones, una parte se convierte en el conjunto de validación.
 
-**¿Qué es el sobreajuste?**
+*Implementación de validación cruzada de K-fold*
 
-Sobreajuste cuando un modelo hace predicciones mucho mejores sobre datos conocidos (datos incluidos en el conjunto de entrenamiento) que sobre datos desconocidos (datos no incluidos en el conjunto de entrenamiento).
+```py
+from sklearn.model_selection import cross_validate
+
+# Ejemplo con una función:
+
+def cross_validation(model, _X, _y, _cv=5):
+
+    scoring = ['accuracy', 'precision']
+
+    results = cross_validate(estimator=model,
+                                X=_X,
+                                y=_y,
+                                cv=_cv,
+                                scoring=_scoring,
+                                return_train_score=True)
+
+    return {"Training Accuracy scores": results['train_accuracy'],
+              "Mean Training Accuracy": results['train_accuracy'].mean()*100,
+              "Training Precision scores": results['train_precision'],
+              "Mean Training Precision": results['train_precision'].mean(),
+              "Validation Accuracy scores": results['test_accuracy'],
+              "Mean Validation Accuracy": results['test_accuracy'].mean()*100,
+              "Validation Precision scores": results['test_precision'],
+              "Mean Validation Precision": results['test_precision'].mean(),
+              }
+        
+```
+
+La función cross_validation personalizada en el código anterior realizará una validación cruzada de 5 veces. Devuelve los resultados de las métricas especificadas anteriormente.
+
+El parámetro estimador de la función cross_validate recibe el algoritmo que queremos usar para el entrenamiento. El parámetro X toma la matriz de características. El parámetro y toma la variable objetivo. La puntuación de parámetros toma las métricas que queremos usar para la evaluación. Pasamos una lista que contiene las métricas que queremos usar para verificar nuestro modelo.
+
+Con cualquier procedimiento de validación de modelos es importante tener en cuenta algunas ventajas y desventajas que en el caso de train test split son:
+
+Algunas ventajas:
+
+- Relativamente simple y más fácil de entender que otros métodos como la validación cruzada K-fold.
+
+- Ayuda a evitar modelos demasiado complejos que no se generalizan bien a nuevos datos.
+
+Algunas desventajas:
+
+- Elimina datos que podrían haberse usado para entrenar un modelo de machine learning (los datos de prueba no se usan para entrenar)
+
+- Con el cambio en el estado aleatorio de la división, la precisión del modelo también cambia, por lo que no podemos lograr una precisión fija para el modelo. Los datos de prueba deben mantenerse independientes de los datos de entrenamiento para que no se produzcan fugas de datos.
+
+## ¿Qué es el sobreajuste?
+
+El sobreajuste es cuando un modelo hace predicciones mucho mejores sobre datos conocidos (datos incluidos en el conjunto de entrenamiento) que sobre datos desconocidos (datos no incluidos en el conjunto de entrenamiento).
 
 ¿Cómo podemos combatir el sobreajuste?
 
@@ -184,7 +233,7 @@ Algunas formas de combatir el sobreajuste son:
 
 - Simplificar el modelo (a menudo se hace cambiando).
 
-- Seleccionar un modelo diferente.
+- Seleccione un modelo diferente.
 
 - Usar más datos de entrenamiento.
 
@@ -198,11 +247,7 @@ Si nuestro error de entrenamiento es bajo y nuestro error de validación es alto
 
 Si nuestro error de entrenamiento y validación son relativamente iguales y muy altos, lo más probable es que nuestro modelo no se ajuste bien a nuestros datos de entrenamiento.
 
-**¿Qué son los datos de pipelines?**
-
-Cualquier colección de transformaciones ordenadas en datos.
-
-Fuente:
+Source:
     
 https://towardsdatascience.com/train-test-split-and-cross-validation-in-python-80b61beca4b6
 
@@ -210,3 +255,18 @@ https://www.kdnuggets.com/2020/09/understanding-bias-variance-trade-off-3-minute
 
 https://medium.com/@ranjitmaity95/7-tactics-to-combat-imbalanced-classes-in-machine-learning-datase-4266029e2861
 
+https://www.kdnuggets.com/2016/08/10-algorithms-machine-learning-engineers.html
+
+https://www.dataquest.io/blog/top-10-machine-learning-algorithms-for-beginners/#:~:text=The%20first%205%20algorithms%20that,are%20examples%20of%20supervised%20learning.
+
+https://www.qwak.com/post/online-vs-offline-machine-learning-whats-the-difference#:~:text=While%20online%20learning%20does%20have,using%20the%20batch%20learning%20method.&text=In%20batch%20learning%2C%20data%20is,time%20to%20time%20in%20batches.
+
+https://towardsdatascience.com/10-machine-learning-algorithms-you-need-to-know-77fb0055fe0
+
+https://hackernoon.com/introduction-to-recommender-system-part-1-collaborative-filtering-singular-value-decomposition-44c9659c5e75
+
+https://towardsdatascience.com/understanding-train-test-split-scikit-learn-python-ea676d5e3d1
+
+https://towardsdatascience.com/understanding-8-types-of-cross-validation-80c935a4976d
+
+https://www.section.io/engineering-education/how-to-implement-k-fold-cross-validation/

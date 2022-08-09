@@ -210,8 +210,6 @@ The custom cross_validation function in the code above will perform 5-fold cross
 
 The estimator parameter of the cross_validate function receives the algorithm we want to use for training. The parameter X takes the matrix of features. The parameter y takes the target variable. The parameter scoring takes the metrics we want to use for evaluation. We pass a list containing metrics we want to use to check our model.
 
-
-
 With any model validation procedure it is important to keep in mind some advantages and disadvantages which in the case of train test split are:
 
 Some Advantages:
