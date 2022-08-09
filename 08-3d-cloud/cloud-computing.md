@@ -40,7 +40,7 @@ So before migrating to the cloud, make yourself these questions:
 
 4. What company will I choose to provide me that service?
 
-In order to answer the last question, we need to know what providers exist in the market. There are a lot of cloud computing providers, for example Digital Ocean, IBM Cloud, OpenStack, etc. However there are three big providers in the west market, AWS, Microsoft Azure and Google Cloud platform, from which AWS has the biggest market share, and its the most widely used.
+In order to answer the last question, we need to know what providers exist in the market. There are a lot of cloud computing providers, for example Digital Ocean, IBM Cloud, OpenStack, etc. However there are three big providers in the west market, AWS, Microsoft Azure and Google Cloud platform, from which AWS has the biggest market share, and its the most widely used. In addition to the core infrastructure services, each cloud provider brings their unique proprietary offerings in the NoSQL, Big Data, Analytics, ML and other such areas.
 
 >A lot of providers have free tiers. AWS, GCP and Azure do offer them.
 
@@ -73,109 +73,78 @@ A data warehouse, compared to a data mart, tries to centralize information, and 
 
 ## Cloud computing providers
 
+Machine learning is a critical element of the data science process, but training ML models is often a time consuming process that requires a lot of resources. Machine learning and deep learning models involve thousands of training iterations. You need these extensive amounts of iterations to produce the most accurate model. For example, if you have a set of training samples with only 1TB of data, 10 iterations of this training set will require 10TB of speed with which the data transfer takes place between the hard disk drive and RAM. In the past, gaining access to ML resources was difficult and expensive. Today, many cloud computing vendors offer resources for data science in the cloud.
+
+Cloud computing enables you to model storage capacity and handle loads at scale, or to scale the processing across nodes. For example, AWS offers Graphics Processing Unit (GPU) instances with 8–256GB memory capacity. These instances are priced at an hourly rate. GPUs are specialized processors designed for complex image processing.
+
 ### Amazon Web Services (AWS)
 
-AWS is the most used cloud platform today. This cloud solution allows us to virtually execute any application on the cloud, from web applications to IoT solutions and big data.
+AWS is the most used cloud platform today. This cloud solution allows us to virtually execute any application on the cloud, from web applications to IoT solutions and big data. In AWS, as in any cloud provider, we have to choose the region in the world in which the servers that provide the service, are installed. Remember to always choose a region that is the closest possible to the client that will use the resources. Amazon Web Services has a lot of tools and services but in this lesson, we want to mention some of them that can help you improving your machine learning models.
 
-**S3** is an Amazon data storage service. One of the most important products from Amazon. **S3** is an object based storage service that allows to store as much data as you want because the scaling is automatic. When we talk about object based we mean the minimal unit, in this case, the files.
-
-How does S3 work?
+**S3** is an Amazon data storage service. One of the most important products from Amazon. **S3** is an object based storage service that allows to store as much data as you want because the scaling is automatic. When we talk about object based we mean the minimal unit, in this case, the files. 
 
 All files or objects are stored in buckets. We can think of a bucket as a folder where we store our files. A bucket is a container that can store different types of objects. We can not create a bucket with a name that already exists. Bucket names in S3 are unique and we can configure if buckets are public or private. Inside a bucket we can modify a file and have its versions during time.
 
 S3 storage format: https://[bucket name].s3.amazonaws.com/video.mp4
 
+**Cloud9** is like a Visual Studio Code but from AWS. It allows us to create environments. When we configure them, in the background this creates and executes a virtual machine service called Elastic Compute Cloud (EC2). 
 
+**SageMaker** is a fully-managed machine learning platform for data scientists and developers. The platform also runs on Elastic Compute Cloud (EC2), and enables you to build machine learning models, organize your data, and scale your operations. Machine learning applications on SageMaker range from speech recognition, computer vision, and recommendations. The AWS marketplace offers models to use, instead of starting from scratch. You can start training and optimizing your model. The most common choices are frameworks like Keras, TensorFlow, and PyTorch. SageMaker can optimize and configure these frameworks automatically, or you can train them yourself. You can also develop your own algorithm by building it in a Docker container and you can use a Jupyter notebook to build your machine learning model, and visualize your data.
 
+**Amazon Lex** is designed to integrate chatbots into applications. Lex contains deep learning-based Natural Language Processing (NLP) and automatic speech recognition capabilities.
 
+**Amazon Rekognition** is a computer vision service that simplifies the development process for image and video recognition applications. Rekognition enables companies to customize their apps according to business needs.
 
-
-
-
-`aws.amazon.com/console`
+Link of the Amazon Web Services: `aws.amazon.com/console`
 
 Where to learn AWS skills: `aws.amazon.com/es/training/awsacademy/`
-
 
 ### Google Cloud Platform (GCP)
 
 Google Cloud Platform offers you three ways to carry out machine learning:
 
-- Keras with a TensorFlow backend to build custom, deep learning models that are trained on Cloud ML Engine
+**Auto ML** to train state-of-the-art deep learning models on your data without writing any code, for begineers. 
 
-- BigQuery ML to build custom ML models on structured data using just SQL
+Auto ML is a cloud-based machine learning platform built for inexperienced users. You can upload your datasets, train models, and deploy them on the website. AutoML integrates with all Google’s services and stores data in the cloud. You can deploy trained models via the REST API interface. There are a number of available AutoML products you can access via a graphical interface. This includes training models on structured data, image and video processing services, and a natural language processing and translation engine.
 
-- Auto ML to train state-of-the-art deep learning models on your data without writing any code
+**BigQuery ML** to build custom ML models, train them and make predictions on structured data using just SQL. Use BigQuery ML for quick problem formulation, experimentation, and easy, low-cost machine learning. Once you identify a viable ML problem using BQML, use Auto ML for code-free, state-of-the-art models. Hand-roll your own custom models only for problems where you have lots of data and enough time/effort to devote.
 
-Choose between them based on your skill set, how important additional accuracy is, and how much time/effort you are willing to devote to the problem. Use BigQuery ML for quick problem formulation, experimentation, and easy, low-cost machine learning. Once you identify a viable ML problem using BQML, use Auto ML for code-free, state-of-the-art models. Hand-roll your own custom models only for problems where you have lots of data and enough time/effort to devote.
+**Cloud ML Engine** to build custom, deep learning models using Keras with a TensorFlow backend, for more experienced data professionals. It can be used to train a complex model by leveraging GPU and Tensor Processing Unit (TPU) infrastructure. You can also use the service to deploy an externally trained model. Cloud ML automates all monitoring and resource provisioning processes for running the jobs. Besides hosting and training, Cloud ML can also perform hyperparameter tuning that influences the accuracy of predictions. Without hyperparameter tuning automation, data scientists need to manually experiment with multiple values while evaluating the accuracy of the results.
+
+TensorFlow is an open source software library that uses data-flow graphs for numerical operations. Mathematical operations in these graphs are represented by nodes, while edges represent data transferred from one node to another. Data in TensorFlow is represented as tensors, which are multidimensional arrays. TensorFlow is usually used for deep learning research and practice. TensorFlow is cross-platform. You can run it on GPUs, CPUs, TPUs, and mobile platforms.
+
+Choose between them based on your skill set, how important additional accuracy is, and how much time/effort you are willing to devote to the problem. 
 
 Check out the Google Cloud Platform free program to discover new tools for your machine learning models.
 
 ![gcp_free_program](../assets/gcp_free_program.jpg)
 
-#### Big Query
-
-With BigQuery, there’s no infrastructure to set up or manage, letting you focus on finding meaningful insights using standard SQL and taking advantage of flexible pricing models across on-demand and flat-rate options. In BigQuery ML, you can use a model with data from multiple BigQuery datasets for training and for prediction.
-
-**Benefits**
-
-- Cost effective
-
-- Real-time analytics
-
-- Serverless solution
-
-- Geoexpansion
-
-- Automatic backup and easy restore
-
-[Big Query official documentation](https://cloud.google.com/bigquery/docs)
-
-If you are new/want to explore GCP for first time, then use google sandbox account which is free and login with your account information and can access GCP toolkit with limited resource.
-
-**Big Query ML**
-
-**Benefits:**
-
-- You don't need to know Python or any other language for managing Machine Learning models. You can train models and make predictions using SQL queries.
-
-- The data export involves many steps, and it’s a time-consuming process. Google BigQuery ML saves time and resources by letting users use Machine Learning models in Google BigQuery.
-
-- It allows users to run Machine Learning models on large datasets within minutes as it uses computation resources of Google BigQuery Data Warehouse.
-
-- It features some automated Machine Learning models that reduce the workload to manipulate data manually. It saves time and allows users to quickly train and test models on the dataset.
-
-[Big Query ML official documentation](https://cloud.google.com/bigquery-ml/docs)
-
-
-
-
-
-`console.cloud.google.com`
-
-Free tier of 3 months with USD 300
+Link of the Google Cloud Platform: `console.cloud.google.com`
 
 Where to learn GCP skills: `go.qwiklabs.com`, `cloudskillsboost.google`
 
-
 ### Microsoft Azure
 
+Just like the SageMaker of Amazon and ML Engine of Google, Azure AI is the answer of Microsoft to Amazon and Google. Moreover, Azure AI offers a range of open and comprehensive platforms for the building, evaluating, and deployment of machine learning models and many more features supporting various AI frameworks such as PyTorch, TensorFlow, Sci-kit Learn, and more.
 
+Compared to AWS, Azure machine learning offerings are more flexible in terms of out-of-the-box algorithms. 
 
+**Azure ML** is a huge library of pre-trained, pre-packaged machine learning algorithms. Azure ML Service also provides an environment for implementing these algorithms and applying them to real-world applications. The UI of Azure ML enables you to build machine learning pipelines that combine multiple algorithms. You can use the UI to train, test, and evaluate models.
 
+Azure ML also provides solutions for Artificial Intelligence (AI). This includes visualization and other data that can help understand model behavior, and compare algorithms to find the best option.
 
-
-
-`azure.microsoft.com`
+Link of the Microsoft Azure platform: `azure.microsoft.com`
 
 How to learn Microsoft skills: [Microsoft Learn](docs.microsoft.com/en-us/learn), [Azure fundamentals](docs.microsoft.com/en-us/certifications/azure-fundamentals/).
 
 
 **Source:**
 
-https://en.wikipedia.org/wiki/Cloud_computing
+-https://en.wikipedia.org/wiki/Cloud_computing
 
-GCP:
+-https://www.c-sharpcorner.com/article/aws-vs-azure-vs-google-cloud-comparative-analysis-of-cloud-platforms-for-machi/
+
+-https://towardsdatascience.com/data-science-in-the-cloud-239b795a5792
 
 -https://medium.com/ibm-data-ai/machine-learning-in-google-cloud-with-bigquery-25d40b158f91
 
@@ -187,6 +156,6 @@ GCP:
 
 -https://towardsdatascience.com/choosing-between-tensorflow-keras-bigquery-ml-and-automl-natural-language-for-text-classification-6b1c9fc21013
 
-https://towardsdatascience.com/running-jupyter-notebook-in-google-cloud-platform-in-15-min-61e16da34d52
+-https://towardsdatascience.com/running-jupyter-notebook-in-google-cloud-platform-in-15-min-61e16da34d52
 
-https://towardsdatascience.com/automated-machine-learning-on-the-cloud-in-python-47cf568859f
+-https://towardsdatascience.com/automated-machine-learning-on-the-cloud-in-python-47cf568859f
