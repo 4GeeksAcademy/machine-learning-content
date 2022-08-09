@@ -41,7 +41,7 @@ The area under $f(x)$ between $x = a$ and $x = b$ is obtained by calculating the
 We can approximate the total area under the function $f(x)$ between $x = a$ and $x = b$ by splitting the graph into small vertical rectangular strips of width $h$, then adding up the areas of those rectangular strips. The figure below shows how to compute the area under $f(x) = x2$ between $x = 3$ and $x = 6$ by approximating it as six rectangular strips of width $h = 0.5$.
 
 
-So to recap $A(x)$ which gives the area under the graph of x2 between some fixed-left point and some variable right point gives us a clear panoram that many practical problems that can be approximated by adding up a large number of small things can be reframed as a question about the area under a certain curve.
+So to recap $A(x)$ which gives the area under the graph of x2 between some fixed-left point and some variable right point gives us a clear panorama that many practical problems that can be approximated by adding up a large number of small things can be reframed as a question about the area under a certain curve.
 
 
 ### Derivatives
