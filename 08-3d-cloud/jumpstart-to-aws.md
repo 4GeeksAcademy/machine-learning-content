@@ -60,7 +60,7 @@ Amazon SageMaker provides machine learning capabilities for data scientists and 
 
 - SageMaker provides model artifacts and scoring images for deployment to Amazon EC2 or anywhere else.
 
-### SageMaker Studio
+## SageMaker Studio
 
 When you log in to Amazon Web Services and choose SageMaker, there are some important first steps to be done:
 
@@ -70,7 +70,7 @@ Once created, AWS manages the server for you, and you as a consumer will log in 
 
 Every time you create a user profile it is again the jupyter server that AWS manages, but every time you create a new notebook, app or machine, they will be running on a new EC2 instance each, so you have to be cautious because all your running instances is what will be charged, so make sure to log out or if you are not using an instance, shut it down so that you are not charged. The good part is that you can have as many machines running as you want and you have them running in all different environments so you can have an R machine, a Spark machine, a Pytorch machine, a tensorflow machine, among others.
 
-Reasons to pick SageMakaer Studio:
+Reasons to pick SageMaker Studio:
 
 - You have more compute power, you can have more machines to run on top of.
 
@@ -78,16 +78,16 @@ Reasons to pick SageMakaer Studio:
 
 - All the widgets that it has: Projects, Data Wrangler, Feature Store, Pipelines, Experiments and trials, Model registry, Endpoints, etc.
 
-#### **Use Case**
+### Example code used in SageMaker Studio
 
 In the left control panel of SageMaker you will find SageMaker Studio. Once you click on it, you will find a kind of Jupyter Lab environment and you will be presented with a Launch screen.
 
-1. **Background**
+**Background**
 
 In this SageMaker example, you will learn the steps to build, train, tune and deploy a fraud detection model.
 The following steps include preparation of your SageMaker notebook, downloading data from the internet into SageMaker, transforming the data, using Gradient Boosting algorithm to create a model, evaluate its effectiveness and setting the model up to make predictions.
 
-2. **Preparation**
+**Preparation**
 
 Once you install pandas, you need to specify some details:
 
@@ -137,7 +137,7 @@ You don't strictly need the SageMaker Python SDK to use SageMaker. There are a c
 pd.__version__
 ```
 
-3. **Data**
+**Data**
 
 In this example, the data is stored in S3 so we will download it from the public S3 bucket.
 
@@ -216,7 +216,7 @@ output_location = 's3://{}/{}/output'.format(bucket, prefix)
 print('Training artifacts will be uploaded to: {}'.format(output_location))
 ```
 
-4. **Training**
+**Training**
 
 The algorithm chosen for this example is XGBoost, so we have two options for training. The first one is to use the built-in XGBoost provided by AWS Sagemaker or we can use the open source package for XGBoost. In this particular example, we will use the built-in algorithm provided by AWS.
 
@@ -276,7 +276,7 @@ xgb.set_hyperparameters(max_depth=5,
 xgb.fit({'train': s3_input_train, 'validation': s3_input_validation})
 ```
 
-5. **Hosting**
+**Hosting**
 
 Once the model is trained, we can use the estimator with .deploy()
 
@@ -285,7 +285,7 @@ xgb_predictor = xgb.deploy(initial_instance_count = 1, #the word initial is beca
                             instance_type = 'ml.m4.xlarge')
 ```
  
-6. **Evaluation**
+**Evaluation**
 
 Once deployed, you can evaluate it on the sagemaker notebook. In this case, we are only predicting whether its a fraudulent transaction (1) or not (0), which produces a simple confusion matrix.
 
@@ -329,7 +329,7 @@ pd.crosstab(index=test_data.iloc[:,0], columns=np.round(predictions), rownames=[
 
 >Due to randomized elements of the algorithm, your results may differ slightly.
 
-7. **Hypertuning**
+**Hypertuning**
 
 We can use Automatic Model Tuning (AMT) from SageMaker where you import the hyperparameters and then provide the range of those hyperparameters. In the following example, let's suppose we want to maximize the area under the curve (AUC) but we don't which values of the eta, alpha, min_child_weight and max_depth hyperparameters to use to train the best model. To find the best values we can specify a range of values and SageMaker will look for the best combination of them to get the training job with the highest AUC.
 
