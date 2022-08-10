@@ -60,6 +60,8 @@ Amazon SageMaker provides machine learning capabilities for data scientists and 
 
 - SageMaker provides model artifacts and scoring images for deployment to Amazon EC2 or anywhere else.
 
+![sagemaker](../assets/sagemaker.jpg)
+
 ## SageMaker Studio
 
 When you log in to Amazon Web Services and choose SageMaker, there are some important first steps to be done:
@@ -99,7 +101,7 @@ Once you install pandas, you need to specify some details:
 !pip install --upgrade pandas
 ```
 
->It is important to mention that when you create a new notebook, when you select the kernel you can reuse the kernel from an existing session so it will have all the packages to avoid reinstalling. Another way is separately building a base docker image and attach it to your Studio domain.
+>It is important to mention that when you create a new notebook and its time to select the kernel, you can reuse the kernel from an existing session, so that it has all the same packages, to avoid reinstalling. Another way is separately building a base docker image and attach it to your Studio domain.
 
 ```py
 import sagemaker #import the sagemaker python sdk, similar to other python packages but with different features.
