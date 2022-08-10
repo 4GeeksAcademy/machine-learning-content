@@ -71,6 +71,8 @@ Como ya mencionamos, SQLite es un sistema de administración de bases de datos d
 
 Las bases de datos SQLite se almacenan localmente, con archivos almacenados en el disco. Esto hace que acceder y administrar los datos en la base de datos sea notablemente rápido.
 
+SQLite databases are stored locally, with files stored in the disk. This makes accessing and managing the data in the database is remarkably fast.
+
 **Código de ejemplo para crear una base de datos:**
 
 ```py
