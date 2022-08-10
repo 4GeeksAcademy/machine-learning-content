@@ -330,3 +330,10 @@ pd.crosstab(index=test_data.iloc[:,0], columns=np.round(predictions), rownames=[
 >Due to randomized elements of the algorithm, your results may differ slightly.
 
 7. **Extensions**
+
+We can use Automatic Model Tuning (AMT) from SageMaker where you import the hyperparameters and then provide the range of those hyperparameters. In the following example, let's suppose we want to maximize the area under the curve (AUC) but we don't which values of the eta, alpha, min_child_weight and max_depth hyperparameters to use to train the best model. To find the best values we can specify a range of values and SageMaker will look for the best combination of them to get the training job with the highest AUC.
+
+```py
+
+from sagemaker.tuner import IntegerParameter, CategoricalParameter, ContinuousParameter, HyperparameterTuner
+hyperparameter_ranges = {'eta':}
