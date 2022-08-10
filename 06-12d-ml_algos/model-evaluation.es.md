@@ -54,6 +54,6 @@ En resumen, bias-variance es una compensación entre el ajuste insuficiente y el
 
 Nuestro objetivo es crear modelos que minimicen el error general mediante una cuidadosa selección y ajuste del modelo para garantizar que haya un equilibrio entre el sesgo y la varianza, lo suficientemente generales como para hacer buenas predicciones sobre nuevos datos pero lo suficientemente específicos como para captar la mayor cantidad de señales posible.
 
-Source:
+Fuente:
 
 https://towardsdatascience.com/interpreting-roc-curve-and-roc-auc-for-classification-evaluation-28ec3983f077

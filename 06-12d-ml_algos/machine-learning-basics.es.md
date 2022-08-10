@@ -247,7 +247,7 @@ Si nuestro error de entrenamiento es bajo y nuestro error de validación es alto
 
 Si nuestro error de entrenamiento y validación son relativamente iguales y muy altos, lo más probable es que nuestro modelo no se ajuste bien a nuestros datos de entrenamiento.
 
-Source:
+Fuente:
     
 https://towardsdatascience.com/train-test-split-and-cross-validation-in-python-80b61beca4b6
 
