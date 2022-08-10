@@ -393,6 +393,6 @@ When you are done with your notebook, the following code will remove the hosted 
 xgb_predictor.delete_endpoint(delete_endpoint_config=True)
 ```
 
-Amazon SageMaker is part of the free tier so if you would like to dive deeper in this machine learning cloud tool, you can create an account in AWS and experiment with SageMaker. Please read the important information below.
+Amazon SageMaker is part of the free tier of Amazon Web Services so if you would like to dive deeper in this machine learning cloud tool, you can create an account in AWS and experiment with SageMaker. Please read the important information below.
 
 >Accounts covered under the AWS Free Tier aren't restricted in what they can launch. As you ramp up with AWS, you might start using more than what's covered under the AWS Free Tier. Because these additional resources might incur charges, a payment method is required on the account. The AWS Free Tier doesn't cover all AWS services.

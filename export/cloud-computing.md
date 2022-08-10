@@ -91,10 +91,6 @@ S3 storage format: https://[bucket name].s3.amazonaws.com/video.mp4
 
 **SageMaker** is a fully-managed machine learning platform for data scientists and developers. The platform also runs on Elastic Compute Cloud (EC2), and enables you to build machine learning models, organize your data, and scale your operations. Machine learning applications on SageMaker range from speech recognition, computer vision, and recommendations. The AWS marketplace offers models to use, instead of starting from scratch. You can start training and optimizing your model. The most common choices are frameworks like Keras, TensorFlow, and PyTorch. SageMaker can optimize and configure these frameworks automatically, or you can train them yourself. You can also develop your own algorithm by building it in a Docker container and you can use a Jupyter notebook to build your machine learning model, and visualize your data.
 
-**Amazon Lex** is designed to integrate chatbots into applications. Lex contains deep learning-based Natural Language Processing (NLP) and automatic speech recognition capabilities.
-
-**Amazon Rekognition** is a computer vision service that simplifies the development process for image and video recognition applications. Rekognition enables companies to customize their apps according to business needs.
-
 Link of the Amazon Web Services: `aws.amazon.com/console`
 
 Where to learn AWS skills: `aws.amazon.com/es/training/awsacademy/`
@@ -116,8 +112,6 @@ TensorFlow is an open source software library that uses data-flow graphs for num
 Choose between them based on your skill set, how important additional accuracy is, and how much time/effort you are willing to devote to the problem. 
 
 Check out the Google Cloud Platform free program to discover new tools for your machine learning models.
-
-![gcp_free_program](../assets/gcp_free_program.jpg)
 
 Link of the Google Cloud Platform: `console.cloud.google.com`
 
