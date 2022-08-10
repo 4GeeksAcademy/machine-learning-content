@@ -218,7 +218,7 @@ database_url = os.environ.get("DATABASE_URL")
 other_variable = os.environ.get("OTHER_VARIABLE")
 ```
 
-We have seen how to work with cookicutter on a common streamlit project. But Cookiecutter has a lot of templates for different project types, so as you can imagine, Data Science is not the exception.
+We have seen how to work with Cookiecutter on a common streamlit project. But Cookiecutter has a lot of templates for different project types, so as you can imagine, Data Science is not the exception.
 
 Use the Cookiecutter Data Science open-source template to kickstart data science projects that follow the best standards in the industry.
 
