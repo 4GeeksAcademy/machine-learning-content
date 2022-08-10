@@ -113,8 +113,6 @@ Choose between them based on your skill set, how important additional accuracy i
 
 Check out the Google Cloud Platform free program to discover new tools for your machine learning models.
 
-![gcp_free_program](../assets/gcp_free_program.jpg)
-
 Link of the Google Cloud Platform: `console.cloud.google.com`
 
 Where to learn GCP skills: `go.qwiklabs.com`, `cloudskillsboost.google`
