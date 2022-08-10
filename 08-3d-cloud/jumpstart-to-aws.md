@@ -91,7 +91,7 @@ The following steps include preparation of your SageMaker notebook, downloading 
 
 Once you install pandas, you need to specify some details:
 
-- The S3 bucket and prefix that you want to use for training and modeling the data, because the data has to come from some storage. It is not recommended to have your data uploaded in a notebook because if you have a lot of data and you are constantly uploading it, you are constantly being charged for it and is also slower. S3 is definitely more friendly in terms of uploading and landing our datasets because it can store terabytes of data. Data can also be in Elastic file system (EFS).
+- The S3 bucket and prefix that you want to use for training and modeling the data, because the data has to come from some storage. It is not recommended to have your data uploaded in a notebook because if you have a lot of data and you are constantly uploading it, you are constantly being charged for it and is also slower. S3 is definitely more friendly in terms of uploading and landing our datasets because it can store terabytes of data and you can train your model in terabytes of data. Data can also be stored in Elastic file system (EFS).
 
 - The IAM role arn used to give training and hosting access to your data. This role is the role you have been assigned whenever launched the SageMaker Studio. With get_execution_role() we fetch that role. It is important because it provides access to SageMaker to other AWS resources.
 
@@ -102,7 +102,7 @@ Once you install pandas, you need to specify some details:
 >It is important to mention that when you create a new notebook, when you select the kernel you can reuse the kernel from an existing session so it will have all the packages to avoid reinstalling. Another way is separately building a base docker image and attach it to your Studio domain.
 
 ```py
-import sagemaker
+import sagemaker #import the sagemaker python sdk, similar to other python packages but with different features.
 bucket = sagemaker.Session().default_bucket()
 prefix = 'sagemaker/fraud-detection'
 
@@ -133,18 +133,200 @@ You don't strictly need the SageMaker Python SDK to use SageMaker. There are a c
 - You can use the AWS CLI.
 
 ```py
-#make sure pandas version is set to 1.2.4 or later. It is always good  to check versions. In Sagemaker features are constantly being added.
+#make sure pandas version is set to 1.2.4 or later. It is always a good idea to check versions. In Sagemaker features are constantly being added.
 pd.__version__
 ```
 
 3. **Data**
 
+In this example, the data is stored in S3 so we will download it from the public S3 bucket.
 
+```py
+!wget https://s3-us-west-2.amazonaws.com/sagemaker-e2e-solutions/fraud-detection/creditcardfraud.zip
+
+#unzipping the data
+with zipfile.ZipFile('creditcardfraud.zip','r') as zip_ref:
+    zip_ref.extractall('.')
+```
+
+Now let's take this into a pandas dataframe and take a first look.
+
+This data is optimized and already normalized but the common scenarios with data are that we don't have any data, or that data is never clean. Normalization needs to be done in some cases but it depends on the model you use. Xgboost tends to be very robust to non-normalized data, but if you are using K-means for example or any deep learning model, normalization should be done. 
+
+```py
+data = pd.read_csv('./creditcard.csv')
+print(data.columns)
+data[['Time','V1','V2','V27','V28','Amount','Class']].describe()
+data.head(10)
+```
+
+This dataset has 28 columns Vi for i = 1...28 of anonymized features along with columns for time, amount and class. We already know that the Vi columns have been normalized to have 0 mean and unit standard deviation as the result of PCA.
+
+The class column corresponds to whether or not a transaction is fraudulent. You will see with the following code that the majority of data is non-fraudulent with only 492 (.173%) against 284315 non-frauds (99.827%). 
+
+```py
+nonfrauds, frauds = data.groupby('Class').size()
+print('Number of frauds: ', frauds)
+print('Number of non-frauds: ', nonfrauds)
+print('Percentage of fraudulent data: ', 100.*frauds/(frauds + nonfrauds))
+```
+
+Here, we are dealing with an imbalanced dataset, so 'accuracy' metric would be a misleading metric as it will probably predict non-frauds in 100% of cases with a 99.9% accuracy. Other metrics like recall or precision help us attack that problem. Another technique is using oversampling the minority class data or undersampling the majority class data. You can read about SMOTE to understand both techniques.
+
+Now let's separate our data into features and label.
+
+```py
+feature_columns = data.columns[:-1]
+label_column = data.columns[-1]
+
+features = data[feature_columns].values.astype('float32')
+labels = (data[label_column].values).astype('float32')
+```
+
+```py
+#XGBoost needs the target variable to be the first one
+model_data = data
+model_data.head()
+model_data = pd.concat([model_data['Class'], model_data.drop(['Class'], axis=1)], axis=1)
+model_data.head()
+```
+
+Separating data into train and validation sets.
+
+```py
+train_data, validation_data, test_data = np.split(model_data.sample(frac=1, random_state=1729),
+                                                [int(0.7 * len(model_data)), int(0.9 * len(model_data))])
+train_data.to_csv('train.csv', header = False, index = False)
+validation_data.to_csv('validation.csv', header = False, index = False)
+```
+
+We need the data before the training can begin, on S3. As we have downloaded the data from **S3**, we have to UPload it back. We can create a python script to preprocess the data and automatically upload the data for us.
+
+```py
+boto3.Session().resource('s3').Bucket(bucket).Object(os.path.join(prefix, 'train/train.csv')) \
+                                .upload_file('train.csv')  
+boto3.Session().resource('s3').Bucket(bucket).Object(os.path.join(prefix, 'validation/validation.csv')) \
+                                .upload_file('validation.csv')
+s3_train_data = 's3://{}/{}/train/train.csv'.format(bucket, prefix)
+s3_validation_data = 's3://{}/{}/validation/validation.csv'.format(bucket, prefix)
+print('Uploaded training data location: {}'.format(s3_train_data))
+print('Uploaded training data location: {}'.format(s3_validation_data))
+
+output_location = 's3://{}/{}/output'.format(bucket, prefix)
+print('Training artifacts will be uploaded to: {}'.format(output_location))
+```
 
 4. **Training**
 
+The algorithm chosen for this example is XGBoost, so we have two options for training. The first one is to use the built-in XGBoost provided by AWS Sagemaker or we can use the open source package for XGBoost. In this particular example, we will use the built-in algorithm provided by AWS.
+
+In SageMaker, behind the scenes is all container based, so we need to specify the locations of the chosen algorithm containers. To specify the linear learner algorithm, we use a utility function to obtain its URL.
+
+The complete list of built-in algorithms can be found here: `https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html`
+
+So let's proceed with the training process. First we need to specify the ECR container location for Amazon SageMaker's implementation of XGBoost.
+
+```py
+container = sagemaker.image_uris.retrieve(region=boto3.Session().region_name, framework='xgboost', version='latest')
+```
+
+Because we are training with the CSV file format, we'll create `s3_inputs` that our training function can use as a pointer to the files in S3, which also specify that the content type is CSV.
+
+```py
+s3_input_train = sagemaker.inputs.TrainingInput(s3_data = 's3://{}/{}/train'.format(bucket, prefix), content_type='csv')
+s3_input_validation = sagemaker.inputs.TrainingInput(s3_data = 's3://{}/{}/validation'.format(bucket, prefix), content_type='csv')
+```
+
+When we are running a training job in SageMaker we are not using the compute in the notebook. What we are doing this training job in a machine in the cloud, and we need the flexibility to specify any machine that we want to use, based on the algorithm that we are using. For example, if we are using a deep learning model, we may want to use GPUs instead of CPUs, so we need that flexibility because we want to optimize on the cost as well. If we would have GPU on my notebook, and we get distracted coding, we don't want to pay for that time because we are not really using the machine for what it was meant to be, so that becomes very important that in the training job we provide a certain type of machine and when the training is done, it automatically terminates all the resources.
+
+To sum up the idea, we need to do the training on a separate instance because based on our job, our model and the size of our dataset, we need to specify the appropiate instance style.
+
+In order to do that, we need to do that configuration by specifying training parameters to the estimator. This includes:
+
+1. The XGBoost algorithm container
+
+2. The IAM role to use
+
+3. Training instance type and count
+
+4. S3 location for output data
+
+5. Algorithm hyperparameters
+
+And then a .fit() function specifying the s3 location for output data.
+
+```py
+sess = sagemaker.Session()
+
+xgb = sagemaker.estimator.Estimator(container,
+                                    role, 
+                                    instance_count = 1, #if you provide more than 1, it will be automatically done for you
+                                    instance_type = 'ml.m4.xlarge',
+                                    output_path = 's3://{}/{}/output'.format(bucket,prefix),
+                                    sagemaker_session = sess)
+xgb.set_hyperparameters(max_depth=5,
+                        eta=0.2,
+                        gamma=4,
+                        min_child_weight=6,
+                        subsample=0.8,
+                        silent=0,
+                        objective='binary:logistic',
+                        num_round=100)
+
+xgb.fit({'train': s3_input_train, 'validation': s3_input_validation})
+```
+
 5. **Hosting**
 
+Once the model is trained, we can use the estimator with .deploy()
+
+```py
+xgb_predictor = xgb.deploy(initial_instance_count = 1, #the word initial is because you can update it later to increase it.
+                            instance_type = 'ml.m4.xlarge')
+```
+ 
 6. **Evaluation**
+
+Once deployed, you can evaluate it on the sagemaker notebook. In this case, we are only predicting whether its a fraudulent transaction (1) or not (0), which produces a simple confusion matrix.
+
+First, we need to determine how we pass data into and receive data from our endpoint. Our data is currently stored as NumPy arrays in memory of our notebook instance. To send it in an HTTP POST request, we'll serialize it as a csv string and then decode the resulting csv.
+
+>For inference with CSV format, SageMaker XGBoost requires that the data does not include the target variable.
+
+```py
+xgb_predictor.serializer = sagemaker.serializers.CSVSerializer()
+```
+
+Now, we'll use a function to:
+
+-Loop over test dataset
+
+-Split it into mini batches of rows
+
+-Convert those mini batches to csv string payloads (we drop the target variable from the dataset first)
+
+-Retrieve mini batch predictions by invoking the XGBoost endpoint
+
+-Collect predictions and convert from the csv output our model provides into a NumPy array.
+
+```py
+def predict(data, predictor, rows=500):
+    split_array = np.array_split(data, int(data.shape[0] / float(rows) + 1))
+    predictions = ''
+    for array in split_array:
+        predictions = '.'.join([predictions, predictor.predict(array).decode('utf-8')])
+
+    return np.fromstring(predictions[1:],sep=',')
+
+predictions = predict(test_data.drop(['Class'], axis=1).to_numpy(), xgb_predictor)
+```
+
+Now let's check the confusion matrix to see how well we did.
+
+```py
+pd.crosstab(index=test_data.iloc[:,0], columns=np.round(predictions), rownames=['actual'], colnames=['predictions'])
+```
+
+>Due to randomized elements of the algorithm, your results may differ slightly.
 
 7. **Extensions**
