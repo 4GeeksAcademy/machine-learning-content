@@ -409,7 +409,7 @@ train_data['Survived'].value_counts()
 
 
 
-Observaciones: Como se supone que nuestra variable objetivo clasifica a los pasajeros en 1 o 0, ya sea que sobrevivan o no, usamos un gráfico de conteo para ver si los datos están equilibrados. También usamos el método value_counts() para ver exactamente cuántas personas sobrevivieron (1) y cuántas no sobrevivieron (0) en nuestro train_data. Está equilibrado y sabemos a ciencia cierta que el hundimiento del Titanic resultó en la muerte de la mayoría de sus pasajeros.
+Observaciones: Como se supone que nuestra variable objetivo clasifica a los pasajeros en 1 ó 0, ya sea que sobrevivan o no, usamos un gráfico de conteo para ver si los datos están equilibrados. También usamos el método value_counts() para ver exactamente cuántas personas sobrevivieron (1) y cuántas no sobrevivieron (0) en nuestro train_data. Está equilibrado y sabemos a ciencia cierta que el hundimiento del Titanic resultó en la muerte de la mayoría de sus pasajeros.
 
 **Uso de histogramas para visualizar todas las características**
 
@@ -916,7 +916,7 @@ En estadística, un valor atípico es un punto de observación que está distant
 
 La importancia que consideremos la característica para nuestro modelo influirá en nuestra decisión sobre qué hacer con los valores atípicos.
 
-El método describe() de Pandas se usa para ver algunos detalles estadísticos básicos como percentil, media, std, etc; de un marco de datos o una serie de valores numéricos.En el caso de que nos gustaría ver las características del tipo de objeto usando describe(), este debe ingresarse como 'dataframe.describe(include='O')' y nos mostrará el valor más frecuente y cuántas veces aparece.
+El método describe() de Pandas se usa para ver algunos detalles estadísticos básicos como percentil, media, std, etc; de un marco de datos o una serie de valores numéricos. En el caso de que nos gustaría ver las características del tipo de objeto usando describe(), este debe ingresarse como 'dataframe.describe(include='O')' y nos mostrará el valor más frecuente y cuántas veces aparece.
 
 **Sintaxis:**
 
@@ -1447,7 +1447,7 @@ https://github.com/4GeeksAcademy/machine-learning-content/blob/master/05-3d-data
 
 
 ```python
-# Manejo de Vlores Faltantes en train_data
+# Manejo de Valores Faltantes en train_data
 
 ## Rellenar la EDAD que falta con la Mediana
 train_data['Age'].fillna(train_data['Age'].median(), inplace=True)
