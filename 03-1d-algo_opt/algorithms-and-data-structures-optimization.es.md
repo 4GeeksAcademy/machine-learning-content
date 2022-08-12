@@ -268,7 +268,7 @@ Veamos un ejemplo de código para QuickSort:
 ```python
 def quicksort(array):
     if len(array) < 2:
-        return array    #---> caso base: los arrays con 0 o 1 elemento ya están ordenados
+        return array    #---> caso base: los arrays con 0 ó 1 elemento ya están ordenados
     else:
         pivot = array[0]  #---> caso recursivo
         less = [ i for i in array[1: ] if i <= pivot]   #----> subarreglo de elementos menos que pivote
@@ -313,8 +313,6 @@ def check_picked_prize(name):
 ```
 
 Si esto fuera una lista, esta función eventualmente se volvería muy lenta, pero debido a que los estamos almacenando en una tabla hash, instantáneamente nos dice si el nombre está en la tabla hash o no. Aquí, verificar si hay duplicados es muy rápido.
-
-If this would be a list, this function would become really slow eventually, but because we are storing them in a hash table, it instantly tells us if the name is in the hash table or not. Here, checking if there are duplicates is very fast.
 
 Veamos un poco de código para el almacenamiento en caché:
 
@@ -453,7 +451,7 @@ Un matemático diría que ahora estamos calculando la distancia en cinco dimensi
 
 ![knn2.jpg](../assets/knn2.jpg)
 
-Entonces, por ejemplo, si John y Maria tienen 18 años de diferencia, y Lucas y Maria tienen 3 años de diferencia, entonces si a Lucas le gusta una película, se la recomendaremos a María. ¡Acabamos de construir un sistema de recomendaciones!
+Entonces, por ejemplo, si John y María tienen 18 años de diferencia, y Lucas y María tienen 3 años de diferencia, entonces si a Lucas le gusta una película, se la recomendaremos a María. ¡Acabamos de construir un sistema de recomendaciones!
 
 Pero no todos los usuarios califican las películas de la misma manera. Dos usuarios pueden tener el mismo gusto por las películas, pero uno de ellos puede ser más conservador al momento de clasificar una película. Están bien emparejados, pero de acuerdo con el algoritmo de distancia, no serían vecinos. ¿Cómo resolver esto?
 
