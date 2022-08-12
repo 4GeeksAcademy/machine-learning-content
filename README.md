@@ -4,7 +4,7 @@
 
 1. Python for Datascience
 
-## Probability and Statistic Skills (4 days)
+## Probability and Statistic Skills (6 days)
 
 1. Calculus
 
@@ -36,7 +36,7 @@
 📝 Algorithm optimization problems
 
 
-## Collect and store data (3 days)
+## Collect and store data (4 days)
 
 1.1. Intro to SQL (Structured Query language) - external
 
