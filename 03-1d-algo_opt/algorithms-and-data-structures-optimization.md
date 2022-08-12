@@ -1,5 +1,3 @@
-# ALGORITHMS AND DATA STRUCTURES
-
 ## What is an algorithm?
 
 Algorithms are more simple than we think. Since we are kids we are taught how to complete day to day tasks.
