@@ -2,7 +2,7 @@
 
 As machine learning engineers we will probably have to interact with SQL databases in order to access data. SQL means Structured Query Language. The key difference between SQL and Python is that developers use SQL to access and extract data from a database, whereas developers use Python to analyze and manipulate data by running regression tests, time series tests and other data processing computations.
 
-Some popular SQL databases are SQLite, PostgreSQL, MySQL. SQLite is best known for being an integrated database. This means that we don't have to install an extra application or use a separate server to run the database. It moves fast but has limited functionality, so if we dont' need a ton of data storage space, we will want to use a SQLite databse. On the other hand, PostgreSQL and MySQL have database types that are great for enterprise solutions. If we need to scale fast, MySQL and PostgreSQL are the best bet. They'll provide long-term infrastructure, bolster security, and handle high performance activities.
+Some popular SQL databases are SQLite, PostgreSQL, MySQL. SQLite is best known for being an integrated database. This means that we don't have to install an extra application or use a separate server to run the database. It moves fast but has limited functionality, so if we dont' need a ton of data storage space, we will want to use a SQLite database. On the other hand, PostgreSQL and MySQL have database types that are great for enterprise solutions. If we need to scale fast, MySQL and PostgreSQL are the best bet. They'll provide long-term infrastructure, bolster security, and handle high performance activities.
 
 In this lecture we'll see how Python and some SQL databases interact. Why should we care about connecting Python and a SQL database?
 
@@ -39,7 +39,7 @@ CURSOR.CLOSE()
 
 In this case, we chose AWS Redshift. We will import the psycopg library. This library translates the Python code we write to speak to the PostgreSQL database (AWS Redshift).
 
-Otherwise, AWS Redshift would not understand our Python code. But because of the psycopg library, youwe will now speak a language AWS Redshift can understand.
+Otherwise, AWS Redshift would not understand our Python code. But because of the psycopg library, we will now speak a language AWS Redshift can understand.
 
 ```py
 #Library for connecting to AWS Redshift
@@ -131,7 +131,7 @@ To connect to a DB2, it requires the following information:
 - database name
 - DNS host name or IP
 - Host port
-- Connection protocole
+- Connection protocol
 - User id
 - Password
 
