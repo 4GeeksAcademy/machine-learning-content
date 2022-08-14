@@ -122,7 +122,7 @@ plt.show()
 # Distribuciones de probabilidad
 
 
-Una distribución de probabilidad es la descripción de la probabilidad de que una variable aleatoria o un set de variables aleatorias adopten cada uno de sus estados posibles. La forma en que describimos las distribuciones de probabilidad depende de si las variables son discretas o continuas.
+Una distribución de probabilidad es la descripción de la probabilidad de que una variable aleatoria o un conjunto de variables aleatorias adopten cada uno de sus estados posibles. La forma en que describimos las distribuciones de probabilidad depende de si las variables son discretas o continuas.
 
 **Binomial Random Variable**
 
@@ -142,7 +142,7 @@ Las distribuciones binomiales deben cumplir tres criterios:
 
 La distribución de Bernoulli es un caso especial de distribución binomial.
 
-Modela una prueba que resulta en éxito o fracaso. Por ejemplo, cara o cruz. Todos los valores en una distribución de Bernoulli son 0 o 1.
+Modela una prueba que resulta en éxito o fracaso. Por ejemplo, cara o cruz. Todos los valores en una distribución de Bernoulli son 0 ó 1.
 
 Imaginemos que la moneda que tenemos no es una moneda justa, porque su probabilidad de caer cara es del 70%. La distribución sería la siguiente:
 
