@@ -49,9 +49,9 @@ https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics
 
 **What is the bias-variance trade-off?**
 
-Bias refers to an error from an estimator that is too general and does not learn relationships from a data set that would allow it to make better predictions.
+**Bias** refers to an error from an estimator that is too general and does not learn relationships from a data set that would allow it to make better predictions.
 
-Variance refers to an error from an estimator being too specific and learning relationships that are specific to the training set but will not generalize to new records well.
+**Variance** refers to an error from an estimator being too specific and learning relationships that are specific to the training set but will not generalize to new records well.
 
 In short, the bias-variance trade-off is a trade-off between underfitting and overfitting. As you decrease bias, you tend to increase variance.
 

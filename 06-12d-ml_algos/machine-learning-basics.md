@@ -6,10 +6,9 @@ Machine learning is the field of science that studies algorithms that approximat
 
 Machine learning algorithms are programs that can learn from data and improve from experience, without human intervention. Learning tasks may include learning the function that maps the input to the output, learning the hidden structure in unlabeled data; or ‘instance-based learning’, where a class label is produced for a new instance by comparing the new instance (row) to instances from the training data, which were stored in memory. 
 
-
 ## Types of machine learning algorithms
 
-### Supervised learning
+### Supervised learning 
 
 It is useful in cases where a label is available for a certain training set, but is missing and needs to be predicted for other instances. It uses the labeled training data to learn the mapping function that turns input variables (X) into the output variable (Y).
 
@@ -27,7 +26,6 @@ Types of supervised machine learning algorithms:
 
 Bagging and boosting are both ensemble methods, meaning they combine many weak predictors to create a strong predictor. One key difference is that bagging builds independent models in parallel, whereas boosting builds models sequentially, at each step emphasizing the observations that were missed in previous steps.
 
-
 Some examples of supervised learning algorithms are:
 
 1. Decision Trees
@@ -39,7 +37,6 @@ Some examples of supervised learning algorithms are:
 4. Logistic Regression
 
 5. Support Vector Machines
-
 
 ### Unsupervised learning
 
@@ -67,7 +64,6 @@ Reinforcement algorithms usually learn optimal actions through trial and error.
 
 For example, a robot could use reinforcement learning to learn that walking forward into a wall is bad, but turning away from a wall and walking is good, or imagine, a video game in which the player needs to move to certain places at certain times to earn points. A reinforcement algorithm playing that game would start by moving randomly but, over time through trial and error, it would learn where and when it needed to move the in-game character to maximize its point total.
 
-
 ## Online vs offline learning
 
 While online learning does have its uses, traditional machine learning is performed offline using the batch learning method. 
@@ -75,8 +71,6 @@ While online learning does have its uses, traditional machine learning is perfor
 In batch learning, data is accumulated over a period of time. The machine learning model is then trained with this accumulated data from time to time in batches. If new data comes in, an entire new batch (including all the old and new data) must be fed into the algorithm to learn from the new data. In batch learning, the machine learning algorithm updates its parameters only after consuming batches of new data.
 
 It is the direct opposite of online learning because the model is unable to learn incrementally from a stream of live data. Online learning refers to updating models incrementally as they gain more information.
- 
-
 
 ## How is data divided?
 
@@ -84,6 +78,7 @@ What is training data and what is it used for?
 
 Training data is a set of examples that will be used to train the machine learning model.
 For supervised machine learning, this training data must have a labeled. What you are trying to predict must be defined.
+
 For unsupervised machine learning, the training data will contain only features and will use no labeled targets. What you are trying to predict is not defined.
 
 What is a validation set and why use one?
@@ -110,9 +105,9 @@ Train test split is a model validation procedure that allows you to simulate how
 
 2. Split the dataset into two pieces: a training set and a testing set. This consists of random sampling without replacement about 75% (you can vary this) of the rows and putting them into your training set and putting the remaining 25% to your test set. Note that the colors in “Features” and “Target” indicate where their data will go (“X_train”, “X_test”, “y_train”, “y_test”) for a particular train test split.
 
-2. Train the model on the training set. This is “X_train” and “y_train” in the image.
+3. Train the model on the training set. This is “X_train” and “y_train” in the image.
 
-3. Test the model on the testing set (“X_test” and “y_test” in the image) and evaluate the performance.
+4. Test the model on the testing set (“X_test” and “y_test” in the image) and evaluate the performance.
 
 ![train_test_split](../assets/train_test_split.jpg)
 
@@ -127,6 +122,7 @@ X = df.loc[:, features]
 y = df.loc[:, [‘price’]]
 
 #Splits the data and returns a list which contains four NumPy arrays. 
+
 #train_size = 0.75 puts 75% of the data into a training set and the remaining 25% into a testing set
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0, train_size = 0.75)
@@ -174,10 +170,7 @@ Some cross-validation techniques:
 
 - Nested cross-validation
 
-
-
 Implementation of these cross-validations can be found out in the sklearn package. Read this [sklearn documentation](https://scikit-learn.org/stable/modules/cross_validation.html) for more details. K-fold and stratified k-fold cross-validations are the most used techniques. Here we will show how to implement K-fold cross validation.
-
 
 K-fold cross-validation is a superior technique to validate the performance of our model. It evaluates the model using different chunks of the data set as the validation set.
 
@@ -216,8 +209,6 @@ def cross_validation(model, _X, _y, _cv=5):
 The custom cross_validation function in the code above will perform 5-fold cross-validation. It returns the results of the metrics specified above.
 
 The estimator parameter of the cross_validate function receives the algorithm we want to use for training. The parameter X takes the matrix of features. The parameter y takes the target variable. The parameter scoring takes the metrics we want to use for evaluation. We pass a list containing metrics we want to use to check our model.
-
-
 
 With any model validation procedure it is important to keep in mind some advantages and disadvantages which in the case of train test split are:
 

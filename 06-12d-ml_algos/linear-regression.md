@@ -232,7 +232,6 @@ If not filtered and explored up front, some features can be more destructive tha
 
 Because overfit is an extremely common issue in many machine learning problems, there are different approaches to solving it. The main one is simplifying the models as much as possible. Simple models do not (usually) overfit. On the other hand, we need to pay attention the to gentle trade-off between overfitting and underfitting a model.
 
-
 Source:
 
 https://scikit-learn.org/

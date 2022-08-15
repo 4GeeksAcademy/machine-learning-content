@@ -16,6 +16,10 @@
 
 7. Log-loss - similar a la precisión pero aumenta la penalización por clasificaciones incorrectas que están más alejadas de su verdadera clase. Para log-loss, los valores más bajos son mejores.
 
+Para ver cómo implementar cada uno de ellos, consulte los ejemplos de documentación de scikit-learn:
+
+https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics
+
 **Métricas de evaluación útiles para problemas de regresión**
 
 1. Error cuadrático medio (MSE) - el promedio del error cuadrático de cada predicción.
@@ -25,6 +29,10 @@
 3. Error absoluto medio (MAE) - el promedio del error absoluto de cada predicción.
 
 4. Coeficiente de determinación (R^2) - proporción de variación en el objetivo que es predecible a partir de las características.
+
+Para ver cómo implementar cada uno de ellos, consulte los ejemplos de documentación de scikit-learn:
+
+https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics
 
 ### Evaluación del modelo
 
@@ -45,3 +53,7 @@
 En resumen, bias-variance es una compensación entre el ajuste insuficiente y el ajuste excesivo. A medida que disminuye el bias, tiende a aumentar la varianza.
 
 Nuestro objetivo es crear modelos que minimicen el error general mediante una cuidadosa selección y ajuste del modelo para garantizar que haya un equilibrio entre el sesgo y la varianza, lo suficientemente generales como para hacer buenas predicciones sobre nuevos datos pero lo suficientemente específicos como para captar la mayor cantidad de señales posible.
+
+Fuente:
+
+https://towardsdatascience.com/interpreting-roc-curve-and-roc-auc-for-classification-evaluation-28ec3983f077
