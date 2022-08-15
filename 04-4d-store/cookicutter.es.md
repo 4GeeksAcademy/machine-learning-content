@@ -216,7 +216,7 @@ database_url = os.environ.get("DATABASE_URL")
 other_variable = os.environ.get("OTHER_VARIABLE")
 ```
 
-Hemos visto cómo trabajar con cookicutter en un proyecto streamlit común. Pero Cookiecutter tiene muchas plantillas para diferentes tipos de proyectos, así que como puedes imaginar, Data Science no es la excepción.
+Hemos visto cómo trabajar con cookiecutter en un proyecto streamlit común. Pero Cookiecutter tiene muchas plantillas para diferentes tipos de proyectos, así que como puedes imaginar, Data Science no es la excepción.
 
 Utiliza la plantilla de código abierto Cookiecutter Data Science para iniciar proyectos de ciencia de datos que sigan los mejores estándares de la industria.
 
