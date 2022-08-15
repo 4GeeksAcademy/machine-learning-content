@@ -1,8 +1,4 @@
-# ALGORITMOS Y ESTRUCTURAS DE DATOS
-
-## ¿Qué es un algoritmo?
-
-Los algoritmos son más simples de lo que pensamos. Desde que somos niños nos enseñan cómo completar las tareas del día a día. Un algoritmo es un conjunto de instrucciones que se siguen para lograr un objetivo o producir un resultado, por ejemplo, aprender a caminar, atarse los zapatos o preparar un pastel. Todos estos procesos se nos enseñan mediante un procedimiento paso a paso.
+## What is an algorithm?
 
 Algorithms are more simple than we think. Since we are kids we are taught how to complete day to day tasks.
 An algorithm is a set of instructions followed to achieve a goal or to produce an output, for example learning to walk, tie your shoes or preparing a cake. All these processes are taught to us using a step to step procedure.

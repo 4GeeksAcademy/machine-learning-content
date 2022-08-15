@@ -36,7 +36,7 @@
 📝 Algorithm optimization problems
 
 
-## Collect and store data (3 days)
+## Collect and store data (4 days)
 
 1.1. Intro to SQL (Structured Query language) - external
 
@@ -57,11 +57,11 @@
 
 ## Data Management (3 days)
 
-1. Exploratory data analysis on Titanic dataset
+1. Exploratory data analysis (EDA) 
 
-📝 Project EDA (2 hours)
+1.2. Titanic survival notebook to understand EDA (2 hours)
 
-2. Feature Engineering on Titanic dataset
+2. Feature Engineering 
 
 2.1. How to deal with outliers
 
@@ -71,12 +71,9 @@
 
 2.4. Feature Scaling
 
-📝 Project feature engineering (2 hours)
-
 3. Feature selection techniques
 
-📝 Project feature selection
-
+📝 Project: New York City Airbnb exploratory data analysis (2 hours) 
 
 ## Machine Learning (12 days)
 
@@ -86,39 +83,39 @@
 
 1.3. Model hyperparameters optimization
 
-1.4. Logistic Regression notebook
+1.4. Logistic Regression on Titanic notebook
 
-📝 Logistic regression project (2 hours) 
+📝 Project: Bank Marketing Campaign (2 hours) 
 
 2.1. Linear Regression 
 
 2.2. Exploring Linear Regression notebook
 
-📝 Linear regression project (2 hours) 
+📝 Project: Predicting insurance cost (2 hours) 
 
 3.1. Regularized Linear Regression 
 
-📝 Regularized linear regression project (2 hours) 
+📝 Project: Finding important sociodemographic features that impact in health resources (2 hours) 
 
 4.1. Decision Trees
 
 4.2. Exploring Decision Trees Notebook
 
-📝 Decision trees project (2 hours)
+📝 Project: Classifying patients having diabetes or not (2 hours)
 
 5.1. Random Forest
 
-📝 Random Forest project (2 hours)
+📝 Project: Improving Titanic survival results (2 hours)
 
 6.1. Boosting Algorithms
 
-📝 Gradient Boosting project (2 hours)
+📝 Project: Boosting your Titanic with XGBoost algorithm (2 hours)
 
 7.1. Naive Bayes
 
 7.2. Exploring Naive Bayes notebook
 
-📝 Naive Bayes project (2 hours)
+📝 Project: Create a Google Play store reviews classifier (Sentiment Analysis) (2 hours)
 
 8.1. Support Vector Machine
 
@@ -126,47 +123,42 @@
 
 8.3. Exploring Natural Language Processing Notebook
 
-📝 NLP using SVM project (2 hours)
+📝 Project: Building an email spam detector (2 hours)
 
 9.1. K-nearest neighbors (KNN)
 
-📝 KNN project (2 hours)
+📝 Project: Building a simple movie recommender system (2 hours)
 
 10.1. Unsupervised Learning
 
-📝 K-means project (2 hours)
+📝 Project: Segment houses based on their coordinates and median income. (2 hours)
 
 11.1. Time Series Forecasting 
 
 11.2. Exploring Time Series Notebook
 
-📝 Time series project (2 hours)
+📝 Project: CPU usage anomaly detection (2 hours)
 
 12.1. Introduction to Deep Learning
 
 12.2. Exploring Neural Networks Notebook
 
-📝 Deep learning project (2 hours)
+📝 Project: Building an image classifier (2 hours)
 
-
-## Data Science as Software (2 days)
+## Data Science as Software (4 days)
 
 1. How to create a machine learning web app using Flask and Heroku.
 
-📝 Flask app project (2 hours) 
+📝 Flask app project 
 
 2. How to create a machine learning web app using Streamlit and Heroku
 
-📝 Streamlit app project (2 hours)
+📝 Streamlit app project 
 
 ## Data Warehouse tools: modeling on the cloud (3 days)
 
-1. Data warehouse tools
+1. Cloud Computing
 
-2. Create and execute machine learning model in BigQuery 
-
-3. BigQuery Project
-
-## Week 12: Real life cases (3 days)
+2. Intro to AWS SageMaker
 
 ## Week 13-16: Final project
