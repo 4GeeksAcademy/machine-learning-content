@@ -116,7 +116,7 @@ new_df = my_imputer.fit_transform(df)
 
 Otra técnica es la 'mode imputation' en la que los valores que faltan se reemplazan con el valor de modo o el valor más frecuente de toda la columna de características. Cuando los datos están sesgados, es bueno considerar el uso de valores de moda para reemplazar los valores que faltan. Para puntos de datos como el campo Embarcado, puede considerar usar la moda para reemplazar los valores. Ten en cuenta que la imputación de datos faltantes con valores de moda se puede hacer con datos numéricos y categóricos.
 
-Example:
+Ejemplo:
 
 
 ```py
