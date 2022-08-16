@@ -14,7 +14,7 @@ Los diagramas de caja, los histogramas y los diagramas de dispersión pueden res
 
 Los puntajes Z pueden cuantificar valores atípicos cuando nuestros datos tienen una distribución normal. Las puntuaciones Z son el número de desviaciones estándar por encima y por debajo de la media que cae cada valor. Por ejemplo, una puntuación Z de 2 indica que una observación está dos desviaciones estándar por encima del promedio, mientras que una puntuación Z de -2 significa que está dos desviaciones estándar por debajo de la media. Una puntuación Z de cero representa un valor que es igual a la media. Los puntajes Z pueden ser engañosos con conjuntos de datos pequeños. Los tamaños de muestra de 10 o menos observaciones no pueden tener puntajes Z que excedan un valor de corte de +/-3.
 
-- Using the IQR to create boundaries
+- Usando el IQR para crear límites
 
 El IQR es el 50% medio del conjunto de datos. Es el rango de valores entre el tercer cuartil y el primer cuartil (Q3 – Q1).
 
