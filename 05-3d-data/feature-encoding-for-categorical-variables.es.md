@@ -24,7 +24,7 @@ Una variable ordinal, por otro lado, también es una variable categórica except
 
 - Nivel educativo (bachillerato, licenciatura, maestría o doctorado).
 
-- Calificación de satisfacción (extremadamente disgusto, disgusto, neutral, me gusta o me gusta mucho).
+- Calificación de satisfacción (extremadamente a disgusto, disgusto, neutral, me gusta o me gusta mucho).
 
 ## Métodos para codificar datos categóricos:
 
@@ -36,7 +36,7 @@ Exploraremos dos formas diferentes de codificar variables nominales, una usando 
 
 **Scikit-learn OneHotEncoder**
 
-Cada categoría se transforma en una nueva característica binaria, con todos los registros marcados con 1 para Verdadero o 0 para Falso. Por ejemplo: [Florida, Virginia, Massachussets] podría codificarse como state_Florida = [1,0,0], state_Virginia = [0,1,0], state_Massachussets = [0,0,1].
+Cada categoría se transforma en una nueva característica binaria, con todos los registros marcados con 1 para Verdadero ó 0 para Falso. Por ejemplo: [Florida, Virginia, Massachussets] podría codificarse como state_Florida = [1,0,0], state_Virginia = [0,1,0], state_Massachussets = [0,0,1].
 
 En el caso de una característica llamada 'Gender' (Género) con los valores únicos de Hombre y Mujer, OneHotEncoder crea dos columnas para representar las dos categorías en la columna de género, una para hombre y otra para mujer.
 

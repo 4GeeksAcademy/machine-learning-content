@@ -61,7 +61,7 @@ Donde:
 
 - x.max(axis=0): Valor máximo de característica.
 
-Sklearn preprocessing defines MinMaxScaler() method to achieve this.
+El preprocesamiento de Sklearn define el método MinMaxScaler() para lograrlo.
 
 **Ejemplo:**
 
@@ -128,7 +128,7 @@ Donde:
 
 - S es la desviación estándar de las muestras de entrenamiento.
 
-El preprocesamiento de Sklearn es compatible con el método StandardScaler() para lograr esto directamente en solo 2 o 3 pasos.
+El preprocesamiento de Sklearn es compatible con el método StandardScaler() para lograr esto directamente en solo 2 ó 3 pasos.
 
 **Ejemplo:**
 
