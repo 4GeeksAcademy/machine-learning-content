@@ -59,7 +59,7 @@ Algunos casos en los que la selección de características no es necesaria:
     - Importancias de las características.
 
 
-Usa lo siguiente [notebook](https://github.com/priyamnagar/feature_selection_titanic/blob/master/Titanic.ipynb) para ver cómo aplicar cada uno de estos métodos en un conjunto de datos que ya se ha dividido en conjuntos de entrenamiento y validación.
+Usa el siguiente [notebook](https://github.com/priyamnagar/feature_selection_titanic/blob/master/Titanic.ipynb) para ver cómo aplicar cada uno de estos métodos en un conjunto de datos que ya se ha dividido en conjuntos de entrenamiento y validación.
 
 Considera los siguientes enlaces para métodos estadísticos si planeas aplicar la selección de características:
 
