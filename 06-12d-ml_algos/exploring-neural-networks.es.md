@@ -32,7 +32,7 @@ Variable de clase (0 o 1)
 
 **Requisitos:**
 
-- Python 2 o 3 instalado.
+- Python 2 ó 3 instalado.
 
 - SciPy (incluido NumPy) instalado.
 
