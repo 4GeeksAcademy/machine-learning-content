@@ -16,7 +16,7 @@ Clustering is used to group samples such that objects within the same cluster ar
 
 -Find natural groupings.
 
-We want to minimize the variance inside a cluster.
+-We want to minimize the variance inside a cluster.
 
 **What are the inputs and outputs?**
 
