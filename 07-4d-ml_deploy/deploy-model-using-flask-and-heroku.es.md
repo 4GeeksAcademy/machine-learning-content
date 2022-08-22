@@ -80,7 +80,7 @@ Ahora abre un navegador y escribe la URL http://127.0.0.1:5000; recibirás la ca
 
 ### **Paso 3:** Usar plantillas HTML
 
-El kit de herramientas Bootstrap te ayudará a darle un poco de estilo a tu aplicación sin tener que escribir tu propio código HTML, CSS y JavaScrip. El conjunto de herramientas te permitirá concentrarse en aprender cómo funciona Flask, en lugar de aprender HMTL.
+El kit de herramientas Bootstrap te ayudará a darle un poco de estilo a tu aplicación sin tener que escribir tu propio código HTML, CSS y JavaScript. El conjunto de herramientas te permitirá concentrarse en aprender cómo funciona Flask, en lugar de aprender HMTL.
 
 ### **Paso de Heroku: crea una nueva aplicación web en Heroku**
 
