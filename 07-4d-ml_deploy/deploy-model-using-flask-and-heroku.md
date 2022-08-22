@@ -110,7 +110,7 @@ Flask provides a render_template() helper function that allows the use of the Ji
 
 In this step, you will create your main Flask application in a new file.
 
-First, in your project directory, use your favorite text editor to create and edit your app.py file. Previously you have been using the app.py to wrute the code for your final model. To avoid confusions, now you will use a 'model.py' or a 'titanic.py' for that, and the app.py will exclusively be to build your web app. This will host all the code you will use to create the application. 
+First, in your project directory, use your favorite text editor to create and edit your app.py file. Previously you have been using the app.py to write the code for your final model. To avoid confusions, now you will use a 'model.py' or a 'titanic.py' for that, and the app.py will exclusively be to build your web app. This will host all the code you will use to create the application. 
 
 In this new file, you will import the Flask object to create a Flask application instance, as you did before. You will also import the render_template() helper function that allows you to render HTML template files that exist in the templates folder you are about to create. The file will have a single view function that will be responsible for handling requests to the main / path. Add the following content:
 
@@ -267,7 +267,7 @@ Let's see how should we code a form requesting the attributes of our passengers.
 
 >In order to predict the data correctly, the corresponding values of each label should match with the value of each input selected.
 
-In the Titanic form that you saw at the beginning of this lesson, we were only requesting the numerical features for prediction, but in the case we include categorical features that were previously label encoded, we need to put the same values to the html form. The following example shows how the form should be coded in case our 'Sex' feature would have been assined 0 for Male and 1 for Female:
+In the Titanic form that you saw at the beginning of this lesson, we were only requesting the numerical features for prediction, but in the case we include categorical features that were previously label encoded, we need to put the same values to the html form. The following example shows how the form should be coded in case our 'Sex' feature would have been assigned 0 for Male and 1 for Female:
 
 ```py
 <label for="Sex">Gender</label>
@@ -367,7 +367,7 @@ if __name__=="__main__":
     app.run(port=5000, debug=True)
 ```
 
-Run the application again and it should predict the result after submitting the form. We have successfully created the Web application. Now it’s time to use heroku to deploy it.
+Run the application again and it should predict the result after submitting the form. We have successfully created the Web application. Now it’s time to use Heroku to deploy it.
 
 ## Deployment using Heroku
 
@@ -380,10 +380,10 @@ Let's make sure we also have the following before deploying to Heroku:
 pip install gunicorn
 ```
 
-2. We have installed a lot of libraries and other important files like flask, gunicorn, sklearn etc. We need to tell heroku that our project requires all these libraries to successfully run the application. This is done by creating a requirements.txt file.
+2. We have installed a lot of libraries and other important files like flask, gunicorn, sklearn etc. We need to tell Heroku that our project requires all these libraries to successfully run the application. This is done by creating a requirements.txt file.
 
 
-3. Procfile is a text file in the root directory of your application, to explicitly declare what command should be executed to start your app. This is an essential requirement for heroku. This file tells heroku we want to use the web process with the command gunicorn and the app name.
+3. Procfile is a text file in the root directory of your application, to explicitly declare what command should be executed to start your app. This is an essential requirement for Heroku. This file tells Heroku we want to use the web process with the command gunicorn and the app name.
 
 ```py
 web: gunicorn app:app
@@ -401,7 +401,7 @@ We are ready! Push your project to Heroku! If you wish to do it directly on Hero
 
 - On 'deploy' tab: link Heroku app to your Github account and select the repo to connect to.
 
-- Scroll down and choose 'manual deploy'. After making sure you are on the branch you want to deploy (in this case: main), then clic on 'Deploy branch'. You will see all the required packages been installed like the following image:
+- Scroll down and choose 'manual deploy'. After making sure you are on the branch you want to deploy (in this case: main), then click on 'Deploy branch'. You will see all the required packages been installed like the following image:
 
 ![deploying_branch](../assets/deploying_branch.jpg)
 
@@ -413,7 +413,7 @@ We are ready! Push your project to Heroku! If you wish to do it directly on Hero
 
 **If you feel more comfortable with the command line, you will need to have git and Heroku CLI installed, and then follow this steps:**
 
->You can clic on the following link to install Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli 
+>You can click on the following link to install Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli 
 
 ```bash
 heroku login
