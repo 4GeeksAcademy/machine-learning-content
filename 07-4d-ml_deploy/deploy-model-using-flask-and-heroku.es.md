@@ -1,10 +1,27 @@
 # Despliegue de un modelo de Machine Learning usando Flask y Heroku
 
+Los modelos de Machine Learning son herramientas poderosas para hacer predicciones basadas en los datos disponibles. Para que estos modelos sean útiles para la sociedad, deben implementarse para que otros puedan acceder fácilmente a ellos para hacer predicciones. Esto se puede hacer usando Flask y Heroku.
+
 Flask es un marco web de Python pequeño y liviano que proporciona herramientas y características útiles que facilitan la creación de aplicaciones web usando solo un archivo de Python.
 
 Heroku es una plataforma en la nube que le permite crear, entregar, monitorear y escalar aplicaciones. Heroku hace que los procesos de implementación, configuración, escalado, ajuste y administración de aplicaciones sean lo más simples y directos posible para que los desarrolladores puedan concentrarse en crear excelentes aplicaciones. También incluye un rico ecosistema de servicios de datos administrados.
 
+Imaginemos que acabamos de terminar de crear nuestro modelo de predicción de supervivencia del Titanic. ¿Ahora que?
+
+Para predecir con datos desconocidos, tenemos que implementarlos en Internet para que el mundo exterior pueda usarlos.
+
+Para eso, necesitaremos guardar el modelo para que podamos predecir los valores más tarde. Hacemos uso de pickle en python, que es un poderoso algoritmo para serializar y deserializar una estructura de objeto de Python, pero también hay otras herramientas. El siguiente código guarda el modelo usando Pickle:
+
+```py
+#serializing our model to a file called model.pkl
+import pickle
+filename = 'titanic_model.pkl'
+pickle.dump(classifier, open(filename,'wb'))
+```
+
 ## Pasos para crear una aplicación web usando Flask en Python3
+
+
 
 ### **Paso 1:** Activa el entorno e instala Flask
 
