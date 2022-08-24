@@ -42,7 +42,7 @@ Algunas implementaciones específicas, por ejemplo, el boosting de gradiente est
 
 Documentación de Scikit learn sobre Boosting de Gradiente para clasificación: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html
 
-Documentación de cikit learn sobre Boosting de Gradiente para regresión: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html
+Documentación de Scikit learn sobre Boosting de Gradiente para regresión: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html
 
 **¿Cómo podemos reducir el sobreajuste al aumentar el gradiente?**
 
