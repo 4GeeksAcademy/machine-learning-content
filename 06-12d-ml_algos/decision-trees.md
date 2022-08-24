@@ -60,7 +60,7 @@ As a problem usually has a large set of features, it results in large number of 
 
 One way of doing this is to set a minimum number of training inputs to use on each leaf. For example we can use a minimum of 3 patients to reach a decision (heart disease or not), and ignore any leaf that takes less than 3 patients. 
 
-Another way is to set maximum depth of your model. Maximum depth refers to the the length of the longest path from a root to a leaf.
+Another way is to set maximum depth of your model. Maximum depth refers to the length of the longest path from a root to a leaf.
 
 The performance of a tree can be further increased by **pruning**. It involves removing the branches that make use of features having low importance. This way, we reduce the complexity of tree, and thus increasing its predictive power by reducing overfitting.
 
