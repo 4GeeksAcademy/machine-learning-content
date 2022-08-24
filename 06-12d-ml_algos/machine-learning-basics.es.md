@@ -58,7 +58,7 @@ Algunos ejemplos de algoritmos de aprendizaje no supervisados ​​son:
 
 ### Aprendizaje reforzado
 
-ESe encuentra entre estos 2 extremos — Describe un conjunto de algoritmos que aprenden del resultado de cada decisión.
+Se encuentra entre estos 2 extremos — Describe un conjunto de algoritmos que aprenden del resultado de cada decisión.
 Los algoritmos de refuerzo generalmente aprenden acciones óptimas a través de prueba y error.
 
 Por ejemplo, un robot podría usar el aprendizaje por refuerzo para aprender que caminar hacia adelante contra una pared es malo, pero alejarse de una pared y caminar es bueno, o imagina un videojuego en el que el jugador necesita moverse a ciertos lugares en ciertos momentos para ganar puntos. Un algoritmo de refuerzo que jugaría ese juego comenzaría moviéndose aleatoriamente pero, con el tiempo, a través de prueba y error, aprendería dónde y cuándo necesita mover el personaje del juego para maximizar su total de puntos.
