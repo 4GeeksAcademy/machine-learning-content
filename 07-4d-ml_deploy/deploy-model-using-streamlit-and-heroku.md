@@ -72,7 +72,7 @@ The simplicity of these ideas does not prevent you from creating incredibly rich
 
 ## Streamlit basic features
 
-Here we will explain some of the basic features but for a complete Streamlit documentation you can clic on the following link: `https://docs.streamlit.io/`
+Here we will explain some of the basic features but for a complete Streamlit documentation you can click on the following link: `https://docs.streamlit.io/`
 
 **Selection Widgets**
 
