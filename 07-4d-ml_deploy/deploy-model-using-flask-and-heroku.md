@@ -27,7 +27,6 @@ For predicting survival in Titanic from various attributes we first need to coll
 
 ### **Step 1:** Activate environment and install Flask
 
-
 In the command line enter your project's directory. Once there, activate your environment and use pip to install Flask.
 
 ```bash
@@ -90,13 +89,13 @@ Output
 
 The above result has several information, such as:
 
--The name of the application you are running.
+- The name of the application you are running.
 
--The environment in which the application is running.
+- The environment in which the application is running.
 
--Debug mode: on means that the Flask debugger is running. This is useful during development because it gives us detailed error messages when something goes wrong, which makes it easier to troubleshoot problems.
+- Debug mode: on means that the Flask debugger is running. This is useful during development because it gives us detailed error messages when something goes wrong, which makes it easier to troubleshoot problems.
 
--The application runs locally on the URL http://127.0.0.1:5000/, 127.0.0.1 is the IP representing your computer's localhost and :5000 is the port number.
+- The application runs locally on the URL http://127.0.0.1:5000/, 127.0.0.1 is the IP representing your computer's localhost and :5000 is the port number.
 
 Now open a browser and type the URL http://127.0.0.1:5000; you will receive the string Hello, World! in response. This confirms that your application is running correctly.
 
@@ -263,9 +262,10 @@ Now that you have a base.html template you can inherit that code to index.html b
 ```
 
 You have used HTML templates and static files in Flask in a clean way. However, to make things simple for your first web app, we will keep only the index.html file.
+
 Let's see how should we code a form requesting the attributes of our passengers.
 
->In order to predict the data correctly, the corresponding values of each label should match with the value of each input selected.
+> In order to predict the data correctly, the corresponding values of each label should match with the value of each input selected.
 
 In the Titanic form that you saw at the beginning of this lesson, we were only requesting the numerical features for prediction, but in the case we include categorical features that were previously label encoded, we need to put the same values to the html form. The following example shows how the form should be coded in case our 'Sex' feature would have been assigned 0 for Male and 1 for Female:
 
@@ -372,6 +372,7 @@ Run the application again and it should predict the result after submitting the 
 ## Deployment using Heroku
 
 You should already have an account on Heroku, but if you don't, go ahead and create your account at 'https://www.heroku.com'.
+
 Let's make sure we also have the following before deploying to Heroku:
 
 1. Gunicorn handles requests and takes care of complicated things. Download gunicorn to your virtual environment. You can use pip to download it.
@@ -413,7 +414,7 @@ We are ready! Push your project to Heroku! If you wish to do it directly on Hero
 
 **If you feel more comfortable with the command line, you will need to have git and Heroku CLI installed, and then follow this steps:**
 
->You can click on the following link to install Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli 
+> You can click on the following link to install Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli 
 
 ```bash
 heroku login
