@@ -216,7 +216,7 @@ Deep Learning has recently outperformed humans in solving particular tasks, for 
 
 - Natural Language Processing
 
-- Virtual Assitants
+- Virtual Assistants
 
 - Visual Recognition
 
