@@ -12,7 +12,7 @@ What are the five linear regression assumptions and how can you check for them?
 
 3. Normality: the errors are normally distributed. We can verify normality by ploting the errors with a histogram.
 
-4. Homoskedasticity: the variance of the error term is constant across values of the target and features. To verufy it we can plot the errors against the predicted y.
+4. Homoskedasticity: the variance of the error term is constant across values of the target and features. To verify it we can plot the errors against the predicted y.
 
 5. No multicollinearity: Look for correlations above ~0.8 between features.
 
@@ -128,7 +128,7 @@ The equation of polynomial becomes something like this.
 The degree of order to use is a hyperparameter, and we need to choose it wisely. Using a high degree of polynomial tries to overfit the data and for smaller values of degree, the model tries to underfit, so we need to find the optimal value of a degree.
 
 
-Let's see an example of hoy to implement this with code:
+Let's see an example of how to implement this with code:
 
 ```py
 
@@ -230,7 +230,7 @@ Let's see an overfitted non-linear example:
 
 If not filtered and explored up front, some features can be more destructive than helpful, repeat information that already expressed by other features and add high noise to the dataset.
 
-Because overfit is an extremely common issue in many machine learning problems, there are different approaches to solving it. The main one is simplifying the models as much as possible. Simple models do not (usually) overfit. On the other hand, we need to pay attention the to gentle trade-off between overfitting and underfitting a model.
+Because overfit is an extremely common issue in many machine learning problems, there are different approaches to solving it. The main one is simplifying the models as much as possible. Simple models do not (usually) overfit. On the other hand, we need to pay attention to gentle trade-off between overfitting and underfitting a model.
 
 Source:
 
