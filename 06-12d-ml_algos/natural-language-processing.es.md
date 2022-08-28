@@ -128,7 +128,7 @@ print(wn.lemmatize(“believed”))
 print(wn.lemmatize(“believes”))
 ```
 
-*Los resultados de la lematización en el orden de las declaraciones impresas son: creer, creyendo, creyó y creencia. la lematización produce el mismo resultado si la palabra no está en el corpus. Creer está lematizado a creencia (la raíz de la palabra)*    
+*Los resultados de la lematización en el orden de las declaraciones impresas son: creer, creyendo, creyó y creencia. La lematización produce el mismo resultado si la palabra no está en el corpus. Creer está lematizado a creencia (la raíz de la palabra)*    
     
 ## Proceso de limpieza con un ejemplo de nube de palabras
 
