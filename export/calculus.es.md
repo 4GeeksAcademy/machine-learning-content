@@ -25,7 +25,7 @@ Entonces, ya habiendo resuelto el problema reformulándolo como un área debajo 
 
 ![calculus_graph2.jpg](../assets/calculus_graph2.jpg)
 
-la integral de $f(x)$ corresponde al cálculo del área bajo la gráfica de $f(x)$. El área bajo $f(x)$ entre los puntos $x = a$ y $x = b$ se denota de la siguiente manera:
+La integral de $f(x)$ corresponde al cálculo del área bajo la gráfica de $f(x)$. El área bajo $f(x)$ entre los puntos $x = a$ y $x = b$ se denota de la siguiente manera:
 
 ![formula_1.png](../assets/formula_1.png)
 
