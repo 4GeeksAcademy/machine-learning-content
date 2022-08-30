@@ -66,74 +66,74 @@ La principal diferencia entre el Data Lake y el Data Warehouse tiene que ver con
 
 Según las necesidades, una empresa puede tener un Data Lake y un Data Warehouse. Ambas estructuras de datos son muy valiosas.
 
-**¿Qué es un data mart?**
+**¿Qué es un Data Mart?**
 
-A Datawarehouse is composed of datamarts. Data marts are small databases oriented to specific topics from the organization. For example a datamart for each department (Marketing, Purchases, etc). The process that extracts, transforms and loads the data from datamarts into the data warehouse is known as **ETL**. This ETL processes are normally done by batches, which are loaded during a specific time of the day, normally at nights when the work loads are not so high.
+Un Data Warehouse se compone de Data Marts. Los Data Marts son pequeñas bases de datos orientadas a temas específicos de la organización. Por ejemplo un Data Mart para cada departamento (Marketing, Compras, etc). El proceso que extrae, transforma y carga los datos de los Data Marts en el almacén de datos se conoce como **ETL**. Estos procesos ETL normalmente se realizan por lotes, los cuales se cargan en un momento específico del día, normalmente en las noches cuando las cargas de trabajo no son tan altas.
 
-A data warehouse, compared to a data mart, tries to centralize information, and fight against having multiple truths from having multiple databases.
+Un Data Warehouse, en comparación con un Data Mart, intenta centralizar la información y luchar contra tener múltiples verdades por tener múltiples bases de datos.
 
-## Cloud computing providers
+## Proveedores de computación en la nube
 
-Machine learning is a critical element of the data science process, but training ML models is often a time consuming process that requires a lot of resources. Machine learning and deep learning models involve thousands of training iterations. You need these extensive amounts of iterations to produce the most accurate model. For example, if you have a set of training samples with only 1TB of data, 10 iterations of this training set will require 10TB of speed with which the data transfer takes place between the hard disk drive and RAM. In the past, gaining access to ML resources was difficult and expensive. Today, many cloud computing vendors offer resources for data science in the cloud.
+Machine Learning es un elemento crítico del proceso de ciencia de datos, pero entrenar modelos de ML suele ser un proceso lento que requiere una gran cantidad de recursos. Los modelos de Machine Learning y aprendizaje profundo implican miles de iteraciones de entrenamiento. Necesitas estas grandes cantidades de iteraciones para producir el modelo más preciso. Por ejemplo, si tienes un conjunto de muestras de entrenamiento con solo 1 TB de datos, 10 iteraciones de este conjunto de entrenamiento requerirán 10 TB de velocidad con la que se realiza la transferencia de datos entre el disco duro y la RAM. En el pasado, obtener acceso a los recursos de ML era difícil y costoso. Hoy en día, muchos proveedores de computación en la nube ofrecen recursos para la ciencia de datos.
 
-Cloud computing enables you to model storage capacity and handle loads at scale, or to scale the processing across nodes. For example, AWS offers Graphics Processing Unit (GPU) instances with 8–256GB memory capacity. These instances are priced at an hourly rate. GPUs are specialized processors designed for complex image processing.
+La computación en la nube te permite modelar la capacidad de almacenamiento y manejar cargas a escala, o escalar el procesamiento entre nodos. Por ejemplo, AWS ofrece instancias de unidades de procesamiento de gráficos (GPU) con una capacidad de memoria de 8 a 256 GB. Estas instancias tienen un precio por hora. Las GPU son procesadores especializados diseñados para el procesamiento de imágenes complejas.
 
-### Amazon Web Services (AWS)
+### Servicios web de Amazon (AWS)
 
-AWS is the most used cloud platform today. This cloud solution allows us to virtually execute any application on the cloud, from web applications to IoT solutions and big data. In AWS, as in any cloud provider, we have to choose the region in the world in which the servers that provide the service, are installed. Remember to always choose a region that is the closest possible to the client that will use the resources. Amazon Web Services has a lot of tools and services but in this lesson, we want to mention some of them that can help you improving your machine learning models.
+AWS es la plataforma en la nube más utilizada en la actualidad. Esta solución en la nube nos permite ejecutar virtualmente cualquier aplicación en la nube, desde aplicaciones web hasta soluciones IoT y big data. En AWS, como en cualquier proveedor de nube, tenemos que elegir la región del mundo en la que están instalados los servidores que dan el servicio. Recuerda elegir siempre una región que sea lo más cercana posible al cliente que utilizará los recursos. Amazon Web Services tiene muchas herramientas y servicios, pero en esta lección queremos mencionar algunos de ellos que pueden ayudarte a mejorar tus modelos de Machine Learning.
 
-**S3** is an Amazon data storage service. One of the most important products from Amazon. **S3** is an object based storage service that allows to store as much data as you want because the scaling is automatic. When we talk about object based we mean the minimal unit, in this case, the files. 
+**S3** es un servicio de almacenamiento de datos de Amazon. Uno de los productos más importantes de Amazon. **S3** es un servicio de almacenamiento basado en objetos que permite almacenar tantos datos como quieras porque el escalado es automático. Cuando hablamos de basado en objetos nos referimos a la unidad mínima, en este caso, los archivos.
 
-All files or objects are stored in buckets. We can think of a bucket as a folder where we store our files. A bucket is a container that can store different types of objects. We can not create a bucket with a name that already exists. Bucket names in S3 are unique and we can configure if buckets are public or private. Inside a bucket we can modify a file and have its versions during time.
+Todos los archivos u objetos se almacenan en cubos. Podemos pensar en un depósito como una carpeta donde almacenamos nuestros archivos. Un cubo es un contenedor que puede almacenar diferentes tipos de objetos. No podemos crear un depósito con un nombre que ya existe. Los nombres de los depósitos en S3 son únicos y podemos configurar si los depósitos son públicos o privados. Dentro de un cubo podemos modificar un archivo y tener sus versiones en el tiempo.
 
-S3 storage format: https://[bucket name].s3.amazonaws.com/video.mp4
+Formato de almacenamiento S3: https://[bucket name].s3.amazonaws.com/video.mp4
 
-**Cloud9** is like a Visual Studio Code but from AWS. It allows us to create environments. When we configure them, in the background this creates and executes a virtual machine service called Elastic Compute Cloud (EC2). 
+**Cloud9** es como Visual Studio Code pero de AWS. Nos permite crear ambientes. Cuando los configuramos, en segundo plano crea y ejecuta un servicio de máquina virtual llamado Elastic Compute Cloud (EC2).
 
-**SageMaker** is a fully-managed machine learning platform for data scientists and developers. The platform also runs on Elastic Compute Cloud (EC2), and enables you to build machine learning models, organize your data, and scale your operations. Machine learning applications on SageMaker range from speech recognition, computer vision, and recommendations. The AWS marketplace offers models to use, instead of starting from scratch. You can start training and optimizing your model. The most common choices are frameworks like Keras, TensorFlow, and PyTorch. SageMaker can optimize and configure these frameworks automatically, or you can train them yourself. You can also develop your own algorithm by building it in a Docker container and you can use a Jupyter notebook to build your machine learning model, and visualize your data.
+**SageMaker** es una plataforma de Machine Learning completamente administrada para desarrolladores y científicos de datos. La plataforma también se ejecuta en Elastic Compute Cloud (EC2) y te permite crear modelos de Machine Learning, organizar tus datos y escalar tus operaciones. Las aplicaciones de Machine Learning en SageMaker van desde reconocimiento de voz, visión artificial y recomendaciones. El mercado de AWS ofrece modelos para usar, en lugar de comenzar desde cero. Puedes comenzar a entrenar y optimizar tu modelo. Las opciones más comunes son marcos como Keras, TensorFlow y PyTorch. SageMaker puede optimizar y configurar estos marcos automáticamente, o puedes entrenarlos tu mismo. También puedes desarrollar tu propio algoritmo al construirlo en un contenedor Docker y puedes usar un cuaderno Jupyter para construir tu modelo de Machine Learning y visualizar tus datos.
 
-Link of the Amazon Web Services: `aws.amazon.com/console`
+Enlace de los Servicios Web de Amazon: `aws.amazon.com/console`
 
-Where to learn AWS skills: `aws.amazon.com/es/training/awsacademy/`
+Dónde aprender habilidades de AWS: `aws.amazon.com/es/training/awsacademy/`
 
-### Google Cloud Platform (GCP)
+### Plataforma en la nube de Google (GCP)
 
-Google Cloud Platform offers you three ways to carry out machine learning:
+La Plataforma en la nube de Google (GCP) te ofrece tres formas de llevar a cabo Machine Learning:
 
-**Auto ML** to train state-of-the-art deep learning models on your data without writing any code, for begineers. 
+**Auto ML** para entrenar modelos de aprendizaje profundo de última generación en tus datos sin escribir ningún código, para principiantes.
 
-Auto ML is a cloud-based machine learning platform built for inexperienced users. You can upload your datasets, train models, and deploy them on the website. AutoML integrates with all Google’s services and stores data in the cloud. You can deploy trained models via the REST API interface. There are a number of available AutoML products you can access via a graphical interface. This includes training models on structured data, image and video processing services, and a natural language processing and translation engine.
+Auto ML es una plataforma de Machine Learning basada en la nube creada para usuarios sin experiencia. Puedes cargar tus conjuntos de datos, entrenar modelos e implementarlos en el sitio web. AutoML se integra con todos los servicios de Google y almacena datos en la nube. Puedes implementar modelos entrenados a través de la interfaz API REST. Hay una serie de productos de AutoML disponibles a los que puedes acceder a través de una interfaz gráfica. Esto incluye modelos de entrenamiento en datos estructurados, servicios de procesamiento de imágenes y videos, y un motor de procesamiento y traducción de lenguaje natural.
 
-**BigQuery ML** to build custom ML models, train them and make predictions on structured data using just SQL. Use BigQuery ML for quick problem formulation, experimentation, and easy, low-cost machine learning. Once you identify a viable ML problem using BQML, use Auto ML for code-free, state-of-the-art models. Hand-roll your own custom models only for problems where you have lots of data and enough time/effort to devote.
+**BigQuery ML** para crear modelos de ML personalizados, entrenarlos y hacer predicciones sobre datos estructurados usando solo SQL. Use BigQuery ML para la formulación rápida de problemas, la experimentación y Machine Learning fácil y de bajo costo. Una vez que identifiques un problema de Machine Learning viable mediante BQML, utiliza Auto Machine Learning para obtener modelos de última generación sin código. Haz rodar a mano tus propios modelos personalizados solo para problemas en los que tengas muchos datos y suficiente tiempo/esfuerzo para dedicar.
 
-**Cloud ML Engine** to build custom, deep learning models using Keras with a TensorFlow backend, for more experienced data professionals. It can be used to train a complex model by leveraging GPU and Tensor Processing Unit (TPU) infrastructure. You can also use the service to deploy an externally trained model. Cloud ML automates all monitoring and resource provisioning processes for running the jobs. Besides hosting and training, Cloud ML can also perform hyperparameter tuning that influences the accuracy of predictions. Without hyperparameter tuning automation, data scientists need to manually experiment with multiple values while evaluating the accuracy of the results.
+**Cloud ML Engine** para crear modelos personalizados de aprendizaje profundo utilizando Keras con un backend de TensorFlow, para profesionales de datos más experimentados. Se puede usar para entrenar un modelo complejo aprovechando la GPU y la infraestructura de la Unidad de procesamiento de tensores (TPU). También puedes usar el servicio para implementar un modelo entrenado externamente. Cloud ML automatiza todos los procesos de supervisión y aprovisionamiento de recursos para ejecutar los trabajos. Además de alojamiento y capacitación, Cloud ML también puede realizar ajustes de hiperparámetros que influyen en la precisión de las predicciones. Sin la automatización de ajuste de hiperparámetros, los científicos de datos necesitan experimentar manualmente con múltiples valores mientras evalúan la precisión de los resultados.
 
-TensorFlow is an open source software library that uses data-flow graphs for numerical operations. Mathematical operations in these graphs are represented by nodes, while edges represent data transferred from one node to another. Data in TensorFlow is represented as tensors, which are multidimensional arrays. TensorFlow is usually used for deep learning research and practice. TensorFlow is cross-platform. You can run it on GPUs, CPUs, TPUs, and mobile platforms.
+TensorFlow es una biblioteca de software de código abierto que utiliza gráficos de flujo de datos para operaciones numéricas. Las operaciones matemáticas en estos gráficos están representadas por nodos, mientras que los bordes representan datos transferidos de un nodo a otro. Los datos en TensorFlow se representan como tensores, que son arrays multidimensionales. TensorFlow generalmente se usa para la investigación y la práctica del aprendizaje profundo. TensorFlow es multiplataforma. Puede ejecutarlo en GPU, CPU, TPU y plataformas móviles.
 
-Choose between them based on your skill set, how important additional accuracy is, and how much time/effort you are willing to devote to the problem. 
+Elije entre ellos en función de tu conjunto de habilidades, la importancia de la precisión adicional y la cantidad de tiempo/esfuerzo que estás dispuesto a dedicar al problema.
 
-Check out the Google Cloud Platform free program to discover new tools for your machine learning models.
+Consulte el programa gratuito Google Cloud Platform (Plataforma en la nube de Google) para descubrir nuevas herramientas para tus modelos de Machine Learning.
 
-Link of the Google Cloud Platform: `console.cloud.google.com`
+Enlace de la plataforma Google Cloud: `console.cloud.google.com`
 
-Where to learn GCP skills: `go.qwiklabs.com`, `cloudskillsboost.google`
+Dónde aprender habilidades de GCP: `go.qwiklabs.com`, `cloudskillsboost.google`
 
 ### Microsoft Azure
 
-Just like the SageMaker of Amazon and ML Engine of Google, Azure AI is the answer of Microsoft to Amazon and Google. Moreover, Azure AI offers a range of open and comprehensive platforms for the building, evaluating, and deployment of machine learning models and many more features supporting various AI frameworks such as PyTorch, TensorFlow, Sci-kit Learn, and more.
+Al igual que SageMaker de Amazon y ML Engine de Google, Azure AI es la respuesta de Microsoft a Amazon y Google. Además, Azure AI ofrece una gama de plataformas abiertas e integrales para la creación, evaluación e implementación de modelos de Machine Learning y muchas más funciones compatibles con varios marcos de IA, como PyTorch, TensorFlow, Sci-kit Learn y más.
 
-Compared to AWS, Azure machine learning offerings are more flexible in terms of out-of-the-box algorithms. 
+En comparación con AWS, las ofertas de Machine Learning de Azure son más flexibles en términos de algoritmos listos para usar. 
 
-**Azure ML** is a huge library of pre-trained, pre-packaged machine learning algorithms. Azure ML Service also provides an environment for implementing these algorithms and applying them to real-world applications. The UI of Azure ML enables you to build machine learning pipelines that combine multiple algorithms. You can use the UI to train, test, and evaluate models.
+**Azure ML** es una biblioteca enorme de algoritmos de Machine Learning empaquetados y entrenados previamente. Azure ML Service también proporciona un entorno para implementar estos algoritmos y aplicarlos a aplicaciones del mundo real. La interfaz de usuario de Azure ML te permite crear pipelines de Machine Learning que combinan varios algoritmos. Puedes usar la interfaz de usuario para entrenar, probar y evaluar modelos.
 
-Azure ML also provides solutions for Artificial Intelligence (AI). This includes visualization and other data that can help understand model behavior, and compare algorithms to find the best option.
+Azure ML también proporciona soluciones para Inteligencia Artificial (IA). Esto incluye visualización y otros datos que pueden ayudar a comprender el comportamiento del modelo y comparar algoritmos para encontrar la mejor opción.
 
-Link of the Microsoft Azure platform: `azure.microsoft.com`
+Enlace de la plataforma Microsoft Azure: `azure.microsoft.com`
 
-How to learn Microsoft skills: [Microsoft Learn](docs.microsoft.com/en-us/learn), [Azure fundamentals](docs.microsoft.com/en-us/certifications/azure-fundamentals/).
+Cómo aprender habilidades de Microsoft: [Microsoft Learn](docs.microsoft.com/en-us/learn), [Azure fundamentals](docs.microsoft.com/en-us/certifications/azure-fundamentals/).
 
 
-**Source:**
+**Fuente:**
 
 -https://en.wikipedia.org/wiki/Cloud_computing
 
