@@ -26,7 +26,7 @@ PrepareBrownies('chocolate')
 
 ## Estructuras de datos
 
-La mayoría de los problemas en informática tienen algún tipo de datos asociados, que tenemos que usar para resolver el problema y llegar a una conclusión. Entonces, una estructura de datos es una forma de organizar y administrar esos datos a nivel de memoria de manera que podamos operar efectiva y eficiententemente con esos datos.
+La mayoría de los problemas en informática tienen algún tipo de datos asociados, que tenemos que usar para resolver el problema y llegar a una conclusión. Entonces, una estructura de datos es una forma de organizar y administrar esos datos a nivel de memoria de manera que podamos operar efectiva y eficientemente con esos datos.
 
 Para tener una diferencia clara entre algoritmos y estructuras de datos, podemos decir que los algoritmos actuarían como los verbos y las estructuras de datos serían los sustantivos.
 

@@ -17,7 +17,7 @@ st.write('Hello, world!')
 
 ![streamlit1](../assets/streamlit1.jpg)
 
-2. **Trata los widgets como variables.** ¡No hay devoluciones de llamada en Streamlit! Cada interacción simplemente vuelve a ejecutar el script de arriba a abajo. Este enfoque conduce a un código realmente limpio:
+2. **Trata los widgets como variables.** ¡No hay devoluciones de llamada en Streamlit! Cada interacción simplemente vuelve a ejecutar el script de arriba abajo. Este enfoque conduce a un código realmente limpio:
 
 ```py
 import streamlit as st
