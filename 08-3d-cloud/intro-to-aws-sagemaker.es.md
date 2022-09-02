@@ -1,6 +1,6 @@
 # Primeros pasos con Machine Learning en las herramientas de AWS
 
-Independientemente del problema en el que estés trabajando, normalmente debes realizar los siguientes pasos:
+Independientemente del problema en el que estés trabajando, normalmente debes realizar los siguientes pasos: 
 
 Comenzamos con nuestro problema comercial y dedicamos un tiempo a convertirlo en un problema de Machine Learning, que no es un proceso simple. Luego comenzamos a recopilar los datos y, una vez que tenemos todos nuestros datos juntos, los visualizamos, los analizamos y hacemos un poco de ingeniería de funciones para finalmente tener datos limpios listos para entrenar nuestro modelo. Probablemente no tengamos nuestro modelo ideal desde el principio, por lo que con la evaluación del modelo medimos cómo está funcionando el modelo, si nos gusta el rendimiento o no, si es preciso o no, y luego comenzamos a optimizarlo ajustando algunos hiperparámetros.
 
@@ -22,138 +22,139 @@ Los servicios de IA son una excelente manera de probar la IA, especialmente si n
 
 Lo mejor de estas APIS de servicios de IA es que, como desarrollador, puedes comenzar a experimentar en lugar de tener que aprender muchas cosas antes de comenzar a usarlas, y luego puedes profundizar y personalizarlas.
 
-Three things that developer need to learn to get the most out of this services:
+Tres cosas que el desarrollador debe aprender para aprovechar al máximo estos servicios:
 
-1. Understand your data, not only in AI services, but in all machine learning.
+1. Comprende tus datos, no solo en los servicios de IA, sino en todo Machine Learning.
 
-2. Understand your use case, test the service with your particular use case, not just the generic one.
+2. Comprende tu caso de uso, prueba el servicio con tu caso de uso particular, no solo con el genérico.
 
-3. Understand what success looks like. Machine learning is very powerful but it is not going to be 100% accurate.
+3. Entiende cómo es el éxito. Machine Learning es muy poderoso, pero no será 100% preciso.
 
 ## Amazon SageMaker
 
-**What is Amazon SageMaker?**
+**¿Qué es Amazon SageMaker?**
 
-Amazon SageMaker provides machine learning capabilities for data scientists and developers to prepare, build, train, and deploy high-quality ML models efficiently.
+Amazon SageMaker proporciona capacidades de Machine Learning para que los científicos y desarrolladores de datos preparen, construyan, entrenen e implementen modelos ML de alta calidad de manera eficiente.
 
-**SageMaker Workflow:**
+**Flujo de trabajo de SageMaker:**
 
-1. Label data: Set up and manage labeling jobs for highly accurate training datasets within Amazon SageMaker, using active learning and human labeling.
+1. Label data: configura y administra trabajos de etiquetado para conjuntos de datos de entrenamiento de alta precisión dentro de Amazon SageMaker, utilizando el aprendizaje activo y el etiquetado humano.
 
-2. Build: Connect to other AWS services and transform data in Amazon SageMaker notebooks.
+2. Build: conéctese a otros servicios de AWS y transforme datos en cuadernos de Amazon SageMaker.
 
-3. Train: Use Amazon SageMaker's algorithms and frameworks, or bring your own, for distributed training.
+3. Train: utiliza los marcos y los algoritmos de Amazon SageMaker, o trae los tuyos propios, para el entrenamiento distribuido.
 
-4. Tune: Amazon SageMaker automatically tunes your model by adjusting multiple combinations of algorithm parameters.
+4. Tune: Amazon SageMaker ajusta automáticamente tu modelo ajustando múltiples combinaciones de parámetros de algoritmo.
 
-5. Deploy: After training is completed, models can be deployed to Amazon SageMaker endpoints, for real-time predictions.
+5. Deploy: Una vez completado el entrenamiento, los modelos se pueden implementar en los puntos finales de Amazon SageMaker para realizar predicciones en tiempo real.
 
-6. Discover: Find, buy and deploy ready-to-use model packages, algorithms, and data products in AWS marketplace.
+6. Discover: Encuentra, compra e implementa paquetes modelo, algoritmos y productos de datos listos para usar en el mercado de AWS.
 
-**SageMaker benefits**
+**Beneficios de SageMaker**
 
-- For data exploration and preprocessing, it provides fully managed instances running Jupyter notebooks that include example code for common model training and hosting exercises.
+- Para la exploración y el preprocesamiento de datos, proporciona instancias totalmente administradas que ejecutan cuadernos Jupyter que incluyen código de ejemplo para ejercicios comunes de alojamiento y entrenamiento de modelos.
 
-- When you are ready to train your data, simply indicate the type and quantity of instances you need and start the training with a single click.
+- Cuando estés listo para entrenar tus datos, simplemente indica el tipo y la cantidad de instancias que necesitas y comienza el entrenamiento con un solo clic.
 
-- It provides machine learning algorithms highly optimized on speed, accuracy and scaling to run on extremely large training datasets.
+- Proporciona algoritmos de Machine Learning altamente optimizados en cuanto a velocidad, precisión y escalado para ejecutarse en conjuntos de datos de entrenamiento extremadamente grandes.
 
-- SageMaker provides model artifacts and scoring images for deployment to Amazon EC2 or anywhere else.
+- SageMaker proporciona artefactos de modelo e imágenes de puntuación para su implementación en Amazon EC2 o en cualquier otro lugar.
 
 ![sagemaker](../assets/sagemaker.jpg)
 
 ## SageMaker Studio
 
-When you log in to Amazon Web Services and choose SageMaker, there are some important first steps to be done:
+Cuando inicias sesión en Amazon Web Services y eliges SageMaker, debes realizar algunos primeros pasos importantes:
 
-First we need to create a Studio domain. This is a one time process you do in your Aws console just for SageMaker. 
+Primero necesitamos crear un dominio de Studio. Este es un proceso único que realizas en tu consola de AWS solo para SageMaker. 
 
-Once created, AWS manages the server for you, and you as a consumer will log in to a user profile. You can have as many user profiles as you want per Studio domain. What normally happens in organizations is that they give a Studio domain to a team of data scientists and they create as many user profiles as they need. 
+Una vez creado, AWS administra el servidor por ti, y tu como consumidor, iniciarás sesión en un perfil de usuario. Puedes tener tantos perfiles de usuario como desees por dominio de Studio. Lo que normalmente ocurre en las organizaciones es que dan un dominio de Studio a un equipo de científicos de datos y crean tantos perfiles de usuario como necesitan.
 
-Every time you create a user profile it is again the jupyter server that AWS manages, but every time you create a new notebook, app or machine, they will be running on a new EC2 instance each, so you have to be cautious because all your running instances is what will be charged, so make sure to log out or if you are not using an instance, shut it down so that you are not charged. The good part is that you can have as many machines running as you want and you have them running in all different environments so you can have an R machine, a Spark machine, a Pytorch machine, a tensorflow machine, among others.
+Cada vez que creas un perfil de usuario, es nuevamente el servidor jupyter el que administra AWS, pero cada vez que crees un nuevo notebook, aplicación o máquina, se ejecutarán en una nueva instancia EC2 cada uno, por lo que debes tener cuidado porque todas tus instancias en ejecución es lo que se cobrará, así que asegúrate de cerrar la sesión o, si no estás utilizando una instancia, apágala para que no se te cobre. Lo bueno es que puedes tener tantas máquinas funcionando como desees y las tienes funcionando en todos los entornos diferentes, por lo que puedes tener una máquina R, una máquina Spark, una máquina Pytorch, una máquina tensorflow, entre otras.
 
-Reasons to pick SageMaker Studio:
+Razones para elegir SageMaker Studio:
 
-- You have more compute power, you can have more machines to run on top of.
+- Tienes más poder de cómputo, puedes tener más máquinas para ejecutar.
 
-- You can add as much data to the server and it just grows.
+- Puedes agregar la mayor cantidad de datos al servidor y simplemente crece.
 
-- All the widgets that it has: Projects, Data Wrangler, Feature Store, Pipelines, Experiments and trials, Model registry, Endpoints, etc.
+- Todos los widgets que tienes: Proyectos, Data Wrangler, Feature Store, Pipelines, Experimentos y ensayos, Registro de modelos, Endpoints, etc.
 
-### Example code used in SageMaker Studio
+### Código de ejemplo utilizado en SageMaker Studio
 
-In the left control panel of SageMaker you will find SageMaker Studio. Once you click on it, you will find a kind of Jupyter Lab environment and you will be presented with a Launch screen.
+En el panel de control izquierdo de SageMaker encontrarás SageMaker Studio. Una vez que hagas clic en él, encontrarás una especie de entorno de Jupyter Lab y se le presentará una pantalla de inicio.
 
-**Background**
+**Fondo**
 
-In this SageMaker example, you will learn the steps to build, train, tune and deploy a fraud detection model.
-The following steps include preparation of your SageMaker notebook, downloading data from the internet into SageMaker, transforming the data, using Gradient Boosting algorithm to create a model, evaluate its effectiveness and setting the model up to make predictions.
+En este ejemplo de SageMaker, aprenderás los pasos para crear, entrenar, ajustar e implementar un modelo de detección de fraude.
 
-**Preparation**
+Los siguientes pasos incluyen la preparación de tu SageMaker notebook, la descarga de datos de Internet a SageMaker, la transformación de los datos, el uso del algoritmo Gradient Boosting para crear un modelo, evaluar su efectividad y configurar el modelo para hacer predicciones.
 
-Once you install pandas, you need to specify some details:
+**Preparación**
 
-- The S3 bucket and prefix that you want to use for training and modeling the data, because the data has to come from some storage. It is not recommended to have your data uploaded in a notebook because if you have a lot of data and you are constantly uploading it, you are constantly being charged for it and is also slower. S3 is definitely more friendly in terms of uploading and landing our datasets because it can store terabytes of data and you can train your model in terabytes of data. Data can also be stored in Elastic file system (EFS).
+Una vez que instales Pandas, debes especificar algunos detalles:
 
-- The IAM role arn used to give training and hosting access to your data. This role is the role you have been assigned whenever launched the SageMaker Studio. With get_execution_role() we fetch that role. It is important because it provides access to SageMaker to other AWS resources.
+- El depósito de S3 y el prefijo son los que debes usar para entrenar y modelar los datos, porque los datos deben provenir de algún almacenamiento. No se recomienda tener tus datos cargados en un Notebook porque si tienes muchos datos y los estás cargando constantemente, se te están cobrando constantemente y también es más lento. S3 definitivamente es más amigable en términos de carga y aterrizaje de nuestros conjuntos de datos porque puedes almacenar terabytes de datos y puedes entrenar tu modelo en terabytes de datos. Los datos también se pueden almacenar en el sistema de archivos elástico (EFS).
+
+- El rol de IAM se utiliza para brindar capacitación y acceso de hospedaje a tus datos. Esta función es la función que se te asignó cada vez que inició SageMaker Studio. Con get_execution_role() buscamos ese rol. Es importante porque proporciona acceso a SageMaker a otros recursos de AWS.
 
 ```py
 !pip install --upgrade pandas
 ```
 
->It is important to mention that when you create a new notebook and its time to select the kernel, you can reuse the kernel from an existing session, so that it has all the same packages, to avoid reinstalling. Another way is separately building a base docker image and attach it to your Studio domain.
+> Es importante mencionar que cuando creas un nuevo Notebook y es hora de seleccionar el kernel, puedes reutilizar el kernel de una sesión existente, para que tengas todos los mismos paquetes, para evitar la reinstalación. Otra forma es crear por separado una imagen base de la ventana acoplable y adjuntarla a tu dominio de Studio.
 
 ```py
-import sagemaker #import the sagemaker python sdk, similar to other python packages but with different features.
+import sagemaker #importar el sdk de sagemaker python, similar a otros paquetes de python pero con características diferentes.
 bucket = sagemaker.Session().default_bucket()
 prefix = 'sagemaker/fraud-detection'
 
-#Define IAM role
+#Definir el rol de IAM
 import boto3
 import re
 from sagemaker import get_execution_role
 
 role = get_execution_role()
 
-#Import the python libraries we will need
+#Importar las bibliotecas de python que necesitaremos
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from Ipython.display import Image #to display images in the notebook
-from Ipython.display import display #to display outputs in the notebook
-from time import gmtime, strftime #for labeling SageMaker models
+from Ipython.display import Image #Para mostrar imágenes el notebook
+from Ipython.display import display #Para mostrar las salidas en el notebook
+from time import gmtime, strftime #Para etiquetar modelos de SageMaker
 import sys
 import math
 import json
 import zipfile
 ```
 
-You don't strictly need the SageMaker Python SDK to use SageMaker. There are a couple other ways to invoke SageMaker APIs:
+No necesitas estrictamente el SDK de Python de SageMaker para usar SageMaker. Hay otras formas de invocar las API de SageMaker:
 
-- You can use boto3
+- Puedes usar boto3.
 
-- You can use the AWS CLI.
+- Puedes usar la CLI de AWS.
 
 ```py
-#make sure pandas version is set to 1.2.4 or later. It is always a good idea to check versions. In Sagemaker features are constantly being added.
+#Asegúrate de que la versión de pandas esté configurada en 1.2.4 o posterior. Siempre es una buena idea comprobar las versiones. En Sagemaker, las características se agregan constantemente.
 pd.__version__
 ```
 
-**Data**
+**Datos**
 
-In this example, the data is stored in S3 so we will download it from the public S3 bucket.
+En este ejemplo, los datos se almacenan en S3, por lo que los descargaremos del depósito público de S3.
 
 ```py
 !wget https://s3-us-west-2.amazonaws.com/sagemaker-e2e-solutions/fraud-detection/creditcardfraud.zip
 
-#unzipping the data
+#Descomprimiendo los datos
 with zipfile.ZipFile('creditcardfraud.zip','r') as zip_ref:
     zip_ref.extractall('.')
 ```
 
-Now let's take this into a pandas dataframe and take a first look.
+Ahora llevemos esto a un marco de datos de pandas y echemos un primer vistazo.
 
-This data is optimized and already normalized but the common scenarios with data are that we don't have any data, or that data is never clean. Normalization needs to be done in some cases but it depends on the model you use. Xgboost tends to be very robust to non-normalized data, but if you are using K-means for example or any deep learning model, normalization should be done. 
+Estos datos están optimizados y ya normalizados, pero los escenarios comunes con los datos son que no tenemos datos o que los datos nunca están limpios. La normalización debe realizarse en algunos casos, pero depende del modelo que utilices. Xgboost tiende a ser muy robusto para los datos no normalizados, pero si estás utilizando K-means, por ejemplo, o cualquier modelo de aprendizaje profundo, se debe realizar la normalización.
 
 ```py
 data = pd.read_csv('./creditcard.csv')
@@ -162,9 +163,9 @@ data[['Time','V1','V2','V27','V28','Amount','Class']].describe()
 data.head(10)
 ```
 
-This dataset has 28 columns Vi for i = 1...28 of anonymized features along with columns for time, amount and class. We already know that the Vi columns have been normalized to have 0 mean and unit standard deviation as the result of PCA.
+Este conjunto de datos tiene 28 columnas Vi para i = 1...28 de características anonimizadas junto con columnas de tiempo, cantidad y clase. Ya sabemos que las columnas Vi se han normalizado para tener 0 media y desviación estándar unitaria como resultado de PCA.
 
-The class column corresponds to whether or not a transaction is fraudulent. You will see with the following code that the majority of data is non-fraudulent with only 492 (.173%) against 284315 non-frauds (99.827%). 
+La columna de clase corresponde a si una transacción es fraudulenta o no. Verás con el siguiente código que la mayoría de los datos no son fraudulentos con solo 492 (.173%) contra 284315 no fraudulentos (99.827%).
 
 ```py
 nonfrauds, frauds = data.groupby('Class').size()
@@ -173,9 +174,9 @@ print('Number of non-frauds: ', nonfrauds)
 print('Percentage of fraudulent data: ', 100.*frauds/(frauds + nonfrauds))
 ```
 
-Here, we are dealing with an imbalanced dataset, so 'accuracy' metric would be a misleading metric as it will probably predict non-frauds in 100% of cases with a 99.9% accuracy. Other metrics like recall or precision help us attack that problem. Another technique is using oversampling the minority class data or undersampling the majority class data. You can read about SMOTE to understand both techniques.
+Aquí, estamos lidiando con un conjunto de datos desequilibrado, por lo que la métrica de "precisión" sería una métrica engañosa, ya que probablemente predecirá la ausencia de fraude en el 100 % de los casos con una precisión del 99,9 %. Otras métricas como el recuerdo o la precisión nos ayudan a atacar ese problema. Otra técnica es utilizar el sobremuestreo de los datos de la clase minoritaria o el submuestreo de los datos de la clase mayoritaria. Puedes leer sobre SMOTE para comprender ambas técnicas.
 
-Now let's separate our data into features and label.
+Ahora separemos nuestros datos en características y etiquetas.
 
 ```py
 feature_columns = data.columns[:-1]
@@ -186,14 +187,14 @@ labels = (data[label_column].values).astype('float32')
 ```
 
 ```py
-#XGBoost needs the target variable to be the first one
+#XGBoost necesita que la variable objetivo sea la primera
 model_data = data
 model_data.head()
 model_data = pd.concat([model_data['Class'], model_data.drop(['Class'], axis=1)], axis=1)
 model_data.head()
 ```
 
-Separating data into train and validation sets.
+Separación de datos en conjuntos de entrenamiento y validación.
 
 ```py
 train_data, validation_data, test_data = np.split(model_data.sample(frac=1, random_state=1729),
@@ -202,7 +203,7 @@ train_data.to_csv('train.csv', header = False, index = False)
 validation_data.to_csv('validation.csv', header = False, index = False)
 ```
 
-We need the data before the training can begin, on S3. As we have downloaded the data from **S3**, we have to UPload it back. We can create a python script to preprocess the data and automatically upload the data for us.
+Necesitamos los datos antes de que pueda comenzar el entrenamiento, en S3. Como hemos descargado los datos de **S3**, tenemos que volver a cargarlos. Podemos crear un script de python para preprocesar los datos y cargarlos automáticamente por nosotros.
 
 ```py
 boto3.Session().resource('s3').Bucket(bucket).Object(os.path.join(prefix, 'train/train.csv')) \
@@ -218,51 +219,51 @@ output_location = 's3://{}/{}/output'.format(bucket, prefix)
 print('Training artifacts will be uploaded to: {}'.format(output_location))
 ```
 
-**Training**
+**Entrenamiento**
 
-The algorithm chosen for this example is XGBoost, so we have two options for training. The first one is to use the built-in XGBoost provided by AWS Sagemaker or we can use the open source package for XGBoost. In this particular example, we will use the built-in algorithm provided by AWS.
+El algoritmo elegido para este ejemplo es XGBoost, por lo que tenemos dos opciones de entrenamiento. La primera es usar el XGBoost integrado proporcionado por AWS Sagemaker o podemos usar el paquete de código abierto para XGBoost. En este ejemplo en particular, utilizaremos el algoritmo integrado proporcionado por AWS.
 
-In SageMaker, behind the scenes is all container based, so we need to specify the locations of the chosen algorithm containers. To specify the linear learner algorithm, we use a utility function to obtain its URL.
+En SageMaker, detrás de escena todo se basa en contenedores, por lo que debemos especificar las ubicaciones de los contenedores de algoritmo elegidos. Para especificar el algoritmo de aprendizaje lineal, usamos una función de utilidad para obtener su URL.
 
-The complete list of built-in algorithms can be found here: `https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html`
+La lista completa de algoritmos incorporados se puede encontrar aquí: `https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html`
 
-So let's proceed with the training process. First we need to specify the ECR container location for Amazon SageMaker's implementation of XGBoost.
+Así que procedamos con el proceso de entrenamiento. Primero, debemos especificar la ubicación del contenedor ECR para la implementación de XGBoost de Amazon SageMaker.
 
 ```py
 container = sagemaker.image_uris.retrieve(region=boto3.Session().region_name, framework='xgboost', version='latest')
 ```
 
-Because we are training with the CSV file format, we'll create `s3_inputs` that our training function can use as a pointer to the files in S3, which also specify that the content type is CSV.
+Debido a que estamos entrenando con el formato de archivo CSV, crearemos `s3_inputs` que nuestra función de entrenamiento puede usar como puntero a los archivos en S3, que también especifican que el tipo de contenido es CSV.
 
 ```py
 s3_input_train = sagemaker.inputs.TrainingInput(s3_data = 's3://{}/{}/train'.format(bucket, prefix), content_type='csv')
 s3_input_validation = sagemaker.inputs.TrainingInput(s3_data = 's3://{}/{}/validation'.format(bucket, prefix), content_type='csv')
 ```
 
-When we are running a training job in SageMaker we are not using the compute in the notebook. What we are doing this training job in a machine in the cloud, and we need the flexibility to specify any machine that we want to use, based on the algorithm that we are using. For example, if we are using a deep learning model, we may want to use GPUs instead of CPUs, so we need that flexibility because we want to optimize on the cost as well. If we would have GPU on my notebook, and we get distracted coding, we don't want to pay for that time because we are not really using the machine for what it was meant to be, so that becomes very important that in the training job we provide a certain type of machine and when the training is done, it automatically terminates all the resources.
+Cuando ejecutamos un trabajo de capacitación en SageMaker, no usamos el cálculo en el notebook. Estamos haciendo este trabajo de entrenamiento en una máquina en la nube, y necesitamos la flexibilidad para especificar cualquier máquina que queramos usar, según el algoritmo que estamos usando. Por ejemplo, si usamos un modelo de aprendizaje profundo, es posible que queramos usar GPU en lugar de CPU, por lo que necesitamos esa flexibilidad porque también queremos optimizar el costo. Si tuviéramos GPU en mi computadora portátil y nos distrajéramos con la codificación, no queremos pagar por ese tiempo porque realmente no estamos usando la máquina para lo que debe ser, por lo que se vuelve muy importante que en el entrenamiento de trabajo proporcionemos un cierto tipo de máquina y cuando se realiza el entrenamiento, automáticamente finaliza todos los recursos.
 
-To sum up the idea, we need to do the training on a separate instance because based on our job, our model and the size of our dataset, we need to specify the appropiate instance style.
+Para resumir la idea, debemos realizar el entrenamiento en una instancia separada porque, según nuestro trabajo, nuestro modelo y el tamaño del conjunto de datos, debemos especificar el estilo de instancia apropiado.
 
-In order to do that, we need to do that configuration by specifying training parameters to the estimator. This includes:
+Para hacer eso, necesitamos hacer esa configuración especificando parámetros de entrenamiento para el estimador. Esto incluye:
 
-1. The XGBoost algorithm container
+1. El contenedor del algoritmo XGBoost.
 
-2. The IAM role to use
+2. El rol de IAM a utilizar.
 
-3. Training instance type and count
+3. Tipo y conteo de instancias de entrenamiento.
 
-4. S3 location for output data
+4. Ubicación S3 para datos de salida.
 
-5. Algorithm hyperparameters
+5. Hiperparámetros del algoritmo.
 
-And then a .fit() function specifying the s3 location for output data.
+Y luego una función .fit() que especifica la ubicación s3 para los datos de salida.
 
 ```py
 sess = sagemaker.Session()
 
 xgb = sagemaker.estimator.Estimator(container,
                                     role, 
-                                    instance_count = 1, #if you provide more than 1, it will be automatically done for you
+                                    instance_count = 1, #Si proporciona más de 1, se hará automáticamente por ti
                                     instance_type = 'ml.m4.xlarge',
                                     output_path = 's3://{}/{}/output'.format(bucket,prefix),
                                     sagemaker_session = sess)
@@ -278,38 +279,38 @@ xgb.set_hyperparameters(max_depth=5,
 xgb.fit({'train': s3_input_train, 'validation': s3_input_validation})
 ```
 
-**Hosting**
+**Alojamiento**
 
-Once the model is trained, we can use the estimator with .deploy()
+Una vez que el modelo está entrenado, podemos usar el estimador con .deploy().
 
 ```py
-xgb_predictor = xgb.deploy(initial_instance_count = 1, #the word initial is because you can update it later to increase it.
+xgb_predictor = xgb.deploy(initial_instance_count = 1, #La palabra inicial es porque puedes actualizarla más tarde para aumentarla.
                             instance_type = 'ml.m4.xlarge')
 ```
  
-**Evaluation**
+**Evaluación**
 
-Once deployed, you can evaluate it on the sagemaker notebook. In this case, we are only predicting whether its a fraudulent transaction (1) or not (0), which produces a simple confusion matrix.
+Una vez implementado, puede evaluarlo en el cuaderno de sagemaker. En este caso, solo estamos prediciendo si es una transacción fraudulenta (1) o no (0), lo que produce una matriz de confusión simple.
 
-First, we need to determine how we pass data into and receive data from our endpoint. Our data is currently stored as NumPy arrays in memory of our notebook instance. To send it in an HTTP POST request, we'll serialize it as a csv string and then decode the resulting csv.
+Primero, necesitamos determinar cómo pasamos y recibimos datos de nuestro punto final. Nuestros datos se almacenan actualmente como arrays de NumPy en la memoria de nuestra instancia de computadora portátil. Para enviarlo en una solicitud HTTP POST, lo serializaremos como una cadena csv y luego decodificaremos el csv resultante.
 
->For inference with CSV format, SageMaker XGBoost requires that the data does not include the target variable.
+> Para la inferencia con formato CSV, SageMaker XGBoost requiere que los datos no incluyan la variable de destino.
 
 ```py
 xgb_predictor.serializer = sagemaker.serializers.CSVSerializer()
 ```
 
-Now, we'll use a function to:
+Ahora, usaremos una función para:
 
--Loop over test dataset
+- Bucle sobre el conjunto de datos de prueba.
 
--Split it into mini batches of rows
+- Dividir en mini lotes de filas.
 
--Convert those mini batches to csv string payloads (we drop the target variable from the dataset first)
+- Convertir esos mini lotes en cargas útiles de strings csv (primero eliminamos la variable de destino del conjunto de datos).
 
--Retrieve mini batch predictions by invoking the XGBoost endpoint
+- Recuperar predicciones de mini lotes invocando el punto final XGBoost.
 
--Collect predictions and convert from the csv output our model provides into a NumPy array.
+- Recopilar predicciones y convertir la salida csv que proporciona nuestro modelo en un array NumPy.
 
 ```py
 def predict(data, predictor, rows=500):
@@ -323,17 +324,17 @@ def predict(data, predictor, rows=500):
 predictions = predict(test_data.drop(['Class'], axis=1).to_numpy(), xgb_predictor)
 ```
 
-Now let's check the confusion matrix to see how well we did.
+Ahora revisemos la matriz de confusión para ver qué tan bien lo hicimos.
 
 ```py
 pd.crosstab(index=test_data.iloc[:,0], columns=np.round(predictions), rownames=['actual'], colnames=['predictions'])
 ```
 
->Due to randomized elements of the algorithm, your results may differ slightly.
+> Debido a los elementos aleatorios del algoritmo, tus resultados pueden diferir ligeramente.
 
-**Hypertuning**
+**Hipersintonía**
 
-We can use Automatic Model Tuning (AMT) from SageMaker where you import the hyperparameters and then provide the range of those hyperparameters. In the following example, let's suppose we want to maximize the area under the curve (AUC) but we don't which values of the eta, alpha, min_child_weight and max_depth hyperparameters to use to train the best model. To find the best values we can specify a range of values and SageMaker will look for the best combination of them to get the training job with the highest AUC.
+Podemos usar el Ajuste Automático del Modelo (AMT) de SageMaker donde importa los hiperparámetros y luego proporciona el rango de esos hiperparámetros. En el siguiente ejemplo, supongamos que queremos maximizar el área bajo la curva (AUC), pero no sabemos qué valores de los hiperparámetros eta, alpha, min_child_weight y max_ depth usar para entrenar el mejor modelo. Para encontrar los mejores valores, podemos especificar un rango de valores y SageMaker buscará la mejor combinación de ellos para obtener el trabajo de entrenamiento con el AUC más alto.
 
 ```py
 from sagemaker.tuner import IntegerParameter, CategoricalParameter, ContinuousParameter, HyperparameterTuner
@@ -365,27 +366,27 @@ boto3.client('sagemaker').describe_hyper_parameter_tuning_job(
 ```
 
 ```py
-#return the best training job name
+#Devolver el mejor nombre de trabajo de entrenamiento
 tuner.best_training_job()
 ```
 
 ```py
-#Deploy the best trained or user specified model to an Amazon Sagemaker endpoint
+#Implementar el modelo mejor capacitado o especificado por el usuario en un punto de enlace de Amazon Sagemaker
 tuner_predictor = tuner.deploy(initial_instance_count=1,
                                 instance_type='ml.m4.xlarge')
 ```
 
 ```py
-#create a serializer
+#Crear un serializador
 tuner_predictor.serializer = sagemaker.serializers.CSVSerializer()
 ```
 
-**Optional Clean up**
+**Limpieza opcional**
 
-When you are done with your notebook, the following code will remove the hosted endpoint you created and avoid any charges.
+Cuando hayas terminado con tu Notebook, el siguiente código eliminará el punto final alojado que creaste y evitará cualquier cargo.
 
 ```py
-#store variables to be used in the next notebook
+#Almacenar variables que se utilizarán en el próximo Notebook
 %store model_data
 %store container
 %store test_data
@@ -393,6 +394,6 @@ When you are done with your notebook, the following code will remove the hosted 
 xgb_predictor.delete_endpoint(delete_endpoint_config=True)
 ```
 
-Amazon SageMaker is part of the free tier of Amazon Web Services so if you would like to dive deeper in this machine learning cloud tool, you can create an account in AWS and experiment with SageMaker. Please read the important information below.
+Amazon SageMaker es parte del nivel gratuito de Amazon Web Services, por lo que si deseas profundizar en esta herramienta de Machine Learning en la nube, puedes crear una cuenta en AWS y experimentar con SageMaker. Lee la información importante a continuación.
 
->Accounts covered under the AWS Free Tier aren't restricted in what they can launch. As you ramp up with AWS, you might start using more than what's covered under the AWS Free Tier. Because these additional resources might incur charges, a payment method is required on the account. The AWS Free Tier doesn't cover all AWS services.
+> Las cuentas cubiertas por la capa gratuita de AWS no están restringidas en cuanto a lo que pueden lanzar. A medida que avanzas con AWS, es posible que comiences a usar más de lo que cubre la capa gratuita de AWS. Debido a que estos recursos adicionales pueden incurrir en cargos, se requiere un método de pago en la cuenta. La capa gratuita de AWS no cubre todos los servicios de AWS.
