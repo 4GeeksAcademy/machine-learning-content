@@ -1,4 +1,4 @@
-# Despliegue de un modelo de Machine Learning usando Flask y Heroku
+# Implementación de un modelo de Machine Learning usando Flask y Heroku
 
 Los modelos de Machine Learning son herramientas poderosas para hacer predicciones basadas en los datos disponibles. Para que estos modelos sean útiles para la sociedad, deben implementarse para que otros puedan acceder fácilmente a ellos para hacer predicciones. Esto se puede hacer usando Flask y Heroku.
 
@@ -363,7 +363,7 @@ if __name__=="__main__":
 
 Vuelve a ejecutar la aplicación y debería predecir el resultado después de enviar el formulario. Hemos creado con éxito la aplicación Web. Ahora es el momento de usar Heroku para implementarlo.
 
-## Despliegue usando Heroku
+## Implementación usando Heroku
 
 Ya deberías tener una cuenta en Heroku, pero si no la tienes, continúa y crea tu cuenta en 'https://www.heroku.com'.
 
