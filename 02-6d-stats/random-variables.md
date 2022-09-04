@@ -136,7 +136,7 @@ Binomial distributions must meet three criteria:
 
 1. The number of trials is fixed.
 2. Each trial is independent.
-3. The probability of succeess is exactly the same for all trials.
+3. The probability of success is exactly the same for all trials.
 
 ![binomial_rv.jpg](../assets/binomial_rv.jpg)
 
