@@ -7,7 +7,7 @@ We want to let you know that the ‘K’ in K-Means Clustering has nothing to do
 **What is K-nearest neighbors (KNN)?**
 
 When you think about KNN think about your friends. You are the average of the people you spend most time with.
-When you think about your feature space, think of it as your neighborhood, where each data point has a neightbor.
+When you think about your feature space, think of it as your neighborhood, where each data point has a neighbor.
 
 KNN is a simple algorithm but it's very powerful.  It classifies the data point on how its neighbor is classified. It makes predictions by averaging the k neighbors nearest to a given data point. For example, if we wanted to predict how much money a potential customer would spend at our store, we could find the 5 customers most similar to her and average their spending to make the prediction.
 
