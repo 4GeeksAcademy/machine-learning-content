@@ -93,7 +93,7 @@ S3 storage format: https://[bucket name].s3.amazonaws.com/video.mp4
 
 Link of the Amazon Web Services: `aws.amazon.com/console`
 
-Where to learn AWS skills: `aws.amazon.com/es/training/awsacademy/`
+Where to learn AWS skills: `aws.amazon.com/training/awsacademy`
 
 ### Google Cloud Platform (GCP)
 
