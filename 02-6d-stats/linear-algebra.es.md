@@ -92,7 +92,7 @@ La transposición de matriz proporciona una forma de "rotar" una de las matrices
 Hay dos pasos para transponer una matriz:
 
 1. Rotar la matriz 90° a la derecha
-2. Invier el orden de los elementos en cada fila (por ejemplo, $[a b c]$ se convierte en $[c b a]$)
+2. Invierte el orden de los elementos en cada fila (por ejemplo, $[a b c]$ se convierte en $[c b a]$)
 
 Numpy usa la función np.dot $(A,B)$ para la multiplicación de vectores y matrices.
 
