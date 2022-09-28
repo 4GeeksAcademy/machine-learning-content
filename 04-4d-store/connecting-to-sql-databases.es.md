@@ -18,7 +18,7 @@ from dbmodule import connect
 
 #Crea un objeto de conexión
 
-CONNECTION = CONNECT('databse name', 'username','password')
+CONNECTION = CONNECT('database name', 'username','password')
 
 #Crea un objeto de cursor
 
@@ -97,7 +97,7 @@ from sqlalchemy import create_engine
 import pandas as pd
  
 #Crea motor: motor
-engine = create_engine('sqlite:///databse_name.sqlite')
+engine = create_engine('sqlite:///database_name.sqlite')
  
 #Guarda los nombres de las tablas en una lista: table_names
 table_names = engine.table_names()
