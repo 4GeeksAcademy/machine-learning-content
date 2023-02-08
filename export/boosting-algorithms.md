@@ -30,11 +30,11 @@ Gradient boosting involves using multiple weak predictors (decision trees) to cr
 
 The main hyperparameters that can be tuned with GBM models are:
 
-- Loss function - loss function to calculate gradient of error
+- Loss function: loss function to calculate gradient of error
 
-- Learning rate - the rate at which new trees correct/modify the existing predictor
+- Learning rate: the rate at which new trees correct/modify the existing predictor
 
-- Num estimators - the total number of trees to produce for the final predictor
+- Num estimators: the total number of trees to produce for the final predictor
 
 Additional hyperparameters specific to the loss function 
 
