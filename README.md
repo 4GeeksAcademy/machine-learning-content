@@ -1,5 +1,10 @@
 # Machine Learning Bootcamp
 
+1. Use the `export` folder for publishing pursposes, all lessons are compiled into that folder.
+2. Compile original lessons by running `bash export.sh`
+
+> 🔥 Remember to run the `$ bash export` command.
+
 ## Python (3 days)
 
 1. Python for Datascience
