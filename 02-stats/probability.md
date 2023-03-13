@@ -4,9 +4,10 @@
 
 **Sets**
 
-A Set is a collection of different elements. We have some elements and we put them together.
-This collection is called a Set.
+A Set is a collection of different elements. We have some elements and we put them together; this collection is called a Set.
+
 There are two types of sets:
+
 1. Finite sets: It has a finite number of elements. For example, a set that includes numbers between 10 and 20.
 2. Infinite set: For example, a set of all real numbers.
 
