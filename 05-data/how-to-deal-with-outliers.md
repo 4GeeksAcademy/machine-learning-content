@@ -4,23 +4,21 @@ As we saw in the exploratory data analysis, in statistics, an outlier is a data 
 
 Outliers are problematic for many statistical analyses because they can mislead the training process and give poor results. Unfortunately, there are no strict statistical rules for definitively identifying outliers. Finding outliers depends on subject-area knowledge and an understanding of the data collection process. There are many reasons why we can find outliers in our data.
 
+## How to identify potential outliers
 
-
-**How to identify potential outliers:**
-
--Graphing your data to identify outliers.
+- Graphing your data to identify outliers.
 
 Boxplots, histograms and scatterplots can highlight outliers
 Boxplots use the interquartile method with fences to find outliers. We can also use it to find outliers in different groups of a column.
 Histograms look for isolated bars
 Scatterplots to detect outliers in a multivariate setting. A scatterplot with regression line shows how most of the points follow the fitted line for the model, except for some outliers.
 
--Using Z-scores to detect outliers
+- Using Z-scores to detect outliers
 
 Z-scores can quantify outliers when our data has a normal distribution. Z-scores are the number of standard deviations above and below the mean that each value falls. For example, a Z-score of 2 indicates that an observation is two standard deviations above the average while a Z-score of -2 signifies it is two standard deviations below the mean. A Z-score of zero represents a value that equals the mean.
 Z-scores can be misleading with small datasets. Sample sizes of 10 or fewer observations cannot have Z-scores that exceed a cutoff value of +/-3.
 
--Using the IQR to create boundaries
+- Using the IQR to create boundaries
 
 The IQR is the middle 50% of the dataset. It’s the range of values between the third quartile and the first quartile (Q3 – Q1). 
 
@@ -28,7 +26,7 @@ There are many ways to identify outliers. We must use our in-depth knowledge abo
 
 Not all outliers are bad and some should not be deleted. In fact, outliers can be very informative about the subject-area and data collection process. It’s important to understand how outliers occur and whether they might happen again as a normal part of the process or study area.
 
-**How to handle outliers:**
+## How to handle outliers
 
 Should we remove outliers?
 
@@ -36,22 +34,21 @@ It depends on what causes the outliers.
 
 Causes for outliers:
 
--Data entry and measurement errors.
+- Data entry and measurement errors.
 
 Let's imagine we have an array of ages: {30,56,21,50,35,83,62,22,45,233}. 233 is clearly an outlier because it is an impossible age as nobody lives 233 years. Examining the numbers more closely, we may conclude that the person in charge of data entry may have accidentally entered a double 3 so the real number would have been 23. If you determine that an outlier value is an error, correct the value when possible. That can involve fixing the typo or possibly remeasuring the item or person. If that’s not possible, you must delete the data point because you know it’s an incorrect value.
 
--Sampling problems
+- Sampling problems
 
 Inferential statistics use samples to draw conclusions about a specific population. Studies should carefully define a population, and then draw a random sample from it specifically. That’s the process by which a study can learn about a population.
 
 Unfortunately, your study might accidentally obtain an item or person that is not from the target population. If you can establish that an item or person does not represent your target population, you can remove that data point. However, you must be able to attribute a specific cause or reason for why that sample item does not fit your target population.
 
--Natural variation
+- Natural variation
 
 The process or population you’re studying might produce weird values naturally. There’s nothing wrong with these data points. They’re unusual, but they are a normal part of the data distribution. If our sample size is large enough, we can find unusual values. In a normal distribution, approximately 1 in 340 observations will be at least three standard deviations away from the mean. If the extreme value is a legitimate observation that is a natural part of the population we’re studying, you should leave it in the dataset.
 
-
-How to handle them?
+### How to handle them?
 
 Sometimes it’s best to keep outliers in your data. They can capture valuable information that is part of your study area. Retaining these points can be hard, particularly when it reduces statistical significance! However, excluding extreme values solely due to their extremeness can distort the results by removing information about the variability inherent in the study area. You’re forcing the subject area to appear less variable than it is in reality.
 
@@ -69,10 +66,6 @@ What to do when we want to include outliers but we dont want them to mislead our
 We can use bootstrapping techniques, models that are robust and not sensitive to outliers.
 
 In the case of the Titanic dataset, we are only going to treat the Fare column which had outliers. 
-
-
-
-
 
 Source:
 

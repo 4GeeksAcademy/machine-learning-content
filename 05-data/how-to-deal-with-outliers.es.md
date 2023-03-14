@@ -4,7 +4,7 @@ Como vimos en el análisis exploratorio de datos, en estadística, un valor atí
 
 Los valores atípicos son problemáticos para muchos análisis estadísticos porque pueden confundir el proceso de entrenamiento y dar malos resultados. Desafortunadamente, no existen reglas estadísticas estrictas para identificar definitivamente los valores atípicos. Encontrar valores atípicos depende del conocimiento del área temática y la comprensión del proceso de recopilación de datos. Hay muchas razones por las que podemos encontrar valores atípicos en nuestros datos.
 
-**Cómo identificar posibles valores atípicos:**
+## Cómo identificar posibles valores atípicos
 
 - Graficando sus datos para identificar valores atípicos
 
@@ -22,7 +22,7 @@ Hay muchas maneras de identificar valores atípicos. Debemos utilizar nuestro pr
 
 No todos los valores atípicos son malos y algunos no deben eliminarse. De hecho, los valores atípicos pueden ser muy informativos sobre el área temática y el proceso de recopilación de datos. Es importante comprender cómo se producen los valores atípicos y si podrían volver a ocurrir como parte normal del proceso o área de estudio.
 
-**Cómo manejar los valores atípicos:**
+## Cómo manejar los valores atípicos 
 
 ¿Deberíamos eliminar los valores atípicos?
 
@@ -44,7 +44,7 @@ Desafortunadamente, tu estudio podría obtener accidentalmente un artículo o un
 
 El proceso o la población que está estudiando puede producir valores extraños de forma natural. No hay nada malo con estos puntos de datos. Son inusuales, pero son una parte normal de la distribución de datos. Si nuestro tamaño de muestra es lo suficientemente grande, podemos encontrar valores inusuales. En una distribución normal, aproximadamente 1 de cada 340 observaciones estará al menos a tres desviaciones estándar de la media. Si el valor extremo es una observación legítima que es una parte natural de la población que estamos estudiando, debe dejarlo en el conjunto de datos.
 
-¿Cómo manejarlos?
+### ¿Cómo manejarlos?
 
 A veces es mejor mantener valores atípicos en sus datos. Pueden capturar información valiosa que es parte de su área de estudio. Retener estos puntos puede ser difícil, ¡particularmente cuando reduce la significancia estadística! Sin embargo, la exclusión de valores extremos únicamente debido a su carácter extremo puede distorsionar los resultados al eliminar información sobre la variabilidad inherente al área de estudio. Estás obligando al área temática a parecer menos variable de lo que es en realidad.
 
