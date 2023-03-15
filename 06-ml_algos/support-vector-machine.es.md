@@ -1,6 +1,6 @@
 # Máquinas de Vectores de Soporte
 
-Máquinas de Vectores de Soporte (Support Vector Machine - SVM) es un algoritmo de aprendizaje supervisado, por lo que necesitamos tener un conjunto de datos etiquetado para poder usar SVM. Puede ser utilizado para problemas de regresión y clasificación y puede ser de tipo lineal y no lineal. El objetivo principal de SVM es encontrar un hiperplano en un espacio dimensional N (número total de características) que diferencie los puntos de datos. Entonces, necesitamos encontrar un plano que cree el margen máximo entre dos clases de puntos de datos, lo que significa encontrar la línea para la cual la distancia de los puntos más cercanos sea la más lejana posible.
+Máquinas de Vectores de Soporte (Support Vector Machine - SVM) es un algoritmo de aprendizaje supervisado, por lo que necesitamos tener un conjunto de datos etiquetado para poder usar SVM. Puede ser utilizado para problemas de regresión y clasificación y puede ser de tipo lineal y no lineal. El objetivo principal de SVM es encontrar un hiperplano en un espacio dimensional N (número total de características), que diferencie los puntos de datos. Entonces, necesitamos encontrar un plano que cree el margen máximo entre dos clases de puntos de datos, lo que significa encontrar la línea para la cual la distancia de los puntos más cercanos sea la más lejana posible.
 
 Veamos algunos gráficos donde el algoritmo está tratando de encontrar la distancia máxima entre los puntos más cercanos:
 

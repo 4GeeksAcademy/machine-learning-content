@@ -147,7 +147,7 @@ recall = metrics.recall_score(y_test, y_pred)
 print("Recall score:",recall)
 ```
 
-## Paso 7 - Matriz de confusión
+## Hipertuning Naive Bayes
 
 El modelo Naive Bayes tiene un par de hiperparámetros útiles para ajustar en Scikit-Learn. Además de los hiperparámetros, probablemente el factor más importante en una implementación de Naive Bayes es la independencia de los predictores (características).
 

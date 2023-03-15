@@ -36,7 +36,7 @@ $L = ∑( Ŷi- Yi)^2 + λ∑ β2$
 
 ## ¿Qué hiperparámetros se pueden ajustar en modelos lineales regularizados?
 
-Puede ajustar el peso del término de regularización para los modelos regularizados (generalmente indicado como alfa), que afecta la cantidad de características que los modelos comprimirán.
+Puedes ajustar el peso del término de regularización para los modelos regularizados (generalmente indicado como alfa), que afecta la cantidad de características que los modelos comprimirán.
 
 - alpha = 0 ---> El modelo regularizado es idéntico al modelo original.
 
