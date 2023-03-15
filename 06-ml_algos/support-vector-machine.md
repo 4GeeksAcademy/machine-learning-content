@@ -1,6 +1,6 @@
 # Support Vector Machine
 
-Support Vector Machine (SVM) is a supervised learning algorithm so we need to have a labeled dataset to be able to use SVM. It can be used for regression and classification problems and it can be of linear and non linear type. The main objective of SVM is to find a hyperplane in an N( total number of features)-dimensional space that differentiates the data points. So we need to find a plane that creates the maximum margin between two data point classes, which means finding the line for which the distance of the closest points is the farthest possible.
+Support Vector Machine (SVM) is a supervised learning algorithm so we need to have a labeled dataset to be able to use SVM. It can be used for regression and classification problems and it can be of linear and non linear type. The main objective of SVM is to find a hyperplane in an N( total number of features),dimensional space that differentiates the data points. So we need to find a plane that creates the maximum margin between two data point classes, which means finding the line for which the distance of the closest points is the farthest possible.
 
 Let's see some graphs where the algorithm is trying to find the maximum distance between the closest points:
 
@@ -20,13 +20,13 @@ The margin needs to be equal on both sides.
 
 To sum up some possible uses of SVM models, they can be used for:
 
--Linear classification
+- Linear classification
 
--Non linear classification
+- Non linear classification
 
--Linear Regression
+- Linear Regression
 
--Non linear Regression
+- Non linear Regression
 
 ## Effect of small margins
 
@@ -36,7 +36,7 @@ Because your margins are so small, you may increase the chance of misclassify ne
 
 How do we deal with that?
 
--Increase margins by including some misclassified data points between your margins. Increase bias and reduce variance can be done by controlling one of the SVM hyperparameters, the 'C' parameter.
+- Increase margins by including some misclassified data points between your margins. Increase bias and reduce variance can be done by controlling one of the SVM hyperparameters, the 'C' parameter.
 
 A low C value increases bias and decreases variance. If values are too extreme you may underfit.
 

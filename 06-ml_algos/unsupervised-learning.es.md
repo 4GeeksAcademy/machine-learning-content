@@ -131,7 +131,7 @@ La reducción de la dimensionalidad puede:
 
 3. Técnicas de incrustación - por ejemplo, encontrar vecinos locales como se hace en la incrustación lineal local puede usarse para reducir la dimensionalidad.
 
-4. Técnicas de clustering  o centroide _ cada valor se puede describir como un miembro de un cluster, una combinación lineal de clusters o una combinación lineal de centroides de cluster.
+4. Técnicas de clustering  o centroide - cada valor se puede describir como un miembro de un cluster, una combinación lineal de clusters o una combinación lineal de centroides de cluster.
 
 Con mucho, el más popular es PCA y variaciones similares basadas en la descomposición propia.
 

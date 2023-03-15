@@ -21,9 +21,9 @@ KNN is non-parametric, meaning we don´t make any assumptions about the underlyi
 
 KNN makes predictions by:
 
--Averaging, for regression tasks.
+- Averaging, for regression tasks.
 
--Majority voting for classification tasks.
+- Majority voting for classification tasks.
 
 **Steps:**
 
@@ -67,7 +67,7 @@ b. Odd value of K is always selected to avoid confusion between 2 classes.
 
 There is no closed-form solution for calculating k, so various heuristics are often used. It may be easiest to simply do cross validation and test several different values for k and choose the one that produces the smallest error during cross validation.
 
->As k increases, bias tends to increase and variance decreases.
+> As k increases, bias tends to increase and variance decreases.
 
 ![error_vs_kvalue](../assets/error_vs_kvalue.jpg)
 

@@ -10,13 +10,13 @@ Clustering is used to group samples such that objects within the same cluster ar
 
 **What are the goals for clustering?**
 
--We want observations in different clusters to be dissimilar to each other
+- We want observations in different clusters to be dissimilar to each other
 
--Homogeneity: We want observations in the same cluster to be similar to each other.
+- Homogeneity: We want observations in the same cluster to be similar to each other.
 
--Find natural groupings.
+- Find natural groupings.
 
--We want to minimize the variance inside a cluster.
+We want to minimize the variance inside a cluster.
 
 **What are the inputs and outputs?**
 
@@ -26,9 +26,9 @@ The outputs will be a set of labels, one for each observation, and also a set of
 
 **To achieve good clustering, you need to:**
 
--Choose the right distance metric.
+- Choose the right distance metric.
 
--Have good intuition behind your data.
+- Have good intuition behind your data.
 
 ### K-MEANS
 
@@ -70,11 +70,11 @@ Simple, it is the center point of a cluster. For example, if we want to find 3 c
 
 **Common distance metrics:**
 
--Euclidean distance: The distance can be defined as a straight line between two points (most common distance metric).
+- Euclidean distance: The distance can be defined as a straight line between two points (most common distance metric).
 
--Manhattan distance: The distance between two points is the sum of the (absolute) differences of their coordinates.
+- Manhattan distance: The distance between two points is the sum of the (absolute) differences of their coordinates.
 
--Cosine distance
+- Cosine distance
 
 **Example Code:**
 

@@ -40,9 +40,9 @@ $L = ∑( Ŷi- Yi)^2 + λ∑ β2$
 
 You can tune the weight of the regularization term for regularized models (typically denoted as alpha), which affect how much the models will compress features.
 
--alpha = 0 ---> regularized model is identical to original model.
+- alpha = 0 ---> regularized model is identical to original model.
 
--alpha = 1 ---> regularized model reduced the original model to a constant value.
+- alpha = 1 ---> regularized model reduced the original model to a constant value.
 
 **Regularized models performance**
 

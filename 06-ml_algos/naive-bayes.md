@@ -28,25 +28,25 @@ This algorithm NECESSARILY needs you to understand the importance of using distr
 
 **Advantages:**
 
-Naive Bayes is a really unique machine learning algorithm because it doesn’t learn through gradient descent mechanism. Instead Naive Bayes calculates its own parameters in a very fast calculation.
+- Naive Bayes is a really unique machine learning algorithm because it doesn’t learn through gradient descent mechanism. Instead Naive Bayes calculates its own parameters in a very fast calculation.
 
-This causes Naive Bayes to be an astonishingly fast machine learning algorithm compared to most of its ML algorithm competition which learn through iterative gradient descent process or distance calculations.
+- This causes Naive Bayes to be an astonishingly fast machine learning algorithm compared to most of its ML algorithm competition which learn through iterative gradient descent process or distance calculations.
 
--Naive Bayes is commonly used and preferred in suitable classification tasks. It can be used for binary and multiclass classification.
+- Naive Bayes is commonly used and preferred in suitable classification tasks. It can be used for binary and multiclass classification.
 
--Naïve Bayes have very fast training and prediction phases. Because of its high performance Naive Bayes can be preferred in real time machine learning deployment or as a complimentary model to improve less speedy models in a hybrid solution.
+- Naïve Bayes have very fast training and prediction phases. Because of its high performance Naive Bayes can be preferred in real time machine learning deployment or as a complimentary model to improve less speedy models in a hybrid solution.
 
--It is a great choice for text classification problems. It is a popular choice for spam email classification.
+- It is a great choice for text classification problems. It is a popular choice for spam email classification.
 
--It can be easily trained on small dataset. Some machine learning models will require lots of data for training and perform poorly if it’s not provided. Naive Bayes usually performs very well with moderate sizes of training datasets.
+- It can be easily trained on small dataset. Some machine learning models will require lots of data for training and perform poorly if it’s not provided. Naive Bayes usually performs very well with moderate sizes of training datasets.
 
--It will produce probability reports which can be very useful if you need them. They don’t just tell target label of a sample but they also tell the probability of the prediction, which gives you increased control on the classification process by allowing or disallowing predictions below a certain probability percentage.
+- It will produce probability reports which can be very useful if you need them. They don’t just tell target label of a sample but they also tell the probability of the prediction, which gives you increased control on the classification process by allowing or disallowing predictions below a certain probability percentage.
 
 **Disadvantages:**
 
--Naïve Bayes algorithm involves the use of the Bayes theorem. So, it does not work well when we have particular missing values or missing combination of values.
+- Naïve Bayes algorithm involves the use of the Bayes theorem. So, it does not work well when we have particular missing values or missing combination of values.
 
--Naïve Bayes algorithm works well when we have simple categories. But, it does not work well when the relationship between words is important.
+- Naïve Bayes algorithm works well when we have simple categories. But, it does not work well when the relationship between words is important.
 
 ### Types of Naive Bayes algorithm
 
@@ -66,13 +66,13 @@ This offers great versatility and enables many advantages for text related class
 
 Naive Bayes is one of the most straightforward and fast classification algorithms. It is very well suited for large volumes of data. It is successfully used in various applications such as :
 
--Spam filtering
+- Spam filtering
 
--Text classification
+- Text classification
 
--Sentiment analysis
+- Sentiment analysis
 
--Recommender systems
+- Recommender systems
 
 It uses the Bayes theorem of probability for the prediction of unknown classes. Its assumption of feature independence, and its effectiveness in solving multi-class problems, makes it perfect for performing Sentiment Analysis. Sentiment Analysis refers to the identification of positive or negative sentiments of a target group (customers, audience, etc.)
 
@@ -90,11 +90,11 @@ For convenience, we will call refund, marital status, and taxable income x₁, x
 
 Let's look at how Naive Bayes theorem calculates probability for categorical features. In the first image we have the calculation for 'Refund' column, and the second image shows the calculation for 'Marital status' column.
 
--Calculating conditional probabilities of Refund given Evade:
+- Calculating conditional probabilities of Refund given Evade:
 
 ![naivebayes_image2](../assets/naivebayes_image2.jpg)
 
--Calculating conditional probabilities of Marital status given Evade:
+- Calculating conditional probabilities of Marital status given Evade:
 
 ![naivebayes_image3](../assets/naivebayes_image3.jpg)
 
@@ -156,7 +156,7 @@ This machine learning model is called Naive because it assumes independence betw
 
 Here are some two useful parameters that can be optimized and tuned in Naive Bayes:
 
-- **priors:**
+- **Priors:**
 
 Priors are probabilities of a feature or target before new data is introduced to the model. Priors parameter gives an option to specify priors instead of model deriving them from the frequencies in data. Sum of priors should always add up to 1. This is true when model is calculating the priors as well as when user is passing priors as an array to the model. If priors don’t add up to 1 following error will likely occur.
 
@@ -196,7 +196,7 @@ It could be tweaked to assign it a probability of 1 which makes no sense (100% c
 
 - Naïve Bayes classifiers have limited options for parameter tuning like alpha=1 for smoothing, fit_prior=[True / False] to learn class prior probabilities or not and some other options (look at detail here: https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html#sklearn.naive_bayes.GaussianNB). It's recommended to focus on your pre-processing of data and the feature selection.
 
--You might think to apply some classifier combination technique like ensemble, bagging and boosting but these methods would not help. Actually, “ensemble, boosting, bagging” won’t help since their purpose is to reduce variance. Naïve Bayes has no variance to minimize.
+- You might think to apply some classifier combination technique like ensemble, bagging and boosting but these methods would not help. Actually, “ensemble, boosting, bagging” won’t help since their purpose is to reduce variance. Naïve Bayes has no variance to minimize.
 
 
 Source:
