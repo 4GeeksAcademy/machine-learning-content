@@ -1,4 +1,4 @@
-# Algoritmos Boosting
+# Boosting de Algoritmos
 
 Ya mencionamos el significado del aprendizaje conjunto, que en general es un modelo que hace predicciones basadas en varios modelos diferentes. En la última lección hablamos sobre el embolsado, una técnica que entrena un grupo de modelos individuales de manera paralela con subconjuntos aleatorios de datos. En esta lección aprenderemos la técnica de Boosting.
 
