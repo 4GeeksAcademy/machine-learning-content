@@ -1,4 +1,4 @@
-### Árboles de decisión
+# Árboles de decisión
 
 Los árboles de decisión pertenecen a una clase de algoritmos de machine learning supervisado, que se utilizan tanto en el modelado predictivo de clasificación (predice resultados discretos) como en la regresión (predice resultados numéricos continuos). Se construyen a partir de solo dos elementos: nodos y ramas.
 
