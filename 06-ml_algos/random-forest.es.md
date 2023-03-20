@@ -1,4 +1,4 @@
-# Random Forest
+# Bosque Aleatorio
 
 Ensembling es otro tipo de aprendizaje supervisado. Combina las predicciones de múltiples modelos de Machine Learning que son individualmente débiles para producir una predicción más precisa en una nueva muestra. Al combinar modelos individuales, el modelo de conjunto tiende a ser más flexible🤸‍♀️ (menos bias) y menos sensible a los datos🧘‍♀️ (menos variación).
 
