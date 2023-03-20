@@ -99,6 +99,8 @@ El resultado anterior tiene varias informaciones, tales como:
 
 Ahora abre un navegador y escribe la URL http://127.0.0.1:5000; recibirás la cadena Hello, World! en respuesta. Esto confirma que tu aplicación se está ejecutando correctamente.
 
+Ahora tienes una pequeña aplicación web Flask. Ha ejecutado su aplicación y ha mostrado información en el navegador web. A continuación, utilizará los archivos HTML en su aplicación.
+
 ### **Paso 3:** Usar plantillas HTML
 
 Actualmente, su aplicación solo muestra un mensaje simple sin HTML. Las aplicaciones web utilizan principalmente HTML para mostrar información al visitante, por lo que ahora trabajará para incorporar un archivo HTML en tu aplicación, que se puede mostrar en el navegador web.
