@@ -20,7 +20,7 @@ Ejemplos de hiperparámetros de modelo en diferentes modelos:
 
 Un parámetro del modelo es una variable del modelo seleccionado que se puede estimar ajustando los datos proporcionados al modelo. Por ejemplo, en la regresión lineal, la pendiente y la intersección de la línea son dos parámetros estimados ajustando una línea recta a los datos minimizando el RMSE.
 
-![parameter_vs_hyperparameter](../assets/parameter_vs_hyperparameter.jpg)
+![parameter_vs_hyperparameter]([https://github.com/4GeeksAcademy/machine-learning-content/raw/master/assets/parameter_vs_hyperparameter.jpg?](https://raw.githubusercontent.com/4GeeksAcademy/machine-learning-content/master/assets/parameter_vs_hyperparameter.jpg))
 
 Y, como ya mencionamos, se establece un valor de hiperparámetro del modelo antes de que el modelo comience a entrenarse y no se puede aprender ajustando el modelo a los datos.
 
