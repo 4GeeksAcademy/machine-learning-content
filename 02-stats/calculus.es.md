@@ -19,24 +19,25 @@ Por ejemplo, si quisieramos saber cuan lejos ha caminado una persona basada en s
 
 Muchos de estos tipos de problemas terminan siendo equivalentes a encontrar el área debajo de un gráfico. El propósito de las pequeñas aproximaciones es que nos permite replantear el problema de qué tan lejos ha caminado la persona en la pregunta de encontrar el área bajo cierta curva.
 
-![calculus_graph_slopes.jpg](../assets/calculus_graph1.jpg)
+![calculus_graph_slopes.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/calculus_graph1.jpg?raw=true)
+
 
 Entonces, ya habiendo resuelto el problema reformulándolo como un área debajo de un gráfico, puedes empezar a pensar sobre como conseguir el área debajo de otros gráficos. Ahora veamos un gráfico diferente.
 
-![calculus_graph2.jpg](../assets/calculus_graph2.jpg)
+![calculus_graph2.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/calculus_graph2.jpg?raw=true)
 
 la integral de $f(x)$ corresponde al cálculo del área bajo la gráfica de $f(x)$. El área bajo $f(x)$ entre los puntos $x = a$ y $x = b$ se denota de la siguiente manera:
 
-![formula_1.png](../assets/formula_1.png)
+![formula_1.png](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/formula_1.png?raw=true)
 
 
 El área $A(a,b)$ está delimitada por la función $f(x)$ desde arriba, por el eje x desde abajo y por dos líneas verticales en $x = a$ y $x = b$. Esos dos puntos $x = a$ y $x = b$ se denotan los límites de integración. El signo $∫$ proviene de la palabra en latín "summa". La integral es la suma de los valores de $f(x)$ entre los dos límites de la integración.
 
 El área debajo de $f(x)$ entre $x = a$ y $x = b$ se obtiene calculando el cambio en la función integral de la siguiente manera:
 
-![formula_2.png](../assets/formula_2.png)
+![formula_2.png](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/formula_2.png?raw=true)
 
-![calculus_graph5.jpg](../assets/calculus_graph5.jpg)
+![calculus_graph5.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/calculus_graph5.jpg?raw=true)
 
 Podemos aproximar el área total debajo de la función $f(x)$ entre $x = a$ y $x = b$ separando el gráfico en pequeñas tiras rectangulares verticales de width $h$, luego sumando las áreas de esas tiras rectangulares. La figura debajo enseña cómo calcular el área bajo $f(x) = x2$ entre $x = 3$ y $x = 6$ aproximándola como seis franjas rectangulares de width $h = 0,5$.
 
@@ -58,9 +59,9 @@ La pendiente representa la inclinación de una recta. Significa: ¿Cuánto cambi
 
 
 
-![calculus_graph_slopes.jpg](../assets/calculus_graph_slopes.jpg)
+![calculus_graph_slopes.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/calculus_graph_slopes.jpg?raw=true)
 
-![calculus_slope2_graph.jpg](../assets/calculus_slope2_graph.jpg)
+![calculus_slope2_graph.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/calculus_slope2_graph.jpg?raw=true)
 
 La pendiente entre $(1,4)$ y $(3,12)$ sería:
 

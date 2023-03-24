@@ -20,23 +20,22 @@ For example, if we wanted to know how far a person walked based on its velocity 
 
 Many of these types of problems turn out to be equivalent to finding the area under some graph. The purpose of small approximations is that it lets us reframe the problem of how far the person has walked into the question of finding the area under a certain curve.
 
-
-![calculus_graph_slopes.jpg](../assets/calculus_graph1.jpg)
+![calculus_graph_slopes.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/calculus_graph1.jpg?raw=true)
 
 So having just solved a problem by reframing it as an area under a graph, you might start thinking about how to find the area under other graphs. Now let's see a different graph.
 
-![calculus_graph2.jpg](../assets/calculus_graph2.jpg)
+![calculus_graph2.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/calculus_graph2.jpg?raw=true)
 
 The integral of $f(x)$ corresponds to the computation of the area under the graph of $f(x)$. The area under $f(x)$ between the points $x = a$ and $x = b$ is denoted as follows:
 
-![formula_1.png](../assets/formula_1.png)
+![formula_1.png](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/formula_1.png?raw=true)
 
 The area $A(a,b)$ is bounded by the function $f(x)$ from above, by the x-axis from below, and by two vertical lines at $x = a$ and $x = b$. Those two points $x = a$ and $x = b$ are denoted the limits of integration. The $∫$ sign comes from the Latin word summa. The integral is the sum of the values of $f(x)$ between the two limits of integration.
 The area under $f(x)$ between $x = a$ and $x = b$ is obtained by calculating the change in the integral function as follows:
 
-![formula_2.png](../assets/formula_2.png)
+![formula_2.png](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/formula_2.png?raw=true)
 
-![calculus_graph5.jpg](../assets/calculus_graph5.jpg)
+![calculus_graph5.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/calculus_graph5.jpg?raw=true)
 
 We can approximate the total area under the function $f(x)$ between $x = a$ and $x = b$ by splitting the graph into small vertical rectangular strips of width $h$, then adding up the areas of those rectangular strips. The figure below shows how to compute the area under $f(x) = x2$ between $x = 3$ and $x = 6$ by approximating it as six rectangular strips of width $h = 0.5$.
 
@@ -56,9 +55,9 @@ We will use the geometry definition for simplicity in explanation.
 The slope represents the steepness of a line. It means: How much does $y$ (or $f(x)$) change given a specific change in $x$?
 
 
-![calculus_graph_slopes.jpg](../assets/calculus_graph_slopes.jpg)
+![calculus_graph_slopes.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/calculus_graph_slopes.jpg?raw=true)
 
-![calculus_slope2_graph.jpg](../assets/calculus_slope2_graph.jpg)
+![calculus_slope2_graph.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/calculus_slope2_graph.jpg?raw=true)
 
 The slope between $(1,4)$ and $(3,12)$ would be:
 
