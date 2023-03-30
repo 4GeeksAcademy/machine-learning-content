@@ -108,7 +108,7 @@ Train test split es un procedimiento de validación de modelo que le permite sim
 
 4. Prueba el modelo en el conjunto de prueba ("X_test" y "y_test" en la imagen) y evalúa el rendimiento.
 
-![train_test_split](../assets/train_test_split.jpg)
+![train_test_split](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/train_test_split.jpg?raw=true)
 
 Código de ejemplo:
 
@@ -149,7 +149,7 @@ Se entrenan y evalúan varios modelos, y cada pieza de datos se obtiene de un mo
 
 Es una forma más confiable de validar modelos, pero es más costosa desde el punto de vista computacional. Por ejemplo, la validación cruzada de 5 veces requiere entrenar y validar 5 modelos en lugar de 1.
 
-![cross_validation](../assets/cross_validation.jpg)
+![cross_validation](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/cross_validation.jpg?raw=true)
 
 Algunas técnicas de validación cruzada:
 
