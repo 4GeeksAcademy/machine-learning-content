@@ -15,7 +15,8 @@ import streamlit as st
 st.write('Hello, world!')
 ```
 
-![streamlit1](../assets/streamlit1.jpg)
+![streamlit1](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit1.jpg?raw=true)
+
 
 2. **Treat widgets as variables.** There are no callbacks in Streamlit! Every interaction simply reruns the script from top to bottom. This approach leads to really clean code:
 
@@ -25,7 +26,7 @@ x = st.slider('x')
 st.write(x, 'squared is', x * x)
 ```
 
-![streamlit2](../assets/streamlit2.jpg)
+![streamlit2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit2.jpg?raw=true)
 
 3. **Reuse data and computation.** What if you download lots of data or perform complex computation? The key is to safely reuse information across runs. Streamlit introduces a cache primitive that behaves like a persistent, immutable-by-default, data store that lets Streamlit apps safely and effortlessly reuse information. Look at the following example:
 
@@ -42,7 +43,7 @@ desired_label = st.selectbox('Filter to:', ['car', 'truck'])
 st.write(data[data.label == desired_label])
 ```
 
-![streamlit3](../assets/streamlit3.jpg)
+![streamlit3](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit3.jpg?raw=true)
 
 Now, let's go ahead and install Streamlit using pip: 
 
@@ -68,7 +69,7 @@ The simplicity of these ideas does not prevent you from creating incredibly rich
 
 - Streamlit is built for GPUs. Streamlit allows direct access to machine-level primitives like TensorFlow and PyTorch and complements these libraries.
 
-![streamlit4](../assets/streamlit4.jpg)
+![streamlit4](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit4.jpg?raw=true)
 
 ## Streamlit basic features
 
@@ -84,7 +85,7 @@ There are many widgets available, including the following:
 age = streamlit.selectbox("Choose your age:", np.arange(18, 66, 1))
 ```
 
-![streamlit_selectbox](../assets/streamlit_selectbox.jpg)
+![streamlit_selectbox](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_selectbox.jpg?raw=true)
 
 Another option:
 
@@ -101,7 +102,7 @@ age = streamlit.slider("Choose your age: ", min_value=16,
                        max_value=66, value=35, step=1)
 ```
 
-![streamlit_slider](../assets/streamlit_slider.jpg)
+![streamlit_slider](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_slider.jpg?raw=true)
 
 - Multiselect
 
@@ -111,7 +112,7 @@ artists = st.multiselect("Who are your favorite artists?",
                          "Eminem", "Billy Joel", "Madonna"])
 ```
 
-![streamlit_multiselect](../assets/streamlit_multiselect.jpg)
+![streamlit_multiselect](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_multiselect.jpg?raw=true)
 
 - Checkbox
 
@@ -154,7 +155,7 @@ c = alt.Chart(df).mark_circle().encode(x='a', y='b', size='c',
 st.altair_chart(c, width=-1)
 ```
 
-![streamlit_visualization](../assets/streamlit_visualization.jpg)
+![streamlit_visualization](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_visualization.jpg?raw=true)
 
 A different example:
 
@@ -181,7 +182,7 @@ if st.sidebar.checkbox("Show Analysis by State", True, key=2):
         st.plotly_chart(state_total_graph)
 ```
 
-![streamlit_visualization2](../assets/streamlit_visualization2.jpg)
+![streamlit_visualization2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_visualization2.jpg?raw=true)
 
 To plot the graph we used plotly.express library’s bar method. The first parameter is the dataframe we want to plot, the second parameter is the column for the x-axis, the third parameter is the column for the y-axis, labels parameter is optional in case you want to change the name of a column for the graph and the color parameter here is to color code the graph on the basis of the Status column from the data frame.
 
@@ -200,7 +201,7 @@ st.markdown("* This gives a general overview of the data including"
             "between games.")
 ```
 
-![streamlit_markdown](../assets/streamlit_markdown.jpg)
+![streamlit_markdown](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_markdown.jpg?raw=true)
 
 **Write**
 
