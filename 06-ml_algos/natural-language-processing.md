@@ -153,7 +153,7 @@ df = pd.read_csv('emails.csv')
 df.head()
 ```
 
-![wordcloud](../assets/wordcloud.jpg)
+![wordcloud](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/wordcloud.jpg?raw=true)
 
 
 ```py
@@ -192,7 +192,7 @@ df['text'] = clean_desc
 df.head(3)
 ```
 
-![wordcloud2](../assets/wordcloud2.jpg)
+![wordcloud2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/wordcloud2.jpg?raw=true)
 
 Removing **stop words** from the email text allows the more relevant frequent words to stand out. Removing stop words is a common technique! Some Python libraries like NLTK come pre-loaded with a list of stop words, but it is easy to create one from scratch. The following code includes a few email related words like “re” and “subject” but it is up to the analyst to determine what words should be included or excluded.
 
@@ -217,7 +217,7 @@ plt.axis('off')
 plt.show()
 ```
 
-![wordcloud3](../assets/wordcloud3.jpg)
+![wordcloud3](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/wordcloud3.jpg?raw=true)
 
 When you look at a word cloud, notice it is primarily single words. The larger the word, the higher its frequency. To prevent the word cloud from outputting sentences, the text goes through a processes called tokenization. It is the process of breaking down a sentence into the individual words. The individual words are called tokens.
 

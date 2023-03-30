@@ -152,7 +152,7 @@ df = pd.read_csv('emails.csv')
 df.head()
 ```
 
-![wordcloud](../assets/wordcloud.jpg)
+![wordcloud](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/wordcloud.jpg?raw=true)
 
 
 ```py
@@ -191,7 +191,7 @@ df['text'] = clean_desc
 df.head(3)
 ```
 
-![wordcloud2](../assets/wordcloud2.jpg)
+![wordcloud2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/wordcloud2.jpg?raw=true)
 
 Eliminar **palabras vacías** del texto del correo electrónico permite que se destaquen las palabras frecuentes más relevantes. ¡Eliminar palabras vacías es una técnica común! Algunas bibliotecas de Python como NLTK vienen precargadas con una lista de palabras vacías, pero es fácil crear una desde cero. El siguiente código incluye algunas palabras relacionadas con el correo electrónico como "re" y "asunto", pero depende del analista determinar qué palabras deben incluirse o excluirse. 
 
@@ -216,7 +216,7 @@ plt.axis('off')
 plt.show()
 ```
 
-![wordcloud3](../assets/wordcloud3.jpg)
+![wordcloud3](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/wordcloud3.jpg?raw=true)
 
 Cuando observas una nube de palabras, fíjate que se trata principalmente de palabras sueltas. Cuanto mayor sea la palabra, mayor será su frecuencia. Para evitar que la nube de palabras genere oraciones, el texto pasa por un proceso llamado tokenización. Es el proceso de dividir una oración en palabras individuales. Las palabras individuales se llaman tokens.
 
