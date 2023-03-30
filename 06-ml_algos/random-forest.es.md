@@ -14,11 +14,9 @@ Entrenando un montón de modelos individuales de forma paralela. Cada modelo es 
 
 Para comprender el modelo de Random Forest, primero aprendimos sobre el árbol de decisiones, el componente básico de un bosque aleatorio. Todos usamos árboles de decisión en nuestra vida diaria, e incluso si no lo sabes, reconocerás el proceso.
 
-![decision_tree_daily_life](../assets/decision_tree_daily_life.jpg)
+![decision_tree_daily_life](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/decision_tree_daily_life.jpg?raw=true)
 
 Random Forest, como su nombre lo indica, consiste en una gran cantidad de árboles de decisión individuales que operan como un conjunto. Cada árbol individual en el Random Forest escupe una predicción de clase y la clase con más votos se convierte en la predicción de nuestro modelo.
-
-![decision_tree_daily_life](../assets/decision_tree_daily_life.jpg)
 
 Una explicación más profunda:
 

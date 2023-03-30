@@ -14,12 +14,9 @@ Training a bunch of individual models in a parallel way. Each model is trained b
 
 To understand the random forest model, we first learned about the decision tree, the basic building block of a random forest. We all use decision trees in our daily life, and even if you don’t know it, you’ll recognize the process.
 
-![decision_tree_daily_life](../assets/decision_tree_daily_life.jpg)
+![decision_tree_daily_life](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/decision_tree_daily_life.jpg?raw=true)
 
 Random forest, like its name implies, consists of a large number of individual decision trees that operate as an ensemble. Each individual tree in the random forest spits out a class prediction and the class with the most votes becomes our model’s prediction.
-
-![decision_tree_daily_life](../assets/decision_tree_daily_life.jpg)
-
 
 Some deeper explanation:
 
