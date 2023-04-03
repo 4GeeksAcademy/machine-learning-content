@@ -1,4 +1,4 @@
-# Calculus
+# Cálculo
 
 
 El cálculo, el álgebra lineal y la probabilidad son los "lenguajes" en los que se escribe Machine Learning. Aprender estos temas proporcionará una comprensión más profunda de la mecánica algorítmica subyacente y permitirá el desarrollo de nuevos algoritmos, que en última instancia pueden implementarse como estrategias comerciales cuantitativas más sofisticadas.
