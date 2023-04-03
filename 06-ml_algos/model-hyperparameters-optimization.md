@@ -20,7 +20,7 @@ Examples of model hyperparameters in different models:
 
 A model parameter is a variable of the selected model which can be estimated by fitting the given data to the model. For example in linear regression, the slope and the intercept of the line are two parameters estimated by fitting a straight line to the data by minimizing the RMSE.
 
-![parameter_vs_hyperparameter](https://raw.githubusercontent.com/4GeeksAcademy/machine-learning-content/master/assets/parameter_vs_hyperparameter.jpg)
+![parameter_vs_hyperparameter](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/parameter_vs_hyperparameter.jpg?raw=true)
 
 And, as we already mentioned, a model hyperparameter value is set before the model start training and they cannot be learned by fitting the model to the data.
 

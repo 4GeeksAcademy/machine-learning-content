@@ -15,7 +15,7 @@ import streamlit as st
 st.write('Hello, world!')
 ```
 
-![streamlit1](../assets/streamlit1.jpg)
+![streamlit1](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit1.jpg?raw=true)
 
 2. **Trata los widgets como variables.** ¡No hay devoluciones de llamada en Streamlit! Cada interacción simplemente vuelve a ejecutar el script de arriba abajo. Este enfoque conduce a un código realmente limpio:
 
@@ -25,7 +25,7 @@ x = st.slider('x')
 st.write(x, 'squared is', x * x)
 ```
 
-![streamlit2](../assets/streamlit2.jpg)
+![streamlit2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit2.jpg?raw=true)
 
 3. **Reutiliza datos y cálculos.** ¿Qué sucede si descargas muchos datos o realizas cálculos complejos? La clave es reutilizar de forma segura la información entre ejecuciones. Streamlit presenta una primitiva de caché que se comporta como un almacén de datos persistente e inmutable de forma predeterminada que permite que las aplicaciones de Streamlit reutilicen la información de forma segura y sin esfuerzo. Mira el siguiente ejemplo:
 
@@ -42,7 +42,7 @@ desired_label = st.selectbox('Filter to:', ['car', 'truck'])
 st.write(data[data.label == desired_label])
 ```
 
-![streamlit3](../assets/streamlit3.jpg)
+![streamlit3](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit3.jpg?raw=true)
 
 Ahora, sigamos adelante e instalemos Streamlit usando pip:
 
@@ -68,7 +68,7 @@ La simplicidad de estas ideas no te impide crear aplicaciones increíblemente ri
 
 - Streamlit está diseñado para GPU. Streamlit permite el acceso directo a primitivas a nivel de máquina como TensorFlow y PyTorch y complementa estas bibliotecas.
 
-![streamlit4](../assets/streamlit4.jpg)
+![streamlit4](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit4.jpg?raw=true)
 
 ## Características básicas de Streamlit 
 
@@ -84,7 +84,7 @@ Hay muchos widgets disponibles, incluidos los siguientes:
 age = streamlit.selectbox("Choose your age:", np.arange(18, 66, 1))
 ```
 
-![streamlit_selectbox](../assets/streamlit_selectbox.jpg)
+![streamlit_selectbox](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_selectbox.jpg?raw=true)
 
 Otra opción:
 
@@ -101,7 +101,7 @@ age = streamlit.slider("Choose your age: ", min_value=16,
                        max_value=66, value=35, step=1)
 ```
 
-![streamlit_slider](../assets/streamlit_slider.jpg)
+![streamlit_slider](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_slider.jpg?raw=true)
 
 - Multiselect
 
@@ -111,7 +111,7 @@ artists = st.multiselect("Who are your favorite artists?",
                          "Eminem", "Billy Joel", "Madonna"])
 ```
 
-![streamlit_multiselect](../assets/streamlit_multiselect.jpg)
+![streamlit_multiselect](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_multiselect.jpg?raw=true)
 
 - Checkbox
 
@@ -154,7 +154,7 @@ c = alt.Chart(df).mark_circle().encode(x='a', y='b', size='c',
 st.altair_chart(c, width=-1)
 ```
 
-![streamlit_visualization](../assets/streamlit_visualization.jpg)
+![streamlit_visualization](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_visualization.jpg?raw=true)
 
 Un ejemplo diferente:
 
@@ -181,7 +181,7 @@ if st.sidebar.checkbox("Show Analysis by State", True, key=2):
         st.plotly_chart(state_total_graph)
 ```
 
-![streamlit_visualization2](../assets/streamlit_visualization2.jpg)
+![streamlit_visualization2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_visualization2.jpg?raw=true)
 
 Para trazar el gráfico, usamos el método de barra de la biblioteca plotly.express. El primer parámetro es el marco de datos que queremos trazar, el segundo parámetro es la columna del eje x, el tercer parámetro es la columna del eje y, el parámetro de etiquetas es opcional en caso de que desees cambiar el nombre de una columna para el gráfico y el parámetro de color aquí es para codificar por color el gráfico sobre la base de la columna Estado del marco de datos.
 
@@ -200,7 +200,7 @@ st.markdown("* This gives a general overview of the data including"
             "between games.")
 ```
 
-![streamlit_markdown](../assets/streamlit_markdown.jpg)
+![streamlit_markdown](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_markdown.jpg?raw=true)
 
 **Write**
 
