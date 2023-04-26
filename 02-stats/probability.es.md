@@ -12,7 +12,7 @@ Hay dos tipos de conjuntos:
 2. Sets infinitos: Por ejemplo, un conjunto de todos los números reales.
 
 
-![probability_sets.jpg](../assets/probability_sets.jpg)
+![probability_sets.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/probability_sets.jpg?raw=true)
 
 Todo lo que está fuera del Set A lo llamamos complemento del Set A. Un elemento x pertenece al complemento de A si x es un elemento de nuestro Set universal, y además no pertenece a A.
 
@@ -22,7 +22,7 @@ La **unión** de los dos Sets consiste en todos los elementos que pertenecen a u
 
 La **intersección** de dos Sets es la colección de elementos que pertenecen a ambos Sets. Entonces, un elemento pertenece a la intersección de dos Sets si y solo si ese elemento pertenece a ambos.
 
-![intersection.jpg](../assets/intersection.jpg)
+![intersection.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/intersection.jpg?raw=true)
 
 **Secuencias**
 
@@ -90,7 +90,7 @@ Veamos un ejemplo de un espacio muestral discreto y finito simple.
 
 Lanzaremos un dado dos veces (no estamos tratando con dos experimentos probabilísticos, es un solo experimento que implica dos lanzamientos del dado). Luego tomamos nota del primer resultado, y después tomamos nota del segundo resultado. Esto nos da un par de números y se grafican de la siguiente manera:
 
-![probability_dice.jpg](../assets/probability_dice.jpg)
+![probability_dice.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/probability_dice.jpg?raw=true)
 
 ### ¿Por qué probabilidad?
 
@@ -124,7 +124,7 @@ Los frecuentistas tratan los datos como aleatorios y la estadística como fija. 
 
 Los Bayesianos tratan el parámetro de población como aleatorio y los datos como fijos. Las estadísticas Bayesianas nos permiten hacer conjeturas informadas sobre el valor del parámetro en forma de distribuciones previas. Las estimaciones del parámetro vienen en forma de distribuciones posteriores.
 
-![bayessian.png](../assets/bayessian.png)
+![bayessian.png](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/bayessian.png?raw=true)
 
 ### Eventos
 
