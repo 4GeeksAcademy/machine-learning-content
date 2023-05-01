@@ -105,13 +105,13 @@ Piensa en XGBoost como un boosting de gradiente con "esteroides", también se le
 
 Miremos la siguiente imagen para entender las razones por las que funciona tan bien.
 
-![xgboost](../assets/xgboost.jpg)
+![xgboost](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/xgboost.jpg?raw=true)
 
 (Imagen de haciadatascience.com)
 
 Ahora, veamos la siguiente comparación. El modelo XGBoost tiene la mejor combinación de rendimiento de predicción y tiempo de procesamiento en comparación con otros algoritmos.
 
-![xgboost_performance](../assets/xgboost_performance.jpg)
+![xgboost_performance](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/xgboost_performance.jpg?raw=true)
 
 (Imagen de haciadatascience.com)
 

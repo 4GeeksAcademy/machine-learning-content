@@ -4,7 +4,7 @@ Deep Learning (aprendizaje profundo) es un subcampo de Machine Learning que se o
 
 Los modelos de aprendizaje profundo tienden a funcionar bien con una gran cantidad de datos, mientras que los modelos antiguos de Machine Learning dejan de mejorar después de un punto de saturación. Una de las diferencias entre Machine Learning y los modelos de aprendizaje profundo está en el área de extracción de funciones. La extracción de características la realiza el ser humano en Machine Learning, mientras que el modelo de aprendizaje profundo se da cuenta por sí mismo.
 
-![why_deep_learning](../assets/why_deep_learning.jpg)
+![why_deep_learning](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/why_deep_learning.jpg?raw=true)
 
 *Imagen de Andrew Ng en https://www.slideshare.net/ExtractConf*
 
@@ -32,7 +32,7 @@ El álgebra y el cálculo son la base de las redes neuronales profundas.
 
 El siguiente diagrama muestra una red simple. Los pesos y bias (sesgos) son los parámetros que se pueden aprender. En la siguiente ecuación: $y = mx+b$ 'm' (la pendiente) sería el peso y 'b' representaría el bias. La combinación lineal de los pesos, las entradas y el bias forman la entrada h, que pasa a través de la función de activación f(h), dando la salida final, etiquetada como y.
 
-![neural_network](../assets/neural_network.jpg)
+![neural_network](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/neural_network.jpg?raw=true)
 
 La función de activación, f(h) puede ser cualquier función. Si hacemos f(h)=h, la salida será la misma que la entrada. Ahora la salida de la red es $y=Σi WiXi + b$.
 
@@ -252,7 +252,7 @@ Deep Learning has recently outperformed humans in solving particular tasks, for 
 
 The following graph shows the top 16 open-source deep learning libraries used by Github contributors.
 
-![deep_learning_tools](../assets/deep_learning_tools.jpg)
+![deep_learning_tools](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/deep_learning_tools.jpg?raw=true)
 
 *Image by KDnuggets*
 

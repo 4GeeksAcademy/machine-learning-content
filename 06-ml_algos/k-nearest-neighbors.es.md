@@ -54,7 +54,7 @@ Pero, ¿qué métrica de distancia debo elegir?
 
 2. Elegir el valor de k
 
-![knn](../assets/knn.jpg)
+![knn](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/knn.jpg?raw=true)
 
 *imagen por helloacm.com*
 
@@ -70,7 +70,7 @@ No existe una solución de forma cerrada para calcular k, por lo que a menudo se
 
 > A medida que aumenta k, el bias tiende a aumentar y la varianza disminuye.
 
-![error_vs_kvalue](../assets/error_vs_kvalue.jpg)
+![error_vs_kvalue](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/error_vs_kvalue.jpg?raw=true)
 
 *imagen por towardsdatascience.com*
 
@@ -101,7 +101,7 @@ No existe una solución de forma cerrada para calcular k, por lo que a menudo se
 
 Podemos extender este concepto de vecinos a las aplicaciones de los sistemas de recomendación. Las técnicas estadísticas de KNN nos permiten encontrar subconjuntos similares de usuarios (vecinos) para hacer recomendaciones. La idea general es que un nuevo usuario (punto de datos) se compare con todo el espacio de datos para descubrir vecinos similares. Los elementos que gustan a los vecinos se recomiendan al nuevo usuario.
 
-![recommender_system](../assets/recommender_system.jpg)
+![recommender_system](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/recommender_system.jpg?raw=true)
 
 *Imagen por www.aurigait.com*
 
@@ -111,7 +111,7 @@ El enfoque **basado en el contenido** utiliza una serie de características disc
 
 El enfoque de **filtrado colaborativo** crea un modelo a partir de los comportamientos anteriores de un usuario (artículos comprados o seleccionados previamente y/o calificaciones numéricas dadas a esos artículos), así como decisiones similares tomadas por otros usuarios. Luego, este modelo se usa para predecir elementos (o calificaciones de elementos) en los que el usuario puede estar interesado.
 
-![recommender_system_approaches](../assets/recommender_system_approaches.jpg)
+![recommender_system_approaches](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/recommender_system_approaches.jpg?raw=true)
 
 La mayoría de las empresas probablemente utilicen una combinación de ambos (enfoque híbrido) en sus sistemas de recomendación de producción.
 

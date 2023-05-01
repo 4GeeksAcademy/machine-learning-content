@@ -82,7 +82,7 @@ Usaremos un caso de estudio muy simple de towardsdatascience.com para hacer que 
 
 Tomemos los datos de evasión de impuestos de nuestro ejemplo anterior, donde necesitábamos predecir si una persona cumplirá con el pago de impuestos según el estado civil y los ingresos imponibles. Agregaremos un nuevo predictor 'refund' (reembolso) y ajustaremos Naive Bayes en los datos train con 10 observaciones, luego predeciremos una sola observación invisible en los datos de prueba.
 
-![naivebayes_image1](../assets/naivebayes_image1.jpg)
+![naivebayes_image1](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/naivebayes_image1.jpg?raw=true)
 
 Ahora tenemos dos características categóricas (reembolso y estado civil) y una característica numérica (ingreso imponible). Calcular la probabilidad será diferente para cada uno.
 
@@ -92,19 +92,19 @@ Veamos cómo el teorema de Naive Bayes calcula la probabilidad de las caracterí
 
 - Calculando de probabilidades condicionales de Reembolso dada 'evade':
 
-![naivebayes_image2](../assets/naivebayes_image2.jpg)
+![naivebayes_image2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/naivebayes_image2.jpg?raw=true)
 
 - Calculando de probabilidades condicionales de Estado Civil dado 'evade':
 
-![naivebayes_image3](../assets/naivebayes_image3.jpg)
+![naivebayes_image3](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/naivebayes_image3.jpg?raw=true)
 
 Para características numéricas necesitamos asumir una distribución subyacente para cada característica. Supongamos que asume que x₃ se distribuye normalmente, ahora calculemos la probabilidad para x₃ = 80. μ y σ² representan la media y la varianza respectivamente.
 
-![naivebayes_image4](../assets/naivebayes_image4.jpg)
+![naivebayes_image4](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/naivebayes_image4.jpg?raw=true)
 
 Ahora estamos listos para predecir sobre la información invisible. Mira la solución:
 
-![naivebayes_image5](../assets/naivebayes_image5.jpg)
+![naivebayes_image5](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/naivebayes_image5.jpg?raw=true)
 
 Código de ejemplo:
 

@@ -53,7 +53,7 @@ But what distance metric should I choose?
 
 2. Choosing the value of k
 
-![knn](../assets/knn.jpg)
+![knn](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/knn.jpg?raw=true)
 
 *image by helloacm.com*
 
@@ -69,7 +69,7 @@ There is no closed-form solution for calculating k, so various heuristics are of
 
 > As k increases, bias tends to increase and variance decreases.
 
-![error_vs_kvalue](../assets/error_vs_kvalue.jpg)
+![error_vs_kvalue](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/error_vs_kvalue.jpg?raw=true)
 
 *image by towardsdatascience.com*
 
@@ -100,7 +100,7 @@ There is no closed-form solution for calculating k, so various heuristics are of
 
 We can extend this concept of neighbors to the applications of recommender systems. The statistical techniques of KNN allows us to find similar subsets of users (neighbors) to make recommendations on. The general idea is that a new user (data point) is matched against the entire data space to discover similar neighbors. The items that the neighbors like are then recommended to the new user.
 
-![recommender_system](../assets/recommender_system.jpg)
+![recommender_system](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/recommender_system.jpg?raw=true)
 
 *Image by www.aurigait.com*
 
@@ -110,7 +110,7 @@ Recommender systems can be loosely broken down into three categories: content ba
 
 **Collaborative filtering** approach builds a model from a user’s past behaviors (items previously purchased or selected and/or numerical ratings given to those items) as well as similar decisions made by other users. This model is then used to predict items (or ratings for items) that the user may have an interest in.
 
-![recommender_system_approaches](../assets/recommender_system_approaches.jpg)
+![recommender_system_approaches](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/recommender_system_approaches.jpg?raw=true)
 
 Most businesses probably use a combination of both (hybrid approach) in their production recommender systems.
 

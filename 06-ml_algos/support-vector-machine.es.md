@@ -4,17 +4,17 @@ Máquinas de Vectores de Soporte (Support Vector Machine - SVM) es un algoritmo 
 
 Veamos algunos gráficos donde el algoritmo está tratando de encontrar la distancia máxima entre los puntos más cercanos:
 
-![svm](../assets/svm.jpg)
+![svm](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/svm.jpg?raw=true)
 
-![svm2](../assets/svm2.jpg)
+![svm2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/svm2.jpg?raw=true)
 
-![svm3](../assets/svm3.jpg)
+![svm3](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/svm3.jpg?raw=true)
 
 Podemos ver que el tercer gráfico entre líneas es la mayor distancia que podemos observar para poner entre nuestros dos grupos.
 
 Para comprender completamente la terminología de la máquina de vectores de soporte, veamos sus partes:
 
-![svm_terminology](../assets/svm_terminology.jpg)
+![svm_terminology](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/svm_terminology.jpg?raw=true)
 
 El margen debe ser igual en ambos lados.
 

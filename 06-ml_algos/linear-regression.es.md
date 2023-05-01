@@ -88,7 +88,7 @@ print('Slope: {}\nIntercept: {}'.format(m, b))
  Slope (pendiente): 5.096261164108786
  Intercept (Interceptar): -8.549690202482191
     
-![linear-regression-result](../assets/linear-regression-result.jpg)
+![linear-regression-result](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/linear-regression-result.jpg?raw=true)
 
 La regresión lineal de Scikit-learn nos facilita la implementación y optimización de modelos de regresión lineal. Puedes ver la documentación de regresión lineal de scikit-learn aquí: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
 
@@ -150,7 +150,7 @@ plt.show()
 
 ```
 
-![non-linear-data](../assets/non-linear-data.jpg)
+![non-linear-data](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/non-linear-data.jpg?raw=true)
 
 ```py
 # Dividir los datos
@@ -174,7 +174,7 @@ plt.show()
 
 ```
 
-![linreg_on_nonlinear_data](../assets/linreg_on_nonlinear_data.jpg)
+![linreg_on_nonlinear_data](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/linreg_on_nonlinear_data.jpg?raw=true)
 
 Ahora convertiremos la entrada a términos polinómicos usando el grado como 2 debido a la ecuación que hemos usado, la intersección es 2.
 
@@ -212,7 +212,7 @@ plt.show()
 
 ```
 
-![polynomial_regression](../assets/polynomial_regression.jpg)
+![polynomial_regression](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/polynomial_regression.jpg?raw=true)
 
 Después de convertir a términos polinómicos ajustamos la regresión lineal que ahora funciona como regresión polinomial. Nuestro coeficiente fue 0,9 y pronosticó 0,88 y el intercepto fue 2 y dio 1,9, que es muy cercano al original y se puede decir que el modelo es un modelo generalizado. 
 
@@ -222,7 +222,7 @@ Tener más funciones puede parecer una forma perfecta de mejorar la precisión d
 
 Veamos un ejemplo no lineal sobreajustado:
 
-![underfitting_vs_overfitting](../assets/underfitting_vs_overfitting.jpg)
+![underfitting_vs_overfitting](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/underfitting_vs_overfitting.jpg?raw=true)
 
 Si no se filtran y exploran por adelantado, algunas características pueden ser más destructivas que útiles, repiten información que ya expresan otras características y agregan mucho ruido al conjunto de datos.
 
