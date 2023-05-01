@@ -23,7 +23,7 @@ pickle.dump(classifier, open(filename,'wb'))
 
 For predicting survival in Titanic from various attributes we first need to collect the data(new attribute values) and then use the model we built to predict whether a passenger would survive or not in the Titanic. Therefore, in order to collect the data we create a html form which would contain all the different options to select from each attribute. Here, I have created a simple form using html only. If you want to make the form more interactive you can do so as well.
 
-![titanic_prediction_form](../assets/titanic_prediction_form.jpg)
+![titanic_prediction_form](https://github.com/Lorenagubaira/machine-learning-content/blob/master/assets/titanic_prediction_form.jpg?raw=true)
 
 ### **Step 1:** Activate environment and install Flask
 
@@ -392,7 +392,7 @@ web: gunicorn app:app
 
 Your current structure should be looking something like this:
 
-![flask-heroku-structure](../assets/flask-heroku-structure.jpg)
+![flask-heroku-structure](https://github.com/Lorenagubaira/machine-learning-content/blob/master/assets/flask-heroku-structure.jpg?raw=true)
 
 4. Finally, use a .gitignore file to do exclude unnecessary files that we don't want to deploy to Heroku.
 
@@ -404,11 +404,11 @@ We are ready! Push your project to Heroku! If you wish to do it directly on Hero
 
 - Scroll down and choose 'manual deploy'. After making sure you are on the branch you want to deploy (in this case: main), then click on 'Deploy branch'. You will see all the required packages been installed like the following image:
 
-![deploying_branch](../assets/deploying_branch.jpg)
+![deploying_branch](https://github.com/Lorenagubaira/machine-learning-content/blob/master/assets/deploying_branch.jpg?raw=true)
 
 - When finished, it should look like the following screenshot:
 
-![deployed_to_heroku](../assets/deployed_to_heroku.jpg)
+![deployed_to_heroku](https://github.com/Lorenagubaira/machine-learning-content/blob/master/assets/deployed_to_heroku.jpg?raw=true)
 
 - Copy that link and paste it in your browser to test your app.
 
