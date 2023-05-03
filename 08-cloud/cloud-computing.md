@@ -20,7 +20,7 @@ The main characteristics of cloud computing are:
 
 When we talk about AI, we always talk about levels of responsability. The levels of responsability in cloud computing are always shared, so we are responsible of certain tasks and the cloud provider is responsible of other tasks.
 
-![cloud_computing](../assets/cloud_computing.jpg)
+![cloud_computing](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/cloud_computing.jpg?raw=true)
 
 When we talk about on-premises scheme, we basically are not on the cloud and we are responsible of everything. When we migrate to an IaaS model (Infrastructure as a service), it means that we are going to rent the infrastructure services to the cloud provider, for example virtual machines, servers, storage, etc. When we migrate to PaaS (Platform as a service), the provider is not only offering us an infrastructure, they are offering a platform that we can use. Finally, in Saas (Software as a service), the provider is in charge of everything. 
 

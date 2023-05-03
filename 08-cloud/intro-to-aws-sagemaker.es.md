@@ -10,7 +10,7 @@ No es sencillo pero ya hemos aprendido a hacer todo esto por nuestra cuenta. La 
 
 Debido a que actualmente es el proveedor de computación en la nube número uno, elegimos AWS para aprender algunas habilidades de computación en la nube. En la siguiente imagen podemos ver la pila de Machine Learning de AWS de tres capas.
 
-![aws_stack](../assets/aws_stack.jpg)
+![aws_stack](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/aws_stack.jpg?raw=true)
 
 En la parte inferior de la pila podemos encontrar 'Marcos e infraestructura de ML', que es lo que AWS llamaría la forma "difícil" de hacer Machine Learning, ejecutando algunas máquinas virtuales en las que podemos usar GPU si las necesitamos e instalamos. algunos frameworks, por ejemplo Tensorflow, para empezar a hacer todos los pasos mencionados anteriormente.
 
@@ -60,7 +60,7 @@ Amazon SageMaker proporciona capacidades de Machine Learning para que los cient�
 
 - SageMaker proporciona artefactos de modelo e imágenes de puntuación para su implementación en Amazon EC2 o en cualquier otro lugar.
 
-![sagemaker](../assets/sagemaker.jpg)
+![sagemaker](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/sagemaker.jpg?raw=true)
 
 ## SageMaker Studio
 

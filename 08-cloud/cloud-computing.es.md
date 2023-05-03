@@ -20,7 +20,7 @@ Las principales características de la computación en la nube son:
 
 Cuando hablamos de IA, siempre hablamos de niveles de responsabilidad. Los niveles de responsabilidad en la computación en la nube siempre son compartidos, por lo que somos responsables de ciertas tareas y el proveedor de la nube es responsable de otras tareas.
 
-![cloud_computing](../assets/cloud_computing.jpg)
+![cloud_computing](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/cloud_computing.jpg?raw=true)
 
 Cuando hablamos de un esquema local, básicamente no estamos en la nube y somos responsables de todo. Cuando migramos a un modelo IaaS (Infraestructura como servicio), significa que vamos a alquilar los servicios de infraestructura al proveedor de la nube, por ejemplo máquinas virtuales, servidores, almacenamiento, etc. Cuando migramos a PaaS (Plataforma como servicio), el proveedor no solo nos ofrece una infraestructura, nos ofrece una plataforma que podemos usar. Finalmente, en Saas (Software as a service), el proveedor se encarga de todo.
 

@@ -10,7 +10,7 @@ It is not simple but we have already learned how to do all this on our own. The 
 
 Because it is currently the number one cloud computing provider, We chose AWS to learn some cloud computing skills. In the following image we can see the three layer AWS machine learning stack.
 
-![aws_stack](../assets/aws_stack.jpg)
+![aws_stack](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/aws_stack.jpg?raw=true)
 
 In the bottom of the stack we can find 'ML frameworks & infrastructure', which is what AWS would call the "hard" way of doing machine learning, by running some virtual machines where we are able to use GPUs if we need them and install some frameworks, for example Tensorflow, to start doing all the steps mentioned above.
 
@@ -60,7 +60,7 @@ Amazon SageMaker provides machine learning capabilities for data scientists and 
 
 - SageMaker provides model artifacts and scoring images for deployment to Amazon EC2 or anywhere else.
 
-![sagemaker](../assets/sagemaker.jpg)
+![sagemaker](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/sagemaker.jpg?raw=true)
 
 ## SageMaker Studio
 
