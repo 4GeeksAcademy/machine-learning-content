@@ -4,7 +4,7 @@ Deep learning is a sub-field of machine learning dealing with algorithms inspire
 
 Deep learning models tend to perform well with amount of data wheras old machine learning models stop improving after a saturation point. One of the differences between machine learning and deep learning models is on the feature extraction area. Feature extraction is done by human in machine learning whereas deep learning model figure out by itself.
 
-![why_deep_learning](../assets/why_deep_learning.jpg)
+![why_deep_learning](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/why_deep_learning.jpg?raw=true)
 
 *Image by Andrew Ng at https://www.slideshare.net/ExtractConf*
 
@@ -32,7 +32,7 @@ Algebra and calculus are the foundation of the deep neural nets.
 
 The diagram below shows a simple network. Weights and biases are the learnable parameters. In the following equation: $y = mx+b$ 'm' (the slope) would be the weight and 'b' would represent bias. The linear combination of the weights, inputs, and bias form the input h, which passes through the activation function f(h), giving the final output, labeled y.
 
-![neural_network](../assets/neural_network.jpg)
+![neural_network](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/neural_network.jpg?raw=true)
 
 The activation function, f(h) can be any function. If we let f(h)=h, the output will be the same as the input. Now the output of the network is $y=Σi WiXi + b$
 
@@ -252,7 +252,7 @@ Deep Learning has recently outperformed humans in solving particular tasks, for 
 
 The following graph shows the top 16 open-source deep learning libraries used by Github contributors.
 
-![deep_learning_tools](../assets/deep_learning_tools.jpg)
+![deep_learning_tools](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/deep_learning_tools.jpg?raw=true)
 
 *Image by KDnuggets*
 

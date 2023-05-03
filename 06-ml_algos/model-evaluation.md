@@ -1,4 +1,3 @@
-# Model Evaluation
 
 ## Evaluation metrics
 
@@ -45,7 +44,6 @@ https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics
 2. Variance - error from an estimator being too specific and learning relationships that are specific to the training set but do not generalize to new samples well. Variance can come from fitting too closely to noise in the data, and models with high variance are extremely sensitive to changing inputs.  For example, creating a decision tree that splits the training set until every leaf node only contains 1 sample.
 
 3. Irreducible error - error caused by noise in the data that cannot be removed through modeling. For example, inaccuracy in data collection causes irreducible error.
-
 
 **What is the bias-variance trade-off?**
 

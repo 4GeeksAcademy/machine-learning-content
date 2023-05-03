@@ -4,17 +4,18 @@ Support Vector Machine (SVM) is a supervised learning algorithm so we need to ha
 
 Let's see some graphs where the algorithm is trying to find the maximum distance between the closest points:
 
-![svm](../assets/svm.jpg)
+![svm](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/svm.jpg?raw=true)
 
-![svm2](../assets/svm2.jpg)
 
-![svm3](../assets/svm3.jpg)
+![svm2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/svm2.jpg?raw=true)
+
+![svm3](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/svm3.jpg?raw=true)
 
 We can see that the third graph between lines is the greatest distance we can observe in order to put between our two groups.
 
 To completely understand the Support Vector Machine terminology, let's look at the parts of it:
 
-![svm_terminology](../assets/svm_terminology.jpg)
+![svm_terminology](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/svm_terminology.jpg?raw=true)
 
 The margin needs to be equal on both sides. 
 

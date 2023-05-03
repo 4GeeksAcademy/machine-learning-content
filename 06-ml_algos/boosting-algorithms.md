@@ -105,13 +105,13 @@ Think of XGBoost as gradient boosting on ‘steroids’, it is also called ‘Ex
 
 Let's look at the following image to understand the reasons why it performs so well.
 
-![xgboost](../assets/xgboost.jpg)
+![xgboost](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/xgboost.jpg?raw=true)
 
 (Image from towardsdatascience.com)
 
 Now, let's see the following comparison. XGBoost model has the best combination of prediction performance and processing time compared to other algorithms.
 
-![xgboost_performance](../assets/xgboost_performance.jpg)
+![xgboost_performance](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/xgboost_performance.jpg?raw=true)
 
 (Image from towardsdatascience.com)
 

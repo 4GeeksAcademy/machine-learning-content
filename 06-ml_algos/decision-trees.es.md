@@ -14,7 +14,7 @@ Se utilizan para clasificación, regresión, para medir la importancia de las ca
 
 Veamos una estructura de árbol de decisión:
 
-![decision_tree_structure](../assets/decision_tree_structure.jpg)
+![decision_tree_structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/decision_tree_structure.jpg?raw=true)
 
 - Root node - nodo en la parte superior del árbol. Contiene una función que divide mejor los datos (una función única que por sí sola clasifica la variable de destino con mayor precisión)
 
@@ -24,11 +24,11 @@ Veamos una estructura de árbol de decisión:
 
 Según el tamaño del conjunto de datos (tanto en filas como en columnas), probablemente haya miles o millones de formas en que se pueden organizar los nodos y sus condiciones. Veamos un pequeño ejemplo:
 
-![decision_tree_data](../assets/decision_tree_data.jpg)
+![decision_tree_data](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/decision_tree_data.jpg?raw=true)
 
 Ahora veamos una forma posible de construir el árbol de decisión:
 
-![decision-tree](../assets/decision-tree.jpg)
+![decision-tree](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/decision-tree.jpg?raw=true)
 
 Las hojas que contienen una mezcla de personas que tienen y no tienen enfermedades del corazón se llaman impuras. Podemos cuantificar la impureza usando Gini Impureza, Entropía y Ganancia de información. Cuanto mayor es la impureza de Gini, más impuras son las hojas. Así que queremos que el valor sea lo más bajo posible. Primero calculamos la impureza de Gini de cada una de las hojas, luego calculamos la impureza de Gini total de la división. La fórmula para calcular la impureza de Gini de las hojas es:
 

@@ -45,7 +45,7 @@ y.plot(figsize=(15, 6))
 plt.show()
 ```
 
-![time-series](../assets/time-series.jpg)
+![time-series](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/time-series.jpg?raw=true)
 
 *imagen de www.digitalocean.com*
 
@@ -187,7 +187,7 @@ Prophet también proporciona una función conveniente para trazar rápidamente l
 my_model.plot(forecast, uncertainty=True)
 ```
 
-![time-series2](../assets/time-series2.jpg)
+![time-series2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/time-series2.jpg?raw=true)
 
 *imagen de www.digitalocean.com*
 

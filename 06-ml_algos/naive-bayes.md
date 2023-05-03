@@ -82,7 +82,7 @@ We will use a very simple case study from towardsdatascience.com to make Naive B
 
 Let's take the tax evasion data from our previous example, where we needed to predict whether a person will comply to pay taxes based on marital status and taxable income. We will add a new predictor 'refund' and fit Naive Bayes into train data with 10 observations, then predict a single unseen observation on the test data.
 
-![naivebayes_image1](../assets/naivebayes_image1.jpg)
+![naivebayes_image1](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/naivebayes_image1.jpg?raw=true)
 
 We now have two categorical features (refund and marital status) and one numerical feature (taxable income). Calculating probability will be different for each.
 
@@ -92,20 +92,20 @@ Let's look at how Naive Bayes theorem calculates probability for categorical fea
 
 - Calculating conditional probabilities of Refund given Evade:
 
-![naivebayes_image2](../assets/naivebayes_image2.jpg)
+![naivebayes_image2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/naivebayes_image2.jpg?raw=true)
 
 - Calculating conditional probabilities of Marital status given Evade:
 
-![naivebayes_image3](../assets/naivebayes_image3.jpg)
+![naivebayes_image3](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/naivebayes_image3.jpg?raw=true)
 
 For numerical features we need to assume an underlying distribution for each feature. Let’s say you assume x₃ to be normally distributed, now let's calculate probability for x₃ = 80.  μ and σ² represent mean and variance respectively.
 
-![naivebayes_image4](../assets/naivebayes_image4.jpg)
+![naivebayes_image4](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/naivebayes_image4.jpg?raw=true)
 
 Now we are ready to predict on the unseen information. Check out the solution:
 
 
-![naivebayes_image5](../assets/naivebayes_image5.jpg)
+![naivebayes_image5](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/naivebayes_image5.jpg?raw=true)
 
 Example code:
 

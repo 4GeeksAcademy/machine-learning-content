@@ -90,7 +90,7 @@ print('Slope: {}\nIntercept: {}'.format(m, b))
     Intercept: -8.549690202482191
 
   
-![linear-regression-result](../assets/linear-regression-result.jpg)
+![linear-regression-result](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/linear-regression-result.jpg?raw=true)
     
 Scikit-learn Linear regression makes it easier for us to implement and optimize linear regression models. You can see the scikit-learn linear regression documentation here: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
 
@@ -153,8 +153,7 @@ plt.ylabel("Y")
 plt.show()
 
 ```
-
-![non-linear-data](../assets/non-linear-data.jpg)
+![non-linear-data](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/non-linear-data.jpg?raw=true)
 
 ```py
 #split the data
@@ -178,7 +177,7 @@ plt.show()
 
 ```
 
-![linreg_on_nonlinear_data](../assets/linreg_on_nonlinear_data.jpg)
+![linreg_on_nonlinear_data](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/linreg_on_nonlinear_data.jpg?raw=true)
 
 Now we will convert the input to polynomial terms by using the degree as 2 because of the equation we have used, the intercept is 2. 
 
@@ -215,7 +214,8 @@ plt.legend()
 plt.show()
 
 ```
-![polynomial_regression](../assets/polynomial_regression.jpg)
+
+![polynomial_regression](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/polynomial_regression.jpg?raw=true)
 
 After converting to polynomial terms we fit the linear regression which is now working as polynomial regression. Our coefficient was 0.9 and it has predicted 0.88 and intercept was 2 and it has given 1.9 which is very close to the original and the model can be said as a generalized model.
 
@@ -226,7 +226,7 @@ Having more features may seem like a perfect way for improving the accuracy of o
 
 Let's see an overfitted non-linear example:
 
-![underfitting_vs_overfitting](../assets/underfitting_vs_overfitting.jpg)
+![underfitting_vs_overfitting](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/underfitting_vs_overfitting.jpg?raw=true)
 
 If not filtered and explored up front, some features can be more destructive than helpful, repeat information that already expressed by other features and add high noise to the dataset.
 

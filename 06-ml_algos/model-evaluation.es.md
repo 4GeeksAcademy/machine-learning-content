@@ -1,6 +1,6 @@
 # Métricas de evaluación
 
-**Métricas de evaluación útiles para problemas de clasificación**
+### Métricas de evaluación útiles para problemas de clasificación**
 
 1. Precisión - mide el porcentaje de tiempo en que clasificamos correctamente las muestras: (verdadero positivo + verdadero negativo)/todas las muestras.
 
@@ -20,7 +20,7 @@ Para ver cómo implementar cada uno de ellos, consulte los ejemplos de documenta
 
 https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics
 
-**Métricas de evaluación útiles para problemas de regresión**
+### Métricas de evaluación útiles para problemas de regresión
 
 1. Error cuadrático medio (MSE) - el promedio del error cuadrático de cada predicción.
 

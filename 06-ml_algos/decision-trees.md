@@ -14,7 +14,7 @@ They are used for classification, regression, to measure feature importance and 
 
 Let´s see a decision tree structure:
 
-![decision_tree_structure](../assets/decision_tree_structure.jpg)
+![decision_tree_structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/decision_tree_structure.jpg?raw=true)
 
 - Root node — node at the top of the tree. It contains a feature that best splits the data (a single feature that alone classifies the target variable most accurately)
 
@@ -24,11 +24,11 @@ Let´s see a decision tree structure:
 
 Depending on the dataset size (both in rows and columns), there are probably thousands to millions of ways the nodes and their conditions can be arranged. Let's look at a small example:
 
-![decision_tree_data](../assets/decision_tree_data.jpg)
+![decision_tree_data](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/decision_tree_data.jpg?raw=true)
 
 Now let's see one possible way to build the decision tree:
 
-![decision-tree](../assets/decision-tree.jpg)
+![decision-tree](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/decision-tree.jpg?raw=true)
 
 The leaves that contain a mixture of people who have and don’t have Heart Disease are called impure. We can quantify impurity using Gini Impurity, Entropy, and Information Gain. The higher the Gini Impurity, the more impure the leaves are. So we want the value to be as low as possible. We calculate the Gini Impurity of each of the leaves first, then calculate the total Gini Impurity of the split. The formula to calculate Gini Impurity of leaves is:
 
