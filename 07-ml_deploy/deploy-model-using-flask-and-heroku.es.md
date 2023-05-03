@@ -23,7 +23,7 @@ pickle.dump(classifier, open(filename,'wb'))
 
 Para predecir la supervivencia en el Titanic a partir de varios atributos, primero debemos recopilar los datos (nuevos valores de atributos) y luego usar el modelo que construimos para predecir si un pasajero sobreviviría o no en el Titanic. Por lo tanto, para recopilar los datos, creamos un formulario html que contendría todas las diferentes opciones para seleccionar de cada atributo. Aquí, he creado un formulario simple usando solo html. Si deseas que el formulario sea más interactivo, también puedes hacerlo.
 
-![titanic_prediction_form](../assets/titanic_prediction_form.jpg)
+![titanic_prediction_form](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_prediction_form.jpg?raw=true)
 
 ### **Paso 1:** Activa el entorno e instala Flask
 
@@ -387,7 +387,7 @@ web: gunicorn app:app
 
 Tu estructura actual debería ser algo como esto:
 
-![flask-heroku-structure](../assets/flask-heroku-structure.jpg)
+![flask-heroku-structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-heroku-structure.jpg?raw=true)
 
 4. Finalmente, usa un archivo .gitignore para excluir archivos innecesarios que no queremos implementar en Heroku.
 
@@ -399,11 +399,11 @@ Tu estructura actual debería ser algo como esto:
 
 - Desplázate hacia abajo y elije 'despliegue manual'. Después de asegurarte de que estás en la rama que deseas implementar (en este caso: principal), haz clic en 'Implementar rama'. Verás que se han instalado todos los paquetes necesarios como en la siguiente imagen:
 
-![deploying_branch](../assets/deploying_branch.jpg)
+![deploying_branch](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/deploying_branch.jpg?raw=true)
 
 - Cuando termines, debería verse como la siguiente captura de pantalla:
 
-![deployed_to_heroku](../assets/deployed_to_heroku.jpg)
+![deployed_to_heroku](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/deployed_to_heroku.jpg?raw=true)
 
 - Copia ese enlace y pégalo en tu navegador para probar tu aplicación.
 
