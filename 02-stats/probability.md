@@ -12,7 +12,7 @@ There are two types of sets:
 2. Infinite set: For example, a set of all real numbers.
 
 
-![probability_sets.jpg](../assets/probability_sets.jpg)
+![probability_sets.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/probability_sets.jpg?raw=true)
 
 Everything outside the Set A we call it the complement of Set A. An element x belongs to the complement of A if x is an element of our universal set, and also does not belong to A.
 
@@ -23,7 +23,7 @@ The **union** of the two sets consists of all elements that belong to one set or
 The **intersection** of two sets is the collection of elements that belong to both of the sets. So, an element belongs to the intersection of two sets if and only if that element belongs to both of them.
 
 
-![intersection.jpg](../assets/intersection.jpg)
+![intersection.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/intersection.jpg?raw=true)
 
 **Sequences**
 
@@ -93,7 +93,7 @@ Sample spaces are sets, and a set can be discrete, finite, infinite, continuous,
 
 
 
-![probability_dice.jpg](../assets/probability_dice.jpg)
+![probability_dice.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/probability_dice.jpg?raw=true)
 
 ### Why Probability?
 
@@ -130,7 +130,7 @@ Frequentists treat the data as random and the statistic as fixed. Inferences are
 Bayesians treat the population parameter as random and the data as fixed. Bayesian statistics allows us to make informed guesses about the value of the parameter in the form of prior distributions. Estimates of the parameter come in the form of posterior distributions.
 
 
-![bayessian.png](../assets/bayessian.png)
+![bayessian.png](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/bayessian.png?raw=true)
 
 ### Events
 

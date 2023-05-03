@@ -50,13 +50,13 @@ La Desviación Estándar nos dice qué tan lejos está la media de cada observac
 
 En estadística descriptiva generalmente tratamos con datos disponibles en una muestra, no en una población. La desviación estándar se calcula con la raíz cuadrada de la varianza.
 
-![descriptive_stats_standard_deviation.jpg](../assets/descriptive_stats_standard_deviation.jpg)
+![descriptive_stats_standard_deviation.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/descriptive_stats_standard_deviation.jpg?raw=true)
 
 **Desviación media**
 
 La Desviación media da información sobre la distancia entre los valores de los datos y el valor medio.
 
-![descriptive_stats_mean_deviation.jpg](../assets/descriptive_stats_mean_deviation.jpg)
+![descriptive_stats_mean_deviation.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/descriptive_stats_mean_deviation.jpg?raw=true)
 
 **Varianza**
 
@@ -64,7 +64,7 @@ Es solamente otra medida de dispersión, de cómo los puntos de datos difieren d
 
 La varianza es mastante interesante en un sentido matemático, pero la desviación estándar suele ser una medida mucho mejor de cuán dispersa está la distribución.
 
-![descriptive_stats_variance.jpg](../assets/descriptive_stats_variance.jpg)
+![descriptive_stats_variance.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/descriptive_stats_variance.jpg?raw=true)
 
 **Rango**
 
@@ -97,7 +97,7 @@ La mediana 59 tiene cuatro valores menos que ella misma de ocho. 59 es el percen
 
 Los cuartiles son valores que dividen tus datos en cuartos. Ordenados de manera ascendente.
 
-![descriptive_stats_quartiles.jpg](../assets/descriptive_stats_quartiles.jpg)
+![descriptive_stats_quartiles.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/descriptive_stats_quartiles.jpg?raw=true)
 
 12
 
@@ -132,17 +132,17 @@ El tercer momento central es la asimetría. Una medida que describe el contraste
 
 Por ejemplo, si hay más valores altos en tu distibución que valores bajos, entonces tu distribución está 'sesgada' hacia los valores altos.
 
-![descriptive_stats_skewness.jpg](../assets/descriptive_stats_skewness.jpg)
+![descriptive_stats_skewness.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/descriptive_stats_skewness.jpg?raw=true)
 
 Para calcular la asimetría:
 
 1. Primer coeficiente de asimetría de Pearson (asimetría modal)
 
-![descriptive_stats_pearson_first.jpg](../assets/descriptive_stats_pearson_first.jpg)
+![descriptive_stats_pearson_first.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/descriptive_stats_pearson_first.jpg?raw=true)
 
 2. Segundo coeficiente de asimetría de Pearson (asimetría mediana)
 
-![descriptive_stats_pearson_second.jpg](../assets/descriptive_stats_pearson_second.jpg)
+![descriptive_stats_pearson_second.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/descriptive_stats_pearson_second.jpg?raw=true)
 
 La dirección de la asimetría viene dada por el signo 0, significa que no hay asimetría. Negativo significa asimetría negativa.
 
@@ -166,7 +166,7 @@ Si r es negativo, significa que a medida que una variable se hace más grande, l
 
 El 4to momento central es la Curtosis. Se trata de la existencia de valores atípicos. Es una medida de si los datos son de cola pesada (profusión de valores atípicos) o de cola ligera (ausencia de valores atípicos) en relación con una distribución normal. Se trata de cuán gordas son las colas en la distribución.
 
-![descriptive_stats_kurtosis.jpg](../assets/descriptive_stats_kurtosis.jpg)
+![descriptive_stats_kurtosis.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/descriptive_stats_kurtosis.jpg?raw=true)
 
 Leptokurtic significa que las colas son gruesas y pesadas.
 
