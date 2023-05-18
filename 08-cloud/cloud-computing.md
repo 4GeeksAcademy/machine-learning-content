@@ -85,7 +85,7 @@ AWS is the most used cloud platform today. This cloud solution allows us to virt
 
 All files or objects are stored in buckets. We can think of a bucket as a folder where we store our files. A bucket is a container that can store different types of objects. We can not create a bucket with a name that already exists. Bucket names in S3 are unique and we can configure if buckets are public or private. Inside a bucket we can modify a file and have its versions during time.
 
-S3 storage format: https://[bucket name].s3.amazonaws.com/video.mp4
+S3 storage format: `https://[bucket name].s3.amazonaws.com/video.mp4`
 
 **Cloud9** is like a Visual Studio Code but from AWS. It allows us to create environments. When we configure them, in the background this creates and executes a virtual machine service called Elastic Compute Cloud (EC2). 
 
@@ -129,7 +129,7 @@ Azure ML also provides solutions for Artificial Intelligence (AI). This includes
 
 Link of the Microsoft Azure platform: `azure.microsoft.com`
 
-How to learn Microsoft skills: [Microsoft Learn](docs.microsoft.com/en-us/learn), [Azure fundamentals](docs.microsoft.com/en-us/certifications/azure-fundamentals/).
+How to learn Microsoft skills: [Microsoft Learn](https://docs.microsoft.com/en-us/learn), [Azure fundamentals](https://docs.microsoft.com/en-us/certifications/azure-fundamentals/).
 
 
 **Source:**
