@@ -16,5 +16,5 @@ regex
 
 
 # Machine learning ----------------------------
-sklearn
+scikit-learn
 wordcloud
