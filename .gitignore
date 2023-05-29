@@ -1,6 +1,7 @@
 .*
 !.gitignore
 !.gitpod.yml
+!.devcontainer
 
 
    
