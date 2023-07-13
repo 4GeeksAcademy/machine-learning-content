@@ -69,7 +69,6 @@ El paso previo de entrenar un modelo, además del EDA, es dividir los datos en u
 
 ![train_test_split](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/train_test_split.jpg?raw=true)
 
-Código de ejemplo:
 
 ```py
 
@@ -184,48 +183,12 @@ Algunas desventajas:
 
 ## ¿Qué es el sobreajuste?
 
-El sobreajuste es cuando un modelo hace predicciones mucho mejores sobre datos conocidos (datos incluidos en el conjunto de entrenamiento) que sobre datos desconocidos (datos no incluidos en el conjunto de entrenamiento).
+El **sobreajuste** (*overfitting*) se da cuando el modelo se entrena con muchos datos. Cuando un modelo se entrena con tantos datos, comienza a aprender del ruido y las entradas de datos inexactas de nuestro dataset. Debido a esto, el modelo no devuelve una salida acertada. Combatir el sobreajuste es una tarea iterativa y que deriva en la experiencia del desarrollador, y podemos empezar con:
 
-¿Cómo podemos combatir el sobreajuste?
+- Realizar un correcto EDA, seleccionando valores y variables significativas para el modelo siguiendo la regla del "menos es más".
+- Simplificar o cambiar el modelo que estamos utilizando.
+- Usar más o menos datos de entrenamiento.
 
-Algunas formas de combatir el sobreajuste son:
+Detectar si el modelo está sobreajustando los datos es también una ciencia, y lo podemos determinar si la métrica del modelo en el conjunto de datos de entrenamiento es muy alta, y la métrica del conjunto de prueba es baja.
 
-- Simplificar el modelo (a menudo se hace cambiando).
-
-- Seleccione un modelo diferente.
-
-- Usar más datos de entrenamiento.
-
-- Recopilar datos de mejor calidad para combatir el sobreajuste.
-
-¿Cómo podemos saber si nuestro modelo está sobreajustando los datos?
-
-Si nuestro error de entrenamiento es bajo y nuestro error de validación es alto, lo más probable es que nuestro modelo esté sobreajustando nuestros datos de entrenamiento.
-
-¿Cómo podemos saber si nuestro modelo no se ajusta bien a los datos?
-
-Si nuestro error de entrenamiento y validación son relativamente iguales y muy altos, lo más probable es que nuestro modelo no se ajuste bien a nuestros datos de entrenamiento.
-
-Fuente:
-    
-https://towardsdatascience.com/train-test-split-and-cross-validation-in-python-80b61beca4b6
-
-https://www.kdnuggets.com/2020/09/understanding-bias-variance-trade-off-3-minutes.html
-
-https://medium.com/@ranjitmaity95/7-tactics-to-combat-imbalanced-classes-in-machine-learning-datase-4266029e2861
-
-https://www.kdnuggets.com/2016/08/10-algorithms-machine-learning-engineers.html
-
-https://www.dataquest.io/blog/top-10-machine-learning-algorithms-for-beginners/#:~:text=The%20first%205%20algorithms%20that,are%20examples%20of%20supervised%20learning.
-
-https://www.qwak.com/post/online-vs-offline-machine-learning-whats-the-difference#:~:text=While%20online%20learning%20does%20have,using%20the%20batch%20learning%20method.&text=In%20batch%20learning%2C%20data%20is,time%20to%20time%20in%20batches.
-
-https://towardsdatascience.com/10-machine-learning-algorithms-you-need-to-know-77fb0055fe0
-
-https://hackernoon.com/introduction-to-recommender-system-part-1-collaborative-filtering-singular-value-decomposition-44c9659c5e75
-
-https://towardsdatascience.com/understanding-train-test-split-scikit-learn-python-ea676d5e3d1
-
-https://towardsdatascience.com/understanding-8-types-of-cross-validation-80c935a4976d
-
-https://www.section.io/engineering-education/how-to-implement-k-fold-cross-validation/
+En cambio, si no hemos entrenado suficiente el modelo también podemos verlo simplemente comparando la métrica de entrenamiento y prueba, de tal forma que si son relativamente iguales y muy altos, lo más probable es que nuestro modelo no se ajuste bien a nuestros datos de entrenamiento.
