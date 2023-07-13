@@ -1,112 +1,71 @@
-# Básicos de Machine Learning 
+## Introducción al Machine Learning
 
-## ¿Qué es Machine Learning? 
+### Definición
 
-Machine learning es el campo de la ciencia que estudia algoritmos que aproximan funciones cada vez mejor a medida que se les dan más observaciones. 
+El **Aprendizaje Automático** (*Machine learning*) es una rama de la Inteligencia Artificial que se centra en la construcción de sistemas que pueden aprender de los datos, en lugar de seguir solo reglas programadas explícitamente.
 
-Los algoritmos de Machine Learning son programas que pueden aprender de los datos y mejorar a partir de la experiencia, sin intervención humana. Las tareas de aprendizaje pueden incluir el aprendizaje de la función que asigna la entrada a la salida, el aprendizaje de la estructura oculta en los datos no etiquetados; o "aprendizaje basado en instancias", donde se produce una etiqueta de clase para una nueva instancia comparando la nueva instancia (fila) con las instancias de los datos de entrenamiento, que se almacenaron en la memoria.
+Los sistemas de Machine Learning utilizan algoritmos para analizar datos, aprender de ellos y luego hacer predicciones, en lugar de ser programados específicamente para llevar a cabo la tarea. Por ejemplo, un modelo de Machine Learning podría ser entrenado para reconocer gatos al proporcionarle miles de imágenes con y sin gatos. Con suficientes ejemplos, el sistema "aprende" a distinguir las características que definen a un gato, así podría identificarlos en nuevas imágenes que nunca antes había visto.
 
-## Tipos de algoritmos de Machine Learning
+### Tipos de aprendizaje
 
-### Aprendizaje supervisado
+Según cómo el modelo puede aprender a partir de los datos, existen varios tipos de aprendizaje:
 
-Es útil en los casos en que una etiqueta está disponible para un determinado conjunto de entrenamiento, pero falta y debe predecirse para otras instancias. Utiliza los datos de entrenamiento etiquetados para aprender la función de mapeo que convierte las variables de entrada (X) en la variable de salida (Y).
+#### Aprendizaje supervisado
 
-Los datos etiquetados son datos que tienen la información sobre la variable de destino para cada instancia.
+Los modelos son entrenados en un conjunto de datos etiquetado. Un conjunto de datos etiquetado es un conjunto de datos que contiene tanto los datos de entrada como las respuestas correctas, también conocidas como etiquetas o valores objetivo.
 
-Tipos de algoritmos de Machine Learning supervisado:
+El objetivo del aprendizaje supervisado es aprender una función que transforme las entradas en salidas. Dependiendo del tipo de salida que queremos que el modelo sea capaz de generar, podemos dividir los modelos en varios tipos:
 
-- La clasificación se utiliza para predecir el resultado de una muestra dada cuando la variable de salida está en forma de categorías.
+- **Regresión** (regression). Cuando la etiqueta o el valor objetivo es un número continuo (como el precio de una casa), el problema se considera un problema de regresión. El modelo debe devolver un número en una escala infinita.
+- **Clasificación** (classification). Cuando la etiqueta es categórica (como predecir si un correo es spam o no), el problema es de clasificación. El modelo debe devolver una etiqueta según se corresponda a una clase u otra.
 
-- La regresión se utiliza para predecir el resultado de una muestra dada cuando la variable de salida está en forma de valores reales.
+Algunos ejemplos de modelos fundamentados en este tipo de aprendizaje son:
 
-- El ensamblaje es otro tipo de aprendizaje supervisado. Significa combinar las predicciones de múltiples modelos de Machine Learning que son individualmente débiles para producir una predicción más precisa en una nueva muestra. Ensamblar significa combinar los resultados de múltiples estudiantes (clasificadores) para obtener mejores resultados, mediante votación o promediación. La votación se usa durante la clasificación y el promedio se usa durante la regresión. La idea es que los conjuntos de alumnos se desempeñen mejor que los alumnos individuales. El Bagging (embolsado) y el Boosting (impulso) son dos tipos de algoritmos de ensamblaje.
+- Regresión logística y lineal.
+- Árboles de decisión.
+- Clasificador "Naive Bayes".
+- Máquinas de Vectores de Soporte.
 
-**¿Cuál es la diferencia entre Bagging y Boosting?**
+#### Aprendizaje no supervisado
 
-El Bagging y el Boosting son métodos de ensamblado, lo que significa que combinan muchos predictores débiles para crear un predictor fuerte. Una diferencia clave es que el embolsado construye modelos independientes en paralelo, mientras que el impulso construye modelos secuencialmente, en cada paso enfatizando las observaciones que se perdieron en los pasos anteriores.
+En este tipo de aprendizaje, en contraposición a lo que sucedía con el anterior, los modelos se entrenan usando un conjunto de datos sin etiquetas. En este tipo de aprendizaje, el objetio es encontrar patrones o estructuras ocultas en los datos.
 
-Algunos ejemplos de algoritmos de aprendizaje supervisado son:
+Puesto que en este tipo de aprendizaje no hay etiquetas, los modelos deben descubrir por sí mismos las relaciones en los datos.
 
-1. Árboles de decisión.
+Algunos ejemplos de modelos fundamentados en este tipo de aprendizaje son:
 
-2. Clasificación Naive Bayes.
+- Agrupamiento (*clustering*).
+- Reducción de la dimensionalidad.
 
-3. Regresión de mínimos cuadrados ordinarios.
+#### Aprendizaje por refuerzo
 
-4. Regresión logística.
+En este aprendizaje el modelo (también llamado agente) aprende a tomar decisiones óptimas a través de la interacción con su entorno. El objetivo es maximizar alguna noción de recompensa acumulativa.
 
-5. Máquinas de vectores de soporte.
+En el aprendizaje por refuerzo, el agente toma acciones, las cuales afectan el estado del ambiente, y recibe retroalimentación en forma de recompensas o penalizaciones. La meta es aprender una estrategia para maximizar su recompensa a largo plazo.
 
-### Aprendizaje sin supervisión
+Un ejemplo de este tipo de aprendizaje es un programa que aprenda a jugar al ajedrez. El agente (el programa) decide qué movimiento hacer (las acciones de mover ficha) en diferentes posiciones del tablero de ajedrez (los estados) para maximizar la posibilidad de ganar el juego (la recompensa).
 
-Es útil en los casos en que el desafío es descubrir relaciones implícitas en un conjunto de datos no etiquetado dado. En otras palabras, solo tenemos las variables de entrada (X) y ninguna variable de salida correspondiente.
+Este tipo de aprendizaje es diferente de los dos anteriores. En lugar de aprender a partir de un conjunto de datos con o sin etiquetas, el aprendizaje por refuerzo está centrado en tomar decisiones óptimas y aprender a partir de la retroalimentación de esas decisiones.
 
-Tipos de aprendizaje no supervisado:
+### Conjuntos de datos
 
-- La asociación se utiliza para descubrir la probabilidad de la co-ocurrencia de elementos en una colección. Por ejemplo, se podría utilizar un modelo de asociación para descubrir que si un cliente compra pan, tiene un 80 % de probabilidades de que también compre huevos.
+Los datos son una pieza fundamental en cualquier algoritmo de Machine Learning. Sin ellos, independientemente del tipo de aprendizaje o modelo, no existe forma de iniciar ningún proceso de aprendizaje.
 
-- La agrupación se utiliza para agrupar muestras de modo que los objetos dentro del mismo grupo sean más similares entre sí que con los objetos de otro grupo.
+Un conjunto de datos es una colección que normalmente se representa en forma de tabla. En esta tabla, cada fila representa una observación o instancia y cada columna representa una característica, atributo o variable de esa obversación. Este conjunto de datos es utilizado para entrenar y evaluar modelos:
 
-- La reducción de dimensionalidad se utiliza para reducir el número de variables de un conjunto de datos y, al mismo tiempo, garantizar que aún se transmita información importante. La reducción de la dimensionalidad se puede realizar utilizando métodos de extracción de características y métodos de selección de características.
+1. Entrenamiento del modelo. Un modelo de Machine Learning aprende a partir de un conjunto de datos de entrenamiento. El modelo entrena ajustando sus parámetros internamente.
+2. Evaluación del modelo. Una vez que el modelo ha sido entrenado, se utiliza un conjunto de datos de prueba independiente para evaluar su rendimiento. Este dataset contiene observaciones que no se utilizaron durante el entrenamiento, lo que permite obtener una evaluación imparcial de cómo se espera que el modelo realice predicciones sobre nuevos datos.
 
-Algunos ejemplos de algoritmos de aprendizaje no supervisados ​​son:
+En algunas situaciones, también se utiliza un conjunto de validación, que se utiliza para evaluar el rendimiento de un modelo durante el entrenamiento. Una vez que se entrenan los modelos, se evalúan en el conjunto de validación para seleccionar el mejor modelo posible.
 
-1. K-means
+#### División del conjunto de datos
 
-2. PCA
+El paso previo de entrenar un modelo, además del EDA, es dividir los datos en un conjunto de entrenamiento (`train dataset`) y un conjunto de prueba (`test dataset`), en un procedimiento como el siguiente:
 
-### Aprendizaje reforzado
-
-Se encuentra entre estos 2 extremos — Describe un conjunto de algoritmos que aprenden del resultado de cada decisión.
-Los algoritmos de refuerzo generalmente aprenden acciones óptimas a través de prueba y error.
-
-Por ejemplo, un robot podría usar el aprendizaje por refuerzo para aprender que caminar hacia adelante contra una pared es malo, pero alejarse de una pared y caminar es bueno, o imagina un videojuego en el que el jugador necesita moverse a ciertos lugares en ciertos momentos para ganar puntos. Un algoritmo de refuerzo que jugaría ese juego comenzaría moviéndose aleatoriamente pero, con el tiempo, a través de prueba y error, aprendería dónde y cuándo necesita mover el personaje del juego para maximizar su total de puntos.
-
-## Aprendizaje en línea vs fuera de línea
-
-Si bien el aprendizaje en línea tiene sus usos, Machine Learning tradicional se realiza fuera de línea mediante el método de aprendizaje por lotes (batch).
-
-En el aprendizaje por lotes, los datos se acumulan durante un período de tiempo. Luego, el modelo de machine learning se entrena con estos datos acumulados de vez en cuando en lotes. Si ingresan nuevos datos, se debe ingresar un lote nuevo completo (incluidos todos los datos antiguos y nuevos) en el algoritmo para aprender de los nuevos datos. En el aprendizaje por lotes, el algoritmo de machine learning actualiza sus parámetros solo después de consumir lotes de datos nuevos.
-
-Es exactamente lo opuesto al aprendizaje en línea porque el modelo no puede aprender de manera incremental a partir de un flujo de datos en vivo. El aprendizaje en línea se refiere a la actualización gradual de los modelos a medida que obtienen más información.
-
-## ¿Cómo se dividen los datos?
-
-¿Qué son los datos de entrenamiento y para qué sirven?
-
-Los datos de entrenamiento son un conjunto de ejemplos que se utilizarán para entrenar el modelo de machine learning.
-Para machine learning supervisado, estos datos de entrenamiento deben tener una etiqueta. Lo que está tratando de predecir debe ser definido.
-
-Para el aprendizaje automático no supervisado, los datos de entrenamiento contendrán solo características y no usarán objetivos etiquetados. Lo que está tratando de predecir no está definido.
-
-¿Qué es un conjunto de validación y por qué utilizar uno?
-
-Un conjunto de validación es un conjunto de datos que se utiliza para evaluar el rendimiento de un modelo durante el entrenamiento/selección del modelo. Una vez que se entrenan los modelos, se evalúan en el conjunto de validación para seleccionar el mejor modelo posible.
-
-Nunca debe usarse para entrenar el modelo directamente.
-
-Tampoco debe usarse como el conjunto de datos de prueba porque hemos sesgado la selección de nuestro modelo para que funcione bien con estos datos, incluso si el modelo no se entrenó directamente con ellos.
-
-¿Qué es un equipo de prueba y por qué utilizar uno?
-
-Un conjunto de prueba es un conjunto de datos que no se utilizan durante el entrenamiento o la validación. El rendimiento del modelo se evalúa en el conjunto de prueba para predecir qué tan bien se generalizará a nuevos datos.
-
-### Técnicas de entrenamiento y validación
-
-Un objetivo del aprendizaje supervisado es construir un modelo que funcione bien con nuevos datos. Si tiene datos nuevos, es una buena idea ver cómo funciona su modelo en ellos. El problema es que es posible que no tenga datos nuevos, pero puede simular esta experiencia con un procedimiento como train test split.
-
-**Train-test-split**
-
-Train test split es un procedimiento de validación de modelo que le permite simular cómo se comportaría un modelo con datos nuevos/no vistos. Así es como funciona el procedimiento.
-
-1. Asegúrate de que tus datos estén organizados en un formato aceptable para train test split. En scikit-learn, esto consiste en separar su conjunto de datos completo en Funciones y Objetivo. 
-
-2. Divide el conjunto de datos en dos partes: un conjunto de entrenamiento y un conjunto de prueba. Esto consiste en un muestreo aleatorio sin reemplazo de alrededor del 75 % (puede variar esto) de las filas y colocarlas en su conjunto de entrenamiento y colocar el 25 % restante en su conjunto de prueba. Ten en cuenta que los colores en "Features" (Características) y "Target" (Objetivo) indican dónde irán tus datos (“X_train”, “X_test”, “y_train”, “y_test”) para un train test split en particular.
-
-3. Entrena al modelo en el conjunto de entrenamiento. Esto es "X_train" y "y_train" en la imagen.
-
-4. Prueba el modelo en el conjunto de prueba ("X_test" y "y_test" en la imagen) y evalúa el rendimiento.
+1. Asegúrate de que tus datos estén organizados en un formato aceptable. Si trabajamos con ficheros de texto deberían ser formato de tabla, y si trabajamos con imágenes, los propios docmentos en sí.
+2. Divide el conjunto de datos en dos partes: un conjunto de entrenamiento y un conjunto de prueba. Seleccionaremos aleatoriamente un 80% (puede variar) de las filas y las colocaremos en el conjunto de entrenamiento y el 20% restante en el conjunto de prueba. Además, debemos dividir las predictoras de las clases, conformando 4 elementos: `X_train`, `y_train`, `X_test`, `y_test`.
+3. Entrena el modelo usando el conjunto de entrenamiento (`X_train`, `y_train`).
+3. Prueba el modelo usando el conjunto de prueba (`X_test`, `y_test`).
 
 ![train_test_split](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/train_test_split.jpg?raw=true)
 
