@@ -1,58 +1,59 @@
-# Regularized Linear Models
+## Regularized Linear Models
 
-Before explaining regularized linear models, let's recap some important information about linear regression.
+A **regularized linear model** is a version of a linear model that includes an element in its function to avoid overfitting and improve the learning capability of the model.
 
-Every machine learning problem is basically an optimization problem. That is, you wish to find either a maximum or a minimum of a specific function. The function that you want to optimize is usually called the loss function (or cost function). The loss function is defined for each machine learning algorithm you use, and this is the main metric for evaluating the accuracy of your trained model.
+Generally speaking, a linear model (like the one we saw in the previous module) tries to find the relationship between the input variables and the output variable. However, if a linear model has too many parameters or if the data are very noisy, it can happen that the model fits the training data too well, producing a clear overfit and making it difficult to generalize well to new data.
 
-This is the most basic form of a loss for a specific data-point, that is used mostly for linear regression algorithms:
+To avoid this problem, regularized linear models add an extra term to penalize coefficient values that are too large. These models are linear regressions like those seen in the previous module but with the addition of a regularization term. The two types of models are:
 
-$l = ( Ŷi- Yi)^2$
+- **Lasso regularized linear model** (*L1*): Adds a penalty equal to the absolute value of the magnitude of the coefficients. May result in coefficients equal to zero, indicating that the corresponding feature is not used in the model.
+- **Ridge regularized linear model** (*L2*): Adds a penalty equal to the square of the magnitude of the coefficients. This tends to reduce the coefficients but does not make them exactly zero, so all features remain in the model.
 
-Where :
+Both techniques attempt to limit or "penalize" the size of the coefficients in the model. Imagine that we are fitting a line to points on a graph:
 
-- Ŷi is the predicted value
+- **Linear regression**: We only care about finding the line that best fits the points.
+- **Ridge linear regression**: We try to find the line that fits best, but we also want to keep the slope of the line as small as possible.
+- **Lasso linear regression**: As with Ridge, we try to fit the line and keep the slope small, but Lasso can take the slope to zero if that helps fit the data. This is like "cherry-picking" which variables are important and which are not, because he can reduce the importance of some variables to zero.
 
-- Yi is the actual value
+### Model parameterization
 
-The loss function as a whole can be denoted as:
+We can easily build a regularized linear model in Python using the `scikit-learn` library and the `Lasso` and `Ridge` functions. Some of its most important parameters and the first ones we should focus on are:
 
-$L = ∑( Ŷi- Yi)^2$
+- `alpha`: This is the regularization hyperparameter. It controls how much we want to penalize high coefficients. A higher value increases the regularization and therefore the model coefficients tend to be smaller. Conversely, a lower value reduces it and allows higher coefficients. The default value is 1.0 and its range of values goes from 0.0 to infinity.
+- `max_iter`: This is the maximum number of iterations of the model. 
 
-This loss function, in particular, is called quadratic loss or least squares. We wish to minimize the loss function (L) as much as possible so the prediction will be as close as possible to the ground truth.
+Another very important parameter is the `random_state`, which controls the random generation seed. This parameter is crucial to ensure replicability.
 
-> Remember, every machine learning algorithm defines its own loss function according to its goal in life
+### Model usage in Python
 
-## Overcoming overfit with regularization
+You can easily use `scikit-learn` to program these methods after the EDA:
 
-We finished the last lesson talking about the importance of avoiding overfitting. One of the most common mechanisms for avoiding overfit is called regularization. Regularized machine learning model, is a model that its loss function contains another element that should be minimized as well. Let’s see an example:
+#### Lasso
 
-$L = ∑( Ŷi- Yi)^2 + λ∑ β2$
+```py
+from sklearn.linear_model import Lasso
 
-
-
-1. **Ridge Regression** - linear regression that adds L2-norm penalty/regularization term to the cost function. The λ parameter is a scalar that should be learned as well, using cross validation. A super important fact we need to notice about ridge regression is that it enforces the β coefficients to be lower, but it does not enforce them to be zero. That is, it will not get rid of irrelevant features but rather minimize their impact on the trained model.
-
-2. **Lasso** - linear regression that adds L1-norm penalty/regularization term to the cost function. The only difference from Ridge regression is that the regularization term is in absolute value. But this difference has a huge impact on the trade-off we’ve discussed before. Lasso method overcomes the disadvantage of Ridge regression by not only punishing high values of the coefficients β but actually setting them to zero if they are not relevant. Therefore, you might end up with fewer features included in the model than you started with, which is a huge advantage.
-
-3. Elastic Net - linear regression that adds mix of both L1- and L2-norm penalties terms to the cost function.
-
-## What hyperparameters can be tuned in regularized linear models?
-
-You can tune the weight of the regularization term for regularized models (typically denoted as alpha), which affect how much the models will compress features.
-
-- alpha = 0 ---> regularized model is identical to original model.
-
-- alpha = 1 ---> regularized model reduced the original model to a constant value.
-
-**Regularized models performance**
-
-Regularized models tend to outperform non-regularized linear models, so it is suggested that you at least try using ridge regression.
-
-Lasso can be effective when you want to automatically do feature selection in order to create a simpler model but can be dangerous since it may be erratic  and remove features that contain useful signal.
-
-Elastic net is a balance of ridge and lasso, and it can be used to the same effect as lasso with less erratic behaviour.
+# Load of train and test data
 
 
-Source:
+lasso_model = Lasso(alpha = 0.1, max_iter = 300)
 
-https://medium.com/hackernoon/practical-machine-learning-ridge-regression-vs-lasso-a00326371ece
+lasso_model.fit(X_train, y_train)
+
+y_pred = lasso_model.predict(y_test)
+```
+
+#### Ridge
+
+```py
+from sklearn.linear_model import Ridge
+
+# Load of train and test data
+
+
+ridge_model = Ridge(alpha = 0.1, max_iter = 300)
+
+ridge_model.fit(X_train, y_train)
+
+y_pred = ridge_model.predict(y_test)
+```
