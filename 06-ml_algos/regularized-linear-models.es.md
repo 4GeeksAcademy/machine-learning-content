@@ -15,14 +15,14 @@ Ambas técnicas intentan limitar o "penalizar" el tamaño de los coeficientes de
 - **Regresión lineal de Ridge**: Intentamos encontrar la línea que se ajusta mejor, pero también queremos que la pendiente de la línea se lo más pequeña posible.
 - **Regresión lineal de Lasso**: Al igual que con Ridge, intentamos ajustar la línea y mantener la pendiente pequeña, pero Lasso puede llevar la pendiente a cero si eso ayuda a ajustar los datos. Esto es como si "seleccionase" qué variables son importantes y cuáles no, porque puede reducir la importancia de algunas variables a cero.
 
-### Parametrización del modelo
+### Hiperparametrización del modelo
 
-Podemos construir un modelo lineal regularizado fácilmente en Python utilizando la librería `scikit-learn` y las funciones `Lasso` y `Ridge`. Algunos de sus parámetros más importantes y los primeros en los que debemos centrarnos son:
+Podemos construir un modelo lineal regularizado fácilmente en Python utilizando la librería `scikit-learn` y las funciones `Lasso` y `Ridge`. Algunos de sus hiperparámetros más importantes y los primeros en los que debemos centrarnos son:
 
-- `alpha`: Este es el hiperparámetro de regularización. Controla cuánto queremos penalizar los coeficientes altos. Un valor más alto aumenta la regularización y por lo tanto los coeficientes del modelo tienden a ser más pequeños. Por el contrario, un valor más bajo la reduce y permite coeficientes más altos. El valor por defecto es 1.0 y su rango de valores va desde 0.0 hasta infinito.
+- `alpha`: Este es el hiperparámetro de regularización. Controla cuánto queremos penalizar los coeficientes altos. Un valor más alto aumenta la regularización y por lo tanto los coeficientes del modelo tienden a ser más pequeños. Por el contrario, un valor más bajo la reduce y permite coeficientes más altos. El valor por defecto es `1.0` y su rango de valores va desde `0.0` hasta `infinito`.
 - `max_iter`: Es el número máximo de iteraciones del modelo. 
 
-Otro parámetro muy importante es el `random_state`, que controla la semilla de generación aleatoria. Este parámetro es crucial para asegurar la replicabilidad.
+Otro hiperparámetro muy importante es el `random_state`, que controla la semilla de generación aleatoria. Este atributo es crucial para asegurar la replicabilidad.
 
 ### Uso del modelo en Python
 
