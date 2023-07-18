@@ -1,6 +1,6 @@
 ## Árboles de Decisión
 
-Un **árbol de decisión** (*decission tree*) es un modelo ampliamente utilizado en Machine Learning y que permite resolver problemas tanto de regresión como de clasificación. Es un modelo gráfico que imita la toma de decisiones humanas, es decir, se basa en una serie de preguntas para llegar a una conclusión.
+Un **árbol de decisión** (*decision tree*) es un modelo ampliamente utilizado en Machine Learning y que permite resolver problemas tanto de regresión como de clasificación. Es un modelo gráfico que imita la toma de decisiones humanas, es decir, se basa en una serie de preguntas para llegar a una conclusión.
 
 La idea principal detrás de los árboles de decisión es dividir los datos en grupos cada vez más pequeños (llamados nodos) basándose en diferentes criterios hasta llegar a un resultado o decisión final. Estos criterios se seleccionan de tal manera que los elementos de cada nodo sean lo más similares posibles entre sí.
 
@@ -29,7 +29,7 @@ El objetivo de las divisiones en un árbol de decisión es aumentar la pureza de
 
 En este caso, por simplicidad, supongamos que decidimos dividir por `Clima` primero. Entonces, dividimos los datos en dos nodos hijos: uno para los días soleados y otro para los días lluviosos:
 
-![decision_tree_structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/starting_tree.png?raw=true)
+![starting_tree](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/starting_tree.png?raw=true)
 
 Ahora tenemos dos nodos hijos, cada uno con una parte de los datos:
 
@@ -49,7 +49,7 @@ Ahora tenemos dos nodos hijos, cada uno con una parte de los datos:
 
 Cada uno de estos nodos hijos se divide de nuevo, esta vez en función de la velocidad del viento:
 
-![decision_tree_structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/derivated_tree.png?raw=true)
+![derivated_tree](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/derivated_tree.png?raw=true)
 
 Ahora, cada uno de los nodos hijos (que ahora son nodos hoja, ya que no se dividirán más porque son puros) representa una decisión final basada en las condiciones climáticas. Por ejemplo, si el clima es soleado y el viento es débil, la decisión es jugar al fútbol.
 

@@ -1,148 +1,66 @@
-# Decision Trees
+## Decision trees
 
-Decision trees belong to a class of supervised machine learning algorithms, which are used in both classification (predicts discrete outcome) and regression (predicts continuous numeric outcomes) predictive modeling. They are constructed from only two elements — nodes and branches.
+A **decision tree** is a model widely used in Machine Learning to solve both regression and classification problems. It is a graphical model that mimics human decision making, i.e. it is based on a series of questions to reach a conclusion.
 
-**Are decision trees parametric or non-parametric models?**
+The main idea behind decision trees is to divide data into smaller and smaller groups (called nodes) based on different criteria until a final result or decision is reached. These criteria are selected in such a way that the elements of each node are as similar as possible to each other.
 
-Non-parametric. The number of model parameters is not determined before creating the model.
+### Structure
 
-## What are decision trees?
-
-Decision trees are a sequence of conditions that allow us to split the data iteratively (a node after another, essentially) until we can assign each data into a label. New data will simply follow the decision tree and end up in the most suitable category. 
-
-They are used for classification, regression, to measure feature importance and for feature selection.
-
-Let´s see a decision tree structure:
+The structure of a decision tree resembles that of an inverted tree. It starts with a node called **root node** that contains all the data. This node is split into two or more child nodes based on some criterion. These are the **decision nodes**. This process is repeated for each child node, creating what are called **branches**, until a node is reached that is no longer split. These final nodes are called **leaf nodes** and represent the final decision or prediction of the tree.
 
 ![decision_tree_structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/decision_tree_structure.jpg?raw=true)
 
-- Root node — node at the top of the tree. It contains a feature that best splits the data (a single feature that alone classifies the target variable most accurately)
+An important aspect of decision trees is that they are very interpretable models. You can visualize the entire tree and follow the decisions it makes, which is not possible in many other types of models. However, they can be prone to overfitting, especially if the tree is allowed to grow too large.
 
-- Decision nodes — nodes where the variables are evaluated. These nodes have arrows pointing to them and away from them
+### Derivation example
 
-- Leaf nodes — final nodes at which the prediction is made
+Let's imagine we are building a decision tree to decide whether we should play soccer based on weather conditions. We have the following data (in spanish):
 
-Depending on the dataset size (both in rows and columns), there are probably thousands to millions of ways the nodes and their conditions can be arranged. Let's look at a small example:
+| Clima | Viento | ¿Jugar al fútbol? |
+|-------|--------|-------------------|
+| Soleado | Fuerte | No |
+| Lluvioso | Débil | Sí |
+| Soleado | Débil | Sí |
+| Lluvioso | Fuerte | No |
 
-![decision_tree_data](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/decision_tree_data.jpg?raw=true)
+We start with a single node containing all the data. We need to decide what our first splitting criterion will be, i.e., which of the two features (`Clima` or `Viento`) we should use to split the data. This criterion is usually decided based on the **purity** of the resulting nodes. For a classification problem, a node is pure if all its data belong to the same class. In a regression problem, a node is pure if all the data of that node have the same value for the target variable.
 
-Now let's see one possible way to build the decision tree:
+The purpose of splits in a decision tree is to increase the purity of the child nodes. For example, if you have a node that contains spam and non-spam email data, you could split it based on whether the email contains the word "win". This could increase the purity if it turns out that most of the emails that contain the word "win" are spam and most of the emails that do not contain the word "win" are non-spam.
 
-![decision-tree](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/decision-tree.jpg?raw=true)
+In this case, for simplicity, suppose we decide to divide by `Clima` first. Then, we split the data into two child nodes: one for sunny days and one for rainy days:
 
-The leaves that contain a mixture of people who have and don’t have Heart Disease are called impure. We can quantify impurity using Gini Impurity, Entropy, and Information Gain. The higher the Gini Impurity, the more impure the leaves are. So we want the value to be as low as possible. We calculate the Gini Impurity of each of the leaves first, then calculate the total Gini Impurity of the split. The formula to calculate Gini Impurity of leaves is:
+![decision_tree_structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/starting_tree.png?raw=true)
 
-Gini impurity of a leaf: 1 - (probability of 'yes')^2 - (probability of 'no')^2
+Now we have two child nodes, each with a part of the data:
 
-A Low Gini (near 0) means most records from the sample are in the same class. A high Gini (maximum of 1 or less, depending on number of classes) means records from sample are spread evenly across classes.
+- In the "Soleado" (sunny) node, we have the following data:
 
-Finding Gini Impurity for continuous variables is a little more involved. First, we need to sort the column from lowest to highest, then calculate the average for adjacent rows. These average values will be our candidates for root node thresholds. Lastly, we calculate the Gini Impurity values for each average value. 
+| Clima | Viento | ¿Jugar al fútbol? |
+|-------|--------|-------------------|
+| Soleado | Fuerte | No |
+| Soleado | Débil | Sí |
 
-The above tree is called Classification tree as the target is to classify if a patient may have heart disease or not, based on gender. Regression trees are represented in the same manner, just they predict continuous values like the price of a house.
+- In the "Lluvioso" (rainy) node, we have the following data:
 
-**Between several features, how do we know which feature should be the root node?**
+| Clima | Viento | ¿Jugar al fútbol? |
+|-------|--------|-------------------|
+| Lluvioso | Débil | Sí |
+| Lluvioso | Fuerte | No |
 
-We need to check how every input feature classifies the target variable independently. If none of the features alone is 100% correct in the classification, we can consider these features impure.
+Each of these child nodes is divided again, this time according to wind speed:
 
-Gini impurity is calculated for all root node candidates, the one with the lowest Gini Impurity is going to be our root node. 
+![derivated_tree](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/derivated_tree.png?raw=true)
 
-To further decide which of the impure features is most pure, we can use the Entropy metric, whose value ranges from 0 (best) to 1 (worst). The variable with the lowest entropy is then used as a root node.
+Now, each of the child nodes (which are now leaf nodes, since they will not be split anymore because they are pure) represents a final decision based on the weather conditions. For example, if the weather is sunny and the wind is weak, the decision is to play soccer.
 
-To begin training the decision tree classifier, we have to determine the root node. Then, for every single split, the Information gain metric is calculated. It represents an average of all entropy values based on a specific split. The higher the gain is, the better the decision split is.
+### Model hyperparameterization
 
-The algorithm then performs a greedy search that goes over all input features and their unique values, calculates information gain for every combination, and saves the best split feature and threshold for every node.
+We can easily build a decision tree in Python using the `scikit-learn` library and the `DecisionTreeClassifier` and `DecisionTreeRegressor` functions. Some of its most important hyperparameters and the first ones we should focus on are:
 
-In this way, the tree is built recursively. The recursion process could go on forever, so we’ll have to specify some exit conditions manually. The most common ones are maximum depth and minimum samples at the node.
+- `max_depth`: The maximum depth of the tree. This limits how many splits it can have, which is useful to prevent overfitting. If this value is `None`, then nodes are expanded until leaves are pure or until all leaves contain fewer samples than `min_samples_split`.
+- `min_samples_split`: The minimum number of samples needed to split a node. If a node has less samples than `min_samples_split`, then it will not be split, even if it is not pure. Helps prevent overfitting.
+- `min_samples_leaf`: The minimum number of samples that must be in a leaf node. A node will split if doing so creates at least `min_samples_leaf` samples in each of the children. This also helps to prevent overfitting.
+- `max_features`: The maximum number of features to consider when looking for the best split. If `max_features` is `None`, then all features will be considered. Reducing this number may make the model simpler and faster to train, but may also cause it to miss some important relationships.
+- Criterion: The function to measure the quality of a split. Depending on the nature of the tree (sort or return), the options vary. This hyperparameter is in charge of choosing which variable to branch.
 
-## Decision tree optimization
-
-As a problem usually has a large set of features, it results in large number of splits, which in turn gives a huge tree. Such trees are complex and can lead to overfitting. So, we need to know when to stop.
-
-One way of doing this is to set a minimum number of training inputs to use on each leaf. For example we can use a minimum of 3 patients to reach a decision (heart disease or not), and ignore any leaf that takes less than 3 patients. 
-
-Another way is to set maximum depth of your model. Maximum depth refers to the length of the longest path from a root to a leaf.
-
-The performance of a tree can be further increased by **pruning**. It involves removing the branches that make use of features having low importance. This way, we reduce the complexity of tree, and thus increasing its predictive power by reducing overfitting.
-
-**What are some ways to reduce overfitting with decision trees?**
-
-- Reduce maximum depth
-
-- Increase min samples split
-
-- Balance data to prevent bias toward dominant classes
-
-- Increase the number of samples
-
-- Decrease the number of features
-
-## What are the main hyperparameters that you can tune for decision trees?
-
-Generally speaking, decision trees have the following parameters:
-
-- max depth - maximum tree depth
-
-- min samples split - minimum number of samples for a node to be split
-
-- min samples leaf - minimum number of samples for each leaf node
-
-- max leaf nodes - the maximum number of leaf nodes in the tree
-
-- max features - maximum number of features that are evaluated for splitting at each node (only valid for algorithms that randomize features considered at each split)
-
-The traditional decision tree is greedy and looks at all features at each split point, but many modern implementations allow splitting on randomized features (as seen in scikit learn) so max features may or may not be a tuneable hyperparameter.
-
-As always, the best place to know what other hyperparameters can be tuned, is the scikit learn documentation on decision trees, whether it's for classification or regression: https://scikit-learn.org/stable/modules/tree.html
-
-**How is feature importance evaluated in decision-tree based models?**
-
-The features that are split on most frequently and are closest to the top of the tree, thus affecting the largest number of samples, are considered to be the most important.
-
-
-## How each hyperparameter affects the model's ability to learn?**
-
-- max depth: increasing max depth will decrease bias and increase variance 
-
-- min samples split: increasing min samples split increases bias and decreases variance
-
-- min samples leaf: increasing min samples leaf increases bias and decreases variance
-
-- max leaf nodes: decreasing max leaf node increases bias and decreases variance
-
-- max features: decreasing maximum features increases bias and decreases variance
-
-There may be instances when changing hyperparameters has no effect on the model.
-
-## Advantages and disadvantages of Decision trees
-
-**Advantages:**
-
-- Simple to understand, interpret, visualize.
-
-- Decision trees implicitly perform variable screening or feature selection.
-
-- Can handle both numerical and categorical data. Can also handle multi-output problems.
-
-- Decision trees require relatively little effort from users for data preparation.
-
-- Nonlinear relationships between parameters do not affect tree performance.
-
-**Disadvantages:**
-
-- Overfitting. Decision trees overfit very quickly. If you let them grow without a stopping mechanism or a correction mechanism after the tree has been trained, they can split so many times that each leaf is a sample. This means that they’ve literally learned how the training data set looks and suffer from high variance (generalize poorly to novel data). Check the chapter below for practical advice on correcting overfitting.
-
-- Non-robust to input data changes. A small change in training data can result in a completely different tree. The overall accuracy might still be high, but the specific decision splits will be totally different.
-
-- Biased towards the dominant class. Classification decision trees tend to favor predicting the dominant class in datasets with class imbalance. 
-
-Source:
-
-https://pythonkai.org/2021/12/20/machine-learning-for-beginners-project-4-decision-tree-classifier/
-
-https://towardsdatascience.com/master-machine-learning-decision-trees-from-scratch-with-python-de75b0494bcd
-
-https://www.w3schools.com/python/python_ml_decision_tree.asp
-
-https://towardsdatascience.com/master-machine-learning-decision-trees-from-scratch-with-python-de75b0494bcd
-
-https://pub.towardsai.net/decision-tree-classification-explain-it-to-me-like-im-10-59a53c0b338f
+Another very important hyperparameter is the `random_state`, which controls the random generation seed. This attribute is crucial to ensure replicability.

@@ -34,6 +34,7 @@ You can easily use `scikit-learn` to program these methods after the EDA:
 from sklearn.linear_model import Lasso
 
 # Load of train and test data
+# These data must have been standardized and correctly processed in a complete EDA
 
 
 lasso_model = Lasso(alpha = 0.1, max_iter = 300)
@@ -49,7 +50,7 @@ y_pred = lasso_model.predict(y_test)
 from sklearn.linear_model import Ridge
 
 # Load of train and test data
-
+# These data must have been standardized and correctly processed in a complete EDA
 
 ridge_model = Ridge(alpha = 0.1, max_iter = 300)
 
