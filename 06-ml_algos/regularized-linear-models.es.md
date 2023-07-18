@@ -1,56 +1,59 @@
-# Modelos Lineales Regularizados
+## Modelos Lineales Regularizados
 
-Antes de explicar los modelos lineales regularizados, recapitulemos información importante sobre la regresión lineal.
+Un **modelo lineal regularizado** (*regularized linear model*) es una versión de un modelo lineal que incluye un elemento en su función para evitar el sobreajuste (*overfitting*) y mejorar la capacidad de aprendizaje del modelo.
 
-Cada problema de machine learning es básicamente un problema de optimización. Es decir, desea encontrar un máximo o un mínimo de una función específica. La función que desea optimizar generalmente se denomina función de pérdida (o función de costo). La función de pérdida se define para cada algoritmo de machine learning que usa, y esta es la métrica principal para evaluar la precisión de tu modelo entrenado.
+En términos generales, un modelo lineal (como el que vimos en el módulo anterior) intenta encontrar la relación entre las variables de entrada y la variable de salida. Sin embargo, si un modelo lineal tiene demasiados parámetros o si los datos son muy ruidosos, puede suceder que el modelo se ajuste demasiado a los datos de entrenamiento, produciéndose un claro sobreajuste y que dificulta generalizar bien a nuevos datos.
 
-Esta es la forma más básica de pérdida para un punto de datos específico, que se usa principalmente para algoritmos de regresión lineal:
+Para evitar este problema, los modelos lineales regularizados añaden un término extra para penalizar los valores de los coeficientes que son demasiado grandes. Estos modelos son regresiones lineales como las vistas en el módulo anterior pero con la adición de un término de regularización. Los dos tipos de modelos son:
 
-$l = ( Ŷi- Yi)^2$
+- **Modelo lineal regularizado de Lasso** (*L1*): Añade una penalización igual al valor absoluto de la magnitud de los coeficientes. Puede resultar en coeficientes iguales a cero, lo que indica que la característica correspondiente no se utiliza en el modelo.
+- **Modelo lineal regularizado de Ridge** (*L2*): Añade una penalización igual al cuadrado de la magnitud de los coeficientes. Esto tiende a reducir los coeficientes pero no los hace exactamente cero, por lo que todas las características se mantienen en el modelo.
 
-Donde:
+Ambas técnicas intentan limitar o "penalizar" el tamaño de los coeficientes del modelo. Imaginemos que estamos ajustando una línea a puntos en un gráfico:
 
-- Ŷi es el valor predicho
+- **Regresión lineal**: Solo nos preocupamos por encontrar la línea que se ajusta mejor a los puntos.
+- **Regresión lineal de Ridge**: Intentamos encontrar la línea que se ajusta mejor, pero también queremos que la pendiente de la línea se lo más pequeña posible.
+- **Regresión lineal de Lasso**: Al igual que con Ridge, intentamos ajustar la línea y mantener la pendiente pequeña, pero Lasso puede llevar la pendiente a cero si eso ayuda a ajustar los datos. Esto es como si "seleccionase" qué variables son importantes y cuáles no, porque puede reducir la importancia de algunas variables a cero.
 
-- Yi es el valor real
+### Hiperparametrización del modelo
 
-La función loss (pérdida) en su conjunto se puede denotar como:
+Podemos construir un modelo lineal regularizado fácilmente en Python utilizando la librería `scikit-learn` y las funciones `Lasso` y `Ridge`. Algunos de sus hiperparámetros más importantes y los primeros en los que debemos centrarnos son:
 
-$L = ∑( Ŷi- Yi)^2$
+- `alpha`: Este es el hiperparámetro de regularización. Controla cuánto queremos penalizar los coeficientes altos. Un valor más alto aumenta la regularización y por lo tanto los coeficientes del modelo tienden a ser más pequeños. Por el contrario, un valor más bajo la reduce y permite coeficientes más altos. El valor por defecto es `1.0` y su rango de valores va desde `0.0` hasta `infinito`.
+- `max_iter`: Es el número máximo de iteraciones del modelo. 
 
-Esta función de pérdida, en particular, se llama pérdida cuadrática o mínimos cuadrados. Deseamos minimizar la función de pérdida (L) tanto como sea posible para que la predicción sea lo más cercana posible a la realidad fundamental.
+Otro hiperparámetro muy importante es el `random_state`, que controla la semilla de generación aleatoria. Este atributo es crucial para asegurar la replicabilidad.
 
-> Recuerda, cada algoritmo de machine learning define su propia función de pérdida de acuerdo con su objetivo en la vida.
+### Uso del modelo en Python
 
-## Superar el sobreajuste con la regularización
+Puedes fácilmente utilizando `scikit-learn` programar estos métodos posterior al EDA:
 
-Terminamos la última lección hablando de la importancia de evitar el sobreajuste. Uno de los mecanismos más comunes para evitar el sobreajuste se denomina regularización. El modelo de machine learning regularizado es un modelo en el que su función de pérdida contiene otro elemento que también debe minimizarse. Veamos un ejemplo:
+#### Lasso
 
-$L = ∑( Ŷi- Yi)^2 + λ∑ β2$
+```py
+from sklearn.linear_model import Lasso
 
-1. **Regresión de cresta**: regresión lineal que agrega el término de penalización/regularización de la norma L2 a la función de costo. El parámetro λ es un escalar que también debe aprenderse mediante la validación cruzada. Un hecho muy importante que debemos notar sobre la regresión de cresta es que obliga a que los coeficientes β sean más bajos, pero no obliga a que sean cero. Es decir, no eliminará las características irrelevantes, sino que minimizará su impacto en el modelo entrenado.
+# Carga de los datos de train y test
+# Estos datos deben haber sido normalizados y correctamente tratados en un EDA completo
 
-2. **Lasso**: regresión lineal que agrega el término de penalización/regularización de la norma L1 a la función de costo. La única diferencia con la regresión de cresta es que el término de regularización está en valor absoluto. Pero esta diferencia tiene un gran impacto en la compensación que hemos discutido antes. El método Lasso supera la desventaja de la regresión de cresta al no solo castigar los valores altos de los coeficientes β, sino también al establecerlos en cero si no son relevantes. Por lo tanto, es posible que termine con menos funciones incluidas en el modelo que las que tenía al principio, lo cual es una gran ventaja.
+lasso_model = Lasso(alpha = 0.1, max_iter = 300)
 
-3. **Red elástica**: regresión lineal que agrega una combinación de términos de penalización de norma L1 y L2 a la función de costo.
+lasso_model.fit(X_train, y_train)
 
-## ¿Qué hiperparámetros se pueden ajustar en modelos lineales regularizados?
+y_pred = lasso_model.predict(y_test)
+```
 
-Puedes ajustar el peso del término de regularización para los modelos regularizados (generalmente indicado como alfa), que afecta la cantidad de características que los modelos comprimirán.
+#### Ridge
 
-- alpha = 0 ---> El modelo regularizado es idéntico al modelo original.
+```py
+from sklearn.linear_model import Ridge
 
-- alpha = 1 ---> modelo regularizado redujo el modelo original a un valor constante.
+# Carga de los datos de train y test
+# Estos datos deben haber sido normalizados y correctamente tratados en un EDA completo
 
-**Rendimiento de los modelos regularizados**
+ridge_model = Ridge(alpha = 0.1, max_iter = 300)
 
-Los modelos regularizados tienden a superar a los modelos lineales no regularizados, por lo que se sugiere que al menos intente usar la regresión de cresta.
+ridge_model.fit(X_train, y_train)
 
-Lasso puede ser efectivo cuando desea realizar automáticamente la selección de funciones para crear un modelo más simple, pero puede ser peligroso ya que puede ser errático y eliminar funciones que contienen señales útiles.
-
-La red elástica es un equilibrio entre la cresta y el lasso, y se puede utilizar con el mismo efecto que el lasso con un comportamiento menos errático.
-
-
-Fuente:
-
-https://medium.com/hackernoon/practical-machine-learning-ridge-regression-vs-lasso-a00326371ece
+y_pred = ridge_model.predict(y_test)
+```
