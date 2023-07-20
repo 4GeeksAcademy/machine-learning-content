@@ -1,10 +1,22 @@
-# Boosting de Algoritmos
+## Boosting
 
-Ya mencionamos el significado del aprendizaje conjunto, que en general es un modelo que hace predicciones basadas en varios modelos diferentes. En la última lección hablamos sobre el embolsado, una técnica que entrena un grupo de modelos individuales de manera paralela con subconjuntos aleatorios de datos. En esta lección aprenderemos la técnica de Boosting.
+**Boosting** es una técnica que se utiliza para mejorar el rendimiento de los modelos. La idea esencial detrás del boosting es entrenar una serie de modelos débiles (generalmente árboles de decisión), cada uno de los cuales intenta corregir los errores del anterior.
 
-**¿Qué significa Boosting?**
+El proceso de boosting funciona de la siguiente manera:
 
-Entrenamiento de un grupo de modelos individuales de forma **secuencial**. Cada modelo individual aprende de los errores cometidos por el modelo anterior.
+1. **Inicialización**. Primero, se asigna un peso inicial a cada muestra en el conjunto de entrenamiento. Por lo general, estos pesos son iguales para todas las muestras al inicio.
+2. **Entrenamiento del primer modelo**. Se entrena un modelo con los datos de entrenamiento. Este modelo hará algunas predicciones correctas y algunas incorrectas.
+3. **Cálculo de errores**. A continuación, se calcula el error del primer modelo en base a los pesos actuales de las muestras. Las muestras 
+
+1. Entrenar un modelo débil (árbol de decisión) con el conjunto de datos original.
+2. Entrenar otro modelo débil (árbol de decisión) que se centra en corregir los errores del primer modelo.
+3. Entrenar otro modelo débil (árbol de decisión) que se centra en corregir los errores del segundo modelo.
+4. Y así sucesivamente...
+
+Al final, todas las predicciones de los modelos se combinan de alguna manera para producir la predicción final. El efecto es que los modelos pueden concentrarse en las partes más difíciles de los datos, donde otros modelos están cometiendo errores.
+
+
+
 
 ## Boosting de Gradiente
 
