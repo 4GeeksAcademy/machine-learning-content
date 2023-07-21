@@ -79,7 +79,18 @@ Boosting y random forest son dos técnicas de Machine Learning que combinan múl
 |  | Boosting | Random forest |
 |--|----------|---------------|
 | Estrategia de ensamble | Los modelos se entrenan de forma secuencial, cada uno intenta corregir los errores del modelo anterior. | Los modelos se entrenan de forma independiente, cada uno con una muestra aleatoria de los datos |
-| Prevención de sobreajuste | Puede ser más propenso al sobreajuste, especialmente con ruido o valores atípicos en los datos. | Generalmente menos propenso al sobreajuste debido a su estrategia de *bagging* (*bootstrap aggregating*). |
+| Capacidad de modelado | Puede capturar relaciones complejas y no lineales en los datos. | Más "plano" y menor capacidad de capturar relaciones complejas y no lineales. |
+| Prevención de sobreajuste | Puede ser más propenso al sobreajuste, especialmente con ruido o valores atípicos en los datos. | Generalmente menos propenso al sobreajuste. |
 | Rendimiento y precisión | Tiende a tener un mayor rendimiento en términos de precisión, pero puede ser más sensible a los hiperparámetros. | Puede tener menor rendimiento de precisión, pero es más robusto a las variaciones de hiperparámetros. |
 | Tiempo de entrenamiento | Puede ser más lento para entrenar porque los modelos deben ser entrenados secuencialmente, uno detrás de otro. | Puede ser más rápido para entrenar porque todos los modelos pueden ser entrenados en paralelo. |
 
+Estas diferencias fundamentales entre los dos modelos hacen que sean más o menos indicados según la situación y las características de los datos. Sin embargo, para dejarlo más claro, podemos establecer algunos criterios basados en las características de los datos que podríamos considerar al elegir boosting y random forest:
+
+|  | Boosting | Random forest |
+|--|----------|---------------|
+| Tamaño del conjunto de datos | Funciona mejor con grandes conjuntos donde la mejora en rendimiento puede compensar el tiempo adicional de entrenamiento y afinación. | Funciona bien tanto con conjuntos pequeños como grandes, aunque puede ser preferible para conjuntos de datos pequeños debido a su eficiencia. |
+| Número de predictoras | Funciona mejor con grandes volúmenes de predictoras, ya que puede captar interacciones complejas. | Funciona bien con grandes volúmenes de predictoras. |
+| Distribuciones | Puede manejar distribuciones no usuales ya que es bueno interpretando relaciones no lineales complejas entre los datos. | Es robusto a las distribuciones usuales, pero puede tener problemas para modelar relaciones no lineales complejas. |
+| Outliers | Muy sensible a outliers. | Robusto a outliers gracias a su naturaleza basada en particiones. |
+
+La elección entre boosting y random forest depende del problema específico y del conjunto de datos con el que estemos trabajando, pero estas normas generales son un buen punto de partida para encarar los diferentes problemas del mundo real.
