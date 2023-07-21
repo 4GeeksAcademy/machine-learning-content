@@ -2,197 +2,84 @@
 
 **Boosting** es una técnica que se utiliza para mejorar el rendimiento de los modelos. La idea esencial detrás del boosting es entrenar una serie de modelos débiles (generalmente árboles de decisión), cada uno de los cuales intenta corregir los errores del anterior.
 
-El proceso de boosting funciona de la siguiente manera:
+### Estructura
 
-1. **Inicialización**. Primero, se asigna un peso inicial a cada muestra en el conjunto de entrenamiento. Por lo general, estos pesos son iguales para todas las muestras al inicio.
+El modelo, tiene una estructura secuencial y cada modelo en la secuencia se construye para coregir los errores de su predecesor. La estructura de un algoritmo de boosting sigue un proceso caracterizado con los siguientes pasos:
+
+1. **Inicialización**. Primero, se asigna un peso inicial a cada instancia (fila) en el conjunto de entrenamiento. Por lo general, estos pesos son iguales para todas las instancias al inicio.
 2. **Entrenamiento del primer modelo**. Se entrena un modelo con los datos de entrenamiento. Este modelo hará algunas predicciones correctas y algunas incorrectas.
-3. **Cálculo de errores**. A continuación, se calcula el error del primer modelo en base a los pesos actuales de las muestras. Las muestras 
+3. **Cálculo de errores**. A continuación, se calcula el error del modelo anterior en función de los pesos anteriores. Las instancias mal clasificadas por este modelo recibirán un mayor peso, de manera que se destacarán en el siguiente paso.
+4. **Entrenamiento del segundo modelo**. Se entrena un nuevo modelo, pero ahora se enfoca más en las instancias con mayor peso (las que el modelo anterior clasificó erróneamente).
+5. **Iteración**. Se repiten los pasos 3 y 4 para un número predefinido de veces, o hasta que se alcance un límite de error aceptable. Cada nuevo modelo se concentra en corregir los errores del modelo anterior.
+6. **Combinación de los modelos**. Tras el fin de las iteraciones, los modelos se combinan a través de una suma ponderada de sus predicciones. Los modelos que tienen un mejor rendimiento (es decir, cometen menos errores en sus predicciones) suelen tener mayor peso en la suma.
 
-1. Entrenar un modelo débil (árbol de decisión) con el conjunto de datos original.
-2. Entrenar otro modelo débil (árbol de decisión) que se centra en corregir los errores del primer modelo.
-3. Entrenar otro modelo débil (árbol de decisión) que se centra en corregir los errores del segundo modelo.
-4. Y así sucesivamente...
+![boosting](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/boosting.png?raw=true)
 
-Al final, todas las predicciones de los modelos se combinan de alguna manera para producir la predicción final. El efecto es que los modelos pueden concentrarse en las partes más difíciles de los datos, donde otros modelos están cometiendo errores.
+Es importante tener en cuenta que el boosting puede ser más susceptible al sobreajuste que otras técnicas si no se controla, dado que cada nuevo modelo está tratando de corregir los errores del anterior y podría terminar adaptándose demasiado a los datos de entrenamiento. Por lo tanto, es crucial tener un buen control de los hiperparámetros y realizar una validación cruzada durante el entrenamiento.
 
+### Implementaciones
 
+Existen multitud de implementaciones de este modelo, desde más a menos eficientes, con mayor o menor flexibilidad con respecto a los tipos de datos, según si se utilizan para clasificación o regresión, etcétera. Nosotros nos centraremos en el **boosting por gradiente** (*gradient boosting*), que es válido tanto para clasificación como para regresión.
 
+#### XGBoost
 
-## Boosting de Gradiente
+**XGBoost** (*eXtreme Gradient Boosting*) es la implementación más eficiente del algoritmo de gradient boosting. Se ha desarrollado buscando rapidez y precisión, y hasta ahora es la mejor implementación, superando en tiempos de entrenamiento a la de sklearn. La reducción de tiempos se debe a que proporciona métodos para paralelizar las tareas, flexibilidad a la hora de entrenar el modelo y es más robusto, pudiendo incluir mecanismos de poda de los árboles para ahorrar tiempos de procesamiento. Siempre que la tengamos disponible, esta es la alternativa que se debería utilizar frente a la de sklearn.
 
-Gradient Boosting (Boosting de Gradiente) aprende del error o error residual directamente, en lugar de actualizar los pesos de los puntos de datos.
+En la lección de Python de este módulo ejemplificamos cómo utilizar XGBoost, pero aquí proporcionaremos un código simple de muestra para que se vea el uso de sklearn para implementar boosting:
 
-Pasos de un algoritmo de boosting de gradiente:
-
-- Paso 1: entrenar un árbol de decisión.
-
-- Paso 2: Aplicar el árbol de decisión recién entrenado para predecir.
-
-- Paso 3: Calcular el residuo de este árbol de decisión, guarde los errores residuales como la nueva y.
-
-- Paso 4: Repitir el paso 1 (hasta alcanzar la cantidad de árboles que configuramos para entrenar).
-
-- Paso 5: Haz la predicción final.
-
-**¿En qué se diferencian las máquinas de boosting de gradiente de los algoritmos de árboles de decisión tradicionales?**
-
-El boosting de gradiente implica el uso de múltiples predictores débiles (árboles de decisión) para crear un predictor fuerte. Específicamente, incluye una función de pérdida que calcula el gradiente del error con respecto a cada característica y luego crea iterativamente nuevos árboles de decisión que minimizan el error actual. Se agregan más y más árboles al modelo actual para continuar corrigiendo errores hasta que las mejoras caen por debajo de un umbral mínimo o se ha creado un número predeterminado de árboles.
-
-**¿Qué hiperparámetros se pueden ajustar en el boosting de gradiente además de los hiperparámetros de cada árbol individual?**
-
-Los principales hiperparámetros que se pueden ajustar con los modelos GBM son:
-
-- Función de pérdida: función de pérdida para calcular el gradiente de error
-
-- Tasa de aprendizaje: la tasa a la que los árboles nuevos corrigen/modifican el predictor existente
-
-- Estimadores numéricos - el número total de árboles a producir para el predictor final
-
-Hiperparámetros adicionales específicos de la función de pérdida
-
-Algunas implementaciones específicas, por ejemplo, el boosting de gradiente estocástico, pueden tener hiperparámetros adicionales, como el tamaño de la submuestra (el tamaño de la submuestra afecta la aleatorización en las variaciones estocásticas).
-
-Documentación de Scikit learn sobre Boosting de Gradiente para clasificación: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html
-
-Documentación de Scikit learn sobre Boosting de Gradiente para regresión: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html
-
-**¿Cómo podemos reducir el sobreajuste al aumentar el gradiente?**
-
-Reducir la tasa de aprendizaje o reducir el número máximo de estimadores son las dos formas más fáciles de lidiar con modelos de boosting de gradiente que sobreajustan los datos.
-
-Con el boosting de gradiente estocástico, la reducción del tamaño de la submuestra es una forma adicional de combatir el sobreajuste.
-
-Los algoritmos de boosting tienden a ser vulnerables al sobreajuste, por lo que es importante saber cómo reducir el sobreajuste.
-
-## Implementación en Scikit Learn
-
-Imaginemos que ya tenemos nuestros datos divididos en conjuntos de datos de entrenamiento y prueba:
+##### Clasificación
 
 ```py
+from sklearn.ensemble import GradientBoostingClassifier
 
-# Cargar bibliotecas
+# Carga de los datos de train y test
+# Estos datos deben haber sido normalizados y correctamente tratados en un EDA completo
 
-from sklearn.metrics import accuracy_score
-from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier,GradientBoostingClassifier
+model = GradientBoostingClassifier(n_estimators = 5, random_state = 42)
 
-# Ajustar un modelo de árbol de decisión como comparación
+model.fit(X_train, y_train)
 
-clf = DecisionTreeClassifier()
-clf.fit(X_train, y_train)
-y_pred = clf.predict(X_test)
-accuracy_score(y_test, y_pred)
-
-OUTPUT: 0.756
-
-# Ajustar un modelo de Random Forest
-
-clf = RandomForestClassifier(n_estimators=100, max_features="auto",random_state=0)
-clf.fit(X_train, y_train)
-y_pred = clf.predict(X_test)
-accuracy_score(y_test, y_pred)
-
-OUTPUT: 0.797
-
-# Paso 6: ajustar un modelo de boosting de gradiente
-
-clf = GradientBoostingClassifier(n_estimators=100)
-clf.fit(X_train, y_train)
-y_pred = clf.predict(X_test)
-accuracy_score(y_test, y_pred)
-
-OUTPUT:0.834
+y_pred = model.predict(y_test)
 ```
 
-> n_estimators representa cuántos árboles queremos que crezcan.
-
-## ¿Qué es XGBoost?
-
-XGBoost es un algoritmo de Machine Learning basado en un árbol de decisión que utiliza un marco de refuerzo de gradiente.
-
-Piensa en XGBoost como un boosting de gradiente con "esteroides", también se le llama "boosting de gradiente extremo". Una combinación perfecta de técnicas de optimización de software y hardware para obtener resultados superiores utilizando menos recursos informáticos en el menor tiempo posible.
-
-**¿Por qué funciona tan bien?**
-
-Miremos la siguiente imagen para entender las razones por las que funciona tan bien.
-
-![xgboost](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/xgboost.jpg?raw=true)
-
-(Imagen de haciadatascience.com)
-
-Ahora, veamos la siguiente comparación. El modelo XGBoost tiene la mejor combinación de rendimiento de predicción y tiempo de procesamiento en comparación con otros algoritmos.
-
-![xgboost_performance](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/xgboost_performance.jpg?raw=true)
-
-(Imagen de haciadatascience.com)
-
-Establecer los hiperparámetros óptimos de cualquier modelo de Machine Learning puede ser un desafío. Entonces, ¿por qué no dejar que Scikit Learn lo haga por ti?
-
-Para que XGBoost pueda manejar nuestros datos, necesitaremos transformarlos a un formato específico llamado DMatrix. Veamos un ejemplo de cómo definir un modelo XGBoost:
+##### Regresión
 
 ```py
-from sklearn.model_selection import train_test_split
+from sklearn.ensemble import GradientBoostingRegressor
 
-X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size=0.2)
+# Carga de los datos de train y test
+# Estos datos deben haber sido normalizados y correctamente tratados en un EDA completo
 
-D_train = xgb.DMatrix(X_train, label=Y_train)
-D_test = xgb.DMatrix(X_test, label=Y_test)
+model = GradientBoostingRegressor(n_estimators = 5, random_state = 42)
 
-param = {
-    'eta': 0.3, 
-    'max_depth': 3,  
-    'objective': 'multi:softprob',  
-    'num_class': 3} 
+model.fit(X_train, y_train)
 
-steps = 20  # El número de iteraciones de entrenamiento.
-
-model = xgb.train(param, D_train, steps)
-
+y_pred = model.predict(y_test)
 ```
 
-¿Cómo combinaríamos la búsqueda en cuadrícula de Scikit Learn con un clasificador XGBoost?
+### Hiperparametrización del modelo
 
-> Solo haz eso en un gran conjunto de datos si tienes tiempo para matar: ¡hacer una búsqueda en cuadrícula es esencialmente entrenar un conjunto de árboles de decisión muchas veces!
+Podemos construir un árbol de decisión fácilmente en Python utilizando la librería `scikit-learn` y las funciones `GradientBoostingClassifier` y `GradientBoostingRegressor`.También podemos hacer utilizar una alternativa más eficiente llamada `XGBoost` para clasificar y regresar con las funciones `XGBClassifier` y `XGBRegressor`. Algunos de sus hiperparámetros más importantes y los primeros en los que debemos centrarnos son:
 
-```py
+- `n_estimators` (`n_estimators` en XGBoost): Este es probablemente el hiperparámetro más importante. Define el número de árboles de decisión en el bosque. En general, un número mayor de árboles aumenta la precisión y hace que las predicciones sean más estables, pero también puede ralentizar considerablemente el tiempo de cálculo.
+- `learning_rate` (`learning_rate` en XGBoost): La tasa a la cual se acepta el modelo en cada etapa de boosting. Una tasa de aprendizaje más elevada puede llevar a un modelo más complejo, mientras que una tasa más baja requerirá más árboles para obtener el mismo nivel de complejidad.
+- `loss` (`objective` en XGBoost): La función de pérdida a optimizar (cantidad de errores de clasificación o diferencia con la realidad en regresión).
+- `subsample` (`subsample` en XGBoost): La fracción de instancias a utilizar para entrenar los modelos. Si es menor que `1.0`, entonces cada árbol se entrena con una fracción aleatoria del total de las instancias del dataset de entrenamiento.
+- `max_depth` (`max_depth` en XGBoost): La profundidad máxima de los árboles. Esto es esencialmente cuántas divisiones puede hacer el árbol antes de hacer una predicción.
+- `min_samples_split` (`gamma` en XGBoost): El número mínimo de muestras necesarias para dividir un nodo en cada árbol. Si se establece un valor alto, evita que el modelo aprenda relaciones demasiado específicas y por tanto ayuda a prevenir el sobreajuste.
+- `min_samples_leaf` (`min_child_weight` en XGBoost): El número mínimo de muestras que se deben tener en un nodo hoja en cada árbol.
+- `max_features` (`colsample_by_level` en XGBoost): El número máximo de características a considerar al buscar la mejor división dentro de cada árbol. Por ejemplo, si tenemos 10 características, podemos elegir que cada árbol considere solo un subconjunto de ellas al decidir dónde dividir.
 
-from sklearn.model_selection import GridSearchCV
+Como podemos ver, solo los cuatro primeros hiperparámetros hacen referencia al boosting, mientras que el resto eran truncales a los árboles de decisión. Otro hiperparámetro muy importante es el `random_state`, que controla la semilla de generación aleatoria. Este atributo es crucial para asegurar la replicabilidad.
 
-clf = xgb.XGBClassifier()
-parameters = {
-     "eta"    : [0.05, 0.10, 0.15, 0.20, 0.25, 0.30 ] ,
-     "max_depth"        : [ 3, 4, 5, 6, 8, 10, 12, 15],
-     "min_child_weight" : [ 1, 3, 5, 7 ],
-     "gamma"            : [ 0.0, 0.1, 0.2 , 0.3, 0.4 ],
-     "colsample_bytree" : [ 0.3, 0.4, 0.5 , 0.7 ]
-     }
+### Boosting vs random forest
 
-grid = GridSearchCV(clf,
-                    parameters, n_jobs=4,
-                    scoring="neg_log_loss",
-                    cv=3)
+Boosting y random forest son dos técnicas de Machine Learning que combinan múltiples modelos para mejorar la precisión y estabilidad de las predicciones. Aunque ambas técnicas se basan en la idea de ensamblar varios modelos, tienen algunas diferencias clave.
 
-grid.fit(X_train, Y_train)
+|  | Boosting | Random forest |
+|--|----------|---------------|
+| Estrategia de ensamble | Los modelos se entrenan de forma secuencial, cada uno intenta corregir los errores del modelo anterior. | Los modelos se entrenan de forma independiente, cada uno con una muestra aleatoria de los datos |
+| Prevención de sobreajuste | Puede ser más propenso al sobreajuste, especialmente con ruido o valores atípicos en los datos. | Generalmente menos propenso al sobreajuste debido a su estrategia de *bagging* (*bootstrap aggregating*). |
+| Rendimiento y precisión | Tiende a tener un mayor rendimiento en términos de precisión, pero puede ser más sensible a los hiperparámetros. | Puede tener menor rendimiento de precisión, pero es más robusto a las variaciones de hiperparámetros. |
+| Tiempo de entrenamiento | Puede ser más lento para entrenar porque los modelos deben ser entrenados secuencialmente, uno detrás de otro. | Puede ser más rápido para entrenar porque todos los modelos pueden ser entrenados en paralelo. |
 
-```
-
-La lista completa de posibles parámetros está disponible en el sitio web oficial de XGBoost: https://xgboost.readthedocs.io/en/latest/parameter.html 
-
-
-El aprendizaje de conjunto es muy poderoso y puede usarse no solo para la clasificación sino también para la regresión. Aunque generalmente funcionan principalmente en métodos de árbol, también se pueden aplicar en modelos lineales y svm dentro de los conjuntos de embolsado o refuerzo, para lograr un mejor rendimiento. Pero recuerda, elegir el algoritmo correcto no es suficiente. También debemos elegir la configuración correcta del algoritmo para un conjunto de datos ajustando los hiperparámetros.
-
-
-Fuente:
-
-https://towardsdatascience.com/basic-ensemble-learning-random-forest-adaboost-gradient-boosting-step-by-step-explained-95d49d1e2725
-
-https://medium.com/@aravanshad/gradient-boosting-versus-random-forest-cfa3fa8f0d80
-
-https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d
-
-https://xgboost.readthedocs.io/en/latest/parameter.html
-
-https://towardsdatascience.com/a-beginners-guide-to-xgboost-87f5d4c30ed7
-
-https://towardsdatascience.com/fine-tuning-xgboost-in-python-like-a-boss-b4543ed8b1e
