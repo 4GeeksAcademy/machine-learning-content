@@ -36,7 +36,6 @@ from sklearn.linear_model import Lasso
 # Load of train and test data
 # These data must have been standardized and correctly processed in a complete EDA
 
-
 lasso_model = Lasso(alpha = 0.1, max_iter = 300)
 
 lasso_model.fit(X_train, y_train)

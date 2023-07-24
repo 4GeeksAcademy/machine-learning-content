@@ -31,4 +31,4 @@ Podemos construir un árbol de decisión fácilmente en Python utilizando la lib
 - `min_samples_leaf`: El número mínimo de muestras que se deben tener en un nodo hoja en cada árbol.
 - `max_features`: El número máximo de características a considerar al buscar la mejor división dentro de cada árbol. Por ejemplo, si tenemos 10 características, podemos elegir que cada árbol considere solo un subconjunto de ellas al decidir dónde dividir.
 
-Como podemos ver, solo los dos primeros hiperparámetros hacen referencia al random forest, mientras que el resto eran truncales a los árboles de decisión.
+Como podemos ver, solo los dos primeros hiperparámetros hacen referencia al random forest, mientras que el resto eran truncales a los árboles de decisión. Otro hiperparámetro muy importante es el `random_state`, que controla la semilla de generación aleatoria. Este atributo es crucial para asegurar la replicabilidad.

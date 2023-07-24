@@ -31,4 +31,4 @@ We can easily build a decision tree in Python using the `scikit-learn` library a
 - `min_samples_leaf`: The minimum number of samples to have in a leaf node in each tree.
 - `max_features`: The maximum number of features to consider when looking for the best split within each tree. For example, if we have 10 features, we can choose to have each tree consider only a subset of them when deciding where to split.
 
-As we can see, only the first two hyperparameters refer to the random forest, while the rest were truncal to the decision trees.
+As we can see, only the first two hyperparameters refer to the random forest, while the rest were truncal to the decision trees. Another very important hyperparameter is the `random_state`, which controls the random generation seed. This attribute is crucial to ensure replicability.
