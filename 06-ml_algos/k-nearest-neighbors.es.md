@@ -1,44 +1,26 @@
-# K Vecinos más cercanos (KNN)
+## K vecinos más cercanos (KNN)
 
-Antes de comenzar a aprender el algoritmo de K-vecinos más cercanos, primero debemos aclarar la diferencia entre el agrupamiento de K-medias y el algoritmo de k-vecinos más cercanos porque a menudo se confunden entre sí.
+El modelo **K vecinos más cercanos** (*K-nearest neighbors*), más conocido por sus siglas **KNN** es un algoritmo utilizado para tareas de clasificación y regresión. En KNN, un punto de datos se clasifica o se predice en función de la mayoría de las clases o valores de los `K` puntos de datos más cercanos en el espacio de características.
 
-Queremos hacerle saber que la 'K' en Agrupación de K-Means no tiene nada que ver con la 'K' en el algoritmo KNN. Agrupación de K-Means es un algoritmo de aprendizaje no supervisado que se utiliza para la agrupación, mientras que KNN es un algoritmo de aprendizaje supervisado que se utiliza para la clasificación.
+Por ejemplo, si quisiéramos predecir cuánto dinero gasta un cliente potencial en nuestro negocio, podríamos hacerlo en base a los 5 clientes más similares a él y promediar sus gratos para hacer la predicción.
 
-**¿Qué es K-vecinos más cercanos (KNN)?**
+### Estructura
 
-Cuando pienses en KNN, piensa en tus amigos. Eres el promedio de las personas con las que pasas más tiempo.
+El modelo se construye en función de unos pasos bien delimitados y definidos, que son los siguientes:
 
-Cuando piense en su espacio de características, piense en él como su vecindario, donde cada punto de datos tiene un vecino.
+1. **Selección del valor de `K`**: Se elige un valor para `K`, que representa el número de puntos de datos más cercanos que se considerarán para clasificar o predecir el nuevo punto de datos. Un valor pequeño puede llevar a un modelo más ruidoso y sensible a outliers, mientras que un valor grande puede suavizar las fronteras de decisión.
+2. **Medición de distancia**: Se utiliza una métrica para calcular la distancia entre el punto de datos a clasificar o predecir y los demás puntos de datos en el conjunto de entrenamiento.
+![knn_distance_value](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/knn_distance_value.png?raw=true)
+3. **Identificación de los K vecinos más cercanos**: Se seleccionan los `K` puntos de datos más cercanos (en función de la medición seleccionada).
+![knn_k_value](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/knn_k_value.png?raw=true)
+4. **Predicción**: Si se trata de un problema de clasificación, el nuevo punto se clasifica en la clase más frecuente entre los ``K` vecinos más cercanos. Si se trata de un problema de regresión, el valor objetivo para el nuevo punto se calcula como la media o la mediana de los valores de los `K` vecinos más próximos.
 
-KNN es un algoritmo simple pero muy poderoso. Clasifica el punto de datos sobre cómo se clasifica su vecino. Hace predicciones promediando los k vecinos más cercanos a un punto de datos dado. Por ejemplo, si quisiéramos predecir cuánto dinero gastaría un cliente potencial en nuestra tienda, podríamos encontrar los 5 clientes más similares a ella y promediar sus gastos para hacer la predicción.
+Además, el modelo no implica una fase de entrenamiento propiamente dicha, ya que todo el conjunto de entrenamiento se almacena en memoria para realizar las clasificaciones o predicciones en función de los vecinos más cercanos.
 
-El promedio podría ponderarse en función de la similitud entre los puntos de datos y también podría definirse la métrica de distancia de similitud.
+Es importante tener en cuenta que el rendimiento de este modelo puede depender en gran medida del valor de `K` y de la elección de la métrica de distancia. Además, puede ser computacionalmente costoso para grandes conjuntos de datos, ya que debe calcular la distancia con todos los puntos de entrenamiento para cada predicción.
 
-**¿KNN es un algoritmo paramétrico o no paramétrico? ¿Se utiliza como clasificador o regresor?**
 
-KNN no es paramétrico, lo que significa que no hacemos suposiciones sobre la distribución subyacente de sus datos, y KNN puede usarse como clasificador o regresor.
 
-## ¿Cómo funciona KNN?
-
-KNN hace predicciones por:
-
-- Promedio, para tareas de regresión.
-
-- Voto mayoritario para tareas de clasificación.
-
-**Pasos:**
-
-Paso 1: Determinar el valor de K.
-
-Paso 2: Calcular las distancias entre la nueva entrada (datos de prueba) y todos los datos de entrenamiento. Las métricas más utilizadas para calcular la distancia son Euclidean, Manhattan y Minkowski.
-
-Paso 3: Ordenar la distancia y determinar los k vecinos más cercanos en función de los valores de distancia mínima.
-
-Paso 4: analizar la categoría de esos vecinos y asignar la categoría para los datos de prueba según el voto de la mayoría.
-
-Paso 5: Devolver la clase predicha.
-
-Vamos a explicar más a fondo los siguientes dos pasos:
 
 1. Elegir la métrica de distancia adecuada. La distancia se utiliza mucho en KNN. Solo mide la distancia entre dos puntos de datos.
 
