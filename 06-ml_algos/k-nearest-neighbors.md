@@ -29,12 +29,12 @@ One of the most common questions in this type of models deals with what optimal 
 
 Distance metrics are functions used to measure the proximity or similarity between two data points in a KNN model. There are a large number of proposals, but the best known are the following:
 
-- **Euclidean** (*Euclidean*): measures the straight-line distance between two points. Suitable for numerical data.
-- Manhattan**: Measures the distance as the difference of the Cartesian coordinates of the two points. Suitable for numerical data as well.
-- Minkowski**: It is an intermediate point between the two previous ones.
+- **Euclidean**: measures the straight-line distance between two points. Suitable for numerical data.
+- **Manhattan**: Measures the distance as the difference of the Cartesian coordinates of the two points. Suitable for numerical data as well.
+- **Minkowski**: It is an intermediate point between the two previous ones.
 - **Chebyshev**: Also known as the maximum distance between the difference of heights (Y-axis) or widths (X-axis).
-- Cosine** (*Cosine*): Used to measure the similarity between two vectors.
-- Hamming**: Used for categorical or binary data. It measures the difference between two character strings of equal length.
+- **Cosine**: Used to measure the similarity between two vectors.
+- **Hamming**: Used for categorical or binary data. It measures the difference between two character strings of equal length.
 
 ![knn_distance_metrics](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/knn_distance_metrics.png?raw=true)
 
