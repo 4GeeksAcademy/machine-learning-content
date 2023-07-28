@@ -23,6 +23,7 @@ Además, $A$ es la variable a predecir y $B$ es la predictora. El teorema de Bay
 En `scikit-learn` hay tres implementaciones de este modelo: `GaussianNB`, `MultinomialNB` y `BernoulliNB`. Estas implementaciones se diferencian principalmente en el tipo de datos que pueden manejar y las suposiciones que hacen sobre la distribución de los datos:
 
 | | GaussianNB | MultinomialNB | BernoulliNB |
+|-|------------|---------------|-------------|
 | Tipo de datos | Datos continuos. | Datos discretos. | Datos binarios. | 
 | Distribuciones | Supone que los datos siguen una distribución normal. | Supone que los datos siguen una distribución multinomial. | Supone que los datos siguen una distribución Bernoulli. |
 | Uso común | Clasificación con características numéricas. | Clasificación con características que representan conteos o frecuencias discretas. | Clasificación con características binarias. |

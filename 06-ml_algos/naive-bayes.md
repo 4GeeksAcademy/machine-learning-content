@@ -23,6 +23,7 @@ Moreover, $A$ is the variable to predict and $B$ is the predictor. Bayes' theore
 In `scikit-learn` there are three implementations of this model: `GaussianNB`, `MultinomialNB` and `BernoulliNB`. These implementations differ mainly in the type of data they can handle and the assumptions they make about the distribution of the data:
 
 | | GaussianNB | MultinomialNB | BernoulliNB |
+|-|------------|---------------|-------------|
 | Data type | Continuous data. | Discrete data. | Binary data. |
 | Distributions | Assumes that the data follow a normal distribution. | Assumes that the data follow a multinomial distribution. | Assumes that the data follow a Bernoulli distribution. |
 | Common usage | Classification with numeric characteristics. | Classification with features representing discrete counts or frequencies. | Classification with binary features. |
