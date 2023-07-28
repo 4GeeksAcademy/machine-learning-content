@@ -1,139 +1,47 @@
-# K Nearest neighbors (KNN)
+## K-nearest neighbors (KNN)
 
-Before we start learning the K-nearest neighbors algorithm, we first need to clarify the difference between K-means clustering and k-nearest neighbors algorithm because they are often confused with each other.
+The **K-nearest neighbors** model, better known by its acronym **KNN** is an algorithm used for classification and regression tasks. In KNN, a data point is classified or predicted based on the most classes or values of the `K` nearest data points in the feature space.
 
-We want to let you know that the ‘K’ in K-Means Clustering has nothing to do with the ‘K’ in KNN algorithm. k-Means Clustering is an unsupervised learning algorithm that is used for clustering whereas KNN is a supervised learning algorithm used for classification.
+For example, if we wanted to predict how much money a potential customer spends in our business, we could do it based on the 5 most similar customers to him and average their likes to make the prediction.
 
-**What is K-nearest neighbors (KNN)?**
+### Structure
 
-When you think about KNN think about your friends. You are the average of the people you spend most time with.
-When you think about your feature space, think of it as your neighborhood, where each data point has a neighbor.
+The model is built according to well-defined and well-defined steps, which are as follows:
 
-KNN is a simple algorithm but it's very powerful.  It classifies the data point on how its neighbor is classified. It makes predictions by averaging the k neighbors nearest to a given data point. For example, if we wanted to predict how much money a potential customer would spend at our store, we could find the 5 customers most similar to her and average their spending to make the prediction.
+1. **Selection of the value of `K`**: A value is chosen for `K`, which represents the number of nearest data points to be considered for classifying or predicting the new data point. A small value may lead to a noisier model sensitive to outliers, while a large value may smooth the decision boundaries.
+2. **Distance measurement**: A metric is used to calculate the distance between the data point to be classified or predicted and the other data points in the training set.
+3. **Identification of the K nearest neighbors**: The `K` nearest data points are selected (depending on the selected metric).
+4. **Prediction**: If it is a classification problem, the new point is classified into the most frequent class among the ``K` nearest neighbors. If it is a regression problem, the target value for the new point is calculated as the mean or median of the values of the ``K` nearest neighbors.
 
-The average could be weighted based on similarity between data points and the similarity distance metric could be defined as well.
+Furthermore, the model does not involve a training phase per se, as the entire training set is stored in memory to perform nearest-neighbor classifications or predictions.
 
-**Is KNN a parametric or non-parametric algorithm? Is it used as a classifier or regressor?**
+It is important to note that the performance of this model can be highly dependent on the value of `K` and the choice of distance metric. In addition, it can be computationally expensive for large data sets, since it must compute the distance to all training points for each prediction:
 
-KNN is non-parametric, meaning we don´t make any assumptions about the underlying distribution of your data, and KNN can be used either as a classifier or regressor. 
+![knn_distance_value](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/knn_distance_value.png?raw=true)
 
-## How KNN works?
+This distance orders the points surrounding the point to be predicted, so that depending on the value of `K` the closest points can be chosen:
 
-KNN makes predictions by:
+![knn_k_value](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/knn_k_value.png?raw=true)
 
-- Averaging, for regression tasks.
+One of the most common questions in this type of models deals with what optimal value of `K` we should choose. This number cannot be calculated a priori and is approximated in the hyperparameter optimization phase. As can be seen in the case of the figure, its value can bias a particular prediction towards the opposite or another one with slight changes.
 
-- Majority voting for classification tasks.
+#### Distance metrics
 
-**Steps:**
+Distance metrics are functions used to measure the proximity or similarity between two data points in a KNN model. There are a large number of proposals, but the best known are the following:
 
-Step 1: Determine the value for K
+- **Euclidean**: measures the straight-line distance between two points. Suitable for numerical data.
+- **Manhattan**: Measures the distance as the difference of the Cartesian coordinates of the two points. Suitable for numerical data as well.
+- **Minkowski**: It is an intermediate point between the two previous ones.
+- **Chebyshev**: Also known as the maximum distance between the difference of heights (Y-axis) or widths (X-axis).
+- **Cosine**: Used to measure the similarity between two vectors.
+- **Hamming**: Used for categorical or binary data. It measures the difference between two character strings of equal length.
 
-Step 2: Calculate the distances between the new input (test data) and all the training data. The most commonly used metrics for calculating distance are Euclidean, Manhattan and Minkowski
+![knn_distance_metrics](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/knn_distance_metrics.png?raw=true)
 
-Step 3: Sort the distance and determine k nearest neighbors based on minimum distance values
+### Model hyperparameterization
 
-Step 4: Analyze the category of those neighbors and assign the category for the test data based on majority vote
+We can easily build a KNN model in Python using the `scikit-learn` library and the `KNeighborsClassifier` and `KNeighborsRegressor` functions. Some of its most important hyperparameters and the first ones we should focus on are:
 
-Step 5: Return the predicted class
-
-Let's explain further the follwoing two steps:
-
-1. Choosing the right distance metric. Distance is heavily utilized in KNN. It just measures the distance between two data points.
-
-But what distance metric should I choose?
-
-- Manhattan distance for continuous values. We get the absolute values of the distances with the formula $|x1 - x2| + |y1 - y2|$.
-
-- Euclidean distance for continuous values. Is the shortest and one of the most popular distance metrics of choice.
-
-- Hamming distance for categorical values. If both of our values are related (both have 1) we would get 0, meaning they are exactly the same. If our distance metric is 1, they are not the same.
-
-- Cosine similarity distance (for word vectors). What the angle is between two different points.
-
-2. Choosing the value of k
-
-![knn](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/knn.jpg?raw=true)
-
-*image by helloacm.com*
-
-**How do we select the ideal number of neighbors for KNN?**
-
-Choosing the right value of K is called parameter tuning and it’s necessary for better results. By choosing the value of K we square root the total number of data points available in the dataset.
-
-a. K = sqrt (total number of data points).
-
-b. Odd value of K is always selected to avoid confusion between 2 classes.
-
-There is no closed-form solution for calculating k, so various heuristics are often used. It may be easiest to simply do cross validation and test several different values for k and choose the one that produces the smallest error during cross validation.
-
-> As k increases, bias tends to increase and variance decreases.
-
-![error_vs_kvalue](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/error_vs_kvalue.jpg?raw=true)
-
-*image by towardsdatascience.com*
-
-## Pros and Cons
-
-**Pros:**
-
-- No training time is required
-
-- Its simple and easy to implement
-
-- New data points can be added to the train data set at any time since model training is not required.
-
-- No assumptions about the data, so it is good for non linearity.
-
-**Cons:**
-
-- Require feature scaling
-
-- Does not work well when the dimensions are high. Poor runtime on large train set.
-
-- Sensitive to outliers
-
-- Prediction is computationally expensive as we need to compute the distance between the point under consideration and all other points.
-
-
-## KNN and Recommender Systems
-
-We can extend this concept of neighbors to the applications of recommender systems. The statistical techniques of KNN allows us to find similar subsets of users (neighbors) to make recommendations on. The general idea is that a new user (data point) is matched against the entire data space to discover similar neighbors. The items that the neighbors like are then recommended to the new user.
-
-![recommender_system](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/recommender_system.jpg?raw=true)
-
-*Image by www.aurigait.com*
-
-Recommender systems can be loosely broken down into three categories: content based systems, collaborative filtering systems, and hybrid systems (which use a combination of the other two).
-
-**Content based** approach utilizes a series of discrete characteristics of an item in order to recommend additional items with similar properties.
-
-**Collaborative filtering** approach builds a model from a user’s past behaviors (items previously purchased or selected and/or numerical ratings given to those items) as well as similar decisions made by other users. This model is then used to predict items (or ratings for items) that the user may have an interest in.
-
-![recommender_system_approaches](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/recommender_system_approaches.jpg?raw=true)
-
-Most businesses probably use a combination of both (hybrid approach) in their production recommender systems.
-
-Recommender systems can be classified into 3 types:
-
-- Simple recommenders: offer generalized recommendations to every user, based on movie popularity and/or genre. The basic idea is that movies that are more popular will have a higher probability of being liked by the average audience. 
-
-- Content-based recommenders: suggest similar items based on a particular item. This system uses item metadata, such as genre, director, description, actors, etc. for movies, to make these recommendations. The general idea is that if a person likes a particular item, he or she will also like an item that is similar to it. And to recommend that, it will make use of the user's past item metadata. A good example could be YouTube, where based on your history, it suggests you new videos that you could potentially watch.
-
-- Collaborative filtering engines: these systems are widely used, and they try to predict the rating or preference that a user would give an item-based on past ratings and preferences of other users. Collaborative filters do not require item metadata like its content-based counterparts.
-
-We have prepared a guided project for you to understand hoy to build a very simple movie recommender system.
-
-Source:
-
-https://www.dataquest.io/blog/top-10-machine-learning-algorithms-for-beginners/#:~:text=The%20first%205%20algorithms%20that,are%20examples%20of%20supervised%20learning.
-
-https://towardsdatascience.com/how-to-find-the-optimal-value-of-k-in-knn-35d936e554eb
-
-https://becominghuman.ai/comprehending-k-means-and-knn-algorithms-c791be90883d
-
-https://towardsdatascience.com/knn-algorithm-what-when-why-how-41405c16c36f
-
-https://medium.com/analytics-vidhya/a-beginners-guide-to-k-nearest-neighbor-knn-algorithm-with-code-5015ce8b227e
-
-https://www.aurigait.com/blog/recommendation-system-using-knn/#:~:text=Collaborative%20Filtering%20using%20k%2DNearest,of%20top%2Dk%20nearest%20neighbors.
+- `n_neighbors`: This is the `K` value we mentioned earlier. It represents the number of nearest data points to be considered when classifying or predicting a new data point. It is the most important hyperparameter in KNN and directly affects the shape of the decision boundaries of the model. A small value can lead to a model more sensitive to noise and outliers, while a large value can simplify the model.
+- `metric`: Function for calculating the distance between the data points and the new point. The choice of metric can affect the way the model interprets the proximity between points and thus the resulting classification or prediction.
+- `algorithm`: Different implementations of the KNN model, which will be more or less effective depending on the characteristics and complexity of the data set.
