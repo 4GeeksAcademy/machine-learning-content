@@ -1,11 +1,24 @@
 Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: nbformat in /home/vscode/.local/lib/python3.11/site-packages (5.9.1)
-Requirement already satisfied: fastjsonschema in /home/vscode/.local/lib/python3.11/site-packages (from nbformat) (2.18.0)
-Requirement already satisfied: jsonschema>=2.6 in /home/vscode/.local/lib/python3.11/site-packages (from nbformat) (4.18.4)
+Collecting nbformat
+  Downloading nbformat-5.9.1-py3-none-any.whl (77 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 77.6/77.6 kB 3.3 MB/s eta 0:00:00
+Collecting fastjsonschema (from nbformat)
+  Downloading fastjsonschema-2.18.0-py3-none-any.whl (23 kB)
+Collecting jsonschema>=2.6 (from nbformat)
+  Downloading jsonschema-4.18.4-py3-none-any.whl (80 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 81.0/81.0 kB 3.0 MB/s eta 0:00:00
 Requirement already satisfied: jupyter-core in /home/vscode/.local/lib/python3.11/site-packages (from nbformat) (5.3.1)
 Requirement already satisfied: traitlets>=5.1 in /home/vscode/.local/lib/python3.11/site-packages (from nbformat) (5.9.0)
-Requirement already satisfied: attrs>=22.2.0 in /home/vscode/.local/lib/python3.11/site-packages (from jsonschema>=2.6->nbformat) (23.1.0)
-Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /home/vscode/.local/lib/python3.11/site-packages (from jsonschema>=2.6->nbformat) (2023.7.1)
-Requirement already satisfied: referencing>=0.28.4 in /home/vscode/.local/lib/python3.11/site-packages (from jsonschema>=2.6->nbformat) (0.30.0)
-Requirement already satisfied: rpds-py>=0.7.1 in /home/vscode/.local/lib/python3.11/site-packages (from jsonschema>=2.6->nbformat) (0.9.2)
-Requirement already satisfied: platformdirs>=2.5 in /home/vscode/.local/lib/python3.11/site-packages (from jupyter-core->nbformat) (3.9.1)
+Collecting attrs>=22.2.0 (from jsonschema>=2.6->nbformat)
+  Downloading attrs-23.1.0-py3-none-any.whl (61 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.2/61.2 kB 3.1 MB/s eta 0:00:00
+Collecting jsonschema-specifications>=2023.03.6 (from jsonschema>=2.6->nbformat)
+  Downloading jsonschema_specifications-2023.7.1-py3-none-any.whl (17 kB)
+Collecting referencing>=0.28.4 (from jsonschema>=2.6->nbformat)
+  Downloading referencing-0.30.0-py3-none-any.whl (25 kB)
+Collecting rpds-py>=0.7.1 (from jsonschema>=2.6->nbformat)
+  Downloading rpds_py-0.9.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 23.4 MB/s eta 0:00:00
+Requirement already satisfied: platformdirs>=2.5 in /home/vscode/.local/lib/python3.11/site-packages (from jupyter-core->nbformat) (3.10.0)
+Installing collected packages: fastjsonschema, rpds-py, attrs, referencing, jsonschema-specifications, jsonschema, nbformat
+Successfully installed attrs-23.1.0 fastjsonschema-2.18.0 jsonschema-4.18.4 jsonschema-specifications-2023.7.1 nbformat-5.9.1 referencing-0.30.0 rpds-py-0.9.2
