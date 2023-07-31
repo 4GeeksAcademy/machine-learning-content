@@ -2,7 +2,7 @@
 
 **Naive Bayes** is a classification algorithm based on Bayes' theorem, which is a statistical technique that uses probability to make predictions. This algorithm is very simple but effective and is widely used in various areas of Machine Learning.
 
-The name *Naive* (naive in English) comes from the assumption that all features (predictor variables) in the data set are independent of each other (there is no correlation between them) given the value of the target variable. In other words, this assumption assumes that each characteristic contributes independently to the probability of belonging to a particular class.
+The name *Naive* comes from the assumption that all features (predictor variables) in the data set are independent of each other (there is no correlation between them) given the value of the target variable. In other words, this assumption assumes that each characteristic contributes independently to the probability of belonging to a particular class.
 
 ### Bayes' Theorem
 
@@ -36,6 +36,6 @@ We can easily build a decision tree in Python using the `scikit-learn` library a
 
 - `alpha`: It is used to avoid zero probabilities on features that do not appear in the training set. A larger value adds more smoothing (only for `MultinomialNB` and `BernoulliNB`).
 - `fit_prior`: Indicates whether to learn the a priori probabilities of the classes from the data or to use uniform probabilities (only for `MultinomialNB`).
-- binarize`: Threshold to normalize features. If a value is provided, the features are binarized according to that threshold; otherwise, it is assumed that the features are already binarized. If they were not and this hyperparameter is not used, the model may not perform well (only for `BernoulliNB`).
+- `binarize`: Threshold to normalize features. If a value is provided, the features are binarized according to that threshold; otherwise, it is assumed that the features are already binarized. If they were not and this hyperparameter is not used, the model may not perform well (only for `BernoulliNB`).
 
 As you can see the hyperparameterization in this type of models is very small, so one way to optimize this type of models is, for example, to eliminate variables that are highly correlated (if variable $A$ and $B$ have a high correlation, one of them is eliminated), since in this type of models they have a double importance.

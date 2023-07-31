@@ -11,7 +11,7 @@ The model is built according to well-defined and well-defined steps, which are a
 1. **Selection of the value of `K`**: A value is chosen for `K`, which represents the number of nearest data points to be considered for classifying or predicting the new data point. A small value may lead to a noisier model sensitive to outliers, while a large value may smooth the decision boundaries.
 2. **Distance measurement**: A metric is used to calculate the distance between the data point to be classified or predicted and the other data points in the training set.
 3. **Identification of the K nearest neighbors**: The `K` nearest data points are selected (depending on the selected metric).
-4. **Prediction**: If it is a classification problem, the new point is classified into the most frequent class among the ``K` nearest neighbors. If it is a regression problem, the target value for the new point is calculated as the mean or median of the values of the ``K` nearest neighbors.
+4. **Prediction**: If it is a classification problem, the new point is classified into the most frequent class among the `K` nearest neighbors. If it is a regression problem, the target value for the new point is calculated as the mean or median of the values of the `K` nearest neighbors.
 
 Furthermore, the model does not involve a training phase per se, as the entire training set is stored in memory to perform nearest-neighbor classifications or predictions.
 
