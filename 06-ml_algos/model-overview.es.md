@@ -1,4 +1,3 @@
-
 ## Resumen de los modelos de Aprendizaje Supervisado
 
 A continuación se facilita un breve repaso sobre los diferentes modelos estudiados y cuándo y por qué se utilizan, a modo de guía práctica para saber elegir siempre la mejor opción:
