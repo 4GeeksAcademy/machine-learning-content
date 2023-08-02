@@ -1,156 +1,160 @@
-# UNSUPERVISED LEARNING
+## Unsupervised learning
 
-Unsupervised learning models are used when we only have the input variables (X) and no corresponding output variables. They use unlabeled training data to model the underlying structure of the data.
+**Unsupervised learning** is a branch of Machine Learning in which hidden patterns and structures in the data are explored and discovered without the guidance of a target variable or prior labels. Unlike supervised learning, where input examples and their corresponding desired outputs are provided to train the model, in unsupervised learning, the algorithm is confronted with an unlabeled data set and seeks to find interesting patterns or group the data into categories without specific guidance.
 
-## CLUSTERING
+The main objective of unsupervised learning is to explore the inherent structure of the data and extract valuable information without the model having prior knowledge of the categories or relationships between variables.
 
-**What is clustering?**
+There are two main types of unsupervised learning techniques:
 
-Clustering is used to group samples such that objects within the same cluster are more similar to each other than to the objects from another cluster.
+1. **Clustering**: Consists of dividing the data set into groups (*clusters*) based on similarities or patterns in the data. Clustering algorithms attempt to group similar observations into the same cluster and separate different samples into different clusters.
+2. **Dimensionality reduction**: The objective is to reduce the number of features or variables in the data set without losing important information. These techniques allow the data to be represented in a lower dimensional space, facilitating the visualization and understanding of the data structure.
 
-**What are the goals for clustering?**
+Unsupervised learning has a wide variety of applications, such as customer segmentation in marketing, data anomaly detection, image compression, document clustering into topics, among others. It is a powerful tool for exploring and understanding the intrinsic structure of data without the need for known labels or answers.
 
-- We want observations in different clusters to be dissimilar to each other
+### Clustering
 
-- Homogeneity: We want observations in the same cluster to be similar to each other.
+**Clustering** is an unsupervised learning technique used to divide a dataset into groups based on similarities between observations. The objective is to group similar items into the same cluster and to separate different observations into distinct clusters, without having prior information about the categories to which they belong.
 
-- Find natural groupings.
+There are several clustering algorithms, but the most common are:
 
-We want to minimize the variance inside a cluster.
+- **K-Means**: This is one of the most popular clustering algorithms. It starts by defining random `K` centroids (point representing the geometric center of a cluster), then assigns each data point to the nearest centroid and recalculates the centroids as the average of the assigned points. Repeat this process until the centroids converge.
+- **Hierarchical Clustering**: It starts by considering each data point as its own cluster and gradually merges the nearest clusters into one. This forms a hierarchy that can be represented in a dendogram.
+- **DBSCAN** (*Density-Based Spatial Clustering of Applications with Noise*): Clusters data points that are close to each other and have enough neighbors in their neighborhood. It allows finding clusters of irregular shapes and sizes and also detecting outlier points.
 
-**What are the inputs and outputs?**
+#### K-Means
 
-The inputs will be a set of numerical inputs normally scaled, and without outliers.
+The **K-Means** algorithm is a clustering technique that aims to divide a dataset into `K` clusters (defined as input parameter), so that points within each cluster are similar to each other and different from points in other clusters.
 
-The outputs will be a set of labels, one for each observation, and also a set of centroids, one for each cluster.
+It is an iterative process composed of several steps:
 
-**To achieve good clustering, you need to:**
+1. **Initialization**. The process begins by defining `K` random points in the data set as initial centroids. The centroids are representative points that will serve as the initial centers of each cluster.
+2. **Assignment of points to clusters**. Each point in the data set is assigned to the cluster whose centroid is the closest. This is done by calculating the distance between each point and the centroids, and assigning the point to the cluster whose centroid has the smallest distance. The distances used and available are the ones we studied in the KNN model module and can be found [here](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/knn_distance_metrics.png?raw=true).
+3. **Centroid update**. Once all points are assigned to their corresponding clusters, the centroids are updated by recalculating their position as the average of all points assigned to that cluster. This step relocates the centroids to the geometric center of each cluster.
+4. **Iteration**. Steps 2 and 3 are repeated until the centroids no longer change significantly and the points are stable in their clusters. That is, the algorithm continues to assign and update points until convergence is reached.
+5. **Result**. Once the algorithm has converged, the points in the data set are grouped into `K` clusters or groups, and each cluster is represented by its centroid. The groups obtained represent sets of similar points.
 
-- Choose the right distance metric.
+![k-means-iterations](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/k-means-iterations.gif)
 
-- Have good intuition behind your data.
+The challenge of finding the optimal `K` can be addressed by hyperparameter optimization or by more analytical procedures such as the **elbow method**, more information about which can be found [here](https://www.analyticsvidhya.com/blog/2021/01/in-depth-intuition-of-k-means-clustering-algorithm-in-machine-learning/).
 
-### K-MEANS
+This algorithm is fast and effective for data clustering, but it is highly dependent on the initial centroid distribution and does not always find the best overall solution. Therefore, it is sometimes run several times with different initializations to avoid obtaining suboptimal solutions.
 
-K-means clustering is an unsupervised clustering algorithm that takes a bunch of unlabeled points and tries to group them into “k” number of clusters, where each point in the cluster is similar to each other.
+##### Implementation
 
-Cluster is a collection of similar objects that are dissimilar to the others.
-
-The “k” in k-means denotes the number of clusters you want to have in the end. If k = 5, you will have 5 clusters on the data set.
-
-The cluster means are usually randomized at the start (often by choosing random observations from the data) and then updated as more records are observed.
-
-At each iterations, a new observation is assigned to a cluster based on which cluster mean it is nearest and then the means are recalculated, or updated , with the new observation information included.
-
-**What are common use cases for k-means clustering?**
-
-Customer segmentation is probably the most common use case for k-means clustering.
-
-It is also used for finding groups in types of complaints, types of consumer behaviors, summarization of data, finding anomalies, for example fraud detection, and the list goes on.
-
->Anomalies can be considered small clusters with points very far away from any centroid.
-
-**How does k-means work?**
-
-**Step 1:** Determine K value by Elbow method and specify the number of clusters K
-
-**Step 2:** Randomly assign each data point to a cluster
-
-**Step 3:** Determine the cluster centroid coordinates
-
-What is a centroid?
-
-Simple, it is the center point of a cluster. For example, if we want to find 3 clusters, then we would have 3 centroids, or centers, one for each cluster.
-
-**Step 4:** Determine the distances of each data point to the centroids and re-assign each point to the closest cluster centroid based upon minimum distance. The smaller the distance, more similarity. The bigger the distance, less similarity.
-
-**Step 5:** Calculate cluster centroids again
-
-**Step 6:** Repeat steps 4 and 5 until we reach global optima where no improvements are possible and no switching of data points from one cluster to other.
-
-**Common distance metrics:**
-
-- Euclidean distance: The distance can be defined as a straight line between two points (most common distance metric).
-
-- Manhattan distance: The distance between two points is the sum of the (absolute) differences of their coordinates.
-
-- Cosine distance
-
-**Example Code:**
+The implementation of this type of model is very simple, and is carried out with the `scikit-learn` library. For this purpose, we will generate a sample example using this library as well:
 
 ```py
-# Import kmeans and vq functions
-from scipy.cluster.vq import kmeans, vq
+import numpy as np
+from sklearn.cluster import KMeans
+from sklearn.datasets import make_blobs
 
-# Compute cluster centers
-centroids,_ = kmeans(df, 2)
+# Generate a sample dataset
+X, _ = make_blobs(n_samples = 300, centers = 3, random_state = 42)
 
-# Assign cluster labels
-df['cluster_labels'], _ = vq(df, centroids)
+# Training the model
+model = KMeans(n_clusters = 3, random_state = 42)
+model.fit(X)
 
-# Plot the points with seaborn
-sns.scatterplot(x='x', y='y', hue='cluster_labels', data=df)
+# Making predictions with new data
+new_data = np.array([[2, 3], [0, 4], [3, 1]])
+predictions = model.predict(new_data)
+```
+
+In this example code we generate 2 clusters (hyperparameter `n_clusters`) and set the seed since it is a model with a random initialization component.
+
+Once we have trained the model we can get the labels of which cluster is associated to each point with the `labels_` attribute of the model (`model.labels_`). We can also obtain the coordinates of the centroids of each cluster with the `cluster_centers_` attribute of the model (`model.cluster_centers_`).
+
+#### Hierarchical Clustering
+
+**Hierarchical clustering** is a clustering technique that organizes data into a hierarchy of clusters, where smaller clusters are gradually combined to form larger clusters. The end result is a dendrogram, which is a graphical representation of the cluster hierarchy.
+
+It is an iterative process composed of several steps:
+
+1. **Initialization**. Each data point is initially considered as its own cluster.
+2. **Similarity calculation**. The similarity or distance between all pairs of data points is calculated. The distances used and available are the ones we studied in the KNN model module and can be found [here](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/knn_distance_metrics.png?raw=true).
+3. **Cluster union**. The two closest clusters are combined to form a new larger one. The distance between two clusters can be calculated in many ways.
+4. **Similarity matrix update**. The similarity matrix is updated to reflect the distance between the new clusters and the remaining clusters.
+5. **Iteration**. Steps 3 and 4 are repeated until all data points are in a single cluster or until a specific number of desired clusters (input hyperparameter) is reached.
+6. **Dendogram**. The result of hierarchical clustering is displayed in a **dendogram**, which is a tree diagram showing the hierarchy of the groups. The data points are located at the leaves of the tree, and larger clusters are formed by combining smaller clusters along the branches of the tree.
+
+![hierarchical-clustering-iterations](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/hierarchical-clustering-iterations.gif)
+
+The dendrogram allows visualizing the hierarchical structure of the clusters and the distance between them. The horizontal cuts in the dendrogram determine the number of clusters obtained by cutting the tree at a certain height.
+
+Hierarchical clustering is useful when the optimal number of clusters is not known in advance or when it is desired to explore the hierarchical structure of the data. However, it can be computationally expensive on large data sets due to the need to calculate all distances between data points.
+
+##### Implementation
+
+The implementation of this type of model is very simple, and is carried out with the `scipy` library. To do so, we will generate a sample example using the `scikit-learn` library:
+
+```py
+import numpy as np
+from scipy.cluster.hierarchy import dendrogram, linkage
+from sklearn.datasets import make_blobs
+
+# Generate a sample dataset
+X, _ = make_blobs(n_samples = 100, centers = 3, random_state = 42)
+
+# Calculate the similarity matrix between clusters
+Z = linkage(X, method = "complete")
+
+# Display the dendrogram
+plt.figure(figsize = (10, 6))
+
+dendrogram(Z)
+
+plt.title("Dendrograma")
+plt.xlabel("Índices de datos")
+plt.ylabel("Distancia")
 plt.show()
 ```
 
-## Dimensionality Reduction
+We could also use the `scikit-learn` library to implement this model, using the `AgglomerativeClustering` function, but nowadays the `scipy` version is more widely used because it is more intuitive and easier to use.
 
-**What is dimensionality reduction?**
+### Dimensionality reduction
 
-Dimensionality Reduction is used to reduce the number of variables of a data set while ensuring that important information is still conveyed. Dimensionality Reduction can be done using feature extraction methods and Feature Selection methods. Feature Selection selects a subset of the original variables. Feature Extraction performs data transformation from a high-dimensional space to a low-dimensional space. Example: PCA algorithm is a Feature Extraction approach.
+**Dimensionality reduction** is a technique used to reduce the number of features or variables in a data set. The main objective of this model is to simplify the representation of the data while maintaining as much relevant information as possible.
 
-**Why would we want to use dimensionality reduction techniques to transform our data before training?**
+In many data sets, especially those with many features, there may be redundancy or correlation between variables, which can make analysis and visualization difficult. Dimensionality reduction addresses this problem by transforming the original data into a lower dimensional space, where the new variables (called **principal components** or **latent features**) represent a combination of the original variables.
 
-Dimensionality reduction allows us to:
+There are two main approaches to dimensionality reduction:
 
-- Remove collinearity from the feature space
+- **Principal Component Analysis** (**PCA**): Is a linear technique that finds the directions of maximum variance in the data and projects the original data into a lower dimensional space defined by the principal components. The objective is to retain most of the variance in the data while reducing the dimensionality of the data.
+- **Singular Value Decomposition** (**SVD**): A mathematical technique used to factorize a data matrix into three components: which are then used to reduce the dimensionality.
 
-- Speed up training by reducing the number of features
+There are many reasons why we would want to use this type of model to simplify the data. We can highlight:
 
-- Reduce memory usage by reducing the number of features
+1. **Data simplification and visualization**: In data sets with many features, dimensionality reduction makes it possible to simplify the representation of the data and to visualize them in lower dimensional spaces. This facilitates the interpretation and understanding of the data.
+2. **Noise reduction**: By reducing dimensionality, redundant or noisy information can be removed, which can improve data quality and the performance of machine learning models.
+3. **Computational efficiency**: Feature-rich datasets may require increased computational and memory capacity. Dimensionality reduction can help reduce this complexity, resulting in faster training and prediction times.
+4. **Regularization**: In some cases, dimensionality reduction acts as a form of regularization, avoiding overfitting by reducing the complexity of the model.
+5. **Feature exploration and selection**: Dimensionality reduction can help identify the most important or relevant features of a dataset, which can be useful in the EDA *feature engineering* process.
+6. **Data preprocessing**: Dimensionality reduction can be used as a preprocessing step to improve data quality before applying other machine learning algorithms.
 
-- Identify underlying, latent features that impact multiple features in the original space
+#### PCA
 
-**Why would we want to avoid dimensionality reduction techniques to transform our data before training?**
+The **PCA** is a dimensionality reduction technique that seeks to transform an original data set with multiple features (dimensions) into a new data set with fewer features, but preserving most of the important information.
 
-Dimensionality reduction can:
+Imagine that we have a dataset with many characteristics, such as height, weight, age, income and education level of different people. Each person represents a point in a high-dimensional space, where each feature is a dimension. PCA allows us to find new directions or axes in this high-dimensional space, known as principal components. These directions represent the linear combinations of the original characteristics that explain most of the variability in the data. The first principal component captures the largest possible variability in the data set, the second principal component captures the next largest variability, and so on.
 
-- Add extra unnecessary computation
+When using PCA, we can choose how many principal components we wish to keep. If we choose to keep only a few of them, we will reduce the number of features and thus the dimensionality of the data set. This can be especially useful when there are many features and we want to simplify the interpretation and analysis of the data.
 
-- Make the model difficult to interpret if the latent features are not easy to understand
+##### Implementation
 
-- Add complexity to the model pipeline
+The implementation of this type of algorithm is very simple, and is carried out with the `scikit-learn` library. We will use a dataset that we have been using regularly in the course; the Iris set:
 
-- Reduce the predictive power of the model if too much signal is lost
+```py
+from sklearn.datasets import load_iris
+from sklearn.decomposition import PCA
 
-**Popular dimensionality reduction algorithms**
+# Load the Iris dataset
+iris = load_iris()
+X = iris.data
+y = iris.target
 
-1. Principal component analysis (PCA) - uses an eigen decomposition to transform the original feature data into linearly independent eigenvectors. The most important vectors (with highest eigenvalues) are then selected to represent the features in the transformed space.
+# Create a PCA object and fit it to the data
+pca = PCA(n_components = 2)
+X_pca = pca.fit_transform(X)
+```
 
-2. Non-negative matrix factorization (NMF) - can be used to reduce dimensionality for certain problem types while preserving more information than PCA.
-
-3. Embedding techniques - For example, finding local neighbors as done in Local Linear Embedding, can be used to reduce dimensionality
-
-4. Clustering or centroid techniques - each value can be described as a member of a cluster, a linear combination of clusters, or a linear combination of cluster centroids
-
-By far the most popular is PCA and similar eigen-decomposition based variations
-
-Most dimensionality reduction techniques have inverse transformations, but signal is often lost when reducing dimensions, so the inverse transformation is usually only an apporximation of the original data.
-
-### PCA 
-
-Principal component analysis (PCA) is an unsupervised technique used to preprocess and reduce the dimensionality of high-dimensional datasets while preserving the original structure and relationships inherent to the original dataset so that machine learning models can still learn from them and be used to make accurate predictions.
-
-**How do we select the number of principal components needed for PCA?**
-
-Selecting the number of latent features to retain is tipically done by inspecting the eigenvalue of each eigenvector. As eigenvalues decrease, the impact of the latent feature on the target variable also decreases.
-
-This means that principal components with small eigenvalues have a small impact on the model and can be removed.
-
-There are various rules of thumb, but one general rule is to include the most significant principal components that account for at least 95% of the variation in the features.
-
-Source:
-
-https://becominghuman.ai/comprehending-k-means-and-knn-algorithms-c791be90883d
-
-https://www.dataquest.io/blog/top-10-machine-learning-algorithms-for-beginners/#:~:text=The%20first%205%20algorithms%20that,are%20examples%20of%20supervised%20learning.
+The `n_components` hyperparameter allows us to select how many dimensions we want the resulting dataset to have. In the example above, there are 4 dimensions: `petal_length`, `petal_width`, `sepal_length` and `sepal_width`. We then transform the space into a two-dimensional one, with only two features.
