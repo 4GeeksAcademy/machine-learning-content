@@ -1,3 +1,36 @@
+## Series temporales
+
+Una **serie temporal** (*time serie*) es una secuencia de datos ordenados en el tiempo, donde cada punto de datos está asociado a un instante específico. En otras palabras, es una colección de observaciones que se registran en intervalos regulares o irregulares a lo largo del tiempo. Estas observaciones pueden ser recopiladas en horas, días, meses o incluso años, dependiendo del contexto y la naturaleza del fenómeno que se está analizando.
+
+En una serie temporal, el tiempo es la variable independiente, y las observaciones registradas a lo largo del tiempo son las variables dependientes. El objetivo principal de analizar una serie temporal es comprender y modelar el patrón o la estructura subyacente en los datos a lo largo del tiempo, con el fin de hacer predicciones futuras o extraer información relevante.
+
+Las series temporales se encuentran comúnmente en una amplia variedad de campos: economía, finanzas, meteorología, ciencia e ingeniería, entre otras. Algunos ejemplos de series temporales incluyen datos de ventas diarias, precios de acciones, temperaturas diarias, tasas de crecimiento de población, niveles de producción, etcétera.
+
+![temporal-serie-example](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/temporal-serie-example.png?raw=true)
+
+Al analizar una serie temporal, es importante tener en cuenta que los datos están correlacionados en el tiempo. Esto significa que las observaciones en un momento dado pueden depender de las observaciones pasadas y, en algunos casos, también pueden verse afectadas por las observaciones futuras. Este patrón de correlación en el tiempo es lo que hace que el análisis de series temporales sea único y requiera técnicas específicas para su modelado y predicción.
+
+El análisis de series temporales puede involucrar diversas técnicas, como métodos de suavizado, descomposición, modelos autoregresivos, modelos de media móvil, entre otros. Además, el uso de herramientas de visualización, como gráficos de líneas o gráficos de autocorrelación, es común para comprender mejor los patrones y tendencias en los datos a lo largo del tiempo.
+
+### Análisis de una serie temporal
+
+Cuando analizamos visualmente una serie temporal, hay varias cosas importantes que debemos buscar para comprender el comportamiento y los patrones de los datos a lo largo del tiempo. Estas son algunas de las principales cosas que se deben observar:
+
+- **Tendencia**: Identificar si existe una tendencia general en la serie temporal, es decir, si los datos tienden a aumentar o disminuir a lo largo del tiempo. Una tendencia puede ser lineal (crecimiento o decrecimiento constante) o no lineal (crecimiento o decrecimiento acelerado o desacelerado).
+- **Estacionalidad**: Observar si hay patrones estacionales o cíclicos en los datos, es decir, si hay comportamientos que se repiten en intervalos regulares, como diariamente, mensualmente o estacionalmente. Por ejemplo, puede haber un aumento en las ventas de juguetes durante las vacaciones de Navidad cada año.
+- **Variabilidad**: Verificar si la variabilidad de los datos cambia con el tiempo. Pueden haber períodos de alta variabilidad seguidos de períodos de baja variabilidad. La variabilidad puede indicar momentos de inestabilidad o cambios en el comportamiento del fenómeno estudiado.
+- **Puntos atípicos** (*Outliers*): Identificar si hay valores extremos o inusuales que difieran significativamente del patrón general de la serie. Los puntos atípicos pueden afectar la interpretación y los análisis posteriores.
+- **Autocorrelación**: Comprobar si existe una correlación entre las observaciones pasadas y las actuales. La autocorrelación puede indicar dependencias en el tiempo y es fundamental para el modelado de series temporales.
+- **Puntos de inflexión**: Buscar cambios bruscos o puntos de inflexión en la serie, donde la tendencia o el comportamiento del fenómeno cambian significativamente.
+
+La visualización de una serie temporal puede realizarse mediante gráficos de líneas, gráficos de dispersión, histogramas, gráficos de autocorrelación y otras técnicas de visualización. Al identificar estas características en la serie temporal, podemos obtener información valiosa sobre el comportamiento y las relaciones temporales de los datos, lo que nos permitirá tomar decisiones informadas y realizar análisis más profundos o modelos predictivos.
+
+### Predicción de una serie temporal
+
+Para predecir y analizar series temporales, existen varios tipos de modelos que se pueden utilizar. Algunos de los modelos más comunes son:
+
+
+
 # Series de tiempo
 
 Los datos de series de tiempo son cualquier tipo de información que se presenta como una secuencia ordenada. Los sensores, el monitoreo, las previsiones meteorológicas, los precios de las acciones, los tipos de cambio, las métricas de rendimiento de las aplicaciones son solo algunos ejemplos del tipo de datos que incluyen series temporales.
