@@ -27,7 +27,7 @@ La visualización de una serie temporal puede realizarse mediante gráficos de l
 
 ### Predicción de una serie temporal
 
-Para predecir y analizar series temporales, existen varios tipos de modelos que se pueden utilizar. Algunos de los modelos más comunes son:
+Para predecir series temporales (**time series forecasting**), existen varios tipos de modelos que se pueden utilizar. Algunos de los modelos más comunes son:
 
 - **Modelo ARIMA** (*AutoRegressive Integrated Moving Average*): ARIMA es un modelo de pronóstico para series temporales que combina información de valores pasados, diferenciación y errores de predicción para hacer proyecciones sobre valores futuros. ARIMA es versátil y puede adaptarse a diferentes patrones en las series temporales, como tendencias y estacionalidad. Cuando aplicamos ARIMA a una serie temporal, primero podemos diferenciar la serie si es necesario para hacerla estacionaria. Luego, ajustamos el modelo ARIMA a los datos y utilizamos sus componentes AR, I y MA para hacer pronósticos futuros.
 - **Modelo de Suavizado Exponencial** (*Exponential Smoothing*): Este modelo es muy simple y eficiente. Se basa en la idea de asignar diferentes pesos a las observaciones pasadas, dándoles más importancia cuanto más recientes son. Es útil para series temporales con tendencias o patrones de crecimiento/declive gradual.
