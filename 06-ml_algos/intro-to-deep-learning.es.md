@@ -1,130 +1,57 @@
-# Introducción a Deep Learing 
+## Introducción al Deep Learing
 
-Deep Learning (aprendizaje profundo) es un subcampo de Machine Learning que se ocupa de algoritmos inspirados en la estructura y función del cerebro llamados redes neuronales artificiales. Los algoritmos de aprendizaje profundo son similares a cómo se estructura el sistema nervioso, donde cada neurona está conectada entre sí y pasa información.
+Uno de los modelos más utilizados en el Machine Learning son las **Redes de Neuronas Artificiales** (*ANN*, *Artificial Neural Networks*), que son modelos inspirados en la estructura y función del cerebro humano. 
 
-Los modelos de aprendizaje profundo tienden a funcionar bien con una gran cantidad de datos, mientras que los modelos antiguos de Machine Learning dejan de mejorar después de un punto de saturación. Una de las diferencias entre Machine Learning y los modelos de aprendizaje profundo está en el área de extracción de funciones. La extracción de características la realiza el ser humano en Machine Learning, mientras que el modelo de aprendizaje profundo se da cuenta por sí mismo.
+### Definición
 
-![why_deep_learning](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/why_deep_learning.jpg?raw=true)
+El **Aprendizaje Profundo** (*Deep Learning*) es una rama de la Inteligencia Artificial que se centra en la construcción de sistemas basados en **Redes de Neuronas Porfundas** (*DNN*, *Deep Neural Networks*). Estas redes neuronales se denominan "profundas" porque tienen muchas capas de neuronas artificiales, o "nodos", que pueden aprender y representar patrones de datos muy complejos. Las redes más sencillas, con menos capas, pueden ser capaces de aprender patrones más simples, pero las redes profundas son capaces de aprender patrones que son demasiado complejos para que los humanos los diseñen manualmente.
 
-*Imagen de Andrew Ng en https://www.slideshare.net/ExtractConf*
+Las técnicas de deep learning han impulsado muchos avances en la IA en la última década, particularmente en áreas como el reconocimiento de voz, el reconocimiento de imágenes, el procesamiento del lenguaje natural, y el juego autónomo. Por ejemplo, las técnicas de deep learning son la base de los sistemas de reconocimiento de voz como Siri y Alexa, los sistemas de recomendación de Netflix y Amazon, y el software de conducción autónoma de Tesla.
 
-**¿Qué son las funciones de activación?**
+El deep learning requiere grandes cantidades de datos y capacidad de cálculo para entrenar modelos eficazmente. Esto es debido a que las redes neuronales profundas tienen muchos parámetros que necesitan ser ajustados, y estos parámetros se ajustan iterativamente a través de un proceso llamado retropropagación, que requiere grandes cantidades de cálculos matemáticos.
 
-Imaginemos un ejemplo sobre un modelo que decide si un estudiante es aceptado en una universidad en función de sus calificaciones. Las funciones de activación son funciones que deciden, dadas las entradas en el nodo, cuál debe ser la salida del nodo, por lo que en este caso la función de activación decide, dadas las calificaciones, si el estudiante es aceptado o no. 
+A pesar de su complejidad y requerimientos de recursos, el deep learning ha demostrado ser una herramienta extremadamente poderosa para resolver problemas de IA complejos y se espera que siga impulsando muchos avances en la IA en el futuro.
 
-Una forma en que las neuronas procesan las entradas es mediante el uso de combinaciones lineales de entradas ponderadas (es decir, neurona lineal). Otra es usar una función logística que devuelve un valor entre 0 y 1. Otras funciones de activación que verá son las funciones tanh y softmax.
+### Redes de Neuronas Artificiales
 
-**¿Qué son los pesos?**
+Una **Red de Neuronas Artificiales** (*ANN*, *Artificial Neural Networks*) es un modelo de aprendizaje automático inspirado en la estructura y función del cerebro humano. Consta de un gran número de unidades de procesamiento llamadas **neuronas** (*neuron*) interconectadas. Estas neuronas se organizan en capas: una capa de entrada que recibe los datos, una o más capas ocultas que procesan los datos, y una capa de salida que produce la predicción o clasificación final.
 
-Cuando los datos de entrada entran en una neurona, se multiplican por un valor de peso que se asigna a esta entrada en particular. Estos pesos comienzan como valores aleatorios y, a medida que la red neuronal aprende más sobre qué tipo de datos de entrada conducen a que un estudiante sea aceptado en una universidad, la red ajusta los pesos en función de los errores de categorización que resultaron de los pesos anteriores. A esto se le llama entrenar la red neuronal. El entrenamiento de redes neuronales puede verse como una especie de problema de optimización. El objetivo es minimizar el error de las redes neuronales mediante un entrenamiento constante.
+#### Neurona
 
-Para averiguar cómo vamos a encontrar estos pesos, comienza por pensar en la meta. Queremos que la red haga predicciones lo más cercanas posible a los valores reales. Para medir esto, necesitamos una métrica de qué tan equivocadas están las predicciones, el error. Una métrica común es la suma de los errores cuadráticos (SSE), donde y^ es la predicción e y es el valor real, y toma la suma de todas las unidades de salida j y otra suma de todos los puntos de datos μ.
+Una **neurona** (*neuron*) es una unidad de procesamiento básica de la red. También se le conoce como "nodo" o "unidad". Su nombre proviene de las neuronas en el cerebro humano, que fueron la inspiración para el concepto de redes neuronales.
 
-El SSE es una buena opción por varias razones. El cuadrado asegura que el error sea siempre positivo y que los errores más grandes se penalicen más que los errores más pequeños. Nuestro objetivo es encontrar pesos wij que minimicen el error cuadrático. Para hacer esto con una red neuronal, normalmente usamos el descenso de gradiente.
+![neuron-structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/neuron-structure.PNG?raw=true)
 
-¿Recuerdas nuestro módulo 'Optimización de algoritmos'? Vimos un poco de Gradient Descent.
+Una neurona en una red neuronal toma un conjunto de entradas ($x_1, x_2, ..., x_n$), realiza un cálculo con ellas y produce una salida ($y_1$). El cálculo que realiza una neurona normalmente implica tomar una combinación ponderada de las entradas (es decir, multiplicar cada entrada por un peso y sumar los resultados), y luego aplicar una función de activación al resultado. Los pesos ($w_i1, w_i2, ..., w_in$) son los principales componentes que la red cambia durante el entrenamiento para aprender de los datos. Se ajustan de manera que la salida de la red se acerque lo más posible al resultado deseado.
 
-El descenso de gradiente es un algoritmo de optimización utilizado para encontrar los valores de los parámetros (coeficientes) de una función (f) que minimiza una función de cost (costo). El descenso de gradiente se usa mejor cuando los parámetros no se pueden calcular analíticamente (por ejemplo, usando álgebra lineal) y se deben buscar mediante un algoritmo de optimización. Utiliza técnicas de derivadas y cálculo a través de retropropagación, propagación resiliente y propagación de Manhattan y otras técnicas de optimización basadas en cálculos de gradiente.
+La función de activación introduce la no linealidad en el modelo. Esto permite que la red neuronal modele relaciones complejas entre las entradas y las salidas, más allá de lo que podría hacer con solo combinaciones lineales de las entradas. Ejemplos comunes de funciones de activación incluyen la función sigmoide, la función tangente hiperbólica y la unidad lineal rectificada (ReLU).
 
-El álgebra y el cálculo son la base de las redes neuronales profundas.
+Una de las técnicas más utilizadas para optimizar los hiperparámetros de una red (que al fin y al cabo son los pesos de las conexiones de las neuronas) es uno que mencionamos al inicio del curso, el **descenso del gradiente** (*gradient descent*). Aquí lo analizamos con más detalle.
 
-**Redes neuronales**
+##### Descenso del gradiente
 
-El siguiente diagrama muestra una red simple. Los pesos y bias (sesgos) son los parámetros que se pueden aprender. En la siguiente ecuación: $y = mx+b$ 'm' (la pendiente) sería el peso y 'b' representaría el bias. La combinación lineal de los pesos, las entradas y el bias forman la entrada h, que pasa a través de la función de activación f(h), dando la salida final, etiquetada como y.
+El **descenso de gradiente** (*gradient descent*) es un algoritmo de optimización que se utiliza en las redes neuronales (y en muchos otros algoritmos de aprendizaje automático) para minimizar una función de coste o pérdida. La función de coste o pérdida mide cuán lejos está la predicción del modelo del valor real para un conjunto de datos de entrenamiento. El objetivo de entrenar una red neuronal es encontrar los valores de los pesos que minimicen esta función de coste.
 
-![neural_network](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/neural_network.jpg?raw=true)
+El descenso de gradiente hace esto de manera iterativa. Comienza con valores iniciales aleatorios para los parámetros y luego, en cada iteración, calcula el gradiente de la función de coste con respecto a cada parámetro. El gradiente en un punto es un vector que apunta en la dirección de la mayor pendiente en ese punto, por lo que moverse en la dirección opuesta (es decir, el "descenso de gradiente") reduce la función de coste. 
 
-La función de activación, f(h) puede ser cualquier función. Si hacemos f(h)=h, la salida será la misma que la entrada. Ahora la salida de la red es $y=Σi WiXi + b$.
+El algoritmo entonces actualiza los parámetros moviéndose una pequeña cantidad en la dirección del gradiente negativo. Este proceso se repite hasta que el algoritmo converge a un mínimo de la función de coste, es decir, un punto donde la función de coste no puede ser reducida más moviendo los parámetros en ninguna dirección.
 
-**Propagación hacia adelante y hacia atrás**
+#### Estructura
 
-Al propagar valores desde la primera capa (la capa de entrada) a través de todas las funciones matemáticas representadas por cada nodo, la red genera un valor. Este proceso se llama **pase hacia adelante**.
+Las redes neuronales artificiales generalmente consisten en tres tipos principales de capas: la capa de entrada, las capas ocultas y la capa de salida.
 
-Reenvía la propagación para obtener el resultado y lo compara con el valor real para obtener el error. Ahora, para minimizar el error, se propaga hacia atrás encontrando la derivada del error con respecto a cada peso y luego restando este valor del valor del peso. Esto se llama **propagación inversa**.
+![neural-network-structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/neural-network-structure.PNG?raw=true)
 
-Ahora veamos el código para implementar toda la propagación:
+1. **Capa de entrada** (*input layer*): Esta es la capa que recibe la información que será procesada por la red neuronal. Cada neurona en esta capa corresponde a una característica o atributo del conjunto de datos. Por ejemplo, si estás procesando imágenes de 28x28 píxeles, tendrías 784 neuronas de entrada, una para cada píxel de la imagen. Sólo puede haber una única capa de entrada en una red.
+2. **Capas ocultas** (*hidden layers*): Estas son las capas entre la capa de entrada y la capa de salida. La "profundidad" de una red neuronal se refiere al número de estas capas ocultas. Cada neurona en una capa oculta recibe entradas de todas las neuronas de la capa anterior, las procesa aplicando funciones aritméticas y lógicas y pasa el resultado a la siguiente capa. Toda red debe tener al menos una de estas capas.
+3. **Capa de salida** (*output layer*): Esta es la última capa de la red y produce el resultado final. La naturaleza de esta capa depende del tipo de tarea que la red esté diseñada para realizar. Si la red está diseñada para la clasificación binaria (por ejemplo, decidir si una imagen es un perro o un gato), entonces esta capa tendría una sola neurona con una función de activación sigmoide que produce un número entre 0 y 1. Si la red está diseñada para la clasificación multiclase, entonces esta capa tendría tantas neuronas como clases y se utilizaría una función de activación softmax para producir una distribución de probabilidad sobre las clases. Si la red está diseñada para una tarea de regresión, entonces esta capa tendría una sola neurona y su salida sería el valor predicho.
 
-```py
-import numpy as np
-from data_prep import features, targets, features_test, targets_test
-
-np.random.seed(21)
-
-def sigmoid(x):
-    """
-    Calculate sigmoid
-    """
-    return 1 / (1 + np.exp(-x))
+Normalmente se dice que cuando utilizamos redes con una única capa oculta estamos haciendo Machine Learning, y cuando utilizamos más de una capa oculta estamos haciendo Deep Learning.
 
 
-# Hiperparámetros
-n_hidden = 2  # Número de unidades ocultas
-epochs = 900
-learnrate = 0.005
 
-n_records, n_features = features.shape
-last_loss = None
-# Inicializar pesos
-weights_input_hidden = np.random.normal(scale=1 / n_features ** .5,
-                                        size=(n_features, n_hidden))
-weights_hidden_output = np.random.normal(scale=1 / n_features ** .5,
-                                         size=n_hidden)
 
-for e in range(epochs):
-    del_w_input_hidden = np.zeros(weights_input_hidden.shape)
-    del_w_hidden_output = np.zeros(weights_hidden_output.shape)
-    for x, y in zip(features.values, targets):
-        ## Pase adelantado ##
-        # TODO: Calcular la salida
-        hidden_input = np.dot(x, weights_input_hidden)
-        hidden_output = sigmoid(hidden_input)
 
-        output = sigmoid(np.dot(hidden_output,
-                                weights_hidden_output))
-
-        ## Pase hacia atrás ##
-        # TODO: Calcular el error de predicción de la red
-        error = y - output
-
-        # TODO: Calcular el término de error para la unidad de salida
-        output_error_term = error * output * (1 - output)
-
-        ## propagate errors to hidden layer
-
-        # TODO: Calculate the hidden layer's contribution to the error
-        hidden_error = np.dot(output_error_term, weights_hidden_output)
-
-        # TODO: Calculate the error term for the hidden layer
-        hidden_error_term = hidden_error * hidden_output * (1 - hidden_output)
-
-        # TODO: Update the change in weights
-        del_w_hidden_output += output_error_term * hidden_output
-        del_w_input_hidden += hidden_error_term * x[:, None]
-
-    # TODO: Update weights
-    weights_input_hidden += learnrate * del_w_input_hidden / n_records
-    weights_hidden_output += learnrate * del_w_hidden_output / n_records
-
-    # Printing out the mean square error on the training set
-    if e % (epochs / 10) == 0:
-        hidden_output = sigmoid(np.dot(x, weights_input_hidden))
-        out = sigmoid(np.dot(hidden_output,
-                             weights_hidden_output))
-        loss = np.mean((out - targets) ** 2)
-
-        if last_loss and last_loss < loss:
-            print("Train loss: ", loss, "  WARNING - Loss Increasing")
-        else:
-            print("Train loss: ", loss)
-        last_loss = loss
-
-# Calculate accuracy on test data
-hidden = sigmoid(np.dot(features_test, weights_input_hidden))
-out = sigmoid(np.dot(hidden, weights_hidden_output))
-predictions = out > 0.5
-accuracy = np.mean(predictions == targets_test)
-print("Prediction accuracy: {:.3f}".format(accuracy))
-```
 
 ## Deep learning techniques
 
