@@ -63,7 +63,7 @@ We can easily build a decision tree in Python using the `scikit-learn` library a
 
 - `n_estimators` (`n_estimators` in XGBoost): This is probably the most important hyperparameter. It defines the number of decision trees in the forest. In general, a larger number of trees increases the accuracy and makes the predictions more stable, but it can also slow down the computation time considerably.
 - `learning_rate` (`learning_rate` in XGBoost): The rate at which the model is accepted at each boosting stage. A higher learning rate may lead to a more complex model, while a lower rate will require more trees to obtain the same level of complexity.
-- loss` (`objective` in XGBoost): The loss function to optimize (amount of classification errors or difference with reality in regression).
+- `loss` (`objective` in XGBoost): The loss function to optimize (amount of classification errors or difference with reality in regression).
 - `subsample` (`subsample` in XGBoost): The fraction of instances to use to train the models. If it is less than `1.0`, then each tree is trained with a random fraction of the total number of instances in the training dataset.
 - `max_depth` (`max_depth` in XGBoost): The maximum depth of the trees. This is essentially how many splits the tree can make before making a prediction.
 - `min_samples_split` (`gamma` in XGBoost): The minimum number of samples needed to split a node in each tree. If set to a high value, it prevents the model from learning too specific relationships and thus helps prevent overfitting.
