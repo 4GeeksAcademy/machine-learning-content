@@ -1,74 +1,42 @@
-# Máquinas de Vectores de Soporte
+## Máquina de Vectores de Soporte
 
-Máquinas de Vectores de Soporte (Support Vector Machine - SVM) es un algoritmo de aprendizaje supervisado, por lo que necesitamos tener un conjunto de datos etiquetado para poder usar SVM. Puede ser utilizado para problemas de regresión y clasificación y puede ser de tipo lineal y no lineal. El objetivo principal de SVM es encontrar un hiperplano en un espacio dimensional N (número total de características), que diferencie los puntos de datos. Entonces, necesitamos encontrar un plano que cree el margen máximo entre dos clases de puntos de datos, lo que significa encontrar la línea para la cual la distancia de los puntos más cercanos sea la más lejana posible.
+Las **Máquinas de Vectores de Soporte** (*SVM*, *Support Vector Machines*) son una clase de algoritmos de aprendizaje supervisado ampliamente utilizados en clasificación y regresión. Éstas se introdujeron en la década de 1990 y desde entonces han sido una herramienta importante en el campo del aprendizaje automático. 
 
-Veamos algunos gráficos donde el algoritmo está tratando de encontrar la distancia máxima entre los puntos más cercanos:
+Imaginemos un conjunto de datos bidimensional donde los datos de dos clases son claramente separables. Una SVM tratará de encontrar una línea recta (o en términos más generales, un hiperplano) que separe las dos clases. Esta línea no es única, pero la SVM intenta encontrar la que tenga el mayor **margen** entre los puntos más cercanos de ambas clases. Sin embargo, no siempre es posible separar las clases con un hiperplano lineal. En estos casos, una SVM utiliza el truco del kernel. Esencialmente, transforma el espacio de entrada a un espacio de dimensiones más altas donde las clases se vuelven linealmente separables.
 
-![svm](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/svm.jpg?raw=true)
+El **margen** es la distancia entre el hiperplano de separación y los vectores de soporte más cercanos de cada clase. Una SVM busca maximizar este margen, ya que a mayor valor, mayor es el aumento de la robustez y la capacidad de generalización del modelo.
 
-![svm2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/svm2.jpg?raw=true)
+![svm-logical](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/svm-logical.PNG?raw=true)
 
-![svm3](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/svm3.jpg?raw=true)
+Un **kernel** es una función que toma dos entradas y las transforma en un único valor de salida. Esta función se utiliza para transformar datos que no son linealmente separables en un espacio de dimensiones más altas donde sí lo sean.
 
-Podemos ver que el tercer gráfico entre líneas es la mayor distancia que podemos observar para poner entre nuestros dos grupos.
+Supongamos que tenemos dos tipos de frutas en una mesa: manzanas y bananas. Si todas las manzanas están en un lado y todas las bananas en otro, podemos dibujar fácilmente una línea recta para separarlas. Pero, ¿qué sucede si están mezcladas y no podemos separarlas con una línea recta? Aquí es donde entra el kernel: imaginemos que usamos nuestra mano para golpear suavemente el centro de la mesa haciendo que las frutas salten en el aire. Mientras están en el aire (añadimos una nueva dimensión: la altura) podríamos dibujar un plano (en lugar de una línea) para separar manzanas y bananas. Después, cuando las frutas vuelvan a caer en la mesa, ese plano se traduciría en una línea curva o en una forma más compleja en la mesa que separa las frutas. El kernel es esa mano que hace saltas las frutas: transforma los datos originales a un espacio donde pueden ser separados con más facilidad.
 
-Para comprender completamente la terminología de la máquina de vectores de soporte, veamos sus partes:
+Las SVM son herramientas poderosas y han sido utilizadas en una variedad de aplicaciones, desde clasificación de texto y reconocimiento de imágenes hasta bioinformática, incluida la clasificación de proteínas y la detección de enfermedades genéticamente predispuestas.
 
-![svm_terminology](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/svm_terminology.jpg?raw=true)
+### Hiperparametrización del modelo
 
-El margen debe ser igual en ambos lados.
+Podemos construir un SVG fácilmente en Python utilizando la librería `scikit-learn` y la función `SVC`. Algunos de sus hiperparámetros más importantes y los primeros en los que debemos centrarnos son:
 
-Para resumir algunos usos posibles de los modelos SVM, se pueden usar para:
+- `C`: Este es el hiperparámetro de regularización. Controla el compromiso entre maximizar el margen y minimizar la clasificación errónea. Un valor pequeño para C permite un margen más amplio a expensas de algunos errores de clasificación. Un valor alto para C exige una clasificación correcta, posiblemente a expensas de un margen más estrecho.
+- `kernel`: Define la función kernel que se utilizará en el algoritmo. Puede ser lineal, polinómico, RBF, etc.
+- `gamma`: Solo se usa para el kernel RBF y otros. Define cuán lejos llega la influencia de un solo ejemplo de entrenamiento. Valores bajos significan influencia lejana y valores altos significan influencia cercana.
+- `degree`: Se utiliza para el kernel polinómico. Es el grado del polinomio utilizado.
 
-- Clasificación lineal.
+Otro hiperparámetro muy importante es el `random_state`, que controla la semilla de generación aleatoria. Este atributo es crucial para asegurar la replicabilidad.
 
-- Clasificación no lineal.
+### Uso del modelo en Python
 
-- Regresión lineal.
+Puedes fácilmente utilizando `scikit-learn` programar estos métodos posterior al EDA:
 
-- Regresión no lineal.
+```py
+from sklearn.svm import SVC
 
-## Efecto de pequeños márgenes
+# Carga de los datos de train y test
+# Estos datos deben haber sido normalizados y correctamente tratados en un EDA completo
 
-El clasificador de margen máximo separará las categorías. Si estás familiarizado con la compensación de bias-variance (sesgo-varianza), sabrás que si estás poniendo una línea que está muy bien ajustada para tu conjunto de datos, estás reduciendo el bias y aumentando la varianza. Si aún no estás familiarizado, lo que dice es que cuando tienes un bias alto, significa que es posible que tu modelo no esté completamente ajustado a tu conjunto de datos, por lo que tendrá más errores de clasificación, pero si tienes un bias bajo y una varianza alta, significa que tu modelo estará muy, muy bien ajustado a tu conjunto de datos y eso puede conducir a un sobreajuste, lo que significa que funcionará muy bien en tu conjunto de entrenamiento, pero en tu conjunto de prueba tendrá una mayor tasa de error.
+model = SVC(kernel = "rbf", C = 1.0, gamma = 0.5)
+model.fit(X_train, y_train)
 
-Debido a que sus márgenes son tan pequeños, puedes aumentar la posibilidad de clasificar erróneamente nuevos puntos de datos.
-
-¿Cómo podemos hacer frente a eso?
-
-- Aumentar los márgenes al incluir algunos puntos de datos mal clasificados entre sus márgenes. Se puede aumentar el bias y reducir la varianza controlando uno de los hiperparámetros de SVM, el parámetro 'C'.
-
-Un valor bajo de C aumenta el bias y disminuye la varianza. Si los valores son demasiado extremos, es posible que no se adapte bien.
-
-Un valor alto de C disminuye el bias y aumenta la varianza. Si los valores son demasiado extremos, es posible que se sobreajuste.
-
-Podemos determinar el mejor valor de C haciendo una validación cruzada o ajustando con el conjunto de validación.
-
-**¿Qué otros hiperparámetros se pueden optimizar para Máquinas de Vectores de Soporte?**
-
-- Kernel: El kernel se decide sobre la base de la transformación de datos. De forma predeterminada, el kernel es el kernel de función de base radial (RBF). Podemos cambiarlo a lineal o polinomial dependiendo de nuestro conjunto de datos.
-
-- C parameter: El parámetro c es un parámetro de regularización que le dice al clasificador cuánto error de clasificación debe evitar. Si el valor de C es alto, el clasificador se ajustará muy bien a los datos de entrenamiento, lo que podría causar un sobreajuste. Un valor bajo de C podría permitir más clasificaciones erróneas (errores) que pueden conducir a una menor precisión para nuestro clasificador.
-
-- Gamma: Gamma es un parámetro de hiperplano no lineal. Los valores altos indican que se pueden agrupar puntos de datos que están muy cerca unos de otros. Un valor bajo indica que los puntos de datos se pueden agrupar incluso si están separados por grandes distancias.
-
-Para conocer la lista completa de hiperparámetros de SVM que se pueden ajustar, vaya a la siguiente documentación de aprendizaje de scikit:
-
-https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html
-
-**¿Por qué es importante escalar funciones antes de usar SVM?**
-
-SVM intenta ajustarse a la brecha más amplia entre todas las clases, por lo que las características sin escalar pueden causar que algunas características tengan un impacto significativamente mayor o menor en la forma en que se crea la división de SVM.
-
-**¿Puede SVM producir una puntuación de probabilidad junto con su predicción de clasificación?**
-
-No.
-
-Fuente:
-
-https://medium.com/analytics-vidhya/how-to-build-a-simple-sms-spam-filter-with-python-ee777240fc
-
-https://projectgurukul.org/spam-filtering-machine-learning/
-
-https://medium.com/@bedigunjit/simple-guide-to-text-classification-nlp-using-svm-and-naive-bayes-with-python-421db3a72d34
-
+y_pred = model.predict(y_test)
+```
