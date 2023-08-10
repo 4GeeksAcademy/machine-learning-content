@@ -1,369 +1,296 @@
-# Implementación de un modelo de Machine Learning usando Flask y Heroku
+## Despliegue en Render usando Flask
 
-Los modelos de Machine Learning son herramientas poderosas para hacer predicciones basadas en los datos disponibles. Para que estos modelos sean útiles para la sociedad, deben implementarse para que otros puedan acceder fácilmente a ellos para hacer predicciones. Esto se puede hacer usando Flask y Heroku.
+Tras la fase de desarrollo del modelo, tendremos un modelo resolutivo según nuestras espectativas y que satisface nuestras necesidades. Para que este modelo sea útil y cumpla la función para la que ha sido entrenado, debemos disponibilizarlo en algún entorno que nos permita su utilización. Aquí proponemos un entorno gratuito llamado `Render`, pero puede trasladarse a otros entornos, gratuitos o de pago.
 
-Flask es un marco web de Python pequeño y liviano que proporciona herramientas y características útiles que facilitan la creación de aplicaciones web usando solo un archivo de Python.
+### Render
 
-Heroku es una plataforma en la nube que le permite crear, entregar, monitorear y escalar aplicaciones. Heroku hace que los procesos de implementación, configuración, escalado, ajuste y administración de aplicaciones sean lo más simples y directos posible para que los desarrolladores puedan concentrarse en crear excelentes aplicaciones. También incluye un rico ecosistema de servicios de datos administrados.
+Render es una plataforma de computación en la nube que facilita el despliegue, la hosting y la ejecución de aplicaciones, bases de datos, tareas programadas y otros servicios. A menudo se describe como una plataforma fácil de usar que combina la facilidad de las plataformas como Heroku con el poder y la flexibilidad de los proveedores de nube más tradicionales como AWS.
 
-Imaginemos que acabamos de terminar de crear nuestro modelo de predicción de supervivencia del Titanic. ¿Ahora que?
+Algunas características y ofertas clave de Render incluyen:
 
-Para predecir con datos desconocidos, tenemos que implementarlos en Internet para que el mundo exterior pueda usarlos.
+1. **Despliegue de aplicaciones web**: Render permite desplegar aplicaciones web en varios lenguajes y marcos, incluidos Node.js, Ruby on Rails, Django y muchos otros.
+2. **Servicios privados**: Son aplicaciones o trabajos que no están expuestos a internet pero pueden ser usados por otras aplicaciones en Render.
+3. **Tareas programadas**: Permite ejecutar trabajos periódicos, similares a los cron jobs en sistemas Unix.
+4. **Bases de datos**: Render soporta el despliegue de bases de datos como PostgreSQL, y ofrece una solución de almacenamiento persistente para datos.
+5. **Despliegue desde repositorios**: Puedes conectar tu repositorio de GitHub o GitLab y configurar despliegues automáticos cada vez que hagas push a tu repositorio.
 
-Para eso, necesitaremos guardar el modelo para que podamos predecir los valores más tarde. Hacemos uso de pickle en python, que es un poderoso algoritmo para serializar y deserializar una estructura de objeto de Python, pero también hay otras herramientas. El siguiente código guarda el modelo usando Pickle:
+Render se ha ganado una reputación positiva por ser una opción atractiva para desarrolladores y startups que buscan una forma rápida y sencilla de desplegar y escalar aplicaciones sin la sobrecarga administrativa de las soluciones más tradicionales.
 
-```py
-#serializing our model to a file called model.pkl
-import pickle
-filename = 'titanic_model.pkl'
-pickle.dump(classifier, open(filename,'wb'))
-```
+#### Registro en la plataforma
 
-## Pasos para crear una aplicación web usando Flask en Python3
+Para poder acceder a Render debemos tener una cuenta. Para registrarse se debe acceder al siguiente [enlace](https://dashboard.render.com/register). Una vez tenemos una cuenta, se nos habilita el acceso a toda la funcionalidad de Render:
 
-Para predecir la supervivencia en el Titanic a partir de varios atributos, primero debemos recopilar los datos (nuevos valores de atributos) y luego usar el modelo que construimos para predecir si un pasajero sobreviviría o no en el Titanic. Por lo tanto, para recopilar los datos, creamos un formulario html que contendría todas las diferentes opciones para seleccionar de cada atributo. Aquí, he creado un formulario simple usando solo html. Si deseas que el formulario sea más interactivo, también puedes hacerlo.
+![render-functionalities](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/render-functionalities.PNG?raw=true)
 
-![titanic_prediction_form](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_prediction_form.jpg?raw=true)
+Podemos crear servicios de bases de datos, de despliegue web, tareas programadas...
 
-### **Paso 1:** Activa el entorno e instala Flask
+### Integración en Render
 
-En la línea de comando ingresa el directorio de tu proyecto. Una vez allí, activa su entorno y usa pip para instalar Flask.
+En esta lección integraremos el modelo de clasificación que hemos desarrollado en el [módulo de los árboles de decisión](https://4geeks.com/es/syllabus/spain-ds-pt-1/read/exploring-decision-trees).
 
-```bash
-pip install Flask
-```
+El modelo `decision_tree_classifier_default_42.sav` se ha guardado en un objeto `Pickle` de tal forma que pueda ser utilizado, por ejemplo, para desplegarlo en un servicio web como este caso.
 
-### **Paso 2:** Crea una aplicación básica
+#### Paso 1: Crear un repositorio en Git
 
-En tu directorio, abre un archivo llamado hello.py para editarlo. Este archivo hello.py servirá como un ejemplo mínimo de cómo manejar las solicitudes HTTP. En el interior, importará el objeto Flask y creará una función que devuelva una respuesta HTTP. Escribe el siguiente código dentro de hello.py:
+Para integrar algo en Render primero debemos haber creado un repositorio en Git. El Git que vamos a generar en esta lección se encuentra [aquí](https://github.com/4GeeksAcademy/flask-render-integration), que deriva del Machine Learning Template de 4Geeks.
+
+#### Paso 2: Crear una aplicación básica
+
+Ahora generaremos una aplicación sencilla utilizando la librería `Flask`. En el directorio `src`, creamos un archivo nuevo llamado `hello.py` que modificaremos con el siguiente código:
 
 ```py
 from flask import Flask
-
 app = Flask(__name__)
 
-
-@app.route('/')
-def hello():
-    return 'Hello, World!'
+@app.route("/")
+def hello_world():
+    return "Hello, World!"
 ```
 
-Expliquemos lo que acaba de hacer el código anterior. Primero importa el objeto Flask del paquete Flask. Luego lo usará para crear su instancia de la aplicación Flask con el nombre app. Pasa la variable especial __name__ que contiene el nombre del módulo de Python actual. Se utiliza para decirle a la instancia dónde se encuentra. Deberá hacer esto porque Flask configura algunas rutas en segundo plano.
+El archivo creado servirá como un ejemplo mínimo de cómo manejar las solicitudes HTTP. En él se importa el objeto `Flask` y se crea una función que devuelve una respuesta HTTP.
 
-Una vez que crea la instancia de la aplicación, la usa para manejar las solicitudes web entrantes y enviar respuestas al usuario. @app.route es un decorador que convierte una función normal de Python en una función de vista Flask, que convierte el valor de retorno de la función en una respuesta HTTP que mostrará un cliente HTTP, como un navegador web. Pasa el valor '/' a @app.route() para indicar que esta función responderá a las solicitudes web de la URL /, que es la URL principal.
+Ahora mismo el repositorio luce de la siguiente forma:
 
-La función de vista hello() devuelve la cadena 'Hello, World!' en respuesta.
+![flask-step1](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step1.png?raw=true)
 
-Guarda y cierra el archivo.
+#### Paso 3: Ejecutar la aplicación
 
-Para ejecutar su aplicación web, primero le indicarás a Flask dónde encontrar la aplicación (el archivo hello.py en su caso) con la variable de entorno `FLASK_APP`:
+Para ejecutar la aplicación en local necesitamos la librería de Python `gunicorn`. Simplemente debemos instalarla, acceder con la consola al directorio donde se encuentra el script y ejecutar `gunicorn app:app`.
 
-```bash
-export FLASK_APP=hello
-```
+![flask-step2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step2.png?raw=true)
 
-Luego, ejecútalo en modo desarrollo con la variable de entorno `FLASK_ENV`:
+Al terminar se disponibilizará una dirección a través de la cual podemos acceder a la aplicación web:
 
-```bash
-export FLASK_ENV=development
-```
+![flask-step21](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step21.png?raw=true)
 
-Finalmente, ejecuta la aplicación usando `flask run`:
+En este caso como estamos desarrollándolo en un Codespace, el enlace es distinto al que se generaría en local, que sería `http://127.0.0.1:8000`.
 
-```py
-flask run
-```
+Ahora hemos implementado una aplicación web muy sencilla usando Flask. Además, hemos podido ejecutarla y mostrar información en la interfaz web.
 
-Una vez que se está ejecutando, el resultado debería ser similar a este:
+Ahora tienes una pequeña aplicación web Flask. Ha ejecutado su aplicación y ha mostrado información en el navegador web. A continuación, añadiremos archivos HTML para personalizar la aplicación.
 
-```bash
-Output
- * Serving Flask app "hello" (lazy loading)
- * Environment: development
- * Debug mode: on
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 813-894-335
- ```
+#### Paso 4: Implementar la interfaz web de la aplicación
 
-El resultado anterior tiene varias informaciones, tales como:
+Como hemos mencionado al inicio de la lección, queremos integrar el árbol de decisión entrenado para el conjunto de datos de Iris del repositorio UCI de Machine Learning. Este conjunto de datos cuenta con 4 variables predictoras: anchura del pétalo (`petal width (cm)`), longitud del pétalo (`petal length (cm)`), anchura del sépalo (`sepal width (cm)`) y longitud del sépalo (`sepal length (cm)`).
 
-- El nombre de la aplicación que estás ejecutando.
+Crearemos un HTML que permita introducir un valor para cada variable para poder llevar a cabo la predicción:
 
-- El entorno en el que se ejecuta la aplicación.
-
-- Debug mode: on significa que el depurador Flask se está ejecutando. Esto es útil durante el desarrollo porque nos brinda mensajes de error detallados cuando algo sale mal, lo que facilita la resolución de problemas.
-
-- La aplicación se ejecuta localmente en la URL http://127.0.0.1:5000/, 127.0.0.1 es la IP que representa el host local de su computadora y :5000 es el número de puerto.
-
-Ahora abre un navegador y escribe la URL http://127.0.0.1:5000; recibirás la cadena Hello, World! en respuesta. Esto confirma que tu aplicación se está ejecutando correctamente.
-
-Ahora tienes una pequeña aplicación web Flask. Ha ejecutado su aplicación y ha mostrado información en el navegador web. A continuación, utilizará los archivos HTML en su aplicación.
-
-### **Paso 3:** Usar plantillas HTML
-
-Actualmente, su aplicación solo muestra un mensaje simple sin HTML. Las aplicaciones web utilizan principalmente HTML para mostrar información al visitante, por lo que ahora trabajará para incorporar un archivo HTML en tu aplicación, que se puede mostrar en el navegador web.
-
-Flask proporciona una función auxiliar render_template() que permite el uso del motor de plantillas Jinja. Esto hará que la administración de HTML sea mucho más fácil al escribir su código HTML en archivos .html, además de usar la lógica en su código HTML. Utilizarás estos archivos HTML (plantillas) para crear su aplicación web.
-
-En este paso, crearás tu aplicación Flask principal en un archivo nuevo.
-
-Primero, en el directorio de tu proyecto, usa tu editor de texto favorito para crear y editar tu archivo app.py. Anteriormente, has estado usando app.py para escribir el código de tu modelo final. Para evitar confusiones, ahora usarás un 'model.py' o un 'titanic.py' para eso, y el app.py será exclusivamente para construir tu aplicación web. Esto albergará todo el código que utilizarás para crear la aplicación.
-
-En este nuevo archivo, importarás el objeto Flask para crear una instancia de la aplicación Flask, como lo hiciste antes. También importará la función auxiliar render_template() que le permite renderizar archivos de plantilla HTML que existen en la carpeta de plantillas que estás a punto de crear. El archivo tendrá una función de vista única que se encargará de manejar las solicitudes a la ruta principal/. Agrega el siguiente contenido:
-
-```py
-import numpy as np
-import flask
-import pickle
-from flask import Flask, render_template, request
-
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-```
-
-La función de vista index() devuelve el resultado de invocar render_template() con index.html como argumento; esto le indica a render_template() que busque un archivo llamado index.html en la carpeta de plantillas. La carpeta y el archivo aún no existen y recibirá un error si ejecutas la aplicación en este momento. Lo ejecutarás de todos modos, para que estés familiarizado con esta excepción que se encuentra comúnmente. Luego lo resolverá creando la carpeta y el archivo necesarios.
-
-Guarda el archivo y ciérralo.
-
-Deten el servidor de desarrollo en tu otro terminal ejecutando la aplicación hello con CTRL+C.
-
-Antes de ejecutar la aplicación, asegúrate de especificar correctamente el valor de la variable de entorno FLASK_APP, ya que ahora no estás utilizando la aplicación hello.
-
-```bash
-export FLASK_APP=app
-flask run
-```
-Cuando abras la URL http://127.0.0.1:5000 en tu navegador, se mostrará la página del depurador informándote que no se encontró la plantilla index.html. Se resaltará la línea principal de código en el código responsable de este error. En este caso, es la línea return render_template('index.html').
-
-Si haces clic en esta línea, el depurador revelará más código para que tengas más contexto que te ayude a resolver el problema.
-
-Probablemente verás un error que muestra 'plantilla no encontrada (index.html)'.
-
-Vamos a crear plantillas de carpetas. En tu aplicación, utilizarás plantillas para representar HTML que se mostrará en el navegador del usuario. Esta carpeta contiene nuestro archivo de formulario html index.html. Comienza a editar tu archivo index.html escribiendo el siguiente código:
-
-```py
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>ML app</title>
+    <title>Iris - Model prediction</title>
 </head>
 <body>
-   <h1>Welcome to my Titanic Survival prediction app</h1>
+    <h2>Introduce the values</h2>
+    
+    <form action="/" method="post">
+        Petal width: <input type="number" step="any" name="val1" required><br><br>
+        Petal length: <input type="number" step="any" name="val2" required><br><br>
+        Sepal width: <input type="number" step="any" name="val3" required><br><br>
+        Sepal length: <input type="number" step="any" name="val4" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+    
+    {% if prediction != None %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
 </body>
 </html>
 ```
 
-Guarda el archivo y usa tu navegador para navegar a http://127.0.0.1:500 nuevamente, o actualiza la página. Esta vez, el navegador debería mostrar el texto "Bienvenido a mi aplicación de predicción Titanic Survival" en una etiqueta h1.
+Este HTML contiene un título y un formulario en el que se deben introducir los valores asociados a cada campo. A continuación, pulsando sobre el botón `Predict` aparecerá un elemento que contiene la predicción del modelo, en función de los valores introducidos. En el HTML hay unas sentencias entre llaves que es código Python puro, una curiosa sintaxis que utiliza Flask para introducir valores de manera dinámica.
 
-Además de la carpeta de plantillas, las aplicaciones web de Flask también suelen tener una carpeta estática para albergar archivos, como los archivos CSS, los archivos JavaScript y las imágenes que utiliza la aplicación.
+Todas las plantillas HTML que generemos deben ir en una carpeta `templates` que se debe crear al mismo nivel que el `app.py`. Llamamos a este fichero `index.html` y lo almacenamos en la carpeta.
 
-Puedes crear un archivo de hoja de estilo style.css para agregar CSS a tu aplicación. Primero, crea un directorio llamado estático dentro de tu directorio principal del proyecto. Luego crea otro directorio llamado css dentro de static para alojar los archivos .css. Se puede hacer lo mismo con archivos js e imágenes para aplicaciones más complejas.
-
-Dentro de su directorio css, crea un archivo style.css y agrega la siguiente regla:
+Además de crear la plantilla anterior, debemos actualizar el código para que se alimente del HTML, reciba los campos y pueda devolver una predicción. Así, el archivo `app.py` lo actualizaríamos:
 
 ```py
-h1 {
-    border: 2px #eee solid;
-    color: brown;
-    text-align: center;
+from flask import Flask, request, render_template
+from pickle import load
+app = Flask(__name__)
+model = load(open("/workspaces/flask-render-integration/models/decision_tree_classifier_default_42.sav","rb"))
+class_dict = {
+    "0": "Iris setosa",
+    "1": "Iris versicolor",
+    "2": "Iris virginica"
+}
+
+@app.route("/", methods = ["GET", "POST"])
+def index():
+    if request.method == "POST":
+        
+        val1 = float(request.form['val1'])
+        val2 = float(request.form['val2'])
+        val3 = float(request.form['val3'])
+        val4 = float(request.form['val4'])
+        
+        data = [[val1, val2, val3, val4]]
+        prediction = str(model.predict(data)[0])
+        pred_class = class_dict[prediction]
+    else:
+        pred_class = None
+    
+    return render_template("index.html", prediction = pred_class)
+```
+
+Hemos creado la función `index`, que reemplaza a la antigua `hello_world` y que se nutre de los valores que se introduzcan en el HTML para desencadenar el proceso de predicción. Esto es así porque cuando se hace click sobre el botón `Predecir`, se envía una petición POST al script y se leen los valores introducidos en el formulario del HTML para realizar la predicción.
+
+En última instancia, el método devuelve el HTML renderizado, en este caso con el valor de la predicción en función de los valores.
+
+Ahora mismo el repositorio luce de la siguiente forma:
+
+![flask-step3](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step3.png?raw=true)
+
+Si guardamos los cambios y ejecutamos de nuevo la aplicación (`gunicorn app:app`), tras navegar a nuestra aplicación web en local veremos lo siguiente:
+
+![flask-step4](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step4.png?raw=true)
+
+Tras rellenar los valores y hacer click sobre `Predict`, el resultado se muestra también en la propia interfaz:
+
+![flask-step5](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step5.png?raw=true)
+
+Al introducir cualquier valor se predice una clase. Además, la efectividad del modelo es la observada en el módulo pasado.
+
+La interfaz web parece muy simple y poco atractiva de cara a los usuarios. El siguiente paso es darle algo de estilo.
+
+#### Paso 5: Estilizar la interfaz web de la aplicación
+
+Una manera fácil de añadir estilos es utilizando CSS. Podemos agregar un bloque `<style>` directamente al HTML anterior para mejorarlo visualmente. El código `CSS` que incluiremos será el siguiente:
+
+```css
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f4f4f4;
+}
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+}
+input[type="number"] {
+    width: 100%;
     padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #555;
+}
+h3 {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
 }
 ```
-Este código agregará un borde, cambiará el color a marrón, centrará el texto y agregará un pequeño relleno a los tags h1.
 
-Guarda y cierra el archivo.
+El código anterior establece un fondo claro para toda la página, y destaca el formulario y el encabezado con un fondo blanco y bordes suavemente redondeados. Los campos de entrada son más espaciosos y visuales, con bordes y rellenos adecuados, y el botón de envío presenta un cambio de color cuando se pasa el cursor sobre él, proporcionando retroalimentación visual. Además, se emplea una tipografía más legible y se separan adecuadamente los elementos con márgenes para evitar que se sientan apretados.
 
-En tu archivo index.html agregarás un enlace a tu archivo style.css:
+Al introducirlo en el HTML, el código quedaría tal que así:
 
-```py
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
-    <title>Welcome to my Titanic Survival prediction app</title>
-</head>
-```
-Aquí utilizas la función auxiliar url_for() para generar la ubicación de archivo adecuada. El primer argumento especifica que está vinculando a un archivo estático y el segundo argumento es la ruta al archivo dentro del directorio estático.
-
-Guarda y cierra el archivo.
-
-Después de actualizar la página de índice de tu aplicación, notarás que el texto "Bienvenido a mi aplicación de predicción Titanic Survival" ahora es marrón, está centrado y enmarcado dentro de un borde.
-
-Puedes poner el estilo que desees en tu archivo style.css. Sin embargo, el kit de herramientas de Bootstrap puede ayudarte con esto si no eres un experto. Ahora, si tu aplicación tendrá más de una página, puedes evitar la repetición innecesaria de código con la ayuda de un archivo de plantilla base, del cual heredarán todos tus archivos HTML. Si ese es el caso, puedes escribir el siguiente código en tu archivo base.html:
-
-```py
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>{% block title %} {% endblock %}</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <a class="navbar-brand" href="{{ url_for('index')}}">FlaskBlog</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">About</a>
-            </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container">
-        {% block content %} {% endblock %}
-    </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-</html>
-```
-
-Guarda y cierra el archivo una vez que hayas terminado de editarlo.
-
-La mayor parte del código en el bloque anterior es HTML estándar y requiere código para Bootstrap. Los tags <meta> brindan información para el navegador web, el tag <link> vincula a los archivos CSS de Boostrap y los tags <script> son vínculos al código JavaScript que habilita alguna funcionalidad adicional de Boostrap.
-
-Sin embargo, las siguientes partes resaltadas son específicas del motor de plantillas Jinja:
-
-- {% block title %} {% endblock %}: un bloque que sirve como marcador de posición para un título. Luego lo usarás en otras plantillas para dar un título personalizado a cada página de tu aplicación sin tener que volver a escribir la sección <head> completa cada vez.
-
-- {{ url_for('index')}: una invocación de función que devolverá la URL para la función de vista index(). Esto es diferente de la invocación anterior de url_for() que usó para vincular a un archivo CSS estático, porque solo requiere un argumento, que es el nombre de la función de vista, y vincula a la ruta asociada con la función en lugar de a un archivo estático expediente.
-
-- {% block content %} {% endblock %}: otro bloque que será reemplazado por contenido dependiendo de la plantilla secundaria (plantillas que heredan de base.html) que lo anulará.
-
-Ahora que tienes una plantilla base.html, puedes heredar ese código a index.html agregando solo el siguiente código en tu index.html:
-
-```py
-{% extends 'base.html' %}
-
-{% block content %}
-    <h1>{% block title %} Welcome to FlaskBlog {% endblock %}</h1>
-{% endblock %}
-```
-
-Has utilizado plantillas HTML y archivos estáticos en Flask de forma limpia. Sin embargo, para simplificar las cosas para su primera aplicación web, conservaremos solo el archivo index.html.
-
-Veamos cómo debemos codificar un formulario solicitando los atributos de nuestros pasajeros.
-
-> Para poder predecir los datos correctamente, los valores correspondientes de cada etiqueta deben coincidir con el valor de cada entrada seleccionada.
-
-En el formulario Titanic que viste al comienzo de esta lección, solo solicitamos las características numéricas para la predicción, pero en el caso de que incluyamos características categóricas que fueron previamente codificadas con etiquetas, necesitamos poner los mismos valores en el formulario html. El siguiente ejemplo muestra cómo se debe codificar el formulario en caso de que a nuestra función 'Sex' se le haya asignado 0 para Hombre y 1 para Mujer:
-
-```py
-<label for="Sex">Gender</label>
-    <select id="relation" name="relation">
-      <option value="0">Male</option>
-      <option value="1">Female</option>
-    </select>
-```
-
-Puedes encontrar un par de ejemplos de formularios en los siguientes enlaces:
-
-https://github.com/4GeeksAcademy/machine-learning-content/blob/master/07-1d-ml_deploy/form-examples/index_example1.html
-
-https://github.com/4GeeksAcademy/machine-learning-content/blob/master/07-1d-ml_deploy/form-examples/index_example2.html
-
-https://www.geeksforgeeks.org/html-design-form/
-
-### **Paso 4:** Predecir el resultado de supervivencia
-
-Ejecutemos la aplicación.
-
-```bash
-export FLASK_APP=app.py
-run flask
-```
-
-Cuando alguien envía el formulario, la página web debe mostrar el resultado si un pasajero sobreviviría o moriría en el Titanic. Para esto, necesitamos el archivo modelo (model.pkl) que creamos antes, en la misma carpeta del proyecto. Agregamos el siguiente código al archivo app.py:
-
-```py
-# función de predicción
-def ValuePredictor(to_predict_list):
-    to_predict = np.array(to_predict_list).reshape(1,12)
-    loaded_model = pickle.load(open("model.pkl","rb"))
-    result = loaded_model.predict(to_predict)
-    return result[0]
-
-
-@app.route('/result',methods = ['POST'])
-def result():
-    if request.method == 'POST':
-        to_predict_list = request.form.to_dict()
-        to_predict_list=list(to_predict_list.values())
-        to_predict_list = list(map(int, to_predict_list))
-        result = ValuePredictor(to_predict_list)
-        
-        if int(result)==1:
-            prediction='Passenger survives'
-        else:
-            prediction='Passenger dies'
-            
-        return render_template("result.html",prediction=prediction) 
-```
-
-Aquí, después de enviar el formulario, los valores del formulario se almacenan en la variable to_predict_list en forma de diccionario. Lo convertimos en una lista de los valores del diccionario y lo pasamos como argumento a la función ValuePredictor(). En esta función, cargamos el archivo model.pkl y predecimos los nuevos valores y devolvemos el resultado.
-
-Este resultado/predicción (Pasajero sobrevive o no) se pasa como argumento al motor de plantilla con la página html que se mostrará.
-
-Crea el siguiente archivo result.html y agrégalo a la carpeta de plantillas.
-
-```py
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html>
-   <body>
-       <h1> {{ prediction }}</h1>
-   </body>
+<head>
+    <title>Iris - Model prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        h3 {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Introduce the values</h2>
+    
+    <form action="/" method="post">
+        Petal width: <input type="number" step="any" name="val1" required><br><br>
+        Petal length: <input type="number" step="any" name="val2" required><br><br>
+        Sepal width: <input type="number" step="any" name="val3" required><br><br>
+        Sepal length: <input type="number" step="any" name="val4" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+    
+    {% if prediction != None %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</body>
 </html>
 ```
 
-**Un código alternativo para todo el archivo app.py podría ser:**
+Tras reejecutar la aplicación y acceder de nuevo a la interfaz web, este es su nuevo aspecto:
 
-```py
-import numpy as np
-from flask import Flask, request, render_template
-import pickle
+![flask-step6](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step6.png?raw=true)
 
-app = Flask(__name__)
-model = pickle.load(open('titanic_model.pkl', 'rb'))
+Y nuevamente, al rellenar los valores y lanzar la predicción, así se muestra en el front:
 
-@app.route('/') #http://www.google.com/
-def home():
-    return render_template('index.html')
-@app.route('/predict', methods=['POST'])
-def predict():
-    '''
-    For rendering results on HTML GUI
-    '''
-    int_features = [int(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
-    prediction = model.predict(final_features)
+![flask-step7](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step7.png?raw=true)
 
-    output = round(prediction[0], 2)
+Tras desarrollar la funcionalidad deseada y contar con un front que satisface nuestras necesidades, integraremos todo esto en Render.
 
-    return render_template('index.html', prediction_text='Would you survive? {} (1=survived, 0=deceased)'.format(output))
+#### Paso 6: Crear servicio en Render
 
-if __name__=="__main__":
-    app.run(port=5000, debug=True)
-```
+El último paso es configurar el servicio en Render y conectarlo con nuestro repositorio Git. Debemos ir al Dashboard de Render, seleccionar el apartado de `Web Services` y elegir el repositorio en el que hayamos subido todo el código y las carpetas anteriores.
 
-Vuelve a ejecutar la aplicación y debería predecir el resultado después de enviar el formulario. Hemos creado con éxito la aplicación Web. Ahora es el momento de usar Heroku para implementarlo.
+Una vez lo seleccionemos nos aparecerá un formulario como el siguiente:
+
+![flask-step8](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step8.png?raw=true)
+
+Deberemos rellenarlo con la siguiente información:
+
+- `Name`: El nombre que queramos que tenga nuestro servicio. En este caso introduciremos `4geeks-flask-integration`
+- `Branch`: La rama en la que se encuentra nuestro código actualizado, siempre en la última versión. Deberemos dejar el valor por defecto, `master`.
+- ``
+- ``
+- ``
+- ``
+- ``
+
+
+
 
 ## Implementación usando Heroku
 
