@@ -271,7 +271,7 @@ Y nuevamente, al rellenar los valores y lanzar la predicción, así se muestra e
 
 Tras desarrollar la funcionalidad deseada y contar con un front que satisface nuestras necesidades, integraremos todo esto en Render.
 
-#### Paso 6: Crear servicio en Render
+#### Paso 6: Crear servicio en Render y desplegar la aplicación
 
 El último paso es configurar el servicio en Render y conectarlo con nuestro repositorio Git. Debemos ir al Dashboard de Render, seleccionar el apartado de `Web Services` y elegir el repositorio en el que hayamos subido todo el código y las carpetas anteriores.
 
@@ -283,94 +283,41 @@ Deberemos rellenarlo con la siguiente información:
 
 - `Name`: El nombre que queramos que tenga nuestro servicio. En este caso introduciremos `4geeks-flask-integration`
 - `Branch`: La rama en la que se encuentra nuestro código actualizado, siempre en la última versión. Deberemos dejar el valor por defecto, `master`.
-- ``
-- ``
-- ``
-- ``
-- ``
+- `Root Directory`: En este caso hemos desarrollado el código dentro de la carpeta `src`, que incluye el script de Python, el template HTML y las librerías del proyecto (archivo `requirements.txt`), por lo que deberemos introducir `src`.
+- `Runtime`: El código es Python, así que dejaremos el valor por defecto, `Python 3`.
+- `Build Command`: Dejaremos el valor por defecto, `pip install -r requirements.txt`.
+- `Start Command`: Ya somos amigables con este comando. Hemos utilizado en el desarrollo gunicorn, así que dejaremos el valor por defecto, `gunicorn app:app`.
 
+Por último, elegiremos la tarifa gratuita. El formulario, una vez relleno, debería tener la siguiente información:
 
+![flask-step9](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step9.png?raw=true)
 
+En el siguiente paso nos aparecerá una consola con los logs del despliegue de la aplicación. El despliegue se hace paso a paso, clonando en primer lugar el repositorio, construyéndolo (*build*), instalando las dependencias, y, en último lugar, ejecutando el comando para lanzar la aplicación web.
 
-## Implementación usando Heroku
+![flask-step10](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step10.png?raw=true)
 
-Ya deberías tener una cuenta en Heroku, pero si no la tienes, continúa y crea tu cuenta en 'https://www.heroku.com'.
+##### Resolver fallo de creación
 
-Asegurémonos de tener también lo siguiente antes de implementar en Heroku:
+Debido a que el entorno de Render es diferente al nuestro de desarrollo (especialmente en la versión de Python, ya que se utiliza por defecto la 3.7 y en este bootcamp nosotros usamos de la 3.10 hacia arriba), puede que nos arroje un error la build del proyecto. En este caso su resolución es muy simple:
 
-1. Gunicorn maneja las solicitudes y se encarga de las cosas complicadas. Descarga gunicorn a tu entorno virtual. Puedes usar pip para descargarlo.
+![flask-step11](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step11.png?raw=true)
 
-```bash
-pip install gunicorn
-```
+Tenemos que acceder, en la misma pantalla donde se abre el log de la ejecución, al apartado `Environment` e introducir una nueva variable de entorno. En este caso nosotros tenemos la versión `3.11.4` de Python pero se podría introducir cualquier otra (siempre y cuando sea a partir de la 3.7).
 
-2. Hemos instalado muchas bibliotecas y otros archivos importantes como flask, gunicorn, sklearn, etc. Necesitamos decirle a Heroku que nuestro proyecto requiere todas estas bibliotecas para ejecutar la aplicación con éxito. Esto se hace creando un archivo requirements.txt.
+Volvemos a lanzar el despliegue y ahora debería funcionar.
 
-3. Procfile es un archivo de texto en el directorio raíz de tu aplicación, para declarar explícitamente qué comando debe ejecutarse para iniciar tu aplicación. Este es un requisito esencial para Heroku. Este archivo le dice a Heroku que queremos usar el proceso web con el comando gunicorn y el nombre de la aplicación.
+***
 
-```py
-web: gunicorn app:app
-```
+Una vez el despliegue haya sido satisfactorio, este será el log que se mostrará:
 
-Tu estructura actual debería ser algo como esto:
+![flask-step12](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step12.png?raw=true)
 
-![flask-heroku-structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-heroku-structure.jpg?raw=true)
+De hecho, hay disponible un apartado en el que podemos visualizar los distintos despliegues de nuestra aplicación web y el status de cada uno de ellos:
 
-4. Finalmente, usa un archivo .gitignore para excluir archivos innecesarios que no queremos implementar en Heroku.
+![flask-step13](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step13.png?raw=true)
 
-¡Estamos listos! ¡Envía tu proyecto a Heroku! Si deseas hacerlo directamente en el sitio web de Heroku, puedes hacerlo de la siguiente manera:
+#### Paso 7: Uso del servicio en Render
 
-- Haz clic en 'Crear una nueva aplicación'
+Una vez que el despliegue ha sido satisfactorio, accedemos a la aplicación desde el enlace situado justo debajo del nombre del servicio, y ya podemos utilizar la aplicación y compartirsela a nuestros amigos/compañeros/clientes. La que hemos creado en esta lección está accesible en el siguiente enlace: `https://fourgeeks-flask-integration.onrender.com/`.
 
-- En la pestaña 'implementar': vincula la aplicación Heroku a tu cuenta de Github y selecciona el repositorio para conectarse.
-
-- Desplázate hacia abajo y elije 'despliegue manual'. Después de asegurarte de que estás en la rama que deseas implementar (en este caso: principal), haz clic en 'Implementar rama'. Verás que se han instalado todos los paquetes necesarios como en la siguiente imagen:
-
-![deploying_branch](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/deploying_branch.jpg?raw=true)
-
-- Cuando termines, debería verse como la siguiente captura de pantalla:
-
-![deployed_to_heroku](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/deployed_to_heroku.jpg?raw=true)
-
-- Copia ese enlace y pégalo en tu navegador para probar tu aplicación.
-
-**Si te sientes más cómodo con la línea de comandos, deberás tener instalados git y Heroku CLI, y luego seguir estos pasos:**
-
-> Puedes hacer clic en el siguiente enlace para instalar Heroku CLI: https://devcenter.heroku.com/articles/heroku-cli
-
-```bash
-heroku login
-```
-
-```bash
-heroku create
-```
-
-```bash
-git init
-git add .
-git commit -m 'initial commit'
-```
-
-```bash
-git push heroku master
-heroku open
-```
-
-¡Anímate y prueba tu aplicación web!
-
-Fuente:
-
-https://www.heroku.com/
-
-https://devcenter.heroku.com/articles/heroku-cli
-
-https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3-es
-
-https://medium.com/towards-data-science/designing-a-machine-learning-model-and-deploying-it-using-flask-on-heroku-9558ce6bde7b
-
-https://medium.com/towards-data-science/create-an-api-to-deploy-machine-learning-models-using-flask-and-heroku-67a011800c50
-
-https://medium.com/towards-data-science/productionize-a-machine-learning-model-with-flask-and-heroku-8201260503d2
-
-https://medium.com/towards-data-science/flask-and-heroku-for-online-machine-learning-deployment-425beb54a274
+![flask-step14](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step14.png?raw=true)
