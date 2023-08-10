@@ -65,9 +65,7 @@ When finished, an address will be available through which we can access the web 
 
 In this case, as we are developing it in a Codespace, the link is different from the one that would be generated locally, which would be `http://127.0.0.1:8000`.
 
-Now we have implemented a very simple web application using Flask. In addition, we have been able to run it and display information in the web interface.
-
-Now you have a small Flask web application. You have run your application and displayed information in the web browser. Next, we will add HTML files to customize the application.
+At this point we have a small Flask web application with little or no functionality. Next, we will add HTML files to customize the application.
 
 #### Step 4: Implementing the application web interface
 
@@ -108,8 +106,9 @@ In addition to creating the above template, we must update the code so that it i
 ```py
 from flask import Flask, request, render_template
 from pickle import load
+
 app = Flask(__name__)
-model = load(open("/workspaces/flask-render-integration/models/decision_tree_classifier_default_42.sav","rb"))
+model = load(open("/workspaces/flask-render-integration/models/decision_tree_classifier_default_42.sav", "rb"))
 class_dict = {
     "0": "Iris setosa",
     "1": "Iris versicolor",
@@ -120,10 +119,10 @@ class_dict = {
 def index():
     if request.method == "POST":
         
-        val1 = float(request.form['val1'])
-        val2 = float(request.form['val2'])
-        val3 = float(request.form['val3'])
-        val4 = float(request.form['val4'])
+        val1 = float(request.form["val1"])
+        val2 = float(request.form["val2"])
+        val3 = float(request.form["val3"])
+        val4 = float(request.form["val4"])
         
         data = [[val1, val2, val3, val4]]
         prediction = str(model.predict(data)[0])
@@ -321,3 +320,5 @@ In fact, a section is available in which we can visualize the different deployme
 Once the deployment has been successful, we access the application from the link just below the name of the service, and we can now use the application and share it with our friends/colleagues/clients. The one we have created in this lesson is accessible at the following link: `https://fourgeeks-flask-integration.onrender.com/`.
 
 ![flask-step14](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step14.png?raw=true)
+
+> NOTE: As you have used the free plan, Render may throw the application away if it is not used. Depending on when you read this the application will be operational or not.

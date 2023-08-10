@@ -36,7 +36,7 @@ Para integrar algo en Render primero debemos haber creado un repositorio en Git.
 
 #### Paso 2: Crear una aplicación básica
 
-Ahora generaremos una aplicación sencilla utilizando la librería `Flask`. En el directorio `src`, creamos un archivo nuevo llamado `hello.py` que modificaremos con el siguiente código:
+Ahora generaremos una aplicación sencilla utilizando la librería `Flask`. En el directorio `src`, creamos un archivo nuevo llamado `app.py` que modificaremos con el siguiente código:
 
 ```py
 from flask import Flask
@@ -65,9 +65,7 @@ Al terminar se disponibilizará una dirección a través de la cual podemos acce
 
 En este caso como estamos desarrollándolo en un Codespace, el enlace es distinto al que se generaría en local, que sería `http://127.0.0.1:8000`.
 
-Ahora hemos implementado una aplicación web muy sencilla usando Flask. Además, hemos podido ejecutarla y mostrar información en la interfaz web.
-
-Ahora tienes una pequeña aplicación web Flask. Ha ejecutado su aplicación y ha mostrado información en el navegador web. A continuación, añadiremos archivos HTML para personalizar la aplicación.
+En este punto tenemos una pequeña aplicación web Flask con poca o casi ninguna funcionalidad. A continuación, añadiremos archivos HTML para personalizar la aplicación.
 
 #### Paso 4: Implementar la interfaz web de la aplicación
 
@@ -108,8 +106,9 @@ Además de crear la plantilla anterior, debemos actualizar el código para que s
 ```py
 from flask import Flask, request, render_template
 from pickle import load
+
 app = Flask(__name__)
-model = load(open("/workspaces/flask-render-integration/models/decision_tree_classifier_default_42.sav","rb"))
+model = load(open("/workspaces/flask-render-integration/models/decision_tree_classifier_default_42.sav", "rb"))
 class_dict = {
     "0": "Iris setosa",
     "1": "Iris versicolor",
@@ -120,10 +119,10 @@ class_dict = {
 def index():
     if request.method == "POST":
         
-        val1 = float(request.form['val1'])
-        val2 = float(request.form['val2'])
-        val3 = float(request.form['val3'])
-        val4 = float(request.form['val4'])
+        val1 = float(request.form["val1"])
+        val2 = float(request.form["val2"])
+        val3 = float(request.form["val3"])
+        val4 = float(request.form["val4"])
         
         data = [[val1, val2, val3, val4]]
         prediction = str(model.predict(data)[0])
@@ -321,3 +320,5 @@ De hecho, hay disponible un apartado en el que podemos visualizar los distintos 
 Una vez que el despliegue ha sido satisfactorio, accedemos a la aplicación desde el enlace situado justo debajo del nombre del servicio, y ya podemos utilizar la aplicación y compartirsela a nuestros amigos/compañeros/clientes. La que hemos creado en esta lección está accesible en el siguiente enlace: `https://fourgeeks-flask-integration.onrender.com/`.
 
 ![flask-step14](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step14.png?raw=true)
+
+> NOTA: Al haber utilizado el plan gratuito, puede que Render tire la aplicación si no se utiliza. Depende de cuando leas esto la aplicación estará operativa o no.
