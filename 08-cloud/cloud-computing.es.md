@@ -44,46 +44,22 @@ A pesar de que hay un catálogo infinito y muy bien repartido de servicios para 
 
 Los almacenes de datos en la nube son sistemas diseñados para almacenar grandes cantidades de información de manera eficiente y escalable. Con el aumento reciente en el tamaño de los conjuntos de datos y la potencia informática necesaria para ejecutar modelos de aprendizaje automático, aprovechar los recursos de la nube es una necesidad para la ciencia de datos.
 
-En la gestión de datos hay conceptos clave, como 
+En la gestión de los datos, dependiendo de cómo se almacenen, custodien y cuál es el uso que se les va a dar, existen distintas tecnologías disponibles.
 
+![dataplaces](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/dataplaces.png?raw=true)
 
+#### Data lake
 
+Un **largo de datos** (*Data Lake*) es un depósito que almacena grandes volúmenes de datos en su formato original y sin procesar. Esto incluye datos estructurados, semiestructurados y no estructurados. La información se almacena en su forma cruda, lo que brinda flexibilidad para analizarlos en diferentes contextos y extraer información valiosa.
 
-# Almacenes de datos en la nube
+Esta tecnología es especialmente útil para el análisis de Big Data y la exploración de datos. Ejemplos de tecnologías utilizadas en Data Lakes son Hadoop y sistemas de almacenamiento en la nube como Amazon S3.
 
+#### Data warehouse
 
+Un **almacén de datos** (*Data Warehouse*) es un sistema centralizado que recopila, organiza y almacena datos de diferentes fuentes de una empresa en un formato estructurado y optimizado para consultas analíticas. Los datos en un Data Warehouse suelen ser históricos y están diseñados para respaldar la toma de decisiones basadas en informes y análisis. Los Data Warehouses a menudo utilizan modelos dimensionales y tablas de hechos para permitir consultas complejas. Ejemplos de Data Warehouses incluyen Amazon Redshift, Google BigQuery y Microsoft Azure Synapse Analytics.
 
+#### Data mart
 
-## Conceptos de computación en la nube
+Un **data mart** (el término en castellano no se utiliza) es una versión más pequeña de un Data Warehouse. Está diseñado para atender las necesidades específicas de un departamento o grupo de usuarios dentro de una organización. Los Data Marts contienen una porción de los datos del Data Warehouse y están optimizados para un área de negocio particular. Son útiles para permitir a los usuarios acceder y analizar datos relevantes de manera más eficiente y específica. Los Data Marts pueden ser independientes o extraídos del Data Warehouse principal.
 
-**¿Qué es un Data Lakes (lago de datos)?**
-
-Es un servicio que nos permite almacenar datos en un formato crudo, sin ningún tipo de procesamiento previo. Podemos almacenar datos estructurados, por ejemplo, un archivo de Excel, datos semiestructurados, como un archivo json, y datos no estructurados, por ejemplo, un audio.
-
-Estos Data Lakes están destinados a almacenar datos no estructurados, sin embargo, también pueden almacenar los otros dos tipos de datos. Los lagos de datos nos permiten importar cualquier cantidad de datos en tiempo real, almacenar y etiquetar esos datos de forma segura, analizarlos sin necesidad de mover los datos a una herramienta de análisis separada y, por supuesto, podemos usarlos para crear modelos predictivos.
-
-Los Data Lakes ayudan a las empresas a tomar mejores decisiones porque se convierten en una fuente de información centralizada y estandarizada. Se adaptan fácilmente a los cambios, pueden escalar mucho más que una base de datos relacional y permiten cruzar diversas fuentes de datos, no solo relacionales.
-
-Sin embargo, también tienen dificultades, como grandes inversiones iniciales y costoso mantenimiento. Las personas que trabajarán con este servicio deben estar muy capacitadas porque la integración de diferentes fuentes de datos es muy compleja y siempre existe un gran riesgo de seguridad de comprometer la información de la empresa si el Data Lakes está comprometido. 
-
-**¿Cuál es la diferencia entre un Data Lake y un Data Warehouse?**
-
-Un Data Warehouse (almacén de datos) es un repositorio de datos optimizado y centralizado para analizar datos relacionales que provienen de sistemas transaccionales y aplicaciones comerciales. Los datos se limpian, enriquecen y transforman para que puedan actuar como la única fuente verdadera en la que los usuarios pueden confiar.
-
-Un Data Lake es diferente porque almacena datos relacionales de aplicaciones comerciales y no datos relacionales de aplicaciones móviles, dispositivos IoT y redes sociales. La estructura o el esquema de los datos no se define cuando se capturan los datos.
-
-La principal diferencia entre el Data Lake y el Data Warehouse tiene que ver con el formato en el que se procesan y almacenan los datos. En un Data Warehouse siempre encontraremos datos estructurados y preprocesados. Decidir si tener un Data Lake o un Data Warehouse depende del tipo de datos con los que trabajarás y también de la frecuencia con la que se actualizarán y consultarán los datos. Los Data Warehouse son bases de datos analíticas, por lo que no están destinados a consultas y actualizaciones frecuentes.
-
-Según las necesidades, una empresa puede tener un Data Lake y un Data Warehouse. Ambas estructuras de datos son muy valiosas.
-
-**¿Qué es un Data Mart?**
-
-Un Data Warehouse se compone de Data Marts. Los Data Marts son pequeñas bases de datos orientadas a temas específicos de la organización. Por ejemplo un Data Mart para cada departamento (Marketing, Compras, etc). El proceso que extrae, transforma y carga los datos de los Data Marts en el almacén de datos se conoce como **ETL**. Estos procesos ETL normalmente se realizan por lotes, los cuales se cargan en un momento específico del día, normalmente en las noches cuando las cargas de trabajo no son tan altas.
-
-Un Data Warehouse, en comparación con un Data Mart, intenta centralizar la información y luchar contra tener múltiples verdades por tener múltiples bases de datos.
-
-## Proveedores de computación en la nube
-
-Machine Learning es un elemento crítico del proceso de ciencia de datos, pero entrenar modelos de ML suele ser un proceso lento que requiere una gran cantidad de recursos. Los modelos de Machine Learning y aprendizaje profundo implican miles de iteraciones de entrenamiento. Necesitas estas grandes cantidades de iteraciones para producir el modelo más preciso. Por ejemplo, si tienes un conjunto de muestras de entrenamiento con solo 1 TB de datos, 10 iteraciones de este conjunto de entrenamiento requerirán 10 TB de velocidad con la que se realiza la transferencia de datos entre el disco duro y la RAM. En el pasado, obtener acceso a los recursos de ML era difícil y costoso. Hoy en día, muchos proveedores de computación en la nube ofrecen recursos para la ciencia de datos.
-
-La computación en la nube te permite modelar la capacidad de almacenamiento y manejar cargas a escala, o escalar el procesamiento entre nodos. Por ejemplo, AWS ofrece instancias de unidades de procesamiento de gráficos (GPU) con una capacidad de memoria de 8 a 256 GB. Estas instancias tienen un precio por hora. Las GPU son procesadores especializados diseñados para el procesamiento de imágenes complejas.
+La principal diferencia entre un data lake y un data warehouse tiene que ver con el formato en el que se procesan y almacenan los datos. En un almacén de datos siempre encontraremos datos estructurados y preprocesados, y en un lago, no. Tomar la decisión sobre qué tecnología implantar dependerá del tipo de datos en el que trabajemos y la frecuencia con la que se actualizarán. Un data warehouse es un entorno más analítico, y no está destinado a consultas ni actualizaciones frecuentes.
