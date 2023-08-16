@@ -26,7 +26,7 @@ We can create database services, web deployment services, scheduled tasks...
 
 ### Integration in Render
 
-In this lesson we will integrate the classification model we have developed in the [decision trees module](https://4geeks.com/syllabus/spain-ds-pt-1/read/exploring-decision-trees).
+In this lesson we will integrate the classification model we have developed in the [decision trees module](https://4geeks.com/lesson/exploring-decision-trees).
 
 The `decision_tree_classifier_default_42.sav` model has been saved in a `Pickle` object so that it can be used, for example, to deploy it in a web service like this case.
 

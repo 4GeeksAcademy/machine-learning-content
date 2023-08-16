@@ -8,7 +8,7 @@ Crearemos una aplicación que integraremos nuevamente en Render.
 
 ### Integración en Render
 
-Utilizaremos de nuevo el modelo de clasificación que hemos desarrollado en el [módulo de los árboles de decisión](https://4geeks.com/es/syllabus/spain-ds-pt-1/read/exploring-decision-trees).
+Utilizaremos de nuevo el modelo de clasificación que hemos desarrollado en el [módulo de los árboles de decisión](https://4geeks.com/lesson/exploring-decision-trees).
 
 El modelo `decision_tree_classifier_default_42.sav` se ha guardado en un objeto `Pickle` de tal forma que pueda ser utilizado, por ejemplo, para desplegarlo en un servicio web como este caso.
 
