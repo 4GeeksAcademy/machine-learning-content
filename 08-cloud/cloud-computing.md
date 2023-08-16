@@ -17,7 +17,7 @@ There are three main models of cloud services:
 - **Software as a Service** (*SaaS*): Delivers complete applications through the cloud. Users can access and use the software through a web browser without having to install or maintain it locally. With SaaS, we don't actually have to build anything. It's as if we already have a house fully furnished and ready to live in. We just need to move in and start living. Instead of installing programs on our computer, we access them through the Internet. For example, as with Gmail or Google Docs. We don't need to worry about the technical stuff, just use what's there.
 
 |   | IaaS (Infrastructure as a Service)   | PaaS (Platform as a Service)    | SaaS (Software as a Service)  |
-|!--|!-------------------------------------|!--------------------------------|!------------------------------|
+|:--|:-------------------------------------|:--------------------------------|:------------------------------|
 | Level of Abstraction | Low | Medium | High |
 | Management Responsibility | User (Operating Systems, Networks) | Vendor (Platform, Middleware) | Vendor (Application) |
 | Flexibility | High | Moderate | Low |

@@ -17,7 +17,7 @@ Hay tres modelos principales de servicios en la nube:
 - **Software como servicio** (*SaaS*, *Software as a Service*): Ofrece aplicaciones completas a través de la nube. Los usuarios pueden acceder y utilizar el software a través de un navegador web sin necesidad de instalar o mantenerlo localmente. Con SaaS, en realidad no tenemos que construir nada. Es como si ya tuviéramos una casa completamente amueblada y lista para vivir. Solo necesitamos entrar y empezar a vivir. En lugar de instalar programas en nuestro ordenador, accedemos a ellos a través de Internet. Por ejemplo, como sucede en Gmail o Google Docs. No necesitamos preocuparnos por las cosas técnicas, solo usar lo que está ahí.
 
 |   | IaaS (Infraestructura como Servicio) | PaaS (Plataforma como Servicio) | SaaS (Software como Servicio) |
-|!--|!-------------------------------------|!--------------------------------|!------------------------------|
+|:--|:-------------------------------------|:--------------------------------|:------------------------------|
 | Nivel de Abstracción | Baja | Mediana | Alta |
 | Responsabilidad de Gestión | Usuario (Sistemas Operativos, Redes) | Proveedor (Plataforma, Middleware) | Proveedor (Aplicación) |
 | Flexibilidad | Alta | Moderada | Baja |
