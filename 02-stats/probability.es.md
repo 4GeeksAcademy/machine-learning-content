@@ -1,4 +1,16 @@
-# Probabilidad
+## Probabilidad
+
+La **probabilidad** (*probability*) es una medida que describe la posibilidad de que ocurra un evento en particular dentro de un conjunto de posibles eventos. Se expresa en una escala que va desde 0 (indicando que un evento es imposible) hasta 1 (indicando que un evento es cierto). También puede expresarse como un porcentaje entre 0% y 100%.
+
+La probabilidad proporciona un marco para cuantificar la incertidumbre asociada con predicciones, inferencias, decisiones y eventos aleatorios. Para entenderla y calcularla, es esencial comprender los siguientes conceptos:
+
+- **Experimento** (*experiment*): Es cualquier acción o procedimiento que puede producir resultados bien definidos. Ejemplo: lanzar un dado.
+- **Espacio muestral** (*sample space*): Es el conjunto de todos los posibles resultados de un experimento. Para el ejemplo del dado, el espacio muestral es $S = {1, 2, 3, 4, 5, 6}$ (ya que son todas las posibles caras que pueden salirnos al lanzar un dado).
+- **Evento** (*event*): Es el subconjunto específico de resultados dentro de un espacio muestral. En nuestro ejemplo, refiriéndonos al evento "obtener un número par" se representaría como $E = {2, 4, 6}$ (ya que todos esos números son pares).
+
+La probabilidad de un evento se calcula como la relación entre el número de resultados favorables para ese evento y el número total de resultados en el espacio muestral. Por ejemplo, la probabilidad de obtener un número par al lanzar un dado es:
+
+$P(E) = {3} \ {6} = 0.5$
 
 ### Antecedentes Matemáticos
 
