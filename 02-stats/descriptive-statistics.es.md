@@ -10,7 +10,7 @@ Esto es diferente de la Estadística Inferencial.
 
 Estadística Inferencial significa intentar hacer inferencias o conclusiones de una muestra a toda la población.
 
-Entonces, utilizando Estadística Descriptivanquiza quieras tal vez usar un número que sea más indicativo de todos los números en ese conjunto. O algunos de los números que representan la tendencia central.
+Entonces, utilizando Estadística Descriptiva, quizá quieras usar un número que sea más indicativo de todos los números en ese conjunto. O algunos de los números que representan la tendencia central.
 
 Comenzaremos enumerando las medidas de tendencia central, que representan la idea de que hay un número que resume mejor todo el conjunto.
 
