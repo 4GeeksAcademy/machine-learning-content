@@ -10,7 +10,7 @@ La probabilidad proporciona un marco para cuantificar la incertidumbre asociada 
 
 La probabilidad de un evento se calcula como la relación entre el número de resultados favorables para ese evento y el número total de resultados en el espacio muestral. Por ejemplo, la probabilidad de obtener un número par al lanzar un dado es:
 
-$P(E) = {3} \ {6} = 0.5$
+$P(E) = \frac{3}{6} = 0.5$
 
 ### Operaciones entre sucesos
 
@@ -40,127 +40,22 @@ Es el suceso que tiene lugar si ocurre el primer suceso pero no el segundo. Se d
 
 ![difference](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/difference.png?raw=true)
 
-
-
-
-
-En muchos casos, es más práctico usar una regla simple pero incierta en lugar de una regla compleja pero cierta, incluso si la regla verdadera es determinista y nuestro sistema de modelado tiene la fidelidad para adaptarse a una regla compleja.
-
-Por ejemplo, la regla simple "La mayoría de las aves vuelan" es **económica** de desarrollar y es ampliamente útil, mientras que una regla de la forma "Las aves vuelan, excepto las aves muy jóvenes que aún no han aprendido a volar, enfermas o lesionadas, aves que han perdido la capacidad de volar, especies de aves que no vuelan, incluidos el casuario, el avestruz y el kiwi..." es **cara** de desarrollar, mantener, comunicar y después de todo este esfuerzo, sigue siendo **frágil* * y propenso al **fracaso**.
-
-La probabilidad puede verse como la extensión de la lógica para hacer frente a la incertidumbre.
-
-La teoría de la probabilidad proporciona un set de reglas formales para determinar la probabilidad de que una proposición sea verdadera dada la probabilidad de otras proposiciones.
-
 ### Tipos de probabilidad
 
-**Probabilidad Frecuentista:**
+Existen varios tipos de probabilidad, cada uno adecuado para diferentes contextos o situaciones. Algunos de los más frecuentes son:
 
-•	Frecuencia de eventos. Ejemplo: La posibilidad de sacar una determinada mano en el póquer.
+1. **Probabilidad clásica**: Se basa en situaciones donde todos los posibles resultados son igual de probables. Por ejemplo, si lanzamos una moneda al aire, cada cara tiene una probabilidad del 50% de salir.
+2. **Probabilidad empírica**: Se denomina también frecuentista porque se basa en experimentos reales y en observaciones. La probabilidad de un evento se determina observando la frecuencia con la que ocurre después de realizar muchas pruebas o experimentos. Por ejemplo, si al lanzar una moneda 100 vece, cae cara 55 veces, la probabilidad empírica de obtener cara sería de $\frac{55}{100} = 0.55$.
+3. **Probabilidad subjetiva**: Es una estimación basada en la creencia de una persona, a menudo sin base empírica sólida. Por ejemplo, un meteorólogo podría decir que hay un 70% de probabilidad de lluvia basándose en su experiencia e intuición, además de los datos disponibles.
+4. **Probabilidad condicional**: Es la probabilidad de que ocurra un evento $A$ dado que otro evento $B$ ya ha ocurrido. Se denota como $P(A|B)$. Es una de las probabilidades más estudiadas en el campo del Machine Learning, ya que de ella deriva el **teorema de Bayes**.
+5. **Probabilidad conjunta**: Es la probabilidad de que ocurran dos o más eventos simultáneamente. Se denota como $P(A \cap B)$.
 
-•	Modelo fijo, datos diferentes. (Ejecutamos los mismos experimentos cada vez con datos diferentes)
+Estos tipos de probabilidad permiten abordar diferentes situaciones y problemas en el campo de la estadística y de la probabilidad, y son fundamentales en muchas aplicaciones, incluyendo la toma de decisiones, el Machine Learning y la investigación científica.
 
-**Probabilidad Bayesiana:**
+#### Teorema de Bayes
 
-•	Un grado de creencia. Ejemplo: cuando un médico que dice que un paciente tiene un 40% de posibilidades de tener gripe.
+El teorema de Bayes es una herramienta fundamental en estadística que nos permite actualizar nuestras creencias ante nuevas evidencias.
 
-•	Datos fijos y diferentes modelos. (Usamos la misma creencia para comprobar la incertidumbre de diferentes modelos y actualizar nuestras creencias) -Basado en la Regla de Bayes.
+Imaginemos que tenemos una bolsa con 100 canicas: 30 son rojas y 70 son azules. Si sacamos una canica al azar, la probabilidad de que sea roja es del 30% y la probabilidad de que sea azul es del 70%. Ahora, supongamos que un amigo, sin que lo veamos, elige una canica de la bolsa y nos dice: "La canica que elegí tiene rayas". Si ahora supiéramos que el 50% de las canicas rojas tienen rayas y solo el 10% de las canicas azules las tienen, dada esta nueva información, ¿cuál es la probabilidad de que la canica que nuestro amigo eligió sea roja? Aquí es donde se aplica el teorema de Bayes.
 
-**Diferencias entre estadística bayesiana y frecuentista.**
-
-Ambos intentan estimar un parámetro de población basado en una muestra de datos.
-
-Los frecuentistas tratan los datos como aleatorios y la estadística como fija. Las inferencias se basan en un muestreo infinito a largo plazo, y las estimaciones del parámetro vienen en forma de estimaciones puntuales o intervalos de confianza.
-
-Los Bayesianos tratan el parámetro de población como aleatorio y los datos como fijos. Las estadísticas Bayesianas nos permiten hacer conjeturas informadas sobre el valor del parámetro en forma de distribuciones previas. Las estimaciones del parámetro vienen en forma de distribuciones posteriores.
-
-![bayessian.png](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/bayessian.png?raw=true)
-
-### Eventos
-
-Un evento es un set de resultados de un experimento en probabilidad.
-
-En la probabilidad Bayesiana, un evento se define como la descripción del siguiente espacio de estado posible utilizando el conocimiento del estado actual.
-
-Los eventos pueden ser :
-
-•	Independiente - cada evento no se ve afectado ni por los eventos anteriores o futuros.
-
-•	Dependiente - un evento se ve afectado por otros eventos.
-
-•	Mutuamente excluyentes - los eventos no pueden ocurrir al mismo tiempo.
-
-El complemento de un evento son todos los demás resultados de un evento. Por ejemplo, si el evento es Cruz, el complemento es Cara. Si conoces la probabilidad de $p(x)$, puedes encontrar el complemento haciendo $1 - p(x)$. A veces es más fácil calcular primero el complemento antes que la probabilidad real.
-
-### La Probabilidad Condicional
-
-La probabilidad condicional de un evento $B$ es la probabilidad de que ocurra el evento dado que el evento $A$ ya ha ocurrido.
-
-Si $A$ y $B$ son dos eventos, entonces la probabilidad condicional se puede designar como $P(A dado B)$ o $P(A|B)$. La probabilidad condicional se puede calcular a partir de la probabilidad conjunta $(A | B) = P(A, B) / P(B)$. (La probabilidad condicional no es simétrica).
-
-Por ejemplo: $P(A | B) != P(B | A)$
-
-Otras formas de calcular la probabilidad condicional incluyen el uso de la otra probabilidad condicional, es decir:
-
-$P(A|B) = P(B|A) * P(A) / P(B)$ ----->Bayes Theorem
-
-También se usa el reverso:
-
-$P(B|A) = P(A|B) * P(B) / P(A)$
-
-Esta forma de cálculo es útil cuando es difícil calcular la probabilidad conjunta. De lo contrario, cuando la probabilidad condicional inversa está disponible, el cálculo a través de esto se vuelve fácil.
-
-Este cálculo alternativo de probabilidad condicional se denomina Regla de Bayes o Teorema de Bayes.
-
-**Teorema de Bayes**
-
-El teorema de Bayes es una fórmula matemática simple utilizada para calcular probabilidades condicionales. Este teorema establece que:
-
-$P(A|B) = P(B|A) * P(A) / P(B)$
-
-El teorema de Bayes se usa para el cálculo de una probabilidad condicional donde la intuición a menudo falla. Aunque se usa ampliamente en probabilidad, el teorema también se está aplicando en el campo de Machine Learning.
-
-Su uso en Machine Learning incluye el ajuste de un modelo a un DataSet (conjunto de datos) de entrenamiento y el desarrollo de modelos de clasificación.
-
-Siempre es posible responder preguntas de probabilidad condicional mediante el Teorema de Bayes. Nos dice la probabilidad del evento A dada alguna nueva evidencia B, pero si lo olvidaste, siempre puedes cultivar historias con árboles podados.
-
-Ejemplo:
-
-Los incendios peligrosos son raros (1 %), pero el humo es bastante común (10 %) debido a las barbacoas, y el 90 % de los incendios peligrosos producen humo.
-
-¿Cuál es la probabilidad de un Incendio peligroso cuando hay Humo?
-
-Cálculo
-
-$P(Fire|Smoke) =P(Fire) P(Smoke|Fire)/P(Smoke)$
-
-= 1% x 90%/10%
-
-= 9%
-
-**Teorema de Bayes en Machine Learning**
-
-El teorema de Bayes se puede utilizar tanto en regresión como en clasificación.
-
-Generalmente, en Machine Learning supervisado, cuando queremos entrenar un modelo, los componentes principales son:
-
-- Un set de puntos de datos que contienen características (los atributos que definen dichos puntos de datos)
-
-- Las etiquetas de dicho punto de datos (El tag numérico o categórico que luego queremos predecir en nuevos puntos de datos)
-
-- Una función de hipótesis que vincula dichas características con sus etiquetas correspondientes.
-
-- También tenemos una función de pérdida, que es la diferencia entre las predicciones del modelo y las etiquetas reales que queremos reducir para lograr los mejores resultados posibles.
-
-Referencias:
-
-https://medium.com/brandons-computer-science-notes/an-introdcution-to-probability-45a64aee7606
-
-https://discovery.cs.illinois.edu/learn/Prediction-and-Probability/Conditional-Probability/
-
-https://www.upgrad.com/blog/bayes-theorem-explained-with-example-complete-guide/
-
-https://www.edx.org/es/micromasters/mitx-statistics-and-data-science
-
-https://towardsdatascience.com/bayes-theorem-clearly-explained-with-visualization-5083ea5e9b14
-
+De esta forma podemos calcular de nuevo la probabilidad de que la canica sea roja y tenga rayas, a partir de la nueva información.
