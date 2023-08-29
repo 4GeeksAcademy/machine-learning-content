@@ -6,105 +6,43 @@ La probabilidad proporciona un marco para cuantificar la incertidumbre asociada 
 
 - **Experimento** (*experiment*): Es cualquier acción o procedimiento que puede producir resultados bien definidos. Ejemplo: lanzar un dado.
 - **Espacio muestral** (*sample space*): Es el conjunto de todos los posibles resultados de un experimento. Para el ejemplo del dado, el espacio muestral es $S = {1, 2, 3, 4, 5, 6}$ (ya que son todas las posibles caras que pueden salirnos al lanzar un dado).
-- **Evento** (*event*): Es el subconjunto específico de resultados dentro de un espacio muestral. En nuestro ejemplo, refiriéndonos al evento "obtener un número par" se representaría como $E = {2, 4, 6}$ (ya que todos esos números son pares).
+- **Evento** (*event*): También llamado suceso, es el subconjunto específico de resultados dentro de un espacio muestral. En nuestro ejemplo, refiriéndonos al evento "obtener un número par" se representaría como $E = {2, 4, 6}$ (ya que todos esos números son pares).
 
 La probabilidad de un evento se calcula como la relación entre el número de resultados favorables para ese evento y el número total de resultados en el espacio muestral. Por ejemplo, la probabilidad de obtener un número par al lanzar un dado es:
 
 $P(E) = {3} \ {6} = 0.5$
 
-### Antecedentes Matemáticos
+### Operaciones entre sucesos
 
-**Sets (conjuntos)**
+Como hemos visto, un **suceso** (*event*) es el resultado de un experimento aleatorio y siempre lleva asociada una probabilidad. A menudo puede que nos interese relacionar las probabilidades entre dos sucesos, y esto se lleva a cabo a través de las operaciones entre sucesos.
 
-Cuando tenemos diferentes elementos y los ponemos juntos, hacemos una colección, la cual es denominada "Set".
+#### Unión de sucesos
 
-Hay dos tipos de conjuntos:
+Es el suceso que tiene lugar si ocurre al menos uno de los dos sucesos. Se denota por $A \cup B$. Por ejemplo, si $A$ es el suceso de obtener un 2 en un lanzamiento de dado y $B$ es el suceso de obtener un 3, entonces $A \cup B$ es el suceso de obtener un 2 o un 3.
 
-1. Sets finitos: Tiene un número finito de elementos. Por ejemplo, un conjunto que incluye números entre 10 y 20.
-2. Sets infinitos: Por ejemplo, un conjunto de todos los números reales.
+![union](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/union.png?raw=true)
+
+#### Intersección de sucesos
+
+Es el suceso que tiene lugar si ocurren ambos sucesos a la vez. Se denota por $A \cap B$. Por ejemplo, si $A$ es el suceso de obtener un número menor que 4 y $B$ es el suceso de obtener un número par, entonces $A \cap B$ es el suceso de obtener un 2 (porque es par y el único número menor que 4).
+
+![intersection](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/intersection.png?raw=true)
+
+#### Complemento de un suceso
+
+Es el suceso que tiene lugar si no ocurre el suceso dado. Se denota por $A'$. Por ejemplo, si $A$ es el suceso de obtener un número par al lanzar un dado, entonces $A'$ es el suceso de obtener un número impar.
+
+![complement](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/complement.png?raw=true)
+
+#### Diferencia entre sucesos
+
+Es el suceso que tiene lugar si ocurre el primer suceso pero no el segundo. Se denota por $A - B$. Por ejemplo, si $A$ es el suceso de obtener un número menor que 4 y $B$ es el suceso de obtener un número par, entonces $A - B$ es el suceso de obtener un 1 o un 3.
+
+![difference](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/difference.png?raw=true)
 
 
-![probability_sets.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/probability_sets.jpg?raw=true)
 
-Todo lo que está fuera del Set A lo llamamos complemento del Set A. Un elemento x pertenece al complemento de A si x es un elemento de nuestro Set universal, y además no pertenece a A.
 
-Ahora cuando tenemos dos Sets A y B, podemos hablar de su unión e intersecciones.
-
-La **unión** de los dos Sets consiste en todos los elementos que pertenecen a un Set o al otro (o a ambos). Entonces, un elemento pertenece a la unión si y solo si este elemento pertenece a uno de los conjuntos, o pertenece al otro de los conjuntos.
-
-La **intersección** de dos Sets es la colección de elementos que pertenecen a ambos Sets. Entonces, un elemento pertenece a la intersección de dos Sets si y solo si ese elemento pertenece a ambos.
-
-![intersection.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/intersection.jpg?raw=true)
-
-**Secuencias**
-
-Una secuencia es una colección de elementos que salen de algún set y esa colección está indexada por los números naturales.
-
-Queremos decir que tenemos $i$ y $ai$ donde $i$ es un índice que corre sobre los números naturales (que es el set de enteros positivos), y cada $ai$ es un elemento de algún set. Formalmente, una secuencia es una función que, a cualquier número natural, asocia un elemento de $S$. Normalmente nos preocupamos por si una secuencia converge a algún número $a$. El límite cuando $i$ tiende al infinito de $ai$ es igual a un cierto número, $a$.
-
-Pero, ¿qué significa exactamente que una secuencia converja?
-
-No importa qué tipo de banda tome alrededor de mi límite $a$, eventualmente, la secuencia estará dentro de esta banda y permanecerá allí. Por ejemplo, si una determinada secuencia converge a un número a y otra secuencia converge a un número $b$, tendremos que $ai + bi$ (que es otra secuencia) convergerán a $a+b$.
-
-Pero, ¿cómo podemos saber si una secuencia dada converge o no?
-
-Tenemos dos casos:
-
-1. El primero, cuando tenemos una secuencia de números que van aumentando. Esos números pueden subir para siempre sin ningún límite. En ese caso decimos que la secuencia converge a infinito.
-
-2. Pero si no converge al infinito, lo que significa es que las entradas de la secuencia están acotadas, entonces en ese caso, la secuencia convergerá a un cierto número.
-
-**Series Infinitas**
-
-Tenemos una secuencia de números $ai$, indexada por $i$, donde $i$ va desde $1$ hasta el infinito. Entonces tenemos una secuencia infinita. Queremos sumar los términos de esa secuencia.
-
-Entonces, ¿qué es una serie infinita?
-
-La serie infinita se define como el límite, cuando $n$ tiende a infinito de la serie finita en la que sumamos solo los primeros $n$ términos de la serie. La situación es más complicada si los términos $ai$ pueden tener signos diferentes. En ese caso, es posible que el límite no exista, por lo que la serie no está bien definida.
-
-**Sets Contables vs No Contables**
-
-Los modelos de probabilidad a menudo involucran sets de muestras infinitas. Algunos sets son discretos (a los que llamamos contables) y algunos son continuos (a los que llamamos incontables). De esta manera, eventualmente agotaremos todos los elementos del set, de modo que cada uno corresponda a un número entero positivo.
-
-¿Qué sería un set incontable?
-
-Es un set que no se puede contar. Siempre que tengamos un intervalo unitario o cualquier otro intervalo que tenga una longitud positiva, es considerado un set incontable. Y si en lugar de un intervalo, miramos toda la línea real o dos, tres o más espacios dimensionales; entonces todos los sets usuales que consideramos sets continuos resultan ser incontables también.
-
-### Probabilidad
-
-Hoy en día, no hay mucho que podamos entender sobre lo que sucede a nuestro alrededor, a menos que entendamos la incertidumbre. Es fácil formular proposiciones sin incertidumbre, pero los problemas aparecen cuando la incertidumbre se manifiesta.
-
-Un modelo probabilístico es un modelo de un experimento aleatorio y puede ayudarte a analizar situaciones inciertas sin importar cuál sea su experiencia única.
-
-Primero describimos los posibles resultados del experimento y luego describimos la probabilidad de los diferentes resultados posibles. Esta combinación se llama espacio de probabilidad, que es el par $(S, P)$ donde $S$ es el espacio muestral y $P$ es la distribución de probabilidad.
-
-Imaginemos que lanzamos una moneda. El espacio de probabilidad es $(S, P)$. Formamos un SET de los posibles resultados. Ese conjunto se llama **espacio muestral** de todos los eventos elementales. Su **distribución de probabilidad** consiste en asignar un número real $p(x)$ a todo evento elemental $X$ tal que su probabilidad esté entre $0$ y $1$ y la suma de todas estas probabilidades sea igual a $1$.
-
-$S = {cara, cruz}$ donde $S$ puede ser cara o cruz, por lo que la probabilidad es $P(cara) = P(cruz) = 1/2$
-
-La probabilidad de cara es la misma que la probabilidad de cruz, que es igual a $0,5$. Entonces, si lanzas una moneda al aire, existe la misma posibilidad de que salga cara o de que salga cruz.
-
-Ahora imaginemos que tenemos una buena tirada de dados. Tenemos $6$ resultados posibles si lanzamos un dado: { 1, 2, 3, 4, 5, 6}. Si es una tirada de dados justa, entonces cada uno de esos posibles resultados tiene la misma probabilidad, que sería:
-
-El número de posibilidades que cumplen mi condición / número de posibilidades igualmente probables.
-
-$P(1) = 1/6$
-
-$P(1 o 6) = 2/6$
-
-$p(2 y 3) = 0/6$ ------> obtener $2$ o $3$ son eventos mutuamente excluyentes. No pueden ocurrir al mismo tiempo.
-
-Una distribución de probabilidad se considera uniforme si todos los resultados son igualmente probables.
-
-Los espacios muestrales son sets, y un set puede ser discreto, finito, infinito, continuo, etc. 
-
-Veamos un ejemplo de un espacio muestral discreto y finito simple.
-
-Lanzaremos un dado dos veces (no estamos tratando con dos experimentos probabilísticos, es un solo experimento que implica dos lanzamientos del dado). Luego tomamos nota del primer resultado, y después tomamos nota del segundo resultado. Esto nos da un par de números y se grafican de la siguiente manera:
-
-![probability_dice.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/probability_dice.jpg?raw=true)
-
-### ¿Por qué probabilidad?
 
 En muchos casos, es más práctico usar una regla simple pero incierta en lugar de una regla compleja pero cierta, incluso si la regla verdadera es determinista y nuestro sistema de modelado tiene la fidelidad para adaptarse a una regla compleja.
 
