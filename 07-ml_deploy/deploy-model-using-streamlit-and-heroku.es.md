@@ -1,7 +1,5 @@
 # Implementación de un modelo de Machine learning usando Streamlit y Heroku
 
-En la lección anterior, aprendimos cómo crear una aplicación web de Machine Learning con Flask, escribir HTML básico e implementar aplicaciones de Flask con Heroku. Pero, ¿y si pudiéramos crear esas aplicaciones tan fácilmente como escribir scripts (secuencias de comandos) de Python?
-
 Imagina que puedes convertir secuencias de comandos simples de Python en hermosas aplicaciones web. Bueno, esa herramienta existe y se llama Streamlit.
 
 Streamlit es un marco de código abierto para crear aplicaciones de ciencia de datos y Machine Learning para la exploración de datos de la manera más rápida posible. Incluso te brinda una experiencia de codificación en tiempo real. Puedes iniciar tu aplicación streamlit y cada vez que guardes, ¡verás tu código reflejado en el navegador al mismo tiempo!
@@ -264,7 +262,7 @@ streamlit run app.py
 
 Ahora que tenemos una aplicación web muy básica, podemos mostrársela a otros al implementarla en Heroku. Por supuesto, Heroku no es la única opción gratuita en el mercado. Una opción gratuita diferente podría ser Amazon EC2 y muchas otras.
 
-Si ya habías instalado la interfaz de línea de comandos (CLI) de Heroku de la lección anterior, entonces estás listo para comenzar. Si no, puedes hacerlo desde aquí: https://devcenter.heroku.com/articles/getting-started-with-python#set-up
+Si ya habías instalado la interfaz de línea de comandos (CLI) de Heroku, entonces estás listo para comenzar. Si no, puedes hacerlo desde aquí: https://devcenter.heroku.com/articles/getting-started-with-python#set-up
 
 Esto lo ayudará a administrar su aplicación, ejecutarla localmente, ver sus registros y mucho más.
 

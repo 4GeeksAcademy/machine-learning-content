@@ -25,7 +25,7 @@ Existen multitud de implementaciones de este modelo, desde más a menos eficient
 
 **XGBoost** (*eXtreme Gradient Boosting*) es la implementación más eficiente del algoritmo de gradient boosting. Se ha desarrollado buscando rapidez y precisión, y hasta ahora es la mejor implementación, superando en tiempos de entrenamiento a la de sklearn. La reducción de tiempos se debe a que proporciona métodos para paralelizar las tareas, flexibilidad a la hora de entrenar el modelo y es más robusto, pudiendo incluir mecanismos de poda de los árboles para ahorrar tiempos de procesamiento. Siempre que la tengamos disponible, esta es la alternativa que se debería utilizar frente a la de sklearn.
 
-En la lección de Python de este módulo ejemplificamos cómo utilizar XGBoost, pero aquí proporcionaremos un código simple de muestra para que se vea el uso de sklearn para implementar boosting:
+En la lectura ejemplificamos cómo utilizar XGBoost, pero aquí proporcionaremos un código simple de muestra para que se vea el uso de sklearn para implementar boosting:
 
 ##### Clasificación
 
