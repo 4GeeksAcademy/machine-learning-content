@@ -8,8 +8,6 @@ La **estadística descriptiva** (*descriptive statistics*) es una rama de la est
 
 Las **medidas de tendencia central** son valores numéricos que describen cómo se centralizan o agrupan los datos en un conjunto. Son esenciales en estadística y análisis de datos porque nos proporcionan un resumen de la información, permitiéndonos comprender rápidamente las características generales de una distribución de datos sin tener que observar cada valor individualmente.
 
-**Media** (*mean*)
-
 Valor central de un conjunto de datos numéricos. 
 
 ```py
