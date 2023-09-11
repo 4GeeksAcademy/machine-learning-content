@@ -33,7 +33,7 @@ Es un proceso iterativo compuesto de varios pasos:
 4. **Iteración**. Se repiten los pasos 2 y 3 hasta que los centroides ya no cambian significativamente y los puntos están estables en sus clusters. Es decir, el algoritmo continúa asignando y actualizando puntos hasta que se alcanza la convergencia.
 5. **Resultado**. Una vez que el algoritmo ha convergido, los puntos del conjunto de datos están agrupados en `K` clusters o grupos, y cada clusterestá representado por su centroide. Los grupos obtenidos representan conjuntos de puntos similares.
 
-![k-means-iterations](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/k-means-iterations.gif)
+![k-means-iterations](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/k-means-iterations.gif?raw=true)
 
 El reto de encontrar el `K` óptimo puede ser abordado mediante una optimización de hiperparámetros o mediante procedimientos más analíticos como el **método del codo** (*elbow method*), del que puedes encontrar más información [aquí](https://www.analyticsvidhya.com/blog/2021/01/in-depth-intuition-of-k-means-clustering-algorithm-in-machine-learning/)
 
@@ -77,7 +77,7 @@ Es un proceso iterativo compuesto de varios pasos:
 5. **Iteración**. Se repiten los pasos 3 y 4 hasta que todos los puntos de datos se encuentren en un único solo cluster o hasta que se alcance un número específico de grupos deseados (hiperparámetro de entrada).
 6. **Dendograma**. El resultado del clustering jerárquico se muestra en un **dendograma**, que es un diagrama de árbol que muestra la jerarquía de los grupos. Los puntos de datos se encuentran en las hojas del árbo, y los clusters más grandes se forman combinando clusters más pequeños lo largo de las ramas del árbol. 
 
-![hierarchical-clustering-iterations](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/hierarchical-clustering-iterations.gif)
+![hierarchical-clustering-iterations](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/hierarchical-clustering-iterations.gif?raw=true)
 
 El dendrograma permite visualizar la estructura jerárquica de los clústeres y la distancia entre ellos. Los cortes horizontales en el dendrograma determinan la cantidad de clústeres obtenidos al cortar el árbol a una cierta altura.
 

@@ -25,7 +25,7 @@ The random forest structure, with its combination of randomness and aggregation,
 We can easily build a decision tree in Python using the `scikit-learn` library and the `RandomForestClassifier` and `RandomForestRegressor` functions. Some of its most important hyperparameters and the first ones we should focus on are:
 
 - `n_estimators`: This is probably the most important hyperparameter. It defines the number of decision trees in the forest. In general, a larger number of trees increases the accuracy and makes the predictions more stable, but it can also slow down the computation time considerably.
-- bootstrap`: This hyperparameter is used to control whether bootstrap samples (sampling with replacement) are used for tree construction.
+- `bootstrap`: This hyperparameter is used to control whether bootstrap samples (sampling with replacement) are used for tree construction.
 - `max_depth`: The maximum depth of the trees. This is essentially how many splits the tree can make before making a prediction.
 - `min_samples_split`: The minimum number of samples needed to split a node in each tree. If set to a high value, it prevents the model from learning too specific relationships and thus helps prevent overfitting.
 - `min_samples_leaf`: The minimum number of samples to have in a leaf node in each tree.

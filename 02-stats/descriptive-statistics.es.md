@@ -1,185 +1,106 @@
-# DESCRIPTIVE STATISTICS
+## Estadística descriptiva
 
-Podemos dividir el campo Estadísticas en dos categorías:
-    
-Estadística Descriptiva y Estadística Inferencial.
+La **estadística descriptiva** (*descriptive statistics*) es una rama de la estadística que se encarga de recolectar, analizar, interpretar y presentar datos de manera organizada y efectiva. Su principal objetivo es proporcionar resúmenes simples y comprensibles acerca de las características principales de un conjunto de datos, sin llegar a hacer inferencias o predicciones sobre una población más amplia.
 
-Estadística Descriptiva significa resumir y organizar los datos, por ejemplo, teniendo una gran cantidad de datos, deseas contárselo a alguien pero sin darle todos, puedes usar números indicativos.
+### Guía de la estadística descriptiva en Python
 
-Esto es diferente de la Estadística Inferencial.
+#### Medidas de tendencia central
 
-Estadística Inferencial significa intentar hacer inferencias o conclusiones de una muestra a toda la población.
+Las **medidas de tendencia central** son valores numéricos que describen cómo se centralizan o agrupan los datos en un conjunto. Son esenciales en estadística y análisis de datos porque nos proporcionan un resumen de la información, permitiéndonos comprender rápidamente las características generales de una distribución de datos sin tener que observar cada valor individualmente.
 
-Entonces, utilizando Estadística Descriptiva, quizá quieras usar un número que sea más indicativo de todos los números en ese conjunto. O algunos de los números que representan la tendencia central.
+Valor central de un conjunto de datos numéricos. 
 
-Comenzaremos enumerando las medidas de tendencia central, que representan la idea de que hay un número que resume mejor todo el conjunto.
+```py
+import statistics as stats
 
-### Medidas de tendencia central
+data = [10, 20, -15, 0, 50, 10, 5, 100]
+mean = stats.mean(data)
+print(f"Media: {mean}")
+```
 
-**Momentos**
+**Mediana** (*median*)
 
-Un momento es una medida cuantitativa que dice algo sobre la forma de una distribución. Hay momentos centrales y no centrales. Esta sección se enfoca en los momentos centrales. Estas medidas de tendencia central representan la idea de que hay un número que resume mejor todo el set.
+Valor medio cuando los datos están ordenados.
 
-El momento central 0 es la probabilidad total y siempre es igual a 1.
+```py
+median = stats.median(data)
+print(f"Mediana: {median}")
+```
 
-El 1er momento es la media (valor esperado).
+**Moda** (*mode*)
 
-El 2do momento central es la varianza.
+Valor que ocurre con mayor frecuencia.
 
-**Media**
+```py
+mode = stats.mode(data)
+print(f"Moda: {mode}")
+```
 
-La media aritmética es probablemente con lo que estás más familiarizado cuando la gente habla de promedio. Si tienes cinco números, la media sería la suma de todos dividido entre 5. Es el punto de balance y también es llamado el primer momento.
+Estas medidas son fundamentales para describir y analizar distribuciones de datos.
 
-**Mediana**
+#### Medidas de dispersión
 
-Es el valor que divide los datos en dos partes iguales, Si el número de elementos en los datos es par, entonces la mediana sería el promedio de los dos términos medios.
+Las **medidas de dispersión** son valores numéricos que describen cómo de variados son los datos en un conjunto. Mientras las medidas de tendencia central nos indican dónde están "centrados" los datos, las medidas de dispersión nos muestran cuánto se "extienden" o "varían" esos datos alrededor de ese centro.
 
-Cuando la diferencia entre los términos consecutivos es constante (progresión aritmética) entonces la mediana = media.
+**Rango** (*range*)
 
-**Moda**
+Es la diferencia entre el valor máximo y el valor mínimo de un conjunto de datos. 
 
-la moda es escencialmente que número es el mas común en un set. Si dos valores aparecen al mismo tiempo más que otros, entonces tenemos un conjunto bimodal. También podemos tener conjuntos trimodales o multimodales.
+```py
+range_ = max(data) - min(data)
+print(f"Rango: {range_}")
+```
 
-### Medidas de variabilidad
+**Varianza y desviación estándar** (*variance and standard deviation*)
 
-Estas medidas representan la dispersión de los datos.
+Ambas métricas miden lo mismo. Indican cómo de lejos están, en promedio, los valores con respecto a la media. No obstante, la desviación típica es una medida que se utiliza para poder trabajar con unidades de medida iniciales, mientras que la varianza, aunque a priori nos pueda parecer un cálculo innecesario, se calcula para poder obtener otros parámetros.
 
-**Desviación Estándar**
+```py
+variance = stats.variance(data)
+std = stats.stdev(data)
+print(f"Varianza: {variance}")
+print(f"Desviación estándar: {std}")
+```
 
-La Desviación Estándar nos dice qué tan lejos está la media de cada observación en el.
+#### Medidas de posición
 
-En estadística descriptiva generalmente tratamos con datos disponibles en una muestra, no en una población. La desviación estándar se calcula con la raíz cuadrada de la varianza.
+Las **medidas de posición** son estadísticas que nos indican la ubicación o posición de un valor específico dentro de un conjunto de datos.
 
-![descriptive_stats_standard_deviation.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/descriptive_stats_standard_deviation.jpg?raw=true)
+**Percentiles y cuantiles** (*percentiles* and *quantiles*)
 
-**Desviación media**
+Son medidas que tratan sobre cómo se puede dividir un conjunto de datos en partes específicas. Estas medidas se utilizan para entender y describir la distribución de datos.
 
-La Desviación media da información sobre la distancia entre los valores de los datos y el valor medio.
+- **Percentil**: Divide un conjunto de datos en 100 partes iguales. El k-ésimo percentil indica el valor bajo el cual cae el k% de las observaciones.
+- **Cuantil**: Divide un conjunto de datos en partes iguales, dependiendo del tipo. Los cuartiles dividen los datos en cuatro partes, los quintiles en cinco, etcétera.
 
-![descriptive_stats_mean_deviation.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/descriptive_stats_mean_deviation.jpg?raw=true)
+#### Medidas de forma
 
-**Varianza**
+Las **medidas de forma** describen cómo se distribuyen los valores en un conjunto de datos en relación con las medidas de tendencia central. Específicamente, nos indican la naturaleza de la distribución, ya sea si es simétrica, sesgada o tiene colas pesadas, entre otros.
 
-Es solamente otra medida de dispersión, de cómo los puntos de datos difieren de la media. La varianza es la expectativa de la desviación al cuadrado de una variable aleatoria de su media poblacional o media muestral.
+**Asimetría** (*skewness*)
 
-La varianza es mastante interesante en un sentido matemático, pero la desviación estándar suele ser una medida mucho mejor de cuán dispersa está la distribución.
+Mide la falta de simetría en la distribución de datos. Una asimetría positiva indica que la mayoría de los datos están a la izquierda y hay unos pocos valores muy altos a la derecha. Una asimetría negativa indica que hay más valores bajos inusuales. Si es cercana a cero sugiere que los datos son bastante simétricos.
 
-![descriptive_stats_variance.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/descriptive_stats_variance.jpg?raw=true)
+![skewness](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/skewness.png?raw=true)
 
-**Rango**
+```py
+from scipy.stats import skew
 
-El rango es la diferencia entre el valor más bajo y el más alto.
+skewness = skew(data)
+```
 
-**Percentil**
+**Curtosis** (*kurtosis*)
 
-Es una forma de representar la posición de un valor en un conjunto de datos. Para calcularlo, los valores deben estar siempre en orden ascendente.
+Mide la concentración de los datos en torno a la media. Se emplea para describir una distribución y forma parte de algunos contrastes de normalidad. Una curtosis positiva indica un pico más agudo en comparación con la distribución normal. Una curtosis negativa indica un pico más aplanado y unas colas más ligeras. Una curtosis cercana a cero es lo ideal, ya que sugiere una forma similar a la de la distribución normal.
 
-12  
+![kurtosis](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/kurtosis.png?raw=true)
 
-24
+```PY
+from scipy.stats import kurtosis
 
-41   
+kurt = kurtosis(data)
+```
 
-51  
+#### Visualización de datos
 
-67  
-
-67   
-
-85   
-
-99
-
-
-La mediana 59 tiene cuatro valores menos que ella misma de ocho. 59 es el percentil 50 porque el 50 % de los datos son inferiores a 59.
-
-**Cuartiles**
-
-Los cuartiles son valores que dividen tus datos en cuartos. Ordenados de manera ascendente.
-
-![descriptive_stats_quartiles.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/descriptive_stats_quartiles.jpg?raw=true)
-
-12
-
-24
-
-41
-
-51
-
-67
-
-67
-
-85
-
-99
-
-115
-
-Q2 = 67 es el percentil 50 de los datos y también es la mediana.
-
-Q1 = 41 es el percentil 25 de los datos.
-
-Q3 = 85 es el percentil 75 de los datos
-
-IQR = rango intercuantílico $= Q3 - Q1 = 85 - 41 = 44$
-                
-
-### Asimetría
-
-El tercer momento central es la asimetría. Una medida que describe el contraste de una cola frente a la otra cola.
-
-Por ejemplo, si hay más valores altos en tu distibución que valores bajos, entonces tu distribución está 'sesgada' hacia los valores altos.
-
-![descriptive_stats_skewness.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/descriptive_stats_skewness.jpg?raw=true)
-
-Para calcular la asimetría:
-
-1. Primer coeficiente de asimetría de Pearson (asimetría modal)
-
-![descriptive_stats_pearson_first.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/descriptive_stats_pearson_first.jpg?raw=true)
-
-2. Segundo coeficiente de asimetría de Pearson (asimetría mediana)
-
-![descriptive_stats_pearson_second.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/descriptive_stats_pearson_second.jpg?raw=true)
-
-La dirección de la asimetría viene dada por el signo 0, significa que no hay asimetría. Negativo significa asimetría negativa.
-
-El coeficiente compara la distribución de la muestra con una distribución normal.
-
-### Correlación
-
-Es una Técnica estadística que puede mostrar si los pares de variables están correlacionados y con qué fuerza.
-
-El coeficiente de correlación (r) varía de -1 a +1.
-
-Cuanto más cerca de +1 o -1, más estrechamente se correlacionan las dos variables.
-
-Si r es cercano a 0, no hay relación.
-
-Si r es positivo, significa que a medida que una variable aumenta, la otra aumenta.
-
-Si r es negativo, significa que a medida que una variable se hace más grande, la otra se hace más pequeña.
-
-### Curtosis
-
-El 4to momento central es la Curtosis. Se trata de la existencia de valores atípicos. Es una medida de si los datos son de cola pesada (profusión de valores atípicos) o de cola ligera (ausencia de valores atípicos) en relación con una distribución normal. Se trata de cuán gordas son las colas en la distribución.
-
-![descriptive_stats_kurtosis.jpg](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/descriptive_stats_kurtosis.jpg?raw=true)
-
-Leptokurtic significa que las colas son gruesas y pesadas.
-
-Platykurtic significa que las colas son más delgadas.
-
-La principal diferencia entre la asimetría y la curtosis es:
-    
-    La asimetría se refiere a un grado de simetría.
-    La curtosis se refiere a un grado de presencia de valores atípicos.
-
-Cuanto mayor sea el momento, más difícil será estimar con muestras. Se requieren muestras más grandes para obtener buenas estimaciones.
-
-References:
-
-https://towardsdatascience.com/understanding-descriptive-statistics-c9c2b0641291
-
+En este apartado, visualizar los datos de los que disponemos es fundamental. Se suelen utilizar histogramas, gráficos de barras y diagramas de dispersión, dependiendo de la tipología de los datos.

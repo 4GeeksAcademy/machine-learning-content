@@ -33,7 +33,7 @@ It is an iterative process composed of several steps:
 4. **Iteration**. Steps 2 and 3 are repeated until the centroids no longer change significantly and the points are stable in their clusters. That is, the algorithm continues to assign and update points until convergence is reached.
 5. **Result**. Once the algorithm has converged, the points in the data set are grouped into `K` clusters or groups, and each cluster is represented by its centroid. The groups obtained represent sets of similar points.
 
-![k-means-iterations](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/k-means-iterations.gif)
+![k-means-iterations](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/k-means-iterations.gif?raw=true)
 
 The challenge of finding the optimal `K` can be addressed by hyperparameter optimization or by more analytical procedures such as the **elbow method**, more information about which can be found [here](https://www.analyticsvidhya.com/blog/2021/01/in-depth-intuition-of-k-means-clustering-algorithm-in-machine-learning/).
 
@@ -77,7 +77,7 @@ It is an iterative process composed of several steps:
 5. **Iteration**. Steps 3 and 4 are repeated until all data points are in a single cluster or until a specific number of desired clusters (input hyperparameter) is reached.
 6. **Dendogram**. The result of hierarchical clustering is displayed in a **dendogram**, which is a tree diagram showing the hierarchy of the groups. The data points are located at the leaves of the tree, and larger clusters are formed by combining smaller clusters along the branches of the tree.
 
-![hierarchical-clustering-iterations](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/hierarchical-clustering-iterations.gif)
+![hierarchical-clustering-iterations](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/hierarchical-clustering-iterations.gif?raw=true)
 
 The dendrogram allows visualizing the hierarchical structure of the clusters and the distance between them. The horizontal cuts in the dendrogram determine the number of clusters obtained by cutting the tree at a certain height.
 
