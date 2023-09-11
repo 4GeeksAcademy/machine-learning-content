@@ -18,7 +18,7 @@ When visually analyzing a time series, there are several important things to loo
 
 - **Trend**: Identify whether there is a general trend in the time series, i.e., whether the data tend to increase or decrease over time. A trend can be linear (steady growth or decline) or non-linear (accelerating or decelerating growth or decline).
 - **Seasonality**: Observe whether there are seasonal or cyclical patterns in the data, i.e., whether there are behaviors that repeat at regular intervals, such as daily, monthly, or seasonally. For example, there may be an increase in toy sales during the Christmas vacations each year.
-- **Variability: Check whether the variability of the data changes over time. There may be periods of high variability followed by periods of low variability. Variability may indicate times of instability or changes in the behavior of the phenomenon being studied.
+- **Variability**: Check whether the variability of the data changes over time. There may be periods of high variability followed by periods of low variability. Variability may indicate times of instability or changes in the behavior of the phenomenon being studied.
 - **Outliers**: Identify if there are extreme or unusual values that differ significantly from the general pattern of the series. Outliers can affect interpretation and further analysis.
 - **Autocorrelation**: Check for correlation between past and current observations. Autocorrelation can indicate dependencies over time and is critical for time series modeling.
 - **Inflection points**: Look for abrupt changes or turning points in the series, where the trend or behavior of the phenomenon changes significantly.

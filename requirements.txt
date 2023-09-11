@@ -1,5 +1,3 @@
-# pip install -r requirements.txt
-
 # Base ----------------------------------------
 pandas>=1.1.4
 numpy>=1.18.5

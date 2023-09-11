@@ -22,7 +22,7 @@ where:
 - $Y$ is the dependent variable we are trying to predict or model
 - $X$ is the independent variable that we use to make the prediction
 - $a$ and $b$ are the coefficients we want the model to learn. $a$ is the intercept (value of $Y$ when $X$ is zero) and $b$ is the slope
-- e$ is the prediction error discussed above. It is the difference between the actual value of $Y$ and the value of $Y$ predicted by the model
+- $e$ is the prediction error discussed above. It is the difference between the actual value of $Y$ and the value of $Y$ predicted by the model
 
 The goal of simple linear regression is, therefore, to find the best values of $a$ and $b$ that minimize the error $e$. Once we have found these values, we can use them to predict the values of $Y$ given any $X$.
 

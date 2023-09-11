@@ -297,7 +297,7 @@ En el siguiente paso nos aparecerá una consola con los logs del despliegue de l
 
 ##### Resolver fallo de creación
 
-Debido a que el entorno de Render es diferente al nuestro de desarrollo (especialmente en la versión de Python, ya que se utiliza por defecto la 3.7 y en este bootcamp nosotros usamos de la 3.10 hacia arriba), puede que nos arroje un error la build del proyecto. En este caso su resolución es muy simple:
+Debido a que el entorno de Render es diferente al nuestro de desarrollo (especialmente en la versión de Python, ya que se utiliza por defecto la 3.7 y en este caso nosotros usamos de la 3.10 hacia arriba), puede que nos arroje un error la build del proyecto. En este caso su resolución es muy simple:
 
 ![flask-step11](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step11.png?raw=true)
 
