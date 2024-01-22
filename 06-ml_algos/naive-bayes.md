@@ -8,7 +8,7 @@ The name *Naive* comes from the assumption that all features (predictor variable
 
 **Bayes' theorem** is a fundamental concept in probability that allows us to update our beliefs or probabilities about an event given new evidence. The formula on which this theorem is based is as follows:
 
-$P(A|B) = {P(B|A) - P(A)} / {P(B)}$,
+$P(A|B) = {P(B|A) * P(A)} / {P(B)}$,
 
 and where:
 - $P(A|B)$ is the probability that event $A$ occurs given that we already know that event $B$ has occurred.
