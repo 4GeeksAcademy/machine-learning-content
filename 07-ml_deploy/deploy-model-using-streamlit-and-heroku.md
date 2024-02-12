@@ -1,12 +1,12 @@
-# Implementación de un modelo de Machine learning usando Streamlit y Heroku
+# Implementing a Machine Learning model using Streamlit and Heroku
 
-Imagina que puedes convertir secuencias de comandos simples de Python en hermosas aplicaciones web. Bueno, esa herramienta existe y se llama Streamlit.
+Imagine you can turn simple Python scripts into beautiful web applications. Well, that tool exists, and it's called Streamlit.
 
-Streamlit es un marco de código abierto para crear aplicaciones de ciencia de datos y Machine Learning para la exploración de datos de la manera más rápida posible. Incluso te brinda una experiencia de codificación en tiempo real. Puedes iniciar tu aplicación streamlit y cada vez que guardes, ¡verás tu código reflejado en el navegador al mismo tiempo!
+Streamlit is an open-source framework for creating data science and Machine Learning applications for the fastest possible data exploration. It even gives you a real-time coding experience. You can start your Streamlit application, and every time you save, you will see your code reflected in the browser simultaneously!
 
-## Los principios básicos de Streamlit:
+## The basic principles of Streamlit
 
-1. **Adopta las secuencias de comandos de Python.** Si sabes cómo escribir secuencias de comandos de Python, puedes escribir aplicaciones Streamlit. Por ejemplo, así es como se escribe en la pantalla:
+1. **Adopts Python scripts**. If you know how to write Python scripts, you can write Streamlit applications. For example, this is how you write to the screen:
 
 ```py
 import streamlit as st
@@ -15,7 +15,7 @@ st.write('Hello, world!')
 
 ![streamlit1](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit1.jpg?raw=true)
 
-2. **Trata los widgets como variables.** ¡No hay devoluciones de llamada en Streamlit! Cada interacción simplemente vuelve a ejecutar el script de arriba abajo. Este enfoque conduce a un código realmente limpio:
+2. **Treat widgets as variables**. There are no callbacks in Streamlit! Each interaction re-runs the script from top to bottom. This approach leads to really clean code:
 
 ```py
 import streamlit as st
@@ -25,13 +25,13 @@ st.write(x, 'squared is', x * x)
 
 ![streamlit2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit2.jpg?raw=true)
 
-3. **Reutiliza datos y cálculos.** ¿Qué sucede si descargas muchos datos o realizas cálculos complejos? La clave es reutilizar de forma segura la información entre ejecuciones. Streamlit presenta una primitiva de caché que se comporta como un almacén de datos persistente e inmutable de forma predeterminada que permite que las aplicaciones de Streamlit reutilicen la información de forma segura y sin esfuerzo. Mira el siguiente ejemplo:
+3. **Reuse data and computations.** What happens if you download a lot of data or perform complex calculations? The key is to reuse information between runs safely. Streamlit introduces a caching primitive that acts as a default persistent and immutable data store, allowing Streamlit applications to reuse information safely and effortlessly. Look at the following example:
 
 ```py
 import streamlit as st
 import pandas as pd
 
-# ¡Reutiliza estos datos en las ejecuciones!
+# Re-use the CSV in your code executions!
 read_and_cache_csv = st.cache(pd.read_csv)
 
 BUCKET = "https://streamlit-self-driving.s3-us-west-2.amazonaws.com/"
@@ -42,41 +42,42 @@ st.write(data[data.label == desired_label])
 
 ![streamlit3](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit3.jpg?raw=true)
 
-Ahora, sigamos adelante e instalemos Streamlit usando pip:
+Now, let's go ahead and install Streamlit using pip:
 
 ```bash
 pip install --upgrade streamlit
 ```
 
-Una vez completada la instalación, usa el siguiente comando para ver una demostración de una aplicación con código de ejemplo:
+Once the installation is complete, use the following command to see a demo of an application with sample code:
+
 
 ```bash
 streamlit hello
 ```
 
-Ahora puedes ver tu aplicación en su navegador: http://localhost:8501
+Now you can see your application in your browser: http://localhost:8501
 
-La simplicidad de estas ideas no te impide crear aplicaciones increíblemente ricas y útiles con Streamlit.
+The simplicity of these ideas does not prevent you from creating incredibly rich and useful applications with Streamlit.
 
-- Las aplicaciones Streamlit son archivos Python puros. Para que puedas usar tu editor y depurador favorito con Streamlit.
+- Streamlit applications are pure Python files. So you can use your favorite editor and debugger with Streamlit.
 
-- Los scripts de Python puro funcionan a la perfección con Git y otro software de control de código fuente, incluidas confirmaciones, solicitudes de incorporación de cambios, problemas y comentarios. Debido a que el lenguaje subyacente de Streamlit es Python puro, obtiene todos los beneficios.
+- Pure Python scripts work seamlessly with Git and other source code control software, including commits, pull requests, issues, and comments. Because the underlying language of Streamlit is pure Python, you get all the benefits.
 
-- Streamlit proporciona un entorno de codificación en vivo de modo inmediato. Simplemente haz clic en Volver a ejecutar siempre cuando Streamlit detecte un cambio en el archivo de origen.
+- Streamlit provides an immediate live coding environment. Click `Rerun` whenever Streamlit detects a change in the source file.
 
-- Streamlit está diseñado para GPU. Streamlit permite el acceso directo a primitivas a nivel de máquina como TensorFlow y PyTorch y complementa estas bibliotecas.
+- Streamlit is designed for GPU. Streamlit allows direct access to machine-level primitives like TensorFlow and PyTorch and complements these libraries.
 
 ![streamlit4](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit4.jpg?raw=true)
 
-## Características básicas de Streamlit 
+## Basic features of Streamlit
 
-Aquí explicaremos algunas de las características básicas, pero para obtener una documentación completa de Streamlit, puedes hacer clic en el siguiente enlace: `https://docs.streamlit.io/`
+Here we will explain some of the basic features, but for complete documentation of Streamlit, you can click on the following link: https://docs.streamlit.io/
 
-**Widgets de selección**
+**Selection Widgets**
 
-Hay muchos widgets disponibles, incluidos los siguientes:
+There are many widgets available, including the following:
 
-- SelectBox
+### SelectBox
 
 ```py
 age = streamlit.selectbox("Choose your age:", np.arange(18, 66, 1))
@@ -84,15 +85,15 @@ age = streamlit.selectbox("Choose your age:", np.arange(18, 66, 1))
 
 ![streamlit_selectbox](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_selectbox.jpg?raw=true)
 
-Otra opción:
+Another way of doing the same:
 
 ```py
 select = st.selectbox('Select a State',data['State'])
 ```
 
-El primer parámetro es el título del cuadro de selección y el segundo parámetro define una lista de valores que se completarán en el cuadro de selección. Aquí, el segundo parámetro es un nombre de columna "Estado" en el archivo .csv que cargamos.
+The first parameter is the title of the selection box, and the second parameter defines a list of values that will be filled in the selection box. The second parameter is a "State" column name in the .csv file we loaded.
 
-- Slider
+### Slider
 
 ```py
 age = streamlit.slider("Choose your age: ", min_value=16,   
@@ -101,7 +102,7 @@ age = streamlit.slider("Choose your age: ", min_value=16,
 
 ![streamlit_slider](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_slider.jpg?raw=true)
 
-- Multiselect
+### Multiselect
 
 ```py
 artists = st.multiselect("Who are your favorite artists?", 
@@ -111,17 +112,17 @@ artists = st.multiselect("Who are your favorite artists?",
 
 ![streamlit_multiselect](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_multiselect.jpg?raw=true)
 
-- Checkbox
+### Checkbox
 
 ```py
 st.sidebar.checkbox("Show Analysis by State", True, key=1)
 ```
 
-El primer parámetro en la casilla de verificación define el título de la casilla de verificación, el segundo parámetro define Verdadero o Falso si está marcada de forma predeterminada o no y el tercer parámetro define la clave única para la casilla de verificación.
+The first parameter in the checkbox defines the title of the checkbox, the second parameter defines True or False if it is checked by default or not, and the third parameter defines the unique key for the checkbox.
 
-**Almacenamiento en caché**
+## Cache Memory**
 
-El problema con muchas herramientas de tablero es que los datos se vuelven a cargar cada vez que seleccionas una opción o cambia de página. Afortunadamente, Streamlit tiene una opción increíble que te permite almacenar en caché los datos y solo ejecutarlos si no se han ejecutado antes. Puedes almacenar en caché cualquier función que crees. Esto puede incluir cargar datos, pero también preprocesarlos o entrenar un modelo complejo una vez.
+The problem with many dashboard tools is that data is reloaded every time you select an option or change the page. Fortunately, Streamlit has an amazing option that allows you to cache data and only run it if it hasn't been run before. You can cache any function you create. This can include loading data, but also preprocessing it or training a complex model once.
 
 ```py
 import pandas as pd
@@ -136,9 +137,9 @@ def load_data():
 df = load_data()
 ```
 
-**Visualización**
+## Visualization
 
-Streamlit admite muchas bibliotecas de visualización, incluidas: Matplotlib, Altair, Vega-Lite, Plotly, Bokeh, Deck.GL y Graphviz. ¡Incluso puede cargar audio y video!
+Streamlit supports many visualization libraries, including: Matplotlib, Altair, Vega-Lite, Plotly, Bokeh, Deck.GL, and Graphviz. You can even upload audio and video!
 
 ```py
 import pandas as pd
@@ -154,7 +155,7 @@ st.altair_chart(c, width=-1)
 
 ![streamlit_visualization](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_visualization.jpg?raw=true)
 
-Un ejemplo diferente:
+Another example:
 
 ```py
 def get_total_dataframe(dataset):
@@ -181,11 +182,11 @@ if st.sidebar.checkbox("Show Analysis by State", True, key=2):
 
 ![streamlit_visualization2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_visualization2.jpg?raw=true)
 
-Para trazar el gráfico, usamos el método de barra de la biblioteca plotly.express. El primer parámetro es el marco de datos que queremos trazar, el segundo parámetro es la columna del eje x, el tercer parámetro es la columna del eje y, el parámetro de etiquetas es opcional en caso de que desees cambiar el nombre de una columna para el gráfico y el parámetro de color aquí es para codificar por color el gráfico sobre la base de la columna Estado del marco de datos.
+To plot the chart, we use the bar method from the plotly.express library. The first parameter is the dataframe we want to plot, the second parameter is the x-axis column, the third parameter is the y-axis column, the labels parameter is optional in case you want to rename a column for the chart, and the color parameter here is to color code the chart based on the State column of the dataframe.
 
-**Markdown**
+## Markdown
 
-Podemos generar Markdown y hermosos README con una sola función:
+We can generate Markdown and beautiful READMEs with a single function:
 
 ```py
 import streamlit as st
@@ -200,21 +201,23 @@ st.markdown("* This gives a general overview of the data including"
 
 ![streamlit_markdown](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_markdown.jpg?raw=true)
 
-**Write**
+## Write Function
 
-La función Write se comporta de manera diferente en función de su entrada. Por ejemplo, si agregas una figura de Matplotlib, automáticamente te mostrará esa visualización.
+The `write` function behaves differently depending on its input. For example, if you add a Matplotlib figure, it will automatically display that visualization.
 
-Algunos ejemplos:
+Some examples:
 
+```py
 write(string) : Prints the formatted Markdown string.
 write(data_frame) : Displays the DataFrame as a table.
 write(dict) : Displays dictionary in an interactive widget.
 write(keras) : Displays a Keras model.
 write(plotly_fig) : Displays a Plotly figure.
+```
 
-## Creando la aplicación
+## Creating a Streamlit app
 
-Veamos cómo podemos crear una aplicación web de ejemplo muy básica. Primero crearemos un archivo python app.py e importaremos las bibliotecas que necesitaremos.
+Let's see how we can create a very basic example web application. First, we'll create a Python file named app.py and import the libraries we will need.
 
 ```py
 import streamlit as st
@@ -223,7 +226,7 @@ import numpy as np
 import plotly.express as px
 ```
 
-Luego importamos los datos:
+Then we import the data:
 
 ```py
 @st.cache(ttl=60*5, max_entries=20)
@@ -234,9 +237,9 @@ def load_data():
 data = load_data()
 ```
 
-En el método load_data(), estamos leyendo el archivo .csv usando la biblioteca Pandas y estamos haciendo que nuestro código sea eficiente almacenando en caché los datos. Si estos datos siguieran cambiando, borramos nuestra memoria caché cada 5 minutos o para un máximo de 20 entradas. Si los datos no cambian con mucha frecuencia, simplemente podemos usar @st.cache(persist=True). El código anterior es un ejemplo, pero para el modelo Titanic, podríamos mantener persist=True.
+In the load_data() method, we are reading the .csv file using the Pandas library, and we are making our code efficient by caching the data. If these data were to keep changing, we clear our cache every 5 minutes or for a maximum of 20 entries. If the data do not change frequently, we could simply use @st.cache(persist=True). The above code is an example, but for the Titanic model, we might keep persist=True.
 
-Ahora vamos a crear un título, algo de contenido y un menú lateral.
+Now let's create a title, some content, and a sidebar.
 
 ```py
 st.markdown('<style>description{color:blue;}</style>', unsafe_allow_html=True)
@@ -248,39 +251,41 @@ st.markdown("<description>The sinking of the Titanic is one of the most infamous
 " groups of people were more likely to survive than others. </description>", unsafe_allow_html=True)
 st.sidebar.title('Select the parameters to analyze survival prediction')
 ```
-La descripción se muestra en color azul porque usamos HTML para dar el color personalizado como azul. También podemos usar encabezado y subencabezado como usamos st.title() para diferentes encabezados. O podemos usar Markdown para ese propósito.
 
-Cualquier cosa que llamemos con barra lateral se mostrará en la barra lateral.
+The description is displayed in blue because we use HTML to give the custom color as blue. We can also use header and subheader as we use st.title() for different headings. Or we can use Markdown for that purpose.
 
-Una vez que hayas terminado de crear tu propia aplicación, puedes ejecutarla usando:
+Anything we call with the sidebar will be displayed in the sidebar.
+
+Once you have finished creating your own application, you can run it using:
 
 ```bash
 streamlit run app.py
 ```
 
-## Implementación
+## Implementation
 
-Ahora que tenemos una aplicación web muy básica, podemos mostrársela a otros al implementarla en Heroku. Por supuesto, Heroku no es la única opción gratuita en el mercado. Una opción gratuita diferente podría ser Amazon EC2 y muchas otras.
+Now that we have a very basic web application, we can show it to others by deploying it on Render.com. Of course, Render is not the only free option on the market. Alternatives are Azure, Heroku, Amazon EC2, and many others.
 
-Si ya habías instalado la interfaz de línea de comandos (CLI) de Heroku, entonces estás listo para comenzar. Si no, puedes hacerlo desde aquí: https://devcenter.heroku.com/articles/getting-started-with-python#set-up
+You're ready to start if you have already installed the Heroku Command Line Interface (CLI). If not, you can do so from here:  
+https://devcenter.heroku.com/articles/getting-started-with-python#set-up
 
-Esto lo ayudará a administrar su aplicación, ejecutarla localmente, ver sus registros y mucho más.
+This will help you manage your application, run it locally, view its logs, and more.
 
-**Proceso de implementación**
+## Deployment Process
 
-- Abre tu cmd.exe e ingresa a la carpeta de la aplicación.
+You can just open your cmd.exe and navigate to the application's folder.
 
-- Inicia sesión en Heroku con `heroku login`. Seráa redirigido a una pantalla de inicio de sesión en tu navegador preferido.
+Log in to Heroku with `heroku login`. You will be redirected to a login screen in your preferred browser.
 
-- Mientras tienes tu cmd abierto en la carpeta de su aplicación, primero ejecuta `heroku create` para crear una instancia de Heroku.
+While your cmd is open in the application folder, first run `$ heroku create` to create a Heroku instance.
 
-- Hazle push a todo tu código a esa instancia con `git push heroku master`.
+Push all your code to that instance with `git push heroku master`
 
-Esto creará una instancia de Heroku y enviará todo el código de la carpeta de la aplicación a esa instancia. Ahora, la aplicación debe implementarse.
+This will create a Heroku instance and send all the code from the application folder to that instance. Now, the application should be deployed.
 
-- Con `heroku ps:scale web=1` se asegurará de que se esté ejecutando al menos una instancia de la aplicación.
+With `heroku ps:scale web=1`, you ensure that at least one instance of the application is running.
 
-- Finalmente, ejecuta `heroku open` para abrir tu aplicación en el navegador.
+Finally, run `heroku open` to open your application in the browser.
 
 
 Fuente:
