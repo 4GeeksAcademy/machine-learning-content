@@ -24,7 +24,10 @@ print(f"Mean: {mean}")
 
 Average value when data are sorted.
 
-```py
+```py runable=true
+import statistics as stats
+
+data = [10, 20, -15, 0, 50, 10, 5, 100]
 median = stats.median(data)
 print(f"Median: {median}")
 ```
@@ -33,7 +36,10 @@ print(f"Median: {median}")
 
 Value that occurs most frequently.
 
-```py
+```py runable=true
+import statistics as stats
+
+data = [10, 20, -15, 0, 50, 10, 5, 100]
 mode = stats.mode(data)
 print(f"Mode: {mode}")
 ```
@@ -48,7 +54,10 @@ These measures are fundamental for describing and analyzing data distributions.
 
 The difference between the maximum value and the minimum value of a data set.
 
-```py
+```py runable=true
+import statistics as stats
+
+data = [10, 20, -15, 0, 50, 10, 5, 100]
 range_ = max(data) - min(data)
 print(f"Range: {range_}")
 ```
@@ -57,7 +66,10 @@ print(f"Range: {range_}")
 
 Both metrics measure the same thing. They indicate how far, on average, the values are from the mean. However, the standard deviation is a measure used to be able to work with initial units of measurement, while the variance, although at first sight it may seem an unnecessary calculation, is calculated to be able to obtain other parameters.
 
-```py
+```py runable=true
+import statistics as stats
+
+data = [10, 20, -15, 0, 50, 10, 5, 100]
 variance = stats.variance(data)
 std = stats.stdev(data)
 print(f"Variance: {variance}")
