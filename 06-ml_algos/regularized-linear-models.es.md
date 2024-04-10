@@ -2,7 +2,7 @@
 
 Un **modelo lineal regularizado** (*regularized linear model*) es una versión de un modelo lineal que incluye un elemento en su función para evitar el sobreajuste (*overfitting*) y mejorar la capacidad de aprendizaje del modelo.
 
-En términos generales, un modelo lineal (como el que vimos en el módulo anterior) intenta encontrar la relación entre las variables de entrada y la variable de salida. Sin embargo, si un modelo lineal tiene demasiados parámetros o si los datos son muy ruidosos, puede suceder que el modelo se ajuste demasiado a los datos de entrenamiento, produciéndose un claro sobreajuste y que dificulta generalizar bien a nuevos datos.
+En términos generales, un [modelo lineal](https://4geeks.com/es/lesson/explorando-la-regresion-lineal) (como el que vimos en el módulo anterior) intenta encontrar la relación entre las variables de entrada y la variable de salida. Sin embargo, si un modelo lineal tiene demasiados parámetros o si los datos son muy ruidosos, puede suceder que el modelo se ajuste demasiado a los datos de entrenamiento, produciéndose un claro sobreajuste y que dificulta generalizar bien a nuevos datos.
 
 Para evitar este problema, los modelos lineales regularizados añaden un término extra para penalizar los valores de los coeficientes que son demasiado grandes. Estos modelos son regresiones lineales como las vistas en el módulo anterior pero con la adición de un término de regularización. Los dos tipos de modelos son:
 
