@@ -12,7 +12,7 @@ Para evitar este problema, los modelos lineales regularizados añaden un términ
 Ambas técnicas intentan limitar o "penalizar" el tamaño de los coeficientes del modelo. Imaginemos que estamos ajustando una línea a puntos en un gráfico:
 
 - **Regresión lineal**: Solo nos preocupamos por encontrar la línea que se ajusta mejor a los puntos.
-- **Regresión lineal de Ridge**: Intentamos encontrar la línea que se ajusta mejor, pero también queremos que la pendiente dé la línea lo más pequeña posible.
+- **Regresión lineal de Ridge**: Intentamos encontrar la línea que se ajusta mejor, pero también queremos que la pendiente de la línea sea lo más pequeña posible.
 - **Regresión lineal de Lasso**: Al igual que con Ridge, intentamos ajustar la línea y mantener la pendiente pequeña, pero Lasso puede llevar la pendiente a cero si eso ayuda a ajustar los datos. Esto es como si "seleccionase" qué variables son importantes y cuáles no, porque puede reducir la importancia de algunas variables a cero.
 
 ### Hiperparametrización del modelo
