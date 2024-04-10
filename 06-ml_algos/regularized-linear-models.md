@@ -2,7 +2,7 @@
 
 A **regularized linear model** is a version of a linear model that includes an element in its function to avoid overfitting and improve the learning capability of the model.
 
-Generally speaking, a linear model (like the one we saw in the previous module) tries to find the relationship between the input variables and the output variable. However, if a linear model has too many parameters or if the data are very noisy, it can happen that the model fits the training data too well, producing a clear overfit and making it difficult to generalize well to new data.
+Generally speaking, a [linear model](https://4geeks.com/lesson/exploring-linear-regression) (like the one we saw in the previous module) tries to find the relationship between the input variables and the output variable. However, if a linear model has too many parameters or if the data are very noisy, it can happen that the model fits the training data too well, producing a clear overfit and making it difficult to generalize well to new data.
 
 To avoid this problem, regularized linear models add an extra term to penalize coefficient values that are too large. These models are linear regressions like those seen in the previous module, but with the addition of a regularization term. The two types of models are:
 
