@@ -2,7 +2,7 @@
 
 El **cálculo** (*calculus*) es una rama de las matemáticas que se centra en los conceptos de derivadas e integrales, que son técnicas que describen cómo cambian las funciones.
 
-El cálculo, el álgebra lineal y la probabilidad son los fundamentos del Machine Learning. Aprender sobre estos temas nos proporcionará una comprensión más profunda sobre cómo podrían funcionar los modelos por definición y nos permitirá, incluso, desarrollar otros nuevos.
+El cálculo, el álgebra lineal y la probabilidad son los fundamentos del Machine Learning. Aprender estos temas nos proporcionará una comprensión más profunda de cómo podrían funcionar los modelos por definición y nos permitirá, incluso, desarrollar otros nuevos.
 
 ### Derivadas
 
