@@ -13,7 +13,7 @@ The model has a sequential structure, and each model in the sequence is built to
 5. **Iteration**. Steps 3 and 4 are repeated a predefined number of times, or until an acceptable error limit is reached. Each new model concentrates on correcting the errors of the previous model.
 6. **Combination of the models**. After the end of the iterations, the models are combined into a weighted sum of their predictions. Models that perform better (i.e., make fewer errors in their predictions) are usually weighted more heavily in the sum.
 
-![Boosting example](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/boosting.png?raw=true)
+![Boosting algorithm example](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/boosting.png?raw=true)
 
 It is important to keep in mind that boosting can be more susceptible to overfitting than other techniques if left unchecked, since each new model is trying to correct the errors of the previous one and could end up overfitting the training data. Therefore, it is crucial to have good control over the hyperparameters and to perform cross-validation during training.
 
