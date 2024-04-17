@@ -7,9 +7,9 @@ The main objective of unsupervised learning is to explore the inherent structure
 There are two main types of unsupervised learning techniques:
 
 1. **Clustering**: Consists of dividing the data set into groups (*clusters*) based on similarities or patterns in the data. Clustering algorithms attempt to group similar observations into the same cluster and separate different samples into different clusters.
-2. **Dimensionality reduction**: The objective is to reduce the number of features or variables in the data set without losing important information. These techniques allow the data to be represented in a lower dimensional space, facilitating the visualization and understanding of the data structure.
+2. **Dimensionality reduction**: The objective is to reduce the number of features or variables in the data set without losing important information. These techniques allow the data to be represented in a lower-dimensional space, facilitating the visualization and understanding of the data structure.
 
-Unsupervised learning has a wide variety of applications, such as customer segmentation in marketing, data anomaly detection, image compression, document clustering into topics, among others. It is a powerful tool for exploring and understanding the intrinsic structure of data without the need for known labels or answers.
+Unsupervised learning has a wide variety of applications, such as customer segmentation in marketing, data anomaly detection, image compression, and document clustering into topics, among others. It is a powerful tool for exploring and understanding the intrinsic structure of data without the need for known labels or answers.
 
 ### Clustering
 
@@ -19,7 +19,7 @@ There are several clustering algorithms, but the most common are:
 
 - **K-Means**: This is one of the most popular clustering algorithms. It starts by defining random `K` centroids (point representing the geometric center of a cluster), then assigns each data point to the nearest centroid and recalculates the centroids as the average of the assigned points. Repeat this process until the centroids converge.
 - **Hierarchical Clustering**: It starts by considering each data point as its own cluster and gradually merges the nearest clusters into one. This forms a hierarchy that can be represented in a dendogram.
-- **DBSCAN** (*Density-Based Spatial Clustering of Applications with Noise*): Clusters data points that are close to each other and have enough neighbors in their neighborhood. It allows finding clusters of irregular shapes and sizes and also detecting outlier points.
+- **DBSCAN** (*Density-Based Spatial Clustering of Applications with Noise*): Clusters data points that are close to each other and have enough neighbors in their neighborhood. It allows for finding clusters of irregular shapes and sizes and also detecting outlier points.
 
 #### K-Means
 
@@ -33,7 +33,7 @@ It is an iterative process composed of several steps:
 4. **Iteration**. Steps 2 and 3 are repeated until the centroids no longer change significantly and the points are stable in their clusters. That is, the algorithm continues to assign and update points until convergence is reached.
 5. **Result**. Once the algorithm has converged, the points in the data set are grouped into `K` clusters or groups, and each cluster is represented by its centroid. The groups obtained represent sets of similar points.
 
-![k-means-iterations](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/k-means-iterations.gif?raw=true)
+![K-means iterations](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/k-means-iterations.gif?raw=true)
 
 The challenge of finding the optimal `K` can be addressed by hyperparameter optimization or by more analytical procedures such as the **elbow method**, more information about which can be found [here](https://www.analyticsvidhya.com/blog/2021/01/in-depth-intuition-of-k-means-clustering-algorithm-in-machine-learning/).
 
@@ -62,7 +62,7 @@ predictions = model.predict(new_data)
 
 In this example code we generate 2 clusters (hyperparameter `n_clusters`) and set the seed since it is a model with a random initialization component.
 
-Once we have trained the model we can get the labels of which cluster is associated to each point with the `labels_` attribute of the model (`model.labels_`). We can also obtain the coordinates of the centroids of each cluster with the `cluster_centers_` attribute of the model (`model.cluster_centers_`).
+Once we have trained the model, we can get the labels of which cluster is associated with each point with the `labels_` attribute of the model (`model.labels_`). We can also obtain the coordinates of the centroids of each cluster with the `cluster_centers_` attribute of the model (`model.cluster_centers_`).
 
 #### Hierarchical Clustering
 
@@ -77,11 +77,11 @@ It is an iterative process composed of several steps:
 5. **Iteration**. Steps 3 and 4 are repeated until all data points are in a single cluster or until a specific number of desired clusters (input hyperparameter) is reached.
 6. **Dendogram**. The result of hierarchical clustering is displayed in a **dendogram**, which is a tree diagram showing the hierarchy of the groups. The data points are located at the leaves of the tree, and larger clusters are formed by combining smaller clusters along the branches of the tree.
 
-![hierarchical-clustering-iterations](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/hierarchical-clustering-iterations.gif?raw=true)
+![Hierarchical clustering iterations](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/hierarchical-clustering-iterations.gif?raw=true)
 
 The dendrogram allows visualizing the hierarchical structure of the clusters and the distance between them. The horizontal cuts in the dendrogram determine the number of clusters obtained by cutting the tree at a certain height.
 
-Hierarchical clustering is useful when the optimal number of clusters is not known in advance or when it is desired to explore the hierarchical structure of the data. However, it can be computationally expensive on large data sets due to the need to calculate all distances between data points.
+Hierarchical clustering is useful when the optimal number of clusters is not known in advance or when it is desired to explore the hierarchical structure of the data. However, it can be computationally expensive on large data sets due to the need to calculate all the distances between data points.
 
 ##### Implementation
 
@@ -103,9 +103,9 @@ plt.figure(figsize = (10, 6))
 
 dendrogram(Z)
 
-plt.title("Dendrograma")
-plt.xlabel("Índices de datos")
-plt.ylabel("Distancia")
+plt.title("Dendrogram")
+plt.xlabel("Data Index")
+plt.ylabel("Distance")
 plt.show()
 ```
 
@@ -115,16 +115,16 @@ We could also use the `scikit-learn` library to implement this model, using the 
 
 **Dimensionality reduction** is a technique used to reduce the number of features or variables in a data set. The main objective of this model is to simplify the representation of the data while maintaining as much relevant information as possible.
 
-In many data sets, especially those with many features, there may be redundancy or correlation between variables, which can make analysis and visualization difficult. Dimensionality reduction addresses this problem by transforming the original data into a lower dimensional space, where the new variables (called **principal components** or **latent features**) represent a combination of the original variables.
+In many data sets, especially those with many features, there may be redundancy or correlation between variables, which can make analysis and visualization difficult. Dimensionality reduction addresses this problem by transforming the original data into a lower-dimensional space, where the new variables (called **principal components** or **latent features**) represent a combination of the original variables.
 
 There are two main approaches to dimensionality reduction:
 
-- **Principal Component Analysis** (**PCA**): Is a linear technique that finds the directions of maximum variance in the data and projects the original data into a lower dimensional space defined by the principal components. The objective is to retain most of the variance in the data while reducing the dimensionality of the data.
+- **Principal Component Analysis** (**PCA**): Is a linear technique that finds the directions of maximum variance in the data and projects the original data into a lower-dimensional space defined by the principal components. The objective is to retain most of the variance in the data while reducing the dimensionality of the data.
 - **Singular Value Decomposition** (**SVD**): A mathematical technique used to factorize a data matrix into three components: which are then used to reduce the dimensionality.
 
 There are many reasons why we would want to use this type of model to simplify the data. We can highlight:
 
-1. **Data simplification and visualization**: In data sets with many features, dimensionality reduction makes it possible to simplify the representation of the data and to visualize them in lower dimensional spaces. This facilitates the interpretation and understanding of the data.
+1. **Data simplification and visualization**: In data sets with many features, dimensionality reduction makes it possible to simplify the representation of the data and to visualize them in lower-dimensional spaces. This facilitates the interpretation and understanding of the data.
 2. **Noise reduction**: By reducing dimensionality, redundant or noisy information can be removed, which can improve data quality and the performance of machine learning models.
 3. **Computational efficiency**: Feature-rich datasets may require increased computational and memory capacity. Dimensionality reduction can help reduce this complexity, resulting in faster training and prediction times.
 4. **Regularization**: In some cases, dimensionality reduction acts as a form of regularization, avoiding overfitting by reducing the complexity of the model.
@@ -133,7 +133,7 @@ There are many reasons why we would want to use this type of model to simplify t
 
 #### PCA
 
-The **PCA** is a dimensionality reduction technique that seeks to transform an original data set with multiple features (dimensions) into a new data set with fewer features, but preserving most of the important information.
+The **PCA** is a dimensionality reduction technique that seeks to transform an original data set with multiple features (dimensions) into a new data set with fewer features while preserving most of the important information.
 
 Imagine that we have a dataset with many characteristics, such as height, weight, age, income and education level of different people. Each person represents a point in a high-dimensional space, where each feature is a dimension. PCA allows us to find new directions or axes in this high-dimensional space, known as principal components. These directions represent the linear combinations of the original characteristics that explain most of the variability in the data. The first principal component captures the largest possible variability in the data set, the second principal component captures the next largest variability, and so on.
 
