@@ -21,13 +21,13 @@ In addition, we can easily implement it using the following functions:
 
 |   Model   |   Classification   |   Regression   |
 |:----------|:-------------------|:---------------|
-| Logistic Regression | `sklearn.linear_model.LogisticRegression` | - |
-| Linear Regression | - | `sklearn.linear_model.LinearRegression` |
-| Regularized Linear Regression | - | `sklearn.linear_model.Lasso`<br />`sklearn.linear_model.Ridge` |
+| Logistic Regression | `sklearn.linear_model.LogisticRegression` | <center>-</center> |
+| Linear Regression | <center>-</center> | `sklearn.linear_model.LinearRegression` |
+| Regularized Linear Regression | <center>-</center> | `sklearn.linear_model.Lasso`<br />`sklearn.linear_model.Ridge` |
 | Decision Tree | `sklearn.tree.DecisionTreeClassifier` | `sklearn.tree.DecisionTreeRegressor` |
 | Random Forest | `sklearn.ensemble.RandomForestClassifier` | `sklearn.ensemble.RandomForestRegressor` |
 | Boosting | `sklearn.ensemble.GradientBoostingClassifier`<br />`xgboost.XGBClassifier` | `sklearn.ensemble.GradientBoostingRegressor`<br />`xgboost.XGBRegressor` |
-| Naive Bayes | `sklearn.naive_bayes.BernoulliNB`<br />`sklearn.naive_bayes.MultinomialNB`<br />`sklearn.naive_bayes.GaussianNB` | - |
+| Naive Bayes | `sklearn.naive_bayes.BernoulliNB`<br />`sklearn.naive_bayes.MultinomialNB`<br />`sklearn.naive_bayes.GaussianNB` | <center>-</center> |
 | K Nearest Neighbors | `sklearn.neighbors.KNeighborsClassifier` | `sklearn.neighbors.KNeighborsRegressor` |
 
 ### Description and when to use
