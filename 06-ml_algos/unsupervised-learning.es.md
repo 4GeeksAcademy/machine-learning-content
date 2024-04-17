@@ -18,12 +18,12 @@ El **clustering** es una técnica del aprendizaje no supervisado que se utiliza 
 Existen varios algoritmos de clustering, pero los más comunes son:
 
 - **K-Means**: Es uno de los algoritmos de clustering más populares. Se inicia definiendo `K` centroides (punto que representa el centro geométrico de un cluster) aleatorios, luego asigna cada punto de datos al centroide más cercano y recalcula los centroides como el promedio de los puntos asignados. Repite este proceso hasta que los centroides convergen.
-- **Clustering jerárquico** (*Hierarchical Clustering*): Comienza considerando que cada punto de datos es su propio cluster y fusiona gradualmente los clusters más cercanos en uno solo. Esto forma una jerarquía que se puede representar en un dendograma.
+- **Clustering jerárquico** (*Hierarchical Clustering*): Comienza considerando que cada punto de datos es su propio cluster y fusiona gradualmente los clusters más cercanos en uno solo. Esto forma una jerarquía que se puede representar en un dendrograma.
 - **DBSCAN** (*Density-Based Spatial Clustering of Applications with Noise*): Agrupa puntos de datos que están cerca unos de otros y tienen suficientes vecinos en su vecindario. Permite encontrar clústeres de formas y tamaños irregulares y también detectar puntos atípicos.
 
 #### K-Means
 
-El algoritmo **K-Means** es una técnica de agrupamiento que tiene como objetivo dividir un conjunto de datos en `K` clusters (definido como parámetro de entrada), de manera que los puntos dentro de cada clúster sean similares entre sí y diferentes a los puntos en otros clústeres.
+El algoritmo **K-Means** es una técnica de agrupamiento que tiene como objetivo dividir un conjunto de datos en `K` clústeres (definido como parámetro de entrada), de manera que los puntos dentro de cada clúster sean similares entre sí y diferentes a los puntos en otros clústeres.
 
 Es un proceso iterativo compuesto de varios pasos:
 
@@ -33,7 +33,7 @@ Es un proceso iterativo compuesto de varios pasos:
 4. **Iteración**. Se repiten los pasos 2 y 3 hasta que los centroides ya no cambian significativamente y los puntos están estables en sus clusters. Es decir, el algoritmo continúa asignando y actualizando puntos hasta que se alcanza la convergencia.
 5. **Resultado**. Una vez que el algoritmo ha convergido, los puntos del conjunto de datos están agrupados en `K` clusters o grupos, y cada clusterestá representado por su centroide. Los grupos obtenidos representan conjuntos de puntos similares.
 
-![k-means-iterations](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/k-means-iterations.gif?raw=true)
+![K-means iteraciones](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/k-means-iterations.gif?raw=true)
 
 El reto de encontrar el `K` óptimo puede ser abordado mediante una optimización de hiperparámetros o mediante procedimientos más analíticos como el **método del codo** (*elbow method*), del que puedes encontrar más información [aquí](https://www.analyticsvidhya.com/blog/2021/01/in-depth-intuition-of-k-means-clustering-algorithm-in-machine-learning/)
 
@@ -60,7 +60,7 @@ new_data = np.array([[2, 3], [0, 4], [3, 1]])
 predictions = model.predict(new_data)
 ```
 
-En este código de ejemplo generamos 2 clusters (hiperparámetro `n_clusters`) y establecemos la semilla ya que es un modelo con un componente de inicialización aleatorio.
+En este código de ejemplo generamos 2 clusters (hiperparámetro `n_clusters`) y establecemos la semilla, ya que es un modelo con un componente de inicialización aleatorio.
 
 Una vez hemos entrenado el modelo podemos obtener las etiquetas de qué cluster se asocia a cada punto con el atributo `labels_` del modelo (`model.labels_`). También podemos obtener las coordenadas de los centroides de cada cluster con el atributo `cluster_centers_` del modelo (`model.cluster_centers_`).
 
@@ -75,9 +75,9 @@ Es un proceso iterativo compuesto de varios pasos:
 3. **Unión de clusters**. Los dos clusters más cercanos se combinan para formar uno nuevo más grande. La distancia entre dos clusters se puede calcular de muchas formas.
 4. **Actualización de la matriz de similitud**. La matriz de similitud se actualiza para reflejar la distancia entre los nuevos clusters y los clusters restantes.
 5. **Iteración**. Se repiten los pasos 3 y 4 hasta que todos los puntos de datos se encuentren en un único solo cluster o hasta que se alcance un número específico de grupos deseados (hiperparámetro de entrada).
-6. **Dendograma**. El resultado del clustering jerárquico se muestra en un **dendograma**, que es un diagrama de árbol que muestra la jerarquía de los grupos. Los puntos de datos se encuentran en las hojas del árbo, y los clusters más grandes se forman combinando clusters más pequeños lo largo de las ramas del árbol. 
+6. **Dendrograma**. El resultado del clustering jerárquico se muestra en un **dendrograma**, que es un diagrama de árbol que muestra la jerarquía de los grupos. Los puntos de datos se encuentran en las hojas del árbol, y los clusters más grandes se forman combinando clusters más pequeños lo largo de las ramas del árbol. 
 
-![hierarchical-clustering-iterations](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/hierarchical-clustering-iterations.gif?raw=true)
+![Clustering jerárquico iteraciones](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/hierarchical-clustering-iterations.gif?raw=true)
 
 El dendrograma permite visualizar la estructura jerárquica de los clústeres y la distancia entre ellos. Los cortes horizontales en el dendrograma determinan la cantidad de clústeres obtenidos al cortar el árbol a una cierta altura.
 
@@ -113,16 +113,16 @@ También podríamos utilizar la librería `scikit-learn` para implementar este m
 
 ### Reducción de dimensionalidad
 
-La **reducción de dimensionalidad** (*dimensionality reduction*) es una técnica utilizada para disminuir la cantidad de características o variables en un conjunto de datos. El objetivo principal este modelo es simplificar la representación de los datos, manteniendo al mismo tiempo la mayor cantidad posible de información relevante.
+La **reducción de dimensionalidad** (*dimensionality reduction*) es una técnica utilizada para disminuir la cantidad de características o variables en un conjunto de datos. El objetivo principal de este modelo es simplificar la representación de los datos, manteniendo al mismo tiempo la mayor cantidad posible de información relevante.
 
 En muchos conjuntos de datos, especialmente en aquellos con muchas características, puede haber redundancia o correlación entre las variables, lo que puede dificultar el análisis y la visualización. La reducción de dimensionalidad aborda este problema al transformar los datos originales en un espacio de menor dimensión, donde las nuevas variables (llamadas **componentes principales** o **características latentes**) representan una combinación de las variables originales.
 
 Hay dos enfoques principales para la reducción de dimensionalidad:
 
-- **Análisis de Componentes Principales** (**PCA**, *Principal Component Analysis*): Es una técnica lineal que encuentra las direcciones de máxima varianza en los datos y proyecta los datos originales en un espacio de menor dimensión definido por las componentes principales. El objetivo es retener la mayor parte de la varianza en los datos mientras se reduce la dimensionalidad de los mismos.
+- **Análisis de Componentes Principales** (**PCA**, *Principal Component Analysis*): Es una técnica lineal que encuentra las direcciones de máxima varianza en los datos y proyecta los datos originales en un espacio de menor dimensión definido por los componentes principales. El objetivo es retener la mayor parte de la varianza en los datos mientras se reduce la dimensionalidad de los mismos.
 - **Descomposición en Valores Singulares** (**SVD**, *Singular Value Decomposition*): Es una técnica matemática utilizada para factorizar una matriz de datos en tres componentes: que luego se utilizan para reducir la dimensionalidad.
 
-Existen muchos mmotivos por los cuales querríamos utilizar este tipo de modelos para simplificar los datos. Podemos destacar:
+Existen muchos motivos por los cuales querríamos utilizar este tipo de modelos para simplificar los datos. Podemos destacar:
 
 1. **Simplificación y visualización de datos**: En conjuntos de datos con muchas características, la reducción de dimensionalidad permite simplificar la representación de los datos y visualizarlos en espacios de menor dimensión. Esto facilita la interpretación y comprensión de los datos.
 2. **Reducción de ruido**: Al reducir la dimensionalidad, se puede eliminar información redundante o ruidosa, lo que puede mejorar la calidad de los datos y el rendimiento de los modelos de aprendizaje automático.
