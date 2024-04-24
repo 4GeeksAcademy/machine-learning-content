@@ -6,11 +6,11 @@ Imagine a two-dimensional dataset where data from two classes are clearly separa
 
 The **margin** is the distance between the separating hyperplane and the nearest support vectors of each class. An SVM seeks to maximize this margin, since the higher the value, the greater the increase in robustness and generalizability of the model.
 
-![svm-logical](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/svm-logical.PNG?raw=true)
+![SVM logical](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/svm-logical.PNG?raw=true)
 
 A **kernel** is a function that takes two inputs and transforms them into a single output value. This function is used to transform data that is not linearly separable into a higher dimensional space where it is.
 
-Suppose we have two types of fruit on a table: apples and bananas. If all the apples are on one side and all the bananas are on another, we can easily draw a straight line to separate them. But what if they are mixed and we can't separate them with a straight line? This is where the kernel comes in: let's imagine we use our hand to gently tap the center of the table making the fruits jump in the air. While they are in the air (we add a new dimension: height) we could draw a plane (instead of a line) to separate apples and bananas. Then, when the fruits land back on the table, that plane would translate into a curved line or a more complex shape on the table that separates the fruits. The kernel is that hand that makes the fruit jump: it transforms the original data into a space where it can be more easily separated.
+Suppose we have two types of fruit on a table: apples and bananas. If all the apples are on one side and all the bananas are on another, we can easily draw a straight line to separate them. But what if they are mixed, and we can't separate them with a straight line? This is where the kernel comes in: let's imagine we use our hand to gently tap the center of the table, making the fruits jump in the air. While they are in the air (we add a new dimension: height) we could draw a plane (instead of a line) to separate apples and bananas. Then, when the fruits land back on the table, that plane would translate into a curved line or a more complex shape on the table that separates the fruits. The kernel is that hand that makes the fruit jump: it transforms the original data into a space where it can be more easily separated.
 
 SVMs are powerful tools and have been used in a variety of applications, from text classification and image recognition to bioinformatics, including protein classification and detection of genetically predisposed diseases.
 
@@ -27,7 +27,7 @@ Another very important hyperparameter is the `random_state`, which controls the 
 
 ### Using the model in Python
 
-You can easily using `scikit-learn` program these methods post EDA:
+You can easily use `scikit-learn` to program these methods post EDA:
 
 ```py
 from sklearn.svm import SVC
