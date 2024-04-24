@@ -32,7 +32,7 @@ Creating an NLP model involves several steps, from data collection to model depl
 4. **Model building**:
     - **Architecture selection**: Depending on the task, you can opt for traditional Machine Learning models, recurrent neural networks (RNN), convolutional neural networks (CNN) for text, transformers, etc.
     - **Hyperparameter configuration**: Define things like learning rate, batch size, number of layers, etc.
-    - **Model training**: Use the training dataset to train the model, while monitoring its performance on the validation set.
+    - **Model training**: Use the training dataset to train the model while monitoring its performance on the validation set.
 5. **Model evaluation**: Once the model is trained, evaluate it using the appropriate metrics (accuracy, recall, F1-score, etc.) on the test set.
 6. **Optimization**: If the performance is not satisfactory, consider:
     - Adjust hyperparameters.
@@ -41,4 +41,4 @@ Creating an NLP model involves several steps, from data collection to model depl
     - Implement regularization techniques.
 7. **Deployment**: Once you are satisfied with the model's performance, you can deploy it to a server or application so that others can use it.
 
-These steps provide a general structure, but each NLP project may have its own specificities and require adaptations. NLP model building is both an art and a science, and often requires experimentation and iteration.
+These steps provide a general structure, but each NLP project may have its own specificities and require adaptations. NLP model building is both an art and a science, and it often requires experimentation and iteration.
