@@ -14,7 +14,7 @@ Algunas de las tareas principales del NLP incluyen:
 6. **Traducción automática**: Traducir texto de un idioma a otro.
 7. **Respuesta a preguntas**: Generar respuestas a preguntas formuladas en lenguaje natural.
 8. **Generación de lenguaje natural**: Crear textos coherentes y contextualmente relevantes.
-9. **Sumarización automática**: Crear un resumen conciso de un texto más largo.
+9. **Resumen automático**: Crear un resumen conciso de un texto más largo.
 
 ### Estructura
 
