@@ -285,7 +285,7 @@ We will have to fill it with the following information:
 - `Root Directory`: In this case, we have developed the code inside the `src` folder, which includes the Python script, the HTML template and the project libraries (file `requirements.txt`), so we should enter `src`.
 - `Runtime`: The code is Python, so we will leave the default value, `Python 3`.
 - `Build Command`: We will leave the default value, `pip install -r requirements.txt`.
-- `Start Command`: We are already friendly with this command. We have used it in the development gunicorn, so we will leave the default value, `gunicorn app:app`.
+- `Start Command`: We are already friendly with this command. We have used it in the development, so we will leave the default value, `gunicorn app:app`.
 
 Finally, we will choose the free rate. The form, once filled in, should have the following information:
 
