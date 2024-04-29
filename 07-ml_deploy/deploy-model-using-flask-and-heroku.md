@@ -27,7 +27,7 @@ For predicting survival in the Titanic from various attributes, we first need to
 
 ### Step 1: Activate environment and install Flask
 
-In the command line, enter your project's directory. Once there, activate your environment and use pip to install Flask.
+In the command line, enter your project's directory. Once there, activate your environment and use `pip` to install Flask.
 
 ```bash
 pip install Flask
@@ -58,19 +58,19 @@ Save and close the file.
 
 To run your web application, you will first tell Flask where to find the application (the `hello.py` file in your case) with the `FLASK_APP` environment variable:
 
-```bash
+```py
 export FLASK_APP=hello
 ```
 
 Then, execute it in development mode with the environment variable `FLASK_ENV`:
 
-```bash
+```py
 export FLASK_ENV=development
 ```
 
 Finally, execute the app using `flask run`:
 
-```py
+```bash
 flask run
 ```
 
@@ -93,7 +93,7 @@ The above result has some information, such as:
 
 - The environment in which the application is running.
 
-- Debug mode: on means that the Flask debugger is running. This is useful during development because it gives us detailed error messages when something goes wrong, which makes it easier to troubleshoot problems.
+- **Debug mode: on** means that the Flask debugger is running. This is useful during development because it gives us detailed error messages when something goes wrong, which makes it easier to troubleshoot problems.
 
 - The application runs locally on the URL `http://127.0.0.1:5000/`, *127.0.0.1* is the IP representing your computer's localhost and *:5000* is the port number.
 
@@ -147,7 +147,7 @@ You will probably see an error showing **template not found (index.html)**.
 
 Let's create folder templates. In your application, you will use templates to render HTML, which will display in the user's browser. This folder contains our HTML form file `index.html`. Start editing your `index.html` file by writing the following code:
 
-```py
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -168,7 +168,7 @@ You can create a `style.css` stylesheet file to add CSS to your application. Fir
 
 Inside your `css` directory, create a `style.css` file and add the following rule:
 
-```py
+```css
 h1 {
     border: 2px #eee solid;
     color: brown;
@@ -183,7 +183,7 @@ Save and close the file.
 
 In your `index.html` file you will add a link to your `style.css` file:
 
-```py
+```html
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
@@ -199,7 +199,7 @@ After updating your application's index page, you will notice that the **Welcome
 
 You can put the style you want to your `style.css` file. However, the Bootstrap tool kit can help you with this if you are not an expert. Now, if your application will have more than one page, then you can avoid unnecessary repetition of code with the help of a base template file, from which all your HTML files will inherit. If that is the case, you can write the following code in your `base.html` file:
 
-```py
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -253,7 +253,7 @@ However, the following highlighted parts are specific to the Jinja template engi
 
 Now that you have a `base.html` template, you can inherit that code into `index.html` by only adding the following code in your `index.html`:
 
-```py
+```html
 {% extends 'base.html' %}
 
 {% block content %}
@@ -269,7 +269,7 @@ Let's see how we should code a form requesting the attributes of our passengers.
 
 In the Titanic form that you saw at the beginning of this lesson, we were only requesting the numerical features for prediction, but in the case where we include categorical features that were previously label encoded, we need to put the same values in the HTML form. The following example shows how the form should be coded in case our 'Sex' feature would have been assigned 0 for Male and 1 for Female:
 
-```py
+```html
 <label for="Sex">Gender</label>
     <select id="relation" name="relation">
       <option value="0">Male</option>
@@ -324,7 +324,7 @@ This result/prediction (whether the passenger survives or not) is then passed as
 
 Create the following `result.html` file and add it to the templates folder.
 
-```py
+```html
 <!doctype html>
 <html>
    <body>
@@ -371,10 +371,10 @@ You should already have an account on Heroku, but if you don't, go ahead and cre
 
 Let's make sure we also have the following before deploying to Heroku:
 
-1. Gunicorn handles requests and takes care of complicated things. Download `gunicorn` to your virtual environment. You can use `pip` to download it.
+1. Gunicorn handles requests and takes care of complicated things. Download `gunicorn` to your virtual environment. You can use `` to download it.
 
 ```bash
-pip install gunicorn
+ install gunicorn
 ```
 
 2. We have installed a lot of libraries and other important files like flask, gunicorn, sklearn etc. We need to tell Heroku that our project requires all these libraries to successfully run the application. This is done by creating a `requirements.txt` file.
@@ -382,7 +382,7 @@ pip install gunicorn
 
 3. `Procfile` is a text file in the root directory of your application to explicitly declare what command should be executed to start your app. This is an essential requirement for Heroku. This file tells Heroku we want to use the web process with the command gunicorn and the app name.
 
-```py
+```bash
 web: gunicorn app:app
 ```
 
