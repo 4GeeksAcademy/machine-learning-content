@@ -4,18 +4,18 @@ Los modelos de Machine Learning son herramientas poderosas para hacer prediccion
 
 Flask es un marco web de Python pequeño y liviano que proporciona herramientas y características útiles que facilitan la creación de aplicaciones web usando solo un archivo de Python.
 
-Heroku es una plataforma en la nube que le permite crear, entregar, monitorear y escalar aplicaciones. Heroku hace que los procesos de implementación, configuración, escalado, ajuste y administración de aplicaciones sean lo más simples y directos posible para que los desarrolladores puedan concentrarse en crear excelentes aplicaciones. También incluye un rico ecosistema de servicios de datos administrados.
+Heroku es una plataforma en la nube que le permite crear, entregar, monitorear y escalar aplicaciones. Heroku hace que los procesos de implementación, configuración, escalado, ajuste y administración de aplicaciones sean lo más simple y directos posible para que los desarrolladores puedan concentrarse en crear excelentes aplicaciones. También incluye un rico ecosistema de servicios de datos administrados.
 
-Imaginemos que acabamos de terminar de crear nuestro modelo de predicción de supervivencia del Titanic. ¿Ahora que?
+Imaginemos que acabamos de terminar de crear nuestro modelo de predicción de supervivencia del Titanic. ¿Ahora qué?
 
 Para predecir con datos desconocidos, tenemos que implementarlos en Internet para que el mundo exterior pueda usarlos.
 
-Para eso, necesitaremos guardar el modelo para que podamos predecir los valores más tarde. Hacemos uso de pickle en python, que es un poderoso algoritmo para serializar y deserializar una estructura de objeto de Python, pero también hay otras herramientas. El siguiente código guarda el modelo usando Pickle:
+Para eso, necesitaremos guardar el modelo para que podamos predecir los valores más tarde. Hacemos uso de *Pickle* en Python, que es un poderoso algoritmo para serializar y deserializar una estructura de objeto de Python, pero también hay otras herramientas. El siguiente código guarda el modelo usando Pickle:
 
 ```py
-# Serializando nuestro modelo a un archivo llamado titanic_model.pkl
+# Serializando nuestro modelo a un archivo llamado model.pkl
 import pickle
-filename = 'titanic_model.pkl'
+filename = 'model.pkl'
 pickle.dump(classifier, open(filename,'wb'))
 ```
 
@@ -27,7 +27,7 @@ Para predecir la supervivencia en el Titanic a partir de varios atributos, prime
 
 ### Paso 1: Activa el entorno e instala Flask
 
-En la línea de comando ingresa el directorio de tu proyecto. Una vez allí, activa su entorno y usa pip para instalar Flask.
+En la línea de comando ingresa el directorio de tu proyecto. Una vez allí, activa su entorno y usa `pip` para instalar Flask.
 
 ```bash
 pip install Flask
@@ -58,19 +58,19 @@ Guarda y cierra el archivo.
 
 Para ejecutar su aplicación web, primero le indicarás a Flask dónde encontrar la aplicación (el archivo `hello.py` en su caso) con la variable de entorno `FLASK_APP`:
 
-```bash
+```py
 export FLASK_APP=hello
 ```
 
 Luego, ejecútalo en modo desarrollo con la variable de entorno `FLASK_ENV`:
 
-```bash
+```py
 export FLASK_ENV=development
 ```
 
 Finalmente, ejecuta la aplicación usando `flask run`:
 
-```py
+```bash
 flask run
 ```
 
@@ -87,13 +87,13 @@ Output
  * Debugger PIN: 813-894-335
  ```
 
-El resultado anterior tiene varias informaciones, tales como:
+El resultado anterior contiene diversa información, tal como:
 
 - El nombre de la aplicación que estás ejecutando.
 
 - El entorno en el que se ejecuta la aplicación.
 
-- Debug mode: on significa que el depurador Flask se está ejecutando. Esto es útil durante el desarrollo porque nos brinda mensajes de error detallados cuando algo sale mal, lo que facilita la resolución de problemas.
+- **Debug mode: on** significa que el depurador Flask se está ejecutando. Esto es útil durante el desarrollo porque nos brinda mensajes de error detallados cuando algo sale mal, lo que facilita la resolución de problemas.
 
 - La aplicación se ejecuta localmente en la URL `http://127.0.0.1:5000/`, *127.0.0.1* es la IP que representa el host local de su computadora y *:5000* es el número de puerto.
 
@@ -103,7 +103,7 @@ Ahora tienes una pequeña aplicación web Flask. Ha ejecutado su aplicación y h
 
 ### Paso 3: Usar plantillas HTML
 
-Actualmente, su aplicación solo muestra un mensaje simple sin HTML. Las aplicaciones web utilizan principalmente HTML para mostrar información al visitante, por lo que ahora trabajará para incorporar un archivo HTML en tu aplicación, que se puede mostrar en el navegador web.
+Actualmente, su aplicación solo muestra un mensaje simple sin HTML. Las aplicaciones web utilizan principalmente HTML para mostrar información al visitante, por lo que ahora trabajarás para incorporar un archivo HTML en tu aplicación, que se puede mostrar en el navegador web.
 
 Flask proporciona una función auxiliar `render_template()` que permite el uso del motor de plantillas Jinja. Esto hará que la administración de HTML sea mucho más fácil al escribir su código HTML en archivos `.html`, además de usar la lógica en su código HTML. Utilizarás estos archivos HTML (plantillas) para crear tu aplicación web.
 
@@ -130,7 +130,7 @@ La función de vista `index()` devuelve el resultado de invocar `render_template
 
 Guarda el archivo y ciérralo.
 
-Deten el servidor de desarrollo en tu otro terminal ejecutando la aplicación hello con `Ctrl + c`.
+Detén el servidor de desarrollo en tu otro terminal ejecutando la aplicación hello con `Ctrl + c`.
 
 Antes de ejecutar la aplicación, asegúrate de especificar correctamente el valor de la variable de entorno FLASK_APP, ya que ahora no estás utilizando la aplicación hello.
 
@@ -142,11 +142,11 @@ Cuando abras la URL `http://127.0.0.1:5000` en tu navegador, se mostrará la pá
 
 Si haces clic en esta línea, el depurador revelará más código para que tengas más contexto que te ayude a resolver el problema.
 
-Probablemente verás un error que muestra **template not found (index.html)**.
+Probablemente, verás un error que muestra **template not found (index.html)**.
 
 Vamos a crear plantillas de carpetas. En tu aplicación, utilizarás plantillas para representar HTML que se mostrará en el navegador del usuario. Esta carpeta contiene nuestro archivo de formulario HTML `index.html`. Comienza a editar tu archivo `index.html` escribiendo el siguiente código:
 
-```py
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -167,7 +167,7 @@ Puedes crear un archivo de hoja de estilo `style.css` para agregar CSS a tu apli
 
 Dentro de su directorio `css`, crea un archivo `style.css` y agrega la siguiente regla:
 
-```py
+```css
 h1 {
     border: 2px #eee solid;
     color: brown;
@@ -181,22 +181,22 @@ Guarda y cierra el archivo.
 
 En tu archivo `index.html` agregarás un enlace a tu archivo `style.css`:
 
-```py
+```html
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
     <title>Welcome to my Titanic Survival prediction app</title>
 </head>
 ```
-Aquí utilizas la función auxiliar url_for() para generar la ubicación de archivo adecuada. El primer argumento especifica que está vinculando a un archivo estático y el segundo argumento es la ruta al archivo dentro del directorio estático.
+Aquí utilizas la función auxiliar `url_for()` para generar la ubicación de archivo adecuada. El primer argumento especifica que está vinculando a un archivo estático y el segundo argumento es la ruta al archivo dentro del directorio estático.
 
 Guarda y cierra el archivo.
 
-Después de actualizar la página de índice de tu aplicación, notarás que el texto **Welcome to my Titanic Survival prediction app** ahora es marrón, está centrado y enmarcado dentro de un borde.
+Después de actualizar la página *index* de tu aplicación, notarás que el texto **Welcome to my Titanic Survival prediction app** ahora es marrón, está centrado y enmarcado dentro de un borde.
 
 Puedes poner el estilo que desees en tu archivo `style.css`. Sin embargo, el kit de herramientas de Bootstrap puede ayudarte con esto si no eres un experto. Ahora, si tu aplicación tendrá más de una página, puedes evitar la repetición innecesaria de código con la ayuda de un archivo de plantilla base, del cual heredarán todos tus archivos HTML. Si ese es el caso, puedes escribir el siguiente código en tu archivo `base.html`:
 
-```py
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -238,19 +238,19 @@ Puedes poner el estilo que desees en tu archivo `style.css`. Sin embargo, el kit
 
 Guarda y cierra el archivo una vez que hayas terminado de editarlo.
 
-La mayor parte del código en el bloque anterior es HTML estándar y requiere código para Bootstrap. Los tags <meta> brindan información para el navegador web, el tag <link> vincula a los archivos CSS de Boostrap y los tags <script> son vínculos al código JavaScript que habilita alguna funcionalidad adicional de Boostrap.
+La mayor parte del código en el bloque anterior es HTML estándar y código requerido para Bootstrap. Los tags `<meta>` brindan información para el navegador web, el tag `<link>` vincula a los archivos CSS de Bootstrap y los tags `<script>` son vínculos al código JavaScript que habilita alguna funcionalidad adicional de Bootstrap.
 
 Sin embargo, las siguientes partes resaltadas son específicas del motor de plantillas Jinja:
 
-- {% block title %} {% endblock %}: un bloque que sirve como marcador de posición para un título. Luego lo usarás en otras plantillas para dar un título personalizado a cada página de tu aplicación sin tener que volver a escribir la sección <head> completa cada vez.
+- `{% block title %} {% endblock %}`: un bloque que sirve como marcador de posición para un título. Luego lo usarás en otras plantillas para dar un título personalizado a cada página de tu aplicación sin tener que volver a escribir la sección `<head>` completa cada vez.
 
-- {{ url_for('index')}: una invocación de función que devolverá la URL para la función de vista index(). Esto es diferente de la invocación anterior de url_for() que usó para vincular a un archivo CSS estático, porque solo requiere un argumento, que es el nombre de la función de vista, y vincula a la ruta asociada con la función en lugar de a un archivo estático expediente.
+- `{{ url_for('index')}}`: una invocación de función que devolverá la URL para la función de vista `index()`. Esto es diferente de la invocación anterior de `url_for()` que usó para vincular a un archivo CSS estático, porque solo requiere un argumento, que es el nombre de la función de vista, y vincula a la ruta asociada con la función en lugar de a un archivo estático expediente.
 
-- {% block content %} {% endblock %}: otro bloque que será reemplazado por contenido dependiendo de la plantilla secundaria (plantillas que heredan de base.html) que lo anulará.
+- `{% block content %} {% endblock %}`: otro bloque que será reemplazado por contenido dependiendo de la plantilla secundaria (plantillas que heredan de `base.html`) que lo anulará.
 
-Ahora que tienes una plantilla base.html, puedes heredar ese código a index.html agregando solo el siguiente código en tu index.html:
+Ahora que tienes una plantilla `base.html`, puedes heredar ese código a `index.html` agregando solo el siguiente código en tu `index.html`:
 
-```py
+```html
 {% extends 'base.html' %}
 
 {% block content %}
@@ -258,15 +258,15 @@ Ahora que tienes una plantilla base.html, puedes heredar ese código a index.htm
 {% endblock %}
 ```
 
-Has utilizado plantillas HTML y archivos estáticos en Flask de forma limpia. Sin embargo, para simplificar las cosas para su primera aplicación web, conservaremos solo el archivo index.html.
+Has utilizado plantillas HTML y archivos estáticos en Flask de forma limpia. Sin embargo, para simplificar las cosas para su primera aplicación web, conservaremos solo el archivo `index.html`.
 
 Veamos cómo debemos codificar un formulario solicitando los atributos de nuestros pasajeros.
 
 > Para poder predecir los datos correctamente, los valores correspondientes de cada etiqueta deben coincidir con el valor de cada entrada seleccionada.
 
-En el formulario Titanic que viste al comienzo de esta lección, solo solicitamos las características numéricas para la predicción, pero en el caso de que incluyamos características categóricas que fueron previamente codificadas con etiquetas, necesitamos poner los mismos valores en el formulario html. El siguiente ejemplo muestra cómo se debe codificar el formulario en caso de que a nuestra función 'Sex' se le haya asignado 0 para Hombre y 1 para Mujer:
+En el formulario Titanic que viste al comienzo de esta lección, solo solicitamos las características numéricas para la predicción, pero en el caso de que incluyamos características categóricas que fueron previamente codificadas con etiquetas, necesitamos poner los mismos valores en el formulario HTML. El siguiente ejemplo muestra cómo se debe codificar el formulario en caso de que a nuestra función 'Sex' se le haya asignado 0 para Hombre (*Male*) y 1 para Mujer (*Female*):
 
-```py
+```html
 <label for="Sex">Gender</label>
     <select id="relation" name="relation">
       <option value="0">Male</option>
@@ -274,15 +274,12 @@ En el formulario Titanic que viste al comienzo de esta lección, solo solicitamo
     </select>
 ```
 
-Puedes encontrar un par de ejemplos de formularios en los siguientes enlaces:
-
-https://github.com/4GeeksAcademy/machine-learning-content/blob/master/07-1d-ml_deploy/form-examples/index_example1.html
-
-https://github.com/4GeeksAcademy/machine-learning-content/blob/master/07-1d-ml_deploy/form-examples/index_example2.html
+Puedes encontrar un par de ejemplos de formularios en el siguiente enlace:
 
 https://www.geeksforgeeks.org/html-design-form/
 
-### **Paso 4:** Predecir el resultado de supervivencia
+
+### Paso 4: Predecir el resultado de supervivencia
 
 Ejecutemos la aplicación.
 
@@ -291,10 +288,10 @@ export FLASK_APP=app.py
 run flask
 ```
 
-Cuando alguien envía el formulario, la página web debe mostrar el resultado si un pasajero sobreviviría o moriría en el Titanic. Para esto, necesitamos el archivo modelo (model.pkl) que creamos antes, en la misma carpeta del proyecto. Agregamos el siguiente código al archivo app.py:
+Cuando alguien envía el formulario, la página web debe mostrar el resultado si un pasajero sobreviviría o moriría en el Titanic. Para esto, necesitamos el archivo modelo (`model.pkl`) que creamos antes, en la misma carpeta del proyecto. Agregamos el siguiente código al archivo `app.py`:
 
 ```py
-# función de predicción
+# Función de predicción
 def ValuePredictor(to_predict_list):
     to_predict = np.array(to_predict_list).reshape(1,12)
     loaded_model = pickle.load(open("model.pkl","rb"))
@@ -306,7 +303,7 @@ def ValuePredictor(to_predict_list):
 def result():
     if request.method == 'POST':
         to_predict_list = request.form.to_dict()
-        to_predict_list=list(to_predict_list.values())
+        to_predict_list = list(to_predict_list.values())
         to_predict_list = list(map(int, to_predict_list))
         result = ValuePredictor(to_predict_list)
         
@@ -318,22 +315,22 @@ def result():
         return render_template("result.html",prediction=prediction) 
 ```
 
-Aquí, después de enviar el formulario, los valores del formulario se almacenan en la variable to_predict_list en forma de diccionario. Lo convertimos en una lista de los valores del diccionario y lo pasamos como argumento a la función ValuePredictor(). En esta función, cargamos el archivo model.pkl y predecimos los nuevos valores y devolvemos el resultado.
+Aquí, después de enviar el formulario, los valores del formulario se almacenan en la variable `to_predict_list` en forma de diccionario. Lo convertimos en una lista de los valores del diccionario y lo pasamos como argumento a la función `ValuePredictor()`. En esta función, cargamos el archivo `model.pkl` y predecimos los nuevos valores y devolvemos el resultado.
 
-Este resultado/predicción (Pasajero sobrevive o no) se pasa como argumento al motor de plantilla con la página html que se mostrará.
+Este resultado/predicción (si el pasajero sobrevive o no) se pasa como argumento al motor de plantilla con la página HTML que se mostrará.
 
-Crea el siguiente archivo result.html y agrégalo a la carpeta de plantillas.
+Crea el siguiente archivo `result.html` y agrégalo a la carpeta *templates*.
 
-```py
+```html
 <!doctype html>
 <html>
    <body>
-       <h1> {{ prediction }}</h1>
+       <h1>{{ prediction }}</h1>
    </body>
 </html>
 ```
 
-**Un código alternativo para todo el archivo app.py podría ser:**
+**Un código alternativo para todo el archivo `app.py` podría ser:**
 
 ```py
 import numpy as np
@@ -341,9 +338,9 @@ from flask import Flask, request, render_template
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('titanic_model.pkl', 'rb'))
+model = pickle.load(open('model.pkl', 'rb'))
 
-@app.route('/') #http://www.google.com/
+@app.route('/')  # http://www.google.com/
 def home():
     return render_template('index.html')
 @app.route('/predict', methods=['POST'])
@@ -371,39 +368,39 @@ Ya deberías tener una cuenta en Heroku, pero si no la tienes, continúa y crea 
 
 Asegurémonos de tener también lo siguiente antes de implementar en Heroku:
 
-1. Gunicorn maneja las solicitudes y se encarga de las cosas complicadas. Descarga gunicorn a tu entorno virtual. Puedes usar pip para descargarlo.
+1. Gunicorn maneja las solicitudes y se encarga de las cosas complicadas. Descarga `gunicorn` en tu entorno virtual. Puedes usar `pip` para descargarlo.
 
 ```bash
 pip install gunicorn
 ```
 
-2. Hemos instalado muchas bibliotecas y otros archivos importantes como flask, gunicorn, sklearn, etc. Necesitamos decirle a Heroku que nuestro proyecto requiere todas estas bibliotecas para ejecutar la aplicación con éxito. Esto se hace creando un archivo requirements.txt.
+2. Hemos instalado muchas bibliotecas y otros archivos importantes como flask, gunicorn, sklearn, etc. Necesitamos decirle a Heroku que nuestro proyecto requiere todas estas bibliotecas para ejecutar la aplicación con éxito. Esto se hace creando un archivo `requirements.txt`.
 
-3. Procfile es un archivo de texto en el directorio raíz de tu aplicación, para declarar explícitamente qué comando debe ejecutarse para iniciar tu aplicación. Este es un requisito esencial para Heroku. Este archivo le dice a Heroku que queremos usar el proceso web con el comando gunicorn y el nombre de la aplicación.
+3. `Procfile` es un archivo de texto en el directorio raíz de tu aplicación, para declarar explícitamente qué comando debe ejecutarse para iniciar tu aplicación. Este es un requisito esencial para Heroku. Este archivo le dice a Heroku que queremos usar el proceso web con el comando gunicorn y el nombre de la aplicación.
 
-```py
+```bash
 web: gunicorn app:app
 ```
 
 Tu estructura actual debería ser algo como esto:
 
-![flask-heroku-structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-heroku-structure.jpg?raw=true)
+![Estructura actual del repositorio](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-heroku-structure.jpg?raw=true)
 
-4. Finalmente, usa un archivo .gitignore para excluir archivos innecesarios que no queremos implementar en Heroku.
+4. Finalmente, usa un archivo `.gitignore` para excluir archivos innecesarios que no queremos implementar en Heroku.
 
 ¡Estamos listos! ¡Envía tu proyecto a Heroku! Si deseas hacerlo directamente en el sitio web de Heroku, puedes hacerlo de la siguiente manera:
 
-- Haz clic en 'Crear una nueva aplicación'
+- Haz clic en 'Create a new app'
 
-- En la pestaña 'implementar': vincula la aplicación Heroku a tu cuenta de Github y selecciona el repositorio para conectarse.
+- En la pestaña 'deploy': vincula la aplicación Heroku a tu cuenta de GitHub y selecciona el repositorio para conectarse.
 
-- Desplázate hacia abajo y elije 'despliegue manual'. Después de asegurarte de que estás en la rama que deseas implementar (en este caso: principal), haz clic en 'Implementar rama'. Verás que se han instalado todos los paquetes necesarios como en la siguiente imagen:
+- Desplázate hacia abajo y elige 'manual deploy'. Después de asegurarte de que estás en la rama que deseas implementar (en este caso: `main`), haz clic en 'Deploy branch'. Verás que se han instalado todos los paquetes necesarios como en la siguiente imagen:
 
-![deploying_branch](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/deploying_branch.jpg?raw=true)
+![Implementando rama](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/deploying_branch.jpg?raw=true)
 
 - Cuando termines, debería verse como la siguiente captura de pantalla:
 
-![deployed_to_heroku](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/deployed_to_heroku.jpg?raw=true)
+![Implementación completada](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/deployed_to_heroku.jpg?raw=true)
 
 - Copia ese enlace y pégalo en tu navegador para probar tu aplicación.
 
