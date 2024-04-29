@@ -155,7 +155,7 @@ The web interface seems very simple and unattractive to users. The next step is 
 
 #### Step 5: Styling the application web interface
 
-An easy way to add styles is to use CSS. We can add a `<style>` block directly to the above HTML to enhance it visually. The `CSS` code we will include is as follows:
+An easy way to add styles is to use CSS. We can add a `<style>` block directly above of the HTML to enhance it visually. The `CSS` code we will include is as follows:
 
 ```css
 body {
@@ -195,7 +195,7 @@ h3 {
 }
 ```
 
-The above code sets a light background for the entire page, and highlights the form and header with a white background and smoothly rounded edges. The input fields are more spacious and visual, with appropriate borders and padding, and the submit button features a color change when hovered over, providing visual feedback. In addition, more legible typography is used and elements are appropriately spaced with margins to prevent them from feeling cramped.
+The above code sets a light background for the entire page and highlights the form and header with a white background and smoothly rounded edges. The input fields are more spacious and visual, with appropriate borders and padding, and the submit button features a color change when hovered over, providing visual feedback. In addition, more legible typography is used, and elements are appropriately spaced with margins to prevent them from feeling cramped.
 
 When inserted into the HTML, the code would look like this:
 
@@ -262,46 +262,46 @@ When inserted into the HTML, the code would look like this:
 
 After re-running the application and accessing the web interface again, this is its new appearance:
 
-![flask-step6](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step6.png?raw=true)
+![Flask step 6](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step6.png?raw=true)
 
 And again, when filling in the values and launching the prediction, this is how it is displayed on the front end:
 
-![flask-step7](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step7.png?raw=true)
+![Flask step 7](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step7.png?raw=true)
 
 After developing the desired functionality and having a front end that meets our needs, we will integrate all this into Render.
 
-#### Step 6: Create service in Render and deploy the application
+#### Step 6: Create a service in Render and deploy the application
 
-The last step is to configure the service in Render and connect it to our Git repository. We must go to the Render Dashboard, select the `Web Services` section and choose the repository where we have uploaded all the code and the previous folders.
+The last step is to configure the service in Render and connect it to our Git repository. We must go to the Render Dashboard, select the `Web Services` section, and choose the repository where we have uploaded all the code and the previous folders.
 
 Once we select it, a form like the following one will appear:
 
-![flask-step8](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step8.png?raw=true)
+![Flask step 8](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step8.png?raw=true)
 
 We will have to fill it with the following information:
 
-- `Name`: The name we want our service to have. In this case we will introduce `4geeks-flask-integration`.
-- `Branch`: The branch where our updated code is located, always in the latest version. We will have to leave the default value, `master`.
-- `Root Directory`: In this case we have developed the code inside the `src` folder, which includes the Python script, the HTML template and the project libraries (file `requirements.txt`), so we should enter `src`.
+- `Name`: The name we want our service to have. In this case, we will introduce `4geeks-flask-integration`.
+- `Branch`: The branch where our updated code is located, always in the latest version. We will have to leave the default value, `main`.
+- `Root Directory`: In this case, we have developed the code inside the `src` folder, which includes the Python script, the HTML template and the project libraries (file `requirements.txt`), so we should enter `src`.
 - `Runtime`: The code is Python, so we will leave the default value, `Python 3`.
 - `Build Command`: We will leave the default value, `pip install -r requirements.txt`.
-- `Start Command`: We are already friendly with this command. We have used in the development gunicorn, so we will leave the default value, `gunicorn app:app`.
+- `Start Command`: We are already friendly with this command. We have used it in the development gunicorn, so we will leave the default value, `gunicorn app:app`.
 
 Finally, we will choose the free rate. The form, once filled in, should have the following information:
 
-![flask-step9](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step9.png?raw=true)
+![Flask step 9](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step9.png?raw=true)
 
-In the next step we will see a console with the logs of the application deployment. The deployment is done step by step, first cloning the repository, building it (*build*), installing the dependencies, and, finally, executing the command to launch the web application.
+In the next step, we will see a console with the logs of the application deployment. The deployment is done step by step, first cloning the repository, building it, installing the dependencies, and, finally, executing the command to launch the web application.
 
-![flask-step10](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step10.png?raw=true)
+![Flask step 10](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step10.png?raw=true)
 
-##### Resolve creation bug
+#### Resolve the creation bug
 
-Because the Render environment is different from our development environment (especially in the Python version, since 3.7 is used by default and in this case we use 3.10 and up), we may get an error in the build of the project. In this case its resolution is very simple:
+Because the Render environment is different from our development environment (especially in the Python version, since 3.7 is used by default and in this case we use 3.10 and up), we may get an error in the build of the project. In this case, its resolution is very simple:
 
-![flask-step11](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step11.png?raw=true)
+![Flask step 11](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step11.png?raw=true)
 
-We have to access, in the same screen where the execution log is opened, to the `Environment` section and enter a new environment variable. In this case we have the `3.11.4` version of Python but you could enter any other (as long as it is from 3.7).
+We have to access, in the same screen where the execution log is opened, to the `Environment` section and enter a new environment variable. In this case, we have the `3.11.4` version of Python, but you could enter any other (as long as it is from 3.7).
 
 We re-launch the deployment and now it should work.
 
@@ -309,16 +309,16 @@ We re-launch the deployment and now it should work.
 
 Once the deployment has been successful, this is the log that will be displayed:
 
-![flask-step12](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step12.png?raw=true)
+![Flask step 12](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step12.png?raw=true)
 
 In fact, a section is available in which we can visualize the different deployments of our web application and the status of each one of them:
 
-![flask-step13](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step13.png?raw=true)
+![Flask step 13](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step13.png?raw=true)
 
 #### Step 7: Using the service in Render
 
 Once the deployment has been successful, we access the application from the link just below the name of the service, and we can now use the application and share it with our friends/colleagues/clients. The one we have created in this lesson is accessible at the following link: `https://fourgeeks-flask-integration.onrender.com/`.
 
-![flask-step14](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step14.png?raw=true)
+![Flask step 14](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step14.png?raw=true)
 
-> NOTE: As you have used the free plan, Render may throw the application away if it is not used. Depending on when you read this the application will be operational or not.
+> Note: As you have used the free plan, Render may throw the application away if it is not used. Depending on when you read this, the application will be operational or not.
