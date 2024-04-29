@@ -26,7 +26,7 @@ Podemos crear servicios de bases de datos, de despliegue web, tareas programadas
 
 ### Integración en Render
 
-En esta lección integraremos el modelo de clasificación que hemos desarrollado en el [módulo de los árboles de decisión](https://4geeks.com/lesson/exploring-decision-trees).
+En esta lección integraremos el modelo de clasificación que hemos desarrollado en el [módulo de los árboles de decisión](https://4geeks.com/es/lesson/explorando-arboles-de-decision).
 
 El modelo `decision_tree_classifier_default_42.sav` se ha guardado en un objeto `Pickle` de tal forma que pueda ser utilizado, por ejemplo, para desplegarlo en un servicio web como este caso.
 
@@ -51,17 +51,17 @@ El archivo creado servirá como un ejemplo mínimo de cómo manejar las solicitu
 
 Ahora mismo el repositorio luce de la siguiente forma:
 
-![flask-step1](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step1.png?raw=true)
+![Flask paso 1](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step1.png?raw=true)
 
 #### Paso 3: Ejecutar la aplicación
 
 Para ejecutar la aplicación en local necesitamos la librería de Python `gunicorn`. Simplemente debemos instalarla, acceder con la consola al directorio donde se encuentra el script y ejecutar `gunicorn app:app`.
 
-![flask-step2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step2.png?raw=true)
+![Flask paso 2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step2.png?raw=true)
 
 Al terminar se disponibilizará una dirección a través de la cual podemos acceder a la aplicación web:
 
-![flask-step21](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step21.png?raw=true)
+![Flask paso 2.1](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step21.png?raw=true)
 
 En este caso como estamos desarrollándolo en un Codespace, el enlace es distinto al que se generaría en local, que sería `http://127.0.0.1:8000`.
 
