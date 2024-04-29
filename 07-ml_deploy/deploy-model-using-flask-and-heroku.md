@@ -13,9 +13,9 @@ In order to predict with unknown data, we have to deploy it over the internet so
 For that, we will need to save the model so that we can predict the values later. We make use of *Pickle* in Python which is a powerful algorithm for serializing and deserializing a Python object structure, but there are other tools too. The following code saves the model using Pickle:
 
 ```py
-# Serializing our model to a file called titanic_model.pkl
+# Serializing our model to a file called model.pkl
 import pickle
-filename = 'titanic_model.pkl'
+filename = 'model.pkl'
 pickle.dump(classifier, open(filename,'wb'))
 ```
 
@@ -241,17 +241,17 @@ You can put the style you want to your `style.css` file. However, the Bootstrap 
 
 Save and close the file once you have finished editing it.
 
-Most of the code in the block above is standard HTML and code required for Bootstrap. The <meta> tags provide information for the web browser, the <link> tag links to Boostrap CSS files, and the <script> tags are links to JavaScript code that enables some additional Boostrap functionality.
+Most of the code in the block above is standard HTML and code required for Bootstrap. The `<meta>` tags provide information for the web browser, the `<link>` tag links to Bootstrap CSS files, and the `<script>` tags are links to JavaScript code that enables some additional Bootstrap functionality.
 
 However, the following highlighted parts are specific to the Jinja template engine:
 
-- {% block title %} {% endblock %}: a block that serves as a placeholder for a title. You will later use it in other templates to give a custom title to each page of your application without having to rewrite the entire <head> section each time.
+- `{% block title %} {% endblock %}`: a block that serves as a placeholder for a title. You will later use it in other templates to give a custom title to each page of your application without having to rewrite the entire `<head>` section each time.
 
-- {{ url_for('index')}: a function invocation that will return the URL for the index() view function. This is different from the previous url_for() invocation you used to link to a static CSS file, because it only requires one argument, which is the name of the view function, and links to the path associated with the function rather than to a static file.
+- `{{ url_for('index')}}`: a function invocation that will return the URL for the `index()` view function. This is different from the previous `url_for()` invocation you used to link to a static CSS file because it only requires one argument, which is the name of the view function, and links to the path associated with the function rather than to a static file.
 
-- {% block content %} {% endblock %}: another block that will be replaced by content depending on the secondary template (templates that inherit from base.html) that will override it.
+- `{% block content %} {% endblock %}`: another block that will be replaced by content, depending on the secondary template (templates that inherit from `base.html`) that will override it.
 
-Now that you have a base.html template you can inherit that code to index.html by adding only the following code in your index.html:
+Now that you have a `base.html` template, you can inherit that code into `index.html` by only adding the following code in your `index.html`:
 
 ```py
 {% extends 'base.html' %}
@@ -261,13 +261,13 @@ Now that you have a base.html template you can inherit that code to index.html b
 {% endblock %}
 ```
 
-You have used HTML templates and static files in Flask in a clean way. However, to make things simple for your first web app, we will keep only the index.html file.
+You have used HTML templates and static files in Flask in a clean way. However, to make things simple for your first web app, we will keep only the `index.html` file.
 
-Let's see how should we code a form requesting the attributes of our passengers.
+Let's see how we should code a form requesting the attributes of our passengers.
 
 > In order to predict the data correctly, the corresponding values of each label should match with the value of each input selected.
 
-In the Titanic form that you saw at the beginning of this lesson, we were only requesting the numerical features for prediction, but in the case we include categorical features that were previously label encoded, we need to put the same values to the html form. The following example shows how the form should be coded in case our 'Sex' feature would have been assigned 0 for Male and 1 for Female:
+In the Titanic form that you saw at the beginning of this lesson, we were only requesting the numerical features for prediction, but in the case where we include categorical features that were previously label encoded, we need to put the same values in the HTML form. The following example shows how the form should be coded in case our 'Sex' feature would have been assigned 0 for Male and 1 for Female:
 
 ```py
 <label for="Sex">Gender</label>
@@ -277,28 +277,24 @@ In the Titanic form that you saw at the beginning of this lesson, we were only r
     </select>
 ```
 
-You can find a couple of form examples in the following links:
-
-https://github.com/4GeeksAcademy/machine-learning-content/blob/master/07-1d-ml_deploy/form-examples/index_example1.html
-
-https://github.com/4GeeksAcademy/machine-learning-content/blob/master/07-1d-ml_deploy/form-examples/index_example2.html
+You can find a couple of form examples in the following link:
 
 https://www.geeksforgeeks.org/html-design-form/
 
 
-### **Step 4:** Predicting the survival result
+### Step 4: Predicting the survival result
 
-Let’s run the application.
+Let's run the application.
 
 ```bash
 export FLASK_APP=app.py
 run flask
 ```
 
-When someone submits the form, the webpage should display the result if a passenger would survive or die in the Titanic. For this, we require the model file(model.pkl) we created before, in the same project folder. We add the following code to the app.py file:
+When someone submits the form, the webpage should display the result if a passenger would survive or die in the Titanic. For this, we require the model file (`model.pkl`) we created before, in the same project folder. We add the following code to the `app.py` file:
 
 ```py
-#prediction function
+# Prediction function
 def ValuePredictor(to_predict_list):
     to_predict = np.array(to_predict_list).reshape(1,12)
     loaded_model = pickle.load(open("model.pkl","rb"))
@@ -310,7 +306,7 @@ def ValuePredictor(to_predict_list):
 def result():
     if request.method == 'POST':
         to_predict_list = request.form.to_dict()
-        to_predict_list=list(to_predict_list.values())
+        to_predict_list = list(to_predict_list.values())
         to_predict_list = list(map(int, to_predict_list))
         result = ValuePredictor(to_predict_list)
         
@@ -322,22 +318,22 @@ def result():
         return render_template("result.html",prediction=prediction) 
 ```
 
-Here after the form is submitted, the form values are stored in variable to_predict_list in the form of dictionary. We convert it into a list of the dictionary’s values and pass it as an argument to ValuePredictor() function. In this function, we load the model.pkl file and predict the new values and return the result.
+Here, after the form is submitted, the form values are stored in the variable `to_predict_list` in the form of a dictionary. We convert it into a list of the dictionary's values and pass it as an argument to the `ValuePredictor()` function. In this function, we load the `model.pkl` file, predict the new values, and return the result.
 
-This result/prediction(Passenger survives or not) is then passed as an argument to the template engine with the html page to be displayed.
+This result/prediction (whether the passenger survives or not) is then passed as an argument to the template engine with the HTML page to be displayed.
 
-Create the following result.html file and add it to templates folder.
+Create the following `result.html` file and add it to the templates folder.
 
 ```py
 <!doctype html>
 <html>
    <body>
-       <h1> {{ prediction }}</h1>
+       <h1>{{ prediction }}</h1>
    </body>
 </html>
 ```
 
-**An alternative code for the entire app.py file could be:**
+**An alternative code for the entire `app.py` file could be:**
 
 ```py
 import numpy as np
@@ -345,9 +341,9 @@ from flask import Flask, request, render_template
 import pickle
 
 app = Flask(__name__)
-model = pickle.load(open('titanic_model.pkl', 'rb'))
+model = pickle.load(open('model.pkl', 'rb'))
 
-@app.route('/') #http://www.google.com/
+@app.route('/')  # http://www.google.com/
 def home():
     return render_template('index.html')
 @app.route('/predict', methods=['POST'])
@@ -367,24 +363,24 @@ if __name__=="__main__":
     app.run(port=5000, debug=True)
 ```
 
-Run the application again and it should predict the result after submitting the form. We have successfully created the Web application. Now it’s time to use Heroku to deploy it.
+Run the application again and it should predict the result after submitting the form. We have successfully created the Web application. Now it's time to use Heroku to deploy it.
 
 ## Deployment using Heroku
 
-You should already have an account on Heroku, but if you don't, go ahead and create your account at 'https://www.heroku.com'.
+You should already have an account on Heroku, but if you don't, go ahead and create your account at https://www.heroku.com.
 
 Let's make sure we also have the following before deploying to Heroku:
 
-1. Gunicorn handles requests and takes care of complicated things. Download gunicorn to your virtual environment. You can use pip to download it.
+1. Gunicorn handles requests and takes care of complicated things. Download `gunicorn` to your virtual environment. You can use `pip` to download it.
 
 ```bash
 pip install gunicorn
 ```
 
-2. We have installed a lot of libraries and other important files like flask, gunicorn, sklearn etc. We need to tell Heroku that our project requires all these libraries to successfully run the application. This is done by creating a requirements.txt file.
+2. We have installed a lot of libraries and other important files like flask, gunicorn, sklearn etc. We need to tell Heroku that our project requires all these libraries to successfully run the application. This is done by creating a `requirements.txt` file.
 
 
-3. Procfile is a text file in the root directory of your application, to explicitly declare what command should be executed to start your app. This is an essential requirement for Heroku. This file tells Heroku we want to use the web process with the command gunicorn and the app name.
+3. `Procfile` is a text file in the root directory of your application to explicitly declare what command should be executed to start your app. This is an essential requirement for Heroku. This file tells Heroku we want to use the web process with the command gunicorn and the app name.
 
 ```py
 web: gunicorn app:app
@@ -392,23 +388,23 @@ web: gunicorn app:app
 
 Your current structure should be looking something like this:
 
-![flask-heroku-structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-heroku-structure.jpg?raw=true)
+![Current structure of repository](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-heroku-structure.jpg?raw=true)
 
-4. Finally, use a .gitignore file to do exclude unnecessary files that we don't want to deploy to Heroku.
+4. Finally, use a `.gitignore` file to exclude unnecessary files that we don't want to deploy to Heroku.
 
-We are ready! Push your project to Heroku! If you wish to do it directly on Heroku's website you can do it as follows:
+We are ready! Push your project to Heroku! If you wish to do it directly on Heroku's website, you can do it as follows:
 
 - Click on 'Create a new app'
 
-- On 'deploy' tab: link Heroku app to your Github account and select the repo to connect to.
+- On 'deploy' tab: link Heroku app to your GitHub account and select the repo to connect to.
 
-- Scroll down and choose 'manual deploy'. After making sure you are on the branch you want to deploy (in this case: main), then click on 'Deploy branch'. You will see all the required packages been installed like the following image:
+- Scroll down and choose 'manual deploy'. After making sure you are on the branch you want to deploy (in this case: `main`), click on 'Deploy branch'. You will see all the required packages have been installed, as shown in the following image:
 
-![deploying_branch](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/deploying_branch.jpg?raw=true)
+![Deploying branch](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/deploying_branch.jpg?raw=true)
 
 - When finished, it should look like the following screenshot:
 
-![deployed_to_heroku](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/deployed_to_heroku.jpg?raw=true)
+![Deploy finished](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/deployed_to_heroku.jpg?raw=true)
 
 - Copy that link and paste it in your browser to test your app.
 
