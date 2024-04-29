@@ -13,7 +13,7 @@ Para predecir con datos desconocidos, tenemos que implementarlos en Internet par
 Para eso, necesitaremos guardar el modelo para que podamos predecir los valores más tarde. Hacemos uso de pickle en python, que es un poderoso algoritmo para serializar y deserializar una estructura de objeto de Python, pero también hay otras herramientas. El siguiente código guarda el modelo usando Pickle:
 
 ```py
-#serializing our model to a file called model.pkl
+# Serializando nuestro modelo a un archivo llamado titanic_model.pkl
 import pickle
 filename = 'titanic_model.pkl'
 pickle.dump(classifier, open(filename,'wb'))
@@ -23,9 +23,9 @@ pickle.dump(classifier, open(filename,'wb'))
 
 Para predecir la supervivencia en el Titanic a partir de varios atributos, primero debemos recopilar los datos (nuevos valores de atributos) y luego usar el modelo que construimos para predecir si un pasajero sobreviviría o no en el Titanic. Por lo tanto, para recopilar los datos, creamos un formulario html que contendría todas las diferentes opciones para seleccionar de cada atributo. Aquí, he creado un formulario simple usando solo html. Si deseas que el formulario sea más interactivo, también puedes hacerlo.
 
-![titanic_prediction_form](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_prediction_form.jpg?raw=true)
+![Formulario de predicción del Titanic](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/titanic_prediction_form.jpg?raw=true)
 
-### **Paso 1:** Activa el entorno e instala Flask
+### Paso 1: Activa el entorno e instala Flask
 
 En la línea de comando ingresa el directorio de tu proyecto. Una vez allí, activa su entorno y usa pip para instalar Flask.
 
@@ -33,9 +33,9 @@ En la línea de comando ingresa el directorio de tu proyecto. Una vez allí, act
 pip install Flask
 ```
 
-### **Paso 2:** Crea una aplicación básica
+### Paso 2: Crea una aplicación básica
 
-En tu directorio, abre un archivo llamado hello.py para editarlo. Este archivo hello.py servirá como un ejemplo mínimo de cómo manejar las solicitudes HTTP. En el interior, importará el objeto Flask y creará una función que devuelva una respuesta HTTP. Escribe el siguiente código dentro de hello.py:
+En tu directorio, abre un archivo llamado `hello.py` para editarlo. Este archivo servirá como un ejemplo mínimo de cómo manejar las solicitudes HTTP. En el interior, importa el objeto Flask y crea una función que devuelva una respuesta HTTP. Escribe el siguiente código dentro de `hello.py`:
 
 ```py
 from flask import Flask
@@ -48,15 +48,15 @@ def hello():
     return 'Hello, World!'
 ```
 
-Expliquemos lo que acaba de hacer el código anterior. Primero importa el objeto Flask del paquete Flask. Luego lo usará para crear su instancia de la aplicación Flask con el nombre app. Pasa la variable especial __name__ que contiene el nombre del módulo de Python actual. Se utiliza para decirle a la instancia dónde se encuentra. Deberá hacer esto porque Flask configura algunas rutas en segundo plano.
+Expliquemos lo que acaba de hacer el código anterior. Primero importa el objeto Flask del paquete Flask. Luego lo usará para crear su instancia de la aplicación Flask con el nombre app. Pasa la variable especial `__name__` que contiene el nombre del módulo de Python actual. Se utiliza para decirle a la instancia dónde se encuentra. Deberá hacer esto porque Flask configura algunas rutas en segundo plano.
 
-Una vez que crea la instancia de la aplicación, la usa para manejar las solicitudes web entrantes y enviar respuestas al usuario. @app.route es un decorador que convierte una función normal de Python en una función de vista Flask, que convierte el valor de retorno de la función en una respuesta HTTP que mostrará un cliente HTTP, como un navegador web. Pasa el valor '/' a @app.route() para indicar que esta función responderá a las solicitudes web de la URL /, que es la URL principal.
+Una vez que crea la instancia de la aplicación, la usa para manejar las solicitudes web entrantes y enviar respuestas al usuario. `@app.route` es un decorador que convierte una función normal de Python en una función de vista Flask, que convierte el valor de retorno de la función en una respuesta HTTP que mostrará un cliente HTTP, como un navegador web. Pasa el valor `'/'` a `@app.route()` para indicar que esta función responderá a las solicitudes web de la URL `/`, que es la URL principal.
 
-La función de vista hello() devuelve la cadena 'Hello, World!' en respuesta.
+La función de vista `hello()` devuelve la cadena 'Hello, World!' en respuesta.
 
 Guarda y cierra el archivo.
 
-Para ejecutar su aplicación web, primero le indicarás a Flask dónde encontrar la aplicación (el archivo hello.py en su caso) con la variable de entorno `FLASK_APP`:
+Para ejecutar su aplicación web, primero le indicarás a Flask dónde encontrar la aplicación (el archivo `hello.py` en su caso) con la variable de entorno `FLASK_APP`:
 
 ```bash
 export FLASK_APP=hello
@@ -76,7 +76,7 @@ flask run
 
 Una vez que se está ejecutando, el resultado debería ser similar a este:
 
-```bash
+```text
 Output
  * Serving Flask app "hello" (lazy loading)
  * Environment: development
@@ -95,23 +95,23 @@ El resultado anterior tiene varias informaciones, tales como:
 
 - Debug mode: on significa que el depurador Flask se está ejecutando. Esto es útil durante el desarrollo porque nos brinda mensajes de error detallados cuando algo sale mal, lo que facilita la resolución de problemas.
 
-- La aplicación se ejecuta localmente en la URL http://127.0.0.1:5000/, 127.0.0.1 es la IP que representa el host local de su computadora y :5000 es el número de puerto.
+- La aplicación se ejecuta localmente en la URL `http://127.0.0.1:5000/`, *127.0.0.1* es la IP que representa el host local de su computadora y *:5000* es el número de puerto.
 
-Ahora abre un navegador y escribe la URL http://127.0.0.1:5000; recibirás la cadena Hello, World! en respuesta. Esto confirma que tu aplicación se está ejecutando correctamente.
+Ahora abre un navegador y escribe la URL `http://127.0.0.1:5000`; recibirás la cadena `Hello, World!` en respuesta. Esto confirma que tu aplicación se está ejecutando correctamente.
 
 Ahora tienes una pequeña aplicación web Flask. Ha ejecutado su aplicación y ha mostrado información en el navegador web. A continuación, utilizará los archivos HTML en su aplicación.
 
-### **Paso 3:** Usar plantillas HTML
+### Paso 3: Usar plantillas HTML
 
 Actualmente, su aplicación solo muestra un mensaje simple sin HTML. Las aplicaciones web utilizan principalmente HTML para mostrar información al visitante, por lo que ahora trabajará para incorporar un archivo HTML en tu aplicación, que se puede mostrar en el navegador web.
 
-Flask proporciona una función auxiliar render_template() que permite el uso del motor de plantillas Jinja. Esto hará que la administración de HTML sea mucho más fácil al escribir su código HTML en archivos .html, además de usar la lógica en su código HTML. Utilizarás estos archivos HTML (plantillas) para crear su aplicación web.
+Flask proporciona una función auxiliar `render_template()` que permite el uso del motor de plantillas Jinja. Esto hará que la administración de HTML sea mucho más fácil al escribir su código HTML en archivos `.html`, además de usar la lógica en su código HTML. Utilizarás estos archivos HTML (plantillas) para crear tu aplicación web.
 
 En este paso, crearás tu aplicación Flask principal en un archivo nuevo.
 
-Primero, en el directorio de tu proyecto, usa tu editor de texto favorito para crear y editar tu archivo app.py. Anteriormente, has estado usando app.py para escribir el código de tu modelo final. Para evitar confusiones, ahora usarás un 'model.py' o un 'titanic.py' para eso, y el app.py será exclusivamente para construir tu aplicación web. Esto albergará todo el código que utilizarás para crear la aplicación.
+Primero, en el directorio de tu proyecto, usa tu editor de texto favorito para crear y editar tu archivo `app.py`. Anteriormente, has estado usando `app.py` para escribir el código de tu modelo final. Para evitar confusiones, ahora usarás `model.py` o `titanic.py` para eso, y el `app.py` será exclusivamente para construir tu aplicación web. Esto albergará todo el código que utilizarás para crear la aplicación.
 
-En este nuevo archivo, importarás el objeto Flask para crear una instancia de la aplicación Flask, como lo hiciste antes. También importará la función auxiliar render_template() que le permite renderizar archivos de plantilla HTML que existen en la carpeta de plantillas que estás a punto de crear. El archivo tendrá una función de vista única que se encargará de manejar las solicitudes a la ruta principal/. Agrega el siguiente contenido:
+En este nuevo archivo, importarás el objeto Flask para crear una instancia de la aplicación Flask, como lo hiciste antes. También importará la función auxiliar `render_template()` que le permite renderizar archivos de plantilla HTML que existen en la carpeta de plantillas que estás a punto de crear. El archivo tendrá una función de vista única que se encargará de manejar las solicitudes en la ruta principal `/`. Agrega el siguiente contenido:
 
 ```py
 import numpy as np
@@ -126,11 +126,11 @@ def index():
     return render_template('index.html')
 ```
 
-La función de vista index() devuelve el resultado de invocar render_template() con index.html como argumento; esto le indica a render_template() que busque un archivo llamado index.html en la carpeta de plantillas. La carpeta y el archivo aún no existen y recibirá un error si ejecutas la aplicación en este momento. Lo ejecutarás de todos modos, para que estés familiarizado con esta excepción que se encuentra comúnmente. Luego lo resolverá creando la carpeta y el archivo necesarios.
+La función de vista `index()` devuelve el resultado de invocar `render_template()` con `index.html` como argumento; esto le indica a `render_template()` que busque un archivo llamado `index.html` en la carpeta `templates`. La carpeta y el archivo aún no existen y recibirá un error si ejecutas la aplicación en este momento. Lo ejecutarás de todos modos, para que estés familiarizado con esta excepción que se encuentra comúnmente. Luego lo resolverá creando la carpeta y el archivo necesarios.
 
 Guarda el archivo y ciérralo.
 
-Deten el servidor de desarrollo en tu otro terminal ejecutando la aplicación hello con CTRL+C.
+Deten el servidor de desarrollo en tu otro terminal ejecutando la aplicación hello con `Ctrl + c`.
 
 Antes de ejecutar la aplicación, asegúrate de especificar correctamente el valor de la variable de entorno FLASK_APP, ya que ahora no estás utilizando la aplicación hello.
 
@@ -138,13 +138,13 @@ Antes de ejecutar la aplicación, asegúrate de especificar correctamente el val
 export FLASK_APP=app
 flask run
 ```
-Cuando abras la URL http://127.0.0.1:5000 en tu navegador, se mostrará la página del depurador informándote que no se encontró la plantilla index.html. Se resaltará la línea principal de código en el código responsable de este error. En este caso, es la línea return render_template('index.html').
+Cuando abras la URL `http://127.0.0.1:5000` en tu navegador, se mostrará la página del depurador informándote que no se encontró la plantilla `index.html`. Se resaltará la línea principal de código en el código responsable de este error. En este caso, es la línea `return render_template('index.html')`.
 
 Si haces clic en esta línea, el depurador revelará más código para que tengas más contexto que te ayude a resolver el problema.
 
-Probablemente verás un error que muestra 'plantilla no encontrada (index.html)'.
+Probablemente verás un error que muestra **template not found (index.html)**.
 
-Vamos a crear plantillas de carpetas. En tu aplicación, utilizarás plantillas para representar HTML que se mostrará en el navegador del usuario. Esta carpeta contiene nuestro archivo de formulario html index.html. Comienza a editar tu archivo index.html escribiendo el siguiente código:
+Vamos a crear plantillas de carpetas. En tu aplicación, utilizarás plantillas para representar HTML que se mostrará en el navegador del usuario. Esta carpeta contiene nuestro archivo de formulario HTML `index.html`. Comienza a editar tu archivo `index.html` escribiendo el siguiente código:
 
 ```py
 <!DOCTYPE html>
@@ -159,13 +159,13 @@ Vamos a crear plantillas de carpetas. En tu aplicación, utilizarás plantillas 
 </html>
 ```
 
-Guarda el archivo y usa tu navegador para navegar a http://127.0.0.1:500 nuevamente, o actualiza la página. Esta vez, el navegador debería mostrar el texto "Bienvenido a mi aplicación de predicción Titanic Survival" en una etiqueta h1.
+Guarda el archivo y usa tu navegador para navegar a `http://127.0.0.1:5000` nuevamente, o actualiza la página. Esta vez, el navegador debería mostrar el texto **Welcome to my Titanic Survival prediction app** en una etiqueta **h1**.
 
 Además de la carpeta de plantillas, las aplicaciones web de Flask también suelen tener una carpeta estática para albergar archivos, como los archivos CSS, los archivos JavaScript y las imágenes que utiliza la aplicación.
 
-Puedes crear un archivo de hoja de estilo style.css para agregar CSS a tu aplicación. Primero, crea un directorio llamado estático dentro de tu directorio principal del proyecto. Luego crea otro directorio llamado css dentro de static para alojar los archivos .css. Se puede hacer lo mismo con archivos js e imágenes para aplicaciones más complejas.
+Puedes crear un archivo de hoja de estilo `style.css` para agregar CSS a tu aplicación. Primero, crea un directorio llamado `static` dentro de tu directorio principal del proyecto. Luego crea otro directorio llamado `css` dentro de `static` para alojar los archivos `.css`. Se puede hacer lo mismo con archivos js e imágenes para aplicaciones más complejas.
 
-Dentro de su directorio css, crea un archivo style.css y agrega la siguiente regla:
+Dentro de su directorio `css`, crea un archivo `style.css` y agrega la siguiente regla:
 
 ```py
 h1 {
@@ -175,11 +175,11 @@ h1 {
     padding: 10px;
 }
 ```
-Este código agregará un borde, cambiará el color a marrón, centrará el texto y agregará un pequeño relleno a los tags h1.
+Este código agregará un borde, cambiará el color a marrón, centrará el texto y agregará un pequeño relleno a los tags **h1**.
 
 Guarda y cierra el archivo.
 
-En tu archivo index.html agregarás un enlace a tu archivo style.css:
+En tu archivo `index.html` agregarás un enlace a tu archivo `style.css`:
 
 ```py
 <head>
@@ -192,9 +192,9 @@ Aquí utilizas la función auxiliar url_for() para generar la ubicación de arch
 
 Guarda y cierra el archivo.
 
-Después de actualizar la página de índice de tu aplicación, notarás que el texto "Bienvenido a mi aplicación de predicción Titanic Survival" ahora es marrón, está centrado y enmarcado dentro de un borde.
+Después de actualizar la página de índice de tu aplicación, notarás que el texto **Welcome to my Titanic Survival prediction app** ahora es marrón, está centrado y enmarcado dentro de un borde.
 
-Puedes poner el estilo que desees en tu archivo style.css. Sin embargo, el kit de herramientas de Bootstrap puede ayudarte con esto si no eres un experto. Ahora, si tu aplicación tendrá más de una página, puedes evitar la repetición innecesaria de código con la ayuda de un archivo de plantilla base, del cual heredarán todos tus archivos HTML. Si ese es el caso, puedes escribir el siguiente código en tu archivo base.html:
+Puedes poner el estilo que desees en tu archivo `style.css`. Sin embargo, el kit de herramientas de Bootstrap puede ayudarte con esto si no eres un experto. Ahora, si tu aplicación tendrá más de una página, puedes evitar la repetición innecesaria de código con la ayuda de un archivo de plantilla base, del cual heredarán todos tus archivos HTML. Si ese es el caso, puedes escribir el siguiente código en tu archivo `base.html`:
 
 ```py
 <!doctype html>
