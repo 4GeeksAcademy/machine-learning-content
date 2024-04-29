@@ -10,33 +10,33 @@ Some key features and offerings of Render include:
 
 1. **Web application deployment**: Render allows you to deploy web applications in various languages and frameworks, including Node.js, Ruby on Rails, Django and many others.
 2. **Private services**: These are applications or jobs that are not exposed to the Internet but can be used by other applications in Render.
-3. **Scheduled tasks**: Allows to execute periodic jobs, similar to cron jobs in Unix systems.
-4. **Databases**: Render supports the deployment of databases such as PostgreSQL, and offers a persistent storage solution for data.
+3. **Scheduled tasks**: Allows executing periodic jobs, similar to Cron jobs (a utility used for scheduling tasks) in Unix systems.
+4. **Databases**: Render supports the deployment of databases such as PostgreSQL and offers a persistent storage solution for data.
 5. **Deployment from repositories**: You can connect your GitHub or GitLab repository and configure automatic deployments every time you push to your repository.
 
 Render has earned a positive reputation for being an attractive option for developers and startups looking for a quick and easy way to deploy and scale applications without the administrative overhead of more traditional solutions.
 
 #### Registration on the platform
 
-In order to access Render you must have an account. To register you must access the following [link](https://dashboard.render.com/register). Once you have an account, you will have access to all the Render functionality:
+In order to access Render you must have an account. To register, you must access the following [link](https://dashboard.render.com/register). Once you have an account, you will have access to all the Render functionality:
 
-![render-functionalities](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/render-functionalities.PNG?raw=true)
+![Render functionalities](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/render-functionalities.PNG?raw=true)
 
 We can create database services, web deployment services, scheduled tasks...
 
 ### Integration in Render
 
-In this lesson we will integrate the classification model we have developed in the [decision trees module](https://4geeks.com/lesson/exploring-decision-trees).
+In this lesson, we will integrate the classification model we have developed in the [decision trees module](https://4geeks.com/lesson/exploring-decision-trees).
 
 The `decision_tree_classifier_default_42.sav` model has been saved in a `Pickle` object so that it can be used, for example, to deploy it in a web service like this case.
 
 #### Step 1: Create a Git repository
 
-To integrate something into Render we must first have created a Git repository. The Git we are going to generate in this lesson can be found [here](https://github.com/4GeeksAcademy/flask-render-integration), which is derived from 4Geeks' Machine Learning Template.
+To integrate something into Render, we must first have to create a Git repository. The Git we are going to generate in this lesson can be found [here](https://github.com/4GeeksAcademy/flask-render-integration), which is derived from 4Geeks' Machine Learning Template.
 
 #### Step 2: Create a basic application
 
-We will now generate a simple application using the `Flask` library. In the `src` directory, we create a new file named `hello.py` which we will modify with the following code:
+We will now generate a simple application using the `Flask` library. In the `src` directory, we create a new file named `app.py` which we will modify with the following code:
 
 ```py
 from flask import Flask
@@ -49,23 +49,23 @@ def hello_world():
 
 The created file will serve as a minimal example of how to handle HTTP requests. It imports the `Flask` object and creates a function that returns an HTTP response.
 
-Right now the repository looks like this:
+Right now, the repository looks like this:
 
-![flask-step1](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step1.png?raw=true)
+![Flask step 1](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step1.png?raw=true)
 
 #### Step 3: Run the application
 
-To run the application locally we need the Python library `gunicorn`. We just need to install it, access with the console to the directory where the script is located and run `gunicorn app:app`.
+To run the application locally, we need the Python library `gunicorn`. We just need to install it, access it with the console to the directory where the script is located and run `gunicorn app:app`.
 
-![flask-step2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step2.png?raw=true)
+![Flask step 2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step2.png?raw=true)
 
 When finished, an address will be available through which we can access the web application:
 
-![flask-step21](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step21.png?raw=true)
+![Flask step 2.1](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step21.png?raw=true)
 
 In this case, as we are developing it in a Codespace, the link is different from the one that would be generated locally, which would be `http://127.0.0.1:8000`.
 
-At this point we have a small Flask web application with little or no functionality. Next, we will add HTML files to customize the application.
+At this point, we have a small Flask web application with little or no functionality. Next, we will add HTML files to customize the application.
 
 #### Step 4: Implementing the application web interface
 
@@ -137,17 +137,17 @@ We have created the `index` function, which replaces the old `hello_world` and i
 
 Ultimately, the method returns the rendered HTML, in this case with the value of the prediction based on the values.
 
-Right now the repository looks like this:
+Right now, the repository looks like this:
 
-![flask-step3](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step3.png?raw=true)
+![Flask step 3](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step3.png?raw=true)
 
 If we save the changes and run the application again (`gunicorn app:app`), after navigating to our local web application we will see the following:
 
-![flask-step4](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step4.png?raw=true)
+![Flask step 4](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step4.png?raw=true)
 
 After filling in the values and clicking on `Predict`, the result is also displayed in the interface itself:
 
-![flask-step5](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step5.png?raw=true)
+![Flask step 5](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step5.png?raw=true)
 
 Entering any value predicts a class. Moreover, the effectiveness of the model is as observed in the past module.
 
