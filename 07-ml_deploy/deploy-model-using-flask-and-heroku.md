@@ -371,10 +371,10 @@ You should already have an account on Heroku, but if you don't, go ahead and cre
 
 Let's make sure we also have the following before deploying to Heroku:
 
-1. Gunicorn handles requests and takes care of complicated things. Download `gunicorn` to your virtual environment. You can use `` to download it.
+1. Gunicorn handles requests and takes care of complicated things. Download `gunicorn` to your virtual environment. You can use `pip` to download it.
 
 ```bash
- install gunicorn
+pip install gunicorn
 ```
 
 2. We have installed a lot of libraries and other important files like flask, gunicorn, sklearn etc. We need to tell Heroku that our project requires all these libraries to successfully run the application. This is done by creating a `requirements.txt` file.
