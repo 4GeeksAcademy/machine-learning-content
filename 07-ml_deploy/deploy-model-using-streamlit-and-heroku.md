@@ -25,7 +25,7 @@ st.write(x, 'squared is', x * x)
 
 ![Streamlit slider](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit2.jpg?raw=true)
 
-3. **Reuse data and computations.** What happens if you download a lot of data or perform complex calculations? The key is to reuse information between runs safely. Streamlit introduces a caching primitive that acts as a default persistent and immutable data store, allowing Streamlit applications to reuse information safely and effortlessly. Look at the following example:
+3. **Reuse data and computations.** What happens if you download a lot of data or perform complex calculations? The key is to reuse information between runs safely. Streamlit introduces a caching feature that acts as a default persistent and immutable data store, allowing Streamlit applications to reuse information safely and effortlessly. Look at the following example:
 
 ```py
 import streamlit as st
@@ -82,7 +82,7 @@ There are many widgets available, including the following:
 age = streamlit.selectbox("Choose your age:", np.arange(18, 66, 1))
 ```
 
-![Streamlit_selectbox](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_selectbox.jpg?raw=true)
+![Streamlit selectbox](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_selectbox.jpg?raw=true)
 
 Another way of doing the same:
 
@@ -90,7 +90,7 @@ Another way of doing the same:
 select = st.selectbox('Select a State', data['State'])
 ```
 
-The first parameter is the title of the selection box, and the second parameter defines a list of values that will be filled in the selection box. The second example is a "State" column in the `.csv` file we loaded.
+The first parameter is the title of the selection box, and the second parameter defines a list of values that will be filled in the selection box. The second example there is a "State" column from the `.csv` file we loaded.
 
 ### Slider
 
@@ -98,7 +98,7 @@ The first parameter is the title of the selection box, and the second parameter 
 age = streamlit.slider("Choose your age: ", min_value=16, max_value=66, value=35, step=1)
 ```
 
-![Streamlit_slider](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_slider.jpg?raw=true)
+![Streamlit slider](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_slider.jpg?raw=true)
 
 ### Multiselect
 
@@ -108,7 +108,7 @@ artists = st.multiselect("Who are your favorite artists?",
                          "Eminem", "Billy Joel", "Madonna"])
 ```
 
-![Streamlit_multiselect](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_multiselect.jpg?raw=true)
+![Streamlit multiselect](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_multiselect.jpg?raw=true)
 
 ### Checkbox
 
@@ -150,7 +150,7 @@ c = alt.Chart(df).mark_circle().encode(x='a', y='b', size='c', color='c')
 st.altair_chart(c, width=-1)
 ```
 
-![Streamlit_visualization](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_visualization.jpg?raw=true)
+![Streamlit visualization](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_visualization.jpg?raw=true)
 
 Another example:
 
@@ -177,7 +177,7 @@ if st.sidebar.checkbox("Show Analysis by State", True, key=2):
         st.plotly_chart(state_total_graph)
 ```
 
-![Streamlit_visualization 2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_visualization2.jpg?raw=true)
+![Streamlit visualization 2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_visualization2.jpg?raw=true)
 
 To plot the chart, we use the bar method from the `plotly.express` library. The first parameter is the dataframe we want to plot, the second parameter is the x-axis column, the third parameter is the y-axis column, the labels parameter is optional in case you want to rename a column in the chart, and the color parameter here is to color code the chart based on the State column of the dataframe.
 
@@ -196,7 +196,7 @@ st.markdown("* This gives a general overview of the data including "
             "between games.")
 ```
 
-![Streamlit_markdown](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_markdown.jpg?raw=true)
+![Streamlit markdown](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit_markdown.jpg?raw=true)
 
 ## Write Function
 
@@ -242,10 +242,10 @@ Now let's create a title, some content, and a sidebar.
 st.markdown('<style>description{color:blue;}</style>', unsafe_allow_html=True)
 st.title('Titanic survival prediction')
 st.markdown("<description>The sinking of the Titanic is one of the most infamous shipwrecks in history. " + 
-"On April 15, 1912, during her maiden voyage, the widely considered “unsinkable” RMS Titanic sank after colliding" +
-"with an iceberg. Unfortunately, there weren’t enough lifeboats for everyone onboard, resulting in the death of " +
-"1502 out of 2224 passengers and crew. While there was some element of luck involved in surviving, it seems some" +
-" groups of people were more likely to survive than others. </description>", unsafe_allow_html=True)
+"On April 15, 1912, during her maiden voyage, the widely considered “unsinkable” RMS Titanic sank after colliding " +
+"with an iceberg. Unfortunately, there weren't enough lifeboats for everyone onboard, resulting in the death of " +
+"1502 out of 2224 passengers and crew. While there was some element of luck involved in surviving, it seems some " +
+"groups of people were more likely to survive than others. </description>", unsafe_allow_html=True)
 st.sidebar.title('Select the parameters to analyze survival prediction')
 ```
 
@@ -261,7 +261,7 @@ streamlit run app.py
 
 ## Implementation
 
-Now that we have a very basic web application, we can show it to others by deploying it on Render.com. Of course, Render is not the only free option on the market. Alternatives are Azure, Heroku, Amazon EC2, and many others.
+Now that we have a very basic web application, we can show it to others by deploying it on Heroku.com. Of course, Heroku is not the only free option on the market. Alternatives are Azure, Render, Amazon EC2, and many others.
 
 You're ready to start if you have already installed the Heroku Command Line Interface (CLI). If not, you can do so from here:  
 https://devcenter.heroku.com/articles/getting-started-with-python#set-up
@@ -270,19 +270,39 @@ This will help you manage your application, run it locally, view its logs, and m
 
 ## Deployment Process
 
-You can just open your `cmd.exe` and navigate to the application's folder.
+- You can just open your `cmd.exe` and navigate to the application's folder.
 
-Log in to Heroku with `heroku login`. You will be redirected to a login screen in your preferred browser.
+- Log in to Heroku with `heroku login`. You will be redirected to a login screen in your preferred browser.
 
-While your cmd is open in the application folder, first run `$ heroku create` to create a Heroku instance.
+- While your cmd is open in the application folder, first run `heroku create` to create a Heroku instance.
 
-Push all your code to that instance with `git push heroku master`
+- Push all your code to that instance with `git push heroku main`
 
 This will create a Heroku instance and send all the code from the application folder to that instance. Now, the application should be deployed.
 
-With `heroku ps:scale web=1`, you ensure that at least one instance of the application is running.
+- With `heroku ps:scale web=1`, you ensure that at least one instance of the application is running.
 
-Finally, run `heroku open` to open your application in the browser.
+- Finally, run `heroku open` to open your application in the browser.
 
 
-Additional Documentation can be found at: https://docs.streamlit.io/
+Source:
+
+https://docs.streamlit.io/
+
+https://www.heroku.com/
+
+https://medium.com/towards-data-science/streamlit-101-an-in-depth-introduction-fc8aad9492f2
+
+https://medium.com/insiderfinance/python-streamlit-app-lets-you-get-any-stock-information-with-just-4-lines-of-code-128b784afab8
+
+https://medium.com/towards-data-science/quickly-build-and-deploy-an-application-with-streamlit-988ca08c7e83
+
+https://medium.com/dataseries/interactive-convolutional-neural-network-65bc19d8d698
+
+https://medium.com/towards-data-science/how-to-deploy-a-streamlit-app-using-an-amazon-free-ec2-instance-416a41f69dc3
+
+https://medium.com/swlh/using-streamlit-to-create-interactive-webapps-from-simple-python-scripts-f78b08e486e7
+
+https://towardsdatascience.com/coding-ml-tools-like-you-code-ml-models-ddba3357eace
+
+https://neptune.ai/blog/streamlit-guide-machine-learning
