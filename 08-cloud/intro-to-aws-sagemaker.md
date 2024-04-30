@@ -83,7 +83,7 @@ Reasons to pick SageMaker Studio:
 
 ### Example code used in SageMaker Studio
 
-In the left control panel of SageMaker you will find SageMaker Studio. Once you click on it, you will find a kind of Jupyter Lab environment, and you will be presented with a Launch screen.
+In the left control panel of SageMaker you will find SageMaker Studio. Once you click on it, you will find a kind of JupyterLab environment, and you will be presented with a Launch screen.
 
 **Background**
 
@@ -121,9 +121,9 @@ role = get_execution_role()
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from Ipython.display import Image #to display images in the notebook
-from Ipython.display import display #to display outputs in the notebook
-from time import gmtime, strftime #for labeling SageMaker models
+from Ipython.display import Image  # To display images in the notebook
+from Ipython.display import display  # To display outputs in the notebook
+from time import gmtime, strftime  # For labeling SageMaker models
 import sys
 import math
 import json
@@ -267,7 +267,7 @@ sess = sagemaker.Session()
 
 xgb = sagemaker.estimator.Estimator(container,
                                     role, 
-                                    instance_count = 1, #if you provide more than 1, it will be automatically done for you
+                                    instance_count = 1, # If you provide more than 1, it will be automatically done for you
                                     instance_type = 'ml.m4.xlarge',
                                     output_path = 's3://{}/{}/output'.format(bucket,prefix),
                                     sagemaker_session = sess)
@@ -345,7 +345,7 @@ from sagemaker.tuner import IntegerParameter, CategoricalParameter, ContinuousPa
 hyperparameter_ranges = {'eta': ContinuousParameter(0,1),
                         'min_child_weight': ContinuousParameter(0,10),
                         'alpha': ContinuousParameter(0,2),
-                        'max_depth':IntegerParameter(1,10)}
+                        'max_depth': IntegerParameter(1,10)}
 ```
 
 ```py
