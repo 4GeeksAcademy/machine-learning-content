@@ -119,7 +119,7 @@ In the next step, as in the previous module and whenever you deploy a solution i
 
 ![Streamlit step 7](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/streamlit-step7.png?raw=true)
 
-##### Resolve creation bug
+#### Resolve creation bug
 
 Because the Render environment is different from our development environment (especially in the Python version, since 3.7 is used by default and in this case we use 3.10 and up), we may get an error in the build of the project. In this case, its resolution is very simple:
 
