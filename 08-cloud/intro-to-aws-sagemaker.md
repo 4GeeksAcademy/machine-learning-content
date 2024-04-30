@@ -18,6 +18,7 @@ There is an easier way, which is the 'ML services'. This is all about the servic
 SageMaker is a service that has the previous pipeline ready for you to use, but you still need to know about the algorithms that you want to use, and you still need to code a little bit if you want to go a little bit deeper.
 
 Now let's see the easiest way at the top of the stack image. In 'AI Models', the models are built already. We use, for example, a natural language processing service called 'Amazon Translate'.
+
 AI services are a great way to try AI, specially if you don't have any background or if you are working on some rapid experimentation. They are a quick way to get into the business value, and if you find where the business value is and you need something more customized, then you can move down the stack to the next layer.
 
 The great thing about these AI services APIs is that, as a developer, you can jumpstart to experiment instead of having to learn a lot of stuff before starting to use them, and then you can go deeper and customize them.
