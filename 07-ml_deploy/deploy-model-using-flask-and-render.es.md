@@ -1,16 +1,16 @@
 ## Despliegue en Render usando Flask
 
-Tras la fase de desarrollo del modelo, tendremos un modelo resolutivo según nuestras espectativas y que satisface nuestras necesidades. Para que este modelo sea útil y cumpla la función para la que ha sido entrenado, debemos disponibilizarlo en algún entorno que nos permita su utilización. Aquí proponemos un entorno gratuito llamado `Render`, pero puede trasladarse a otros entornos, gratuitos o de pago.
+Tras la fase de desarrollo del modelo, tendremos un modelo resolutivo según nuestras expectativas y que satisface nuestras necesidades. Para que este modelo sea útil y cumpla la función para la que ha sido entrenado, debemos ponerlo a disposición en algún entorno que nos permita su utilización. Aquí proponemos un entorno gratuito llamado `Render`, pero puede trasladarse a otros entornos, gratuitos o de pago.
 
 ### Render
 
-Render es una plataforma de computación en la nube que facilita el despliegue, la hosting y la ejecución de aplicaciones, bases de datos, tareas programadas y otros servicios. A menudo se describe como una plataforma fácil de usar que combina la facilidad de las plataformas como Heroku con el poder y la flexibilidad de los proveedores de nube más tradicionales como AWS.
+Render es una plataforma de computación en la nube que facilita el despliegue, el hosting y la ejecución de aplicaciones, bases de datos, tareas programadas y otros servicios. A menudo se describe como una plataforma fácil de usar que combina la facilidad de las plataformas como Heroku con el poder y la flexibilidad de los proveedores de nube más tradicionales como AWS.
 
 Algunas características y ofertas clave de Render incluyen:
 
 1. **Despliegue de aplicaciones web**: Render permite desplegar aplicaciones web en varios lenguajes y marcos, incluidos Node.js, Ruby on Rails, Django y muchos otros.
-2. **Servicios privados**: Son aplicaciones o trabajos que no están expuestos a internet pero pueden ser usados por otras aplicaciones en Render.
-3. **Tareas programadas**: Permite ejecutar trabajos periódicos, similares a los cron jobs en sistemas Unix.
+2. **Servicios privados**: Son aplicaciones o trabajos que no están expuestos a internet, pero pueden ser usados por otras aplicaciones en Render.
+3. **Tareas programadas**: Permite ejecutar trabajos periódicos, similar a Cron jobs en sistemas Unix.
 4. **Bases de datos**: Render soporta el despliegue de bases de datos como PostgreSQL, y ofrece una solución de almacenamiento persistente para datos.
 5. **Despliegue desde repositorios**: Puedes conectar tu repositorio de GitHub o GitLab y configurar despliegues automáticos cada vez que hagas push a tu repositorio.
 
@@ -18,17 +18,17 @@ Render se ha ganado una reputación positiva por ser una opción atractiva para 
 
 #### Registro en la plataforma
 
-Para poder acceder a Render debemos tener una cuenta. Para registrarse se debe acceder al siguiente [enlace](https://dashboard.render.com/register). Una vez tenemos una cuenta, se nos habilita el acceso a toda la funcionalidad de Render:
+Para poder acceder a Render debemos tener una cuenta. Para registrarse se debe acceder al siguiente [enlace](https://dashboard.render.com/register). Una vez tenemos una cuenta, se nos habilita el acceso a todas las funcionalidades de Render:
 
-![render-functionalities](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/render-functionalities.PNG?raw=true)
+![Funcionalidades de Render](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/render-functionalities.PNG?raw=true)
 
 Podemos crear servicios de bases de datos, de despliegue web, tareas programadas...
 
 ### Integración en Render
 
-En esta lección integraremos el modelo de clasificación que hemos desarrollado en el [módulo de los árboles de decisión](https://4geeks.com/lesson/exploring-decision-trees).
+En esta lección integraremos el modelo de clasificación que hemos desarrollado en el [módulo de los árboles de decisión](https://4geeks.com/es/lesson/explorando-arboles-de-decision).
 
-El modelo `decision_tree_classifier_default_42.sav` se ha guardado en un objeto `Pickle` de tal forma que pueda ser utilizado, por ejemplo, para desplegarlo en un servicio web como este caso.
+El modelo `decision_tree_classifier_default_42.sav` se ha guardado en un objeto `Pickle` de tal forma que pueda ser utilizado, por ejemplo, para desplegarlo en un servicio web, como este caso.
 
 #### Paso 1: Crear un repositorio en Git
 
@@ -51,19 +51,19 @@ El archivo creado servirá como un ejemplo mínimo de cómo manejar las solicitu
 
 Ahora mismo el repositorio luce de la siguiente forma:
 
-![flask-step1](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step1.png?raw=true)
+![Flask paso 1](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step1.png?raw=true)
 
 #### Paso 3: Ejecutar la aplicación
 
 Para ejecutar la aplicación en local necesitamos la librería de Python `gunicorn`. Simplemente debemos instalarla, acceder con la consola al directorio donde se encuentra el script y ejecutar `gunicorn app:app`.
 
-![flask-step2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step2.png?raw=true)
+![Flask paso 2](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step2.png?raw=true)
 
-Al terminar se disponibilizará una dirección a través de la cual podemos acceder a la aplicación web:
+Al terminar se pondra a disposición una dirección a través de la cual podemos acceder a la aplicación web:
 
-![flask-step21](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step21.png?raw=true)
+![Flask paso 2.1](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step21.png?raw=true)
 
-En este caso como estamos desarrollándolo en un Codespace, el enlace es distinto al que se generaría en local, que sería `http://127.0.0.1:8000`.
+En este caso, como estamos desarrollándolo en un Codespace, el enlace es distinto al que se generaría en local, que sería `http://127.0.0.1:8000`.
 
 En este punto tenemos una pequeña aplicación web Flask con poca o casi ninguna funcionalidad. A continuación, añadiremos archivos HTML para personalizar la aplicación.
 
@@ -133,21 +133,21 @@ def index():
     return render_template("index.html", prediction = pred_class)
 ```
 
-Hemos creado la función `index`, que reemplaza a la antigua `hello_world` y que se nutre de los valores que se introduzcan en el HTML para desencadenar el proceso de predicción. Esto es así porque cuando se hace click sobre el botón `Predecir`, se envía una petición POST al script y se leen los valores introducidos en el formulario del HTML para realizar la predicción.
+Hemos creado la función `index`, que reemplaza a la antigua `hello_world` y que se nutre de los valores que se introduzcan en el HTML para desencadenar el proceso de predicción. Esto es así porque cuando se hace clic sobre el botón `Predict`, se envía una petición POST al script y se leen los valores introducidos en el formulario del HTML para realizar la predicción.
 
 En última instancia, el método devuelve el HTML renderizado, en este caso con el valor de la predicción en función de los valores.
 
 Ahora mismo el repositorio luce de la siguiente forma:
 
-![flask-step3](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step3.png?raw=true)
+![Flask paso 3](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step3.png?raw=true)
 
 Si guardamos los cambios y ejecutamos de nuevo la aplicación (`gunicorn app:app`), tras navegar a nuestra aplicación web en local veremos lo siguiente:
 
-![flask-step4](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step4.png?raw=true)
+![Flask paso 4](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step4.png?raw=true)
 
-Tras rellenar los valores y hacer click sobre `Predict`, el resultado se muestra también en la propia interfaz:
+Tras rellenar los valores y hacer clic sobre `Predict`, el resultado se muestra también en la propia interfaz:
 
-![flask-step5](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step5.png?raw=true)
+![Flask paso 5](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step5.png?raw=true)
 
 Al introducir cualquier valor se predice una clase. Además, la efectividad del modelo es la observada en el módulo pasado.
 
@@ -155,7 +155,7 @@ La interfaz web parece muy simple y poco atractiva de cara a los usuarios. El si
 
 #### Paso 5: Estilizar la interfaz web de la aplicación
 
-Una manera fácil de añadir estilos es utilizando CSS. Podemos agregar un bloque `<style>` directamente al HTML anterior para mejorarlo visualmente. El código `CSS` que incluiremos será el siguiente:
+Una manera fácil de añadir estilos es utilizando CSS. Podemos agregar un bloque `<style>` justo encima del HTML para mejorarlo visualmente. El código `CSS` que incluiremos será el siguiente:
 
 ```css
 body {
@@ -260,13 +260,13 @@ Al introducirlo en el HTML, el código quedaría tal que así:
 </html>
 ```
 
-Tras reejecutar la aplicación y acceder de nuevo a la interfaz web, este es su nuevo aspecto:
+Tras volver a ejecutar la aplicación y acceder de nuevo a la interfaz web, este es su nuevo aspecto:
 
-![flask-step6](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step6.png?raw=true)
+![Flask paso 6](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step6.png?raw=true)
 
 Y nuevamente, al rellenar los valores y lanzar la predicción, así se muestra en el front:
 
-![flask-step7](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step7.png?raw=true)
+![Flask paso 7](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step7.png?raw=true)
 
 Tras desarrollar la funcionalidad deseada y contar con un front que satisface nuestras necesidades, integraremos todo esto en Render.
 
@@ -276,32 +276,32 @@ El último paso es configurar el servicio en Render y conectarlo con nuestro rep
 
 Una vez lo seleccionemos nos aparecerá un formulario como el siguiente:
 
-![flask-step8](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step8.png?raw=true)
+![Flask paso 8](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step8.png?raw=true)
 
 Deberemos rellenarlo con la siguiente información:
 
 - `Name`: El nombre que queramos que tenga nuestro servicio. En este caso introduciremos `4geeks-flask-integration`
-- `Branch`: La rama en la que se encuentra nuestro código actualizado, siempre en la última versión. Deberemos dejar el valor por defecto, `master`.
+- `Branch`: La rama en la que se encuentra nuestro código actualizado, siempre en la última versión. Deberemos dejar el valor por defecto, `main`.
 - `Root Directory`: En este caso hemos desarrollado el código dentro de la carpeta `src`, que incluye el script de Python, el template HTML y las librerías del proyecto (archivo `requirements.txt`), por lo que deberemos introducir `src`.
 - `Runtime`: El código es Python, así que dejaremos el valor por defecto, `Python 3`.
 - `Build Command`: Dejaremos el valor por defecto, `pip install -r requirements.txt`.
-- `Start Command`: Ya somos amigables con este comando. Hemos utilizado en el desarrollo gunicorn, así que dejaremos el valor por defecto, `gunicorn app:app`.
+- `Start Command`: Ya conocemos este comando, lo hemos utilizado en el desarrollo, así que dejaremos el valor por defecto, `gunicorn app:app`.
 
 Por último, elegiremos la tarifa gratuita. El formulario, una vez relleno, debería tener la siguiente información:
 
-![flask-step9](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step9.png?raw=true)
+![Flask paso 9](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step9.png?raw=true)
 
-En el siguiente paso nos aparecerá una consola con los logs del despliegue de la aplicación. El despliegue se hace paso a paso, clonando en primer lugar el repositorio, construyéndolo (*build*), instalando las dependencias, y, en último lugar, ejecutando el comando para lanzar la aplicación web.
+En el siguiente paso nos aparecerá una consola con los registros (*logs*) del despliegue de la aplicación. El despliegue se hace paso a paso, clonando en primer lugar el repositorio, construyéndolo (*build*), instalando las dependencias, y, en último lugar, ejecutando el comando para lanzar la aplicación web.
 
-![flask-step10](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step10.png?raw=true)
+![Flask paso 10](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step10.png?raw=true)
 
-##### Resolver fallo de creación
+#### Resolver el fallo de creación
 
-Debido a que el entorno de Render es diferente al nuestro de desarrollo (especialmente en la versión de Python, ya que se utiliza por defecto la 3.7 y en este caso nosotros usamos de la 3.10 hacia arriba), puede que nos arroje un error la build del proyecto. En este caso su resolución es muy simple:
+Debido a que el entorno de Render es diferente a nuestro entorno de desarrollo (especialmente en la versión de Python, ya que se utiliza por defecto la 3.7 y en este caso nosotros usamos de la 3.10 hacia arriba), puede que nos arroje un error la build del proyecto. En este caso su resolución es muy simple:
 
-![flask-step11](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step11.png?raw=true)
+![Flask paso 11](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step11.png?raw=true)
 
-Tenemos que acceder, en la misma pantalla donde se abre el log de la ejecución, al apartado `Environment` e introducir una nueva variable de entorno. En este caso nosotros tenemos la versión `3.11.4` de Python pero se podría introducir cualquier otra (siempre y cuando sea a partir de la 3.7).
+Tenemos que acceder, en la misma pantalla donde se abre el log de la ejecución, al apartado `Environment` e introducir una nueva variable de entorno. En este caso nosotros tenemos la versión `3.11.4` de Python, pero se podría introducir cualquier otra (siempre y cuando sea a partir de la 3.7).
 
 Volvemos a lanzar el despliegue y ahora debería funcionar.
 
@@ -309,16 +309,16 @@ Volvemos a lanzar el despliegue y ahora debería funcionar.
 
 Una vez el despliegue haya sido satisfactorio, este será el log que se mostrará:
 
-![flask-step12](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step12.png?raw=true)
+![Flask paso 12](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step12.png?raw=true)
 
 De hecho, hay disponible un apartado en el que podemos visualizar los distintos despliegues de nuestra aplicación web y el status de cada uno de ellos:
 
-![flask-step13](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step13.png?raw=true)
+![Flask paso 13](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step13.png?raw=true)
 
 #### Paso 7: Uso del servicio en Render
 
-Una vez que el despliegue ha sido satisfactorio, accedemos a la aplicación desde el enlace situado justo debajo del nombre del servicio, y ya podemos utilizar la aplicación y compartirsela a nuestros amigos/compañeros/clientes. La que hemos creado en esta lección está accesible en el siguiente enlace: `https://fourgeeks-flask-integration.onrender.com/`.
+Una vez que el despliegue ha sido satisfactorio, accedemos a la aplicación desde el enlace situado ju sto debajo del nombre del servicio, y ya podemos utilizar la aplicación y compartírsela a nuestros amigos/compañeros/clientes. La que hemos creado en esta lección está accesible en el siguiente enlace: `https://fourgeeks-flask-integration.onrender.com/`.
 
-![flask-step14](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step14.png?raw=true)
+![Flask paso 14](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/flask-step14.png?raw=true)
 
-> NOTA: Al haber utilizado el plan gratuito, puede que Render tire la aplicación si no se utiliza. Depende de cuando leas esto la aplicación estará operativa o no.
+> Nota: Al haber utilizado el plan gratuito, puede que Render tire la aplicación si no se utiliza. Depende de cuando leas esto la aplicación estará operativa o no.
