@@ -4,18 +4,18 @@
 
 ### Structure
 
-The model has a sequential structure and each model in the sequence is built to correct the errors of its predecessor. The structure of a boosting algorithm follows a process characterized by the following steps:
+The model has a sequential structure, and each model in the sequence is built to correct the errors of its predecessor. The structure of a boosting algorithm follows a process characterized by the following steps:
 
 1. **Initialization**. First, an initial weight is assigned to each instance (row) in the training set. Generally, these weights are equal for all instances at startup.
 2. **Training the first model**. A model is trained with the training data. This model will make some correct and some incorrect predictions.
 3. **Error calculation**. Next, the error of the previous model is calculated based on the previous weights. Instances misclassified by this model will receive a higher weight, so they will be highlighted in the next step.
 4. **Training the second model**. A new model is trained, but now it focuses more on the instances with higher weights (the ones that the previous model misclassified).
-5. **Iteration**. Steps 3 and 4 are repeated for a predefined number of times, or until an acceptable error limit is reached. Each new model concentrates on correcting the errors of the previous model.
-6. **Combination of the models**. After the end of the iterations, the models are combined through a weighted sum of their predictions. Models that perform better (i.e., make fewer errors in their predictions) are usually weighted more heavily in the sum.
+5. **Iteration**. Steps 3 and 4 are repeated a predefined number of times, or until an acceptable error limit is reached. Each new model concentrates on correcting the errors of the previous model.
+6. **Combination of the models**. After the end of the iterations, the models are combined into a weighted sum of their predictions. Models that perform better (i.e., make fewer errors in their predictions) are usually weighted more heavily in the sum.
 
-![boosting](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/boosting.png?raw=true)
+![Boosting algorithm example](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/boosting.png?raw=true)
 
-It is important to keep in mind that boosting can be more susceptible to overfitting than other techniques if left unchecked, since each new model is trying to correct the errors of the previous one and could end up overfitting the training data. Therefore, it is crucial to have good control of the hyperparameters and to perform cross-validation during training.
+It is important to keep in mind that boosting can be more susceptible to overfitting than other techniques if left unchecked, since each new model is trying to correct the errors of the previous one and could end up overfitting the training data. Therefore, it is crucial to have good control over the hyperparameters and to perform cross-validation during training.
 
 ### Implementations
 
@@ -23,9 +23,9 @@ There are a multitude of implementations of this model, from more to less effici
 
 #### XGBoost
 
-**XGBoost** (*eXtreme Gradient Boosting*) is the most efficient implementation of the gradient boosting algorithm. It has been developed for speed and accuracy, and so far it is the best implementation, outperforming sklearn in training times. The time reduction is due to the fact that it provides methods to parallelize the tasks, flexibility when training the model and it is more robust, being able to include tree pruning mechanisms to save processing time. Whenever available, this is the alternative to sklearn that should be used.
+**XGBoost** (*eXtreme Gradient Boosting*) is the most efficient implementation of the gradient boosting algorithm. It has been developed for speed and accuracy, and so far it is the best implementation, outperforming *sklearn* in training times. The time reduction is due to the fact that it provides methods to parallelize the tasks, provides flexibility when training the model, and it is more robust, being able to include tree pruning mechanisms to save processing time. Whenever available, this is the alternative to *sklearn* that should be used.
 
-In the reading we exemplified how to use XGBoost, but here we will provide a simple sample code to show you how to use sklearn to implement boosting:
+In the reading we exemplified how to use XGBoost, but here we will provide a simple sample code to show you how to use *sklearn* to implement boosting:
 
 ##### Classification
 
@@ -72,7 +72,7 @@ We can easily build a decision tree in Python using the `scikit-learn` library a
 
 As we can see, only the first four hyperparameters refer to boosting, while the rest were truncated to decision trees. Another very important hyperparameter is the `random_state`, which controls the random generation seed. This attribute is crucial to ensure replicability.
 
-### Boosting vs. random forest
+### Boosting vs. Random forest
 
 Boosting and random forest are two Machine Learning techniques that combine multiple models to improve the accuracy and stability of predictions. Although both techniques are based on the idea of assembling several models, they have some key differences.
 
@@ -84,7 +84,7 @@ Boosting and random forest are two Machine Learning techniques that combine mult
 | Performance and accuracy | Tends to have higher accuracy performance, but may be more sensitive to hyperparameters. | May have lower precision performance, but is more robust to hyperparameter variations. |
 | Training time | May be slower to train because models must be trained sequentially, one after another. | May be faster to train because all models can be trained in parallel. |
 
-These fundamental differences between the two models make them more or less suitable depending on the situation and the characteristics of the data. However, to make it clearer, we can establish some criteria based on the characteristics of the data that we could consider when choosing boosting and random forest:
+These fundamental differences between the two models make them more or less suitable, depending on the situation and the characteristics of the data. However, to make it clearer, we can establish some criteria based on the characteristics of the data that we could consider when choosing boosting and random forest:
 
 |  | Boosting | Random forest |
 |--|----------|---------------|
