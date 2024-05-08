@@ -2,7 +2,7 @@
 
 **Probability** is a measure that describes the likelihood of a particular event occurring within a set of possible events. It is expressed on a scale ranging from 0 (indicating that an event is impossible) to 1 (indicating that an event is certain). It can also be expressed as a percentage between 0% and 100%.
 
-Probability provides a framework for quantifying the uncertainty associated with predictions, inferences, decisions and random events. To understand and calculate it, it is essential to understand the following concepts:
+Probability provides a framework for quantifying the uncertainty associated with predictions, inferences, decisions, and random events. To understand and calculate it, it is essential to understand the following concepts:
 
 - **Experiment**: Any action or procedure that can produce well-defined results. Example: throwing a die.
 - **Sample space**: The set of all possible outcomes of an experiment. For the example of the die, the sample space is $S = {1, 2, 3, 4, 5, 6}$ (since they are all the possible faces that can come out when rolling a die).
@@ -50,7 +50,7 @@ There are several types of probability, each suitable for different contexts or 
 4. **Conditional probability**: It is the probability that an event $A$ occurs given that another event $B$ has already occurred. It is denoted as $P(A|B)$. It is one of the most studied probabilities in the field of Machine Learning, since the **Bayes' theorem** is derived from it.
 5. **Joint probability**: It is the probability that two or more events occur simultaneously. It is denoted as $P(A \cap B)$.
 
-These types of probability allow addressing different situations and problems in the field of statistics and probability, and are fundamental in many applications, including decision making, Machine Learning and scientific research.
+These types of probability allow addressing different situations and problems in the field of statistics and probability, and are fundamental in many applications, including decision-making, Machine Learning, and scientific research.
 
 #### Bayes' Theorem
 
