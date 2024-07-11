@@ -1,4 +1,10 @@
-## Naive Bayes
+---
+title: "Naive Bayes Algorithm"
+description: "Discover Naive Bayes: a simple yet powerful classification algorithm based on Bayes’ theorem. Learn its implementations and hyperparameters."
+tags: ["python", "machine-learning"]
+authors: ["tommygonzaleza"]
+
+---
 
 **Naive Bayes** is a classification algorithm based on Bayes' theorem, which is a statistical technique that uses probability to make predictions. This algorithm is very simple but effective, and it is widely used in various areas of Machine Learning.
 
