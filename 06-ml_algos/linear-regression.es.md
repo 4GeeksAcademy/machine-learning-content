@@ -20,7 +20,7 @@ Este modelo se fundamenta en torno a cinco supuestos, que son los siguientes:
 4. **Normalidad de los errores**: Los errores están normalmente distribuidos. Esto es importante para la realización de pruebas estadísticas y para construir intervalos de confianza.
 5. **Ausencia de multicolinealidad**: En una regresión múltiple, las variables independientes no están perfectamente correlacionadas entre sí. Si hay correlación perfecta, se dice que los datos tienen multicolinealidad (hay variables que son iguales) y dificulta el cálculo de los coeficientes.
 
-### Regresión lineal simple
+### Qué es una Regresión Lineal Simple
 
 La **regresión lineal simple** permite estudiar las relaciones entre dos variables numéricas continuas. En este tipo de **regresión** intentamos ajustar una línea recta a los datos que mejor describa la relación entre las dos variables. Es decir, buscamos una línea que minimice la distancia vertical entre sí misma y todos los puntos de datos, de tal forma que la mejor relación lineal se da cuando todos los puntos conforman la recta y no existe dispersión.
 
@@ -38,7 +38,7 @@ El objetivo de la regresión lineal simple es, por lo tanto, encontrar los mejor
 
 En la regresión lineal, cada valor dependiente tiene una sola variable independiente correspondiente.
 
-### Regresión lineal múltiple
+### Qué es una Regresión Lineal Múltiple
 
 ![Regresoin Lineal Multiple](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/regresion_lineal_multiple.png?raw=true)
 
