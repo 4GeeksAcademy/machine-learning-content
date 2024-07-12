@@ -12,6 +12,8 @@ This model is based on five assumptions, which are as follows:
 
 ### Simple linear regression
 
+![simple linear regression](https://github.com/4GeeksAcademy/machine-learning-content/raw/master/assets/regresion_lineal.png?raw=true)
+
 Simple linear regression allows us to study the relationships between two continuous numerical variables. In this type of regression, we try to fit a straight line to the data that best describes the relationship between the two variables. That is, we look for a line that minimizes the vertical distance between itself and all the data points, so that the best linear relationship occurs when all the points form the line and there is no dispersion.
 
 The equation that defines this relationship (straight line) is:
@@ -29,6 +31,8 @@ The goal of simple linear regression is, therefore, to find the best values of $
 In linear regression, each dependent value has a single corresponding independent variable.
 
 ### Multiple linear regression
+
+![multiple linear regression](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/regresion_lineal_multiple.png?raw=true)
 
 Multiple linear regression is an extension of simple linear regression used when there is more than one independent variable. It is used to model the relationship between two or more characteristics and a response by fitting a linear equation (more extended than the above) to the observed data.
 
