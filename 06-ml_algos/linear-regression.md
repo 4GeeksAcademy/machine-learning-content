@@ -2,7 +2,7 @@
 title: "What is a Linear Regression and how to use it in machine learning models"
 description: "Discover the power of linear regression, a model that predicts outcomes based on one or more variables. Learn about its five key assumptions and how it can help you understand relationships between data points. Dive into simple and multiple linear regression to enhance your data analysis skills."
 technologies: ["linear regression", "machine learning", "python"]
-keyword: "linear regression"
+keyword: "what is a linear regression"
 
 ---
 
@@ -18,7 +18,7 @@ This model is based on five assumptions, which are as follows:
 4. **Normality of errors**: Errors are normally distributed. This is important for performing statistical tests and constructing confident intervals.
 5. **Absence of multicollinearity**: In a multiple regression, the independent variables are not perfectly correlated with each other. If there is perfect correlation, the data is said to have multicollinearity (there are variables that are the same), which makes it difficult to calculate the coefficients.
 
-### Simple linear regression
+### What is a Simple Linear Regression
 
 ![simple linear regression](https://github.com/4GeeksAcademy/machine-learning-content/raw/master/assets/regresion_lineal.png?raw=true)
 
@@ -38,7 +38,7 @@ The goal of simple linear regression is, therefore, to find the best values of $
 
 In linear regression, each dependent value has a single corresponding independent variable.
 
-### Multiple linear regression
+### What is a Multiple Linear Regression
 
 ![multiple linear regression](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/regresion_lineal_multiple.png?raw=true)
 
