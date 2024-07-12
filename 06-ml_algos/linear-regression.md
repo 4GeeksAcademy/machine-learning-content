@@ -1,3 +1,10 @@
+---
+title: "What is a Linear Regression and how to use it in machine learning models"
+description: "Discover the power of linear regression, a model that predicts outcomes based on one or more variables. Learn about its five key assumptions and how it can help you understand relationships between data points. Dive into simple and multiple linear regression to enhance your data analysis skills."
+technologies: ["linear regression", "machine learning", "python"]
+
+---
+
 ## Linear Regression
 
 **Linear regression** is a type of model used to predict the value of a dependent variable (or target variable) based on the value of one or more independent variables (or predictor variables). Linear regression assumes that there is a direct linear relationship between the independent variables and the dependent variable. If the relationship between the target variable is one single predictor variable, the regression is said to be simple. If it has several predictors, it is called multiple regression.
