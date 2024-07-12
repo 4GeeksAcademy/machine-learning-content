@@ -2,6 +2,7 @@
 title: "What is a Linear Regression and how to use it in machine learning models"
 description: "Discover the power of linear regression, a model that predicts outcomes based on one or more variables. Learn about its five key assumptions and how it can help you understand relationships between data points. Dive into simple and multiple linear regression to enhance your data analysis skills."
 technologies: ["linear regression", "machine learning", "python"]
+keyword: "linear regression"
 
 ---
 
