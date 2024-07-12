@@ -1,4 +1,14 @@
+---
+title: "Que es una regresion lineal y para que utilizarla"
+"description": "Descubre cómo la regresión lineal, un modelo predictivo esencial, puede ayudarte a entender y predecir variables clave. Aprende sobre sus dos tipos principales: simple y múltiple, y los cinco supuestos críticos que garantizan su precisión. ¡Optimiza tus análisis de datos!"
+technologies: ["regresión lineal", "machine learning"]
+keyword: "regresion lineal"
+
+---
+
 ## Regresión Lineal
+
+![regresion lineal](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/regresion_lineal.png?raw=true)
 
 La **regresión lineal** (*linear regression*) es un tipo de modelo que se utiliza para predecir el valor de una variable dependiente (o variable objetivo) basado en el valor de una o más variables independientes (o variables predictoras). La regresión lineal presupone que existe una relación lineal directa entre las variables independientes y la variable dependiente. Si la relación entre la variable objetivo es con una única variable predictora, se dice que la regresión es simple. Si es con varias predictoras, recibe el nombre de regresión múltiple.
 
@@ -12,7 +22,7 @@ Este modelo se fundamenta en torno a cinco supuestos, que son los siguientes:
 
 ### Regresión lineal simple
 
-La regresión lineal simple permite estudiar las relaciones entre dos variables numéricas continuas. En este tipo de regresión intentamos ajustar una línea recta a los datos que mejor describa la relación entre las dos variables. Es decir, buscamos una línea que minimice la distancia vertical entre sí misma y todos los puntos de datos, de tal forma que la mejor relación lineal se da cuando todos los puntos conforman la recta y no existe dispersión.
+La **regresión lineal simple** permite estudiar las relaciones entre dos variables numéricas continuas. En este tipo de **regresión** intentamos ajustar una línea recta a los datos que mejor describa la relación entre las dos variables. Es decir, buscamos una línea que minimice la distancia vertical entre sí misma y todos los puntos de datos, de tal forma que la mejor relación lineal se da cuando todos los puntos conforman la recta y no existe dispersión.
 
 La ecuación que define esta relación (recta) es:
 
@@ -29,6 +39,8 @@ El objetivo de la regresión lineal simple es, por lo tanto, encontrar los mejor
 En la regresión lineal, cada valor dependiente tiene una sola variable independiente correspondiente.
 
 ### Regresión lineal múltiple
+
+![Regresoin Lineal Multiple](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/regresion_lineal_multiple.png?raw=true)
 
 La regresión lineal múltiple es una extensión de la regresión lineal simple que se utiliza cuando hay más de una variable independiente. Se usa para modelar la relación entre dos o más características y una respuesta mediante el ajuste de una ecuación lineal (más extendida que la anterior) a los datos observados.
 
