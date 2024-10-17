@@ -4,11 +4,11 @@
 
 Probability provides a framework for quantifying the uncertainty associated with predictions, inferences, decisions and random events. To understand and calculate it, it is essential to understand the following concepts:
 
-- **Experiment**: Any action or procedure that can produce well-defined results. Example: throwing a die.
-- **Sample space**: The set of all possible outcomes of an experiment. For the example of the die, the sample space is $S = {1, 2, 3, 4, 5, 6}$ (since they are all the possible faces that can come out when rolling a die).
+- **Experiment**: Any action or procedure that can produce well-defined results. Example: throwing a dice.
+- **Sample space**: The set of all possible outcomes of an experiment. For the example of the dice, the sample space is $S = {1, 2, 3, 4, 5, 6}$ (since they are all the possible faces that can come out when rolling a dice).
 - **Event**: Also called an occurrence, it is the specific subset of outcomes within a sample space. In our example, referring to the event of getting an even number would be represented as $E = {2, 4, 6}$ (since all those numbers are even).
 
-The probability of an event is calculated as the ratio of the number of favorable outcomes for that event to the total number of outcomes in the sample space. For example, the probability of getting an even number when rolling a die is:
+The probability of an event is calculated as the ratio of the number of favorable outcomes for that event to the total number of outcomes in the sample space. For example, the probability of getting an even number when rolling a dice is:
 
 $P(E) = \frac{3}{6} = 0.5$
 
@@ -30,7 +30,7 @@ The event that occurs if both events occur at the same time. It is denoted by $A
 
 #### Complement of an event
 
-The event that occurs if the given event does not occur. It is denoted by $A'$. For example, if $A$ is the event of getting an even number by rolling a die, then $A'$ is the event of getting an odd number.
+The event that occurs if the given event does not occur. It is denoted by $A'$. For example, if $A$ is the event of getting an even number by rolling a dice, then $A'$ is the event of getting an odd number.
 
 ![complement](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/complement.png?raw=true)
 
