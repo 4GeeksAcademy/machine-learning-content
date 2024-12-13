@@ -1,10 +1,10 @@
-## Estadística descriptiva
+## Estadística descriptiva.
 
 La **estadística descriptiva** (*descriptive statistics*) es una rama de la estadística que se encarga de recolectar, analizar, interpretar y presentar datos de manera organizada y efectiva. Su principal objetivo es proporcionar resúmenes simples y comprensibles acerca de las características principales de un conjunto de datos, sin llegar a hacer inferencias o predicciones sobre una población más amplia.
 
-### Guía de la estadística descriptiva en Python
+### Guía de la estadística descriptiva en Python.
 
-#### Medidas de tendencia central
+#### Medidas de tendencia central.
 
 Las **medidas de tendencia central** son valores numéricos que describen cómo se centralizan o agrupan los datos en un conjunto. Son esenciales en estadística y análisis de datos porque nos proporcionan un resumen de la información, permitiéndonos comprender rápidamente las características generales de una distribución de datos sin tener que observar cada valor individualmente.
 
@@ -38,7 +38,7 @@ print(f"Moda: {mode}")
 
 Estas medidas son fundamentales para describir y analizar distribuciones de datos.
 
-#### Medidas de dispersión
+#### Medidas de dispersión.
 
 Las **medidas de dispersión** son valores numéricos que describen cómo de variados son los datos en un conjunto. Mientras las medidas de tendencia central nos indican dónde están "centrados" los datos, las medidas de dispersión nos muestran cuánto se "extienden" o "varían" esos datos alrededor de ese centro.
 
@@ -62,7 +62,7 @@ print(f"Varianza: {variance}")
 print(f"Desviación estándar: {std}")
 ```
 
-#### Medidas de posición
+#### Medidas de posición.
 
 Las **medidas de posición** son estadísticas que nos indican la ubicación o posición de un valor específico dentro de un conjunto de datos.
 
@@ -73,7 +73,7 @@ Son medidas que tratan sobre cómo se puede dividir un conjunto de datos en part
 - **Percentil**: Divide un conjunto de datos en 100 partes iguales. El k-ésimo percentil indica el valor bajo el cual cae el k% de las observaciones.
 - **Cuantil**: Divide un conjunto de datos en partes iguales, dependiendo del tipo. Los cuartiles dividen los datos en cuatro partes, los quintiles en cinco, etcétera.
 
-#### Medidas de forma
+#### Medidas de forma.
 
 Las **medidas de forma** describen cómo se distribuyen los valores en un conjunto de datos en relación con las medidas de tendencia central. Específicamente, nos indican la naturaleza de la distribución, ya sea si es simétrica, sesgada o tiene colas pesadas, entre otros.
 
@@ -101,6 +101,6 @@ from scipy.stats import kurtosis
 kurt = kurtosis(data)
 ```
 
-#### Visualización de datos
+#### Visualización de datos.
 
 En este apartado, visualizar los datos de los que disponemos es fundamental. Se suelen utilizar histogramas, gráficos de barras y diagramas de dispersión, dependiendo de la tipología de los datos.
