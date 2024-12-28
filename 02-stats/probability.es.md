@@ -29,7 +29,7 @@ Es el suceso que tiene lugar si ocurren ambos sucesos a la vez. Se denota por $A
 ![intersection](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/intersection.png?raw=true)
 
 #### Complemento de un suceso
-
+#Observacion> Hay una inconsistencia en la explicación. Se visualiza "E" como espacio muestral, pero en el comienzo de la sección se explica "E" como Evento. Para una mayor consistencia en la explicación, debe presentarse el espacio muestral como "S".
 Es el suceso que tiene lugar si no ocurre el suceso dado. Se denota por $A'$. Por ejemplo, si $A$ es el suceso de obtener un número par al lanzar un dado, entonces $A'$ es el suceso de obtener un número impar.
 
 ![complement](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/complement.png?raw=true)
