@@ -1,3 +1,9 @@
+---
+description: >-
+  Master the essentials of descriptive statistics in Python! Learn about
+  measures of central tendency, dispersion, and data visualization. Discover
+  more now!
+---
 ## Estadística descriptiva
 
 La **estadística descriptiva** (*descriptive statistics*) es una rama de la estadística que se encarga de recolectar, analizar, interpretar y presentar datos de manera organizada y efectiva. Su principal objetivo es proporcionar resúmenes simples y comprensibles acerca de las características principales de un conjunto de datos, sin llegar a hacer inferencias o predicciones sobre una población más amplia.
