@@ -1,3 +1,8 @@
+---
+description: >-
+  Introduction to Machine Learning on AWS: Learn how to transform business problems into ML solutions, use SageMaker, and deploy AI models efficiently.
+---
+
 # Getting started with Machine learning on AWS tools
 
 Regardless of the problem you are working on, you normally have to go through the following steps:
