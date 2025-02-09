@@ -1,3 +1,8 @@
+---
+description: >-
+  Introducción a Machine Learning en AWS: Aprende a convertir problemas de negocio en soluciones de ML, explorar datos, entrenar modelos con SageMaker y desplegar predicciones en producción.
+---
+
 # Primeros pasos con Machine Learning en las herramientas de AWS
 
 Independientemente del problema en el que estés trabajando, normalmente debes realizar los siguientes pasos: 
