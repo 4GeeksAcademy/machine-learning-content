@@ -1,8 +1,10 @@
 ---
 description: >-
-  Master the essentials of descriptive statistics in Python! Learn about
-  measures of central tendency, dispersion, and data visualization. Discover
-  more now!
+  Domina la estadística descriptiva en Python. Aprende conceptos clave como las medidas de tendencia central (media, mediana, moda), dispersión (rango, varianza, desviación estándar) y técnicas de visualización de datos. Obtén experiencia práctica analizando datos y tomando decisiones informadas.
+technologies:
+ - probabilidad-y-estadistica
+ - Python
+
 ---
 ## Estadística descriptiva
 
