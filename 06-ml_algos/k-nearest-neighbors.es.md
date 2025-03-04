@@ -31,7 +31,7 @@ Las métricas de distancia son funciones utilizadas para medir la proximidad o s
 
 - **Euclidiana** (*Euclidean*): Mide la distancia en línea recta entre dos puntos. Adecuada para datos numéricos.
 - **Manhattan**: Mide la distancia como la diferencia de las coordenadas cartesianas de ambos puntos. Es adecuada para datos numéricos también.
-- **Minkowski**: Es un punto intermedio entre las dos anteriores.
+- **Minkowski**: Es una generalización de las dos anteriores." 
 - **Chebyshev**: También conocida como la distancia máxima entre la diferencia de alturas (eje Y) o de anchuras (eje X).
 - **Coseno** (*Cosine*): Utilizada para medir la similitud entre dos vectores.
 - **Hamming**: Se utiliza para datos categóricos o binarios. Mide la diferencia entre dos cadenas de caracteres de igual longitud.
