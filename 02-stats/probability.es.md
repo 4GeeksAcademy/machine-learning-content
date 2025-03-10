@@ -1,6 +1,6 @@
 ## Probabilidad
 
-La **probabilidad** (*probability*) es una medida que describe la posibilidad de que ocurra un evento en particular dentro de un conjunto de posibles eventos. Se expresa en una escala que va desde 0 (indicando que un evento es imposible) hasta 1 (indicando que un evento es cierto). También puede expresarse como un porcentaje entre 0% y 100%.
+La **probabilidad** (*probability*) es una medida que describe la posibilidad de que ocurra un evento en particular dentro de un conjunto de posibles eventos. Se expresa en una escala que va desde 0 (indicando que un evento es imposible), hasta 1 (indicando que un evento es cierto). También puede expresarse como un porcentaje entre 0% y 100%.
 
 La probabilidad proporciona un marco para cuantificar la incertidumbre asociada con predicciones, inferencias, decisiones y eventos aleatorios. Para entenderla y calcularla, es esencial comprender los siguientes conceptos:
 
