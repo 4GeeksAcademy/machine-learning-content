@@ -30,7 +30,7 @@ Es el suceso que tiene lugar si ocurren ambos sucesos a la vez. Se denota por $A
 
 #### Complemento de un suceso
 
-Es el suceso que tiene lugar si no ocurre el suceso dado. Se denota por $A'$. Por ejemplo, si $A$ es el suceso de obtener un número par al lanzar un dado, entonces $A'$ es el suceso de obtener un número impar.
+Es el suceso que tiene lugar si no ocurre el suceso dado. Se denota por $E$. Por ejemplo, si $A$ es el suceso de obtener un número par al lanzar un dado, entonces $E$ es el suceso de obtener un número impar.
 
 ![complement](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/complement.png?raw=true)
 
