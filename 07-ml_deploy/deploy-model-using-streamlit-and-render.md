@@ -18,7 +18,7 @@ To integrate something in Render we must first have to create a Git repository. 
 
 #### Step 2: Create a basic application
 
-Now we will generate a simple application using the `Flask` library. In the `src` directory, we create a new file named `app.py` that we will modify with the following code:
+Now we will generate a simple application using the `Streamlit` library. In the `src` directory, we create a new file named `app.py` that we will modify with the following code:
 
 ```py
 import streamlit as st
