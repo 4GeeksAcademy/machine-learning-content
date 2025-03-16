@@ -1,3 +1,8 @@
+---
+description: >-
+  Master las Máquinas de Vectores de Soporte (SVM) en clasificación y regresión.
+  Aprende cómo funcionan y su implementación en Python. ¡Descubre más!
+---
 ## Máquina de Vectores de Soporte
 
 Las **Máquinas de Vectores de Soporte** (*SVM*, *Support Vector Machines*) son una clase de algoritmos de aprendizaje supervisado ampliamente utilizados en clasificación y regresión. Estas se introdujeron en la década de 1990 y desde entonces han sido una herramienta importante en el campo del aprendizaje automático. 

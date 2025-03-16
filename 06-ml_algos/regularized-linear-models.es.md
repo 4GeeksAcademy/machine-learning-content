@@ -1,3 +1,8 @@
+---
+description: >-
+  Master los modelos lineales regularizados con Lasso y Ridge. Aprende a evitar
+  el sobreajuste y mejora tus predicciones en Python. ¡Descubre más!
+---
 ## Modelos Lineales Regularizados
 
 Un **modelo lineal regularizado** (*regularized linear model*) es una versión de un modelo lineal que incluye un elemento en su función para evitar el sobreajuste (*overfitting*) y mejorar la capacidad de aprendizaje del modelo.

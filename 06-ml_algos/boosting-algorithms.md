@@ -1,3 +1,9 @@
+---
+description: >-
+  Master boosting algorithms to enhance your model's performance! Learn about
+  XGBoost, hyperparameters, and how to choose between boosting and random
+  forest.
+---
 ## Boosting
 
 **Boosting** is a technique used to improve the performance of models. The essential idea behind boosting is to train a series of weak models (usually decision trees), each of which attempts to correct the errors of the previous one.

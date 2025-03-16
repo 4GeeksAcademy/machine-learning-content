@@ -1,3 +1,8 @@
+---
+description: >-
+  Aprende a identificar y manejar valores atípicos en tus datos. Descubre
+  técnicas efectivas para mejorar tus análisis estadísticos. ¡Haz clic aquí!
+---
 # Cómo lidiar con los valores atípicos
 
 Como vimos en el análisis exploratorio de datos, en estadística, un valor atípico es un punto de datos que difiere significativamente de otras observaciones. Un valor atípico puede deberse a la variabilidad en la medición o puede indicar un error experimental.

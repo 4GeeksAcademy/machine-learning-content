@@ -1,3 +1,8 @@
+---
+description: >-
+  Descubre el aprendizaje no supervisado: técnicas de clustering y reducción de
+  dimensionalidad. Aprende a identificar patrones en tus datos hoy mismo.
+---
 ## Aprendizaje no supervisado
 
 El **aprendizaje no supervisado** (*unsupervised learning*) es una rama del Machine Learning en la que se exploran y descubren patrones y estructuras ocultas en los datos sin la guía de una variable objetivo o etiquetas previas. A diferencia del aprendizaje supervisado, donde se proporcionan ejemplos de entrada y sus correspondientes salidas deseadas para entrenar al modelo, en el aprendizaje no supervisado, el algoritmo se enfrenta a un conjunto de datos sin etiquetas y busca encontrar patrones interesantes o agrupar los datos en categorías sin una guía específica.

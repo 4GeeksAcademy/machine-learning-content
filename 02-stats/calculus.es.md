@@ -1,7 +1,7 @@
 ---
 description: >-
-  Learn the essentials of calculus, including derivatives and integrals, and
-  discover how they power machine learning. Click to deepen your understanding!
+  Master the essentials of calculus, including derivatives and integrals, and
+  see how they drive machine learning. Click to deepen your understanding!
 ---
 ## Cálculo
 

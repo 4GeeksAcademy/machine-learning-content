@@ -1,3 +1,8 @@
+---
+description: >-
+  Discover the fundamentals of deep learning and artificial neural networks.
+  Learn how these powerful models drive AI advancements today!
+---
 ## Introduction to Deep Learning
 
 One of the most widely used models in Machine Learning are the **Artificial Neural Networks** (*ANN*), which are models inspired by the structure and function of the human brain. 

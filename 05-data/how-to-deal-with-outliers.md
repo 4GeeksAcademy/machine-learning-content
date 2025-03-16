@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn how to identify and handle outliers in your data analysis. Discover
+  effective methods to improve your statistical results today!
+---
 # How to deal with outliers
 
 As we saw in the exploratory data analysis, in statistics, an outlier is a data point that differs significantly from other observations. An outlier may be due to variability in the measurement or it may indicate experimental error. 

@@ -1,3 +1,9 @@
+---
+description: >-
+  Master regularized linear models with Lasso and Ridge techniques to prevent
+  overfitting in your machine learning projects. Discover how to implement them
+  in Python!
+---
 ## Regularized Linear Models
 
 A **regularized linear model** is a version of a linear model that includes an element in its function to avoid overfitting and improve the learning capability of the model.

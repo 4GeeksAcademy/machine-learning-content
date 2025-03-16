@@ -1,3 +1,9 @@
+---
+description: >-
+  Master K-nearest neighbors (KNN) for classification and regression tasks.
+  Learn about distance metrics, hyperparameterization, and optimize your model
+  today!
+---
 ## K-nearest neighbors (KNN)
 
 The **K-nearest neighbors** model, better known by its acronym **KNN** is an algorithm used for classification and regression tasks. In KNN, a data point is classified or predicted based on the most classes or values of the `K` nearest data points in the feature space.

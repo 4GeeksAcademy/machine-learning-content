@@ -1,3 +1,9 @@
+---
+description: >-
+  Discover the Standard Normal Table and learn how to interpret z-scores
+  effectively. Master your statistics skills with this essential reference
+  guide!
+---
 # Standard Normal Table
 
 *This is not a lesson. Use this table as reference.*

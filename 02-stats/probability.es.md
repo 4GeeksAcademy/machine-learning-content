@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn the fundamentals of probability, including events, types, and Bayes'
+  theorem. Discover how to quantify uncertainty and make informed decisions!
+---
 ## Probabilidad
 
 La **probabilidad** (*probability*) es una medida que describe la posibilidad de que ocurra un evento en particular dentro de un conjunto de posibles eventos. Se expresa en una escala que va desde 0 (indicando que un evento es imposible) hasta 1 (indicando que un evento es cierto). También puede expresarse como un porcentaje entre 0% y 100%.
