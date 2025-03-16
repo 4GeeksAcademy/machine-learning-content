@@ -1,8 +1,9 @@
 ---
 description: >-
-  Introducción al aprendizaje automático en AWS: Aprenda a transformar problemas empresariales en soluciones de ML, a utilizar SageMaker y a implementar modelos de IA de manera eficiente.
+  Aprende a transformar problemas empresariales en soluciones de Machine
+  Learning con AWS SageMaker. ¡Descubre cómo implementar modelos de IA de manera
+  eficiente!
 ---
-
 # Primeros pasos con Machine Learning en las herramientas de AWS
 
 Independientemente del problema en el que estés trabajando, normalmente debes realizar los siguientes pasos: 

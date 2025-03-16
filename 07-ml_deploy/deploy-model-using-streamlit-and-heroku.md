@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn how to deploy your Machine Learning model using Streamlit and Heroku.
+  Discover the simplicity of creating interactive web apps today!
+---
 # Implementing a Machine Learning model using Streamlit and Heroku
 
 Imagine you can turn simple Python scripts into beautiful web applications. Well, that tool exists, and it's called Streamlit.
