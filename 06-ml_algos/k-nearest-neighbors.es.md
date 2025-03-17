@@ -1,3 +1,8 @@
+---
+description: >-
+  Descubre el algoritmo K vecinos más cercanos (KNN) para clasificación y
+  regresión. Aprende a optimizar su rendimiento y elige la métrica adecuada.
+---
 ## K vecinos más cercanos (KNN)
 
 El modelo **K vecinos más cercanos** (*K-nearest neighbors*), más conocido por sus siglas **KNN** es un algoritmo utilizado para tareas de clasificación y regresión. En KNN, un punto de datos se clasifica o se predice en función de la mayoría de las clases o valores de los `K` puntos de datos más cercanos en el espacio de características.

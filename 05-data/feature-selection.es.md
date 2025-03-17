@@ -1,3 +1,8 @@
+---
+description: >-
+  Master la selección de características para mejorar tus modelos de aprendizaje
+  automático. Descubre métodos efectivos y cuándo aplicarlos. ¡Haz clic aquí!
+---
 # Selección de características
 
 **¿Qué es la selección de características?**

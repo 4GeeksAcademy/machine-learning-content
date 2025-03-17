@@ -1,3 +1,9 @@
+---
+description: >-
+  Discover essential supervised learning models for classification and
+  regression. Learn when to use each model effectively to enhance your data
+  analysis skills!
+---
 ## Summary of Supervised Learning models
 
 The following is a brief review of the different models studied and when and why they are used, as a practical guide to always knowing how to choose the best option:

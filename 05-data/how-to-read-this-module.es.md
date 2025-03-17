@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn the essentials of Exploratory Data Analysis (EDA) and its role in
+  Machine Learning. Discover how to visualize data and identify patterns!
+---
 ## Análisis exploratorio de datos
 
 El **análisis exploratorio de datos** (*EDA*, *Exploratory data analysis*) es el enfoque de partida y fundamental de cualquier análisis de datos, ya que tiene como objetivo comprender las características principales de un conjunto de datos antes de realizar análisis más avanzados o modelados posteriores.

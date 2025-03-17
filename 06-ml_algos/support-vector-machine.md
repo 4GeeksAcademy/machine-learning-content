@@ -1,3 +1,8 @@
+---
+description: >-
+  Master Support Vector Machines (SVMs) for classification and regression! Learn
+  how to maximize margins and use kernels for better model performance.
+---
 ## Support Vector Machine
 
 **Support Vector Machines** (*SVMs*) are a class of supervised learning algorithms widely used in classification and regression. They were introduced in the 1990s and have been an important tool in the field of machine learning ever since.

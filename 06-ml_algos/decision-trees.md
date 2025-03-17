@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn how decision trees work in machine learning for classification and
+  regression. Discover their structure, examples, and key hyperparameters!
+---
 ## Decision trees
 
 A **decision tree** is a model widely used in Machine Learning to solve both regression and classification problems. It is a graphical model that mimics human decision making, i.e. it is based on a series of questions to reach a conclusion.

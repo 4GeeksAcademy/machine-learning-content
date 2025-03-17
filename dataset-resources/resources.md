@@ -1,3 +1,8 @@
+---
+description: >-
+  Discover essential dataset resources for your projects! Explore top platforms
+  like Google Dataset Search and Kaggle to enhance your data skills today!
+---
 # Resources
 
 “The truth is, having resources is less important than how resourceful you are”

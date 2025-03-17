@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn how to deploy your machine learning model using Flask and Heroku.
+  Discover step-by-step instructions to make your predictions accessible online!
+---
 # Deployment of a Machine learning model using Flask and Heroku 
 
 Machine Learning models are powerful tools to make predictions based on available data. In order to make these models useful for society, they need to be deployed so that others can easily access them to make predictions. This can be done using Flask and Heroku.

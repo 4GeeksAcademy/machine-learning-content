@@ -1,3 +1,8 @@
+---
+description: >-
+  Master feature selection techniques to enhance model performance and
+  interpretability. Discover when and how to reduce features effectively!
+---
 # Feature Selection
 
 **What is feature selection?**

@@ -1,11 +1,13 @@
 ---
-title: "Que es una regresion lineal y para que utilizarla"
-"description": "Descubre cómo la regresión lineal, un modelo predictivo esencial, puede ayudarte a entender y predecir variables clave. Aprende sobre sus dos tipos principales: simple y múltiple, y los cinco supuestos críticos que garantizan su precisión. ¡Optimiza tus análisis de datos!"
-technologies: ["regresión lineal", "machine learning"]
-keyword: "que es una regresion lineal"
-
+title: Que es una regresion lineal y para que utilizarla
+description: >-
+  Descubre qué es una regresión lineal y cómo utilizarla para predecir variables
+  clave. Aprende sobre sus tipos y supuestos esenciales. ¡Optimiza tus análisis!
+technologies:
+  - regresión lineal
+  - machine learning
+keyword: que es una regresion lineal
 ---
-
 ## Regresión Lineal
 
 ![regresion lineal](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/regresion_lineal.png?raw=true)

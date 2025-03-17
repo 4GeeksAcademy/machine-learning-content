@@ -1,3 +1,9 @@
+---
+description: >-
+  Learn about Naive Bayes, a powerful classification algorithm in Machine
+  Learning. Discover its applications, implementations, and hyperparameter
+  tuning!
+---
 ## Naive Bayes
 
 **Naive Bayes** es un algoritmo de clasificación basado en el teorema de Bayes, que es una técnica estadística que utiliza la probabilidad para hacer predicciones. Este algoritmo es muy simple, pero efectivo y se utiliza ampliamente en diversas áreas del Machine Learning.

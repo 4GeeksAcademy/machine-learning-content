@@ -1,3 +1,8 @@
+---
+description: >-
+  Descubre cómo la computación en la nube transforma el acceso a recursos
+  tecnológicos. Aprende sobre IaaS, PaaS y SaaS para optimizar tu negocio.
+---
 ## Computación en la nube
 
 La **computación en la nube** (*cloud computing*) es un modelo de entrega de servicios de tecnología a través de Internet. En lugar de tener que comprar y mantener servidores y hardware propios, las empresas y/o los usuarios pueden acceder a recursos informáticos, como servidores, almacenamiento, bases de datos, redes y software, a través de proveedores de servicios en la nube.
