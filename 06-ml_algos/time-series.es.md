@@ -1,7 +1,6 @@
 ---
 description: >-
-  Learn the essentials of time series analysis, forecasting techniques, and key
-  patterns. Discover how to model and predict data trends effectively!
+  ¡Aprende lo esencial del análisis de series temporales! Explora técnicas de pronóstico y patrones clave. Descubre cómo modelar y predecir tendencias de datos de manera efectiva.
 ---
 ## Series temporales
 
