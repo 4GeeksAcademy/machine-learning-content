@@ -1,7 +1,6 @@
 ---
 description: >-
-  Learn how to deploy your Machine Learning model using Flask and Heroku.
-  Discover step-by-step instructions to make your predictions accessible online!
+  ¡Aprende a desplegar tu modelo de Machine Learning usando Flask y Heroku! Descubre instrucciones paso a paso para hacer que tus predicciones estén disponibles en línea.
 ---
 # Implementación de un modelo de Machine Learning usando Flask y Heroku
 
