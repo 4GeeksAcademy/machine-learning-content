@@ -1,7 +1,6 @@
 ---
 description: >-
-  Learn about Random Forests, a powerful Machine Learning method for
-  classification and regression. Discover how to build robust models with ease!
+  ¡Aprende sobre Random Forests, un poderoso método de Machine Learning para clasificación y regresión! Descubre cómo construir modelos robustos con facilidad.
 ---
 ## Random Forests
 
