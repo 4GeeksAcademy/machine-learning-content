@@ -1,7 +1,6 @@
 ---
 description: >-
-  Learn the essentials of Exploratory Data Analysis (EDA) and its role in
-  Machine Learning. Discover how to visualize data and identify patterns!
+  Aprende lo esencial del Análisis Exploratorio de Datos (EDA) y su papel en el Machine Learning. ¡Descubre cómo visualizar datos e identificar patrones!
 ---
 ## Análisis exploratorio de datos
 
