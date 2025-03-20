@@ -1,7 +1,6 @@
 ---
 description: >-
-  Learn about decision trees in machine learning! Discover how they work, their
-  structure, and key hyperparameters to master this powerful model.
+  ¡Aprende sobre los árboles de decisión en Machine Learning! Descubre cómo funcionan, su estructura y los hiperparámetros clave para dominar este poderoso modelo.
 ---
 ## Árboles de Decisión
 
