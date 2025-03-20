@@ -1,7 +1,6 @@
 ---
 description: >-
-  Master las Máquinas de Vectores de Soporte (SVM) en clasificación y regresión.
-  Aprende cómo funcionan y su implementación en Python. ¡Descubre más!
+  ¡Domina las Máquinas de Vectores de Soporte (SVM) para clasificación y regresión! Aprende cómo funcionan y cómo implementarlas en Python. ¡Descubre más!
 ---
 ## Máquina de Vectores de Soporte
 
