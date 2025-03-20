@@ -1,7 +1,6 @@
 ---
 description: >-
-  Learn the fundamentals of probability, including events, types, and Bayes'
-  theorem. Discover how to quantify uncertainty and make informed decisions!
+  Aprende los fundamentos de la probabilidad, incluyendo eventos, tipos y el teorema de Bayes. ¡Descubre cómo cuantificar la incertidumbre y tomar decisiones informadas!
 ---
 ## Probabilidad
 
