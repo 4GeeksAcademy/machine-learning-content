@@ -1,7 +1,6 @@
 ---
 description: >-
-  Master los modelos lineales regularizados con Lasso y Ridge. Aprende a evitar
-  el sobreajuste y mejora tus predicciones en Python. ¡Descubre más!
+  ¡Domina los modelos lineales regularizados con Lasso y Ridge! Aprende a evitar el sobreajuste y mejora tus predicciones en Python. ¡Descubre más!
 ---
 ## Modelos Lineales Regularizados
 
