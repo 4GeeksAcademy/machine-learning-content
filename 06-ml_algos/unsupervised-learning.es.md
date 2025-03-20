@@ -1,7 +1,6 @@
 ---
 description: >-
-  Descubre el aprendizaje no supervisado: técnicas de clustering y reducción de
-  dimensionalidad. Aprende a identificar patrones en tus datos hoy mismo.
+  ¡Descubre el aprendizaje no supervisado! Explora técnicas de clustering y reducción de dimensionalidad. Aprende a identificar patrones en tus datos hoy mismo.
 ---
 ## Aprendizaje no supervisado
 
