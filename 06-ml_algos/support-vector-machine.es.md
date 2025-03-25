@@ -20,7 +20,7 @@ Las SVM son herramientas poderosas y han sido utilizadas en una variedad de apli
 
 ### Hiperparametrización del modelo
 
-Podemos construir un SVG fácilmente en Python utilizando la librería `scikit-learn` y la función `SVC`. Algunos de sus hiperparámetros más importantes y los primeros en los que debemos centrarnos son:
+Podemos construir un SVM fácilmente en Python utilizando la librería `scikit-learn` y la función `SVC`. Algunos de sus hiperparámetros más importantes y los primeros en los que debemos centrarnos son:
 
 - `C`: Este es el hiperparámetro de regularización. Controla el compromiso entre maximizar el margen y minimizar la clasificación errónea. Un valor pequeño para C permite un margen más amplio a expensas de algunos errores de clasificación. Un valor alto para C exige una clasificación correcta, posiblemente a expensas de un margen más estrecho.
 - `kernel`: Define la función kernel que se utilizará en el algoritmo. Puede ser lineal, polinómico, RBF, etc.
