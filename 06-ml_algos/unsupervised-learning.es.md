@@ -1,3 +1,7 @@
+---
+description: >-
+  ¡Descubre el aprendizaje no supervisado! Explora técnicas de clustering y reducción de dimensionalidad. Aprende a identificar patrones en tus datos hoy mismo.
+---
 ## Aprendizaje no supervisado
 
 El **aprendizaje no supervisado** (*unsupervised learning*) es una rama del Machine Learning en la que se exploran y descubren patrones y estructuras ocultas en los datos sin la guía de una variable objetivo o etiquetas previas. A diferencia del aprendizaje supervisado, donde se proporcionan ejemplos de entrada y sus correspondientes salidas deseadas para entrenar al modelo, en el aprendizaje no supervisado, el algoritmo se enfrenta a un conjunto de datos sin etiquetas y busca encontrar patrones interesantes o agrupar los datos en categorías sin una guía específica.
@@ -31,7 +35,7 @@ Es un proceso iterativo compuesto de varios pasos:
 2. **Asignación de puntos a clusters**. Cada punto del conjunto de datos se asigna al cluster cuyo centroide es el más cercano. Esto se hace calculando la distancia entre cada punto y los centroides, y asignando el punto al cluster cuyo centroide tiene la distancia más pequeña. Las distancias utilizadas y disponibles son las que estudiamos en el módulo del modelo KNN y las puedes encontrar [aquí](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/knn_distance_metrics.png?raw=true).
 3. **Actualización de centroides**. Una vez que todos los puntos están asignados a sus clusters correspondientes, los centroides se actualizan recalculando su posición como el promedio de todos los puntos asignados a ese cluster. Este paso reubica los centroides al centro geométrico de cada grupo.
 4. **Iteración**. Se repiten los pasos 2 y 3 hasta que los centroides ya no cambian significativamente y los puntos están estables en sus clusters. Es decir, el algoritmo continúa asignando y actualizando puntos hasta que se alcanza la convergencia.
-5. **Resultado**. Una vez que el algoritmo ha convergido, los puntos del conjunto de datos están agrupados en `K` clusters o grupos, y cada clusterestá representado por su centroide. Los grupos obtenidos representan conjuntos de puntos similares.
+5. **Resultado**. Una vez que el algoritmo ha convergido, los puntos del conjunto de datos están agrupados en `K` clusters o grupos, y cada cluster está representado por su centroide. Los grupos obtenidos representan conjuntos de puntos similares.
 
 ![K-means iteraciones](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/k-means-iterations.gif?raw=true)
 

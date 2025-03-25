@@ -1,6 +1,8 @@
 ---
 description: >-
-  Introducción a Machine Learning en AWS: Aprende a convertir problemas de negocio en soluciones de ML, explorar datos, entrenar modelos con SageMaker y desplegar predicciones en producción.
+  transformar problemas empresariales en soluciones de Machine
+  Learning con AWS SageMaker. ¡Descubre cómo implementar modelos de IA de manera
+  eficiente!
 ---
 
 # Primeros pasos con Machine Learning en las herramientas de AWS

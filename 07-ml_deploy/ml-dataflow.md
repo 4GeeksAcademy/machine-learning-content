@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn how to manage data workflows for machine learning models. Discover
+  strategies for re-training and improving model performance over time!
+---
 ## Data workflow
 
 En el mundo real, lo normal es que los modelos vayan evolucionando a lo largo del tiempo conforme interactúan con los datos y su rendimiento disminuye. Es fácil entender por qué, y es que los datos de los que disponemos en la fase de entrenamiento inicial del modelo pueden no corresponderse plenamente a los que luego vaya a recibir, por diversos motivos:

@@ -1,3 +1,8 @@
+---
+description: >-
+  Descubre los modelos de aprendizaje supervisado: clasificación, regresión y
+  cuándo utilizarlos. ¡Aprende a elegir la mejor opción para tus proyectos!
+---
 ## Resumen de los modelos de Aprendizaje Supervisado
 
 A continuación se facilita un breve repaso sobre los diferentes modelos estudiados y cuándo y por qué se utilizan, a modo de guía práctica, para saber elegir siempre la mejor opción:

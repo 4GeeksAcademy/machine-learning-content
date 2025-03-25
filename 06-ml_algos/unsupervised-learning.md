@@ -1,3 +1,8 @@
+---
+description: >-
+  Discover the power of unsupervised learning! Learn about clustering,
+  dimensionality reduction, and how to uncover hidden patterns in your data.
+---
 ## Unsupervised learning
 
 **Unsupervised learning** is a branch of Machine Learning in which hidden patterns and structures in the data are explored and discovered without the guidance of a target variable or prior labels. Unlike supervised learning, where input examples and their corresponding desired outputs are provided to train the model, in unsupervised learning, the algorithm is confronted with an unlabeled data set and seeks to find interesting patterns or group the data into categories without specific guidance.

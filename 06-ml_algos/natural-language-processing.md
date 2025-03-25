@@ -1,3 +1,8 @@
+---
+description: >-
+  Discover the essentials of Natural Language Processing (NLP) and learn how to
+  build effective models for tasks like sentiment analysis and translation!
+---
 ## Natural Language Processing
 
 **Natural Language Processing** (*NLP*) is a discipline that deals with the interaction between computers and human language. Specifically, NLP seeks to program computers to process or analyze large amounts of natural language data (such as written or spoken text) in such a way that a coherent interpretation or production of the language is achieved.

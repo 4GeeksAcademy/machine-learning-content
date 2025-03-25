@@ -167,3 +167,9 @@
 2. Intro to AWS SageMaker
 
 ## Week 13-16: Final project
+
+
+## Amazing datasets:
+
+Mr Beast Comments:
+https://www.kaggle.com/datasets/kanchana1990/mr-beast-most-viewed-yt-video-100k-comments

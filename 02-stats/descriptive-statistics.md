@@ -1,3 +1,12 @@
+---
+description: >-
+  Master descriptive statistics in Python! Learn key concepts like mean, median,
+  mode, and data visualization techniques. Discover how to analyze data
+  effectively!
+technologies:
+  - prob-and-stats
+  - Python
+---
 ## Descriptive statistics
 
 Descriptive statistics is a branch of statistics that deals with collecting, analyzing, interpreting, and presenting data in an organized and effective manner. Its main objective is to provide simple and understandable summaries of the main characteristics of a data set, without making inferences or predictions about a larger population.

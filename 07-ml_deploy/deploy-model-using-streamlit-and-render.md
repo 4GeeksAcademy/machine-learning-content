@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn how to deploy your Machine Learning model using Streamlit and Render.
+  Discover the simple steps to create and share your web application today!
+---
 ## Deployment in Render using Streamlit
 
 In the previous module, we learned how to create a Machine Learning web application with `Flask`, an intuitive library that facilitates the generation of dynamic HTML templates to be able to use our models once trained.

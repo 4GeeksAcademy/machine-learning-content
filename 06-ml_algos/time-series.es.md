@@ -1,3 +1,7 @@
+---
+description: >-
+  ¡Aprende lo esencial del análisis de series temporales! Explora técnicas de pronóstico y patrones clave. Descubre cómo modelar y predecir tendencias de datos de manera efectiva.
+---
 ## Series temporales
 
 Una **serie temporal** (*time serie*) es una secuencia de datos ordenados en el tiempo, donde cada punto de datos está asociado a un instante específico. En otras palabras, es una colección de observaciones que se registran en intervalos regulares o irregulares a lo largo del tiempo. Estas observaciones pueden ser recopiladas en horas, días, meses o incluso años, dependiendo del contexto y la naturaleza del fenómeno que se está analizando.

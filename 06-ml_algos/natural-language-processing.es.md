@@ -1,3 +1,9 @@
+---
+description: >-
+  Descubre cómo el Procesamiento del Lenguaje Natural transforma la interacción
+  con las computadoras. Aprende sobre sus aplicaciones y pasos clave para crear
+  modelos efectivos.
+---
 ## Procesamiento del lenguaje natural
 
 El **Procesamiento del lenguaje natural** (*NLP*, *Natural Language Processing*) es una disciplina que se ocupa de la interacción entre las computadoras y el lenguaje humano. Específicamente, NLP busca programar computadoras para procesar o analizar grandes cantidades de datos en lenguaje natural (como textos escritos o hablados) de manera que se logre una interpretación o producción coherente del lenguaje.

@@ -1,3 +1,9 @@
+---
+description: >-
+  Master the fundamentals of probability! Learn about events, types of
+  probability, and Bayes' theorem to enhance your decision-making skills.
+  Discover more!
+---
 ## Probability
 
 **Probability** is a measure that describes the likelihood of a particular event occurring within a set of possible events. It is expressed on a scale ranging from 0 (indicating that an event is impossible) to 1 (indicating that an event is certain). It can also be expressed as a percentage between 0% and 100%.

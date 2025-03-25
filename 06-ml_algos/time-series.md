@@ -1,3 +1,8 @@
+---
+description: >-
+  Master time series analysis and forecasting techniques! Discover trends,
+  seasonality, and powerful models like ARIMA and LSTM for accurate predictions.
+---
 ## Time series
 
 A **time series** is a sequence of data ordered in time, where each data point is associated with a specific instant. In other words, it is a collection of observations that are recorded at regular or irregular intervals over time. These observations can be collected over hours, days, months or even years, depending on the context and the nature of the phenomenon being analyzed.

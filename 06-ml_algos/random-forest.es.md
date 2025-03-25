@@ -1,3 +1,7 @@
+---
+description: >-
+  ¡Aprende sobre Random Forests, un poderoso método de Machine Learning para clasificación y regresión! Descubre cómo construir modelos robustos con facilidad.
+---
 ## Random Forests
 
 Un **random forest** (suele referirse a él en su término en inglés y no en su traducción) es un método de Machine Learning que se utiliza para tareas de clasificación y regresión. Es un tipo de aprendizaje en el que se **ensamblan modelos** (*model ensembling*) para combinar las predicciones de múltiples árboles de decisión para generar una salida más precisa y robusta.

@@ -1,3 +1,9 @@
+---
+description: >-
+  Descubre el mundo del Deep Learning y las Redes de Neuronas Artificiales.
+  Aprende cómo estas tecnologías transforman la IA y resuelven problemas
+  complejos.
+---
 ## Introducción al Deep Learning
 
 Uno de los modelos más utilizados en el Machine Learning son las **Redes de Neuronas Artificiales** (*ANN*, *Artificial Neural Networks*), que son modelos inspirados en la estructura y función del cerebro humano. 

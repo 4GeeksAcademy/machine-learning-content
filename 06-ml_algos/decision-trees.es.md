@@ -1,3 +1,7 @@
+---
+description: >-
+  ¡Aprende sobre los árboles de decisión en Machine Learning! Descubre cómo funcionan, su estructura y los hiperparámetros clave para dominar este poderoso modelo.
+---
 ## Árboles de Decisión
 
 Un **árbol de decisión** (*decision tree*) es un modelo ampliamente utilizado en Machine Learning y que permite resolver problemas tanto de regresión como de clasificación. Es un modelo gráfico que imita la toma de decisiones humanas, es decir, se basa en una serie de preguntas para llegar a una conclusión.

@@ -1,3 +1,7 @@
+---
+description: >-
+  ¡Aprende sobre los algoritmos de boosting, su estructura, implementaciones como XGBoost y su comparación con los Random Forests! ¡Descubre el poder del boosting hoy mismo!
+---
 ## Boosting
 
 **Boosting** es una técnica que se utiliza para mejorar el rendimiento de los modelos. La idea esencial detrás del boosting es entrenar una serie de modelos débiles (generalmente árboles de decisión), cada uno de los cuales intenta corregir los errores del anterior.
