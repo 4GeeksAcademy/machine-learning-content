@@ -20,31 +20,31 @@ $P(E) = \frac{3}{6} = 0.5$
 
 ### Operations between events
 
-As we have seen, an **event** is the result of a random experiment and always has a probability associated with it. Often we may be interested in relating the probabilities between two events, and this is done through operations between events.
+As we have seen, an **event** is the result of a random experiment and always has a probability associated with it. Often, we may be interested in relating the probabilities between two events, and this is done through operations between events.
 
 #### Union of events
 
 The event that occurs if at least one of the two events occurs. It is denoted by $A \cup B$. For example, if $A$ is the event of getting a 2 on a die roll and $B$ is the event of getting a 3, then $A \cup B$ is the event of getting a 2 or a 3.
 
-![union](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/union.png?raw=true)
+![Union of events](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/union.png?raw=true)
 
 #### Intersection of events
 
 The event that occurs if both events occur at the same time. It is denoted by $A \cap B$. For example, if $A$ is the event of getting a number less than 4 and $B$ is the event of getting an even number, then $A \cap B$ is the event of getting a 2 (because it is even and the only number less than 4).
 
-![intersection](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/intersection.png?raw=true)
+![Intersection of events](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/intersection.png?raw=true)
 
 #### Complement of an event
 
 The event that occurs if the given event does not occur. It is denoted by $A'$. For example, if $A$ is the event of getting an even number by rolling a dice, then $A'$ is the event of getting an odd number.
 
-![complement](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/complement.png?raw=true)
+![Complement of an event](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/complement.png?raw=true)
 
 #### Difference between events
 
 The event that occurs if the first event occurs but not the second. It is denoted by $A - B$. For example, if $A$ is the event of obtaining a number less than 4 and $B$ is the event of obtaining an even number, then $A - B$ is the event of obtaining a 1 or a 3.
 
-![difference](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/difference.png?raw=true)
+![Difference between events](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/difference.png?raw=true)
 
 ### Types of probability
 
@@ -62,6 +62,6 @@ These types of probability allow addressing different situations and problems in
 
 **Bayes' theorem** is a fundamental tool in statistics that allows us to update our beliefs in the face of new evidence.
 
-Let's imagine we have a bag with 100 marbles: 30 are red and 70 are blue. If we draw a marble at random, the probability that it is red is 30% and the probability that it is blue is 70%. Now, suppose a friend, unseen by us, picks a marble out of the bag and says, "The marble I picked has stripes on it." If we now knew that 50% of the red marbles have stripes and only 10% of the blue marbles have stripes, given this new information, what is the probability that the marble our friend chose is red? This is where Bayes' theorem applies.
+Let's imagine we have a bag with 100 marbles: 30 are red and 70 are blue. If we draw a marble at random, the probability that it is red is 30%, and the probability that it is blue is 70%. Now, suppose a friend, unseen by us, picks a marble out of the bag and says, "The marble I picked has stripes on it." If we now know that 50% of the red marbles have stripes and only 10% of the blue marbles have stripes, given this new information, what is the probability that the marble our friend chose is red? This is where Bayes' theorem applies.
 
-This way we can recalculate the probability that the marble is red and has stripes, given the new information.
+This way, we can recalculate the probability that the marble is red and has stripes, given the new information.

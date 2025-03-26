@@ -4,7 +4,7 @@ description: >-
 ---
 ## Probabilidad
 
-La **probabilidad** (*probability*) es una medida que describe la posibilidad de que ocurra un evento en particular dentro de un conjunto de posibles eventos. Se expresa en una escala que va desde 0 (indicando que un evento es imposible) hasta 1 (indicando que un evento es cierto). También puede expresarse como un porcentaje entre 0% y 100%.
+La **probabilidad** es una medida que describe la posibilidad de que ocurra un evento en particular dentro de un conjunto de posibles eventos. Se expresa en una escala que va desde 0 (indicando que un evento es imposible) hasta 1 (indicando que un evento es cierto). También puede expresarse como un porcentaje entre 0% y 100%.
 
 La probabilidad proporciona un marco para cuantificar la incertidumbre asociada con predicciones, inferencias, decisiones y eventos aleatorios. Para entenderla y calcularla, es esencial comprender los siguientes conceptos:
 
@@ -24,25 +24,25 @@ Como hemos visto, un **suceso** (*event*) es el resultado de un experimento alea
 
 Es el suceso que tiene lugar si ocurre al menos uno de los dos sucesos. Se denota por $A \cup B$. Por ejemplo, si $A$ es el suceso de obtener un 2 en un lanzamiento de dado y $B$ es el suceso de obtener un 3, entonces $A \cup B$ es el suceso de obtener un 2 o un 3.
 
-![union](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/union.png?raw=true)
+![Unión de sucesos](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/union.png?raw=true)
 
 #### Intersección de sucesos
 
 Es el suceso que tiene lugar si ocurren ambos sucesos a la vez. Se denota por $A \cap B$. Por ejemplo, si $A$ es el suceso de obtener un número menor que 4 y $B$ es el suceso de obtener un número par, entonces $A \cap B$ es el suceso de obtener un 2 (porque es par y el único número menor que 4).
 
-![intersection](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/intersection.png?raw=true)
+![Intersección de sucesos](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/intersection.png?raw=true)
 
 #### Complemento de un suceso
 
 Es el suceso que tiene lugar si no ocurre el suceso dado. Se denota por $A'$. Por ejemplo, si $A$ es el suceso de obtener un número par al lanzar un dado, entonces $A'$ es el suceso de obtener un número impar.
 
-![complement](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/complement.png?raw=true)
+![Complemento de un suceso](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/complement.png?raw=true)
 
 #### Diferencia entre sucesos
 
 Es el suceso que tiene lugar si ocurre el primer suceso pero no el segundo. Se denota por $A - B$. Por ejemplo, si $A$ es el suceso de obtener un número menor que 4 y $B$ es el suceso de obtener un número par, entonces $A - B$ es el suceso de obtener un 1 o un 3.
 
-![difference](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/difference.png?raw=true)
+![Diferencia entre sucesos](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/difference.png?raw=true)
 
 ### Tipos de probabilidad
 
