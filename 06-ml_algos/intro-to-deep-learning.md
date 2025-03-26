@@ -1,3 +1,8 @@
+---
+description: >-
+  Discover the fundamentals of deep learning and artificial neural networks.
+  Learn how these powerful models drive AI advancements today!
+---
 ## Introduction to Deep Learning
 
 One of the most widely used models in Machine Learning are the **Artificial Neural Networks** (*ANN*), which are models inspired by the structure and function of the human brain. 
@@ -20,7 +25,7 @@ An **Artificial Neural Network** (*ANN*) is a machine learning model inspired by
 
 A **neuron** is a basic processing unit of the network. It is also known as a "node" or "unit". Its name comes from the neurons in the human brain, which were the inspiration for the concept of neural networks.
 
-![neuron-structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/neuron-structure.PNG?raw=true)
+![Neuron structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/neuron-structure.PNG?raw=true)
 
 A neuron in a neural network takes a set of inputs ($x_1, x_2, ..., x_n$), performs a computation on them, and produces an output ($y_1$). The computation a neuron performs typically involves taking a weighted combination of the inputs (i.e., multiplying each input by a weight and summing the results), and then applying an activation function to the result. The weights ($w_i1, w_i2, ..., w_in$) are the main components that the network changes during training to learn from the data. They are adjusted so that the output of the network is as close as possible to the desired result.
 
@@ -40,17 +45,17 @@ The algorithm then updates the parameters by moving a small amount in the direct
 
 Artificial neural networks generally consist of three main types of layers: the input layer, the hidden layers and the output layer.
 
-![neural-network-structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/neural-network-structure.PNG?raw=true)
+![Neural network structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/neural-network-structure.PNG?raw=true)
 
 1. **Input layer**: This is the layer that receives the information to be processed by the neural network. Each neuron in this layer corresponds to a characteristic or attribute of the data set. For example, if you are processing 28x28 pixel images, you would have 784 input neurons, one for each pixel in the image. There can only be a single input layer in a network.
 2. **Hidden layers**: These are the layers between the input layer and the output layer. The "depth" of a neural network refers to the number of these hidden layers. Each neuron in a hidden layer receives inputs from all neurons in the previous layer, processes them by applying arithmetic and logical functions, and passes the result to the next layer. Every network must have at least one of these layers.
-3. **Output layer**: This is the last layer of the network and produces the final result. The nature of this layer depends on the type of task the network is designed to perform. If the network is designed for binary classification (e.g., deciding whether an image is a dog or a cat), then this layer would have a single neuron with a sigmoid activation function that produces a number between 0 and 1. If the network is designed for multiclass classification, then this layer would have as many neurons as classes and a softmax activation function would be used to produce a probability distribution over the classes. If the network is designed for a regression task, then this layer would have a single neuron and its output would be the predicted value.
+3. **Output layer**: This is the last layer of the network and produces the final result. The nature of this layer depends on the type of task the network is designed to perform. If the network is designed for binary classification (e.g., deciding whether an image is a dog or a cat), then this layer would have a single neuron with a sigmoid activation function that produces a number between 0 and 1. If the network is designed for multiclass classification, then this layer would have as many neurons as classes, and a softmax activation function would be used to produce a probability distribution over the classes. If the network is designed for a regression task, then this layer would have a single neuron, and its output would be the predicted value.
 
-It is usually said that when we use networks with a single hidden layer we are doing Machine Learning, and when we use more than one hidden layer we are doing Deep Learning.
+It is usually said that when we use networks with a single hidden layer, we are doing Machine Learning, and when we use more than one hidden layer, we are doing Deep Learning.
 
 ### Deep Learning Models
 
-Due to the variety of problems and challenges to be solved, there is a large number of models, most of them are networks of neurons, that allow to address and solve them. Some of the best known and most versatile models are:
+Due to the variety of problems and challenges to be solved, there are a large number of models; most of them are networks of neurons that allow us to address and solve them. Some of the best known and most versatile models are:
 
 | Model | Description | Typical use |
 |:------|:------------|:------------|
@@ -65,7 +70,7 @@ Due to the variety of problems and challenges to be solved, there is a large num
 
 Deep learning models can be implemented using various libraries and frameworks. Some of the most popular are `TensorFlow` and `Keras`.
 
-- **TensorFlow**: Is an open source library for machine learning developed by Google. It provides a set of tools for developing and training Machine Learning and Deep Learning models. TensorFlow offers high and low level APIs and supports a wide range of algorithms and techniques. In addition, it can be run on multiple CPUs and GPUs as well as on mobile devices.
+- **TensorFlow**: Is an open-source library for machine learning developed by Google. It provides a set of tools for developing and training Machine Learning and Deep Learning models. TensorFlow offers high and low level APIs and supports a wide range of algorithms and techniques. In addition, it can be run on multiple CPUs and GPUs, as well as on mobile devices.
 - **Keras**: It is a high-level neural network API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano. It was developed with the goal of enabling rapid experimentation and being user-friendly, modular, and extensible. Keras offers the ability to define and train deep learning models with only a few lines of code, and is an excellent choice for beginners.
 
 TensorFlow and Keras are two popular and powerful tools for implementing deep learning models. TensorFlow offers more flexibility and control, while Keras is easier to use and faster to prototype. Since TensorFlow version 2.0, Keras is officially integrated into TensorFlow, which means you can use the high-level features of Keras while maintaining the powerful capabilities of TensorFlow.

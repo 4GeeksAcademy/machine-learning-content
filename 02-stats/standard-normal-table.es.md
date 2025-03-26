@@ -1,3 +1,7 @@
+---
+description: >-
+  ¡Descubre el mundo de las variables aleatorias! Aprende sobre los tipos discreto y continuo, las funciones de distribución y sus aplicaciones en estadística.
+---
 # Tabla Normal Estándar
 
 *Esto no es una lección. Usa esta tabla como referencia.*

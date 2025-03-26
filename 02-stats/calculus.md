@@ -1,3 +1,8 @@
+---
+description: >-
+  Master the essentials of calculus, derivatives, and integrals! Discover how
+  these concepts are vital for understanding machine learning and optimization.
+---
 ## Calculus
 
 **Calculus** is a branch of mathematics that focuses on the concepts of derivatives and integrals, which are techniques that describe how functions change.

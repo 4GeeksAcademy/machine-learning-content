@@ -1,3 +1,8 @@
+---
+description: >-
+  Discover the essentials of Data Science! Learn how to combine statistics,
+  programming, and business skills to solve real-world problems effectively.
+---
 # INTRO TO THE COURSE                                
 
 Data Science is an interdisciplinary field that combines statistics, programming and business skills, so in order to become a data scientist you need to think like an engineer because you will be building systems in order to solve problems, your goal will be to create automated pipelines that build scalable and organized software.

@@ -1,3 +1,9 @@
+---
+description: >-
+  Discover the essentials of cloud computing, including IaaS, PaaS, and SaaS
+  models. Learn how to leverage cloud services for machine learning and data
+  management!
+---
 ## Cloud computing
 
 **Cloud computing** is a model for delivering technology services over the Internet. Instead of having to purchase and maintain in-house servers and hardware, businesses and/or users can access computing resources, such as servers, storage, databases, networks and software, through cloud service providers.

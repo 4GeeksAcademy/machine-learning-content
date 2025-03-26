@@ -1,3 +1,8 @@
+---
+description: >-
+  Master the essentials of calculus, including derivatives and integrals, and
+  see how they drive machine learning. Click to deepen your understanding!
+---
 ## Cálculo
 
 El **cálculo** (*calculus*) es una rama de las matemáticas que se centra en los conceptos de derivadas e integrales, que son técnicas que describen cómo cambian las funciones.
