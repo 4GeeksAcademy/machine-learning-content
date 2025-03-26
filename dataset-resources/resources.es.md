@@ -1,3 +1,8 @@
+---
+description: >-
+  Discover essential dataset resources for your projects! Explore top platforms
+  like Kaggle and UCI to enhance your data skills today.
+---
 # Recursos
 
 “La verdad es que tener recursos es menos importante que cuán ingenioso eres”

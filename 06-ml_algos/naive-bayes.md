@@ -1,6 +1,16 @@
-## Naive Bayes
-
-**Naive Bayes** is a classification algorithm based on Bayes' theorem, which is a statistical technique that uses probability to make predictions. This algorithm is very simple but effective and is widely used in various areas of Machine Learning.
+---
+title: Naive Bayes Algorithm
+description: >-
+  Discover the Naive Bayes Algorithm, a powerful classification tool in machine
+  learning. Learn its implementations, hyperparameters, and boost your skills
+  today!
+tags:
+  - python
+  - machine-learning
+authors:
+  - tommygonzaleza
+---
+**Naive Bayes** is a classification algorithm based on Bayes' theorem, which is a statistical technique that uses probability to make predictions. This algorithm is very simple but effective, and it is widely used in various areas of Machine Learning.
 
 The name *Naive* comes from the assumption that all features (predictor variables) in the data set are independent of each other (there is no correlation between them) given the value of the target variable. In other words, this assumption assumes that each characteristic contributes independently to the probability of belonging to a particular class.
 
@@ -10,7 +20,8 @@ The name *Naive* comes from the assumption that all features (predictor variable
 
 $P(A|B) = {P(B|A) · P(A)} / {P(B)}$,
 
-and where:
+And where:
+
 - $P(A|B)$ is the probability that event $A$ occurs given that we already know that event $B$ has occurred.
 - $P(B|A)$ is the probability that event $B$ occurs given that we already know that event $A$ has occurred.
 - $P(A)$ is the initial probability that event $A$ occurs before considering evidence $B$.
@@ -28,11 +39,11 @@ In `scikit-learn` there are three implementations of this model: `GaussianNB`, `
 | Distributions | Assumes that the data follow a normal distribution. | Assumes that the data follow a multinomial distribution. | Assumes that the data follow a Bernoulli distribution. |
 | Common usage | Classification with numeric characteristics. | Classification with features representing discrete counts or frequencies. | Classification with binary features. |
 
-If you have both numerical and categorical features in your data, there are different strategies, but the best one to preserve the usefulness and suitability of this model is to transform the categorical ones into numerical ones using coding techniques as we have seen above: `pd.factorize` of `Pandas`.
+If you have both numerical and categorical features in your data, there are different strategies, but the best one to preserve the usefulness and suitability of this model is to transform the categorical ones into numerical ones using coding techniques, as we have seen above: `pd.factorize` of `Pandas`.
 
 ### Model hyperparameterization
 
-We can easily build a decision tree in Python using the `scikit-learn` library and the `GaussianNB`, `MultinomialNB` and `BernoulliNB` functions. Some of its most important hyperparameters and the first ones we should focus on are:
+We can easily build a Naive Bayes model in Python using the `scikit-learn` library and the `GaussianNB`, `MultinomialNB` and `BernoulliNB` functions. Some of its most important hyperparameters and the first ones we should focus on are:
 
 - `alpha`: It is used to avoid zero probabilities on features that do not appear in the training set. A larger value adds more smoothing (only for `MultinomialNB` and `BernoulliNB`).
 - `fit_prior`: Indicates whether to learn the a priori probabilities of the classes from the data or to use uniform probabilities (only for `MultinomialNB`).

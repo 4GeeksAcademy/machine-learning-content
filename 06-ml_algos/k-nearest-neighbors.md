@@ -1,3 +1,9 @@
+---
+description: >-
+  Master K-nearest neighbors (KNN) for classification and regression tasks.
+  Learn about distance metrics, hyperparameterization, and optimize your model
+  today!
+---
 ## K-nearest neighbors (KNN)
 
 The **K-nearest neighbors** model, better known by its acronym **KNN** is an algorithm used for classification and regression tasks. In KNN, a data point is classified or predicted based on the most classes or values of the `K` nearest data points in the feature space.
@@ -6,7 +12,7 @@ For example, if we wanted to predict how much money a potential customer spends 
 
 ### Structure
 
-The model is built according to well-defined and well-defined steps, which are as follows:
+The model is built according to well-defined steps, which are as follows:
 
 1. **Selection of the value of `K`**: A value is chosen for `K`, which represents the number of nearest data points to be considered for classifying or predicting the new data point. A small value may lead to a noisier model sensitive to outliers, while a large value may smooth the decision boundaries.
 2. **Distance measurement**: A metric is used to calculate the distance between the data point to be classified or predicted and the other data points in the training set.
@@ -40,8 +46,8 @@ Distance metrics are functions used to measure the proximity or similarity betwe
 
 ### Model hyperparameterization
 
-We can easily build a KNN model in Python using the `scikit-learn` library and the `KNeighborsClassifier` and `KNeighborsRegressor` functions. Some of its most important hyperparameters and the first ones we should focus on are:
+We can easily build a KNN model in Python using the `scikit-learn` library and the `KNeighborsClassifier` and `KNeighborsRegressor` functions. Some of its most important hyperparameters, and the first ones we should focus on are:
 
 - `n_neighbors`: This is the `K` value we mentioned earlier. It represents the number of nearest data points to be considered when classifying or predicting a new data point. It is the most important hyperparameter in KNN and directly affects the shape of the decision boundaries of the model. A small value can lead to a model more sensitive to noise and outliers, while a large value can simplify the model.
-- `metric`: Function for calculating the distance between the data points and the new point. The choice of metric can affect the way the model interprets the proximity between points and thus the resulting classification or prediction.
+- `metric`: Function for calculating the distance between the data points and the new point. The choice of metric can affect the way the model interprets the proximity between points and, thus, the resulting classification or prediction.
 - `algorithm`: Different implementations of the KNN model, which will be more or less effective depending on the characteristics and complexity of the data set.

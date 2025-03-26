@@ -1,3 +1,8 @@
+---
+description: >-
+  Learn how decision trees work in machine learning for classification and
+  regression. Discover their structure, examples, and key hyperparameters!
+---
 ## Decision trees
 
 A **decision tree** is a model widely used in Machine Learning to solve both regression and classification problems. It is a graphical model that mimics human decision making, i.e. it is based on a series of questions to reach a conclusion.
@@ -6,7 +11,7 @@ The main idea behind decision trees is to divide data into smaller and smaller g
 
 ### Structure
 
-The structure of a decision tree resembles that of an inverted tree. It starts with a node called **root node** that contains all the data. This node is split into two or more child nodes based on some criterion. These are the **decision nodes**. This process is repeated for each child node, creating what are called **branches**, until a node is reached that is no longer split. These final nodes are called **leaf nodes** and represent the final decision or prediction of the tree.
+The structure of a decision tree resembles that of an inverted tree. It starts with a node called **root node** that contains all the data. This node is split into two or more child nodes based on some criterion. These are the **decision nodes**. This process is repeated for each child node, creating what are called **branches**, until a node that is no longer split is reached . These final nodes are called **leaf nodes** and represent the final decision or prediction of the tree.
 
 ![decision_tree_structure](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/decision_tree_structure.jpg?raw=true)
 

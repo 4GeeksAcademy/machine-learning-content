@@ -1,3 +1,8 @@
+---
+description: >-
+  Descubre cómo convertirte en un científico de datos combinando programación,
+  estadísticas y habilidades comerciales. ¡Empieza tu viaje en Data Science hoy!
+---
 # INTRODUCCION AL CURSO                                
 
 Data Science es un campo interdisciplinario que combina estadísticas, programación y habilidades comerciales, por lo que para convertirse en un científico de datos, debes pensar como un ingeniero, porque construirás sistemas para resolver problemas, tu objetivo será crear canalizaciones automatizadas que construyen software escalable y organizado.

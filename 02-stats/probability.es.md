@@ -1,3 +1,7 @@
+---
+description: >-
+  Aprende los fundamentos de la probabilidad, incluyendo eventos, tipos y el teorema de Bayes. ¡Descubre cómo cuantificar la incertidumbre y tomar decisiones informadas!
+---
 ## Probabilidad
 
 La **probabilidad** (*probability*) es una medida que describe la posibilidad de que ocurra un evento en particular dentro de un conjunto de posibles eventos. Se expresa en una escala que va desde 0 (indicando que un evento es imposible) hasta 1 (indicando que un evento es cierto). También puede expresarse como un porcentaje entre 0% y 100%.
@@ -45,7 +49,7 @@ Es el suceso que tiene lugar si ocurre el primer suceso pero no el segundo. Se d
 Existen varios tipos de probabilidad, cada uno adecuado para diferentes contextos o situaciones. Algunos de los más frecuentes son:
 
 1. **Probabilidad clásica**: Se basa en situaciones donde todos los posibles resultados son igual de probables. Por ejemplo, si lanzamos una moneda al aire, cada cara tiene una probabilidad del 50% de salir.
-2. **Probabilidad empírica**: Se denomina también frecuentista porque se basa en experimentos reales y en observaciones. La probabilidad de un evento se determina observando la frecuencia con la que ocurre después de realizar muchas pruebas o experimentos. Por ejemplo, si al lanzar una moneda 100 vece, cae cara 55 veces, la probabilidad empírica de obtener cara sería de $\frac{55}{100} = 0.55$.
+2. **Probabilidad empírica**: Se denomina también frecuentista porque se basa en experimentos reales y en observaciones. La probabilidad de un evento se determina observando la frecuencia con la que ocurre después de realizar muchas pruebas o experimentos. Por ejemplo, si al lanzar una moneda 100 veces, cae cara 55 veces, la probabilidad empírica de obtener cara sería de $\frac{55}{100} = 0.55$.
 3. **Probabilidad subjetiva**: Es una estimación basada en la creencia de una persona, a menudo sin base empírica sólida. Por ejemplo, un meteorólogo podría decir que hay un 70% de probabilidad de lluvia basándose en su experiencia e intuición, además de los datos disponibles.
 4. **Probabilidad condicional**: Es la probabilidad de que ocurra un evento $A$ dado que otro evento $B$ ya ha ocurrido. Se denota como $P(A|B)$. Es una de las probabilidades más estudiadas en el campo del Machine Learning, ya que de ella deriva el **teorema de Bayes**.
 5. **Probabilidad conjunta**: Es la probabilidad de que ocurran dos o más eventos simultáneamente. Se denota como $P(A \cap B)$.
