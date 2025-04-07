@@ -1,5 +1,6 @@
 ---
 title: Recommender Systems Machine Learning
+technologies: ["datascience", "machine-learning", "recommender-systems"]
 description: >-
     Explore the fundamentals of recommender systems in machine learning, including various types and algorithms. This guide is designed for beginners in Machine Learning and Data Science, providing clear and educational insights.
 target_keyword: "recommender systems machine learning"
