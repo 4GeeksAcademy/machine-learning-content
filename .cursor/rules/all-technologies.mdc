@@ -1,0 +1,106 @@
+---
+description: How to use technologies in frontmatter and learn.json file
+globs: content/lessons/*.md, content/projects/**/learn.json
+alwaysApply: false
+---
+# Approved Technologies Rule
+
+This rule defines the only technologies that should be used in frontmatter or learn.json files.
+
+## Approved Technologies
+
+Below is a comprehensive list of all approved technologies, organized by language (where applicable):
+
+### Multilang Technologies (33)
+
+- `back-end`
+- `blue-team`
+- `bootstrap`
+- `career-support`
+- `data-modeling`
+- `data-science`
+- `databases`
+- `django`
+- `express`
+- `flask`
+- `front-end`
+- `git`
+- `html-css`
+- `iso-27001`
+- `Java`
+- `javascript`
+- `job-interview`
+- `learnpack`
+- `machine-learning`
+- `networking`
+- `node`
+- `numpy`
+- `pandas`
+- `PHP`
+- `postgre`
+- `python`
+- `reactjs`
+- `red-team`
+- `sql`
+- `sql-alchemy`
+- `the-dom`
+- `typescript`
+- `uml`
+
+### English Technologies (11)
+
+- `artificial-inteligence`
+- `calculus`
+- `Conditions`
+- `cybersecurity`
+- `generative-ai`
+- `linear-algebra`
+- `linear-regression`
+- `prob-and-stats`
+- `prompt-engineering`
+- `regular-expression`
+- `command-line`
+
+### Spanish Technologies (8)
+
+- `base-de-datos`
+- `ciberseguridad`
+- `expresiones-regulares`
+- `ingenieria-de-prompts`
+- `inteligencia-artificial-generativa`
+- `la-terminal`
+- `redes`
+- `regresion-lineal`
+
+## Summary
+
+Total number of approved technologies: 52
+
+### Counts by Language
+
+- General: 33
+- English: 11
+- Spanish: 8
+
+## Guidelines
+
+1. Only use technologies from this approved list in frontmatter or learn.json files
+2. Use the exact slug as shown in parentheses (e.g., `html`, `javascript`)
+3. Technologies not on this list require approval before use
+4. If a technology is missing that you need, please request it to be added to the official registry
+
+## Implementation
+
+When specifying technologies in frontmatter or learn.json files, ensure they match exactly with the approved slugs listed above.
+
+Example frontmatter:
+```yaml
+technologies: ["javascript", "react", "html", "css"]
+```
+
+Example learn.json:
+```json
+{
+  "technologies": ["python", "flask", "sqlalchemy"]
+}
+```

@@ -1,0 +1,10 @@
+---
+description: Rigobot AI Mentor integration
+globs: content/lessons/*.md
+alwaysApply: false
+---
+- If there is a specific content that is worth reading more about you can ask the readers to "ask rigobot about it" by providing a link like this: https://4geeks.com/ask?query=<query>, for example:
+
+```md
+- **Understand the Spot Market**: Learn what the spot market is and why it matters in trucking. [Ask Rigobot to explain the spot market!](mdc:https:/4geeks.com/ask?query=what-is-the-spot-market-in-trucking)
+```

@@ -1,0 +1,20 @@
+---
+description: Set the tone and voice for writting articles
+globs: content/lessons/*.md
+alwaysApply: false
+---
+- Use contractions (e.g., “you’ve” instead of “you have”) and informal phrasing where it fits.
+- Sprinkle in light humor, like relatable quips or playful asides (e.g., “We’ve all been there, staring at a bug like it’s mocking us”).
+- Keep the tone encouraging and supportive with phrases like “don’t sweat it” or “you’re totally capable of this.”
+- Use first- and second-person pronouns (“I” and “you”) to build a personal connection.
+- Steer clear of stiff, formal, or overly academic language.
+- Keep the tone inviting so readers feel involved, not just lectured at.
+- Use questions or nudges to spark curiosity (e.g., “Ever wondered why that happens?”).
+- Break down complex ideas into small, digestible chunks.
+- Explain technical terms simply (e.g., “A ‘variable’ is just a box to hold your data”).
+- Avoid jargon unless it’s defined first—don’t assume prior knowledge.
+- Use short sentences and clear phrasing to keep the fog away.
+- Kick off with reassurance (e.g., “Don’t worry, this isn’t as tricky as it looks”).
+- End on a high note with encouragement (e.g., “You’ve got this—go crush it!”).
+- Weave in motivational phrases throughout (e.g., “Small steps add up to big wins”).
+- Make it feel like a pep talk, not a chore.

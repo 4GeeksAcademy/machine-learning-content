@@ -1,0 +1,30 @@
+---
+description: All articles must have at least 3 frontmatter keys
+globs: content/lessons/*.md
+alwaysApply: false
+---
+- Begin every lesson with a YAML frontmatter block enclosed in --- lines.
+- Include these required fields:
+  - title: A concise, descriptive title (e.g., "Debugging HTML Code").
+  - tags: A list of relevant keywords as a YAML array (e.g., - debugging, - web development, - html/css).
+  - description: A short, punchy summary (1-2 sentences) that hooks the reader and previews the content (e.g., "Master HTML debugging with our essential guide! Learn to prevent errors and fix common mistakes efficiently.").
+- Add a topic cluster with the key: "cluster" form the list of SEO topic clusters landing pages.
+- Add a the SEO focus keyword using the "seo_keyword" key.
+- Keep the description casual and enticing, avoiding dry or overly technical phrasing.
+- Include the seo keyworkd on the description and the title.
+- Example:
+
+```yaml
+---  
+title: Debugging HTML Code as a Full Stack Developer
+tags:  
+  - debugging  
+  - web development  
+  - html/css  
+description: >-  
+  Master HTML debugging as a full stack developer with our essential guide! Learn to prevent errors and  
+  fix common mistakes efficiently. Discover tips to save time now!  
+cluster: Full Stack Developer
+seo_keyword: Full Stack Developer
+---
+```
