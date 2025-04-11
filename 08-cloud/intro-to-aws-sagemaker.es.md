@@ -290,7 +290,7 @@ xgb.fit({'train': s3_input_train, 'validation': s3_input_validation})
 
 **Alojamiento**
 
-Una vez que el modelo está entrenado, podemos usar el estimador con `.deploy()`.
+Una vez que el modelo esta entrenado, podemos usar el estimador con `.deploy()`.
 
 ```py
 xgb_predictor = xgb.deploy(initial_instance_count = 1, # La palabra 'initial' es porque puedes actualizarla más tarde para aumentarla
