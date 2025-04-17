@@ -2,7 +2,7 @@
 title: Mejora de modelos de Deep Learning con Transfer Learning, Data Augmentation y Early Stopping
 description: >-
   Descubre tres estrategias clave para entrenar modelos de deep learning más efectivos: reutiliza redes preentrenadas con Transfer Learning, mejora la generalización con Data Augmentation y evita el sobreajuste con Early Stopping. Guía práctica para principiantes.
-technologies: ["Deep Learning", "TensorFlow", "Keras", "Python", "Transfer Learning", "Data Augmentation", "Early Stopping"]
+tags: ["Deep Learning", "TensorFlow", "Keras", "Python", "Transfer Learning", "Data Augmentation", "Early Stopping"]
 ---
 
 
