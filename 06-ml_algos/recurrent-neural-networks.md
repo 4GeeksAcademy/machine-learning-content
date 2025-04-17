@@ -1,12 +1,9 @@
 ---
-title: Recurrent Neural Networks
+title: "Recurrent Neural Networks: Understanding Memory in Deep Learning Models"
 description: >-
     Learn how recurrent neural networks enable Deep Learning models to work with sequential data. Discover how they work, their applications in language, time series, and speech recognition, and why they are essential for understanding memory in artificial intelligence.
 tags: ["Python", "Keras", "Deep Learning", "Machine Learning", "RNN", "LSTM", "GRU"]
 ---
-
-
-# Recurrent Neural Networks: Understanding Memory in Deep Learning Models
 
 In many real-world problems, data is presented in sequential form: words in a sentence, stock prices over time, musical notes in a melody, or physiological signals measured at regular intervals. To address such problems, it is not enough to analyze data in isolation; models must be capable of capturing the dependencies between elements in a sequence.
 
