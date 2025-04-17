@@ -2,7 +2,7 @@
 title: Recurrent Neural Networks
 description: >-
     Learn how recurrent neural networks enable Deep Learning models to work with sequential data. Discover how they work, their applications in language, time series, and speech recognition, and why they are essential for understanding memory in artificial intelligence.
-technologies: ["Python", "Keras", "Deep Learning", "Machine Learning", "RNN", "LSTM", "GRU"]
+tags: ["Python", "Keras", "Deep Learning", "Machine Learning", "RNN", "LSTM", "GRU"]
 ---
 
 
