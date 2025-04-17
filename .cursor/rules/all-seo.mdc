@@ -1,0 +1,70 @@
+---
+description: This rule helps ensure that new articles link to appropriate landing pages within their topic clusters.
+globs: *.md
+alwaysApply: false
+---
+
+When writing a new article, consider linking to these relevant topic clusters landing pages, but only if the topic makes sense and you can natually introduce the link, don't force it:
+
+- **Instalar NVM** [español]: [https://4geeks.com/es/how-to/como-instalar-nvm-en-windows](mdc:https:/4geeks.com/es/how-to/como-instalar-nvm-en-windows)
+- **Regresion Lineal** [español]: [https://4geeks.com/es/technology/regresion-lineal](mdc:https:/4geeks.com/es/technology/regresion-lineal)
+- **Seguridad web** [español]: [https://4geeks.com/es/lesson/seguridad-web](mdc:https:/4geeks.com/es/lesson/seguridad-web)
+- **Curso React Desde Cero** [español]: [https://4geeks.com/es/interactive-exercise/curso-react-desde-cero](mdc:https:/4geeks.com/es/interactive-exercise/curso-react-desde-cero)
+- **Install NVM** [english]: [https://4geeks.com/how-to/install-nvm-on-every-operating-system](mdc:https:/4geeks.com/how-to/install-nvm-on-every-operating-system)
+- **curso prompt engineering** [español]: [https://4geeks.com/es/interactive-exercise/curso-de-prompt-engineering](mdc:https:/4geeks.com/es/interactive-exercise/curso-de-prompt-engineering)
+- **applied ai course** [english]: [https://4geeksacademy.com/us/coding-bootcamps/applied-ai-course](mdc:https:/4geeksacademy.com/us/coding-bootcamps/applied-ai-course)
+- **prompt engineering course** [english]: [https://4geeks.com/interactive-exercise/prompt-engineering-exercise-course](mdc:https:/4geeks.com/interactive-exercise/prompt-engineering-exercise-course)
+- **Pyenv** [español]: [https://4geeks.com/es/how-to/que-es-pyenv-y-como-instalar-pyenv](mdc:https:/4geeks.com/es/how-to/que-es-pyenv-y-como-instalar-pyenv)
+- **Tutorial de Python Pandas** [español]: [https://4geeks.com/es/interactive-exercise/tutorial-pandas-para-machine-learning](mdc:https:/4geeks.com/es/interactive-exercise/tutorial-pandas-para-machine-learning)
+- **Pandas Tutorial and Exercises** [english]: [https://4geeks.com/interactive-exercise/pandas-exercises-tutorial](mdc:https:/4geeks.com/interactive-exercise/pandas-exercises-tutorial)
+- **React JS Tutorial Exercises** [english]: [https://4geeks.com/interactive-exercise/react-js-tutorial-exercises](mdc:https:/4geeks.com/interactive-exercise/react-js-tutorial-exercises)
+- **Javascript String o cadenas de caracteres** [español]: [https://4geeks.com/es/lesson/strings-en-javascript](mdc:https:/4geeks.com/es/lesson/strings-en-javascript)
+- **Javascript** [español]: [https://4geeks.com/es/lessons/technology/javascript](mdc:https:/4geeks.com/es/lessons/technology/javascript)
+- **Javascript Array** [español]: [https://4geeks.com/es/lesson/array-arreglo-en-javascript](mdc:https:/4geeks.com/es/lesson/array-arreglo-en-javascript)
+- **Javascript Array** [english]: [https://4geeks.com/lesson/what-is-an-array-define-array](mdc:https:/4geeks.com/lesson/what-is-an-array-define-array)
+- **python que es** [español]: [https://4geeks.com/es/lesson/que-es-python-tutorial](mdc:https:/4geeks.com/es/lesson/que-es-python-tutorial)
+- **Que es javascript** [español]: [https://4geeks.com/es/lesson/que-es-javascript-aprende-a-programar-en-javascript](mdc:https:/4geeks.com/es/lesson/que-es-javascript-aprende-a-programar-en-javascript)
+- **expresiones regulares** [español]: [https://4geeks.com/es/lesson/regex-tutorial-regular-expression-ejemplo](mdc:https:/4geeks.com/es/lesson/regex-tutorial-regular-expression-ejemplo)
+- **Regex tutorial** [english]: [https://4geeks.com/lesson/regex-tutorial-regular-expression-examples](mdc:https:/4geeks.com/lesson/regex-tutorial-regular-expression-examples)
+- **What is debugging** [english]: [https://4geeks.com/en/lesson/what-is-debugging-code](mdc:https:/4geeks.com/en/lesson/what-is-debugging-code)
+- **Coding Standard Guidelines** [english]: [https://4geeks.com/lessons/technology/coding-standard-guidelines](mdc:https:/4geeks.com/lessons/technology/coding-standard-guidelines)
+- **Portafolio Desarrollador Web** [español]: [https://4geeks.com/es/lesson/portfolio-desarrollador-web](mdc:https:/4geeks.com/es/lesson/portfolio-desarrollador-web)
+- **Python list** [english]: [https://4geeks.com/lesson/what-is-a-python-list](mdc:https:/4geeks.com/lesson/what-is-a-python-list)
+- **Update Python** [english]: [https://4geeks.com/how-to/how-to-update-python-version](mdc:https:/4geeks.com/how-to/how-to-update-python-version)
+- **Python Strings** [english]: [https://4geeks.com/lesson/working-with-strings-in-python](mdc:https:/4geeks.com/lesson/working-with-strings-in-python)
+- **Javascript Questions** [english]: [https://4geeks.com/technology/javascript](mdc:https:/4geeks.com/technology/javascript)
+- **Python Questions** [english]: [https://4geeks.com/lesson/intro-to-python](mdc:https:/4geeks.com/lesson/intro-to-python)
+- **Cybersecurity** [english]: [https://4geeksacademy.com/us/coding-bootcamps/cybersecurity](mdc:https:/4geeksacademy.com/us/coding-bootcamps/cybersecurity)
+- **Curso Ciberseguridad** [español]: [https://4geeksacademy.com/es/coding-bootcamps/curso-ciberseguridad](mdc:https:/4geeksacademy.com/es/coding-bootcamps/curso-ciberseguridad)
+- **Cybersecurity Bootcamp** [english]: [https://4geeksacademy.com/us/coding-bootcamps/cybersecurity](mdc:https:/4geeksacademy.com/us/coding-bootcamps/cybersecurity)
+- **AI For Business Course** [english]: [https://4geeksacademy.com/us/coding-bootcamps/applied-ai-course](mdc:https:/4geeksacademy.com/us/coding-bootcamps/applied-ai-course)
+- **curso inteligencia artificial** [español]: [https://4geeksacademy.com/es/coding-bootcamps/curso-inteligencia-artificial](mdc:https:/4geeksacademy.com/es/coding-bootcamps/curso-inteligencia-artificial)
+- **Machine Learning Course** [english]: [https://4geeksacademy.com/us/coding-bootcamps/machine-learning-engineering](mdc:https:/4geeksacademy.com/us/coding-bootcamps/machine-learning-engineering)
+- **Machine Learning Engineer** [english]: [https://4geeksacademy.com/us/machine-learning-engineer/machine-learning-engineer](mdc:https:/4geeksacademy.com/us/machine-learning-engineer/machine-learning-engineer)
+- **Machine Learning Bootcamp** [english]: [https://4geeksacademy.com/us/coding-bootcamps/machine-learning-engineering](mdc:https:/4geeksacademy.com/us/coding-bootcamps/machine-learning-engineering)
+- **Miami Coding Bootcamp** [english]: [https://4geeksacademy.com/us/coding-campus/coding-bootcamp-miami](mdc:https:/4geeksacademy.com/us/coding-campus/coding-bootcamp-miami)
+- **data science bootcamp** [english]: [https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning](mdc:https:/4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning)
+- **Carrera de Programación** [español]: [https://4geeksacademy.com/es/carrera-de-programacion/carrera-de-programacion-es](mdc:https:/4geeksacademy.com/es/carrera-de-programacion/carrera-de-programacion-es)
+- **Desarrollador Full Stack** [español]: [https://4geeksacademy.com/desarrollador-full-stack-developer](mdc:https:/4geeksacademy.com/desarrollador-full-stack-developer)
+- **Software Engineer Salary** [english]: [https://4geeksacademy.com/us/software-engineer-salary/software-engineer-salary](mdc:https:/4geeksacademy.com/us/software-engineer-salary/software-engineer-salary)
+- **Coding Bootcamp Berlin** [english]: [https://4geeksacademy.com/us/coding-campus/coding-bootcamp-berlin-germany](mdc:https:/4geeksacademy.com/us/coding-campus/coding-bootcamp-berlin-germany)
+- **Cuánto gana un programador** [español]: [https://4geeksacademy.com/es/cuanto-gana-un-programador/cuanto-gana-un-programador](mdc:https:/4geeksacademy.com/es/cuanto-gana-un-programador/cuanto-gana-un-programador)
+- **Bootcamp de Programación** [español]: [https://4geeksacademy.com/es/bootcamp-de-programacion/estudiar-en-un-bootcamp-de-programacion](mdc:https:/4geeksacademy.com/es/bootcamp-de-programacion/estudiar-en-un-bootcamp-de-programacion)
+- **Aprender A Programar** [español]: [https://4geeksacademy.com/es/aprender-a-programar/aprender-a-programar-desde-cero](mdc:https:/4geeksacademy.com/es/aprender-a-programar/aprender-a-programar-desde-cero)
+- **Coding Bootcamp** [english]: [https://4geeksacademy.com/us/coding-bootcamp](mdc:https:/4geeksacademy.com/us/coding-bootcamp)
+- **Online coding bootcamp** [english]: [https://4geeksacademy.com/us/coding-campus/online-coding-bootcamp](mdc:https:/4geeksacademy.com/us/coding-campus/online-coding-bootcamp)
+- **Full Stack Developer** [english]: [https://4geeksacademy.com/us/full-stack-developer/full-stack-developer](mdc:https:/4geeksacademy.com/us/full-stack-developer/full-stack-developer)
+- **Software Engineer** [english]: [https://4geeksacademy.com/us/coding-bootcamps/software-engineer-bootcamp](mdc:https:/4geeksacademy.com/us/coding-bootcamps/software-engineer-bootcamp)
+- **Curso Programación** [español]: [https://4geeksacademy.com/es/curso-de-programacion-desde-cero](mdc:https:/4geeksacademy.com/es/curso-de-programacion-desde-cero)
+- **Learn Javascript** [english]: [https://4geeksacademy.com/us/learn-javascript/learn-javascript](mdc:https:/4geeksacademy.com/us/learn-javascript/learn-javascript)
+
+## Guidelines
+
+1. Each article should link to its cluster's landing page at least once
+2. Use descriptive anchor text that includes relevant keywords
+3. Place links naturally within the content where they provide value to readers
+4. Avoid excessive linking that could appear spammy
+
+## Implementation
+
+When writing content related to any of these topics, include contextually relevant links to the appropriate landing pages.

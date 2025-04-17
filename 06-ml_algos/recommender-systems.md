@@ -1,6 +1,9 @@
 ---
+title: Recommender Systems Machine Learning
+technologies: ["datascience", "machine-learning", "recommender-systems"]
 description: >-
-    Learn what recommender systems are, their main types, and the algorithms that make them work. A clear and pedagogical guide for students starting in Machine Learning and Data Science.
+    Explore the fundamentals of recommender systems in machine learning, including various types and algorithms. This guide is designed for beginners in Machine Learning and Data Science, providing clear and educational insights.
+target_keyword: "recommender systems machine learning"
 ---
 
 

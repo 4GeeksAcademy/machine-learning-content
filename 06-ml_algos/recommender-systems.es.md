@@ -1,4 +1,6 @@
 ---
+title: "Fundamentos de Sistemas de Recomendación en Aprendizaje Automático"
+technologies: ["datascience", "machine-learning", "sistemas-de-recomendación"]
 description: >-
   Aprende qué son los sistemas de recomendación, sus principales tipos y los algoritmos
   que los hacen funcionar. Una guía clara y pedagógica para estudiantes que comienzan

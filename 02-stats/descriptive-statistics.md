@@ -15,7 +15,7 @@ Descriptive statistics is a branch of statistics that deals with collecting, ana
 
 #### Measures of central tendency
 
-Measures of central tendency** are numerical values that describe how data are centralized or grouped in a set. They are essential in statistics and data analysis because they provide us with a summary of information, allowing us to quickly understand the general characteristics of a data distribution without having to look at each value individually.
+**Measures of central tendency** are numerical values that describe how data are centralized or grouped in a set. They are essential in statistics and data analysis because they provide us with a summary of information, allowing us to quickly understand the general characteristics of a data distribution without having to look at each value individually.
 
 **Mean**
 
@@ -33,7 +33,10 @@ print(f"Mean: {mean}")
 
 Average value when data are sorted.
 
-```py
+```py runable=true
+import statistics as stats
+
+data = [10, 20, -15, 0, 50, 10, 5, 100]
 median = stats.median(data)
 print(f"Median: {median}")
 ```
@@ -42,7 +45,10 @@ print(f"Median: {median}")
 
 Value that occurs most frequently.
 
-```py
+```py runable=true
+import statistics as stats
+
+data = [10, 20, -15, 0, 50, 10, 5, 100]
 mode = stats.mode(data)
 print(f"Mode: {mode}")
 ```
@@ -51,13 +57,16 @@ These measures are fundamental for describing and analyzing data distributions.
 
 #### Measures of dispersion
 
-Measures of dispersion** are numerical values that describe how varied the data are in a set. While measures of central tendency tell us where the data are "centered", measures of dispersion show us how much those data "spread out" or "vary" around that center.
+**Measures of dispersion** are numerical values that describe how varied the data are in a set. While measures of central tendency tell us where the data are "centered", measures of dispersion show us how much those data "spread out" or "vary" around that center.
 
 **Range**
 
 The difference between the maximum value and the minimum value of a data set.
 
-```py
+```py runable=true
+import statistics as stats
+
+data = [10, 20, -15, 0, 50, 10, 5, 100]
 range_ = max(data) - min(data)
 print(f"Range: {range_}")
 ```
@@ -66,7 +75,10 @@ print(f"Range: {range_}")
 
 Both metrics measure the same thing. They indicate how far, on average, the values are from the mean. However, the standard deviation is a measure used to be able to work with initial units of measurement, while the variance, although at first sight it may seem an unnecessary calculation, is calculated to be able to obtain other parameters.
 
-```py
+```py runable=true
+import statistics as stats
+
+data = [10, 20, -15, 0, 50, 10, 5, 100]
 variance = stats.variance(data)
 std = stats.stdev(data)
 print(f"Variance: {variance}")
@@ -90,7 +102,7 @@ The **shape measures** describe how the values in a data set are distributed in 
 
 **Skewness**
 
-Measures the lack of symmetry in the data distribution. A positive skewness indicates that most of the data are on the left and there are a few very high values on the right. A negative skewness indicates that there are more unusual low values. If it is close to zero it suggests that the data are quite symmetrical.
+Measures the lack of symmetry in the data distribution. A positive skewness indicates that most of the data are on the left and there are a few very high values on the right. A negative skewness indicates that there are more unusually low values. If it is close to zero, it suggests that the data are quite symmetrical.
 
 ![skewness](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/skewness.png?raw=true)
 

@@ -1,0 +1,82 @@
+---
+description: Guidelines for creating learn.json files for LearnPack projects
+globs: content/projects/**/learn.json
+alwaysApply: false
+---
+## LearnPack learn.json Structure
+
+Every learn.json file should include the following essential properties:
+
+### Basic Configuration
+
+```json
+{
+  "slug": "my-project-name",
+  "title": {
+    "en": "English Title",
+    "es": "Spanish Title"
+  },
+  "description": {
+    "en": "Comprehensive description in English that mentions technologies, topics, and learning outcomes",
+    "es": "Descripción completa en español que menciona tecnologías, temas y resultados de aprendizaje"
+  },
+  "difficulty": "beginner", // Options: "easy", "beginner", "intermediate", "hard"
+  "duration": 8, // Estimated hours to complete
+  "autoPlay": false,
+  "projectType": "project",
+  "repository": "https://github.com/4GeeksAcademy/my-project-name",
+  "preview": "https://github.com/4GeeksAcademy/my-project-name/blob/main/preview.png?raw=true"
+}
+```
+
+### Social Sharing
+
+Include a "sharing" key with examples of engaging social media messages in different languages:
+
+```json
+{
+  "sharing": [
+    {
+      "en": "I just completed this amazing project where I built a weather app using React! #4Geeks #CodingJourney",
+      "es": "¡Acabo de completar este increíble proyecto donde construí una aplicación del clima usando React! #4Geeks #AprendiendoACodificar"
+    },
+    {
+      "en": "Just leveled up my coding skills with this awesome project from @4GeeksAcademy! Check it out! #TechSkills #CodingBootcamp",
+      "es": "¡Acabo de mejorar mis habilidades de programación con este increíble proyecto de @4GeeksAcademy! ¡Échale un vistazo! #HabilidadesTécnicas #BootcampDeProgramación"
+    }
+  ]
+}
+```
+
+## Complete Example
+
+```json
+{
+  "slug": "weather-app",
+  "title": {
+    "en": "Build a Weather App with React",
+    "es": "Construye una Aplicación del Clima con React"
+  },
+  "description": {
+    "en": "Create a weather application that fetches and displays current weather conditions and forecasts using React and OpenWeather API. Learn API integration, state management, and responsive design.",
+    "es": "Crea una aplicación del clima que obtiene y muestra las condiciones climáticas actuales y pronósticos usando React y la API de OpenWeather. Aprende integración de API, gestión de estado y diseño responsivo."
+  },
+  "difficulty": "beginner",
+  "autoPlay": false,
+  "sharing": [
+    {
+      "en": "I just built a weather app using React and learned how to integrate with APIs! Check out what I created with @4GeeksAcademy! #ReactJS #WeatherApp #CodingJourney",
+      "es": "¡Acabo de construir una aplicación del clima usando React y aprendí a integrar APIs! ¡Mira lo que creé con @4GeeksAcademy! #ReactJS #AppDelClima #AprendiendoACodificar"
+    },
+    {
+      "en": "From zero to hero! Just completed my weather application project and it looks amazing! Thanks @4GeeksAcademy for the guidance! #ProudCoder #TechSkills",
+      "es": "¡De cero a héroe! ¡Acabo de completar mi proyecto de aplicación del clima y se ve increíble! ¡Gracias @4GeeksAcademy por la guía! #ProgramadorOrgulloso #HabilidadesTécnicas"
+    }
+  ]
+}
+```
+
+Remember to:
+1. Include multilingual support for title, description, and sharing messages
+4. Include sharing messages that are engaging and likely to generate viral reactions
+5. Use proper JSON syntax with correct commas and brackets

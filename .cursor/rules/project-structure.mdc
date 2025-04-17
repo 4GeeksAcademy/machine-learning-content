@@ -1,0 +1,74 @@
+---
+description: Structure for project markdown files
+globs: content/projects/*.md
+alwaysApply: false
+---
+## Project File Structure
+
+Every project markdown file should follow this structure:
+
+1. **Introduction** (No heading needed)
+   - Begin with 1-2 paragraphs explaining what the student will create
+   - Make it engaging and clear about the final outcome
+
+2. **How to Start** (Required)
+   - Must be wrapped in `<how-to-start></how-to-start>` tags
+   - Include a heading `## 🌱 How to start this project`
+   - Provide clear initial steps
+
+3. **Strategy** (Optional)
+   - Include a heading `## Strategy`
+   - Explain the best approach to tackle the project
+   - Highlight ways to avoid common pitfalls
+   - Outline a plan that incorporates best practices
+
+4. **Skills** (Required)
+   - Include a heading `## Skills`
+   - List specific skills students will gain from completing the project
+   - Format as a bullet list for clarity
+
+5. **Share this project** (Required)
+   - All of 4Geek's projects need to include a secion `## Share this project after completion`
+   - In this section we will share examples of possible viral posts you can make when completing the project.
+
+## Example
+
+```markdown
+This project will guide you through building a weather dashboard using React and a public API. You'll create an interactive interface that displays current weather conditions and forecasts for locations worldwide.
+
+By the end of this project, you'll have a fully functional weather app that demonstrates your ability to work with APIs and create dynamic user interfaces.
+
+<how-to-start>
+## 🌱 How to start this project
+
+1. Fork this repository
+2. Clone your forked repository
+3. Run `npm install` to set up dependencies
+4. Get a free API key from OpenWeatherMap
+5. Create a `.env` file for your API key
+6. Start coding with `npm start`
+</how-to-start>
+
+## Strategy
+
+The best approach for this project is to:
+
+1. First build a static version with hardcoded data
+2. Then implement the API connection
+3. Finally add interactive features
+
+This way, you'll have a working UI before dealing with asynchronous data fetching, making debugging easier.
+
+## How to share the project when complete
+
+
+
+## Skills
+
+- Working with REST APIs
+- React state management
+- Responsive design
+- Error handling
+- Environment variable usage
+- Asynchronous JavaScript
+```

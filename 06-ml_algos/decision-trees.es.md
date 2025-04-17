@@ -1,7 +1,6 @@
 ---
 description: >-
-  Learn about decision trees in machine learning! Discover how they work, their
-  structure, and key hyperparameters to master this powerful model.
+  ¡Aprende sobre los árboles de decisión en Machine Learning! Descubre cómo funcionan, su estructura y los hiperparámetros clave para dominar este poderoso modelo.
 ---
 ## Árboles de Decisión
 
@@ -30,7 +29,7 @@ Imaginemos que estamos construyendo un árbol de decisión para decidir si debem
 
 Empezamos con un único nodo que contiene todos los datos. Necesitamos decidir cuál será nuestro primer criterio de división, es decir, cuál de las dos características (`Clima` o `Viento`) deberíamos usar para dividir los datos. Este criterio se decide generalmente basándose en la **pureza** de los nodos resultantes. Para un problema de clasificación, un nodo es puro si todos sus datos pertenecen a la misma clase. En un problema de regresión, un nodo es puro si todos los datos de ese nodo tienen el mismo valor para la variable objetivo.
 
-El objetivo de las divisiones en un árbol de decisión es aumentar la pureza de los nodos hijos. Por ejemplo, si tienes un nodo que contiene datos de emails spam y no spam, podrías dividirlo en base a si el email contiene la palabra "ganar". Esto podría aumentar la pureza si resulta que la mayoría de los emails que contienen la palabra "ganar" son spam y la maytoría de los que no la contienen son no spam.
+El objetivo de las divisiones en un árbol de decisión es aumentar la pureza de los nodos hijos. Por ejemplo, si tienes un nodo que contiene datos de emails spam y no spam, podrías dividirlo en base a si el email contiene la palabra "ganar". Esto podría aumentar la pureza si resulta que la mayoría de los emails que contienen la palabra "ganar" son spam y la mayoría de los que no la contienen son no spam.
 
 En este caso, por simplicidad, supongamos que decidimos dividir por `Clima` primero. Entonces, dividimos los datos en dos nodos hijos: uno para los días soleados y otro para los días lluviosos:
 

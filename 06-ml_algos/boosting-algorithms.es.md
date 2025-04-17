@@ -1,8 +1,6 @@
 ---
 description: >-
-  Learn about boosting algorithms, their structure, implementations like
-  XGBoost, and how they compare to random forests. Discover the power of
-  boosting today!
+  ¡Aprende sobre los algoritmos de boosting, su estructura, implementaciones como XGBoost y su comparación con los Random Forests! ¡Descubre el poder del boosting hoy mismo!
 ---
 ## Boosting
 

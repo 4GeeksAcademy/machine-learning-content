@@ -1,7 +1,6 @@
 ---
 description: >-
-  Discover the Standard Normal Table and learn how to interpret z-scores
-  effectively. Master statistics with our easy reference guide!
+  ¡Descubre el mundo de las variables aleatorias! Aprende sobre los tipos discreto y continuo, las funciones de distribución y sus aplicaciones en estadística.
 ---
 # Tabla Normal Estándar
 

@@ -1,0 +1,32 @@
+---
+description: Markdown structure for better SEO and clean writing
+globs: content/lessons/*.md
+alwaysApply: false
+---
+## How to start the lesson
+
+Start the lesson with one or two paragraphs that grab the reader attention by stating a real life fact that shows how important are the topics the lesson will explain, for example, in a lesson about best practices when coding we can start like this: 
+
+### Example 1:
+
+Studies have shown that developers who use best practices when coding are up to 40% more productive than those who do not, and that code with good practices is up to 50% cheaper to maintain than code with poor practices.
+
+## Example 2:
+
+Companies and governments lose a lot of money every day because developers don't follow the best practices and guidelines. Here are some examples you can read more about:
+
+- NASA's Mars Climate Orbiter was lost because the team was not using consistent metric system in the codebase, which led to confusion in the calculations, losing $320 million.
+- The Ariane 5 rocket explosion by ESA was caused by bad code that was very difficult to read, and $370 million was lost
+- The US stock market Flash Crash in 2010, with undisclosed significant financial losses.
+- This lesson is a compilation of best practices that we promote at 4Geeks, it has been created and grown with contributions from all the community mentors.
+
+## Use of headings:
+
+- Don't use h1 headings at all.
+- Use ## (H2) headings for main sections like “Introduction,” “Tools You’ll Need,” or “Common Pitfalls.”
+- Use ### (H3) headings for subsections under the main ones.
+
+## Follow a clear flow
+
+- Begin with an overview, dive into details (prevention, tools, examples), and wrap up with a summary or next steps.
+- Keep each section short and focused—don’t let it ramble.
