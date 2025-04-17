@@ -2,7 +2,7 @@
 title: Redes Neuronales Recurrentes
 description: >-
   Aprende cómo las redes neuronales recurrentes permiten a los modelos de Deep Learning trabajar con datos secuenciales. Descubre cómo funcionan, sus aplicaciones en lenguaje, series temporales y reconocimiento de voz, y por qué son esenciales para entender la memoria en inteligencia artificial.
-technologies: ["Python", "Keras", "Deep Learning", "Machine Learning", "RNN", "LSTM", "GRU"]
+tags: ["Python", "Keras", "Deep Learning", "Machine Learning", "RNN", "LSTM", "GRU"]
 ---
 
 
