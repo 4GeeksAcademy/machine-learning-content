@@ -1,7 +1,6 @@
 ---
 description: >-
-  Learn how to deploy your Flask application on Render with a decision tree
-  model. Discover step-by-step instructions and enhance your web app today!
+  Aprende a implementar tu aplicación Flask en Render con un modelo de árbol de decisión. ¡Descubre las instrucciones paso a paso y mejora tu aplicación web hoy mismo!
 ---
 ## Despliegue en Render usando Flask
 
