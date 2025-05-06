@@ -6,7 +6,7 @@ description: >-
 technologies:
   - regresión lineal
   - machine learning
-keyword: que es una regresion lineal
+keyword: ¿Qué es una Regresión Lineal? Y para que se utiliza.
 ---
 ## Regresión Lineal
 
