@@ -38,7 +38,7 @@ import pandas as pd
 iris = sns.load_dataset("iris")
 print(iris.head())
 ```
-![seaborn1](/assets/seaborn-plot1.png)
+![seaborn1](https://breathecode.herokuapp.com/v1/media/file/seaborn-plot1-png?raw=true)
 
 ## Basic Plots in Seaborn
 
@@ -52,7 +52,7 @@ plt.title("Iris Scatter Plot")
 plt.show()
 ```
 
-![image2](/assets/seaborn-plot2us.png)
+![image2](https://breathecode.herokuapp.com/v1/media/file/seaborn-plot2-png?raw=true)
 
 ### Bar Plot
 
@@ -63,7 +63,7 @@ sns.barplot(x="species", y="sepal_length", data=iris)
 plt.title("Average Sepal Length by Species")
 plt.show()
 ```
-![image3](/assets/seaborn-plot3us.png)
+![image3](https://breathecode.herokuapp.com/v1/media/file/seaborn-plot3-png?raw=true)
 
 ### Histogram
 
@@ -74,7 +74,7 @@ sns.histplot(iris["sepal_length"], bins=20, kde=True)
 plt.title("Sepal Length Distribution")
 plt.show()
 ```
-![image4](/assets/seaborn-plot4us.png)
+![image4](https://breathecode.herokuapp.com/v1/media/file/seaborn-plot4-png?raw=true)
 
 ## Advanced Plots with Seaborn
 
@@ -87,7 +87,7 @@ sns.boxplot(x="species", y="petal_length", data=iris)
 plt.title("Petal Length Distribution by Species")
 plt.show()
 ```
-![image5](/assets/boxplot_petal_length2.png)
+![image5](https://breathecode.herokuapp.com/v1/media/file/boxplot-petal-length-png?raw=true)
 
 ### Correlation Matrix with Heatmap
 
@@ -101,7 +101,7 @@ sns.heatmap(corr, annot=True, cmap="coolwarm", linewidths=0.5)
 plt.title("Correlation Heatmap")
 plt.show()
 ```
-![image6](/assets/heatmap_correlation2.png)
+![image6](https://breathecode.herokuapp.com/v1/media/file/heatmap-correlation-png?raw=true)
 
 ### Pair Plot
 
@@ -111,4 +111,4 @@ This plot shows multiple scatter plots in a single figure.
 sns.pairplot(iris, hue="species")
 plt.show()
 ```
-![image7](/assets/pairplot_species.png)
+![image7](https://breathecode.herokuapp.com/v1/media/file/pairplot-species-png?raw=true)
