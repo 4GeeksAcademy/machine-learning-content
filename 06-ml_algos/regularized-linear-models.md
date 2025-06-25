@@ -46,7 +46,7 @@ lasso_model = Lasso(alpha = 0.1, max_iter = 300)
 
 lasso_model.fit(X_train, y_train)
 
-y_pred = lasso_model.predict(y_test)
+y_pred = lasso_model.predict(X_test)
 ```
 
 #### Ridge
@@ -61,5 +61,5 @@ ridge_model = Ridge(alpha = 0.1, max_iter = 300)
 
 ridge_model.fit(X_train, y_train)
 
-y_pred = ridge_model.predict(y_test)
+y_pred = ridge_model.predict(X_test)
 ```
