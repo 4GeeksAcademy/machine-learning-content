@@ -39,7 +39,7 @@ import pandas as pd
 iris = sns.load_dataset("iris")
 print(iris.head())
 ```
-![seaborn1](/assets/seaborn-plot1.png)
+![seaborn1](https://breathecode.herokuapp.com/v1/media/file/seaborn-plot1-png?raw=true)
 
 ## Gráficos Básicos en Seaborn
 
@@ -53,7 +53,7 @@ plt.title("Gráfico de Dispersión de Iris")
 plt.show()
 ```
 
-![image2](/assets/seaborn-plot2.png)
+![image2](https://breathecode.herokuapp.com/v1/media/file/seaborn-plot2-png?raw=true)
 
 ### Gráfico de Barras
 
@@ -64,7 +64,7 @@ sns.barplot(x="species", y="sepal_length", data=iris)
 plt.title("Promedio de Largo del Sépalos por Especie")
 plt.show()
 ```
-![image3](/assets/seaborn-plot3.png)
+![image3](https://breathecode.herokuapp.com/v1/media/file/seaborn-plot3-png?raw=true)
 
 ### Histograma
 
@@ -75,7 +75,7 @@ sns.histplot(iris["sepal_length"], bins=20, kde=True)
 plt.title("Distribución del Largo del Sépalo")
 plt.show()
 ```
-![image4](/assets/seaborn-plot4.png)
+![image4](https://breathecode.herokuapp.com/v1/media/file/seaborn-plot4-png?raw=true)
 
 ## Gráficos Avanzados con Seaborn
 
@@ -88,7 +88,7 @@ sns.boxplot(x="species", y="petal_length", data=iris)
 plt.title("Distribución del Largo de los Pétalos por Especie")
 plt.show()
 ```
-![image5](/assets/boxplot_petal_length.png)
+![image5](https://breathecode.herokuapp.com/v1/media/file/boxplot-petal-length-png?raw=true)
 
 ### Matriz de Correlación con Heatmap
 
@@ -102,7 +102,7 @@ sns.heatmap(corr, annot=True, cmap="coolwarm", linewidths=0.5)
 plt.title("Mapa de Calor de Correlación")
 plt.show()
 ```
-![image6](/assets/heatmap_correlation.png)
+![image6](https://breathecode.herokuapp.com/v1/media/file/heatmap-correlation-png?raw=true)
 
 ### Gráfico de Pares (Pairplot)
 
@@ -112,5 +112,5 @@ Este gráfico muestra múltiples gráficos de dispersión en una misma figura.
 sns.pairplot(iris, hue="species")
 plt.show()
 ```
-![image7](/assets/pairplot_species.png)
+![image7](https://breathecode.herokuapp.com/v1/media/file/pairplot-species-png?raw=true)
 
