@@ -5,7 +5,7 @@ description: >-
 ---
 ## Decision trees
 
-A **decision tree** is a model widely used in Machine Learning to solve both regression and classification problems. It is a graphical model that mimics human decision making, i.e. it is based on a series of questions to reach a conclusion.
+A **decision tree** is a model widely used in Machine Learning to solve both regression and classification problems. It is a graphical model that mimics human decision making, i.e., it is based on a series of questions to reach a conclusion.
 
 The main idea behind decision trees is to divide data into smaller and smaller groups (called nodes) based on different criteria until a final result or decision is reached. These criteria are selected in such a way that the elements of each node are as similar as possible to each other.
 
@@ -19,7 +19,7 @@ An important aspect of decision trees is that they are very interpretable models
 
 ### Derivation example
 
-Let's imagine we are building a decision tree to decide whether we should play soccer based on weather conditions. We have the following data (in spanish):
+Let's imagine we are building a decision tree to decide whether we should play soccer based on weather conditions. We have the following data (in Spanish):
 
 | Clima | Viento | ¿Jugar al fútbol? |
 |-------|--------|-------------------|
@@ -63,9 +63,9 @@ Now, each of the child nodes (which are now leaf nodes, since they will not be s
 We can easily build a decision tree in Python using the `scikit-learn` library and the `DecisionTreeClassifier` and `DecisionTreeRegressor` functions. Some of its most important hyperparameters and the first ones we should focus on are:
 
 - `max_depth`: The maximum depth of the tree. This limits how many splits it can have, which is useful to prevent overfitting. If this value is `None`, then nodes are expanded until leaves are pure or until all leaves contain fewer samples than `min_samples_split`.
-- `min_samples_split`: The minimum number of samples needed to split a node. If a node has less samples than `min_samples_split`, then it will not be split, even if it is not pure. Helps prevent overfitting.
+- `min_samples_split`: The minimum number of samples needed to split a node. If a node has fewer samples than `min_samples_split`, then it will not be split, even if it is not pure. Helps prevent overfitting.
 - `min_samples_leaf`: The minimum number of samples that must be in a leaf node. A node will split if doing so creates at least `min_samples_leaf` samples in each of the children. This also helps to prevent overfitting.
 - `max_features`: The maximum number of features to consider when looking for the best split. If `max_features` is `None`, then all features will be considered. Reducing this number may make the model simpler and faster to train, but may also cause it to miss some important relationships.
-- Criterion: The function to measure the quality of a split. Depending on the nature of the tree (sort or return), the options vary. This hyperparameter is in charge of choosing which variable to branch.
+- Criterion: The function to measure the quality of a split. Depending on the nature of the tree (sort or return), the options vary. This hyperparameter is in charge of choosing which variable to branch on.
 
 Another very important hyperparameter is the `random_state`, which controls the random generation seed. This attribute is crucial to ensure replicability.
