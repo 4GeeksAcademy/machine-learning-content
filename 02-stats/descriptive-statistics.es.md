@@ -94,7 +94,7 @@ Las **medidas de posición** son estadísticas que nos indican la ubicación o p
 Son medidas que tratan sobre cómo se puede dividir un conjunto de datos en partes específicas. Estas medidas se utilizan para entender y describir la distribución de datos.
 
 - **Percentil**: Divide un conjunto de datos en 100 partes iguales. El k-ésimo percentil indica el valor bajo el cual cae el k% de las observaciones.
-- **Cuantil**: Divide un conjunto de datos en partes iguales, dependiendo del tipo. Los cuartiles dividen los datos en cuatro partes, los quintiles en cinco, etcétera.
+- **Cuantil**: Divide un conjunto de datos en partes iguales, dependiendo del tipo. Los cuantiles dividen los datos en cuatro partes, los quintiles en cinco, etcétera.
 
 #### Medidas de forma
 
