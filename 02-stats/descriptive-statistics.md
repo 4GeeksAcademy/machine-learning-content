@@ -33,7 +33,7 @@ print(df)
 
 It is the average of a set of numerical data.
 
-```py
+```py runable=true
 mean = df['values'].mean()
 print(f"Mean: {mean}")
 ```
@@ -111,7 +111,7 @@ Here we show you the three main types of kurtosis:
 * **Mesokurtic** : Distribution with a shape similar to the **normal distribution**. Its **excess kurtosis is close to zero** (= 0).
 * **Platykurtic** : Distribution with a flatter peak and lighter tails than the normal. It has fewer **outliers**. An example is the **uniform distribution**. Its **excess kurtosis is negative** (< 0), which indicates a lower risk of extreme events.
 
-```PY
+```py runable=true
 kurt = df['values'].kurt()
 print(f"Kurtosis: {kurt}")
 ```
@@ -119,7 +119,7 @@ print(f"Kurtosis: {kurt}")
 #### Data visualization
 
 Visualizing data is fundamental. Histograms, bar charts, and scatter plots are often used, depending on the data type.
-```PY
+```py runable=true
 import matplotlib.pyplot as plt
 
 # We create a histogram to visualize the distribution of the data
