@@ -9,35 +9,41 @@ technologies:
 ---
 ## Descriptive statistics
 
-Descriptive statistics is a branch of statistics that deals with collecting, analyzing, interpreting, and presenting data in an organized and effective manner. Its main objective is to provide simple and understandable summaries of the main characteristics of a data set, without making inferences or predictions about a larger population.
+**Descriptive statistics** is a branch of statistics that deals with collecting, analyzing, interpreting, and presenting data in an organized and effective manner. Its main objective is to provide simple and understandable summaries about the main characteristics of a dataset, without making inferences or predictions about a broader population.
 
-### Guide to descriptive statistics in Python
+### A Guide to Descriptive Statistics in Python
 
-#### Measures of central tendency
+#### Measures of Central Tendency
 
-**Measures of central tendency** are numerical values that describe how data are centralized or grouped in a set. They are essential in statistics and data analysis because they provide us with a summary of information, allowing us to quickly understand the general characteristics of a data distribution without having to look at each value individually.
+**Measures of central tendency** are numerical values that describe how data in a set are centralized or clustered. They are essential in statistics and data analysis because they provide a summary of information, allowing us to quickly understand the general characteristics of a data distribution.
 
+To illustrate these concepts, we will use a **Pandas DataFrame**.
+
+```python
+import pandas as pd
+import numpy as np
+
+# We create an example DataFrame
+data = {'values': [10, 20, -15, 0, 50, 10, 5, 100]}
+df = pd.DataFrame(data)
+
+print(df)
+```
 **Mean**
 
-The central value of a set of numerical data.
+It is the average of a set of numerical data.
 
 ```py
-import statistics as stats
-
-data = [10, 20, -15, 0, 50, 10, 5, 100]
-mean = stats.mean(data)
+mean = df['values'].mean()
 print(f"Mean: {mean}")
 ```
 
 **Median**
 
-Average value when data are sorted.
+It is the middle value when the data are ordered.
 
 ```py runable=true
-import statistics as stats
-
-data = [10, 20, -15, 0, 50, 10, 5, 100]
-median = stats.median(data)
+median = df['values'].median()
 print(f"Median: {median}")
 ```
 
@@ -46,10 +52,7 @@ print(f"Median: {median}")
 Value that occurs most frequently.
 
 ```py runable=true
-import statistics as stats
-
-data = [10, 20, -15, 0, 50, 10, 5, 100]
-mode = stats.mode(data)
+mode = df['values'].mode()
 print(f"Mode: {mode}")
 ```
 
@@ -64,37 +67,20 @@ These measures are fundamental for describing and analyzing data distributions.
 The difference between the maximum value and the minimum value of a data set.
 
 ```py runable=true
-import statistics as stats
-
-data = [10, 20, -15, 0, 50, 10, 5, 100]
-range_ = max(data) - min(data)
+range_ = df['values'].max() - df['values'].min()
 print(f"Range: {range_}")
 ```
 
 **Variance and standard deviation**
 
-Both metrics measure the same thing. They indicate how far, on average, the values are from the mean. However, the standard deviation is a measure used to be able to work with initial units of measurement, while the variance, although at first sight it may seem an unnecessary calculation, is calculated to be able to obtain other parameters.
+Both metrics measure how far, on average, the values are from the mean. Standard deviation is more interpretable because it is in the same units as the original data. Pandas calculates both easily.
 
 ```py runable=true
-import statistics as stats
-
-data = [10, 20, -15, 0, 50, 10, 5, 100]
-variance = stats.variance(data)
-std = stats.stdev(data)
+variance = df['values'].var()
+std = df['values'].std()
 print(f"Variance: {variance}")
-print(f"Standard deviation: {std}")
+print(f"Standard Deviation: {std}")
 ```
-
-#### Position measures
-
-The **position measures** are statistics that tell us the location or position of a specific value within a data set.
-
-**Percentiles and quantiles**
-
-These are measures that deal with how a data set can be divided into specific parts. These measures are used to understand and describe the distribution of data.
-
-- **Percentile**: Divides a data set into 100 equal parts. The k-th percentile indicates the value below which k% of the observations fall.
-- **Quantile**: Divides a data set into equal parts, depending on the type. Quartiles divide the data into four parts, quintiles into five, and so on.
 
 #### Shape measures
 
@@ -107,23 +93,40 @@ Measures the lack of symmetry in the data distribution. A positive skewness indi
 ![skewness](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/skewness.png?raw=true)
 
 ```py
-from scipy.stats import skew
-
-skewness = skew(data)
+skewness = df['values'].skew()
+print(f"Skewness: {skewness}")
 ```
 
 **Kurtosis**
 
-Measures the concentration of data around the mean. It is used to describe a distribution and is part of some normality tests. A positive kurtosis indicates a sharper peak compared to the normal distribution. A negative kurtosis indicates a flatter peak and lighter tails. A kurtosis close to zero is ideal, as it suggests a shape similar to that of the normal distribution.
+Kurtosis measures the "heaviness of the tails" and the "peakedness" of a distribution. In practical terms, it tells us the probability of finding atypical values (outliers). Its usefulness is key, for example, in financial risk modeling, where a high kurtosis means a higher risk of extreme events.
+A positive kurtosis indicates a sharper peak compared to the normal distribution. A negative kurtosis indicates a flatter peak and lighter tails. A kurtosis close to zero is ideal, as it suggests a shape similar to that of the normal distribution.
 
 ![kurtosis](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/kurtosis.png?raw=true)
 
-```PY
-from scipy.stats import kurtosis
+The `df.kurt()` method in Pandas calculates the excess kurtosis, which facilitates comparison with the normal distribution.
+Here we show you the three main types of kurtosis:
 
-kurt = kurtosis(data)
+* **Leptokurtic**: Distribution with a sharper peak and heavier tails than the normal. It has more **outliers**. An example is the **Student's t-distribution**. Its **excess kurtosis is positive** (> 0), which in financial modeling translates to higher risk.
+* **Mesokurtic** : Distribution with a shape similar to the **normal distribution**. Its **excess kurtosis is close to zero** (= 0).
+* **Platykurtic** : Distribution with a flatter peak and lighter tails than the normal. It has fewer **outliers**. An example is the **uniform distribution**. Its **excess kurtosis is negative** (< 0), which indicates a lower risk of extreme events.
+
+```PY
+kurt = df['values'].kurt()
+print(f"Kurtosis: {kurt}")
 ```
 
 #### Data visualization
 
-In this section, it is essential to visualize the data available to us. Histograms, bar charts and scatter plots are usually used, depending on the type of data.
+Visualizing data is fundamental. Histograms, bar charts, and scatter plots are often used, depending on the data type.
+```PY
+import matplotlib.pyplot as plt
+
+# We create a histogram to visualize the distribution of the data
+df['values'].hist(bins=5)
+plt.title('Histogram of the Value Distribution')
+plt.xlabel('Values')
+plt.ylabel('Frequency')
+plt.show()
+```
+
