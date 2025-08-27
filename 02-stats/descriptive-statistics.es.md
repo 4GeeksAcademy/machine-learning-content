@@ -15,29 +15,37 @@ La **estadística descriptiva** (*descriptive statistics*) es una rama de la est
 
 #### Medidas de tendencia central
 
-Las **medidas de tendencia central** son valores numéricos que describen cómo se centralizan o agrupan los datos en un conjunto. Son esenciales en estadística y análisis de datos porque nos proporcionan un resumen de la información, permitiéndonos comprender rápidamente las características generales de una distribución de datos sin tener que observar cada valor individualmente.
+Las **medidas de tendencia central** son valores numéricos que describen cómo se centralizan o agrupan los datos en un conjunto. Son esenciales en estadística y análisis de datos porque nos proporcionan un resumen de la información, permitiéndonos comprender rápidamente las características generales de una distribución de datos.
+
+Para ilustrar estos conceptos, usaremos un **DataFrame de Pandas**.
+
+```python
+import pandas as pd
+import numpy as np
+
+# Creamos un DataFrame de ejemplo
+data = {'valores': [10, 20, -15, 0, 50, 10, 5, 100]}
+df = pd.DataFrame(data)
+
+print(df)
+```
 
 **Media** (*mean*)
 
-Valor central de un conjunto de datos numéricos. 
+Es el promedio de un conjunto de datos numéricos. 
 
 ```py runable=true
-import statistics as stats
 
-data = [10, 20, -15, 0, 50, 10, 5, 100]
-mean = stats.mean(data)
+mean = df['valores'].mean()
 print(f"Media: {mean}")
 ```
 
 **Mediana** (*median*)
 
-Valor medio cuando los datos están ordenados.
+Es el valor que se encuentra en la posición central cuando los datos están ordenados.
 
 ```py runable=true
-import statistics as stats
-
-data = [10, 20, -15, 0, 50, 10, 5, 100]
-median = stats.median(data)
+median = df['valores'].median()
 print(f"Mediana: {median}")
 ```
 
@@ -46,10 +54,7 @@ print(f"Mediana: {median}")
 Valor que ocurre con mayor frecuencia.
 
 ```py runable=true
-import statistics as stats
-
-data = [10, 20, -15, 0, 50, 10, 5, 100]
-mode = stats.mode(data)
+mode = df['valores'].mode()
 print(f"Moda: {mode}")
 ```
 
@@ -64,37 +69,20 @@ Las **medidas de dispersión** son valores numéricos que describen cómo de var
 Es la diferencia entre el valor máximo y el valor mínimo de un conjunto de datos. 
 
 ```py runable=true
-import statistics as stats
-
-data = [10, 20, -15, 0, 50, 10, 5, 100]
-range_ = max(data) - min(data)
+range_ = df['valores'].max() - df['valores'].min()
 print(f"Rango: {range_}")
 ```
 
 **Varianza y desviación estándar** (*variance and standard deviation*)
 
-Ambas métricas miden lo mismo. Indican cómo de lejos están, en promedio, los valores con respecto a la media. No obstante, la desviación estándar es una medida que se utiliza para poder trabajar con unidades de medida iniciales, mientras que la varianza, aunque a priori nos pueda parecer un cálculo innecesario, se calcula para poder obtener otros parámetros.
+Ambas métricas miden cómo de lejos están, en promedio, los valores con respecto a la media. La desviación estándar es más interpretable porque está en las mismas unidades que los datos originales. Pandas calcula ambas de forma sencilla.
 
 ```py runable=true
-import statistics as stats
-
-data = [10, 20, -15, 0, 50, 10, 5, 100]
-variance = stats.variance(data)
-std = stats.stdev(data)
+variance = df['valores'].var()
+std = df['valores'].std()
 print(f"Varianza: {variance}")
 print(f"Desviación estándar: {std}")
 ```
-
-#### Medidas de posición
-
-Las **medidas de posición** son estadísticas que nos indican la ubicación o posición de un valor específico dentro de un conjunto de datos.
-
-**Percentiles y cuantiles** (*percentiles* and *quantiles*)
-
-Son medidas que tratan sobre cómo se puede dividir un conjunto de datos en partes específicas. Estas medidas se utilizan para entender y describir la distribución de datos.
-
-- **Percentil**: Divide un conjunto de datos en 100 partes iguales. El k-ésimo percentil indica el valor bajo el cual cae el k% de las observaciones.
-- **Cuantil**: Divide un conjunto de datos en partes iguales, dependiendo del tipo. Los cuartiles dividen los datos en cuatro partes, los quintiles en cinco, etcétera.
 
 #### Medidas de forma
 
@@ -107,23 +95,42 @@ Mide la falta de simetría en la distribución de datos. Una asimetría positiva
 ![Asimetría](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/skewness.png?raw=true)
 
 ```py
-from scipy.stats import skew
-
-skewness = skew(data)
+skewness = df['valores'].skew()
+print(f"Asimetría (Skewness): {skewness}")
 ```
 
 **Curtosis** (*kurtosis*)
 
-Mide la concentración de los datos en torno a la media. Se emplea para describir una distribución y forma parte de algunos contrastes de normalidad. Una curtosis positiva indica un pico más agudo en comparación con la distribución normal. Una curtosis negativa indica un pico más aplanado y unas colas más ligeras. Una curtosis cercana a cero es lo ideal, ya que sugiere una forma similar a la de la distribución normal.
+La curtosis mide la "pesadez de las colas" y la "agudeza del pico" de una distribución. En términos prácticos, nos indica la probabilidad de encontrar valores atípicos (outliers). Su utilidad es clave, por ejemplo, en el modelado de riesgos financieros, donde una alta curtosis significa un mayor riesgo de eventos extremos.
+Una curtosis positiva indica un pico más agudo en comparación con la distribución normal. Una curtosis negativa indica un pico más aplanado y unas colas más ligeras. Una curtosis cercana a cero es lo ideal, ya que sugiere una forma similar a la de la distribución normal.
 
 ![Curtosis](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/kurtosis.png?raw=true)
 
-```PY
-from scipy.stats import kurtosis
+El método df.kurt() de Pandas calcula el exceso de curtosis, lo que facilita la comparación con la distribución normal.
 
-kurt = kurtosis(data)
+Aquí te mostramos los tres tipos principales de curtosis:
+
+* **Leptocúrtica** : Distribución con un pico más agudo y colas más pesadas que la normal. Tiene más **outliers**. Un ejemplo es la **distribución t de Student**. Su **curtosis de exceso es positiva** (> 0), lo que en modelado financiero se traduce en mayor riesgo.
+* **Mesocúrtica** : Distribución con una forma similar a la **distribución normal**. Su **curtosis de exceso es cercana a cero** (= 0).
+* **Platicúrtica** : Distribución con un pico más plano y colas más ligeras que la normal. Tiene menos **outliers**. Un ejemplo es la **distribución uniforme**. Su **curtosis de exceso es negativa** (< 0), lo que indica un riesgo menor de eventos extremos.
+  
+```PY
+kurt = df['valores'].kurt()
+print(f"Curtosis (Kurtosis): {kurt}")
 ```
+
 
 #### Visualización de datos
 
-En este apartado, visualizar los datos de los que disponemos es fundamental. Se suelen utilizar histogramas, gráficos de barras y diagramas de dispersión, dependiendo de la tipología de los datos.
+Visualizar los datos es fundamental. Se suelen utilizar histogramas, gráficos de barras y diagramas de dispersión, dependiendo de la tipología de los datos.
+
+```PY
+import matplotlib.pyplot as plt
+
+# Creamos un histograma para visualizar la distribución de los datos
+df['valores'].hist(bins=5)
+plt.title('Histograma de la Distribución de Valores')
+plt.xlabel('Valores')
+plt.ylabel('Frecuencia')
+plt.show()
+```
