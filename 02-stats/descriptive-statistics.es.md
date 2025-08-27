@@ -94,7 +94,7 @@ Mide la falta de simetría en la distribución de datos. Una asimetría positiva
 
 ![Asimetría](https://github.com/4GeeksAcademy/machine-learning-content/blob/master/assets/skewness.png?raw=true)
 
-```py
+```py runable=true
 skewness = df['valores'].skew()
 print(f"Asimetría (Skewness): {skewness}")
 ```
@@ -114,7 +114,7 @@ Aquí te mostramos los tres tipos principales de curtosis:
 * **Mesocúrtica** : Distribución con una forma similar a la **distribución normal**. Su **curtosis de exceso es cercana a cero** (= 0).
 * **Platicúrtica** : Distribución con un pico más plano y colas más ligeras que la normal. Tiene menos **outliers**. Un ejemplo es la **distribución uniforme**. Su **curtosis de exceso es negativa** (< 0), lo que indica un riesgo menor de eventos extremos.
   
-```PY
+```py runable=true
 kurt = df['valores'].kurt()
 print(f"Curtosis (Kurtosis): {kurt}")
 ```
@@ -124,7 +124,7 @@ print(f"Curtosis (Kurtosis): {kurt}")
 
 Visualizar los datos es fundamental. Se suelen utilizar histogramas, gráficos de barras y diagramas de dispersión, dependiendo de la tipología de los datos.
 
-```PY
+```py runable=true
 import matplotlib.pyplot as plt
 
 # Creamos un histograma para visualizar la distribución de los datos
